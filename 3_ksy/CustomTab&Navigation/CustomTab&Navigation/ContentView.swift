@@ -27,7 +27,7 @@ struct ContentView: View {
                 
             }
             
-            CustomTab(currentTab: $currentTab)
+            CustomTabView(currentTab: $currentTab)
         }
     }
 }

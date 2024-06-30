@@ -1,6 +1,6 @@
 //
-//  CustomTab.swift
-//  CustomTabView
+//  CustomTabView.swift
+//  CustomTab&Navigation
 //
 //  Created by 김수영 on 6/30/24.
 //
@@ -23,7 +23,7 @@ enum Tab: String, CaseIterable{
     }
 }
 
-struct CustomTab: View {
+struct CustomTabView: View {
     @Binding var currentTab: Tab
     
     var body: some View {
@@ -70,5 +70,6 @@ struct TabButtonStyle: ButtonStyle {
 }
 
 #Preview {
-    CustomTab(currentTab: .constant(Tab.home))
+    CustomTabView(currentTab: .constant(Tab.home))
 }
+
