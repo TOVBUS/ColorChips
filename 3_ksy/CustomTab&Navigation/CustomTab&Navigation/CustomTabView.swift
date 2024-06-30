@@ -72,4 +72,3 @@ struct TabButtonStyle: ButtonStyle {
 #Preview {
     CustomTabView(currentTab: .constant(Tab.home))
 }
-
