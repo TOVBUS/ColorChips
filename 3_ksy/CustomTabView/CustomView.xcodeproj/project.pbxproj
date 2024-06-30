@@ -12,15 +12,17 @@
 		89589D3E2C3149ED00DB4507 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89589D3D2C3149ED00DB4507 /* Assets.xcassets */; };
 		89589D412C3149ED00DB4507 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89589D402C3149ED00DB4507 /* Preview Assets.xcassets */; };
 		89589D482C314A2B00DB4507 /* CustomTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89589D472C314A2B00DB4507 /* CustomTab.swift */; };
+		89589D4A2C31570A00DB4507 /* NavigationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89589D492C31570A00DB4507 /* NavigationStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		89589D362C3149EC00DB4507 /* CustomTabView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomTabView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		89589D362C3149EC00DB4507 /* CustomView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89589D392C3149EC00DB4507 /* CustomTabViewApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabViewApp.swift; sourceTree = "<group>"; };
 		89589D3B2C3149EC00DB4507 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		89589D3D2C3149ED00DB4507 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		89589D402C3149ED00DB4507 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		89589D472C314A2B00DB4507 /* CustomTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTab.swift; sourceTree = "<group>"; };
+		89589D492C31570A00DB4507 /* NavigationStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,7 +47,7 @@
 		89589D372C3149EC00DB4507 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				89589D362C3149EC00DB4507 /* CustomTabView.app */,
+				89589D362C3149EC00DB4507 /* CustomView.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -56,6 +58,7 @@
 				89589D392C3149EC00DB4507 /* CustomTabViewApp.swift */,
 				89589D3B2C3149EC00DB4507 /* ContentView.swift */,
 				89589D472C314A2B00DB4507 /* CustomTab.swift */,
+				89589D492C31570A00DB4507 /* NavigationStack.swift */,
 				89589D3D2C3149ED00DB4507 /* Assets.xcassets */,
 				89589D3F2C3149ED00DB4507 /* Preview Content */,
 			);
@@ -73,9 +76,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		89589D352C3149EC00DB4507 /* CustomTabView */ = {
+		89589D352C3149EC00DB4507 /* CustomView */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 89589D442C3149ED00DB4507 /* Build configuration list for PBXNativeTarget "CustomTabView" */;
+			buildConfigurationList = 89589D442C3149ED00DB4507 /* Build configuration list for PBXNativeTarget "CustomView" */;
 			buildPhases = (
 				89589D322C3149EC00DB4507 /* Sources */,
 				89589D332C3149EC00DB4507 /* Frameworks */,
@@ -85,9 +88,9 @@
 			);
 			dependencies = (
 			);
-			name = CustomTabView;
+			name = CustomView;
 			productName = CustomTabView;
-			productReference = 89589D362C3149EC00DB4507 /* CustomTabView.app */;
+			productReference = 89589D362C3149EC00DB4507 /* CustomView.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -105,7 +108,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 89589D312C3149EC00DB4507 /* Build configuration list for PBXProject "CustomTabView" */;
+			buildConfigurationList = 89589D312C3149EC00DB4507 /* Build configuration list for PBXProject "CustomView" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -118,7 +121,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				89589D352C3149EC00DB4507 /* CustomTabView */,
+				89589D352C3149EC00DB4507 /* CustomView */,
 			);
 		};
 /* End PBXProject section */
@@ -142,6 +145,7 @@
 			files = (
 				89589D482C314A2B00DB4507 /* CustomTab.swift in Sources */,
 				89589D3C2C3149EC00DB4507 /* ContentView.swift in Sources */,
+				89589D4A2C31570A00DB4507 /* NavigationStack.swift in Sources */,
 				89589D3A2C3149EC00DB4507 /* CustomTabViewApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -327,7 +331,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		89589D312C3149EC00DB4507 /* Build configuration list for PBXProject "CustomTabView" */ = {
+		89589D312C3149EC00DB4507 /* Build configuration list for PBXProject "CustomView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				89589D422C3149ED00DB4507 /* Debug */,
@@ -336,7 +340,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		89589D442C3149ED00DB4507 /* Build configuration list for PBXNativeTarget "CustomTabView" */ = {
+		89589D442C3149ED00DB4507 /* Build configuration list for PBXNativeTarget "CustomView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				89589D452C3149ED00DB4507 /* Debug */,
