@@ -12,6 +12,7 @@
 		89FD50DA2C3196B70001EA06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89FD50D92C3196B70001EA06 /* Assets.xcassets */; };
 		89FD50DD2C3196B70001EA06 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89FD50DC2C3196B70001EA06 /* Preview Assets.xcassets */; };
 		89FD50E62C31978B0001EA06 /* CustomTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FD50E52C31978B0001EA06 /* CustomTabView.swift */; };
+		89FD50E82C319AFF0001EA06 /* TestNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FD50E72C319AFF0001EA06 /* TestNavigationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		89FD50D92C3196B70001EA06 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		89FD50DC2C3196B70001EA06 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		89FD50E52C31978B0001EA06 /* CustomTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabView.swift; sourceTree = "<group>"; };
+		89FD50E72C319AFF0001EA06 /* TestNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestNavigationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 				89FD50D52C3196B60001EA06 /* CustomTab_NavigationApp.swift */,
 				89FD50D72C3196B60001EA06 /* ContentView.swift */,
 				89FD50E52C31978B0001EA06 /* CustomTabView.swift */,
+				89FD50E72C319AFF0001EA06 /* TestNavigationView.swift */,
 				89FD50D92C3196B70001EA06 /* Assets.xcassets */,
 				89FD50DB2C3196B70001EA06 /* Preview Content */,
 			);
@@ -142,6 +145,7 @@
 			files = (
 				89FD50E62C31978B0001EA06 /* CustomTabView.swift in Sources */,
 				89FD50D82C3196B60001EA06 /* ContentView.swift in Sources */,
+				89FD50E82C319AFF0001EA06 /* TestNavigationView.swift in Sources */,
 				89FD50D62C3196B60001EA06 /* CustomTab_NavigationApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
