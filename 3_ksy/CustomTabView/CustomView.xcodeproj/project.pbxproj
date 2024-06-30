@@ -12,7 +12,7 @@
 		89589D3E2C3149ED00DB4507 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89589D3D2C3149ED00DB4507 /* Assets.xcassets */; };
 		89589D412C3149ED00DB4507 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89589D402C3149ED00DB4507 /* Preview Assets.xcassets */; };
 		89589D482C314A2B00DB4507 /* CustomTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89589D472C314A2B00DB4507 /* CustomTab.swift */; };
-		89589D4A2C31570A00DB4507 /* NavigationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89589D492C31570A00DB4507 /* NavigationStack.swift */; };
+		89589D4C2C31933200DB4507 /* NavigationStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89589D4B2C31933200DB4507 /* NavigationStackView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,7 +22,7 @@
 		89589D3D2C3149ED00DB4507 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		89589D402C3149ED00DB4507 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		89589D472C314A2B00DB4507 /* CustomTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTab.swift; sourceTree = "<group>"; };
-		89589D492C31570A00DB4507 /* NavigationStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationStack.swift; sourceTree = "<group>"; };
+		89589D4B2C31933200DB4507 /* NavigationStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationStackView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +58,7 @@
 				89589D392C3149EC00DB4507 /* CustomTabViewApp.swift */,
 				89589D3B2C3149EC00DB4507 /* ContentView.swift */,
 				89589D472C314A2B00DB4507 /* CustomTab.swift */,
-				89589D492C31570A00DB4507 /* NavigationStack.swift */,
+				89589D4B2C31933200DB4507 /* NavigationStackView.swift */,
 				89589D3D2C3149ED00DB4507 /* Assets.xcassets */,
 				89589D3F2C3149ED00DB4507 /* Preview Content */,
 			);
@@ -144,8 +144,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				89589D482C314A2B00DB4507 /* CustomTab.swift in Sources */,
+				89589D4C2C31933200DB4507 /* NavigationStackView.swift in Sources */,
 				89589D3C2C3149EC00DB4507 /* ContentView.swift in Sources */,
-				89589D4A2C31570A00DB4507 /* NavigationStack.swift in Sources */,
 				89589D3A2C3149EC00DB4507 /* CustomTabViewApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

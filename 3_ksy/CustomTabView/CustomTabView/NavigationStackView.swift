@@ -1,6 +1,6 @@
 //
 //  NavigationStackView.swift
-//  CustomTabView
+//  CustomView
 //
 //  Created by 김수영 on 6/30/24.
 //
@@ -58,7 +58,7 @@ struct AppleView: View {
 //@MainActor
 //class FirstDestinationViewModel: ObservableObject {
 //    @Published var image: UIImage? = nil
-//    
+//
 //    init() {
 //        downloadImage()
 //    }
@@ -76,10 +76,10 @@ struct AppleView: View {
 //
 //struct FirstDestinationView: View {
 //    @StateObject private var viewModel: FirstDestinationViewModel
-//    
+//
 //    init(viewModel: FirstDestinationViewModel) {
 //        print("목적지가 되는 뷰가 생성되었습니다!")
-//        
+//
 //        _viewModel = StateObject(wrappedValue: viewModel)
 //    }
 //    var body: some View {
