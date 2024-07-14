@@ -1,13 +1,29 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { MemberController } from './member/member.controller';
-import { MemberService } from './member/member.service';
+import { TypeOrmModule } from '@nestjs/typeorm';
+// import { AuthModule } from './auth/auth.module';
 import { MemberModule } from './member/member.module';
+import { ConfigModule } from './config/config.module';
+import { ConfigService } from './config/config.service';
 
 @Module({
-  imports: [MemberModule],
-  controllers: [AppController, MemberController],
-  providers: [AppService, MemberService],
+  imports: [
+    ConfigModule,
+    TypeOrmModule.forRootAsync({
+      imports: [ConfigModule],
+      useFactory: (configService: ConfigService) => ({
+        type: 'mysql',
+        host: configService.get('DB_HOST'),
+        port: configService.getNumber('DB_PORT'),
+        username: configService.get('DB_USERNAME'),
+        password: configService.get('DB_PASSWORD'),
+        database: configService.get('DB_NAME'),
+        entities: [__dirname + '/**/*.entity{.ts,.js}'],
+        synchronize: true,
+      }),
+      inject: [ConfigService],
+    }),
+    // AuthModule,
+    MemberModule,
+  ],
 })
 export class AppModule {}
