@@ -7,6 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E9E9E202C44E7DB002389EB /* WorkSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E9E9E172C44E7DA002389EB /* WorkSans-Light.ttf */; };
+		3E9E9E212C44E7DB002389EB /* WorkSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E9E9E182C44E7DA002389EB /* WorkSans-ExtraBold.ttf */; };
+		3E9E9E222C44E7DB002389EB /* WorkSans-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E9E9E192C44E7DA002389EB /* WorkSans-Black.ttf */; };
+		3E9E9E232C44E7DB002389EB /* WorkSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E9E9E1A2C44E7DA002389EB /* WorkSans-Bold.ttf */; };
+		3E9E9E242C44E7DB002389EB /* WorkSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E9E9E1B2C44E7DA002389EB /* WorkSans-SemiBold.ttf */; };
+		3E9E9E252C44E7DB002389EB /* WorkSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E9E9E1C2C44E7DA002389EB /* WorkSans-Regular.ttf */; };
+		3E9E9E262C44E7DB002389EB /* WorkSans-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E9E9E1D2C44E7DA002389EB /* WorkSans-ExtraLight.ttf */; };
+		3E9E9E272C44E7DB002389EB /* WorkSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E9E9E1E2C44E7DA002389EB /* WorkSans-Medium.ttf */; };
+		3E9E9E282C44E7DB002389EB /* WorkSans-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E9E9E1F2C44E7DA002389EB /* WorkSans-Thin.ttf */; };
+		3E9E9E302C44E7FC002389EB /* IBMPlexSansKR-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E9E9E292C44E7FB002389EB /* IBMPlexSansKR-ExtraLight.ttf */; };
+		3E9E9E312C44E7FC002389EB /* IBMPlexSansKR-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E9E9E2A2C44E7FB002389EB /* IBMPlexSansKR-Light.ttf */; };
+		3E9E9E322C44E7FC002389EB /* IBMPlexSansKR-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E9E9E2B2C44E7FB002389EB /* IBMPlexSansKR-Thin.ttf */; };
+		3E9E9E332C44E7FC002389EB /* IBMPlexSansKR-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E9E9E2C2C44E7FB002389EB /* IBMPlexSansKR-Regular.ttf */; };
+		3E9E9E342C44E7FC002389EB /* IBMPlexSansKR-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E9E9E2D2C44E7FB002389EB /* IBMPlexSansKR-SemiBold.ttf */; };
+		3E9E9E352C44E7FC002389EB /* IBMPlexSansKR-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E9E9E2E2C44E7FC002389EB /* IBMPlexSansKR-Bold.ttf */; };
+		3E9E9E362C44E7FC002389EB /* IBMPlexSansKR-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E9E9E2F2C44E7FC002389EB /* IBMPlexSansKR-Medium.ttf */; };
 		3EF6F04D2C36937E00EEF18F /* FebirdAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF6F04C2C36937E00EEF18F /* FebirdAppApp.swift */; };
 		3EF6F04F2C36937E00EEF18F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF6F04E2C36937E00EEF18F /* ContentView.swift */; };
 		3EF6F0512C36937E00EEF18F /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF6F0502C36937E00EEF18F /* Item.swift */; };
@@ -15,6 +31,9 @@
 		3EF6F0602C36938000EEF18F /* FebirdAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF6F05F2C36938000EEF18F /* FebirdAppTests.swift */; };
 		3EF6F06A2C36938000EEF18F /* FebirdAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF6F0692C36938000EEF18F /* FebirdAppUITests.swift */; };
 		3EF6F06C2C36938000EEF18F /* FebirdAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF6F06B2C36938000EEF18F /* FebirdAppUITestsLaunchTests.swift */; };
+		3EFC450C2C44F882001052C7 /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFC450B2C44F882001052C7 /* Font+Extension.swift */; };
+		3EFC450F2C44FF72001052C7 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFC450E2C44FF72001052C7 /* Color+Extension.swift */; };
+		3EFC45132C450C0E001052C7 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFC45122C450C0E001052C7 /* View+Extension.swift */; };
 		E1BB0D4C2C450F1C002565B2 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = E1BB0D4B2C450F1C002565B2 /* .swiftlint.yml */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +55,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3E9E9E172C44E7DA002389EB /* WorkSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-Light.ttf"; sourceTree = "<group>"; };
+		3E9E9E182C44E7DA002389EB /* WorkSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-ExtraBold.ttf"; sourceTree = "<group>"; };
+		3E9E9E192C44E7DA002389EB /* WorkSans-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-Black.ttf"; sourceTree = "<group>"; };
+		3E9E9E1A2C44E7DA002389EB /* WorkSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-Bold.ttf"; sourceTree = "<group>"; };
+		3E9E9E1B2C44E7DA002389EB /* WorkSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		3E9E9E1C2C44E7DA002389EB /* WorkSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-Regular.ttf"; sourceTree = "<group>"; };
+		3E9E9E1D2C44E7DA002389EB /* WorkSans-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-ExtraLight.ttf"; sourceTree = "<group>"; };
+		3E9E9E1E2C44E7DA002389EB /* WorkSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-Medium.ttf"; sourceTree = "<group>"; };
+		3E9E9E1F2C44E7DA002389EB /* WorkSans-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-Thin.ttf"; sourceTree = "<group>"; };
+		3E9E9E292C44E7FB002389EB /* IBMPlexSansKR-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBMPlexSansKR-ExtraLight.ttf"; sourceTree = "<group>"; };
+		3E9E9E2A2C44E7FB002389EB /* IBMPlexSansKR-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBMPlexSansKR-Light.ttf"; sourceTree = "<group>"; };
+		3E9E9E2B2C44E7FB002389EB /* IBMPlexSansKR-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBMPlexSansKR-Thin.ttf"; sourceTree = "<group>"; };
+		3E9E9E2C2C44E7FB002389EB /* IBMPlexSansKR-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBMPlexSansKR-Regular.ttf"; sourceTree = "<group>"; };
+		3E9E9E2D2C44E7FB002389EB /* IBMPlexSansKR-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBMPlexSansKR-SemiBold.ttf"; sourceTree = "<group>"; };
+		3E9E9E2E2C44E7FC002389EB /* IBMPlexSansKR-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBMPlexSansKR-Bold.ttf"; sourceTree = "<group>"; };
+		3E9E9E2F2C44E7FC002389EB /* IBMPlexSansKR-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBMPlexSansKR-Medium.ttf"; sourceTree = "<group>"; };
+		3E9E9E372C44E821002389EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3EF6F0492C36937E00EEF18F /* FebirdApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FebirdApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EF6F04C2C36937E00EEF18F /* FebirdAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FebirdAppApp.swift; sourceTree = "<group>"; };
 		3EF6F04E2C36937E00EEF18F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -47,8 +83,9 @@
 		3EF6F0652C36938000EEF18F /* FebirdAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FebirdAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EF6F0692C36938000EEF18F /* FebirdAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FebirdAppUITests.swift; sourceTree = "<group>"; };
 		3EF6F06B2C36938000EEF18F /* FebirdAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FebirdAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		E1BB0D382C44E615002565B2 /* Secret.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secret.xcconfig; sourceTree = "<group>"; };
-		E1BB0D392C44E7BF002565B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		3EFC450B2C44F882001052C7 /* Font+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extension.swift"; sourceTree = "<group>"; };
+		3EFC450E2C44FF72001052C7 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		3EFC45122C450C0E001052C7 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		E1BB0D4B2C450F1C002565B2 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,6 +114,76 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E9E9E0B2C44E5B1002389EB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3EFC450B2C44F882001052C7 /* Font+Extension.swift */,
+				3EFC450E2C44FF72001052C7 /* Color+Extension.swift */,
+				3EFC45122C450C0E001052C7 /* View+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3E9E9E102C44E5ED002389EB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3E9E9E142C44E66A002389EB /* Fonts */,
+				3EF6F0522C36937F00EEF18F /* Assets.xcassets */,
+				3E9E9E372C44E821002389EB /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3E9E9E112C44E5FE002389EB /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				3EF6F04C2C36937E00EEF18F /* FebirdAppApp.swift */,
+				3E9E9E132C44E620002389EB /* Views */,
+				3E9E9E122C44E618002389EB /* Models */,
+				3E9E9E0B2C44E5B1002389EB /* Extensions */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		3E9E9E122C44E618002389EB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3EF6F0502C36937E00EEF18F /* Item.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3E9E9E132C44E620002389EB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3EF6F04E2C36937E00EEF18F /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3E9E9E142C44E66A002389EB /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				3E9E9E192C44E7DA002389EB /* WorkSans-Black.ttf */,
+				3E9E9E1A2C44E7DA002389EB /* WorkSans-Bold.ttf */,
+				3E9E9E182C44E7DA002389EB /* WorkSans-ExtraBold.ttf */,
+				3E9E9E1D2C44E7DA002389EB /* WorkSans-ExtraLight.ttf */,
+				3E9E9E172C44E7DA002389EB /* WorkSans-Light.ttf */,
+				3E9E9E1E2C44E7DA002389EB /* WorkSans-Medium.ttf */,
+				3E9E9E1C2C44E7DA002389EB /* WorkSans-Regular.ttf */,
+				3E9E9E1B2C44E7DA002389EB /* WorkSans-SemiBold.ttf */,
+				3E9E9E1F2C44E7DA002389EB /* WorkSans-Thin.ttf */,
+				3E9E9E2E2C44E7FC002389EB /* IBMPlexSansKR-Bold.ttf */,
+				3E9E9E292C44E7FB002389EB /* IBMPlexSansKR-ExtraLight.ttf */,
+				3E9E9E2A2C44E7FB002389EB /* IBMPlexSansKR-Light.ttf */,
+				3E9E9E2F2C44E7FC002389EB /* IBMPlexSansKR-Medium.ttf */,
+				3E9E9E2C2C44E7FB002389EB /* IBMPlexSansKR-Regular.ttf */,
+				3E9E9E2D2C44E7FB002389EB /* IBMPlexSansKR-SemiBold.ttf */,
+				3E9E9E2B2C44E7FB002389EB /* IBMPlexSansKR-Thin.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		3EF6F0402C36937D00EEF18F = {
 			isa = PBXGroup;
 			children = (
@@ -101,13 +208,9 @@
 		3EF6F04B2C36937E00EEF18F /* FebirdApp */ = {
 			isa = PBXGroup;
 			children = (
-				E1BB0D392C44E7BF002565B2 /* Info.plist */,
-				3EF6F04C2C36937E00EEF18F /* FebirdAppApp.swift */,
-				3EF6F04E2C36937E00EEF18F /* ContentView.swift */,
-				3EF6F0502C36937E00EEF18F /* Item.swift */,
-				3EF6F0522C36937F00EEF18F /* Assets.xcassets */,
+				3E9E9E112C44E5FE002389EB /* Sources */,
+				3E9E9E102C44E5ED002389EB /* Resources */,
 				3EF6F0542C36937F00EEF18F /* Preview Content */,
-				E1BB0D382C44E615002565B2 /* Secret.xcconfig */,
 			);
 			path = FebirdApp;
 			sourceTree = "<group>";
@@ -246,8 +349,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1BB0D4C2C450F1C002565B2 /* .swiftlint.yml in Resources */,
+				3E9E9E212C44E7DB002389EB /* WorkSans-ExtraBold.ttf in Resources */,
 				3EF6F0562C36937F00EEF18F /* Preview Assets.xcassets in Resources */,
+				3E9E9E242C44E7DB002389EB /* WorkSans-SemiBold.ttf in Resources */,
+				3E9E9E322C44E7FC002389EB /* IBMPlexSansKR-Thin.ttf in Resources */,
+				3E9E9E352C44E7FC002389EB /* IBMPlexSansKR-Bold.ttf in Resources */,
+				3E9E9E272C44E7DB002389EB /* WorkSans-Medium.ttf in Resources */,
+				3E9E9E342C44E7FC002389EB /* IBMPlexSansKR-SemiBold.ttf in Resources */,
+				3E9E9E302C44E7FC002389EB /* IBMPlexSansKR-ExtraLight.ttf in Resources */,
+				3E9E9E312C44E7FC002389EB /* IBMPlexSansKR-Light.ttf in Resources */,
+				3E9E9E362C44E7FC002389EB /* IBMPlexSansKR-Medium.ttf in Resources */,
+				3E9E9E202C44E7DB002389EB /* WorkSans-Light.ttf in Resources */,
+				3E9E9E282C44E7DB002389EB /* WorkSans-Thin.ttf in Resources */,
 				3EF6F0532C36937F00EEF18F /* Assets.xcassets in Resources */,
+				3E9E9E222C44E7DB002389EB /* WorkSans-Black.ttf in Resources */,
+				3E9E9E332C44E7FC002389EB /* IBMPlexSansKR-Regular.ttf in Resources */,
+				3E9E9E232C44E7DB002389EB /* WorkSans-Bold.ttf in Resources */,
+				3E9E9E262C44E7DB002389EB /* WorkSans-ExtraLight.ttf in Resources */,
+				3E9E9E252C44E7DB002389EB /* WorkSans-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,8 +413,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3EF6F04F2C36937E00EEF18F /* ContentView.swift in Sources */,
+				3EFC450F2C44FF72001052C7 /* Color+Extension.swift in Sources */,
+				3EFC450C2C44F882001052C7 /* Font+Extension.swift in Sources */,
 				3EF6F0512C36937E00EEF18F /* Item.swift in Sources */,
 				3EF6F04D2C36937E00EEF18F /* FebirdAppApp.swift in Sources */,
+				3EFC45132C450C0E001052C7 /* View+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,7 +456,6 @@
 /* Begin XCBuildConfiguration section */
 		3EF6F06D2C36938000EEF18F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E1BB0D382C44E615002565B2 /* Secret.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -398,7 +519,6 @@
 		};
 		3EF6F06E2C36938000EEF18F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E1BB0D382C44E615002565B2 /* Secret.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -465,7 +585,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = FebirdApp/Info.plist;
+				INFOPLIST_FILE = FebirdApp/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -496,7 +616,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = FebirdApp/Info.plist;
+				INFOPLIST_FILE = FebirdApp/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
