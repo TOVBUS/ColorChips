@@ -1,7 +1,7 @@
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
-export class Member {
+export class Exercise {
   @PrimaryGeneratedColumn()
   exercise_key: number;
 
