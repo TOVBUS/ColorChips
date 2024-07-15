@@ -3,19 +3,14 @@ import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 @Entity()
 export class Member {
   @PrimaryGeneratedColumn()
-  uuid: number;
+  exercise_key: number;
 
   @Column()
-  nickname: string;
+  exercise_title: string;
 
   @Column()
-  gender: string;
+  url: Text;
 
   @Column()
-  birth: Date;
-
-  // @Column({ unique: true })
-  // appleId: string;
+  tip: Text;
 }
-
-// school, inbody 관계 설정

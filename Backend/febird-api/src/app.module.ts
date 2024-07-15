@@ -1,29 +1,17 @@
 import { Module } from '@nestjs/common';
-import { TypeOrmModule } from '@nestjs/typeorm';
-// import { AuthModule } from './auth/auth.module';
+import { ConfigModule } from '@nestjs/config';
 import { MemberModule } from './member/member.module';
-import { ConfigModule } from './config/config.module';
-import { ConfigService } from './config/config.service';
+import { DatabaseModule } from './database/database.module';
+import { SchoolModule } from './school/school.module';
 
 @Module({
   imports: [
-    ConfigModule,
-    TypeOrmModule.forRootAsync({
-      imports: [ConfigModule],
-      useFactory: (configService: ConfigService) => ({
-        type: 'mysql',
-        host: configService.get('DB_HOST'),
-        port: configService.getNumber('DB_PORT'),
-        username: configService.get('DB_USERNAME'),
-        password: configService.get('DB_PASSWORD'),
-        database: configService.get('DB_NAME'),
-        entities: [__dirname + '/**/*.entity{.ts,.js}'],
-        synchronize: true,
-      }),
-      inject: [ConfigService],
+    ConfigModule.forRoot({
+      isGlobal: true,
     }),
-    // AuthModule,
     MemberModule,
+    DatabaseModule,
+    SchoolModule,
   ],
 })
 export class AppModule {}
