@@ -19,9 +19,11 @@ struct ContentView: View {
                     NavigationLink {
                         Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
                             .font(.workSans(.black, size: 28))
+                            
                     } label: {
                         Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
                             .font(.workSans(.black, size: 28))
+                            .foregroundColor(.Success.success400)
                     }
                 }
                 .onDelete(perform: deleteItems)
