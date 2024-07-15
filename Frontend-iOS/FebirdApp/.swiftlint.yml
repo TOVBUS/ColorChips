@@ -31,14 +31,12 @@ file_length:
 # 네이밍 룰은 경고/에러에 min_length와 max_length를 각각 설정 가능
 # 제외할 이름을 설정할 수 있음
 type_name:
-  validates_start_with_uppercase: true
   min_length: 4 # 경고에만 적용됨
   max_length: # 경고와 에러 둘 다 적용
     warning: 40
     error: 50
   excluded: iPhone # 제외할 문자열 값 사용
 identifier_name:
-  validates_start_with_lowercase: true
   min_length: # min_length에서
     error: 3 # 에러만 적용
   excluded: # 제외할 문자열 목록 사용
