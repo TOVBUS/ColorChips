@@ -31,10 +31,10 @@
 		3EF6F0602C36938000EEF18F /* FebirdAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF6F05F2C36938000EEF18F /* FebirdAppTests.swift */; };
 		3EF6F06A2C36938000EEF18F /* FebirdAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF6F0692C36938000EEF18F /* FebirdAppUITests.swift */; };
 		3EF6F06C2C36938000EEF18F /* FebirdAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF6F06B2C36938000EEF18F /* FebirdAppUITestsLaunchTests.swift */; };
-		E1BB0D4C2C450F1C002565B2 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = E1BB0D4B2C450F1C002565B2 /* .swiftlint.yml */; };
 		3EFC450C2C44F882001052C7 /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFC450B2C44F882001052C7 /* Font+Extension.swift */; };
 		3EFC450F2C44FF72001052C7 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFC450E2C44FF72001052C7 /* Color+Extension.swift */; };
 		3EFC45132C450C0E001052C7 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFC45122C450C0E001052C7 /* View+Extension.swift */; };
+		E1BB0D4C2C450F1C002565B2 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = E1BB0D4B2C450F1C002565B2 /* .swiftlint.yml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,7 +71,7 @@
 		3E9E9E2D2C44E7FB002389EB /* IBMPlexSansKR-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBMPlexSansKR-SemiBold.ttf"; sourceTree = "<group>"; };
 		3E9E9E2E2C44E7FC002389EB /* IBMPlexSansKR-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBMPlexSansKR-Bold.ttf"; sourceTree = "<group>"; };
 		3E9E9E2F2C44E7FC002389EB /* IBMPlexSansKR-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBMPlexSansKR-Medium.ttf"; sourceTree = "<group>"; };
-		3E9E9E372C44E821002389EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		3E9E9E372C44E821002389EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3EF6F0492C36937E00EEF18F /* FebirdApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FebirdApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EF6F04C2C36937E00EEF18F /* FebirdAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FebirdAppApp.swift; sourceTree = "<group>"; };
 		3EF6F04E2C36937E00EEF18F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -86,7 +86,6 @@
 		3EFC450B2C44F882001052C7 /* Font+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extension.swift"; sourceTree = "<group>"; };
 		3EFC450E2C44FF72001052C7 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		3EFC45122C450C0E001052C7 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
-		E1BB0D392C44E7BF002565B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		E1BB0D4B2C450F1C002565B2 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -130,6 +129,7 @@
 			children = (
 				3E9E9E142C44E66A002389EB /* Fonts */,
 				3EF6F0522C36937F00EEF18F /* Assets.xcassets */,
+				3E9E9E372C44E821002389EB /* Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -208,11 +208,9 @@
 		3EF6F04B2C36937E00EEF18F /* FebirdApp */ = {
 			isa = PBXGroup;
 			children = (
-				3E9E9E372C44E821002389EB /* Info.plist */,
 				3E9E9E112C44E5FE002389EB /* Sources */,
 				3E9E9E102C44E5ED002389EB /* Resources */,
 				3EF6F0542C36937F00EEF18F /* Preview Content */,
-				3EFC450D2C44FA5E001052C7 /* Secret.xcconfig */,
 			);
 			path = FebirdApp;
 			sourceTree = "<group>";
@@ -587,7 +585,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = FebirdApp/Info.plist;
+				INFOPLIST_FILE = FebirdApp/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -618,7 +616,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = FebirdApp/Info.plist;
+				INFOPLIST_FILE = FebirdApp/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
