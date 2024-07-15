@@ -20,5 +20,5 @@ export class CreateInbodyDto {
   bmi: number;
 
   @IsUUID()
-  uuid: string; // Member의 uuid
+  uuid: number; // Member의 uuid
 }

@@ -28,5 +28,5 @@ export class CreateSchoolDto {
   graduation: Date;
 
   @IsUUID()
-  uuid: string; // Member의 uuid
+  uuid: number; // Member의 uuid
 }

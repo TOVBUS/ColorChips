@@ -1,26 +1,35 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
+import { School } from './school.entity';
+import { Member } from '../member/member.entity';
 import { CreateSchoolDto } from './dto/create-school.dto';
-import { UpdateSchoolDto } from './dto/update-school.dto';
 
 @Injectable()
 export class SchoolService {
-  create(createSchoolDto: CreateSchoolDto) {
-    return 'This action adds a new school';
-  }
+  constructor(
+    @InjectRepository(School)
+    private schoolRepository: Repository<School>,
+    @InjectRepository(Member)
+    private memberRepository: Repository<Member>,
+  ) {}
 
-  findAll() {
-    return `This action returns all school`;
-  }
+  async create(createSchoolDto: CreateSchoolDto): Promise<School> {
+    const { uuid, ...schoolData } = createSchoolDto;
 
-  findOne(id: number) {
-    return `This action returns a #${id} school`;
-  }
+    // Member 엔티티 찾기
+    const member = await this.memberRepository.findOne({ where: { uuid } });
+    if (!member) {
+      throw new NotFoundException(`Member with UUID ${uuid} not found`);
+    }
 
-  update(id: number, updateSchoolDto: UpdateSchoolDto) {
-    return `This action updates a #${id} school`;
-  }
+    // 새 School 엔티티 생성 및 Member 연결
+    const newSchool = this.schoolRepository.create({
+      ...schoolData,
+      member: member,
+    });
 
-  remove(id: number) {
-    return `This action removes a #${id} school`;
+    // 저장 및 반환
+    return await this.schoolRepository.save(newSchool);
   }
 }
