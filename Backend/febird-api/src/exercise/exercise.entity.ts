@@ -1,16 +1,20 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, ManyToOne } from 'typeorm';
+import { Routine } from '../routine/routine.entity';
 
 @Entity()
 export class Exercise {
   @PrimaryGeneratedColumn()
-  exercise_key: number;
+  exercise_id: number;
 
-  @Column()
-  exercise_title: string;
+  @Column({ length: 50 })
+  exercise_name: string;
 
-  @Column()
-  url: Text;
+  @Column('text')
+  url: string;
 
-  @Column()
-  tip: Text;
+  @Column('text')
+  tip: string;
+
+  @ManyToOne(() => Routine, (routine) => routine.exercise)
+  routines: Routine[];
 }

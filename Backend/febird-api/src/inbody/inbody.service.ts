@@ -15,12 +15,12 @@ export class InbodyService {
   ) {}
 
   async create(createInbodyDto: CreateInbodyDto): Promise<Inbody> {
-    const { uuid, ...inbodyData } = createInbodyDto;
+    const { member_id, ...inbodyData } = createInbodyDto;
 
     // Member 엔티티 찾기
-    const member = await this.memberRepository.findOne({ where: { uuid } });
+    const member = await this.memberRepository.findOne({ where: { member_id } });
     if (!member) {
-      throw new NotFoundException(`Member with UUID ${uuid} not found`);
+      throw new NotFoundException(`Member with UUID ${member_id} not found`);
     }
 
     // 새 Inbody 엔티티 생성 및 Member 연결

@@ -2,10 +2,11 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { Member } from '../member/member.entity';
-import { School } from '../school/school.entity';
-import { Inbody } from '../inbody/inbody.entity';
-// import { Exercise } from '../exercise/exercise.entity';
-//  - Azure 블롭 스토리지 연결 필요
+import { History } from '../history/history.entity';
+import { Inbody } from '../inbody/inbody.entity'; 
+import { Level } from '../level/level.entity';
+import { Routine } from '../routine/routine.entity';
+import { Exercise } from '../exercise/exercise.entity';  //  - Azure 블롭 스토리지 연결 필요
 
 @Module({
   imports: [
@@ -30,17 +31,17 @@ import { Inbody } from '../inbody/inbody.entity';
         return {
           type: 'mysql',
           host,
-          port: parseInt(port, 10),
+          port: parseInt(port, 3306),
           username,
           password,
           database,
-          entities: [Member, School, Inbody],
+          entities: [Member, History, Inbody],
           synchronize: true, //추후 false로 변경 필요
         };
       },
       inject: [ConfigService],
     }),
-    TypeOrmModule.forFeature([Member, School, Inbody]),
+    TypeOrmModule.forFeature([Member, History, Inbody, Level, Routine, Exercise ]),
   ],
   exports: [TypeOrmModule],
 })
