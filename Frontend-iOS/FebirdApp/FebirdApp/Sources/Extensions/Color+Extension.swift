@@ -13,7 +13,7 @@ extension Color {
     static let neutralBorder = Color(hex: 0xE5E7EBFF)
     static let white = Color(hex: 0xFFFFFFFF)
     static let defaultBackground = Color(hex: 0xFFFFFFFF)
-    
+
     struct Brand {
         static let brand50 = Color(hex: 0xEFF6FFFF)
         static let brand100 = Color(hex: 0xDBEAFEFF)
@@ -26,7 +26,7 @@ extension Color {
         static let brand800 = Color(hex: 0x1E40AFFF)
         static let brand900 = Color(hex: 0x1E3A8AFF)
     }
-    
+
     struct Neutral {
         static let neutral50 = Color(hex: 0xF9FAFBFF)
         static let neutral100 = Color(hex: 0xF3F4F6FF)
@@ -39,7 +39,7 @@ extension Color {
         static let neutral800 = Color(hex: 0x1F2937FF)
         static let neutral900 = Color(hex: 0x111827FF)
     }
-    
+
     struct Error {
         static let error50 = Color(hex: 0xFEF2F2FF)
         static let error100 = Color(hex: 0xFEE2E2FF)
@@ -52,7 +52,7 @@ extension Color {
         static let error800 = Color(hex: 0x991B1BFF)
         static let error900 = Color(hex: 0x7F1D1DFF)
     }
-    
+
     struct Warning {
         static let warning50 = Color(hex: 0xFEFCE8FF)
         static let warning100 = Color(hex: 0xFEF9C3FF)
@@ -65,7 +65,7 @@ extension Color {
         static let warning800 = Color(hex: 0x854D0EFF)
         static let warning900 = Color(hex: 0x713F12FF)
     }
-    
+
     struct Success {
         static let success50 = Color(hex: 0xF0FDF4FF)
         static let success100 = Color(hex: 0xDCFCE7FF)

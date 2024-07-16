@@ -26,16 +26,16 @@ struct ContentView: View {
                     }
                     .onDelete(perform: deleteItems)
                 }
-                
+
                 VStack(spacing: 20) {
                     Text("Add Item")
                         .appButton(style: .primary, action: addItem)
-                    
+
                     Text("Secondary Button")
                         .appButton(style: .secondary) {
                             print("Secondary button tapped")
                         }
-                    
+
                     Text("Show Alert")
                         .appButton(style: .tertiary) {
                             showAlert = true
@@ -72,7 +72,7 @@ struct ContentView: View {
 
 struct ItemDetailView: View {
     let item: Item
-    
+
     var body: some View {
         Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
             .appFont(.title, language: .korean)

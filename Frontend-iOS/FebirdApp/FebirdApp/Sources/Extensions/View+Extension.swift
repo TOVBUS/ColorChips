@@ -30,7 +30,7 @@ extension View {
         }
         .font(.body())
     }
-    
+
     private func backgroundForStyle(_ style: AppButtonStyle) -> Color {
         switch style {
         case .primary:
@@ -41,7 +41,7 @@ extension View {
             return .clear
         }
     }
-    
+
     private func foregroundForStyle(_ style: AppButtonStyle) -> Color {
         switch style {
         case .primary:
@@ -50,7 +50,7 @@ extension View {
             return .brandPrimary
         }
     }
-    
+
     private func borderColorForStyle(_ style: AppButtonStyle) -> Color {
         switch style {
         case .primary:

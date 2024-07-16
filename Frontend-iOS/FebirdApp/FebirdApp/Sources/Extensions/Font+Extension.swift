@@ -56,7 +56,7 @@ extension Font {
         case .medium: return .medium
         case .semibold: return .semiBold
         case .bold, .heavy, .black: return .bold
-            default: return .regular
+        default: return .regular
         }
     }
 
@@ -71,7 +71,7 @@ extension Font {
         case .bold: return .bold
         case .heavy: return .extraBold
         case .black: return .black
-            default: return .regular
+        default: return .regular
         }
     }
 
