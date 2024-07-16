@@ -2,10 +2,11 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { MemberModule } from './member/member.module';
 import { DatabaseModule } from './database/database.module';
-// import { ExerciseModule } from './exercise/exercise.module';
 import { SchoolModule } from './school/school.module';
 import { InbodyModule } from './inbody/inbody.module';
+// import { ExerciseModule } from './exercise/exercise.module';
 // import { ChatbotModule } from './chatbot/chatbot.module';
+
 
 @Module({
   imports: [
@@ -14,9 +15,9 @@ import { InbodyModule } from './inbody/inbody.module';
     }),
     MemberModule,
     DatabaseModule,
-    // ExerciseModule,
     SchoolModule,
     InbodyModule,
+    // ExerciseModule,
     // ChatbotModule,
   ],
 })
