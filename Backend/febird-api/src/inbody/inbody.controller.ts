@@ -7,10 +7,15 @@ import { UpdateInbodyDto } from './dto/update-inbody.dto';
 export class InbodyController {
   constructor(private readonly inbodyService: InbodyService) {}
 
+  // 인바디 생성
   @Post()
   create(@Body() createInbodyDto: CreateInbodyDto) {
     return this.inbodyService.create(createInbodyDto);
   }
 
-
+  // 모든 인바디 조회
+  @Get()
+  findAll() {
+    return this.inbodyService.findAll();
+  }
 }

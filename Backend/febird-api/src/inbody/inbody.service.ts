@@ -32,4 +32,8 @@ export class InbodyService {
     // 저장 및 반환
     return await this.inbodyRepository.save(newInbody);
   }
+
+  async findAll(): Promise<Inbody[]> {
+    return await this.inbodyRepository.find({ relations: ['member'] });
+  }
 }

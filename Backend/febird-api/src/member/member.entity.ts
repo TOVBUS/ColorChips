@@ -14,7 +14,10 @@ export class Member {
   gender: string;
 
   @Column()
-  birth: Date;
+  age: number;
+
+  @Column()
+  profileImage: string;
 
   // apple id
   // @Column({ unique: true })
