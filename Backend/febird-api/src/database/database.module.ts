@@ -35,7 +35,7 @@ import { Exercise } from '../exercise/exercise.entity';  //  - Azure 블롭 스�
           username,
           password,
           database,
-          entities: [Member, History, Inbody],
+          entities: [Member, History, Inbody, Level, Routine, Exercise],
           synchronize: true, //추후 false로 변경 필요
         };
       },
