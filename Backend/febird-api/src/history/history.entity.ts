@@ -6,6 +6,7 @@ import {
   JoinColumn,
 } from 'typeorm';
 import { Member } from '../member/member.entity'; // Member 엔티티 import
+import { Level } from 'src/level/level.entity';
 
 @Entity()
 export class History {
@@ -27,4 +28,8 @@ export class History {
   @ManyToOne(() => Member, (member) => member.histories)
   @JoinColumn({ name: 'member_id' })
   member: Member;
+
+  @ManyToOne(() => Level, (level) => level.histories)
+  @JoinColumn({ name: 'level_id' })
+  level: Level;
 }
