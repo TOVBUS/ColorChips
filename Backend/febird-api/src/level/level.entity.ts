@@ -9,9 +9,6 @@ export class Level {
   @Column({ length: 10 })
   school_name: string;
 
-  @Column({ length: 100 })
-  reward_url: string;
-
   @ManyToOne(() => Routine, (routine) => routine.level)
   routine: Routine
 }

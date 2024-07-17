@@ -6,7 +6,7 @@ import { InbodyController } from './inbody.controller';
 import { MemberModule } from '../member/member.module';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([Inbody]),MemberModule,],
+  imports: [TypeOrmModule.forFeature([Inbody]),MemberModule],
   controllers: [InbodyController],
   providers: [InbodyService],
   exports: [TypeOrmModule]

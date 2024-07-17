@@ -6,10 +6,8 @@ import { HistoryController } from './history.controller';
 import { MemberModule } from '../member/member.module';
 import { Member } from '../member/member.entity';
 
-
-
 @Module({
-  imports: [TypeOrmModule.forFeature([History, Member,]),MemberModule],
+  imports: [TypeOrmModule.forFeature([History, Member]),MemberModule],
   controllers: [HistoryController],
   providers: [HistoryService],
   exports: [TypeOrmModule],

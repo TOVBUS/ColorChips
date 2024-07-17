@@ -6,7 +6,6 @@ import { UpdateLevelDto } from './dto/update-level.dto';
 @Controller('level')
 export class LevelController {
   constructor(private readonly levelService: LevelService) {}
-
   @Post()
   create(@Body() createLevelDto: CreateLevelDto) {
     return this.levelService.create(createLevelDto);

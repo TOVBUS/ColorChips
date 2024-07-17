@@ -1,4 +1,4 @@
-import { IsInt, IsDate} from 'class-validator';
+import { IsInt, IsDate } from 'class-validator';
 
 export class CreateInbodyDto {
   @IsInt()

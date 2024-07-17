@@ -6,7 +6,6 @@ import { UpdateExerciseDto } from './dto/update-exercise.dto';
 @Controller('exercise')
 export class ExerciseController {
   constructor(private readonly exerciseService: ExerciseService) {}
-
   @Post()
   create(@Body() createExerciseDto: CreateExerciseDto) {
     return this.exerciseService.create(createExerciseDto);

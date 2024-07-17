@@ -12,8 +12,10 @@ export class CreateRoutineDto {
   set: string;
 
   @IsArray()
+  @IsNotEmpty()
   levels: CreateLevelDto[];
 
   @IsArray()
+  @IsNotEmpty()
   exercises: CreateExerciseDto[];
 }

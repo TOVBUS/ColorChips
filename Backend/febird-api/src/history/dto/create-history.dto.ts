@@ -5,7 +5,6 @@ export class CreateHistoryDto {
   @IsNotEmpty()
   achievement_date: Date;
 
-
   @IsNotEmpty()
   @IsInt()
   achievement_level: number;

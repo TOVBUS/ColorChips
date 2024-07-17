@@ -6,7 +6,6 @@ import { UpdateRoutineDto } from './dto/update-routine.dto';
 @Controller('routine')
 export class RoutineController {
   constructor(private readonly routineService: RoutineService) {}
-
   @Post()
   create(@Body() createRoutineDto: CreateRoutineDto) {
     return this.routineService.create(createRoutineDto);

@@ -10,6 +10,4 @@ export class UpdateHistoryDto extends PartialType(CreateHistoryDto) {
   @IsNumber()
   @IsOptional()
   member_id?: number;
-
-
 }
