@@ -61,7 +61,7 @@ extension View {
             return .clear
         }
     }
-    
+
     func appAlert(
         isPresented: Binding<Bool>,
         title: String,
