@@ -78,7 +78,7 @@ extension Color {
         static let success800 = Color(hex: 0x166534FF)
         static let success900 = Color(hex: 0x14532DFF)
     }
-    
+
     init(hex: UInt, alpha: Double = 1) {
         self.init(
             .sRGB,

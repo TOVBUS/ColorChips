@@ -14,7 +14,7 @@ struct OnboardingWelcomView: View {
                 .padding(.bottom, 44)
             Text("반가워요 핑! \n 저는 운동 교관 피오에요 핑! \n 운동 습관을 잡아줄게요 핑!")
                 .multilineTextAlignment(.center)
-                .appFont(.title2)
+                .font(.customFont(language: .korean, size: 20, weight: .bold))
             Image("peoLogo")
             Text("네!").appButton(style: .primary, action: {
                 // 다음 온보딩 화면으로 이동
