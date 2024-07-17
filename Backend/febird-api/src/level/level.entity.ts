@@ -1,5 +1,6 @@
-import { Entity, Column, PrimaryGeneratedColumn, ManyToOne } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, OneToMany } from 'typeorm';
 import { Routine } from 'src/routine/routine.entity';
+import { History } from 'src/history/history.entity';
 
 @Entity()
 export class Level {
@@ -11,4 +12,7 @@ export class Level {
 
   @ManyToOne(() => Routine, (routine) => routine.level)
   routine: Routine
+
+  @OneToMany(() => History, (history) => history.level)
+  histories: History[]
 }
