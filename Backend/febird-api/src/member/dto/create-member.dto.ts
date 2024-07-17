@@ -17,7 +17,7 @@ export class CreateMemberDto {
   @IsString()
   gender: string;
 
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
   appleID: string;
 
