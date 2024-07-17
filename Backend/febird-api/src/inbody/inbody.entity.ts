@@ -2,15 +2,15 @@ import {
   Entity,
   Column,
   PrimaryGeneratedColumn,
-  OneToOne,
+  ManyToOne,
   JoinColumn,
 } from 'typeorm';
-import { Member } from '../member/member.entity'; // Member 엔티티 import
+import { Member } from '../member/member.entity';
 
 @Entity()
 export class Inbody {
   @PrimaryGeneratedColumn()
-  inbody_key: number;
+  inbody_id: number;
 
   @Column('float')
   height: number;
@@ -30,7 +30,7 @@ export class Inbody {
   @Column('float')
   bmi: number;
 
-  @OneToOne(() => Member, (member) => member.inbody)
-  @JoinColumn({ name: 'uuid' })
+  @ManyToOne(() => Member, (member) => member.inbodies)
+  @JoinColumn({ name: 'member_id' })
   member: Member;
 }

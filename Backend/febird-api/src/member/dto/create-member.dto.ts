@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsString, IsDate } from 'class-validator';
+import { IsNotEmpty, IsString, IsInt, IsOptional } from 'class-validator';
 
 export class CreateMemberDto {
   @IsNotEmpty()
@@ -7,13 +7,25 @@ export class CreateMemberDto {
 
   @IsNotEmpty()
   @IsString()
-  gender: string;
+  profile_image: string;
 
   @IsNotEmpty()
-  @IsDate()
-  birth: Date;
+  @IsInt()
+  age: number;
 
-  // @IsNotEmpty()
-  // @IsString()
-  // appleId: string;
+  @IsNotEmpty()
+  @IsString()
+  gender: string;
+
+  @IsOptional()
+  @IsString()
+  appleID: string;
+
+  @IsOptional()
+  @IsString()
+  kakaoID: string;
+
+  @IsNotEmpty()
+  @IsInt()
+  current_level: number;
 }

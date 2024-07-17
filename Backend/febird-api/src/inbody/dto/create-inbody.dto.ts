@@ -1,24 +1,24 @@
-import { IsNumber, IsDate, IsUUID } from 'class-validator';
+import { IsInt, IsDate } from 'class-validator';
 
 export class CreateInbodyDto {
-  @IsNumber()
+  @IsInt()
   height: number;
 
-  @IsNumber()
+  @IsInt()
   weight: number;
 
   @IsDate()
   inbody_date: Date;
 
-  @IsNumber()
+  @IsInt()
   bmr: number;
 
-  @IsNumber()
+  @IsInt()
   bodyfat: number;
 
-  @IsNumber()
+  @IsInt()
   bmi: number;
 
-  @IsUUID()
-  uuid: number; // Member의 uuid
+  @IsInt()
+  member_id: number; 
 }

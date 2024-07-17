@@ -17,19 +17,17 @@ export class MemberService {
     return await this.memberRepository.save(member);
   }
 
+  // Apple Sign에 필요한 것
   // async findByAppleId(appleId: string): Promise<Member> {
   //   return await this.memberRepository.findOne({ where: { appleId } });
   // }
 
-  async update(
-    uuid: number,
-    updateMemberDto: UpdateMemberDto,
-  ): Promise<Member> {
-    await this.memberRepository.update(uuid, updateMemberDto);
-    return this.memberRepository.findOne({ where: { uuid } });
+  async update(member_id: number, updateMemberDto: UpdateMemberDto): Promise<Member> {
+    await this.memberRepository.update(member_id, updateMemberDto);
+    return await this.memberRepository.findOne({ where: { member_id } });
   }
 
-  async remove(id: number): Promise<void> {
-    await this.memberRepository.delete(id);
+  async remove(member_id: number): Promise<void> {
+    await this.memberRepository.delete(member_id);
   }
 }
