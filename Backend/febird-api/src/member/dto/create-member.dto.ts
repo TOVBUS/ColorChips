@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsString, IsInt } from 'class-validator';
+import { IsNotEmpty, IsString, IsInt, IsOptional } from 'class-validator';
 
 export class CreateMemberDto {
   @IsNotEmpty()
@@ -21,7 +21,7 @@ export class CreateMemberDto {
   @IsString()
   appleID: string;
 
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
   kakaoID: string;
 

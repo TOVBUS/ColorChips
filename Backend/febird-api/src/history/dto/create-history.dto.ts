@@ -1,21 +1,9 @@
-import { IsNotEmpty, IsDateString, IsInt, IsString } from 'class-validator';
+import { IsNotEmpty, IsDateString, IsInt } from 'class-validator';
 
 export class CreateHistoryDto {
   @IsDateString()
   @IsNotEmpty()
   achievement_date: Date;
-
-  @IsNotEmpty()
-  @IsInt()
-  achievement_level: number;
-
-  @IsString()
-  @IsNotEmpty()
-  achievement_reward: string;
-
-  @IsString()
-  @IsNotEmpty()
-  achievement_school: string;
 
   @IsInt()
   @IsNotEmpty()
