@@ -266,6 +266,8 @@
 			dependencies = (
 			);
 			name = FebirdApp;
+			packageProductDependencies = (
+			);
 			productName = FebirdApp;
 			productReference = 3EF6F0492C36937E00EEF18F /* FebirdApp.app */;
 			productType = "com.apple.product-type.application";
@@ -339,7 +341,7 @@
 			);
 			mainGroup = 3EF6F0402C36937D00EEF18F;
 			packageReferences = (
-				E1BB0D4A2C450F0B002565B2 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */,
+				3E7521A22C48D5C600920BFD /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */,
 			);
 			productRefGroup = 3EF6F04A2C36937E00EEF18F /* Products */;
 			projectDirPath = "";
@@ -765,9 +767,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		E1BB0D4A2C450F0B002565B2 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */ = {
+		3E7521A22C48D5C600920BFD /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SimplyDanny/SwiftLintPlugins";
+			repositoryURL = "https://github.com/SimplyDanny/SwiftLintPlugins.git";
 			requirement = {
 				kind = upToNextMinorVersion;
 				minimumVersion = 0.55.1;
