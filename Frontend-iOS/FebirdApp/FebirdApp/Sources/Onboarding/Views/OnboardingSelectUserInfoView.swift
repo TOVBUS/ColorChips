@@ -17,12 +17,12 @@ struct OnboardingSelectUserInfoView: View {
             OnboardingGaugeView(progress: 2)
             HStack {
                 Text("프로필 이미지를 하나 골라주세요!")
-                    .font(.customFont(language: .korean, size: 14, weight: .bold))
+                    .font(.customFont(size: 14, weight: .bold))
                 Spacer()
             }
             OnboardingProfileSelectionView(selectedImageIndex: 1)
             HStack {
-                Text("어떻게 불러드릴까요?").font(.customFont(language: .korean, size: 14, weight: .bold))
+                Text("어떻게 불러드릴까요?").font(.customFont(size: 14, weight: .bold))
                 Spacer()
             }
             HStack {
@@ -40,7 +40,7 @@ struct OnboardingSelectUserInfoView: View {
             OnboardingTextField(question: "나이가 어떻게 되세요?", placeholder: "17세", unit: "세", text: $age)
 
             HStack {
-                Text("성별을 알려주세요!").font(.customFont(language: .korean, size: 14, weight: .bold))
+                Text("성별을 알려주세요!").font(.customFont(size: 14, weight: .bold))
                 Spacer()
             }
             OnboardingSelectGenderButton()
@@ -50,7 +50,7 @@ struct OnboardingSelectUserInfoView: View {
             }
             .frame(maxWidth: .infinity, maxHeight: 56)
             .foregroundStyle(Color(.white))
-            .font(.customFont(language: .korean, size: 16, weight: .semibold))
+            .font(.customFont(size: 16, weight: .semibold))
             .background(
                 RoundedRectangle(cornerRadius: 20)
                     .fill(Color(red: 0.07, green: 0.07, blue: 0.08))
