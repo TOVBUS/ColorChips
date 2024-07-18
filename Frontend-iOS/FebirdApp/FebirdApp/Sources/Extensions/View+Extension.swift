@@ -34,7 +34,7 @@ extension View {
     private func backgroundForStyle(_ style: AppButtonStyle) -> Color {
         switch style {
         case .primary:
-            return .brandPrimary
+            return .orange50
         case .secondary:
             return .white
         case .tertiary:
@@ -47,7 +47,7 @@ extension View {
         case .primary:
             return .white
         case .secondary, .tertiary:
-            return .brandPrimary
+            return .orange50
         }
     }
 
@@ -56,7 +56,7 @@ extension View {
         case .primary:
             return .clear
         case .secondary:
-            return .brandPrimary
+            return .orange50
         case .tertiary:
             return .clear
         }

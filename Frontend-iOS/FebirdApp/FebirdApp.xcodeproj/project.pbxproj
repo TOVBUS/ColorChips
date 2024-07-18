@@ -32,7 +32,6 @@
 		3EF6F06A2C36938000EEF18F /* FebirdAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF6F0692C36938000EEF18F /* FebirdAppUITests.swift */; };
 		3EF6F06C2C36938000EEF18F /* FebirdAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF6F06B2C36938000EEF18F /* FebirdAppUITestsLaunchTests.swift */; };
 		3EFC450C2C44F882001052C7 /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFC450B2C44F882001052C7 /* Font+Extension.swift */; };
-		3EFC450F2C44FF72001052C7 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFC450E2C44FF72001052C7 /* Color+Extension.swift */; };
 		3EFC45132C450C0E001052C7 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFC45122C450C0E001052C7 /* View+Extension.swift */; };
 		E1BB0D4C2C450F1C002565B2 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = E1BB0D4B2C450F1C002565B2 /* .swiftlint.yml */; };
 /* End PBXBuildFile section */
@@ -84,7 +83,6 @@
 		3EF6F0692C36938000EEF18F /* FebirdAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FebirdAppUITests.swift; sourceTree = "<group>"; };
 		3EF6F06B2C36938000EEF18F /* FebirdAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FebirdAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3EFC450B2C44F882001052C7 /* Font+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extension.swift"; sourceTree = "<group>"; };
-		3EFC450E2C44FF72001052C7 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		3EFC45122C450C0E001052C7 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		E1BB0D4B2C450F1C002565B2 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -118,7 +116,6 @@
 			isa = PBXGroup;
 			children = (
 				3EFC450B2C44F882001052C7 /* Font+Extension.swift */,
-				3EFC450E2C44FF72001052C7 /* Color+Extension.swift */,
 				3EFC45122C450C0E001052C7 /* View+Extension.swift */,
 			);
 			path = Extensions;
@@ -413,7 +410,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3EF6F04F2C36937E00EEF18F /* ContentView.swift in Sources */,
-				3EFC450F2C44FF72001052C7 /* Color+Extension.swift in Sources */,
 				3EFC450C2C44F882001052C7 /* Font+Extension.swift in Sources */,
 				3EF6F0512C36937E00EEF18F /* Item.swift in Sources */,
 				3EF6F04D2C36937E00EEF18F /* FebirdAppApp.swift in Sources */,

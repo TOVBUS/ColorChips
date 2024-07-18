@@ -21,7 +21,7 @@ struct ContentView: View {
                         NavigationLink(destination: ItemDetailView(item: item)) {
                             Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
                                 .appFont(.title, language: .english)
-                                .foregroundColor(.Success.success700)
+                                .foregroundColor(.blue30)
                         }
                     }
                     .onDelete(perform: deleteItems)
