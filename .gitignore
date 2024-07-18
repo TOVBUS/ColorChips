@@ -134,4 +134,5 @@ iOSInjectionProject/
 ### Xcode xcconfig
 *.xcconfig
 
-# End of https://www.toptal.com/developers/gitignore/api/swift,xcode,macos
+# Ignore swiftpm directory and its contents
+Frontend-iOS/FebirdApp/FebirdApp.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/
