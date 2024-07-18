@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E7521A52C48E6C700920BFD /* ExerciseMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7521A42C48E6C700920BFD /* ExerciseMainView.swift */; };
+		3E7521A82C48F63E00920BFD /* ExerciseMainHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7521A72C48F63E00920BFD /* ExerciseMainHeaderView.swift */; };
+		3E7521AB2C48F66F00920BFD /* RoundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7521AA2C48F66F00920BFD /* RoundedCorners.swift */; };
 		3E9E9E202C44E7DB002389EB /* WorkSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E9E9E172C44E7DA002389EB /* WorkSans-Light.ttf */; };
 		3E9E9E212C44E7DB002389EB /* WorkSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E9E9E182C44E7DA002389EB /* WorkSans-ExtraBold.ttf */; };
 		3E9E9E222C44E7DB002389EB /* WorkSans-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E9E9E192C44E7DA002389EB /* WorkSans-Black.ttf */; };
@@ -58,6 +61,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3E7521A42C48E6C700920BFD /* ExerciseMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseMainView.swift; sourceTree = "<group>"; };
+		3E7521A72C48F63E00920BFD /* ExerciseMainHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseMainHeaderView.swift; sourceTree = "<group>"; };
+		3E7521AA2C48F66F00920BFD /* RoundedCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorners.swift; sourceTree = "<group>"; };
 		3E9E9E172C44E7DA002389EB /* WorkSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-Light.ttf"; sourceTree = "<group>"; };
 		3E9E9E182C44E7DA002389EB /* WorkSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-ExtraBold.ttf"; sourceTree = "<group>"; };
 		3E9E9E192C44E7DA002389EB /* WorkSans-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-Black.ttf"; sourceTree = "<group>"; };
@@ -120,6 +126,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E7521A32C48E60F00920BFD /* Exercise */ = {
+			isa = PBXGroup;
+			children = (
+				3E7521A92C48F66000920BFD /* Utils */,
+				3E7521A62C48E6CE00920BFD /* Views */,
+			);
+			path = Exercise;
+			sourceTree = "<group>";
+		};
+		3E7521A62C48E6CE00920BFD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3E7521A42C48E6C700920BFD /* ExerciseMainView.swift */,
+				3E7521A72C48F63E00920BFD /* ExerciseMainHeaderView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3E7521A92C48F66000920BFD /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				3E7521AA2C48F66F00920BFD /* RoundedCorners.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		3E9E9E0B2C44E5B1002389EB /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				3EF6F04C2C36937E00EEF18F /* FebirdAppApp.swift */,
+				3E7521A32C48E60F00920BFD /* Exercise */,
 				E1BB0D532C4797C9002565B2 /* Onboarding */,
 				3E9E9E0B2C44E5B1002389EB /* Extensions */,
 			);
@@ -424,14 +457,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1BB0D602C4800E2002565B2 /* OnboardingTextField.swift in Sources */,
+				3E7521A52C48E6C700920BFD /* ExerciseMainView.swift in Sources */,
 				E1BB0D5C2C47B15A002565B2 /* OnboardingProfileSelectionView.swift in Sources */,
 				E1BB0D552C47985D002565B2 /* OnboardingGaugeView.swift in Sources */,
+				3E7521AB2C48F66F00920BFD /* RoundedCorners.swift in Sources */,
 				E1BB0D5E2C47F9F7002565B2 /* OnboardingSelectGenderButton.swift in Sources */,
 				E1BB0D622C48A875002565B2 /* InbodyAddView.swift in Sources */,
 				E1BB0D582C479CF7002565B2 /* OnboardingWelcomView.swift in Sources */,
 				E1BB0D5A2C47A4FB002565B2 /* OnboardingSelectUserInfoView.swift in Sources */,
 				3EFC450C2C44F882001052C7 /* Font+Extension.swift in Sources */,
 				3EF6F04D2C36937E00EEF18F /* FebirdAppApp.swift in Sources */,
+				3E7521A82C48F63E00920BFD /* ExerciseMainHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
