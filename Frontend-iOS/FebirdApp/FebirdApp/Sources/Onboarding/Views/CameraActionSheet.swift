@@ -9,34 +9,26 @@ import SwiftUI
 
 struct CameraActionSheet: ViewModifier {
     @Binding var isPresented: Bool
+    var onCameraTap: () -> Void
+    var onGalleryTap: () -> Void
 
     func body(content: Content) -> some View {
         content
             .confirmationDialog("", isPresented: $isPresented, titleVisibility: .hidden) {
                 Button("사진 찍기") {
-                    takePhoto()
+                    onCameraTap()
                 }
                 Button("불러오기") {
-                    pickImage()
+                    onGalleryTap()
                 }
                 Button("취소", role: .cancel) {
                 }
             }
     }
-
-    private func takePhoto() {
-        // 사진 찍기 기능 구현
-        print("사진 찍기")
-    }
-
-    private func pickImage() {
-        // 이미지 불러오기 기능 구현
-        print("이미지 불러오기")
-    }
 }
 
 extension View {
-    func cameraActionSheet(isPresented: Binding<Bool>) -> some View {
-        self.modifier(CameraActionSheet(isPresented: isPresented))
+    func cameraActionSheet(isPresented: Binding<Bool>, onCameraTap: @escaping () -> Void, onGalleryTap: @escaping () -> Void) -> some View {
+        self.modifier(CameraActionSheet(isPresented: isPresented, onCameraTap: onCameraTap, onGalleryTap: onGalleryTap))
     }
 }
