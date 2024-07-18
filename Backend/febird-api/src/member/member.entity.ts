@@ -19,10 +19,10 @@ export class Member {
   @Column({ length: 10 })
   gender: string;
 
-  @Column({ length: 255 })
+  @Column({ length: 255, nullable: true })
   appleID: string;
 
-  @Column({ length: 255 })
+  @Column({ length: 255, nullable: true })
   kaKaoID: string;
 
   @Column()
