@@ -32,8 +32,14 @@
 		3EF6F06A2C36938000EEF18F /* FebirdAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF6F0692C36938000EEF18F /* FebirdAppUITests.swift */; };
 		3EF6F06C2C36938000EEF18F /* FebirdAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF6F06B2C36938000EEF18F /* FebirdAppUITestsLaunchTests.swift */; };
 		3EFC450C2C44F882001052C7 /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFC450B2C44F882001052C7 /* Font+Extension.swift */; };
-		3EFC45132C450C0E001052C7 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFC45122C450C0E001052C7 /* View+Extension.swift */; };
 		E1BB0D4C2C450F1C002565B2 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = E1BB0D4B2C450F1C002565B2 /* .swiftlint.yml */; };
+		E1BB0D552C47985D002565B2 /* OnboardingGaugeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BB0D542C47985D002565B2 /* OnboardingGaugeView.swift */; };
+		E1BB0D582C479CF7002565B2 /* OnboardingWelcomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BB0D572C479CF7002565B2 /* OnboardingWelcomView.swift */; };
+		E1BB0D5A2C47A4FB002565B2 /* OnboardingSelectUserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BB0D592C47A4FB002565B2 /* OnboardingSelectUserInfoView.swift */; };
+		E1BB0D5C2C47B15A002565B2 /* OnboardingProfileSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BB0D5B2C47B15A002565B2 /* OnboardingProfileSelectionView.swift */; };
+		E1BB0D5E2C47F9F7002565B2 /* OnboardingSelectGenderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BB0D5D2C47F9F7002565B2 /* OnboardingSelectGenderButton.swift */; };
+		E1BB0D602C4800E2002565B2 /* OnboardingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BB0D5F2C4800E2002565B2 /* OnboardingTextField.swift */; };
+		E1BB0D622C48A875002565B2 /* InbodyAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BB0D612C48A875002565B2 /* InbodyAddView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,8 +89,14 @@
 		3EF6F0692C36938000EEF18F /* FebirdAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FebirdAppUITests.swift; sourceTree = "<group>"; };
 		3EF6F06B2C36938000EEF18F /* FebirdAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FebirdAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3EFC450B2C44F882001052C7 /* Font+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extension.swift"; sourceTree = "<group>"; };
-		3EFC45122C450C0E001052C7 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		E1BB0D4B2C450F1C002565B2 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		E1BB0D542C47985D002565B2 /* OnboardingGaugeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingGaugeView.swift; sourceTree = "<group>"; };
+		E1BB0D572C479CF7002565B2 /* OnboardingWelcomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWelcomView.swift; sourceTree = "<group>"; };
+		E1BB0D592C47A4FB002565B2 /* OnboardingSelectUserInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSelectUserInfoView.swift; sourceTree = "<group>"; };
+		E1BB0D5B2C47B15A002565B2 /* OnboardingProfileSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingProfileSelectionView.swift; sourceTree = "<group>"; };
+		E1BB0D5D2C47F9F7002565B2 /* OnboardingSelectGenderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSelectGenderButton.swift; sourceTree = "<group>"; };
+		E1BB0D5F2C4800E2002565B2 /* OnboardingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTextField.swift; sourceTree = "<group>"; };
+		E1BB0D612C48A875002565B2 /* InbodyAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InbodyAddView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,7 +128,6 @@
 			isa = PBXGroup;
 			children = (
 				3EFC450B2C44F882001052C7 /* Font+Extension.swift */,
-				3EFC45122C450C0E001052C7 /* View+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -134,6 +145,7 @@
 		3E9E9E112C44E5FE002389EB /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				E1BB0D532C4797C9002565B2 /* Onboarding */,
 				3EF6F04C2C36937E00EEF18F /* FebirdAppApp.swift */,
 				3E9E9E132C44E620002389EB /* Views */,
 				3E9E9E122C44E618002389EB /* Models */,
@@ -235,6 +247,28 @@
 				3EF6F06B2C36938000EEF18F /* FebirdAppUITestsLaunchTests.swift */,
 			);
 			path = FebirdAppUITests;
+			sourceTree = "<group>";
+		};
+		E1BB0D532C4797C9002565B2 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				E1BB0D562C479C93002565B2 /* Views */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		E1BB0D562C479C93002565B2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E1BB0D542C47985D002565B2 /* OnboardingGaugeView.swift */,
+				E1BB0D572C479CF7002565B2 /* OnboardingWelcomView.swift */,
+				E1BB0D592C47A4FB002565B2 /* OnboardingSelectUserInfoView.swift */,
+				E1BB0D5B2C47B15A002565B2 /* OnboardingProfileSelectionView.swift */,
+				E1BB0D5D2C47F9F7002565B2 /* OnboardingSelectGenderButton.swift */,
+				E1BB0D5F2C4800E2002565B2 /* OnboardingTextField.swift */,
+				E1BB0D612C48A875002565B2 /* InbodyAddView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -409,11 +443,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1BB0D602C4800E2002565B2 /* OnboardingTextField.swift in Sources */,
+				E1BB0D5C2C47B15A002565B2 /* OnboardingProfileSelectionView.swift in Sources */,
+				E1BB0D552C47985D002565B2 /* OnboardingGaugeView.swift in Sources */,
+				E1BB0D5E2C47F9F7002565B2 /* OnboardingSelectGenderButton.swift in Sources */,
+				E1BB0D622C48A875002565B2 /* InbodyAddView.swift in Sources */,
 				3EF6F04F2C36937E00EEF18F /* ContentView.swift in Sources */,
+				E1BB0D582C479CF7002565B2 /* OnboardingWelcomView.swift in Sources */,
+				E1BB0D5A2C47A4FB002565B2 /* OnboardingSelectUserInfoView.swift in Sources */,
 				3EFC450C2C44F882001052C7 /* Font+Extension.swift in Sources */,
 				3EF6F0512C36937E00EEF18F /* Item.swift in Sources */,
 				3EF6F04D2C36937E00EEF18F /* FebirdAppApp.swift in Sources */,
-				3EFC45132C450C0E001052C7 /* View+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
