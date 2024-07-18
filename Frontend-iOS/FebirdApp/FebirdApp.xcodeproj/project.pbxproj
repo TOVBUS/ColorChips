@@ -32,6 +32,7 @@
 		3EFC450C2C44F882001052C7 /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFC450B2C44F882001052C7 /* Font+Extension.swift */; };
 		E12911B92C48DC82009A92F7 /* CameraActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12911B82C48DC81009A92F7 /* CameraActionSheet.swift */; };
 		E12911BB2C48EDFE009A92F7 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12911BA2C48EDFE009A92F7 /* PhotoPicker.swift */; };
+		E12911BD2C48FDBA009A92F7 /* InbodyFixView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12911BC2C48FDBA009A92F7 /* InbodyFixView.swift */; };
 		E1BB0D4C2C450F1C002565B2 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = E1BB0D4B2C450F1C002565B2 /* .swiftlint.yml */; };
 		E1BB0D552C47985D002565B2 /* OnboardingGaugeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BB0D542C47985D002565B2 /* OnboardingGaugeView.swift */; };
 		E1BB0D582C479CF7002565B2 /* OnboardingWelcomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BB0D572C479CF7002565B2 /* OnboardingWelcomView.swift */; };
@@ -89,6 +90,7 @@
 		3EFC450B2C44F882001052C7 /* Font+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extension.swift"; sourceTree = "<group>"; };
 		E12911B82C48DC81009A92F7 /* CameraActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraActionSheet.swift; sourceTree = "<group>"; };
 		E12911BA2C48EDFE009A92F7 /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
+		E12911BC2C48FDBA009A92F7 /* InbodyFixView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InbodyFixView.swift; sourceTree = "<group>"; };
 		E1BB0D4B2C450F1C002565B2 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		E1BB0D542C47985D002565B2 /* OnboardingGaugeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingGaugeView.swift; sourceTree = "<group>"; };
 		E1BB0D572C479CF7002565B2 /* OnboardingWelcomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWelcomView.swift; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 				E1BB0D5F2C4800E2002565B2 /* OnboardingTextField.swift */,
 				E1BB0D612C48A875002565B2 /* InbodyAddView.swift */,
 				E12911B82C48DC81009A92F7 /* CameraActionSheet.swift */,
+				E12911BC2C48FDBA009A92F7 /* InbodyFixView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -430,6 +433,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1BB0D602C4800E2002565B2 /* OnboardingTextField.swift in Sources */,
+				E12911BD2C48FDBA009A92F7 /* InbodyFixView.swift in Sources */,
 				E12911BB2C48EDFE009A92F7 /* PhotoPicker.swift in Sources */,
 				E1BB0D5C2C47B15A002565B2 /* OnboardingProfileSelectionView.swift in Sources */,
 				E1BB0D552C47985D002565B2 /* OnboardingGaugeView.swift in Sources */,
