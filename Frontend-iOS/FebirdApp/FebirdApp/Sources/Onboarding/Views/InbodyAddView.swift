@@ -45,14 +45,27 @@ struct InbodyAddView: View {
             }
 
             Spacer()
+            Button("등록하기") {
 
-            Text("등록하기").appButton(style: .primary, action: {
-                // modal
-            })
+            }
+            .frame(maxWidth: .infinity, maxHeight: 56)
+            .foregroundStyle(Color(.white))
+            .font(.customFont(language: .korean, size: 16, weight: .semibold))
+            .background(
+                RoundedRectangle(cornerRadius: 20)
+                    .fill(Color(red: 0.07, green: 0.07, blue: 0.08))
+            )
             if showSkipButton {
-                Text("건너뛰기").appButton(style: .primary, action: {
-                    // 다음 온보딩 화면으로 이동
-                })
+                Button("건너뛰기") {
+
+                }
+                .frame(maxWidth: .infinity, maxHeight: 56)
+                .foregroundStyle(Color(.white))
+                .font(.customFont(language: .korean, size: 16, weight: .semibold))
+                .background(
+                    RoundedRectangle(cornerRadius: 20)
+                        .fill(Color(red: 0.07, green: 0.07, blue: 0.08))
+                )
             }
         }.padding(.horizontal, 24)
     }

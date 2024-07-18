@@ -16,9 +16,17 @@ struct OnboardingWelcomView: View {
                 .multilineTextAlignment(.center)
                 .font(.customFont(language: .korean, size: 20, weight: .bold))
             Image("peoLogo")
-            Text("네!").appButton(style: .primary, action: {
-                // 다음 온보딩 화면으로 이동
-            })
+            Spacer()
+            Button("네!") {
+
+            }
+            .frame(maxWidth: .infinity, maxHeight: 56)
+            .foregroundStyle(Color(.white))
+            .font(.customFont(language: .korean, size: 16, weight: .semibold))
+            .background(
+                RoundedRectangle(cornerRadius: 20)
+                    .fill(Color(red: 0.07, green: 0.07, blue: 0.08))
+            )
             .padding(.horizontal, 24)
         })
     }
