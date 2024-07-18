@@ -10,6 +10,7 @@ import SwiftUI
 struct InbodyAddView: View {
     @State private var showOnboardingGaugeView = true
     @State private var showSkipButton = true
+    @State private var showActionSheet = false
 
     var body: some View {
         VStack {
@@ -45,27 +46,34 @@ struct InbodyAddView: View {
             }
 
             Spacer()
-            Button("등록하기") {
 
-            }
-            .frame(maxWidth: .infinity, maxHeight: 56)
-            .foregroundStyle(Color(.white))
-            .font(.customFont(size: 16, weight: .semibold))
-            .background(
-                RoundedRectangle(cornerRadius: 20)
-                    .fill(Color(red: 0.07, green: 0.07, blue: 0.08))
-            )
+            Button(action: {
+                showActionSheet = true
+            }, label: {
+                Text("등록하기")
+                    .frame(maxWidth: .infinity, maxHeight: 56)
+                    .foregroundStyle(Color(.white))
+                    .font(.customFont(size: 16, weight: .semibold))
+                    .background(
+                        RoundedRectangle(cornerRadius: 20)
+                            .fill(Color(red: 0.07, green: 0.07, blue: 0.08))
+                    )
+            })
+            .cameraActionSheet(isPresented: $showActionSheet)
+
             if showSkipButton {
-                Button("건너뛰기") {
+                Button(action: {
 
-                }
-                .frame(maxWidth: .infinity, maxHeight: 56)
-                .foregroundStyle(Color(.white))
-                .font(.customFont(size: 16, weight: .semibold))
-                .background(
-                    RoundedRectangle(cornerRadius: 20)
-                        .fill(Color(red: 0.07, green: 0.07, blue: 0.08))
-                )
+                }, label: {
+                    Text("건너뛰기")
+                        .frame(maxWidth: .infinity, maxHeight: 56)
+                        .foregroundStyle(Color(.white))
+                        .font(.customFont(size: 16, weight: .semibold))
+                        .background(
+                            RoundedRectangle(cornerRadius: 20)
+                                .fill(Color(red: 0.07, green: 0.07, blue: 0.08))
+                        )
+                })
             }
         }.padding(.horizontal, 24)
     }
