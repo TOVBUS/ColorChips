@@ -38,6 +38,8 @@
 		E1BB0D5E2C47F9F7002565B2 /* OnboardingSelectGenderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BB0D5D2C47F9F7002565B2 /* OnboardingSelectGenderButton.swift */; };
 		E1BB0D602C4800E2002565B2 /* OnboardingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BB0D5F2C4800E2002565B2 /* OnboardingTextField.swift */; };
 		E1BB0D622C48A875002565B2 /* InbodyAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BB0D612C48A875002565B2 /* InbodyAddView.swift */; };
+		E24F5E822C48EC3400724DA7 /* MealMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24F5E812C48EC3400724DA7 /* MealMainView.swift */; };
+		E26D48B52C48F50D00D63FE7 /* AIMealRecomendationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D48B42C48F50D00D63FE7 /* AIMealRecomendationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +95,8 @@
 		E1BB0D5D2C47F9F7002565B2 /* OnboardingSelectGenderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSelectGenderButton.swift; sourceTree = "<group>"; };
 		E1BB0D5F2C4800E2002565B2 /* OnboardingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTextField.swift; sourceTree = "<group>"; };
 		E1BB0D612C48A875002565B2 /* InbodyAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InbodyAddView.swift; sourceTree = "<group>"; };
+		E24F5E812C48EC3400724DA7 /* MealMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealMainView.swift; sourceTree = "<group>"; };
+		E26D48B42C48F50D00D63FE7 /* AIMealRecomendationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIMealRecomendationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				3EF6F04C2C36937E00EEF18F /* FebirdAppApp.swift */,
+				E24F5E7F2C48EBC300724DA7 /* Meal */,
 				E1BB0D532C4797C9002565B2 /* Onboarding */,
 				3E9E9E0B2C44E5B1002389EB /* Extensions */,
 			);
@@ -245,6 +250,23 @@
 				E1BB0D5D2C47F9F7002565B2 /* OnboardingSelectGenderButton.swift */,
 				E1BB0D5F2C4800E2002565B2 /* OnboardingTextField.swift */,
 				E1BB0D612C48A875002565B2 /* InbodyAddView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E24F5E7F2C48EBC300724DA7 /* Meal */ = {
+			isa = PBXGroup;
+			children = (
+				E24F5E802C48EBD700724DA7 /* Views */,
+			);
+			path = Meal;
+			sourceTree = "<group>";
+		};
+		E24F5E802C48EBD700724DA7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E24F5E812C48EC3400724DA7 /* MealMainView.swift */,
+				E26D48B42C48F50D00D63FE7 /* AIMealRecomendationView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -423,6 +445,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E26D48B52C48F50D00D63FE7 /* AIMealRecomendationView.swift in Sources */,
+				E24F5E822C48EC3400724DA7 /* MealMainView.swift in Sources */,
 				E1BB0D602C4800E2002565B2 /* OnboardingTextField.swift in Sources */,
 				E1BB0D5C2C47B15A002565B2 /* OnboardingProfileSelectionView.swift in Sources */,
 				E1BB0D552C47985D002565B2 /* OnboardingGaugeView.swift in Sources */,
