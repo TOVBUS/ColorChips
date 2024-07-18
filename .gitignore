@@ -135,4 +135,4 @@ iOSInjectionProject/
 *.xcconfig
 
 # Ignore swiftpm directory and its contents
-Frontend-iOS/FebirdApp/FebirdApp.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/
+Frontend-iOS/FebirdApp/FebirdApp.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved
