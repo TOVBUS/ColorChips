@@ -40,6 +40,7 @@
 		E1BB0D5A2C47A4FB002565B2 /* OnboardingSelectUserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BB0D592C47A4FB002565B2 /* OnboardingSelectUserInfoView.swift */; };
 		E1BB0D5C2C47B15A002565B2 /* OnboardingProfileSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BB0D5B2C47B15A002565B2 /* OnboardingProfileSelectionView.swift */; };
 		E1BB0D5E2C47F9F7002565B2 /* OnboardingSelectGenderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BB0D5D2C47F9F7002565B2 /* OnboardingSelectGenderButton.swift */; };
+		E1BB0D602C4800E2002565B2 /* OnboardingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BB0D5F2C4800E2002565B2 /* OnboardingTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,7 @@
 		E1BB0D592C47A4FB002565B2 /* OnboardingSelectUserInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSelectUserInfoView.swift; sourceTree = "<group>"; };
 		E1BB0D5B2C47B15A002565B2 /* OnboardingProfileSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingProfileSelectionView.swift; sourceTree = "<group>"; };
 		E1BB0D5D2C47F9F7002565B2 /* OnboardingSelectGenderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSelectGenderButton.swift; sourceTree = "<group>"; };
+		E1BB0D5F2C4800E2002565B2 /* OnboardingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -267,6 +269,7 @@
 				E1BB0D592C47A4FB002565B2 /* OnboardingSelectUserInfoView.swift */,
 				E1BB0D5B2C47B15A002565B2 /* OnboardingProfileSelectionView.swift */,
 				E1BB0D5D2C47F9F7002565B2 /* OnboardingSelectGenderButton.swift */,
+				E1BB0D5F2C4800E2002565B2 /* OnboardingTextField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -443,6 +446,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1BB0D602C4800E2002565B2 /* OnboardingTextField.swift in Sources */,
 				E1BB0D5C2C47B15A002565B2 /* OnboardingProfileSelectionView.swift in Sources */,
 				E1BB0D552C47985D002565B2 /* OnboardingGaugeView.swift in Sources */,
 				E1BB0D5E2C47F9F7002565B2 /* OnboardingSelectGenderButton.swift in Sources */,
