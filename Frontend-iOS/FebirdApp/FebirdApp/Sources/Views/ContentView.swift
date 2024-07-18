@@ -14,7 +14,44 @@ struct ContentView: View {
     @State private var showAlert = false
 
     var body: some View {
-        Text("Hello")
+        NavigationView {
+            VStack {
+                List {
+                    ForEach(items) { item in
+                        NavigationLink(destination: ItemDetailView(item: item)) {
+                            Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
+                                .appFont(.title, language: .english)
+                                .foregroundColor(.blue30)
+                        }
+                    }
+                    .onDelete(perform: deleteItems)
+                }
+
+                VStack(spacing: 20) {
+                    Text("Add Item")
+                        .appButton(style: .primary, action: addItem)
+
+                    Text("Secondary Button")
+                        .appButton(style: .secondary) {
+                            print("Secondary button tapped")
+                        }
+
+                    Text("Show Alert")
+                        .appButton(style: .tertiary) {
+                            showAlert = true
+                        }
+                }
+                .padding()
+            }
+            .navigationTitle("Items")
+            .appAlert(
+                isPresented: $showAlert,
+                title: "Alert Title",
+                message: "This is an alert message.",
+                primaryButton: .default(Text("OK")),
+                secondaryButton: .cancel(Text("Cancel"))
+            )
+        }
     }
 }
 
