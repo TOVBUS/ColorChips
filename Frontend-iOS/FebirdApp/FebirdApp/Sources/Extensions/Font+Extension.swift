@@ -37,7 +37,7 @@ extension Font {
         case black = "WorkSans-Black"
     }
 
-    static func customFont(language: Language, size: CGFloat, weight: Font.Weight) -> Font {
+    static func customFont(size: CGFloat, weight: Font.Weight, language: Language = .korean) -> Font {
         switch language {
         case .korean:
             let ibmWeight = ibmWeightMapping(weight)
@@ -72,53 +72,6 @@ extension Font {
         case .heavy: return .extraBold
         case .black: return .black
         default: return .regular
-        }
-    }
-
-    static func body(language: Language = .korean) -> Font {
-        customFont(language: language, size: 14, weight: .regular)
-    }
-
-    static func bodyBold(language: Language = .korean) -> Font {
-        customFont(language: language, size: 14, weight: .semibold)
-    }
-
-    static func label(language: Language = .korean) -> Font {
-        customFont(language: language, size: 12, weight: .regular)
-    }
-
-    static func subheader(language: Language = .korean) -> Font {
-        customFont(language: language, size: 18, weight: .medium)
-    }
-
-    static func sectionHeader(language: Language = .korean) -> Font {
-        customFont(language: language, size: 30, weight: .medium)
-    }
-
-    static func header(language: Language = .korean) -> Font {
-        customFont(language: language, size: 36, weight: .medium)
-    }
-}
-
-extension View {
-    func appFont(_ style: Font.TextStyle, language: Font.Language = .korean) -> some View {
-        Group {
-            switch style {
-            case .body:
-                self.font(.body(language: language)).lineSpacing(6)
-            case .callout:
-                self.font(.bodyBold(language: language)).lineSpacing(6)
-            case .caption:
-                self.font(.label(language: language)).lineSpacing(4)
-            case .subheadline:
-                self.font(.subheader(language: language)).lineSpacing(10)
-            case .title2:
-                self.font(.sectionHeader(language: language)).lineSpacing(8)
-            case .title:
-                self.font(.header(language: language)).lineSpacing(4)
-            default:
-                self
-            }
         }
     }
 }

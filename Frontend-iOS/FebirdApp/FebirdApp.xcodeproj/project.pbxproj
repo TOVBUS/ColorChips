@@ -24,8 +24,6 @@
 		3E9E9E352C44E7FC002389EB /* IBMPlexSansKR-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E9E9E2E2C44E7FC002389EB /* IBMPlexSansKR-Bold.ttf */; };
 		3E9E9E362C44E7FC002389EB /* IBMPlexSansKR-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E9E9E2F2C44E7FC002389EB /* IBMPlexSansKR-Medium.ttf */; };
 		3EF6F04D2C36937E00EEF18F /* FebirdAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF6F04C2C36937E00EEF18F /* FebirdAppApp.swift */; };
-		3EF6F04F2C36937E00EEF18F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF6F04E2C36937E00EEF18F /* ContentView.swift */; };
-		3EF6F0512C36937E00EEF18F /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF6F0502C36937E00EEF18F /* Item.swift */; };
 		3EF6F0532C36937F00EEF18F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EF6F0522C36937F00EEF18F /* Assets.xcassets */; };
 		3EF6F0562C36937F00EEF18F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EF6F0552C36937F00EEF18F /* Preview Assets.xcassets */; };
 		3EF6F0602C36938000EEF18F /* FebirdAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF6F05F2C36938000EEF18F /* FebirdAppTests.swift */; };
@@ -79,8 +77,6 @@
 		3E9E9E372C44E821002389EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3EF6F0492C36937E00EEF18F /* FebirdApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FebirdApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EF6F04C2C36937E00EEF18F /* FebirdAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FebirdAppApp.swift; sourceTree = "<group>"; };
-		3EF6F04E2C36937E00EEF18F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		3EF6F0502C36937E00EEF18F /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		3EF6F0522C36937F00EEF18F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3EF6F0552C36937F00EEF18F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3EF6F05B2C36938000EEF18F /* FebirdAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FebirdAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,29 +141,11 @@
 		3E9E9E112C44E5FE002389EB /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				E1BB0D532C4797C9002565B2 /* Onboarding */,
 				3EF6F04C2C36937E00EEF18F /* FebirdAppApp.swift */,
-				3E9E9E132C44E620002389EB /* Views */,
-				3E9E9E122C44E618002389EB /* Models */,
+				E1BB0D532C4797C9002565B2 /* Onboarding */,
 				3E9E9E0B2C44E5B1002389EB /* Extensions */,
 			);
 			path = Sources;
-			sourceTree = "<group>";
-		};
-		3E9E9E122C44E618002389EB /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				3EF6F0502C36937E00EEF18F /* Item.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		3E9E9E132C44E620002389EB /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				3EF6F04E2C36937E00EEF18F /* ContentView.swift */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		3E9E9E142C44E66A002389EB /* Fonts */ = {
@@ -448,11 +426,9 @@
 				E1BB0D552C47985D002565B2 /* OnboardingGaugeView.swift in Sources */,
 				E1BB0D5E2C47F9F7002565B2 /* OnboardingSelectGenderButton.swift in Sources */,
 				E1BB0D622C48A875002565B2 /* InbodyAddView.swift in Sources */,
-				3EF6F04F2C36937E00EEF18F /* ContentView.swift in Sources */,
 				E1BB0D582C479CF7002565B2 /* OnboardingWelcomView.swift in Sources */,
 				E1BB0D5A2C47A4FB002565B2 /* OnboardingSelectUserInfoView.swift in Sources */,
 				3EFC450C2C44F882001052C7 /* Font+Extension.swift in Sources */,
-				3EF6F0512C36937E00EEF18F /* Item.swift in Sources */,
 				3EF6F04D2C36937E00EEF18F /* FebirdAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
