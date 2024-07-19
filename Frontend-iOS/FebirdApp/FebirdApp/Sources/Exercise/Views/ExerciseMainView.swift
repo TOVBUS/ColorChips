@@ -9,10 +9,22 @@ import SwiftUI
 
 struct ExerciseMainView: View {
     var body: some View {
-        ExerciseMainHeaderView()
+        ZStack {
+            Rectangle()
+                .foregroundStyle(.white)
+            
+            VStack {
+                ExerciseMainHeaderView()
+                
+                Spacer()
+            }
+            .ignoresSafeArea()
+            .preferredColorScheme(.dark)
+        }
     }
 }
 
 #Preview {
     ExerciseMainView()
+        .preferredColorScheme(.dark)
 }

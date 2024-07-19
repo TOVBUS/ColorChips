@@ -94,7 +94,7 @@ struct ExerciseMainHeaderView: View {
             
             ExerciseGaugeBarView(progress: $progress, totalSteps: 3)
         }
-            
+        .padding(.top, 26)
         .padding(.vertical, 30)
         .frame(alignment: .center)
         .background(.gray100)

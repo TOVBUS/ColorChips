@@ -57,7 +57,7 @@ struct ExerciseGaugeBarView: View {
                         .cornerRadius(6)
                     
                     Rectangle()
-                        .foregroundColor(Color.orange.opacity(0.5))
+                        .foregroundColor(.orange50)
                         .frame(width: indicatorSize - 6, height: indicatorSize - 6)
                         .cornerRadius(4)
                 }
