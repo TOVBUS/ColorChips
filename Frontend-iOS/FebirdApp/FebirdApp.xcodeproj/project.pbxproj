@@ -30,6 +30,7 @@
 		3EF6F06A2C36938000EEF18F /* FebirdAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF6F0692C36938000EEF18F /* FebirdAppUITests.swift */; };
 		3EF6F06C2C36938000EEF18F /* FebirdAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF6F06B2C36938000EEF18F /* FebirdAppUITestsLaunchTests.swift */; };
 		3EFC450C2C44F882001052C7 /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFC450B2C44F882001052C7 /* Font+Extension.swift */; };
+		E10FD99D2C49FB4500D80139 /* InbodyInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10FD99C2C49FB4500D80139 /* InbodyInputView.swift */; };
 		E12911B92C48DC82009A92F7 /* CameraActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12911B82C48DC81009A92F7 /* CameraActionSheet.swift */; };
 		E12911BB2C48EDFE009A92F7 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12911BA2C48EDFE009A92F7 /* PhotoPicker.swift */; };
 		E12911BD2C48FDBA009A92F7 /* InbodyFixView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12911BC2C48FDBA009A92F7 /* InbodyFixView.swift */; };
@@ -88,6 +89,7 @@
 		3EF6F0692C36938000EEF18F /* FebirdAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FebirdAppUITests.swift; sourceTree = "<group>"; };
 		3EF6F06B2C36938000EEF18F /* FebirdAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FebirdAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3EFC450B2C44F882001052C7 /* Font+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extension.swift"; sourceTree = "<group>"; };
+		E10FD99C2C49FB4500D80139 /* InbodyInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InbodyInputView.swift; sourceTree = "<group>"; };
 		E12911B82C48DC81009A92F7 /* CameraActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraActionSheet.swift; sourceTree = "<group>"; };
 		E12911BA2C48EDFE009A92F7 /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
 		E12911BC2C48FDBA009A92F7 /* InbodyFixView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InbodyFixView.swift; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 				E1BB0D612C48A875002565B2 /* InbodyAddView.swift */,
 				E12911B82C48DC81009A92F7 /* CameraActionSheet.swift */,
 				E12911BC2C48FDBA009A92F7 /* InbodyFixView.swift */,
+				E10FD99C2C49FB4500D80139 /* InbodyInputView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -438,6 +441,7 @@
 				E1BB0D5C2C47B15A002565B2 /* OnboardingProfileSelectionView.swift in Sources */,
 				E1BB0D552C47985D002565B2 /* OnboardingGaugeView.swift in Sources */,
 				E1BB0D5E2C47F9F7002565B2 /* OnboardingSelectGenderButton.swift in Sources */,
+				E10FD99D2C49FB4500D80139 /* InbodyInputView.swift in Sources */,
 				E12911B92C48DC82009A92F7 /* CameraActionSheet.swift in Sources */,
 				E1BB0D622C48A875002565B2 /* InbodyAddView.swift in Sources */,
 				E1BB0D582C479CF7002565B2 /* OnboardingWelcomView.swift in Sources */,
