@@ -12,11 +12,14 @@ struct ExerciseMainView: View {
         ZStack {
             Rectangle()
                 .foregroundStyle(.white)
+                .ignoresSafeArea()
             
             VStack {
                 ExerciseMainHeaderView()
                 
                 Spacer()
+                
+                CustomTabBarView()
             }
             .ignoresSafeArea()
             .preferredColorScheme(.dark)
