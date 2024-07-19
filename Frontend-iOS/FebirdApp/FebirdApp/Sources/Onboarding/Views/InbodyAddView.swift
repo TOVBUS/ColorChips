@@ -121,11 +121,11 @@ struct InbodyAddView: View {
         .sheet(isPresented: $showImagePicker) {
             PhotoPicker(image: $image, isPresented: $showImagePicker, sourceType: sourceType)
         }
-        .onChange(of: image) { newImage in
+        .onChange(of: image, { _, newImage in
             if newImage != nil {
                 isImageSelected = true
             }
-        }
+        })
     }
 }
 
