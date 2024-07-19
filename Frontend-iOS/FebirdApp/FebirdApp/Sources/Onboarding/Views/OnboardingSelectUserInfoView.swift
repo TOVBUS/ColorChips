@@ -45,16 +45,18 @@ struct OnboardingSelectUserInfoView: View {
             }
             OnboardingSelectGenderButton()
 
-            Button("입력하기") {
+            Button(action: {
 
-            }
-            .frame(maxWidth: .infinity, maxHeight: 56)
-            .foregroundStyle(Color(.white))
-            .font(.customFont(size: 16, weight: .semibold))
-            .background(
-                RoundedRectangle(cornerRadius: 20)
-                    .fill(Color(red: 0.07, green: 0.07, blue: 0.08))
-            )
+            }, label: {
+                Text("입력하기")
+                    .frame(maxWidth: .infinity, maxHeight: 56)
+                    .foregroundStyle(Color(.white))
+                    .font(.customFont(size: 16, weight: .semibold))
+                    .background(
+                        RoundedRectangle(cornerRadius: 20)
+                            .fill(Color(red: 0.07, green: 0.07, blue: 0.08))
+                    )
+            })
         }
         .padding(.horizontal, 25)
     }
