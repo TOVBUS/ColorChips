@@ -13,6 +13,7 @@ struct AIMealRecomendationView: View {
             VStack(alignment: .leading, spacing: 24) {
                 HStack(alignment: .center, spacing: 16) {
                     Text("피오추천")
+                        .font(.customFont(size: 12, weight: .bold))
                         .foregroundStyle(Color.white)
                         .bold()
                 }
@@ -21,30 +22,27 @@ struct AIMealRecomendationView: View {
                 .frame(height: 24, alignment: .center)
                 .background(Color(red: 0.98, green: 0.45, blue: 0.09))
                 .cornerRadius(8)
-                
                 // 추천받은 식단명
                 Text("샐러디 웜랩")
-                    .font(.title)
+                    .font(.customFont(size: 20, weight: .bold))
                     .foregroundColor(.white)
-                    .bold()
-                
                 // 추천받은 식단의 칼로리, 식단 시간대
                 Group {
                     Label("251Kcal", systemImage: "flame.fill")
                     Label("오전식단", systemImage: "fork.knife")
                 }
                 .foregroundStyle(Color.white)
-                
+                .font(.customFont(size: 14, weight: .medium))
                 // 식단챗봇으로 넘어가는 버튼
                 Button(action: {
-                    
+                // 챗봇뷰
                 }, label: {
                     HStack(alignment: .center, spacing: 8) {
                         Text("식단추천받기")
                         Text("+")
                     }
+                    .font(.customFont(size: 14, weight: .semibold))
                     .foregroundStyle(Color.white)
-                    .bold()
                     .padding(.horizontal, 16)
                     .padding(.vertical, 12)
                     .frame(height: 40, alignment: .center)
