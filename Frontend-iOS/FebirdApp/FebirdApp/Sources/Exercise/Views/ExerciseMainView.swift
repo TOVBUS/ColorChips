@@ -19,6 +19,8 @@ struct ExerciseMainView: View {
                 
                 Spacer()
                 
+                CustomButtonView(title: "운동 시작하기")
+                
                 CustomTabBarView()
             }
             .ignoresSafeArea()
