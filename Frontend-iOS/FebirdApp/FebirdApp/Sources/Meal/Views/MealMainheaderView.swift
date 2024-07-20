@@ -11,11 +11,16 @@ struct MealMainheaderView: View {
     var body: some View {
         ZStack {
             Rectangle()
-                .frame(height: 230)
-                .foregroundStyle(Color.black)
+                .frame(height: 240)
+                .foregroundStyle(Color.gray100)
             .cornerRadius(34, corners: [.bottomLeft, .bottomRight])
             VStack {
+                Text("나의 식단 기록")
+                    .padding(.top, 20)
+                    .font(.customFont(size: 22, weight: .bold))
+                    .foregroundStyle(Color.white)
                 WeeklyCalendar()
+                    .padding(.top, -10)
             }
         }
     }
@@ -35,10 +40,9 @@ extension View {
 struct RoundedCorner: Shape {
     var radius: CGFloat = .infinity
     var corners: UIRectCorner = .allCorners
-    
+
     func path(in rect: CGRect) -> Path {
         let path = UIBezierPath(roundedRect: rect, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
-        
         return Path(path.cgPath)
     }
 }

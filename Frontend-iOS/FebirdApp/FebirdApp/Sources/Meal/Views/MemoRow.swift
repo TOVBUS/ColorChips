@@ -9,6 +9,8 @@ import SwiftUI
 
 struct MemoRow: View {
     @State var showSheet: Bool = false
+    var mealTime: String
+
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             HStack(alignment: .center, spacing: 8) {
@@ -23,7 +25,7 @@ struct MemoRow: View {
                     )
                 VStack(alignment: .leading, spacing: 8) {
                     HStack(alignment: .center, spacing: 16) {
-                        Text("아침") // 아침, 점심, 저녁
+                        Text(mealTime) // 아침, 점심, 저녁
                     }
                     .padding(.horizontal, 8)
                     .padding(.vertical, 4)
@@ -38,7 +40,7 @@ struct MemoRow: View {
                 Button(action: {
                     showSheet.toggle()
                 }, label: {
-                    Image(systemName: "pencil")
+                    Image("elseIcon")
                         .foregroundStyle(Color.black)
                 })
                 .frame(width: 24, height: 24)
@@ -57,5 +59,5 @@ struct MemoRow: View {
 }
 
 #Preview {
-    MemoRow()
+    MemoRow(mealTime: "점심")
 }

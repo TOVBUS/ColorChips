@@ -9,13 +9,10 @@ import SwiftUI
 
 struct AIMealRecomendationView: View {
     var body: some View {
-        // Section Header
-        VStack(alignment: .leading) {
-            Text("AI 식단추천")
-                .font(.customFont(size: 20, weight: .bold))
-                .foregroundColor(Color.gray100)
-            VStack(alignment: .leading, spacing: 10) {
-                VStack(alignment: .leading, spacing: 24) {
+        ZStack {
+            Image("aiMeal")
+            VStack {
+                VStack(alignment: .leading) {
                     HStack(alignment: .center, spacing: 16) {
                         Text("피오추천")
                             .font(.customFont(size: 12, weight: .bold))
@@ -65,14 +62,15 @@ struct AIMealRecomendationView: View {
                         )
                     })
                 }
-                .padding(0)
-                .frame(width: 188, alignment: .topLeading)
+                .padding([.top, .leading], 10)
+                .frame(width: 320, alignment: .topLeading)
+
             }
-            .padding(16)
-            .frame(maxWidth: .infinity, alignment: .topLeading)
-            .background(Color(red: 0.07, green: 0.07, blue: 0.08))
-            .cornerRadius(32)
         }
+        .padding(16)
+//        .frame(maxWidth: .infinity, alignment: .topLeading)
+//        .background(Color.gray100)
+        .cornerRadius(32)
     }
 }
 
