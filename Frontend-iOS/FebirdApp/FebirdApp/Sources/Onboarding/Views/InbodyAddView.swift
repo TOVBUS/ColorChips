@@ -112,11 +112,15 @@ struct InbodyAddView: View {
         }
         .padding(.horizontal, 24)
         .cameraActionSheet(isPresented: $showActionSheet) {
-            self.sourceType = .camera
-            self.showImagePicker = true
+            DispatchQueue.main.async {
+                self.sourceType = .camera
+                self.showImagePicker = true
+            }
         } onGalleryTap: {
-            self.sourceType = .photoLibrary
-            self.showImagePicker = true
+            DispatchQueue.main.async {
+                self.sourceType = .photoLibrary
+                self.showImagePicker = true
+            }
         }
         .sheet(isPresented: $showImagePicker) {
             PhotoPicker(image: $image, isPresented: $showImagePicker, sourceType: sourceType)
