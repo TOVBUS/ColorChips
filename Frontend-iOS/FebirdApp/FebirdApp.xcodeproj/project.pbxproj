@@ -35,6 +35,9 @@
 		3EF6F06A2C36938000EEF18F /* FebirdAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF6F0692C36938000EEF18F /* FebirdAppUITests.swift */; };
 		3EF6F06C2C36938000EEF18F /* FebirdAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF6F06B2C36938000EEF18F /* FebirdAppUITestsLaunchTests.swift */; };
 		3EFC450C2C44F882001052C7 /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFC450B2C44F882001052C7 /* Font+Extension.swift */; };
+		E10FD99F2C49FECB00D80139 /* OnboardingLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10FD99E2C49FECB00D80139 /* OnboardingLoadingView.swift */; };
+		E10FD9A12C49FFF100D80139 /* EyeBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10FD9A02C49FFF100D80139 /* EyeBodyView.swift */; };
+		E10FD9A32C4A066200D80139 /* OnboardingEndView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10FD9A22C4A066200D80139 /* OnboardingEndView.swift */; };
 		E10FD99D2C49FB4500D80139 /* InbodyInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10FD99C2C49FB4500D80139 /* InbodyInputView.swift */; };
 		8F92DF7A2C4B93730071F336 /* ExerciseGuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F92DF792C4B93730071F336 /* ExerciseGuideView.swift */; };
 		8F92DF7C2C4B9A390071F336 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F92DF7B2C4B9A390071F336 /* CustomNavigationBar.swift */; };
@@ -109,6 +112,9 @@
 		3EF6F0692C36938000EEF18F /* FebirdAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FebirdAppUITests.swift; sourceTree = "<group>"; };
 		3EF6F06B2C36938000EEF18F /* FebirdAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FebirdAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3EFC450B2C44F882001052C7 /* Font+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extension.swift"; sourceTree = "<group>"; };
+		E10FD99E2C49FECB00D80139 /* OnboardingLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingLoadingView.swift; sourceTree = "<group>"; };
+		E10FD9A02C49FFF100D80139 /* EyeBodyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeBodyView.swift; sourceTree = "<group>"; };
+		E10FD9A22C4A066200D80139 /* OnboardingEndView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingEndView.swift; sourceTree = "<group>"; };
 		E10FD99C2C49FB4500D80139 /* InbodyInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InbodyInputView.swift; sourceTree = "<group>"; };
 		8F92DF792C4B93730071F336 /* ExerciseGuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseGuideView.swift; sourceTree = "<group>"; };
 		8F92DF7B2C4B9A390071F336 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
@@ -340,6 +346,9 @@
 				E1BB0D5F2C4800E2002565B2 /* OnboardingTextField.swift */,
 				E1BB0D612C48A875002565B2 /* InbodyAddView.swift */,
 				E12911B82C48DC81009A92F7 /* CameraActionSheet.swift */,
+				E10FD99E2C49FECB00D80139 /* OnboardingLoadingView.swift */,
+				E10FD9A02C49FFF100D80139 /* EyeBodyView.swift */,
+				E10FD9A22C4A066200D80139 /* OnboardingEndView.swift */,
 				E12911BC2C48FDBA009A92F7 /* InbodyFixView.swift */,
 				E10FD99C2C49FB4500D80139 /* InbodyInputView.swift */,
 			);
@@ -531,6 +540,7 @@
 				8F92DF7E2C4BA9750071F336 /* ExerciseGuideListView.swift in Sources */,
 				E12911BB2C48EDFE009A92F7 /* PhotoPicker.swift in Sources */,
 				E1BB0D5C2C47B15A002565B2 /* OnboardingProfileSelectionView.swift in Sources */,
+				E10FD9A12C49FFF100D80139 /* EyeBodyView.swift in Sources */,
 				E1BB0D552C47985D002565B2 /* OnboardingGaugeView.swift in Sources */,
 				3E7521AB2C48F66F00920BFD /* RoundedCorners.swift in Sources */,
 				8FAC187F2C494BDE00CDF7CF /* ExerciseGaugeBarView.swift in Sources */,
@@ -538,10 +548,12 @@
 				E10FD99D2C49FB4500D80139 /* InbodyInputView.swift in Sources */,
 				3E7521AD2C49F88B00920BFD /* CustomTabBarView.swift in Sources */,
 				E12911B92C48DC82009A92F7 /* CameraActionSheet.swift in Sources */,
+				E10FD99F2C49FECB00D80139 /* OnboardingLoadingView.swift in Sources */,
 				E1BB0D622C48A875002565B2 /* InbodyAddView.swift in Sources */,
 				E1BB0D582C479CF7002565B2 /* OnboardingWelcomView.swift in Sources */,
 				8F92DF812C4BB0230071F336 /* ExerciseGuideViewModel.swift in Sources */,
 				E1BB0D5A2C47A4FB002565B2 /* OnboardingSelectUserInfoView.swift in Sources */,
+				E10FD9A32C4A066200D80139 /* OnboardingEndView.swift in Sources */,
 				8F92DF832C4BB0970071F336 /* VideoPlayerView.swift in Sources */,
 				8FAC18852C4B8C4200CDF7CF /* ExerciseItem.swift in Sources */,
 				3EFC450C2C44F882001052C7 /* Font+Extension.swift in Sources */,
