@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MemoModalView: View {
     var body: some View {
-        Text("memo")
+        EmptyView()
     }
 }
 
