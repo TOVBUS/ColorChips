@@ -11,11 +11,11 @@ import AVKit
 struct ExerciseGuideView: View {
     @StateObject private var viewModel = ExerciseGuideViewModel()
     var isStarted = false
-    
+
     var body: some View {
         VStack {
             CustomNavigationBar(title: "스모 스쿼트")
-            
+
             if let player = viewModel.player {
                 VideoPlayerView(player: player)
                     .frame(height: 200)
@@ -25,13 +25,13 @@ struct ExerciseGuideView: View {
                 ProgressView()
                     .frame(height: 200)
             }
-            
+
             VStack(alignment: .leading) {
                 Text("이렇게 운동하세요 🥸")
                     .font(.customFont(size: 20, weight: .bold))
                     .foregroundColor(.gray90)
                     .padding(.vertical, 16)
-                
+
                 ScrollView {
                     VStack(alignment: .leading, spacing: 16) {
                         ForEach(viewModel.guideSteps.indices, id: \.self) { index in
@@ -42,9 +42,9 @@ struct ExerciseGuideView: View {
             }
             .frame(maxWidth: .infinity)
             .padding(.horizontal, 16)
-            
+
             Spacer()
-            
+
             if isStarted {
                 CustomButtonView(title: "시작할래요! 😉")
             } else {
@@ -54,7 +54,7 @@ struct ExerciseGuideView: View {
                         .foregroundStyle(.gray90)
                         .padding(.leading, 24)
                         .offset(y: 22)
-                    
+
                     CustomButtonView(title: "피버 코치에게 질문할래요! 🤔")
                 }
             }
@@ -65,7 +65,7 @@ struct ExerciseGuideView: View {
             viewModel.loadVideo()
         }
     }
-    
+
     func makeAttributedText(_ text: String) -> AttributedString {
         var attributedString = AttributedString(text)
         let style = NSMutableParagraphStyle()
@@ -73,9 +73,9 @@ struct ExerciseGuideView: View {
         style.alignment = .left
         style.headIndent = 12
         style.lineBreakMode = .byWordWrapping
-        
+
         attributedString.mergeAttributes(.init([.paragraphStyle: style]))
-        
+
         return attributedString
     }
 }

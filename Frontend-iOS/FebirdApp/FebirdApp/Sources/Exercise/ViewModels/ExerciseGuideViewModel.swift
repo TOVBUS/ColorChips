@@ -14,7 +14,7 @@ class ExerciseGuideViewModel: ObservableObject {
         "등을 곧게 펴고, 무릎이 발끝을 넘지 않도록 하며 스쿼트 자세를 취하세요.",
         "발뒤꿈치로 밀어 원래 위치로 돌아오세요."
     ]
-    
+
     func loadVideo() {
         guard let url = URL(string: "YOUR_VIDEO_URL_HERE") else { return }
         let player = AVPlayer(url: url)

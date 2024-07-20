@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ExerciseItemView: View {
     let item: ExerciseItem
-    
+
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             Text(item.name)
@@ -17,7 +17,7 @@ struct ExerciseItemView: View {
                 .foregroundColor(foregroundColor)
                 .padding(.horizontal, 14)
                 .padding(.top, 8)
-            
+
             Text(item.set)
                 .font(.customFont(size: 14, weight: .regular))
                 .foregroundColor(foregroundColor)
@@ -30,7 +30,7 @@ struct ExerciseItemView: View {
         .cornerRadius(20)
         .padding(.horizontal, 20)
     }
-    
+
     private var foregroundColor: Color {
         if item.isFinished {
             return .gray30
@@ -40,7 +40,7 @@ struct ExerciseItemView: View {
             return .gray90
         }
     }
-    
+
     private var backgroundColor: Color {
         item.isStarted ? .orange10 : .gray10
     }

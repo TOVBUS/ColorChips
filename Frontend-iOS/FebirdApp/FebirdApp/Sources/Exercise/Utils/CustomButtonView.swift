@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CustomButtonView: View {
     var title: String
-    
+
     var body: some View {
         HStack(alignment: .center, spacing: 8) {
             Text(title)

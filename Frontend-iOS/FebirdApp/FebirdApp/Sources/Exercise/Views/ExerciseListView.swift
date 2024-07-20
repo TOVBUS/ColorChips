@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct ExerciseListView: View {
-    
+
     @State private var exercises: [ExerciseItem] = [
         ExerciseItem(name: "스모 스쿼트", set: "3ea * 3set", isFinished: true, isStarted: false),
         ExerciseItem(name: "스모 스쿼트", set: "3ea * 3set", isFinished: false, isStarted: true),
         ExerciseItem(name: "스모 스쿼트", set: "3ea * 3set", isFinished: false, isStarted: false)
     ]
-    
+
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
@@ -24,7 +24,7 @@ struct ExerciseListView: View {
                         .foregroundColor(.gray100)
                 }
                 .padding(.horizontal, 24)
-                
+
                 ForEach(exercises) { exercise in
                     ExerciseItemView(item: exercise)
                 }
@@ -33,7 +33,6 @@ struct ExerciseListView: View {
         }
     }
 }
-
 
 #Preview {
     ExerciseListView()

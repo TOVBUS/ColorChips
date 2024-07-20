@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ExerciseGuideListView: View {
     let guideTexts: [String]
-    
+
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
@@ -18,7 +18,7 @@ struct ExerciseGuideListView: View {
                         Text("\(index + 1).")
                             .font(.customFont(size: 16, weight: .bold))
                             .frame(width: 20, alignment: .leading)
-                        
+
                         Text(guideTexts[index])
                             .font(.customFont(size: 16, weight: .regular))
                             .frame(maxWidth: .infinity, alignment: .leading)

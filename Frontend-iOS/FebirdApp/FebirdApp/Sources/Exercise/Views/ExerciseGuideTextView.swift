@@ -9,11 +9,11 @@ import SwiftUI
 
 struct ExerciseGuideTextView: View {
     var attributedString: AttributedString
-    
+
     init(_ attributedString: AttributedString) {
         self.attributedString = attributedString
     }
-    
+
     var body: some View {
         Text(attributedString)
             .frame(maxWidth: .infinity, alignment: .leading)

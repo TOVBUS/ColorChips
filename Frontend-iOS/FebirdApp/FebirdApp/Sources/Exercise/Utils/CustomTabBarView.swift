@@ -23,13 +23,13 @@ struct TabItem: Identifiable {
 // MARK: - View Models
 class TabViewModel: ObservableObject {
     @Published var selectedTab: TabSelection = .exercise
-    
+
     let tabs: [TabItem] = [
         TabItem(iconName: "MealTabIcon", tab: .meal, action: { print("Meal tab tapped") }),
         TabItem(iconName: "ExerciseTabIcon", tab: .exercise, action: { print("Exercise tab tapped") }),
         TabItem(iconName: "ProfileTabIcon", tab: .profile, action: { print("Profile tab tapped") })
     ]
-    
+
     func selectTab(_ tab: TabSelection) {
         selectedTab = tab
         tabs.first { $0.tab == tab }?.action()
@@ -38,7 +38,7 @@ class TabViewModel: ObservableObject {
 
 struct CustomTabBarView: View {
     @StateObject private var tabViewModel = TabViewModel()
-    
+
     var body: some View {
         HStack(alignment: .center, spacing: 48) {
             ForEach(tabViewModel.tabs) { tab in
@@ -61,14 +61,14 @@ struct TabButtonView: View {
     let iconName: String
     let isSelected: Bool
     let action: () -> Void
-    
+
     var body: some View {
         Button(action: action) {
             ZStack {
                 if isSelected {
                     Image("SelectedTabBackground")
                 }
-                
+
                 Image(iconName)
                     .renderingMode(.template)
                     .foregroundColor(isSelected ? .black : .gray40)
