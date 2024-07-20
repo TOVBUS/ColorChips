@@ -11,7 +11,8 @@ import SwiftUI
 struct FebirdAppApp: App {
     var body: some Scene {
         WindowGroup {
-            InbodyAddView()
+            //OnboardingWelcomView()
+            ExerciseGuideView()
         }
     }
 }
