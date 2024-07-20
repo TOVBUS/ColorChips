@@ -38,6 +38,7 @@
 		E10FD99F2C49FECB00D80139 /* OnboardingLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10FD99E2C49FECB00D80139 /* OnboardingLoadingView.swift */; };
 		E10FD9A12C49FFF100D80139 /* EyeBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10FD9A02C49FFF100D80139 /* EyeBodyView.swift */; };
 		E10FD9A32C4A066200D80139 /* OnboardingEndView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10FD9A22C4A066200D80139 /* OnboardingEndView.swift */; };
+		E10FD99D2C49FB4500D80139 /* InbodyInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10FD99C2C49FB4500D80139 /* InbodyInputView.swift */; };
 		8F92DF7A2C4B93730071F336 /* ExerciseGuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F92DF792C4B93730071F336 /* ExerciseGuideView.swift */; };
 		8F92DF7C2C4B9A390071F336 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F92DF7B2C4B9A390071F336 /* CustomNavigationBar.swift */; };
 		8F92DF7E2C4BA9750071F336 /* ExerciseGuideListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F92DF7D2C4BA9750071F336 /* ExerciseGuideListView.swift */; };
@@ -50,6 +51,7 @@
 		8FAC18872C4B8CBA00CDF7CF /* ExerciseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FAC18862C4B8CBA00CDF7CF /* ExerciseListView.swift */; };
 		E12911B92C48DC82009A92F7 /* CameraActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12911B82C48DC81009A92F7 /* CameraActionSheet.swift */; };
 		E12911BB2C48EDFE009A92F7 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12911BA2C48EDFE009A92F7 /* PhotoPicker.swift */; };
+		E12911BD2C48FDBA009A92F7 /* InbodyFixView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12911BC2C48FDBA009A92F7 /* InbodyFixView.swift */; };
 		E1BB0D4C2C450F1C002565B2 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = E1BB0D4B2C450F1C002565B2 /* .swiftlint.yml */; };
 		E1BB0D552C47985D002565B2 /* OnboardingGaugeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BB0D542C47985D002565B2 /* OnboardingGaugeView.swift */; };
 		E1BB0D582C479CF7002565B2 /* OnboardingWelcomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BB0D572C479CF7002565B2 /* OnboardingWelcomView.swift */; };
@@ -113,6 +115,7 @@
 		E10FD99E2C49FECB00D80139 /* OnboardingLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingLoadingView.swift; sourceTree = "<group>"; };
 		E10FD9A02C49FFF100D80139 /* EyeBodyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeBodyView.swift; sourceTree = "<group>"; };
 		E10FD9A22C4A066200D80139 /* OnboardingEndView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingEndView.swift; sourceTree = "<group>"; };
+		E10FD99C2C49FB4500D80139 /* InbodyInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InbodyInputView.swift; sourceTree = "<group>"; };
 		8F92DF792C4B93730071F336 /* ExerciseGuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseGuideView.swift; sourceTree = "<group>"; };
 		8F92DF7B2C4B9A390071F336 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		8F92DF7D2C4BA9750071F336 /* ExerciseGuideListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseGuideListView.swift; sourceTree = "<group>"; };
@@ -125,6 +128,7 @@
 		8FAC18862C4B8CBA00CDF7CF /* ExerciseListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseListView.swift; sourceTree = "<group>"; };
 		E12911B82C48DC81009A92F7 /* CameraActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraActionSheet.swift; sourceTree = "<group>"; };
 		E12911BA2C48EDFE009A92F7 /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
+		E12911BC2C48FDBA009A92F7 /* InbodyFixView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InbodyFixView.swift; sourceTree = "<group>"; };
 		E1BB0D4B2C450F1C002565B2 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		E1BB0D542C47985D002565B2 /* OnboardingGaugeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingGaugeView.swift; sourceTree = "<group>"; };
 		E1BB0D572C479CF7002565B2 /* OnboardingWelcomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWelcomView.swift; sourceTree = "<group>"; };
@@ -345,6 +349,8 @@
 				E10FD99E2C49FECB00D80139 /* OnboardingLoadingView.swift */,
 				E10FD9A02C49FFF100D80139 /* EyeBodyView.swift */,
 				E10FD9A22C4A066200D80139 /* OnboardingEndView.swift */,
+				E12911BC2C48FDBA009A92F7 /* InbodyFixView.swift */,
+				E10FD99C2C49FB4500D80139 /* InbodyInputView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -526,6 +532,7 @@
 				8F92DF7C2C4B9A390071F336 /* CustomNavigationBar.swift in Sources */,
 				3ED5FD8E2C4A020200CD4508 /* CustomButtonView.swift in Sources */,
 				E1BB0D602C4800E2002565B2 /* OnboardingTextField.swift in Sources */,
+				E12911BD2C48FDBA009A92F7 /* InbodyFixView.swift in Sources */,
 				3E7521A52C48E6C700920BFD /* ExerciseMainView.swift in Sources */,
 				8F92DF852C4BB0B40071F336 /* ExerciseGuideTextView.swift in Sources */,
 				8FAC18822C4B8BA800CDF7CF /* ExerciseItemView.swift in Sources */,
@@ -538,6 +545,7 @@
 				3E7521AB2C48F66F00920BFD /* RoundedCorners.swift in Sources */,
 				8FAC187F2C494BDE00CDF7CF /* ExerciseGaugeBarView.swift in Sources */,
 				E1BB0D5E2C47F9F7002565B2 /* OnboardingSelectGenderButton.swift in Sources */,
+				E10FD99D2C49FB4500D80139 /* InbodyInputView.swift in Sources */,
 				3E7521AD2C49F88B00920BFD /* CustomTabBarView.swift in Sources */,
 				E12911B92C48DC82009A92F7 /* CameraActionSheet.swift in Sources */,
 				E10FD99F2C49FECB00D80139 /* OnboardingLoadingView.swift in Sources */,

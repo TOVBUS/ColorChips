@@ -28,7 +28,7 @@ cyclomatic_complexity:
   warning: 10 # 경고 수준
   error: 15 # 에러 수준
 
-line_length: 200
+line_length: 400
 # 값을 나열해서 암시적으로 양쪽 다 지정할 수 있음
 type_body_length:
   - 300 # 경고

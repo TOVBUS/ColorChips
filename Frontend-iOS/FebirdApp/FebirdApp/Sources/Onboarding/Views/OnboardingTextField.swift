@@ -11,7 +11,16 @@ struct OnboardingTextField: View {
     let question: String
     let placeholder: String
     let unit: String
+    let inputValue: String?
     @Binding var text: String
+
+    init(question: String, placeholder: String, unit: String, inputValue: String?, text: Binding<String>) {
+        self.question = question
+        self.placeholder = placeholder
+        self.unit = unit
+        self.inputValue = inputValue
+        self._text = text
+    }
 
     var body: some View {
         VStack(alignment: .leading, content: {
@@ -30,9 +39,14 @@ struct OnboardingTextField: View {
                         .fill(Color(red: 0.95, green: 0.95, blue: 0.96))
                 )
         })
+        .onAppear(perform: {
+            if text.isEmpty, let inputValue = inputValue {
+                text = inputValue
+            }
+        })
     }
 }
 
 #Preview {
-    OnboardingTextField(question: "나이가 어떻게 되세요?", placeholder: "17", unit: "세", text: .constant(""))
+    OnboardingTextField(question: "체중", placeholder: "46.3", unit: "kg", inputValue: "46.3", text: .constant(""))
 }
