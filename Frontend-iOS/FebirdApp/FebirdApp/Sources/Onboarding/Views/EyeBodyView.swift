@@ -27,10 +27,26 @@ struct EyeBodyView: View {
                     RoundedRectangle(cornerRadius: 8)
                         .fill(Color(red: 0.95, green: 0.95, blue: 0.96))
                         .frame(height: 210)
+                        .overlay {
+                            Group {
+                                if let image = selectedImages[index] {
+                                    Image(uiImage: image)
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fill)
+                                } else {
+                                    Text(getPlaceholder(for: index))
+                                        .multilineTextAlignment(.center)
+                                }
+                            }
+                        }
+                        .onTapGesture {
+                            currentImageIndex = index
+                            showImagePicker = true
+                        }
                 }
             }).padding(.horizontal, 20)
                 .padding(.bottom, 44)
-            // 온보딩로직일땐 건너뛰기 버튼 추가
+
             if isOnboarding {
                 Button(action: {
                     // 다음뷰로 이동 로직
@@ -60,6 +76,15 @@ struct EyeBodyView: View {
             })
         }
         .padding(.horizontal, 24)
+    }
+    func getPlaceholder(for index: Int) -> String {
+        switch index {
+        case 0: return "정면 사진\n추가하기"
+        case 1: return "우측면 사진\n추가하기"
+        case 2: return "좌측면 사진\n추가하기"
+        case 3: return "후면 사진\n추가하기"
+        default: return "사진\n추가하기"
+        }
     }
 }
 
