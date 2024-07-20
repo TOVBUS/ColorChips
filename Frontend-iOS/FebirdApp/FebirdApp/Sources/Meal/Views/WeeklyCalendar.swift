@@ -21,33 +21,36 @@ struct WeeklyCalendar: View {
             .frame(height: 30)
             .padding(.horizontal, 20)
         }
+//        .background(Color.gray90)
     }
     // MARK: - 월 표시 뷰
     private var monthView: some View {
-        HStack(spacing: 30) {
+        HStack(alignment: .center, spacing: 12) {
             Button(
                 action: {
                     changeMonth(-1)
                 },
                 label: {
-                    Image(systemName: "chevron.left")
+                    Image("leftIcon")
                         .padding()
                 }
             )
+            Spacer()
             Text(monthTitle(from: selectedDate))
-                .font(.title)
+                .font(.customFont(size: 18, weight: .medium))
+            Spacer()
             Button(
                 action: {
                     changeMonth(1)
                 },
                 label: {
-                    Image(systemName: "chevron.right")
+                    Image("rightIcon")
                         .padding()
                 }
             )
         }
+        .frame(width: 343, alignment: .center)
     }
-    
     // MARK: - 일자 표시 뷰
     @ViewBuilder
     private var dayView: some View {
@@ -62,18 +65,15 @@ struct WeeklyCalendar: View {
                 ForEach(components, id: \.self) { date in
                     VStack {
                         Text(day(from: date))
-                            .font(.caption)
-                            .foregroundStyle(Color.gray40)
-                            .font(.customFont(size: 10, weight: .medium))
+                            .foregroundStyle(Color.gray30)
+                            .font(.customFont(size: 12, weight: .medium))
                         Text("\(calendar.component(.day, from: date))")
-                            .font(.title)
-                            .bold()
                             .foregroundStyle(Color.white)
                             .font(.customFont(size: 20, weight: .bold))
                     }
-                    .frame(width: 40, height: 60)
+                    .frame(width: 30, height: 60)
                     .padding(.horizontal,8)
-                    .padding(.vertical, 10)
+                    .padding(.vertical, 3)
                     .background(calendar.isDate(selectedDate, equalTo: date, toGranularity: .day) ? Color.orange50 : Color.gray60)
                     .cornerRadius(19)
                     .foregroundColor(calendar.isDate(selectedDate, equalTo: date, toGranularity: .day) ? .white : .black)
@@ -90,8 +90,8 @@ struct WeeklyCalendar: View {
             LinearGradient(
                 gradient: Gradient(
                     colors: [
-                        Color(red: 0.07, green: 0.07, blue: 0.08).opacity(1),
-                        Color.white.opacity(0)
+                        Color.gray100.opacity(1),
+                        Color.gray100.opacity(0)
                     ]
                 ),
                 startPoint: .leading,
@@ -121,7 +121,7 @@ private extension WeeklyCalendar {
     /// 월 표시
     func monthTitle(from date: Date) -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.setLocalizedDateFormatFromTemplate("MMMM yyyy")
+        dateFormatter.dateFormat = "yyyy년 M월"
         return dateFormatter.string(from: date)
     }
     /// 월 변경

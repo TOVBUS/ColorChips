@@ -33,8 +33,14 @@ struct AIMealRecomendationView: View {
                         .foregroundColor(.white)
                     // 추천받은 식단의 칼로리, 식단 시간대
                     Group {
-                        Label("251Kcal", systemImage: "flame.fill")
-                        Label("오전식단", systemImage: "fork.knife")
+                        HStack(alignment: .center, spacing: 4) {
+                            Image("fireIcon")
+                            Text("251Kcal")
+                        }
+                        HStack(alignment: .center, spacing: 4) {
+                            Image("dinnerIcon")
+                            Text("오전식단")
+                        }
                     }
                     .foregroundStyle(Color.white)
                     .font(.customFont(size: 14, weight: .medium))
