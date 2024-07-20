@@ -1,8 +1,12 @@
-import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
-import { Inbody } from '../inbody/inbody.entity'; // Inbody 엔티티 import
-import { History } from '../history/history.entity'; // History 엔티티 import
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany, Unique } from 'typeorm';
+import { Inbody } from '../inbody/inbody.entity'; 
+import { History } from '../history/history.entity'; 
 
 @Entity()
+@Unique(['nickname'])
+@Unique(['appleID'])
+@Unique(['kakaoID'])
+
 export class Member {
   @PrimaryGeneratedColumn()
   member_id: number;
@@ -23,7 +27,7 @@ export class Member {
   appleID: string;
 
   @Column({ length: 255, nullable: true })
-  kaKaoID: string;
+  kakaoID: string;
 
   @Column()
   current_level: number;
