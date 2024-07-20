@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E7521A52C48E6C700920BFD /* ExerciseMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7521A42C48E6C700920BFD /* ExerciseMainView.swift */; };
+		3E7521A82C48F63E00920BFD /* ExerciseMainHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7521A72C48F63E00920BFD /* ExerciseMainHeaderView.swift */; };
+		3E7521AB2C48F66F00920BFD /* RoundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7521AA2C48F66F00920BFD /* RoundedCorners.swift */; };
+		3E7521AD2C49F88B00920BFD /* CustomTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7521AC2C49F88B00920BFD /* CustomTabBarView.swift */; };
 		3E9E9E202C44E7DB002389EB /* WorkSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E9E9E172C44E7DA002389EB /* WorkSans-Light.ttf */; };
 		3E9E9E212C44E7DB002389EB /* WorkSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E9E9E182C44E7DA002389EB /* WorkSans-ExtraBold.ttf */; };
 		3E9E9E222C44E7DB002389EB /* WorkSans-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E9E9E192C44E7DA002389EB /* WorkSans-Black.ttf */; };
@@ -23,6 +27,7 @@
 		3E9E9E342C44E7FC002389EB /* IBMPlexSansKR-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E9E9E2D2C44E7FB002389EB /* IBMPlexSansKR-SemiBold.ttf */; };
 		3E9E9E352C44E7FC002389EB /* IBMPlexSansKR-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E9E9E2E2C44E7FC002389EB /* IBMPlexSansKR-Bold.ttf */; };
 		3E9E9E362C44E7FC002389EB /* IBMPlexSansKR-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E9E9E2F2C44E7FC002389EB /* IBMPlexSansKR-Medium.ttf */; };
+		3ED5FD8E2C4A020200CD4508 /* CustomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED5FD8D2C4A020200CD4508 /* CustomButtonView.swift */; };
 		3EF6F04D2C36937E00EEF18F /* FebirdAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF6F04C2C36937E00EEF18F /* FebirdAppApp.swift */; };
 		3EF6F0532C36937F00EEF18F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EF6F0522C36937F00EEF18F /* Assets.xcassets */; };
 		3EF6F0562C36937F00EEF18F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EF6F0552C36937F00EEF18F /* Preview Assets.xcassets */; };
@@ -31,6 +36,10 @@
 		3EF6F06C2C36938000EEF18F /* FebirdAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF6F06B2C36938000EEF18F /* FebirdAppUITestsLaunchTests.swift */; };
 		3EFC450C2C44F882001052C7 /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFC450B2C44F882001052C7 /* Font+Extension.swift */; };
 		E10FD99D2C49FB4500D80139 /* InbodyInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10FD99C2C49FB4500D80139 /* InbodyInputView.swift */; };
+		8FAC187F2C494BDE00CDF7CF /* ExerciseGaugeBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FAC187E2C494BDE00CDF7CF /* ExerciseGaugeBarView.swift */; };
+		8FAC18822C4B8BA800CDF7CF /* ExerciseItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FAC18812C4B8BA800CDF7CF /* ExerciseItemView.swift */; };
+		8FAC18852C4B8C4200CDF7CF /* ExerciseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FAC18842C4B8C4200CDF7CF /* ExerciseItem.swift */; };
+		8FAC18872C4B8CBA00CDF7CF /* ExerciseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FAC18862C4B8CBA00CDF7CF /* ExerciseListView.swift */; };
 		E12911B92C48DC82009A92F7 /* CameraActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12911B82C48DC81009A92F7 /* CameraActionSheet.swift */; };
 		E12911BB2C48EDFE009A92F7 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12911BA2C48EDFE009A92F7 /* PhotoPicker.swift */; };
 		E12911BD2C48FDBA009A92F7 /* InbodyFixView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12911BC2C48FDBA009A92F7 /* InbodyFixView.swift */; };
@@ -62,6 +71,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3E7521A42C48E6C700920BFD /* ExerciseMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseMainView.swift; sourceTree = "<group>"; };
+		3E7521A72C48F63E00920BFD /* ExerciseMainHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseMainHeaderView.swift; sourceTree = "<group>"; };
+		3E7521AA2C48F66F00920BFD /* RoundedCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorners.swift; sourceTree = "<group>"; };
+		3E7521AC2C49F88B00920BFD /* CustomTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarView.swift; sourceTree = "<group>"; };
 		3E9E9E172C44E7DA002389EB /* WorkSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-Light.ttf"; sourceTree = "<group>"; };
 		3E9E9E182C44E7DA002389EB /* WorkSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-ExtraBold.ttf"; sourceTree = "<group>"; };
 		3E9E9E192C44E7DA002389EB /* WorkSans-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-Black.ttf"; sourceTree = "<group>"; };
@@ -79,6 +92,7 @@
 		3E9E9E2E2C44E7FC002389EB /* IBMPlexSansKR-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBMPlexSansKR-Bold.ttf"; sourceTree = "<group>"; };
 		3E9E9E2F2C44E7FC002389EB /* IBMPlexSansKR-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBMPlexSansKR-Medium.ttf"; sourceTree = "<group>"; };
 		3E9E9E372C44E821002389EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3ED5FD8D2C4A020200CD4508 /* CustomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonView.swift; sourceTree = "<group>"; };
 		3EF6F0492C36937E00EEF18F /* FebirdApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FebirdApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EF6F04C2C36937E00EEF18F /* FebirdAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FebirdAppApp.swift; sourceTree = "<group>"; };
 		3EF6F0522C36937F00EEF18F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -90,6 +104,10 @@
 		3EF6F06B2C36938000EEF18F /* FebirdAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FebirdAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3EFC450B2C44F882001052C7 /* Font+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extension.swift"; sourceTree = "<group>"; };
 		E10FD99C2C49FB4500D80139 /* InbodyInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InbodyInputView.swift; sourceTree = "<group>"; };
+		8FAC187E2C494BDE00CDF7CF /* ExerciseGaugeBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseGaugeBarView.swift; sourceTree = "<group>"; };
+		8FAC18812C4B8BA800CDF7CF /* ExerciseItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseItemView.swift; sourceTree = "<group>"; };
+		8FAC18842C4B8C4200CDF7CF /* ExerciseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseItem.swift; sourceTree = "<group>"; };
+		8FAC18862C4B8CBA00CDF7CF /* ExerciseListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseListView.swift; sourceTree = "<group>"; };
 		E12911B82C48DC81009A92F7 /* CameraActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraActionSheet.swift; sourceTree = "<group>"; };
 		E12911BA2C48EDFE009A92F7 /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
 		E12911BC2C48FDBA009A92F7 /* InbodyFixView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InbodyFixView.swift; sourceTree = "<group>"; };
@@ -128,6 +146,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E7521A32C48E60F00920BFD /* Exercise */ = {
+			isa = PBXGroup;
+			children = (
+				8FAC18832C4B8C1600CDF7CF /* Models */,
+				3E7521A62C48E6CE00920BFD /* Views */,
+				3E7521A92C48F66000920BFD /* Utils */,
+			);
+			path = Exercise;
+			sourceTree = "<group>";
+		};
+		3E7521A62C48E6CE00920BFD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3E7521A42C48E6C700920BFD /* ExerciseMainView.swift */,
+				3E7521A72C48F63E00920BFD /* ExerciseMainHeaderView.swift */,
+				8FAC18862C4B8CBA00CDF7CF /* ExerciseListView.swift */,
+				8FAC18812C4B8BA800CDF7CF /* ExerciseItemView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3E7521A92C48F66000920BFD /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				3E7521AA2C48F66F00920BFD /* RoundedCorners.swift */,
+				8FAC187E2C494BDE00CDF7CF /* ExerciseGaugeBarView.swift */,
+				3E7521AC2C49F88B00920BFD /* CustomTabBarView.swift */,
+				3ED5FD8D2C4A020200CD4508 /* CustomButtonView.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		3E9E9E0B2C44E5B1002389EB /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				3EF6F04C2C36937E00EEF18F /* FebirdAppApp.swift */,
+				3E7521A32C48E60F00920BFD /* Exercise */,
 				E1BB0D532C4797C9002565B2 /* Onboarding */,
 				3E9E9E0B2C44E5B1002389EB /* Extensions */,
 			);
@@ -234,6 +285,14 @@
 				3EF6F06B2C36938000EEF18F /* FebirdAppUITestsLaunchTests.swift */,
 			);
 			path = FebirdAppUITests;
+			sourceTree = "<group>";
+		};
+		8FAC18832C4B8C1600CDF7CF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8FAC18842C4B8C4200CDF7CF /* ExerciseItem.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		E1BB0D532C4797C9002565B2 /* Onboarding */ = {
@@ -353,7 +412,7 @@
 			);
 			mainGroup = 3EF6F0402C36937D00EEF18F;
 			packageReferences = (
-				3E7521A22C48D5C600920BFD /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */,
+				8FAC18802C4B8AE000CDF7CF /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */,
 			);
 			productRefGroup = 3EF6F04A2C36937E00EEF18F /* Products */;
 			projectDirPath = "";
@@ -435,19 +494,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3ED5FD8E2C4A020200CD4508 /* CustomButtonView.swift in Sources */,
 				E1BB0D602C4800E2002565B2 /* OnboardingTextField.swift in Sources */,
 				E12911BD2C48FDBA009A92F7 /* InbodyFixView.swift in Sources */,
+				3E7521A52C48E6C700920BFD /* ExerciseMainView.swift in Sources */,
+				8FAC18822C4B8BA800CDF7CF /* ExerciseItemView.swift in Sources */,
+				8FAC18872C4B8CBA00CDF7CF /* ExerciseListView.swift in Sources */,
 				E12911BB2C48EDFE009A92F7 /* PhotoPicker.swift in Sources */,
 				E1BB0D5C2C47B15A002565B2 /* OnboardingProfileSelectionView.swift in Sources */,
 				E1BB0D552C47985D002565B2 /* OnboardingGaugeView.swift in Sources */,
+				3E7521AB2C48F66F00920BFD /* RoundedCorners.swift in Sources */,
+				8FAC187F2C494BDE00CDF7CF /* ExerciseGaugeBarView.swift in Sources */,
 				E1BB0D5E2C47F9F7002565B2 /* OnboardingSelectGenderButton.swift in Sources */,
 				E10FD99D2C49FB4500D80139 /* InbodyInputView.swift in Sources */,
+				3E7521AD2C49F88B00920BFD /* CustomTabBarView.swift in Sources */,
 				E12911B92C48DC82009A92F7 /* CameraActionSheet.swift in Sources */,
 				E1BB0D622C48A875002565B2 /* InbodyAddView.swift in Sources */,
 				E1BB0D582C479CF7002565B2 /* OnboardingWelcomView.swift in Sources */,
 				E1BB0D5A2C47A4FB002565B2 /* OnboardingSelectUserInfoView.swift in Sources */,
+				8FAC18852C4B8C4200CDF7CF /* ExerciseItem.swift in Sources */,
 				3EFC450C2C44F882001052C7 /* Font+Extension.swift in Sources */,
 				3EF6F04D2C36937E00EEF18F /* FebirdAppApp.swift in Sources */,
+				3E7521A82C48F63E00920BFD /* ExerciseMainHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -785,7 +853,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		3E7521A22C48D5C600920BFD /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */ = {
+		8FAC18802C4B8AE000CDF7CF /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SimplyDanny/SwiftLintPlugins.git";
 			requirement = {
