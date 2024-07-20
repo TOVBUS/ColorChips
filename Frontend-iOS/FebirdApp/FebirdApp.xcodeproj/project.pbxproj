@@ -38,6 +38,9 @@
 		8F92DF7A2C4B93730071F336 /* ExerciseGuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F92DF792C4B93730071F336 /* ExerciseGuideView.swift */; };
 		8F92DF7C2C4B9A390071F336 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F92DF7B2C4B9A390071F336 /* CustomNavigationBar.swift */; };
 		8F92DF7E2C4BA9750071F336 /* ExerciseGuideListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F92DF7D2C4BA9750071F336 /* ExerciseGuideListView.swift */; };
+		8F92DF812C4BB0230071F336 /* ExerciseGuideViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F92DF802C4BB0230071F336 /* ExerciseGuideViewModel.swift */; };
+		8F92DF832C4BB0970071F336 /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F92DF822C4BB0970071F336 /* VideoPlayerView.swift */; };
+		8F92DF852C4BB0B40071F336 /* ExerciseGuideTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F92DF842C4BB0B40071F336 /* ExerciseGuideTextView.swift */; };
 		8FAC187F2C494BDE00CDF7CF /* ExerciseGaugeBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FAC187E2C494BDE00CDF7CF /* ExerciseGaugeBarView.swift */; };
 		8FAC18822C4B8BA800CDF7CF /* ExerciseItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FAC18812C4B8BA800CDF7CF /* ExerciseItemView.swift */; };
 		8FAC18852C4B8C4200CDF7CF /* ExerciseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FAC18842C4B8C4200CDF7CF /* ExerciseItem.swift */; };
@@ -107,6 +110,9 @@
 		8F92DF792C4B93730071F336 /* ExerciseGuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseGuideView.swift; sourceTree = "<group>"; };
 		8F92DF7B2C4B9A390071F336 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		8F92DF7D2C4BA9750071F336 /* ExerciseGuideListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseGuideListView.swift; sourceTree = "<group>"; };
+		8F92DF802C4BB0230071F336 /* ExerciseGuideViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseGuideViewModel.swift; sourceTree = "<group>"; };
+		8F92DF822C4BB0970071F336 /* VideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
+		8F92DF842C4BB0B40071F336 /* ExerciseGuideTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseGuideTextView.swift; sourceTree = "<group>"; };
 		8FAC187E2C494BDE00CDF7CF /* ExerciseGaugeBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseGaugeBarView.swift; sourceTree = "<group>"; };
 		8FAC18812C4B8BA800CDF7CF /* ExerciseItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseItemView.swift; sourceTree = "<group>"; };
 		8FAC18842C4B8C4200CDF7CF /* ExerciseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseItem.swift; sourceTree = "<group>"; };
@@ -152,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				8FAC18832C4B8C1600CDF7CF /* Models */,
+				8F92DF7F2C4BB0060071F336 /* ViewModels */,
 				3E7521A62C48E6CE00920BFD /* Views */,
 				3E7521A92C48F66000920BFD /* Utils */,
 			);
@@ -167,6 +174,7 @@
 				8FAC18812C4B8BA800CDF7CF /* ExerciseItemView.swift */,
 				8F92DF792C4B93730071F336 /* ExerciseGuideView.swift */,
 				8F92DF7D2C4BA9750071F336 /* ExerciseGuideListView.swift */,
+				8F92DF842C4BB0B40071F336 /* ExerciseGuideTextView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -179,6 +187,7 @@
 				3E7521AC2C49F88B00920BFD /* CustomTabBarView.swift */,
 				3ED5FD8D2C4A020200CD4508 /* CustomButtonView.swift */,
 				8F92DF7B2C4B9A390071F336 /* CustomNavigationBar.swift */,
+				8F92DF822C4BB0970071F336 /* VideoPlayerView.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -290,6 +299,14 @@
 				3EF6F06B2C36938000EEF18F /* FebirdAppUITestsLaunchTests.swift */,
 			);
 			path = FebirdAppUITests;
+			sourceTree = "<group>";
+		};
+		8F92DF7F2C4BB0060071F336 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				8F92DF802C4BB0230071F336 /* ExerciseGuideViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		8FAC18832C4B8C1600CDF7CF /* Models */ = {
@@ -501,6 +518,7 @@
 				3ED5FD8E2C4A020200CD4508 /* CustomButtonView.swift in Sources */,
 				E1BB0D602C4800E2002565B2 /* OnboardingTextField.swift in Sources */,
 				3E7521A52C48E6C700920BFD /* ExerciseMainView.swift in Sources */,
+				8F92DF852C4BB0B40071F336 /* ExerciseGuideTextView.swift in Sources */,
 				8FAC18822C4B8BA800CDF7CF /* ExerciseItemView.swift in Sources */,
 				8FAC18872C4B8CBA00CDF7CF /* ExerciseListView.swift in Sources */,
 				8F92DF7E2C4BA9750071F336 /* ExerciseGuideListView.swift in Sources */,
@@ -514,7 +532,9 @@
 				E12911B92C48DC82009A92F7 /* CameraActionSheet.swift in Sources */,
 				E1BB0D622C48A875002565B2 /* InbodyAddView.swift in Sources */,
 				E1BB0D582C479CF7002565B2 /* OnboardingWelcomView.swift in Sources */,
+				8F92DF812C4BB0230071F336 /* ExerciseGuideViewModel.swift in Sources */,
 				E1BB0D5A2C47A4FB002565B2 /* OnboardingSelectUserInfoView.swift in Sources */,
+				8F92DF832C4BB0970071F336 /* VideoPlayerView.swift in Sources */,
 				8FAC18852C4B8C4200CDF7CF /* ExerciseItem.swift in Sources */,
 				3EFC450C2C44F882001052C7 /* Font+Extension.swift in Sources */,
 				3EF6F04D2C36937E00EEF18F /* FebirdAppApp.swift in Sources */,

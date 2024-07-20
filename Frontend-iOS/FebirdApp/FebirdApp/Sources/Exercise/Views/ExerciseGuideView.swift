@@ -6,19 +6,25 @@
 //
 
 import SwiftUI
+import AVKit
 
 struct ExerciseGuideView: View {
-    let guideTexts = [
-        "발을 어깨 너비보다 넓게 벌리고, 발끝을 바깥쪽으로 향하게 서세요.",
-        "등을 곧게 펴고, 무릎이 발끝을 넘지 않도록 하며 스쿼트 자세를 취하세요.",
-        "발뒤꿈치로 밀어 원래 위치로 돌아오세요."
-    ]
-    
+    @StateObject private var viewModel = ExerciseGuideViewModel()
     var isStarted = false
     
     var body: some View {
         VStack {
             CustomNavigationBar(title: "스모 스쿼트")
+            
+            if let player = viewModel.player {
+                VideoPlayerView(player: player)
+                    .frame(height: 200)
+                    .cornerRadius(32)
+                    .padding(.vertical, 24)
+            } else {
+                ProgressView()
+                    .frame(height: 200)
+            }
             
             VStack(alignment: .leading) {
                 Text("이렇게 운동하세요 🥸")
@@ -26,7 +32,13 @@ struct ExerciseGuideView: View {
                     .foregroundColor(.gray90)
                     .padding(.vertical, 16)
                 
-                ExerciseGuideListView(guideTexts: guideTexts)
+                ScrollView {
+                    VStack(alignment: .leading, spacing: 16) {
+                        ForEach(viewModel.guideSteps.indices, id: \.self) { index in
+                            ExerciseGuideTextView(makeAttributedText("\(index + 1). \(viewModel.guideSteps[index])"))
+                        }
+                    }
+                }
             }
             .frame(maxWidth: .infinity)
             .padding(.horizontal, 16)
@@ -43,12 +55,28 @@ struct ExerciseGuideView: View {
                         .padding(.leading, 24)
                         .offset(y: 22)
                     
-                    CustomButtonView(title: "피오코치에게 질문할래요! 🤔")
+                    CustomButtonView(title: "피버 코치에게 질문할래요! 🤔")
                 }
             }
         }
         .padding(16)
         .frame(maxWidth: .infinity)
+        .onAppear {
+            viewModel.loadVideo()
+        }
+    }
+    
+    func makeAttributedText(_ text: String) -> AttributedString {
+        var attributedString = AttributedString(text)
+        let style = NSMutableParagraphStyle()
+        style.lineSpacing = 12
+        style.alignment = .left
+        style.headIndent = 12
+        style.lineBreakMode = .byWordWrapping
+        
+        attributedString.mergeAttributes(.init([.paragraphStyle: style]))
+        
+        return attributedString
     }
 }
 
