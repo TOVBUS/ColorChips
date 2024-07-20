@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct ExerciseMainHeaderView: View {
+    
     @State private var progress: CGFloat = 0.5 // 예시 값
+    
     var body: some View {
         VStack {
             HStack(alignment: .center, spacing: 0) {
