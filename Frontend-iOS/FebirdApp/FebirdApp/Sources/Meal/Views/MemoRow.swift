@@ -16,14 +16,23 @@ struct MemoRow: View {
                     .foregroundColor(.clear)
                     .frame(width: 80, height: 80)
                     .background(
-                        Image("BigfaceFeo")
+                        Image("BigfaceFeo") // 이미지 변경
                             .resizable()
                             .aspectRatio(contentMode: .fill)
                             .clipped()
                     )
                 VStack(alignment: .leading, spacing: 8) {
-                    Text("아침") // 아침, 점심, 저녁
+                    HStack(alignment: .center, spacing: 16) {
+                        Text("아침") // 아침, 점심, 저녁
+                    }
+                    .padding(.horizontal, 8)
+                    .padding(.vertical, 4)
+                    .frame(height: 24, alignment: .center)
+                    .background(Color(red: 0.84, green: 0.85, blue: 0.85))
+                    .cornerRadius(8)
+                    .font(.customFont(size: 14, weight: .bold))
                     Text("연어샐러드") // 처음엔 비어있어야함
+                        .font(.customFont(size: 14, weight: .medium))
                 }
                 .frame(maxWidth: .infinity, alignment: .topLeading)
                 Button(action: {
@@ -34,7 +43,7 @@ struct MemoRow: View {
                 })
                 .frame(width: 24, height: 24)
                 .sheet(isPresented: $showSheet, content: {
-//                    MemoView()
+                    MemoModalView()
                 })
             }
             .padding(0)

@@ -9,9 +9,7 @@ import SwiftUI
 
 struct MealMainView: View {
     var body: some View {
-        VStack {
-            EmptyView()
-        }
+        EmptyView()
     }
 }
 
