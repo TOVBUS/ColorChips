@@ -17,17 +17,20 @@ struct OnboardingWelcomView: View {
                 .font(.customFont(size: 20, weight: .bold))
             Image("peoLogo")
             Spacer()
-            Button("네!") {
 
-            }
-            .frame(maxWidth: .infinity, maxHeight: 56)
-            .foregroundStyle(Color(.white))
-            .font(.customFont(size: 16, weight: .semibold))
-            .background(
-                RoundedRectangle(cornerRadius: 20)
-                    .fill(Color(red: 0.07, green: 0.07, blue: 0.08))
-            )
-            .padding(.horizontal, 24)
+            Button(action: {
+
+            }, label: {
+                Text("네!")
+                    .frame(maxWidth: .infinity, maxHeight: 56)
+                    .foregroundStyle(Color(.white))
+                    .font(.customFont(size: 16, weight: .semibold))
+                    .background(
+                        RoundedRectangle(cornerRadius: 20)
+                            .fill(Color(red: 0.07, green: 0.07, blue: 0.08))
+                            .padding(.horizontal, 24)
+                    )
+            })
         })
     }
 }
