@@ -9,7 +9,10 @@ import SwiftUI
 
 struct MealMainView: View {
     var body: some View {
-        EmptyView()
+        VStack(alignment: .leading, spacing: 8) {
+            AIMealRecomendationView()
+        }
+        .padding(25)
     }
 }
 
