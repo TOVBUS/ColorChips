@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct MemoRow: View {
-    @State var showSheet: Bool = false
+    @State private var inputText = ""
+    @State private var showModal = false
+    @State private var showFullText = false
     var mealTime: String
-
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             HStack(alignment: .center, spacing: 8) {
@@ -30,30 +31,39 @@ struct MemoRow: View {
                     .padding(.horizontal, 8)
                     .padding(.vertical, 4)
                     .frame(height: 24, alignment: .center)
-                    .background(Color(red: 0.84, green: 0.85, blue: 0.85))
+                    .background(Color.gray20)
                     .cornerRadius(8)
                     .font(.customFont(size: 14, weight: .bold))
-                    Text("연어샐러드") // 처음엔 비어있어야함
-                        .font(.customFont(size: 14, weight: .medium))
+                    if !inputText.isEmpty {
+                        Text(showFullText ? inputText : inputText.prefix(30) + (inputText.count > 30 ? "..." : ""))
+                            .font(.customFont(size: 14, weight: .medium))
+                            .lineLimit(showFullText ? nil : 1)
+                            .onTapGesture {
+                                withAnimation {
+                                    showFullText.toggle()
+                                }
+                            }
+                    }
                 }
-                .frame(maxWidth: .infinity, alignment: .topLeading)
+                Spacer()
                 Button(action: {
-                    showSheet.toggle()
+                    showModal.toggle()
                 }, label: {
                     Image("elseIcon")
-                        .foregroundStyle(Color.black)
                 })
                 .frame(width: 24, height: 24)
-                .sheet(isPresented: $showSheet, content: {
-                    MemoModalView()
-                })
             }
-            .padding(0)
+            .padding(12)
             .frame(maxWidth: .infinity, alignment: .leading)
+            .background(Color.gray10)
+            .cornerRadius(32)
+            .sheet(isPresented: $showModal) {
+                MemoModalView(text: $inputText)
+            }
         }
         .padding(12)
         .frame(width: 343, alignment: .topLeading)
-        .background(Color(red: 0.95, green: 0.95, blue: 0.96))
+        .background(Color.gray10)
         .cornerRadius(32)
     }
 }
