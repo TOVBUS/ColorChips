@@ -10,7 +10,6 @@ import SwiftUI
 struct InbodyMainView: View {
     var body: some View {
 
-
         VStack {
             ProfileTopView()
             ScrollView {
