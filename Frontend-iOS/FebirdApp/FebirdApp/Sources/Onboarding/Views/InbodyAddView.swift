@@ -15,6 +15,7 @@ struct InbodyAddView: View {
     @State private var sourceType: UIImagePickerController.SourceType = .camera
     @State private var isImageSelected = false
     @State private var image: UIImage? = UIImage(named: "InbodyDefault")
+    @State private var showCamera = false
 
     var body: some View {
         VStack {
@@ -29,7 +30,7 @@ struct InbodyAddView: View {
             ZStack {
                 Image(uiImage: image ?? UIImage(named: "InbodyDefault")!)
                     .resizable()
-                    .scaledToFit()
+                    .scaledToFill()
                     .frame(width: 300, height: 400)
                     .padding()
                     .clipShape(RoundedRectangle(cornerRadius: 10))
@@ -113,8 +114,7 @@ struct InbodyAddView: View {
         .padding(.horizontal, 24)
         .cameraActionSheet(isPresented: $showActionSheet) {
             DispatchQueue.main.async {
-                self.sourceType = .camera
-                self.showImagePicker = true
+                self.showCamera = true
             }
         } onGalleryTap: {
             DispatchQueue.main.async {
@@ -123,7 +123,10 @@ struct InbodyAddView: View {
             }
         }
         .sheet(isPresented: $showImagePicker) {
-            PhotoPicker(image: $image, isPresented: $showImagePicker, sourceType: sourceType)
+            PhotoPicker(image: $image)
+        }
+        .fullScreenCover(isPresented: $showCamera) {
+            CameraView(image: $image)
         }
         .onChange(of: image, { _, newImage in
             if newImage != nil {

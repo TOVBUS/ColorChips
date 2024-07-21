@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct EyeBodyView: View {
-    @Binding var isOnboarding : Bool
+    @Binding var isOnboarding: Bool
     @State private var selectedImages: [UIImage?] = [nil, nil, nil, nil]
+    @State private var showActionSheet = false
     @State private var showImagePicker = false
+    @State private var showCamera = false
     @State private var currentImageIndex = 0
 
     var body: some View {
@@ -32,6 +34,7 @@ struct EyeBodyView: View {
                                 if let image = selectedImages[index] {
                                     Image(uiImage: image)
                                         .resizable()
+                                        .frame(width: 140, height: 210)
                                         .aspectRatio(contentMode: .fill)
                                 } else {
                                     Text(getPlaceholder(for: index))
@@ -41,7 +44,7 @@ struct EyeBodyView: View {
                         }
                         .onTapGesture {
                             currentImageIndex = index
-                            showImagePicker = true
+                            showActionSheet = true
                         }
                 }
             }).padding(.horizontal, 20)
@@ -76,7 +79,25 @@ struct EyeBodyView: View {
             })
         }
         .padding(.horizontal, 24)
+        .actionSheet(isPresented: $showActionSheet) {
+            ActionSheet(title: Text("사진 선택"), buttons: [
+                .default(Text("사진 찍기")) {
+                    self.showCamera = true
+                },
+                .default(Text("앨범에서 선택")) {
+                    self.showImagePicker = true
+                },
+                .cancel()
+            ])
+        }
+        .sheet(isPresented: $showImagePicker) {
+            PhotoPicker(image: $selectedImages[currentImageIndex])
+        }
+        .fullScreenCover(isPresented: $showCamera) {
+            CameraView(image: $selectedImages[currentImageIndex])
+        }
     }
+
     func getPlaceholder(for index: Int) -> String {
         switch index {
         case 0: return "정면 사진\n추가하기"
