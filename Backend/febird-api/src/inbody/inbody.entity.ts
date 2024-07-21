@@ -18,16 +18,16 @@ export class Inbody {
   @Column('float')
   weight: number;
 
-  @Column()
+  @Column('date', {nullable: true})
   inbody_date: Date;
 
-  @Column('float')
+  @Column('float', {nullable: true})
   bmr: number;
 
-  @Column('float')
+  @Column('float', {nullable: true})
   bodyfat: number;
 
-  @Column('float')
+  @Column('float', {nullable: true})
   bmi: number;
 
   @ManyToOne(() => Member, (member) => member.inbodies)
