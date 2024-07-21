@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ProfileTopView: View {
     var body: some View {
-
         VStack {
             HStack(alignment: .center, spacing: 0) {
                 HStack(alignment: .center, spacing: 16) {
@@ -17,15 +16,14 @@ struct ProfileTopView: View {
                         .resizable()
                         .frame(width: 80, height: 80)
 
-                    VStack(alignment: .leading, spacing: 4) {
+                    VStack(alignment: .leading, spacing: 0) {
                         HStack {
-                            VStack {
+                            VStack(spacing: 0) {
                                 Text("JULY 16, 2024")
                                     .font(.customFont(size: 10, weight: .bold, language: .english))
                                     .kerning(1)
                                     .multilineTextAlignment(.center)
                                     .foregroundColor(.white)
-
                                 HStack(spacing: 0, content: {
                                     Text("꽥꽥이")
                                         .font(.customFont(size: 22, weight: .bold))
@@ -105,6 +103,7 @@ struct ProfileTopView: View {
                 bottomRight: 34
             )
         )
+        .background(ignoresSafeAreaEdges: .top)
     }
 }
 
