@@ -43,6 +43,9 @@
 		8F92DF852C4BB0B40071F336 /* ExerciseGuideTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F92DF842C4BB0B40071F336 /* ExerciseGuideTextView.swift */; };
 		8F92DF872C4D33870071F336 /* ExerciseTimerSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F92DF862C4D33870071F336 /* ExerciseTimerSettingView.swift */; };
 		8F92DF892C4D4A440071F336 /* TimerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F92DF882C4D4A440071F336 /* TimerButton.swift */; };
+		8F92DF8B2C4D506E0071F336 /* ExerciseRestTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F92DF8A2C4D506E0071F336 /* ExerciseRestTimerView.swift */; };
+		8F92DF8D2C4D58570071F336 /* ExerciseTimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F92DF8C2C4D58560071F336 /* ExerciseTimerViewModel.swift */; };
+		8F92DF8F2C4D58710071F336 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F92DF8E2C4D58710071F336 /* TimerView.swift */; };
 		8FAC187F2C494BDE00CDF7CF /* ExerciseGaugeBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FAC187E2C494BDE00CDF7CF /* ExerciseGaugeBarView.swift */; };
 		8FAC18822C4B8BA800CDF7CF /* ExerciseItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FAC18812C4B8BA800CDF7CF /* ExerciseItemView.swift */; };
 		8FAC18852C4B8C4200CDF7CF /* ExerciseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FAC18842C4B8C4200CDF7CF /* ExerciseItem.swift */; };
@@ -122,6 +125,9 @@
 		8F92DF842C4BB0B40071F336 /* ExerciseGuideTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseGuideTextView.swift; sourceTree = "<group>"; };
 		8F92DF862C4D33870071F336 /* ExerciseTimerSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTimerSettingView.swift; sourceTree = "<group>"; };
 		8F92DF882C4D4A440071F336 /* TimerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerButton.swift; sourceTree = "<group>"; };
+		8F92DF8A2C4D506E0071F336 /* ExerciseRestTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseRestTimerView.swift; sourceTree = "<group>"; };
+		8F92DF8C2C4D58560071F336 /* ExerciseTimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTimerViewModel.swift; sourceTree = "<group>"; };
+		8F92DF8E2C4D58710071F336 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		8FAC187E2C494BDE00CDF7CF /* ExerciseGaugeBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseGaugeBarView.swift; sourceTree = "<group>"; };
 		8FAC18812C4B8BA800CDF7CF /* ExerciseItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseItemView.swift; sourceTree = "<group>"; };
 		8FAC18842C4B8C4200CDF7CF /* ExerciseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseItem.swift; sourceTree = "<group>"; };
@@ -190,6 +196,7 @@
 				8F92DF7D2C4BA9750071F336 /* ExerciseGuideListView.swift */,
 				8F92DF842C4BB0B40071F336 /* ExerciseGuideTextView.swift */,
 				8F92DF862C4D33870071F336 /* ExerciseTimerSettingView.swift */,
+				8F92DF8A2C4D506E0071F336 /* ExerciseRestTimerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -203,6 +210,7 @@
 				3ED5FD8D2C4A020200CD4508 /* CustomButtonView.swift */,
 				8F92DF7B2C4B9A390071F336 /* CustomNavigationBar.swift */,
 				8F92DF822C4BB0970071F336 /* VideoPlayerView.swift */,
+				8F92DF8E2C4D58710071F336 /* TimerView.swift */,
 				8F92DF882C4D4A440071F336 /* TimerButton.swift */,
 			);
 			path = Utils;
@@ -321,6 +329,7 @@
 			isa = PBXGroup;
 			children = (
 				8F92DF802C4BB0230071F336 /* ExerciseGuideViewModel.swift */,
+				8F92DF8C2C4D58560071F336 /* ExerciseTimerViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -544,6 +553,7 @@
 				8F92DF852C4BB0B40071F336 /* ExerciseGuideTextView.swift in Sources */,
 				8FAC18822C4B8BA800CDF7CF /* ExerciseItemView.swift in Sources */,
 				8FAC18872C4B8CBA00CDF7CF /* ExerciseListView.swift in Sources */,
+				8F92DF8D2C4D58570071F336 /* ExerciseTimerViewModel.swift in Sources */,
 				8F92DF7E2C4BA9750071F336 /* ExerciseGuideListView.swift in Sources */,
 				E12911BB2C48EDFE009A92F7 /* PhotoPicker.swift in Sources */,
 				E1BB0D5C2C47B15A002565B2 /* OnboardingProfileSelectionView.swift in Sources */,
@@ -552,7 +562,9 @@
 				E1BB0D552C47985D002565B2 /* OnboardingGaugeView.swift in Sources */,
 				3E7521AB2C48F66F00920BFD /* RoundedCorners.swift in Sources */,
 				8FAC187F2C494BDE00CDF7CF /* ExerciseGaugeBarView.swift in Sources */,
+				8F92DF8F2C4D58710071F336 /* TimerView.swift in Sources */,
 				E1BB0D5E2C47F9F7002565B2 /* OnboardingSelectGenderButton.swift in Sources */,
+				8F92DF8B2C4D506E0071F336 /* ExerciseRestTimerView.swift in Sources */,
 				E10FD99D2C49FB4500D80139 /* InbodyInputView.swift in Sources */,
 				3E7521AD2C49F88B00920BFD /* CustomTabBarView.swift in Sources */,
 				E12911B92C48DC82009A92F7 /* CameraActionSheet.swift in Sources */,
