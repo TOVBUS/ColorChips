@@ -7,8 +7,14 @@
 
 import SwiftUI
 
+enum CustomButtonType {
+    case black
+    case orange
+}
+
 struct CustomButtonView: View {
     var title: String
+    var type: CustomButtonType = .black
 
     var body: some View {
         HStack(alignment: .center, spacing: 8) {
@@ -18,7 +24,7 @@ struct CustomButtonView: View {
         }
         .frame(maxWidth: .infinity)
         .frame(height: 56, alignment: .center)
-        .background(.gray100)
+        .background(type == .black ? .gray100 : .orange50)
         .cornerRadius(20)
         .padding(.vertical, 16)
         .padding(.horizontal, 20)
