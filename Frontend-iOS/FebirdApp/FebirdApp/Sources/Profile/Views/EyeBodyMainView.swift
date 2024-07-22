@@ -19,7 +19,7 @@ struct EyeBodyMainView: View {
         VStack {
             ScrollView {
                 ScrollView(.horizontal) {
-
+                    // TODO: - 일별 눈바디 사진 UI 구현
                 }
             }
             Button(action: {
