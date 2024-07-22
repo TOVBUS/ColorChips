@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ExerciseRecordView: View {
     var body: some View {
+<<<<<<< HEAD
         VStack {
             ZStack {
                 Rectangle()
@@ -29,6 +30,9 @@ struct ExerciseRecordView: View {
             }
             ExerciseRecordListView()
         }
+=======
+        EmptyView()
+>>>>>>> 2762bf9 (🎨 :: ExerciseRecordListView의 row ui 구현 #KAN-188)
     }
 }
 
