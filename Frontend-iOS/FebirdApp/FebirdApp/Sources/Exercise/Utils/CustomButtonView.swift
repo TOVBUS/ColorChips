@@ -11,12 +11,14 @@ enum CustomButtonStyle {
     case orange
     case black
     case warning
+    case sharing
     
     var backgroundColor: Color {
         switch self {
         case .orange: return .orange50
         case .black: return .gray100
         case .warning: return .red60
+        case .sharing: return .orange40
         }
     }
     
@@ -47,7 +49,6 @@ struct CustomButtonView: View {
                 .cornerRadius(20)
         }
         .accessibilityLabel(title)
-        .padding(.vertical, 16)
         .padding(.horizontal, 20)
     }
 }
