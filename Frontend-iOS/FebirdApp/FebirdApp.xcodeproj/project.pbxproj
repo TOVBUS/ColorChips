@@ -83,7 +83,7 @@
 		E26D48BD2C49FBE300D63FE7 /* MemoModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D48BC2C49FBE300D63FE7 /* MemoModalView.swift */; };
 		E2CFF20E2C4E999E00540500 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CFF20D2C4E999E00540500 /* Message.swift */; };
 		E2CFF2102C4E9A1700540500 /* MealRecommendation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CFF20F2C4E9A1700540500 /* MealRecommendation.swift */; };
-		E2CFF2122C4E9D6300540500 /* InputFeildView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CFF2112C4E9D6300540500 /* InputFeildView.swift */; };
+		E2CFF2122C4E9D6300540500 /* InputFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CFF2112C4E9D6300540500 /* InputFieldView.swift */; };
 		E2CFF2142C4EA29500540500 /* MessageBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CFF2132C4EA29500540500 /* MessageBubble.swift */; };
 		E2EB25792C4E48C30094EC8E /* ChatBotMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EB25782C4E48C30094EC8E /* ChatBotMainView.swift */; };
 		E2FDD2572C4B93AF004067EF /* WeeklyCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FDD2562C4B93AF004067EF /* WeeklyCalendar.swift */; };
@@ -188,7 +188,7 @@
 		E26D48BC2C49FBE300D63FE7 /* MemoModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoModalView.swift; sourceTree = "<group>"; };
 		E2CFF20D2C4E999E00540500 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		E2CFF20F2C4E9A1700540500 /* MealRecommendation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealRecommendation.swift; sourceTree = "<group>"; };
-		E2CFF2112C4E9D6300540500 /* InputFeildView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFeildView.swift; sourceTree = "<group>"; };
+		E2CFF2112C4E9D6300540500 /* InputFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFieldView.swift; sourceTree = "<group>"; };
 		E2CFF2132C4EA29500540500 /* MessageBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBubble.swift; sourceTree = "<group>"; };
 		E2EB25782C4E48C30094EC8E /* ChatBotMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBotMainView.swift; sourceTree = "<group>"; };
 		E2FDD2562C4B93AF004067EF /* WeeklyCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyCalendar.swift; sourceTree = "<group>"; };
@@ -489,7 +489,7 @@
 			isa = PBXGroup;
 			children = (
 				E2EB25782C4E48C30094EC8E /* ChatBotMainView.swift */,
-				E2CFF2112C4E9D6300540500 /* InputFeildView.swift */,
+				E2CFF2112C4E9D6300540500 /* InputFieldView.swift */,
 				E2CFF2132C4EA29500540500 /* MessageBubble.swift */,
 			);
 			path = Views;
@@ -671,7 +671,7 @@
 			files = (
 				E2EB25792C4E48C30094EC8E /* ChatBotMainView.swift in Sources */,
 				8F92DF912C4D68B40071F336 /* ExerciseRoutineLogView.swift in Sources */,
-				E2CFF2122C4E9D6300540500 /* InputFeildView.swift in Sources */,
+				E2CFF2122C4E9D6300540500 /* InputFieldView.swift in Sources */,
 				8F92DF892C4D4A440071F336 /* TimerButton.swift in Sources */,
 				E26D48B52C48F50D00D63FE7 /* AIMealRecomendationView.swift in Sources */,
 				E24F5E822C48EC3400724DA7 /* MealMainView.swift in Sources */,
