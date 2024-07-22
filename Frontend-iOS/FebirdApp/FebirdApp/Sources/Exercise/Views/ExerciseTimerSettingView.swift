@@ -44,28 +44,7 @@ struct ExerciseTimerSettingView: View {
             
             // MARK: - 메인 컨텐츠
             VStack {
-                VStack(alignment: .center, spacing: 10) {
-                    Text(timeString(from: timerSeconds))
-                        .font(.customFont(size: 80, weight: .medium, language: .english))
-                        .foregroundColor(.white)
-                        .frame(maxWidth: .infinity)
-                        .frame(height: 180)
-                        .background(.timerBackgroundDefalt)
-                        .cornerRadius(50)
-                    
-                    HStack {
-                        TimerButton(text: "-5s", isPressed: $isMinusPressed) {
-                            if timerSeconds > 5 {
-                                timerSeconds -= 5
-                            }
-                        }
-                        
-                        TimerButton(text: "+5s", isPressed: $isPlusPressed) {
-                            timerSeconds += 5
-                        }
-                    }
-                }
-                .frame(width: 260, height: 253)
+                TimerView(viewModel: ExerciseTimerViewModel())
                 
                 Text("전신이 잘 보이도록\n카메라를 고정해주세요!")
                     .font(.customFont(size: 20, weight: .bold))
@@ -78,7 +57,7 @@ struct ExerciseTimerSettingView: View {
             VStack {
                 Spacer()
                 
-                CustomButtonView(title: "준비됐어요! 💪🏻", type: .orange)
+                CustomButtonView(title: "준비됐어요! 💪🏻", style: .orange)
                     .padding(24)
             }
             .ignoresSafeArea()
