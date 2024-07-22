@@ -1,18 +1,18 @@
-import { Controller, Get, Post, Body } from '@nestjs/common';
+import { Controller, Param, Get, Post, Body } from '@nestjs/common';
 import { InbodyService } from './inbody.service';
 import { CreateInbodyDto } from './dto/create-inbody.dto';
 
-@Controller('inbody')
+@Controller('member/:memberId/inbody')
 export class InbodyController {
-  constructor(private readonly inbodyService: InbodyService) {}
+  constructor(private inbodyService: InbodyService) {}
 
   @Post()
-  create(@Body() createInbodyDto: CreateInbodyDto) {
-    return this.inbodyService.create(createInbodyDto);
+  create(@Param('memberId') memberId: number, @Body() createInbodyDto: CreateInbodyDto) {
+    return this.inbodyService.create(+memberId, createInbodyDto);
   }
 
   @Get()
-  findAll() {
-    return this.inbodyService.findAll();
+  findAll(@Param('memberId') memberId: number) {
+    return this.inbodyService.findAll(+memberId);
   }
 }

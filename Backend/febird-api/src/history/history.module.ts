@@ -5,9 +5,11 @@ import { HistoryService } from './history.service';
 import { HistoryController } from './history.controller';
 import { MemberModule } from '../member/member.module';
 import { Member } from '../member/member.entity';
+import { LevelModule } from '../level/level.module';
+import { Level } from '../level/level.entity';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([History, Member]),MemberModule],
+  imports: [TypeOrmModule.forFeature([History, Member, Level]), MemberModule, LevelModule],
   controllers: [HistoryController],
   providers: [HistoryService],
   exports: [TypeOrmModule],
