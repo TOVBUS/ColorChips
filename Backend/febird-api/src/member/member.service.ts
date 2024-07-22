@@ -14,7 +14,7 @@ export class MemberService {
 
   async create(createMemberDto: CreateMemberDto): Promise<Member> {
     const member = this.memberRepository.create(createMemberDto);
-    return await this.memberRepository.save(member);
+    return this.memberRepository.save(member);
   }
 
   // Apple Sign에 필요한 것

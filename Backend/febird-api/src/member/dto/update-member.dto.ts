@@ -25,7 +25,7 @@ export class UpdateMemberDto extends PartialType(CreateMemberDto) {
 
   @IsOptional()
   @IsString()
-  kaKaoID?: string;
+  kakaoID?: string;
 
   @IsOptional()
   @IsInt()
