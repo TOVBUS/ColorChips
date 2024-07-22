@@ -33,7 +33,7 @@ struct InputFieldView: View {
                         // TODO: 메시지 보내기
                         onSend()
                     } label: {
-                        Image(systemName: "paperplane.fill")
+                        Image("sendIcon")
                     }
                     .padding(.trailing)
                 }
@@ -42,7 +42,3 @@ struct InputFieldView: View {
         }
     }
 }
-
-// #Preview {
-//    InputFieldView(text: .constant("안녕"), onSend: () -> Void)
-// }
