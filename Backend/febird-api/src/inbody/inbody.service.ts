@@ -14,23 +14,33 @@ export class InbodyService {
     private memberRepository: Repository<Member>,
   ) {}
 
-  async create(createInbodyDto: CreateInbodyDto): Promise<Inbody> {
-    const { member_id, ...inbodyData } = createInbodyDto;
+  async create(member_id: number, createInbodyDto: CreateInbodyDto): Promise<Inbody> {
+    const member = await this.memberRepository.findOne({
+      where: { member_id: createInbodyDto.member_id },
+    });
 
-    const member = await this.memberRepository.findOne({ where: { member_id } });
     if (!member) {
       throw new NotFoundException(`Member with ID ${member_id} not found`);
     }
 
     const newInbody = this.inbodyRepository.create({
-      ...inbodyData,
+      ...createInbodyDto,
       member: member,
     });
 
     return await this.inbodyRepository.save(newInbody);
   }
 
-  async findAll(): Promise<Inbody[]> {
-    return await this.inbodyRepository.find({ relations: ['member'] });
+  async findAll(memberId: number): Promise<Inbody[]> {
+    const member = await this.memberRepository.findOne({
+      where: { member_id: memberId },
+      relations: ['inbodies'],
+    });
+
+    if (!member) {
+      throw new NotFoundException(`Member with ID ${memberId} not found`);
+    }
+
+    return member.inbodies;
   }
 }
