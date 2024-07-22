@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct InputFeildView: View {
+struct InputFieldView: View {
     @State private var newMessage = ""
-    
+
     var body: some View {
         ZStack {
             Rectangle()
@@ -17,7 +17,7 @@ struct InputFeildView: View {
                 .cornerRadius(20, corners: [.topLeft, .topRight])
                 .frame(width: .infinity, height: 100)
                 .shadow(color: Color.gray20, radius: 5, x: 0, y: 2)
-            
+
             HStack(spacing: 8) {
                 TextField("메시지를 입력하세요", text: $newMessage)
                     .padding(.horizontal, 16)
@@ -26,7 +26,7 @@ struct InputFeildView: View {
                     .background(.gray10)
                     .cornerRadius(19)
                     .padding()
-                
+
                 Button {
                     // TODO: 메시지 보내기
                 } label: {
@@ -40,5 +40,5 @@ struct InputFeildView: View {
 }
 
 #Preview {
-    InputFeildView()
+    InputFieldView()
 }

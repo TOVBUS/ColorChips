@@ -84,6 +84,7 @@
 		E2CFF20E2C4E999E00540500 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CFF20D2C4E999E00540500 /* Message.swift */; };
 		E2CFF2102C4E9A1700540500 /* MealRecommendation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CFF20F2C4E9A1700540500 /* MealRecommendation.swift */; };
 		E2CFF2122C4E9D6300540500 /* InputFeildView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CFF2112C4E9D6300540500 /* InputFeildView.swift */; };
+		E2CFF2142C4EA29500540500 /* MessageBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CFF2132C4EA29500540500 /* MessageBubble.swift */; };
 		E2EB25792C4E48C30094EC8E /* ChatBotMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EB25782C4E48C30094EC8E /* ChatBotMainView.swift */; };
 		E2FDD2572C4B93AF004067EF /* WeeklyCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FDD2562C4B93AF004067EF /* WeeklyCalendar.swift */; };
 		E2FDD25B2C4BA6F2004067EF /* MealMainheaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FDD25A2C4BA6F2004067EF /* MealMainheaderView.swift */; };
@@ -188,6 +189,7 @@
 		E2CFF20D2C4E999E00540500 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		E2CFF20F2C4E9A1700540500 /* MealRecommendation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealRecommendation.swift; sourceTree = "<group>"; };
 		E2CFF2112C4E9D6300540500 /* InputFeildView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFeildView.swift; sourceTree = "<group>"; };
+		E2CFF2132C4EA29500540500 /* MessageBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBubble.swift; sourceTree = "<group>"; };
 		E2EB25782C4E48C30094EC8E /* ChatBotMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBotMainView.swift; sourceTree = "<group>"; };
 		E2FDD2562C4B93AF004067EF /* WeeklyCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyCalendar.swift; sourceTree = "<group>"; };
 		E2FDD25A2C4BA6F2004067EF /* MealMainheaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealMainheaderView.swift; sourceTree = "<group>"; };
@@ -488,6 +490,7 @@
 			children = (
 				E2EB25782C4E48C30094EC8E /* ChatBotMainView.swift */,
 				E2CFF2112C4E9D6300540500 /* InputFeildView.swift */,
+				E2CFF2132C4EA29500540500 /* MessageBubble.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -690,6 +693,7 @@
 				E10FD9A12C49FFF100D80139 /* EyeBodyView.swift in Sources */,
 				E1BB0D552C47985D002565B2 /* OnboardingGaugeView.swift in Sources */,
 				3E7521AB2C48F66F00920BFD /* RoundedCorners.swift in Sources */,
+				E2CFF2142C4EA29500540500 /* MessageBubble.swift in Sources */,
 				8FAC187F2C494BDE00CDF7CF /* ExerciseGaugeBarView.swift in Sources */,
 				8F92DF8F2C4D58710071F336 /* TimerView.swift in Sources */,
 				E1BB0D5E2C47F9F7002565B2 /* OnboardingSelectGenderButton.swift in Sources */,
