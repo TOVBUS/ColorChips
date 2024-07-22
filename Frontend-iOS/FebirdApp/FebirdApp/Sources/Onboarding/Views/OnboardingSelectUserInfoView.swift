@@ -37,7 +37,7 @@ struct OnboardingSelectUserInfoView: View {
                     .fill(Color(red: 0.95, green: 0.95, blue: 0.96))
             )
 
-            OnboardingTextField(question: "나이가 어떻게 되세요?", placeholder: "17세", unit: "세", text: $age)
+            OnboardingTextField(question: "나이가 어떻게 되세요?", placeholder: "17세", unit: "세", inputValue: nil, text: $age)
 
             HStack {
                 Text("성별을 알려주세요!").font(.customFont(size: 14, weight: .bold))
@@ -45,16 +45,18 @@ struct OnboardingSelectUserInfoView: View {
             }
             OnboardingSelectGenderButton()
 
-            Button("입력하기") {
+            Button(action: {
 
-            }
-            .frame(maxWidth: .infinity, maxHeight: 56)
-            .foregroundStyle(Color(.white))
-            .font(.customFont(size: 16, weight: .semibold))
-            .background(
-                RoundedRectangle(cornerRadius: 20)
-                    .fill(Color(red: 0.07, green: 0.07, blue: 0.08))
-            )
+            }, label: {
+                Text("입력하기")
+                    .frame(maxWidth: .infinity, maxHeight: 56)
+                    .foregroundStyle(Color(.white))
+                    .font(.customFont(size: 16, weight: .semibold))
+                    .background(
+                        RoundedRectangle(cornerRadius: 20)
+                            .fill(Color(red: 0.07, green: 0.07, blue: 0.08))
+                    )
+            })
         }
         .padding(.horizontal, 25)
     }
