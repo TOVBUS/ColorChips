@@ -5,7 +5,6 @@
 //  Created by DOYEON JEONG on 7/21/24.
 //
 
-            
 import SwiftUI
 
 struct ExerciseRestTimerView: View {
@@ -16,21 +15,21 @@ struct ExerciseRestTimerView: View {
                 .frame(maxWidth: .infinity)
                 .foregroundColor(.white)
                 .padding(.top, 60)
-            
+
             Spacer()
-            
+
             TimerView(viewModel: ExerciseTimerViewModel())
                 .padding(.bottom, 32)
-            
+
             Text("꽥꽥이님! 잘 하고 있어요!!  아주 조금만 더 힘내볼까요~?")
                 .font(.customFont(size: 20, weight: .bold))
                 .frame(maxWidth: .infinity)
                 .foregroundColor(.white)
                 .multilineTextAlignment(.center)
                 .ignoresSafeArea()
-            
+
             Spacer()
-            
+
             CustomButtonView(title: "휴식 중단하기", style: .warning)
                 .padding(.bottom, 24)
         }

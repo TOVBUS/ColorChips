@@ -11,14 +11,14 @@ struct ExerciseRoutineCompletionView: View {
     var body: some View {
         VStack {
             Spacer()
-            
+
             Image("ddabong")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 260)
-            
+
             Spacer()
-            
+
             CustomButtonView(title: "오늘 루틴 끝났다!!!!!! 👊🏻👊🏻👊🏻", style: .orange)
         }
     }

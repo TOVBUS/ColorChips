@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct ExerciseTimerSettingView: View {
-    
+
     @State private var timerSeconds: Int = 10
     @State private var isMinusPressed = false
     @State private var isPlusPressed = false
-    
+
     var body: some View {
         ZStack {
             // MARK: - 카메라 가이드 사진
@@ -25,14 +25,14 @@ struct ExerciseTimerSettingView: View {
                         .scaledToFit()
                 )
                 .ignoresSafeArea()
-            
+
             Rectangle()
                 .foregroundColor(.clear)
                 .background(
                     LinearGradient(gradient: Gradient(colors: [Color(red: 0.07, green: 0.07, blue: 0.08).opacity(0), Color(red: 0.07, green: 0.07, blue: 0.08)]), startPoint: .top, endPoint: .bottom)
                 )
                 .ignoresSafeArea()
-            
+
             Rectangle()
                 .foregroundColor(.clear)
                 .frame(width: 455, height: 812)
@@ -41,22 +41,22 @@ struct ExerciseTimerSettingView: View {
                 )
                 .ignoresSafeArea()
                 .padding(24)
-            
+
             // MARK: - 메인 컨텐츠
             VStack {
                 TimerView(viewModel: ExerciseTimerViewModel())
-                
+
                 Text("전신이 잘 보이도록\n카메라를 고정해주세요!")
                     .font(.customFont(size: 20, weight: .bold))
                     .multilineTextAlignment(.center)
                     .foregroundColor(.white)
             }
             .ignoresSafeArea()
-            
+
             // MARK: - 하단 버튼
             VStack {
                 Spacer()
-                
+
                 CustomButtonView(title: "준비됐어요! 💪🏻", style: .orange)
                     .padding(24)
             }
@@ -65,7 +65,7 @@ struct ExerciseTimerSettingView: View {
         }
         .ignoresSafeArea()
     }
-    
+
     private func timeString(from seconds: Int) -> String {
         let minutes = seconds / 60
         let remainingSeconds = seconds % 60

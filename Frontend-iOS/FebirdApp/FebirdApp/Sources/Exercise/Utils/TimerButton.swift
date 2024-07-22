@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct TimerButton: View {
-    
+
     let text: String
     @Binding var isPressed: Bool
     let action: () -> Void
-    
+
     var body: some View {
         Button(action: {
             withAnimation(.easeInOut(duration: 0.1)) {

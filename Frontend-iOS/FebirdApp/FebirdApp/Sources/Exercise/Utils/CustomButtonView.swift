@@ -12,7 +12,7 @@ enum CustomButtonStyle {
     case black
     case warning
     case sharing
-    
+
     var backgroundColor: Color {
         switch self {
         case .orange: return .orange50
@@ -21,7 +21,7 @@ enum CustomButtonStyle {
         case .sharing: return .orange40
         }
     }
-    
+
     var foregroundColor: Color {
         return .white
     }
@@ -31,13 +31,13 @@ struct CustomButtonView: View {
     let title: String
     let style: CustomButtonStyle
     let action: () -> Void
-    
+
     init(title: String, style: CustomButtonStyle = .black, action: @escaping () -> Void = {}) {
         self.title = title
         self.style = style
         self.action = action
     }
-    
+
     var body: some View {
         Button(action: action) {
             Text(title)

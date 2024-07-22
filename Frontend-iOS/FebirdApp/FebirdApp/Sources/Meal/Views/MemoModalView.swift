@@ -53,7 +53,7 @@ struct MemoModalView: View {
                 VStack(alignment: .leading, spacing: 10) {
                     TextEditor(text: $temporaryText)
                         .scrollContentBackground(.hidden)
-                    
+
                     HStack {
                         Spacer()
                         Image("fileIcon")
@@ -77,7 +77,7 @@ struct MemoModalView: View {
             }
             .padding(30)
         }
-        
+
     }
 }
 

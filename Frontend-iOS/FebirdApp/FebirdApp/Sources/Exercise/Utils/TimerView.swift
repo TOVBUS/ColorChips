@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TimerView: View {
     @ObservedObject var viewModel: ExerciseTimerViewModel
-    
+
     var body: some View {
         VStack(alignment: .center, spacing: 10) {
             Text(viewModel.timeString())
@@ -19,12 +19,12 @@ struct TimerView: View {
                 .frame(height: 180)
                 .background(.timerBackgroundDefalt)
                 .cornerRadius(50)
-            
+
             HStack {
                 TimerButton(text: "-5s", isPressed: $viewModel.isMinusPressed) {
                     viewModel.decreaseTime()
                 }
-                
+
                 TimerButton(text: "+5s", isPressed: $viewModel.isPlusPressed) {
                     viewModel.increaseTime()
                 }
