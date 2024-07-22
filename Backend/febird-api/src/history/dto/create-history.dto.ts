@@ -1,11 +1,15 @@
-import { IsNotEmpty, IsDateString, IsInt } from 'class-validator';
+import { IsDate, IsNotEmpty, IsNumber } from 'class-validator';
 
 export class CreateHistoryDto {
-  @IsDateString()
+  @IsDate()
   @IsNotEmpty()
   achievement_date: Date;
 
-  @IsInt()
+  @IsNumber()
   @IsNotEmpty()
-  member_id: number; // member의 FK
+  member_id: number;
+
+  @IsNumber()
+  @IsNotEmpty()
+  level_id: number;
 }

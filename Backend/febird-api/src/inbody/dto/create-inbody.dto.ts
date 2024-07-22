@@ -1,24 +1,33 @@
-import { IsInt, IsDate } from 'class-validator';
+import { IsNumber, IsDate, IsNotEmpty, IsOptional } from 'class-validator';
+import { Type } from 'class-transformer';
 
 export class CreateInbodyDto {
-  @IsInt()
+  @IsNumber()
+  @IsNotEmpty()
   height: number;
 
-  @IsInt()
+  @IsNumber()
+  @IsNotEmpty()
   weight: number;
 
   @IsDate()
-  inbody_date: Date;
+  @IsOptional()
+  @Type(() => Date)
+  inbody_date?: Date;
 
-  @IsInt()
-  bmr: number;
+  @IsNumber()
+  @IsOptional()
+  bmr?: number;
 
-  @IsInt()
-  bodyfat: number;
+  @IsNumber()
+  @IsOptional()
+  bodyfat?: number;
 
-  @IsInt()
-  bmi: number;
+  @IsNumber()
+  @IsOptional()
+  bmi?: number;
 
-  @IsInt()
+  @IsNumber()
+  @IsNotEmpty()
   member_id: number; 
 }

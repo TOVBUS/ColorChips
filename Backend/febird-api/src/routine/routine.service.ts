@@ -3,7 +3,6 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Routine } from './routine.entity';
 import { CreateRoutineDto } from './dto/create-routine.dto';
-import { UpdateRoutineDto } from './dto/update-routine.dto';
 
 @Injectable()
 export class RoutineService {
@@ -19,13 +18,5 @@ export class RoutineService {
 
   findAll() {
     return this.routineRepository.find();
-  }
-
-  update(id: number, updateRoutineDto: UpdateRoutineDto) {
-    return this.routineRepository.update(id, updateRoutineDto);
-  }
-
-  remove(id: number) {
-    return this.routineRepository.delete(id);
   }
 }
