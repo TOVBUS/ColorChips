@@ -1,13 +1,13 @@
 import { PartialType } from '@nestjs/swagger';
 import { CreateInbodyDto } from './create-inbody.dto';
-import { IsInt, IsDate, IsOptional } from 'class-validator';
+import { IsNumber, IsDate, IsOptional } from 'class-validator';
 
 export class UpdateInbodyDto extends PartialType(CreateInbodyDto) {
-  @IsInt()
+  @IsNumber()
   @IsOptional()
   height?: number;
 
-  @IsInt()
+  @IsNumber()
   @IsOptional()
   weight?: number;
 
@@ -15,15 +15,15 @@ export class UpdateInbodyDto extends PartialType(CreateInbodyDto) {
   @IsOptional()
   inbody_date?: Date;
 
-  @IsInt()
+  @IsNumber()
   @IsOptional()
   bmr?: number;
 
-  @IsInt()
+  @IsNumber()
   @IsOptional()
   bodyfat?: number;
 
-  @IsInt()
+  @IsNumber()
   @IsOptional()
   bmi?: number;
 }

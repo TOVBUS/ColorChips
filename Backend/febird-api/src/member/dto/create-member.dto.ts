@@ -19,11 +19,11 @@ export class CreateMemberDto {
 
   @IsOptional()
   @IsString()
-  appleID: string;
+  appleID?: string;
 
   @IsOptional()
   @IsString()
-  kakaoID: string;
+  kakaoID?: string;
 
   @IsNotEmpty()
   @IsInt()
