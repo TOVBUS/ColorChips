@@ -41,6 +41,8 @@
 		8F92DF812C4BB0230071F336 /* ExerciseGuideViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F92DF802C4BB0230071F336 /* ExerciseGuideViewModel.swift */; };
 		8F92DF832C4BB0970071F336 /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F92DF822C4BB0970071F336 /* VideoPlayerView.swift */; };
 		8F92DF852C4BB0B40071F336 /* ExerciseGuideTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F92DF842C4BB0B40071F336 /* ExerciseGuideTextView.swift */; };
+		8F92DF872C4D33870071F336 /* ExerciseTimerSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F92DF862C4D33870071F336 /* ExerciseTimerSettingView.swift */; };
+		8F92DF892C4D4A440071F336 /* TimerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F92DF882C4D4A440071F336 /* TimerButton.swift */; };
 		8FAC187F2C494BDE00CDF7CF /* ExerciseGaugeBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FAC187E2C494BDE00CDF7CF /* ExerciseGaugeBarView.swift */; };
 		8FAC18822C4B8BA800CDF7CF /* ExerciseItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FAC18812C4B8BA800CDF7CF /* ExerciseItemView.swift */; };
 		8FAC18852C4B8C4200CDF7CF /* ExerciseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FAC18842C4B8C4200CDF7CF /* ExerciseItem.swift */; };
@@ -132,6 +134,8 @@
 		8F92DF802C4BB0230071F336 /* ExerciseGuideViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseGuideViewModel.swift; sourceTree = "<group>"; };
 		8F92DF822C4BB0970071F336 /* VideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
 		8F92DF842C4BB0B40071F336 /* ExerciseGuideTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseGuideTextView.swift; sourceTree = "<group>"; };
+		8F92DF862C4D33870071F336 /* ExerciseTimerSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTimerSettingView.swift; sourceTree = "<group>"; };
+		8F92DF882C4D4A440071F336 /* TimerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerButton.swift; sourceTree = "<group>"; };
 		8FAC187E2C494BDE00CDF7CF /* ExerciseGaugeBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseGaugeBarView.swift; sourceTree = "<group>"; };
 		8FAC18812C4B8BA800CDF7CF /* ExerciseItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseItemView.swift; sourceTree = "<group>"; };
 		8FAC18842C4B8C4200CDF7CF /* ExerciseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseItem.swift; sourceTree = "<group>"; };
@@ -213,6 +217,7 @@
 				8F92DF792C4B93730071F336 /* ExerciseGuideView.swift */,
 				8F92DF7D2C4BA9750071F336 /* ExerciseGuideListView.swift */,
 				8F92DF842C4BB0B40071F336 /* ExerciseGuideTextView.swift */,
+				8F92DF862C4D33870071F336 /* ExerciseTimerSettingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -226,6 +231,7 @@
 				3ED5FD8D2C4A020200CD4508 /* CustomButtonView.swift */,
 				8F92DF7B2C4B9A390071F336 /* CustomNavigationBar.swift */,
 				8F92DF822C4BB0970071F336 /* VideoPlayerView.swift */,
+				8F92DF882C4D4A440071F336 /* TimerButton.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -603,6 +609,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F92DF892C4D4A440071F336 /* TimerButton.swift in Sources */,
 				E26D48B52C48F50D00D63FE7 /* AIMealRecomendationView.swift in Sources */,
 				E24F5E822C48EC3400724DA7 /* MealMainView.swift in Sources */,
 				8F92DF7C2C4B9A390071F336 /* CustomNavigationBar.swift in Sources */,
@@ -616,6 +623,7 @@
 				8F92DF7E2C4BA9750071F336 /* ExerciseGuideListView.swift in Sources */,
 				E12911BB2C48EDFE009A92F7 /* PhotoPicker.swift in Sources */,
 				E1BB0D5C2C47B15A002565B2 /* OnboardingProfileSelectionView.swift in Sources */,
+				8F92DF872C4D33870071F336 /* ExerciseTimerSettingView.swift in Sources */,
 				E10FD9B22C4CC06000D80139 /* InbodyGraphView.swift in Sources */,
 				E10FD9A12C49FFF100D80139 /* EyeBodyView.swift in Sources */,
 				E1BB0D552C47985D002565B2 /* OnboardingGaugeView.swift in Sources */,
