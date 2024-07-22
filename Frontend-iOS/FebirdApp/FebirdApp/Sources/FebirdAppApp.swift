@@ -13,6 +13,7 @@ struct FebirdAppApp: App {
         WindowGroup {
             // OnboardingWelcomView()
 //            ExerciseGuideView()
+            ChatBotMainView()
         }
     }
 }

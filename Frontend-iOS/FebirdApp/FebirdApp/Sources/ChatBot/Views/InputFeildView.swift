@@ -8,37 +8,41 @@
 import SwiftUI
 
 struct InputFieldView: View {
-    @State private var newMessage = ""
+    @Binding var text: String
+        var onSend: () -> Void
 
     var body: some View {
         ZStack {
             Rectangle()
                 .foregroundStyle(.white)
                 .cornerRadius(20, corners: [.topLeft, .topRight])
-                .frame(width: .infinity, height: 100)
+                .frame(maxWidth: .infinity, maxHeight: 140)
                 .shadow(color: Color.gray20, radius: 5, x: 0, y: 2)
 
-            HStack(spacing: 8) {
-                TextField("메시지를 입력하세요", text: $newMessage)
-                    .padding(.horizontal, 16)
-                    .padding(.vertical, 8)
-                    .frame(maxWidth: .infinity, minHeight: 56, maxHeight: 56, alignment: .leading)
-                    .background(.gray10)
-                    .cornerRadius(19)
-                    .padding()
+            VStack {
+                HStack(spacing: 8) {
+                    TextField("메시지를 입력하세요", text: $text)
+                        .padding(.horizontal, 16)
+                        .padding(.vertical, 8)
+                        .frame(maxWidth: .infinity, minHeight: 56, maxHeight: 56, alignment: .leading)
+                        .background(.gray10)
+                        .cornerRadius(19)
+                        .padding()
 
-                Button {
-                    // TODO: 메시지 보내기
-                } label: {
-                    Image(systemName: "paperplane.fill")
+                    Button {
+                        // TODO: 메시지 보내기
+                        onSend()
+                    } label: {
+                        Image(systemName: "paperplane.fill")
+                    }
+                    .padding(.trailing)
                 }
-                .padding(.trailing)
+                .padding(.bottom, 50)
             }
-            .padding(.vertical)
         }
     }
 }
 
-#Preview {
-    InputFieldView()
-}
+// #Preview {
+//    InputFieldView(text: .constant("안녕"), onSend: () -> Void)
+// }
