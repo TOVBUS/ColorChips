@@ -81,8 +81,9 @@
 		E26D48B92C49F18800D63FE7 /* MemoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D48B82C49F18800D63FE7 /* MemoRow.swift */; };
 		E26D48BB2C49F93900D63FE7 /* MealChatBotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D48BA2C49F93900D63FE7 /* MealChatBotView.swift */; };
 		E26D48BD2C49FBE300D63FE7 /* MemoModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D48BC2C49FBE300D63FE7 /* MemoModalView.swift */; };
+		E2CFF20E2C4E999E00540500 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CFF20D2C4E999E00540500 /* Message.swift */; };
+		E2CFF2102C4E9A1700540500 /* MealRecommendation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CFF20F2C4E9A1700540500 /* MealRecommendation.swift */; };
 		E2EB25792C4E48C30094EC8E /* ChatBotMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EB25782C4E48C30094EC8E /* ChatBotMainView.swift */; };
-		E2EB257B2C4E48F40094EC8E /* ChatingInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EB257A2C4E48F40094EC8E /* ChatingInput.swift */; };
 		E2FDD2572C4B93AF004067EF /* WeeklyCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FDD2562C4B93AF004067EF /* WeeklyCalendar.swift */; };
 		E2FDD25B2C4BA6F2004067EF /* MealMainheaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FDD25A2C4BA6F2004067EF /* MealMainheaderView.swift */; };
 /* End PBXBuildFile section */
@@ -183,8 +184,9 @@
 		E26D48B82C49F18800D63FE7 /* MemoRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoRow.swift; sourceTree = "<group>"; };
 		E26D48BA2C49F93900D63FE7 /* MealChatBotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealChatBotView.swift; sourceTree = "<group>"; };
 		E26D48BC2C49FBE300D63FE7 /* MemoModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoModalView.swift; sourceTree = "<group>"; };
+		E2CFF20D2C4E999E00540500 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		E2CFF20F2C4E9A1700540500 /* MealRecommendation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealRecommendation.swift; sourceTree = "<group>"; };
 		E2EB25782C4E48C30094EC8E /* ChatBotMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBotMainView.swift; sourceTree = "<group>"; };
-		E2EB257A2C4E48F40094EC8E /* ChatingInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatingInput.swift; sourceTree = "<group>"; };
 		E2FDD2562C4B93AF004067EF /* WeeklyCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyCalendar.swift; sourceTree = "<group>"; };
 		E2FDD25A2C4BA6F2004067EF /* MealMainheaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealMainheaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -240,8 +242,6 @@
 				8F92DF902C4D68B40071F336 /* ExerciseRoutineLogView.swift */,
 				8F92DF922C4D71A40071F336 /* ExerciseRoutineCompletionView.swift */,
 				8F92DF942C4D74A10071F336 /* ExerciseGraduationView.swift */,
-				E2EB25782C4E48C30094EC8E /* ChatBotMainView.swift */,
-				E2EB257A2C4E48F40094EC8E /* ChatingInput.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -284,6 +284,7 @@
 			isa = PBXGroup;
 			children = (
 				3EF6F04C2C36937E00EEF18F /* FebirdAppApp.swift */,
+				E2EB257C2C4E4DAB0094EC8E /* ChatBot */,
 				E10FD9A92C4C02A600D80139 /* Profile */,
 				E24F5E7F2C48EBC300724DA7 /* Meal */,
 				3E7521A32C48E60F00920BFD /* Exercise */,
@@ -458,6 +459,32 @@
 				E26D48B82C49F18800D63FE7 /* MemoRow.swift */,
 				E26D48BC2C49FBE300D63FE7 /* MemoModalView.swift */,
 				E26D48BA2C49F93900D63FE7 /* MealChatBotView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E2CFF20C2C4E996900540500 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E2CFF20D2C4E999E00540500 /* Message.swift */,
+				E2CFF20F2C4E9A1700540500 /* MealRecommendation.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E2EB257C2C4E4DAB0094EC8E /* ChatBot */ = {
+			isa = PBXGroup;
+			children = (
+				E2CFF20C2C4E996900540500 /* Models */,
+				E2EB257D2C4E4DC50094EC8E /* Views */,
+			);
+			path = ChatBot;
+			sourceTree = "<group>";
+		};
+		E2EB257D2C4E4DC50094EC8E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E2EB25782C4E48C30094EC8E /* ChatBotMainView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -639,7 +666,6 @@
 				E2EB25792C4E48C30094EC8E /* ChatBotMainView.swift in Sources */,
 				8F92DF912C4D68B40071F336 /* ExerciseRoutineLogView.swift in Sources */,
 				8F92DF892C4D4A440071F336 /* TimerButton.swift in Sources */,
-				E2EB257B2C4E48F40094EC8E /* ChatingInput.swift in Sources */,
 				E26D48B52C48F50D00D63FE7 /* AIMealRecomendationView.swift in Sources */,
 				E24F5E822C48EC3400724DA7 /* MealMainView.swift in Sources */,
 				8F92DF7C2C4B9A390071F336 /* CustomNavigationBar.swift in Sources */,
@@ -669,6 +695,7 @@
 				E10FD99D2C49FB4500D80139 /* InbodyInputView.swift in Sources */,
 				3E7521AD2C49F88B00920BFD /* CustomTabBarView.swift in Sources */,
 				E10FD9B02C4CC01700D80139 /* InbodyMainView.swift in Sources */,
+				E2CFF20E2C4E999E00540500 /* Message.swift in Sources */,
 				E1AEFC952C4D10BE000D6441 /* AlbumView.swift in Sources */,
 				3E9D1FD52C4E346E00302F7E /* ProfileSelectView.swift in Sources */,
 				E12911B92C48DC82009A92F7 /* CameraActionSheet.swift in Sources */,
@@ -688,6 +715,7 @@
 				E1AEFC972C4D2E69000D6441 /* AlbumDetailView.swift in Sources */,
 				8FAC18852C4B8C4200CDF7CF /* ExerciseItem.swift in Sources */,
 				3EFC450C2C44F882001052C7 /* Font+Extension.swift in Sources */,
+				E2CFF2102C4E9A1700540500 /* MealRecommendation.swift in Sources */,
 				E26D48BD2C49FBE300D63FE7 /* MemoModalView.swift in Sources */,
 				3EF6F04D2C36937E00EEF18F /* FebirdAppApp.swift in Sources */,
 				8F92DF7A2C4B93730071F336 /* ExerciseGuideView.swift in Sources */,
