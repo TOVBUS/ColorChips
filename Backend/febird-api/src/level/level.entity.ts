@@ -7,7 +7,7 @@ export class Level {
   @PrimaryGeneratedColumn()
   level_id: number;
 
-  @Column({ length: 10 })
+  @Column({ length: 50 })
   school_name: string;
 
   @ManyToOne(() => Routine, (routine) => routine.level)

@@ -7,24 +7,54 @@
 
 import SwiftUI
 
-struct CustomButtonView: View {
-    var title: String
+enum CustomButtonStyle {
+    case orange
+    case black
+    case warning
+    case sharing
+    
+    var backgroundColor: Color {
+        switch self {
+        case .orange: return .orange50
+        case .black: return .gray100
+        case .warning: return .red60
+        case .sharing: return .orange40
+        }
+    }
+    
+    var foregroundColor: Color {
+        return .white
+    }
+}
 
+struct CustomButtonView: View {
+    let title: String
+    let style: CustomButtonStyle
+    let action: () -> Void
+    
+    init(title: String, style: CustomButtonStyle = .black, action: @escaping () -> Void = {}) {
+        self.title = title
+        self.style = style
+        self.action = action
+    }
+    
     var body: some View {
-        HStack(alignment: .center, spacing: 8) {
+        Button(action: action) {
             Text(title)
                 .font(.customFont(size: 16, weight: .semibold))
-                .foregroundColor(.white)
+                .foregroundColor(style.foregroundColor)
+                .frame(maxWidth: .infinity)
+                .frame(height: 56)
+                .background(style.backgroundColor)
+                .cornerRadius(20)
         }
-        .frame(maxWidth: .infinity)
-        .frame(height: 56, alignment: .center)
-        .background(.gray100)
-        .cornerRadius(20)
-        .padding(.vertical, 16)
+        .accessibilityLabel(title)
         .padding(.horizontal, 20)
     }
 }
 
 #Preview {
-    CustomButtonView(title: "운동 시작하기")
+    CustomButtonView(title: "삭제하기", style: .warning) {
+        print("Warning button tapped")
+    }
 }
