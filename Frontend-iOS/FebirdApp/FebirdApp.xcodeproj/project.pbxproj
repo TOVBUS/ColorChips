@@ -49,6 +49,8 @@
 		E10FD99F2C49FECB00D80139 /* OnboardingLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10FD99E2C49FECB00D80139 /* OnboardingLoadingView.swift */; };
 		E10FD9A12C49FFF100D80139 /* EyeBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10FD9A02C49FFF100D80139 /* EyeBodyView.swift */; };
 		E10FD9A32C4A066200D80139 /* OnboardingEndView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10FD9A22C4A066200D80139 /* OnboardingEndView.swift */; };
+		E10FD9AC2C4C02DC00D80139 /* ProfileSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10FD9AB2C4C02DC00D80139 /* ProfileSelectView.swift */; };
+		E10FD9AE2C4C16AA00D80139 /* ProfileTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10FD9AD2C4C16AA00D80139 /* ProfileTopView.swift */; };
 		E12911B92C48DC82009A92F7 /* CameraActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12911B82C48DC81009A92F7 /* CameraActionSheet.swift */; };
 		E12911BB2C48EDFE009A92F7 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12911BA2C48EDFE009A92F7 /* PhotoPicker.swift */; };
 		E12911BD2C48FDBA009A92F7 /* InbodyFixView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12911BC2C48FDBA009A92F7 /* InbodyFixView.swift */; };
@@ -133,6 +135,8 @@
 		E10FD99E2C49FECB00D80139 /* OnboardingLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingLoadingView.swift; sourceTree = "<group>"; };
 		E10FD9A02C49FFF100D80139 /* EyeBodyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeBodyView.swift; sourceTree = "<group>"; };
 		E10FD9A22C4A066200D80139 /* OnboardingEndView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingEndView.swift; sourceTree = "<group>"; };
+		E10FD9AB2C4C02DC00D80139 /* ProfileSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileSelectView.swift; path = ../../../../../../../../../../.Trash/Profile/Views/ProfileSelectView.swift; sourceTree = "<group>"; };
+		E10FD9AD2C4C16AA00D80139 /* ProfileTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTopView.swift; sourceTree = "<group>"; };
 		E12911B82C48DC81009A92F7 /* CameraActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraActionSheet.swift; sourceTree = "<group>"; };
 		E12911BA2C48EDFE009A92F7 /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
 		E12911BC2C48FDBA009A92F7 /* InbodyFixView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InbodyFixView.swift; sourceTree = "<group>"; };
@@ -239,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				3EF6F04C2C36937E00EEF18F /* FebirdAppApp.swift */,
+				E10FD9A92C4C02A600D80139 /* Profile */,
 				E24F5E7F2C48EBC300724DA7 /* Meal */,
 				3E7521A32C48E60F00920BFD /* Exercise */,
 				E1BB0D532C4797C9002565B2 /* Onboarding */,
@@ -340,6 +345,23 @@
 				8FAC18842C4B8C4200CDF7CF /* ExerciseItem.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		E10FD9A92C4C02A600D80139 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				E10FD9AA2C4C02CA00D80139 /* Views */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		E10FD9AA2C4C02CA00D80139 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E10FD9AB2C4C02DC00D80139 /* ProfileSelectView.swift */,
+				E10FD9AD2C4C16AA00D80139 /* ProfileTopView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		E1BB0D532C4797C9002565B2 /* Onboarding */ = {
@@ -597,12 +619,14 @@
 				8F92DF812C4BB0230071F336 /* ExerciseGuideViewModel.swift in Sources */,
 				E1BB0D5A2C47A4FB002565B2 /* OnboardingSelectUserInfoView.swift in Sources */,
 				E10FD9A32C4A066200D80139 /* OnboardingEndView.swift in Sources */,
+				E10FD9AE2C4C16AA00D80139 /* ProfileTopView.swift in Sources */,
 				8F92DF832C4BB0970071F336 /* VideoPlayerView.swift in Sources */,
 				8FAC18852C4B8C4200CDF7CF /* ExerciseItem.swift in Sources */,
 				3EFC450C2C44F882001052C7 /* Font+Extension.swift in Sources */,
 				E26D48BD2C49FBE300D63FE7 /* MemoModalView.swift in Sources */,
 				3EF6F04D2C36937E00EEF18F /* FebirdAppApp.swift in Sources */,
 				8F92DF7A2C4B93730071F336 /* ExerciseGuideView.swift in Sources */,
+				E10FD9AC2C4C02DC00D80139 /* ProfileSelectView.swift in Sources */,
 				3E7521A82C48F63E00920BFD /* ExerciseMainHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
