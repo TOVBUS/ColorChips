@@ -19,7 +19,7 @@ struct EyeBodyMainView: View {
         VStack {
             ScrollView {
                 ScrollView(.horizontal) {
-                    
+
                 }
             }
             Button(action: {
