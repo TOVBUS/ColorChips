@@ -12,7 +12,8 @@ struct FebirdAppApp: App {
     var body: some Scene {
         WindowGroup {
             // OnboardingWelcomView()
-            ExerciseGuideView()
+//            ExerciseGuideView()
+            SettingsView()
         }
     }
 }
