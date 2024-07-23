@@ -18,6 +18,7 @@ struct LoginView: View {
             VStack(spacing: 20) {
                 Text("피오피트에 오신것을 환영합니다🎉")
                     .font(.customFont(size: 24, weight: .bold))
+                    .padding(.top, 50)
 
                 Text("그동안 혼자 운동하다가\n잘못된 자세로 인해 다친적이 있나요?")
                     .multilineTextAlignment(.leading)
@@ -38,7 +39,7 @@ struct LoginView: View {
                     .resizable()
                     .frame(width: 204, height: 204)
                     .padding(.top, -20)
-                    .padding(.bottom, 50)
+                    .padding(.bottom, 30)
 
                 // MARK: - 로그인 버튼
                 Button(action: {
@@ -78,10 +79,20 @@ struct LoginView: View {
                             .padding(.horizontal, 24)
                     )
                 })
-                .padding(0)
+                .padding(.bottom, 18)
+                
+                Button(action: {
+                    // TODO: 서비스 이용약관으로 넘어감
+                }, label: {
+                    VStack(spacing: 0) {
+                        Text("가입 시, FeoFit의 다음 사항에 동의하는 것으로 간주합니다.")
+                        Text("서비스 이용약관 및 개인정보 정책")
+                    }
+                    .font(.customFont(size: 12, weight: .regular))
+                    .padding(0)
+                })
             }
             .foregroundStyle(.white)
-
         }
         .ignoresSafeArea()
     }
