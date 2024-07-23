@@ -14,32 +14,32 @@ struct LoginView: View {
                 .foregroundColor(.clear)
                 .background(.orange50)
                 .ignoresSafeArea()
-            
+
             VStack(spacing: 20) {
                 Text("피오피트에 오신것을 환영합니다🎉")
                     .font(.customFont(size: 24, weight: .bold))
-                
+
                 Text("그동안 혼자 운동하다가\n잘못된 자세로 인해 다친적이 있나요?")
                     .multilineTextAlignment(.leading)
                     .padding(.trailing, 100)
                     .font(.customFont(size: 16, weight: .regular))
-                
+
                 Text("또, 3일 이상 해야지! 마음먹고\n금방 포기하게 되지는 않았나요?")
                     .multilineTextAlignment(.trailing)
                     .padding(.leading, 100)
                     .font(.customFont(size: 16, weight: .regular))
-                
+
                 Text("앞으로는 피오코치가 \n올바른 자세로, 꾸준히 할 수 있도록 도와줄게요!")
                     .font(.customFont(size: 18, weight: .bold))
                     .frame(maxWidth: .infinity, maxHeight: 80)
                     .multilineTextAlignment(.center)
-                
+
                 Image("peoLogo")
                     .resizable()
                     .frame(width: 204, height: 204)
                     .padding(.top, -20)
                     .padding(.bottom, 50)
-                
+
                 // MARK: - 로그인 버튼
                 Button(action: {
                     // TODO: 카카오 로그인 연결
@@ -61,7 +61,7 @@ struct LoginView: View {
                     )
                 })
                 .padding(0)
-                
+
                 Button(action: {
                     // TODO: 애플 로그인 연결
                 }, label: {
@@ -81,7 +81,7 @@ struct LoginView: View {
                 .padding(0)
             }
             .foregroundStyle(.white)
-            
+
         }
         .ignoresSafeArea()
     }
