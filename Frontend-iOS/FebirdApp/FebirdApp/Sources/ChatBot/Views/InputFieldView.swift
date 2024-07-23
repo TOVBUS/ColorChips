@@ -9,7 +9,7 @@ import SwiftUI
 
 struct InputFieldView: View {
     @Binding var text: String
-        var onSend: () -> Void
+    var onSend: () -> Void
 
     var body: some View {
         ZStack {
@@ -19,26 +19,25 @@ struct InputFieldView: View {
                 .frame(maxWidth: .infinity, maxHeight: 140)
                 .shadow(color: Color.gray20, radius: 5, x: 0, y: 2)
 
-            VStack {
-                HStack(spacing: 8) {
-                    TextField("메시지를 입력하세요", text: $text)
-                        .padding(.horizontal, 16)
-                        .padding(.vertical, 8)
-                        .frame(maxWidth: .infinity, minHeight: 56, maxHeight: 56, alignment: .leading)
-                        .background(.gray10)
-                        .cornerRadius(19)
-                        .padding()
+            HStack(spacing: 8) {
+                TextField("메시지를 입력하세요", text: $text)
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 8)
+                    .frame(height: 56, alignment: .leading)
+                    .background(.gray10)
+                    .cornerRadius(19)
+                    .padding()
 
-                    Button {
-                        // TODO: 메시지 보내기
-                        onSend()
-                    } label: {
-                        Image("sendIcon")
-                    }
-                    .padding(.trailing)
+                Button {
+                    // TODO: 메시지 보내기
+                    onSend()
+                } label: {
+                    Image("sendIcon")
                 }
-                .padding(.bottom, 50)
+                .padding(.trailing)
             }
+            .padding(.bottom, 50)
+
         }
     }
 }

@@ -11,7 +11,7 @@ struct MessageBubble: View {
     let message: Message
 
     var body: some View {
-        HStack {
+        HStack(alignment: .bottom) {
             if message.isUser { Spacer() }
 
             Image(message.isUser ? "" : "BigfaceFeo")
