@@ -10,7 +10,8 @@ import SwiftUI
 struct ExerciseRecordListView: View {
     let schools = ["유치원", "초등학교", "중학교"]
     let schoolGrades = [3, 6, 3] // 각 학교의 학년 수
-    let currentLevel = 23
+    let gauge = [10, 5, 0]
+
     @State private var expandedSchools: Set<Int> = []
 
     var body: some View {
@@ -50,11 +51,11 @@ struct ExerciseRecordListView: View {
                     Text(schools[index])
                         .font(.customFont(size: 18, weight: .medium))
                         .foregroundStyle(.gray100)
-                    OnboardingGaugeView(progress: 10)
+                    OnboardingGaugeView(progress: gauge[index])
                         .padding(.horizontal, -40)
                 }
 
-                Image("BigfaceFeo")
+                Image(gauge[index] == 10 ? "Badge_color" : "Badge_gray")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 64, height: 64)
