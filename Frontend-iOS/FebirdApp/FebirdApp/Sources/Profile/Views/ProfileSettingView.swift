@@ -83,8 +83,9 @@ struct HeaderView: View {
             Image("profile01")
                 .padding(.top, 121)
             ZStack {
-                // TODO: 아이콘 이미지 삽입
-
+               Image("addImage_Button")
+                    .padding(.top, 210)
+                    .padding(.leading, 110)
             }
         }
     }
