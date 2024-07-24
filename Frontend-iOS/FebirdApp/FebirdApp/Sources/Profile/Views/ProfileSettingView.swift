@@ -18,7 +18,7 @@ struct ProfileSettingView: View {
                     .ignoresSafeArea()
 
                 HStack(alignment: .center, spacing: 12) {
-                    Image("Back_button")
+                    Image("backButton")
                     Text("프로필 설정")
                         .foregroundStyle(.white)
                         .font(.customFont(size: 20, weight: .bold))
@@ -30,7 +30,7 @@ struct ProfileSettingView: View {
                 Image("profile01")
                     .padding(.top, 121)
                 ZStack {
-                   Image("addImage_Button")
+                   Image("cameraButton")
                         .padding(.top, 210)
                         .padding(.leading, 110)
                 }

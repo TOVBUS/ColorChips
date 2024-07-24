@@ -33,7 +33,7 @@ struct CustomCell: View {
             }
 
             if showArrow {
-                Image("arrow_right")
+                Image("arrowRightIcon")
             }
 
             if showToggle {

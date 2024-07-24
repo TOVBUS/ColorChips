@@ -19,7 +19,7 @@ struct MemoRow: View {
                     .foregroundColor(.clear)
                     .frame(width: 80, height: 80)
                     .background(
-                        Image("BigfaceFeo") // 이미지 변경
+                        Image("feoFace") // 이미지 변경
                             .resizable()
                             .aspectRatio(contentMode: .fill)
                             .clipped()
@@ -49,7 +49,7 @@ struct MemoRow: View {
                 Button(action: {
                     showModal.toggle()
                 }, label: {
-                    Image("elseIcon")
+                    Image("vertialIcon")
                 })
                 .frame(width: 24, height: 24)
             }

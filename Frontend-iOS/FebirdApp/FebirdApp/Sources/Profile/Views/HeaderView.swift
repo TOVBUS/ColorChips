@@ -17,7 +17,7 @@ struct HeaderView: View {
             .ignoresSafeArea()
 
             HStack(alignment: .center, spacing: 12) {
-                Image("Back_button")
+                Image("backButton")
                 Text("설정")
                     .foregroundStyle(.white)
                     .font(.customFont(size: 20, weight: .bold))
