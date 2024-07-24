@@ -76,11 +76,15 @@
 		E1BB0D5E2C47F9F7002565B2 /* OnboardingSelectGenderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BB0D5D2C47F9F7002565B2 /* OnboardingSelectGenderButton.swift */; };
 		E1BB0D602C4800E2002565B2 /* OnboardingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BB0D5F2C4800E2002565B2 /* OnboardingTextField.swift */; };
 		E1BB0D622C48A875002565B2 /* InbodyAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BB0D612C48A875002565B2 /* InbodyAddView.swift */; };
+		E24CF94E2C4F887100D1548E /* CustomToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24CF94D2C4F887100D1548E /* CustomToggle.swift */; };
+		E24CF9502C4F891A00D1548E /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24CF94F2C4F891A00D1548E /* HeaderView.swift */; };
 		E24F5E822C48EC3400724DA7 /* MealMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24F5E812C48EC3400724DA7 /* MealMainView.swift */; };
+		E25F3BF42C4F4D1700688718 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25F3BF32C4F4D1700688718 /* CustomCell.swift */; };
 		E26D48B52C48F50D00D63FE7 /* AIMealRecomendationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D48B42C48F50D00D63FE7 /* AIMealRecomendationView.swift */; };
 		E26D48B92C49F18800D63FE7 /* MemoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D48B82C49F18800D63FE7 /* MemoRow.swift */; };
 		E26D48BB2C49F93900D63FE7 /* MealChatBotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D48BA2C49F93900D63FE7 /* MealChatBotView.swift */; };
 		E26D48BD2C49FBE300D63FE7 /* MemoModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D48BC2C49FBE300D63FE7 /* MemoModalView.swift */; };
+		E2A2F7E42C4F3C09000AD404 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A2F7E32C4F3C09000AD404 /* SettingsView.swift */; };
 		E2CFF20E2C4E999E00540500 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CFF20D2C4E999E00540500 /* Message.swift */; };
 		E2CFF2102C4E9A1700540500 /* MealRecommendation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CFF20F2C4E9A1700540500 /* MealRecommendation.swift */; };
 		E2CFF2122C4E9D6300540500 /* InputFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CFF2112C4E9D6300540500 /* InputFieldView.swift */; };
@@ -181,11 +185,15 @@
 		E1BB0D5D2C47F9F7002565B2 /* OnboardingSelectGenderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSelectGenderButton.swift; sourceTree = "<group>"; };
 		E1BB0D5F2C4800E2002565B2 /* OnboardingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTextField.swift; sourceTree = "<group>"; };
 		E1BB0D612C48A875002565B2 /* InbodyAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InbodyAddView.swift; sourceTree = "<group>"; };
+		E24CF94D2C4F887100D1548E /* CustomToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomToggle.swift; sourceTree = "<group>"; };
+		E24CF94F2C4F891A00D1548E /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		E24F5E812C48EC3400724DA7 /* MealMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealMainView.swift; sourceTree = "<group>"; };
+		E25F3BF32C4F4D1700688718 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		E26D48B42C48F50D00D63FE7 /* AIMealRecomendationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIMealRecomendationView.swift; sourceTree = "<group>"; };
 		E26D48B82C49F18800D63FE7 /* MemoRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoRow.swift; sourceTree = "<group>"; };
 		E26D48BA2C49F93900D63FE7 /* MealChatBotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealChatBotView.swift; sourceTree = "<group>"; };
 		E26D48BC2C49FBE300D63FE7 /* MemoModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoModalView.swift; sourceTree = "<group>"; };
+		E2A2F7E32C4F3C09000AD404 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		E2CFF20D2C4E999E00540500 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		E2CFF20F2C4E9A1700540500 /* MealRecommendation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealRecommendation.swift; sourceTree = "<group>"; };
 		E2CFF2112C4E9D6300540500 /* InputFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFieldView.swift; sourceTree = "<group>"; };
@@ -413,6 +421,10 @@
 				E1AEFC942C4D10BE000D6441 /* AlbumView.swift */,
 				E1AEFC962C4D2E69000D6441 /* AlbumDetailView.swift */,
 				E1AEFC982C4D3F50000D6441 /* EyeBodyMainView.swift */,
+				E2A2F7E32C4F3C09000AD404 /* SettingsView.swift */,
+				E25F3BF32C4F4D1700688718 /* CustomCell.swift */,
+				E24CF94D2C4F887100D1548E /* CustomToggle.swift */,
+				E24CF94F2C4F891A00D1548E /* HeaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -681,10 +693,12 @@
 				E12911BD2C48FDBA009A92F7 /* InbodyFixView.swift in Sources */,
 				3E7521A52C48E6C700920BFD /* ExerciseMainView.swift in Sources */,
 				8F92DF852C4BB0B40071F336 /* ExerciseGuideTextView.swift in Sources */,
+				E2A2F7E42C4F3C09000AD404 /* SettingsView.swift in Sources */,
 				8FAC18822C4B8BA800CDF7CF /* ExerciseItemView.swift in Sources */,
 				8FAC18872C4B8CBA00CDF7CF /* ExerciseListView.swift in Sources */,
 				8F92DF8D2C4D58570071F336 /* ExerciseTimerViewModel.swift in Sources */,
 				8F92DF7E2C4BA9750071F336 /* ExerciseGuideListView.swift in Sources */,
+				E24CF94E2C4F887100D1548E /* CustomToggle.swift in Sources */,
 				E12911BB2C48EDFE009A92F7 /* PhotoPicker.swift in Sources */,
 				8F92DF952C4D74A10071F336 /* ExerciseGraduationView.swift in Sources */,
 				E1BB0D5C2C47B15A002565B2 /* OnboardingProfileSelectionView.swift in Sources */,
@@ -720,6 +734,7 @@
 				E1AEFC932C4D10AD000D6441 /* AlbumMainView.swift in Sources */,
 				E10FD9AE2C4C16AA00D80139 /* ProfileTopView.swift in Sources */,
 				8F92DF832C4BB0970071F336 /* VideoPlayerView.swift in Sources */,
+				E24CF9502C4F891A00D1548E /* HeaderView.swift in Sources */,
 				E1AEFC972C4D2E69000D6441 /* AlbumDetailView.swift in Sources */,
 				8FAC18852C4B8C4200CDF7CF /* ExerciseItem.swift in Sources */,
 				3EFC450C2C44F882001052C7 /* Font+Extension.swift in Sources */,
@@ -727,6 +742,7 @@
 				E26D48BD2C49FBE300D63FE7 /* MemoModalView.swift in Sources */,
 				3EF6F04D2C36937E00EEF18F /* FebirdAppApp.swift in Sources */,
 				8F92DF7A2C4B93730071F336 /* ExerciseGuideView.swift in Sources */,
+				E25F3BF42C4F4D1700688718 /* CustomCell.swift in Sources */,
 				3E7521A82C48F63E00920BFD /* ExerciseMainHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
