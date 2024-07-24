@@ -32,6 +32,7 @@ struct MealMainView: View {
                 }
                 .padding(20)
             }
+            .padding(.top, -25)
         }
         .ignoresSafeArea()
         
