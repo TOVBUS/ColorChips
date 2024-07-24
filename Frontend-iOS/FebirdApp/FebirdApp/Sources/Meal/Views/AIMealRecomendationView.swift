@@ -51,7 +51,6 @@ struct AIMealRecomendationView: View {
                         .foregroundStyle(.white)
                         .padding(.horizontal, 16)
                         .padding(.vertical, 12)
-                        .cornerRadius(13)
                         .overlay(
                             RoundedRectangle(cornerRadius: 13)
                                 .inset(by: 0.5)
@@ -63,8 +62,6 @@ struct AIMealRecomendationView: View {
                 .frame(width: 320, alignment: .topLeading)
             }
         }
-//        .padding(16)
-//        .cornerRadius(32)
     }
 }
 
