@@ -85,6 +85,11 @@
 		E26D48BB2C49F93900D63FE7 /* MealChatBotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D48BA2C49F93900D63FE7 /* MealChatBotView.swift */; };
 		E26D48BD2C49FBE300D63FE7 /* MemoModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D48BC2C49FBE300D63FE7 /* MemoModalView.swift */; };
 		E2A2F7E42C4F3C09000AD404 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A2F7E32C4F3C09000AD404 /* SettingsView.swift */; };
+		E2CFF20E2C4E999E00540500 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CFF20D2C4E999E00540500 /* Message.swift */; };
+		E2CFF2102C4E9A1700540500 /* MealRecommendation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CFF20F2C4E9A1700540500 /* MealRecommendation.swift */; };
+		E2CFF2122C4E9D6300540500 /* InputFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CFF2112C4E9D6300540500 /* InputFieldView.swift */; };
+		E2CFF2142C4EA29500540500 /* MessageBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CFF2132C4EA29500540500 /* MessageBubble.swift */; };
+		E2EB25792C4E48C30094EC8E /* ChatBotMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EB25782C4E48C30094EC8E /* ChatBotMainView.swift */; };
 		E2FDD2572C4B93AF004067EF /* WeeklyCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FDD2562C4B93AF004067EF /* WeeklyCalendar.swift */; };
 		E2FDD25B2C4BA6F2004067EF /* MealMainheaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FDD25A2C4BA6F2004067EF /* MealMainheaderView.swift */; };
 /* End PBXBuildFile section */
@@ -189,6 +194,11 @@
 		E26D48BA2C49F93900D63FE7 /* MealChatBotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealChatBotView.swift; sourceTree = "<group>"; };
 		E26D48BC2C49FBE300D63FE7 /* MemoModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoModalView.swift; sourceTree = "<group>"; };
 		E2A2F7E32C4F3C09000AD404 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		E2CFF20D2C4E999E00540500 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		E2CFF20F2C4E9A1700540500 /* MealRecommendation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealRecommendation.swift; sourceTree = "<group>"; };
+		E2CFF2112C4E9D6300540500 /* InputFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFieldView.swift; sourceTree = "<group>"; };
+		E2CFF2132C4EA29500540500 /* MessageBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBubble.swift; sourceTree = "<group>"; };
+		E2EB25782C4E48C30094EC8E /* ChatBotMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBotMainView.swift; sourceTree = "<group>"; };
 		E2FDD2562C4B93AF004067EF /* WeeklyCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyCalendar.swift; sourceTree = "<group>"; };
 		E2FDD25A2C4BA6F2004067EF /* MealMainheaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealMainheaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -286,6 +296,7 @@
 			isa = PBXGroup;
 			children = (
 				3EF6F04C2C36937E00EEF18F /* FebirdAppApp.swift */,
+				E2EB257C2C4E4DAB0094EC8E /* ChatBot */,
 				E10FD9A92C4C02A600D80139 /* Profile */,
 				E24F5E7F2C48EBC300724DA7 /* Meal */,
 				3E7521A32C48E60F00920BFD /* Exercise */,
@@ -468,6 +479,34 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		E2CFF20C2C4E996900540500 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E2CFF20D2C4E999E00540500 /* Message.swift */,
+				E2CFF20F2C4E9A1700540500 /* MealRecommendation.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E2EB257C2C4E4DAB0094EC8E /* ChatBot */ = {
+			isa = PBXGroup;
+			children = (
+				E2CFF20C2C4E996900540500 /* Models */,
+				E2EB257D2C4E4DC50094EC8E /* Views */,
+			);
+			path = ChatBot;
+			sourceTree = "<group>";
+		};
+		E2EB257D2C4E4DC50094EC8E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E2EB25782C4E48C30094EC8E /* ChatBotMainView.swift */,
+				E2CFF2112C4E9D6300540500 /* InputFieldView.swift */,
+				E2CFF2132C4EA29500540500 /* MessageBubble.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -642,7 +681,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2EB25792C4E48C30094EC8E /* ChatBotMainView.swift in Sources */,
 				8F92DF912C4D68B40071F336 /* ExerciseRoutineLogView.swift in Sources */,
+				E2CFF2122C4E9D6300540500 /* InputFieldView.swift in Sources */,
 				8F92DF892C4D4A440071F336 /* TimerButton.swift in Sources */,
 				E26D48B52C48F50D00D63FE7 /* AIMealRecomendationView.swift in Sources */,
 				E24F5E822C48EC3400724DA7 /* MealMainView.swift in Sources */,
@@ -666,6 +707,7 @@
 				E10FD9A12C49FFF100D80139 /* EyeBodyView.swift in Sources */,
 				E1BB0D552C47985D002565B2 /* OnboardingGaugeView.swift in Sources */,
 				3E7521AB2C48F66F00920BFD /* RoundedCorners.swift in Sources */,
+				E2CFF2142C4EA29500540500 /* MessageBubble.swift in Sources */,
 				8FAC187F2C494BDE00CDF7CF /* ExerciseGaugeBarView.swift in Sources */,
 				8F92DF8F2C4D58710071F336 /* TimerView.swift in Sources */,
 				E1BB0D5E2C47F9F7002565B2 /* OnboardingSelectGenderButton.swift in Sources */,
@@ -675,6 +717,7 @@
 				E10FD99D2C49FB4500D80139 /* InbodyInputView.swift in Sources */,
 				3E7521AD2C49F88B00920BFD /* CustomTabBarView.swift in Sources */,
 				E10FD9B02C4CC01700D80139 /* InbodyMainView.swift in Sources */,
+				E2CFF20E2C4E999E00540500 /* Message.swift in Sources */,
 				E1AEFC952C4D10BE000D6441 /* AlbumView.swift in Sources */,
 				3E9D1FD52C4E346E00302F7E /* ProfileSelectView.swift in Sources */,
 				E12911B92C48DC82009A92F7 /* CameraActionSheet.swift in Sources */,
@@ -695,6 +738,7 @@
 				E1AEFC972C4D2E69000D6441 /* AlbumDetailView.swift in Sources */,
 				8FAC18852C4B8C4200CDF7CF /* ExerciseItem.swift in Sources */,
 				3EFC450C2C44F882001052C7 /* Font+Extension.swift in Sources */,
+				E2CFF2102C4E9A1700540500 /* MealRecommendation.swift in Sources */,
 				E26D48BD2C49FBE300D63FE7 /* MemoModalView.swift in Sources */,
 				3EF6F04D2C36937E00EEF18F /* FebirdAppApp.swift in Sources */,
 				8F92DF7A2C4B93730071F336 /* ExerciseGuideView.swift in Sources */,
