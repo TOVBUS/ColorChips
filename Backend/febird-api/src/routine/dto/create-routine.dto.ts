@@ -1,15 +1,20 @@
-import { IsString, IsNotEmpty, IsArray } from 'class-validator';
+import { IsString, IsNotEmpty, IsArray, IsNumber, isNumber } from 'class-validator';
 import { CreateLevelDto } from '../../level/dto/create-level.dto';
 import { CreateExerciseDto } from '../../exercise/dto/create-exercise.dto';
 
 export class CreateRoutineDto {
-  @IsString()
+  @IsNumber()
   @IsNotEmpty()
-  count: string;
+  value: number;
+
+  @IsNumber()
+  @IsNotEmpty()
+  set: number;
 
   @IsString()
   @IsNotEmpty()
-  set: string;
+  type: string;
+
 
   @IsArray()
   @IsNotEmpty()

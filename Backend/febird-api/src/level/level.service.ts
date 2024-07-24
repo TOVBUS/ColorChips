@@ -29,7 +29,7 @@ export class LevelService {
     
     const level = this.levelRepository.create({
       ...createLevelDto,
-      routine: routine,
+      routines: [routine],
     });
 
     return this.levelRepository.save(level);

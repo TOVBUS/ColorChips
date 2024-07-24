@@ -1,4 +1,4 @@
-import { Entity, Column, PrimaryGeneratedColumn, OneToMany, JoinColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, JoinColumn } from 'typeorm';
 import { Level } from '../level/level.entity';
 import { Exercise } from '../exercise/exercise.entity';
 
@@ -7,17 +7,20 @@ export class Routine {
   @PrimaryGeneratedColumn()
   routine_id: number;
 
-  @Column({ length: 50 })
-  count: string;
+  @Column()
+  value: number;
 
-  @Column('text')
-  set: string;
+  @Column()
+  set: number;
 
-  @OneToMany(() => Level, (level) => level.routine)
+  @Column({ length: 3 })
+  type: string;
+
+  @ManyToOne(() => Level, (level) => level.routines)
   @JoinColumn({ name: 'level_id' })
-  level: Level[];
+  level: Level;
 
-  @OneToMany(() => Exercise, (exercise) => exercise.routines)
+  @ManyToOne(() => Exercise, (exercise) => exercise.routines)
   @JoinColumn({ name: 'exercise_id' })
-  exercise: Exercise[];
+  exercise: Exercise;
 }

@@ -1,4 +1,4 @@
-import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, OneToMany } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, OneToMany, JoinColumn } from 'typeorm';
 import { Routine } from 'src/routine/routine.entity';
 import { History } from 'src/history/history.entity';
 
@@ -10,8 +10,8 @@ export class Level {
   @Column({ length: 50 })
   school_name: string;
 
-  @ManyToOne(() => Routine, (routine) => routine.level)
-  routine: Routine
+  @OneToMany(() => Routine, (routine) => routine.level)
+  routines: Routine[]
 
   @OneToMany(() => History, (history) => history.level)
   histories: History[]
