@@ -75,7 +75,7 @@ struct WeeklyCalendar: View {
                     .padding(.horizontal,8)
                     .padding(.vertical, 3)
                     .background(calendar.isDate(selectedDate, equalTo: date, toGranularity: .day) ? .orange50 : .gray60)
-                    .cornerRadius(19)
+                    .cornerRadius(18)
                     .foregroundColor(calendar.isDate(selectedDate, equalTo: date, toGranularity: .day) ? .white : .black)
                     .onTapGesture {
                         selectedDate = date
