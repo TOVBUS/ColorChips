@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "Back_button.svg",
+      "filename" : "backButton.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },

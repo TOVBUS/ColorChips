@@ -14,7 +14,7 @@ struct WeeklyCalendar: View {
     var body: some View {
         VStack(alignment: .center, spacing: 20) {
             monthView
-                .foregroundStyle(Color.white)
+                .foregroundStyle(.white)
             ZStack {
                 dayView
                 blurView
@@ -22,7 +22,6 @@ struct WeeklyCalendar: View {
             .frame(height: 30)
             .padding(.horizontal, 20)
         }
-//        .background(Color.gray90)
     }
     // MARK: - 월 표시 뷰
     private var monthView: some View {
@@ -66,17 +65,17 @@ struct WeeklyCalendar: View {
                 ForEach(components, id: \.self) { date in
                     VStack {
                         Text(day(from: date))
-                            .foregroundStyle(Color.gray30)
+                            .foregroundStyle(.gray30)
                             .font(.customFont(size: 12, weight: .medium))
                         Text("\(calendar.component(.day, from: date))")
-                            .foregroundStyle(Color.white)
+                            .foregroundStyle(.white)
                             .font(.customFont(size: 20, weight: .bold))
                     }
                     .frame(width: 30, height: 60)
                     .padding(.horizontal,8)
                     .padding(.vertical, 3)
-                    .background(calendar.isDate(selectedDate, equalTo: date, toGranularity: .day) ? Color.orange50 : Color.gray60)
-                    .cornerRadius(19)
+                    .background(calendar.isDate(selectedDate, equalTo: date, toGranularity: .day) ? .orange50 : .gray60)
+                    .cornerRadius(18)
                     .foregroundColor(calendar.isDate(selectedDate, equalTo: date, toGranularity: .day) ? .white : .black)
                     .onTapGesture {
                         selectedDate = date
@@ -91,8 +90,8 @@ struct WeeklyCalendar: View {
             LinearGradient(
                 gradient: Gradient(
                     colors: [
-                        Color.gray100.opacity(1),
-                        Color.gray100.opacity(0)
+                        .gray100.opacity(1),
+                        .gray100.opacity(0)
                     ]
                 ),
                 startPoint: .leading,
@@ -104,8 +103,8 @@ struct WeeklyCalendar: View {
             LinearGradient(
                 gradient: Gradient(
                     colors: [
-                        Color(red: 0.07, green: 0.07, blue: 0.08).opacity(1),
-                        Color.white.opacity(0)
+                        .gray100.opacity(1),
+                        .gray100.opacity(0)
                     ]
                 ),
                 startPoint: .trailing,
@@ -119,13 +118,13 @@ struct WeeklyCalendar: View {
 
 // MARK: - 로직
 private extension WeeklyCalendar {
-    /// 월 표시
+    // 월 표시
     func monthTitle(from date: Date) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy년 M월"
         return dateFormatter.string(from: date)
     }
-    /// 월 변경
+    // 월 변경
     func changeMonth(_ value: Int) {
         guard let date = calendar.date(
             byAdding: .month,
@@ -136,7 +135,7 @@ private extension WeeklyCalendar {
         }
         selectedDate = date
     }
-    /// 요일 추출
+    // 요일 추출
     func day(from date: Date) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.setLocalizedDateFormatFromTemplate("E")
