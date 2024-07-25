@@ -10,6 +10,9 @@ export class Level {
   @Column({ length: 50 })
   school_name: string;
 
+  @Column()
+  grade: number;
+
   @OneToMany(() => Routine, (routine) => routine.level)
   routines: Routine[]
 

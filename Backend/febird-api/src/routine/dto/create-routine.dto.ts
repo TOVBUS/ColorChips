@@ -11,10 +11,6 @@ export class CreateRoutineDto {
   @IsNotEmpty()
   set: number;
 
-  @IsString()
-  @IsNotEmpty()
-  type: string;
-
   @IsArray()
   @IsNotEmpty()
   levels: CreateLevelDto[];

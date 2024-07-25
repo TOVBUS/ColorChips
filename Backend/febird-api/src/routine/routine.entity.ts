@@ -13,9 +13,6 @@ export class Routine {
   @Column()
   set: number;
 
-  @Column({ length: 3 })
-  type: string;
-
   @ManyToOne(() => Level, (level) => level.routines)
   @JoinColumn({ name: 'level_id' })
   level: Level;
