@@ -1,4 +1,4 @@
-import { Entity, Column, PrimaryGeneratedColumn, ManyToOne } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
 import { Routine } from '../routine/routine.entity';
 
 @Entity()
@@ -15,6 +15,6 @@ export class Exercise {
   @Column('text')
   tip: string;
 
-  @ManyToOne(() => Routine, (routine) => routine.exercise)
+  @OneToMany(() => Routine, (routine) => routine.exercise)
   routines: Routine[];
 }

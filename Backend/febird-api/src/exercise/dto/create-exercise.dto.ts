@@ -3,7 +3,7 @@ import { IsString, IsNotEmpty } from 'class-validator';
 export class CreateExerciseDto {
   @IsString()
   @IsNotEmpty()
-  exercise_title: string;
+  exercise_name: string;
 
   @IsString()
   @IsNotEmpty()
