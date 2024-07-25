@@ -18,13 +18,13 @@ struct ExerciseRecordView: View {
                     .cornerRadius(34, corners: [.bottomLeft, .bottomRight])
                     .ignoresSafeArea()
                     .padding(.bottom, -60)
-                
+
                 HStack(alignment: .center) {
                     Image("Back_button")
                     Text("현재기록")
                         .font(.customFont(size: 20, weight: .bold))
                         .foregroundStyle(.white)
-                        .frame(maxWidth: 240, alignment: .center)
+                        .frame(maxWidth: .infinity, alignment: .center)
                 }
                 .frame(width: 343, alignment: .leading)
             }
