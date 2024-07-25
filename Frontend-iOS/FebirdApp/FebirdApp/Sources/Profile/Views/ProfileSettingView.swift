@@ -10,8 +10,31 @@ import SwiftUI
 struct ProfileSettingView: View {
     var body: some View {
         VStack {
-            HeaderView()
-                .padding(.top, -100)
+            ZStack {
+                Rectangle()
+                    .frame(height: 185)
+                    .foregroundStyle(.gray100)
+                    .cornerRadius(34, corners: [.bottomLeft, .bottomRight])
+                    .ignoresSafeArea()
+
+                HStack(alignment: .center, spacing: 12) {
+                    Image("Back_button")
+                    Text("프로필 설정")
+                        .foregroundStyle(.white)
+                        .font(.customFont(size: 20, weight: .bold))
+                        .frame(maxWidth: .infinity, alignment: .top)
+                    Spacer()
+                }
+                .padding(.top, -55)
+                .padding(.horizontal, 20)
+                Image("profile01")
+                    .padding(.top, 121)
+                ZStack {
+                   Image("addImage_Button")
+                        .padding(.top, 210)
+                        .padding(.leading, 110)
+                }
+            }
             
             VStack(spacing: 20) {
                 HStack {
@@ -59,35 +82,6 @@ struct ProfileSettingView: View {
             .padding(25)
         }
         .ignoresSafeArea()
-    }
-}
-
-struct HeaderView: View {
-    var body: some View {
-        ZStack {
-            Rectangle()
-                .frame(height: 185)
-                .foregroundStyle(.gray100)
-                .cornerRadius(34, corners: [.bottomLeft, .bottomRight])
-                .ignoresSafeArea()
-
-            HStack(alignment: .center, spacing: 12) {
-                Image("Back_button")
-                Text("프로필 설정")
-                    .foregroundStyle(.white)
-                    .font(.customFont(size: 20, weight: .bold))
-                    .frame(maxWidth: .infinity, alignment: .top)
-                Spacer()
-            }
-            .padding(.top, -55)
-            Image("profile01")
-                .padding(.top, 121)
-            ZStack {
-               Image("addImage_Button")
-                    .padding(.top, 210)
-                    .padding(.leading, 110)
-            }
-        }
     }
 }
 
