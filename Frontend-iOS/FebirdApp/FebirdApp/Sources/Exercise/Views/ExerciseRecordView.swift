@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ExerciseRecordView: View {
     var body: some View {
-<<<<<<< HEAD
         VStack {
             ZStack {
                 Rectangle()
@@ -18,7 +17,7 @@ struct ExerciseRecordView: View {
                     .cornerRadius(34, corners: [.bottomLeft, .bottomRight])
                     .ignoresSafeArea()
                     .padding(.bottom, -60)
-
+                
                 HStack(alignment: .center) {
                     Image("Back_button")
                     Text("현재기록")
@@ -30,9 +29,6 @@ struct ExerciseRecordView: View {
             }
             ExerciseRecordListView()
         }
-=======
-        EmptyView()
->>>>>>> 2762bf9 (🎨 :: ExerciseRecordListView의 row ui 구현 #KAN-188)
     }
 }
 
