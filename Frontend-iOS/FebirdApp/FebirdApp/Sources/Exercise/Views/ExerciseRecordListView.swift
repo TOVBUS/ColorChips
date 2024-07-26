@@ -42,7 +42,7 @@ struct ExerciseRecordListView: View {
             }
         }) {
             HStack(spacing: 10) {
-                Image("BigfaceFeo")
+                Image("feoFace")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 64, height: 64)
@@ -75,7 +75,7 @@ struct ExerciseRecordListView: View {
             }
         }
         .padding()
-        .background(Color.gray10)
+        .background(.gray10)
         .cornerRadius(24)
     }
 

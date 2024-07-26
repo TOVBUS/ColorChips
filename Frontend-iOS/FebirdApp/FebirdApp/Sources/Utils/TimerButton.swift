@@ -34,7 +34,7 @@ struct TimerButton: View {
                 .cornerRadius(16)
                 .overlay(
                     RoundedRectangle(cornerRadius: 16)
-                        .stroke(Color.orange, lineWidth: 2)
+                        .stroke(.orange, lineWidth: 2)
                         .opacity(isPressed ? 1 : 0)
                 )
         }

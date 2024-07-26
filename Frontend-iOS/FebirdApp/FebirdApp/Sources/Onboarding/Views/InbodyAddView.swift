@@ -37,7 +37,7 @@ struct InbodyAddView: View {
 
                 if !isImageSelected {
                     RoundedRectangle(cornerRadius: 10)
-                        .fill(Color.black.opacity(0.7))
+                        .fill(.black.opacity(0.7))
                         .frame(width: 345, height: 434)
 
                     VStack {

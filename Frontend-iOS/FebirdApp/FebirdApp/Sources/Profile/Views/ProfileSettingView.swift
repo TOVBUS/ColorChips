@@ -27,8 +27,10 @@ struct ProfileSettingView: View {
                 }
                 .padding(.top, -55)
                 .padding(.horizontal, 20)
+                
                 Image("profile01")
                     .padding(.top, 121)
+                
                 ZStack {
                    Image("cameraButton")
                         .padding(.top, 210)
@@ -45,7 +47,9 @@ struct ProfileSettingView: View {
                 HStack(spacing: 8) {
                     Image("personIcon")
                         .padding()
+                    
                     TextField("어떻게 불러드릴까요?", text: .constant("꽥꽥이"))
+                    
                     Image("pencilIcon")
                         .padding()
                 }
@@ -67,7 +71,7 @@ struct ProfileSettingView: View {
                     .padding(.bottom, 70)
 
                 Button(action: {
-                    //
+                    // TODO: 프로필 변경 내역 저장
                 }, label: {
                     Text("저장하기")
                         .frame(maxWidth: .infinity, maxHeight: 56)

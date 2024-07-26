@@ -7,18 +7,6 @@
 
 import SwiftUI
 
-struct PhotoData: Identifiable {
-    let id = UUID()
-    let day: Int
-    let imageName: String
-}
-
-struct AlbumData: Identifiable {
-    let id = UUID()
-    let title: String
-    let photos: [PhotoData]
-}
-
 struct AlbumView: View {
     let album: AlbumData
     @State private var isExpanded = false
@@ -33,12 +21,12 @@ struct AlbumView: View {
                 HStack {
                     Text(album.title)
                         .font(.customFont(size: 18, weight: .medium))
-                        .foregroundStyle(Color.black)
+                        .foregroundStyle(.black)
                     Spacer()
                     Image(isExpanded ? "Chevron-down" : "Chevron-right")
                 }
                 .padding()
-                .background(Color.gray10)
+                .background(.gray10)
             }
 
             if isExpanded {
@@ -56,12 +44,12 @@ struct AlbumView: View {
                     }
                 }
                 .padding()
-                .background(Color.gray10)
+                .background(.gray10)
             }
         }
-        .background(Color.gray10)
+        .background(.gray10)
         .cornerRadius(14)
-        .shadow(color: Color.gray20, radius: 5, x: 0, y: 2)
+        .shadow(color: .gray20, radius: 5, x: 0, y: 2)
         .animation(.easeInOut(duration: 0.3), value: isExpanded)
     }
 }

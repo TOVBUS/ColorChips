@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct InputFieldView: View {
+    
     @Binding var text: String
     var onSend: () -> Void
 
@@ -17,7 +18,7 @@ struct InputFieldView: View {
                 .foregroundStyle(.white)
                 .cornerRadius(20, corners: [.topLeft, .topRight])
                 .frame(maxWidth: .infinity, maxHeight: 140)
-                .shadow(color: Color.gray20, radius: 5, x: 0, y: 2)
+                .shadow(color: .gray20, radius: 5, x: 0, y: 2)
 
             HStack(spacing: 8) {
                 TextField("메시지를 입력하세요", text: $text)

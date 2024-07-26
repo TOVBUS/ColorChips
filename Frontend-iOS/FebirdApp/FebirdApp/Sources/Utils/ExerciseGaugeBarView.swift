@@ -85,5 +85,5 @@ struct ExerciseGaugeBarView: View {
     ExerciseGaugeBarView(progress: .constant(0.5), totalSteps: 3)
         .previewLayout(.sizeThatFits)
         .padding()
-        .background(Color.gray)
+        .background(.gray)
 }

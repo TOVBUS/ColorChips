@@ -8,6 +8,7 @@
 import SwiftUI
 import Charts
 
+// MARK: - Dummy Data
 struct ToyShape: Identifiable {
     var type: String
     var count: Double
@@ -42,7 +43,7 @@ struct InbodyGraphView: View {
             .frame(height: 200)
             .background(
                 RoundedRectangle(cornerRadius: 32)
-                    .fill(Color.gray10)
+                    .fill(.gray10)
             )
         }
     }

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MemoModalView: View {
     @Environment(\.presentationMode) var presentationMode
+    @Environment(\.scenePhase) private var scenePhase
     @Binding var text: String
     @State private var temporaryText = ""
     
@@ -60,7 +61,7 @@ struct MemoModalView: View {
                 VStack {
                     TextEditor(text: $temporaryText)
                         .scrollContentBackground(.hidden)
-
+                    
                     HStack {
                         Spacer()
                         
@@ -68,7 +69,7 @@ struct MemoModalView: View {
                         
                         Text("\(temporaryText.count) / 200")
                             .font(.customFont(size: 16, weight: .medium))
-                            .foregroundColor(Color.gray40)
+                            .foregroundColor(.gray40)
                             .onChange(of: temporaryText) { newValue in
                                 if newValue.count > 200 {
                                     temporaryText = String(newValue.prefix(200))
@@ -83,7 +84,7 @@ struct MemoModalView: View {
             }
             .padding(25)
         }
-
+        
     }
 }
 

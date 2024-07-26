@@ -18,7 +18,7 @@ struct ProfileSelectView: View {
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 20)
-                .fill(Color.gray10)
+                .fill(.gray10)
             HStack(spacing: 2, content: {
                 ProfileSelectButton(profile: .album, selectedProfile: $selectedProfile)
                 ProfileSelectButton(profile: .inbody, selectedProfile: $selectedProfile)
@@ -42,17 +42,17 @@ struct ProfileSelectButton: View {
                 .frame(height: 40)
                 .background(
                     RoundedRectangle(cornerRadius: 20)
-                        .fill(selectedProfile == profile ? Color.gray100 : Color.gray10)
+                        .fill(selectedProfile == profile ? .gray100 : .gray10)
                 )
                 .foregroundStyle(selectedProfile == profile ? .white : .black)
                 .overlay(
                     RoundedRectangle(cornerRadius: 20)
-                        .stroke(selectedProfile == profile ? Color.gray60 : .clear, lineWidth: 4)
+                        .stroke(selectedProfile == profile ? .gray60 : .clear, lineWidth: 4)
                 )
         })
     }
 }
 
 #Preview {
-    ProfileSelectView().background(Color.black)
+    ProfileSelectView().background(.black)
 }

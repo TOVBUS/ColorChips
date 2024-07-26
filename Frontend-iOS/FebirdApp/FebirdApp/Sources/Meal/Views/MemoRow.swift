@@ -24,6 +24,7 @@ struct MemoRow: View {
                     .padding(.vertical, 2)
                     .background(.gray20)
                     .cornerRadius(8)
+                
                 // MARK: - 글자수 제한
                 if !inputText.isEmpty {
                     Text(showFullText ? inputText : inputText.prefix(30) + (inputText.count > 30 ? "..." : ""))

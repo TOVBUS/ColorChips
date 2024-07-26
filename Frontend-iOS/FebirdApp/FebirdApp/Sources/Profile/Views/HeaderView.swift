@@ -27,7 +27,7 @@ struct HeaderView: View {
             .padding(.leading, 26)
             .padding(.trailing, 87)
             .padding(.top, 60)
-            .padding(.bottom, 10)
+            .padding(.bottom, 26)
 
         }
     }

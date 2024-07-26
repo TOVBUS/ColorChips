@@ -15,7 +15,7 @@ struct OnboardingGaugeView: View {
     var body: some View {
         Gauge(value: Double(progress), in: Double(minValue)...Double(maxValue), label: {
         })
-        .tint(Color.orange)
+        .tint(.orange50)
         .padding(.horizontal, 40)
     }
 }

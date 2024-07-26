@@ -95,14 +95,7 @@ struct ProfileTopView: View {
         .frame(alignment: .center)
         .frame(height: 240)
         .background(.gray100)
-        .clipShape(
-            RoundedCorners(
-                topLeft: 0,
-                topRight: 0,
-                bottomLeft: 34,
-                bottomRight: 34
-            )
-        )
+        .cornerRadius(34, corners: [.bottomLeft, .bottomRight])
         .background(ignoresSafeAreaEdges: .top)
     }
 }

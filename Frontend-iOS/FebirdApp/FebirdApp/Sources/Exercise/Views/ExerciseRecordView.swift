@@ -13,7 +13,7 @@ struct ExerciseRecordView: View {
             ZStack {
                 Rectangle()
                     .frame(height: 160)
-                    .foregroundStyle(Color.gray100)
+                    .foregroundStyle(.gray100)
                     .cornerRadius(34, corners: [.bottomLeft, .bottomRight])
                     .ignoresSafeArea()
                     .padding(.bottom, -60)
@@ -25,7 +25,6 @@ struct ExerciseRecordView: View {
                         .foregroundStyle(.white)
                         .frame(maxWidth: .infinity, alignment: .center)
                 }
-                .frame(width: 343, alignment: .leading)
             }
             ExerciseRecordListView()
         }

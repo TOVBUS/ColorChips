@@ -23,7 +23,7 @@ struct EyeBodyMainView: View {
                 }
             }
             Button(action: {
-                // EyeBodyView로 이동
+                // TODO: EyeBodyView로 이동
             }, label: {
                 Text("눈바디 추가하기")
                     .frame(maxWidth: .infinity, maxHeight: 56)
