@@ -9,11 +9,14 @@ export class Exercise {
   @Column({ length: 50 })
   exercise_name: string;
 
-  @Column('text')
-  url: string;
+  @Column({ length: 255 })
+  video_guide_url: string;
 
   @Column('text')
   tip: string;
+
+  @Column({ length: 3 })
+  type: string;
 
   @OneToMany(() => Routine, (routine) => routine.exercise)
   routines: Routine[];

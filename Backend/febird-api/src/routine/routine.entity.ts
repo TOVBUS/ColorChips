@@ -1,4 +1,10 @@
-import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, JoinColumn } from 'typeorm';
+import {
+  Entity,
+  Column,
+  PrimaryGeneratedColumn,
+  ManyToOne,
+  JoinColumn,
+} from 'typeorm';
 import { Level } from '../level/level.entity';
 import { Exercise } from '../exercise/exercise.entity';
 
@@ -12,9 +18,6 @@ export class Routine {
 
   @Column()
   set: number;
-
-  @Column({ length: 3 })
-  type: string;
 
   @ManyToOne(() => Level, (level) => level.routines)
   @JoinColumn({ name: 'level_id' })

@@ -14,7 +14,10 @@ export class InbodyService {
     private memberRepository: Repository<Member>,
   ) {}
 
-  async create(member_id: number, createInbodyDto: CreateInbodyDto): Promise<Inbody> {
+  async create(
+    member_id: number,
+    createInbodyDto: CreateInbodyDto,
+  ): Promise<Inbody> {
     const member = await this.memberRepository.findOne({
       where: { member_id: createInbodyDto.member_id },
     });

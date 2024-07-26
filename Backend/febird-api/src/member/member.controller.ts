@@ -1,9 +1,17 @@
-import {  Controller, Post, Body, Patch, Param, Delete, UseInterceptors, UploadedFile } from '@nestjs/common';
+import {
+  Controller,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+  UseInterceptors,
+  UploadedFile,
+} from '@nestjs/common';
 import { MemberService } from './member.service';
 import { CreateMemberDto } from './dto/create-member.dto';
 import { UpdateMemberDto } from './dto/update-member.dto';
 import { FileInterceptor } from '@nestjs/platform-express';
-
 
 @Controller('member')
 export class MemberController {
@@ -19,7 +27,11 @@ export class MemberController {
   // 회원정보 수정
   @Patch(':id')
   @UseInterceptors(FileInterceptor('profile_image'))
-  update(@Param('id') id: number, @Body() updateMemberDto: UpdateMemberDto, @UploadedFile() file: any) {
+  update(
+    @Param('id') id: number,
+    @Body() updateMemberDto: UpdateMemberDto,
+    @UploadedFile() file: any,
+  ) {
     if (file) {
       updateMemberDto.profile_image = file.filename; // 파일명을 DTO에 저장
     }

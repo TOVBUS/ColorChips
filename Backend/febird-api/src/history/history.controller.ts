@@ -7,7 +7,10 @@ export class HistoryController {
   constructor(private readonly historyService: HistoryService) {}
 
   @Post()
-  create(@Param('memberId') memberId: number, @Body() createHistoryDto: CreateHistoryDto) {
+  create(
+    @Param('memberId') memberId: number,
+    @Body() createHistoryDto: CreateHistoryDto,
+  ) {
     return this.historyService.create(createHistoryDto);
   }
 

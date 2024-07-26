@@ -7,9 +7,13 @@ export class CreateExerciseDto {
 
   @IsString()
   @IsNotEmpty()
-  url: string;
+  video_guide_url: string;
 
   @IsString()
   @IsNotEmpty()
   tip: string;
+
+  @IsString()
+  @IsNotEmpty()
+  type: string;
 }

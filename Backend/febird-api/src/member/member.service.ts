@@ -22,7 +22,10 @@ export class MemberService {
   //   return await this.memberRepository.findOne({ where: { appleId } });
   // }
 
-  async update(member_id: number, updateMemberDto: UpdateMemberDto): Promise<Member> {
+  async update(
+    member_id: number,
+    updateMemberDto: UpdateMemberDto,
+  ): Promise<Member> {
     await this.memberRepository.update(member_id, updateMemberDto);
     return await this.memberRepository.findOne({ where: { member_id } });
   }

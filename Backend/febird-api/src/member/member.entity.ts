@@ -1,12 +1,17 @@
-import { Entity, Column, PrimaryGeneratedColumn, OneToMany, Unique } from 'typeorm';
-import { Inbody } from '../inbody/inbody.entity'; 
-import { History } from '../history/history.entity'; 
+import {
+  Entity,
+  Column,
+  PrimaryGeneratedColumn,
+  OneToMany,
+  Unique,
+} from 'typeorm';
+import { Inbody } from '../inbody/inbody.entity';
+import { History } from '../history/history.entity';
 
 @Entity()
 @Unique(['nickname'])
 @Unique(['appleID'])
 @Unique(['kakaoID'])
-
 export class Member {
   @PrimaryGeneratedColumn()
   member_id: number;
