@@ -9,6 +9,8 @@ import SwiftUI
 
 @main
 struct FebirdAppApp: App {
+    @EnvironmentObject private var navPathFinder: NavigationPathFinder
+    
     var body: some Scene {
         WindowGroup {
             OnboardingWelcomView()
