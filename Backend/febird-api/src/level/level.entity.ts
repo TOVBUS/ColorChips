@@ -14,8 +14,8 @@ export class Level {
   grade: number;
 
   @OneToMany(() => Routine, (routine) => routine.level)
-  routines: Routine[]
+  routines: Routine[];
 
   @OneToMany(() => History, (history) => history.level)
-  histories: History[]
+  histories: History[];
 }

@@ -11,5 +11,5 @@ export class CreateLevelDto {
 
   @IsNumber()
   @IsNotEmpty()
-  routine_id: number; 
+  routine_id: number;
 }

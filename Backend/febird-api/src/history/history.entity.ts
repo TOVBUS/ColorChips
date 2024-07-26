@@ -5,7 +5,7 @@ import {
   ManyToOne,
   JoinColumn,
 } from 'typeorm';
-import { Member } from '../member/member.entity'; 
+import { Member } from '../member/member.entity';
 import { Level } from 'src/level/level.entity';
 
 @Entity()

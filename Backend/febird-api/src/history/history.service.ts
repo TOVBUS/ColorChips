@@ -46,6 +46,8 @@ export class HistoryService {
   }
 
   async findAll(): Promise<History[]> {
-    return await this.historyRepository.find({ relations: ['member', 'level'] });
+    return await this.historyRepository.find({
+      relations: ['member', 'level'],
+    });
   }
 }

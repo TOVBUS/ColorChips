@@ -15,7 +15,9 @@ export class LevelService {
   ) {}
 
   private async getRoutineById(routine_id: number): Promise<Routine> {
-    const routine = await this.routineRepository.findOne({ where: { routine_id } });
+    const routine = await this.routineRepository.findOne({
+      where: { routine_id },
+    });
 
     if (!routine) {
       throw new NotFoundException(`Routine with ID ${routine_id} not found`);
@@ -26,7 +28,7 @@ export class LevelService {
 
   async create(createLevelDto: CreateLevelDto): Promise<Level> {
     const routine = await this.getRoutineById(createLevelDto.routine_id);
-    
+
     const level = this.levelRepository.create({
       ...createLevelDto,
       routines: [routine],

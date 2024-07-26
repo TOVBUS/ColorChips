@@ -9,7 +9,11 @@ import { LevelModule } from '../level/level.module';
 import { Level } from '../level/level.entity';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([History, Member, Level]), MemberModule, LevelModule],
+  imports: [
+    TypeOrmModule.forFeature([History, Member, Level]),
+    MemberModule,
+    LevelModule,
+  ],
   controllers: [HistoryController],
   providers: [HistoryService],
   exports: [TypeOrmModule],

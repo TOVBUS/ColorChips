@@ -3,10 +3,10 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { Member } from '../member/member.entity';
 import { History } from '../history/history.entity';
-import { Inbody } from '../inbody/inbody.entity'; 
+import { Inbody } from '../inbody/inbody.entity';
 import { Level } from '../level/level.entity';
 import { Routine } from '../routine/routine.entity';
-import { Exercise } from '../exercise/exercise.entity';  //  - Azure 블롭 스토리지 연결 필요
+import { Exercise } from '../exercise/exercise.entity'; //  - Azure 블롭 스토리지 연결 필요
 
 @Module({
   imports: [
@@ -41,7 +41,14 @@ import { Exercise } from '../exercise/exercise.entity';  //  - Azure 블롭 스�
       },
       inject: [ConfigService],
     }),
-    TypeOrmModule.forFeature([Member, History, Inbody, Level, Routine, Exercise ]),
+    TypeOrmModule.forFeature([
+      Member,
+      History,
+      Inbody,
+      Level,
+      Routine,
+      Exercise,
+    ]),
   ],
   exports: [TypeOrmModule],
 })

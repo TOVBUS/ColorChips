@@ -7,7 +7,10 @@ export class InbodyController {
   constructor(private inbodyService: InbodyService) {}
 
   @Post()
-  create(@Param('memberId') memberId: number, @Body() createInbodyDto: CreateInbodyDto) {
+  create(
+    @Param('memberId') memberId: number,
+    @Body() createInbodyDto: CreateInbodyDto,
+  ) {
     return this.inbodyService.create(+memberId, createInbodyDto);
   }
 

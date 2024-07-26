@@ -29,5 +29,5 @@ export class CreateInbodyDto {
 
   @IsNumber()
   @IsNotEmpty()
-  member_id: number; 
+  member_id: number;
 }
