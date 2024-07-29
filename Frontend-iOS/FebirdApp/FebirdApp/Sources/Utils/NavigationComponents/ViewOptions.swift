@@ -43,3 +43,14 @@ enum OnboardingViewOptions: Hashable, ViewOptions {
         }
     }
 }
+
+enum MealViewOptions: Hashable, ViewOptions {
+    case mealChatBotView
+
+    @ViewBuilder func view() -> some View {
+        switch self {
+        case .mealChatBotView:
+            MealChatBotView()
+        }
+    }
+}
