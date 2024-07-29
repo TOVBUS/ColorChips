@@ -23,7 +23,8 @@ struct OnboardingEndView: View {
         Spacer()
 
         Button(action: {
-            // 다음뷰로 이동 로직
+            navigationPathFinder.isFirstEnteredApp = false
+            navigationPathFinder.popToRoot()
         }, label: {
             Text("메인으로 이동하기")
                 .frame(maxWidth: .infinity, maxHeight: 56)

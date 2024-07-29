@@ -41,7 +41,7 @@ struct AIMealRecomendationView: View {
                     .font(.customFont(size: 14, weight: .medium))
                     // MARK: - 식단추천 버튼
                     Button(action: {
-                        // TODO: 챗봇뷰
+                        // 챗봇뷰
                     }, label: {
                         HStack(spacing: 8) {
                             Text("식단추천받기")

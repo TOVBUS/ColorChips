@@ -9,6 +9,7 @@ import SwiftUI
 
 class NavigationPathFinder<Option: ViewOptions>: ObservableObject {
     @Published var path: [Option] = []
+    @Published var isFirstEnteredApp = true
 
     func addPath(option: Option) {
         path.append(option)
