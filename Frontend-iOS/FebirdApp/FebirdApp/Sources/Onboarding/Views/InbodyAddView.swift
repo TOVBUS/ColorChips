@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct InbodyAddView: View {
+    @EnvironmentObject var navigationPathFinder: NavigationPathFinder<OnboardingViewOptions>
+    
     @State private var showOnboardingGaugeView = true
     @State private var showSkipButton = true
     @State private var showActionSheet = false
@@ -71,7 +73,7 @@ struct InbodyAddView: View {
 
                 if showSkipButton {
                     Button(action: {
-                        // 건너뛰기 동작 구현
+                        navigationPathFinder.addPath(option: .inbodyInputView)
                     }, label: {
                         Text("건너뛰기")
                             .frame(maxWidth: .infinity, maxHeight: 56)
@@ -98,7 +100,7 @@ struct InbodyAddView: View {
                 })
 
                 Button(action: {
-                    // 분석하기 동작 구현
+                    navigationPathFinder.addPath(option: .onboardingLoadingView)
                 }, label: {
                     Text("분석하기")
                         .frame(maxWidth: .infinity, maxHeight: 56)
@@ -133,6 +135,7 @@ struct InbodyAddView: View {
                 isImageSelected = true
             }
         })
+        .navigationBarBackButtonHidden()
     }
 }
 

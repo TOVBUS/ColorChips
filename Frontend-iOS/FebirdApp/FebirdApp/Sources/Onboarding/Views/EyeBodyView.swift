@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct EyeBodyView: View {
-    @Binding var isOnboarding: Bool
+    @EnvironmentObject var navigationPathFinder: NavigationPathFinder<OnboardingViewOptions>
+    
+    var isOnboarding: Bool = true
     @State private var selectedImages: [UIImage?] = [nil, nil, nil, nil]
     @State private var showActionSheet = false
     @State private var showImagePicker = false
@@ -53,6 +55,7 @@ struct EyeBodyView: View {
             if isOnboarding {
                 Button(action: {
                     // 다음뷰로 이동 로직
+                    navigationPathFinder.addPath(option: .onboardingEndView)
                 }, label: {
                     Text("건너뛰기")
                         .frame(maxWidth: .infinity, maxHeight: 56)
@@ -67,6 +70,7 @@ struct EyeBodyView: View {
 
             Button(action: {
                 // 저장 로직
+                navigationPathFinder.addPath(option: .onboardingEndView)
             }, label: {
                 Text("저장하기")
                     .frame(maxWidth: .infinity, maxHeight: 56)
@@ -96,6 +100,7 @@ struct EyeBodyView: View {
         .fullScreenCover(isPresented: $showCamera) {
             CameraView(image: $selectedImages[currentImageIndex])
         }
+        .navigationBarBackButtonHidden()
     }
 
     func getPlaceholder(for index: Int) -> String {
@@ -110,5 +115,5 @@ struct EyeBodyView: View {
 }
 
 #Preview {
-    EyeBodyView(isOnboarding: .constant(true))
+    EyeBodyView(isOnboarding: true)
 }

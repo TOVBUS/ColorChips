@@ -7,22 +7,17 @@
 
 import SwiftUI
 
-enum ViewOptions: Hashable {}
-
-class NavigationPathFinder: ObservableObject {
-    static let shared = NavigationPathFinder()
-    private init() { }
-
-    @Published var path: NavigationPath = .init()
+class NavigationPathFinder<Option: ViewOptions>: ObservableObject {
+    @Published var path: [Option] = []
     
-    func addPath(option: ViewOptions) {
+    func addPath(option: Option) {
         path.append(option)
     }
     
     func popPath() {
         path.removeLast()
     }
-
+    
     func popToRoot() {
         path = .init()
     }

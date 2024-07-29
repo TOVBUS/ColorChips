@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct InbodyFixView: View {
+    @EnvironmentObject var navigationPathFinder: NavigationPathFinder<OnboardingViewOptions>
+    
     @State var weight: String
     @State var height: String
     @State var bmi: String
@@ -49,9 +51,10 @@ struct InbodyFixView: View {
             .padding(.horizontal, 24)
 
             Button(action: {
-                // 분석하기 동작 구현
+                // TODO: 백엔드에 회원 정보 저장
+                navigationPathFinder.addPath(option: .eyeBodyView)
             }, label: {
-                Text("분석하기")
+                Text("저장하기")
                     .frame(maxWidth: .infinity)
                     .frame(height: 56)
                     .foregroundStyle(Color(.white))
@@ -62,6 +65,7 @@ struct InbodyFixView: View {
                     )
             })
             .padding(.horizontal, 24)
+            .navigationBarBackButtonHidden()
         }
     }
 }

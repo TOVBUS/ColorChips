@@ -8,13 +8,20 @@
 import SwiftUI
 
 struct OnboardingEndView: View {
+    @EnvironmentObject var navigationPathFinder: NavigationPathFinder<OnboardingViewOptions>
+    
     var body: some View {
-        OnboardingGaugeView(progress: 9).padding(.top, 26)
+        OnboardingGaugeView(progress: 10)
+            .padding(.top, 26)
+        
         Text("운동을 시작해볼까요?")
             .font(.customFont(size: 20, weight: .bold))
             .padding(.top, 30)
+        
         Image("peoLogo")
+        
         Spacer()
+        
         Button(action: {
             // 다음뷰로 이동 로직
         }, label: {
@@ -26,7 +33,9 @@ struct OnboardingEndView: View {
                     RoundedRectangle(cornerRadius: 20)
                         .fill(Color(red: 0.07, green: 0.07, blue: 0.08))
                 )
-        }).padding(.horizontal, 24)
+        })
+        .padding(.horizontal, 24)
+        .navigationBarBackButtonHidden()
     }
 }
 
