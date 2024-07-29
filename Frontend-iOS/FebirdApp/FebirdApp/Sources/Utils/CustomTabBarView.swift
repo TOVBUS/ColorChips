@@ -37,7 +37,7 @@ class TabViewModel: ObservableObject {
 }
 
 struct CustomTabBarView: View {
-    @StateObject private var tabViewModel = TabViewModel()
+    @EnvironmentObject var tabViewModel: TabViewModel
 
     var body: some View {
         HStack(alignment: .center, spacing: 48) {
