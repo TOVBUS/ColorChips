@@ -9,7 +9,7 @@ import SwiftUI
 
 struct EyeBodyView: View {
     @EnvironmentObject var navigationPathFinder: NavigationPathFinder<OnboardingViewOptions>
-    
+
     var isOnboarding: Bool = true
     @State private var selectedImages: [UIImage?] = [nil, nil, nil, nil]
     @State private var showActionSheet = false

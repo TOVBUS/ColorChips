@@ -9,7 +9,7 @@ import SwiftUI
 
 struct InbodyFixView: View {
     @EnvironmentObject var navigationPathFinder: NavigationPathFinder<OnboardingViewOptions>
-    
+
     @State var weight: String
     @State var height: String
     @State var bmi: String

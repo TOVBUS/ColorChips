@@ -11,14 +11,14 @@ struct InbodyMainView: View {
     var body: some View {
         VStack {
             ProfileTopView()
-            
+
             ScrollView {
                 InbodyGraphView(title: "체중")
                 InbodyGraphView(title: "기초대사량")
                 InbodyGraphView(title: "체지방량")
             }
             .padding(.horizontal, 20)
-            
+
             Button(action: {
                 // TODO: 스마트 체중계 결과 화면 추가
                 // TODO: 스마트 체중계 결과 이미지로 변경

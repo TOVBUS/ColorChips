@@ -12,11 +12,11 @@ struct MemoRow: View {
     @State private var showModal = false
     @State private var showFullText = false
     var mealTime: String
-    
+
     var body: some View {
         HStack(spacing: 8) {
             Image("feoFace")
-            
+
             VStack(alignment: .leading, spacing: 8) {
                 Text(mealTime) // 아침, 점심, 저녁
                     .font(.customFont(size: 14, weight: .bold))
@@ -24,7 +24,7 @@ struct MemoRow: View {
                     .padding(.vertical, 2)
                     .background(.gray20)
                     .cornerRadius(8)
-                
+
                 // MARK: - 글자수 제한
                 if !inputText.isEmpty {
                     Text(showFullText ? inputText : inputText.prefix(30) + (inputText.count > 30 ? "..." : ""))
@@ -37,9 +37,9 @@ struct MemoRow: View {
                         }
                 }
             }
-            
+
             Spacer()
-            
+
             Button(action: {
                 showModal.toggle()
             }, label: {

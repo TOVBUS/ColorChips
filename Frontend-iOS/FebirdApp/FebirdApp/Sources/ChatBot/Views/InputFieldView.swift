@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct InputFieldView: View {
-    
+
     @Binding var text: String
     var onSend: () -> Void
 

@@ -11,7 +11,7 @@ import SwiftUI
 struct FebirdAppApp: App {
     @StateObject private var navigationPathFinder = NavigationPathFinder<OnboardingViewOptions>()
     private var isFirstEnteredApp = true
-    
+
     var body: some Scene {
         WindowGroup {
             // MARK: - 최초 진입시 온보딩뷰
@@ -23,6 +23,7 @@ struct FebirdAppApp: App {
                         }
                 } else {
                     // MARK: - 그렇지 않으면 운동메인뷰
+                    // 커스텀 탭바로 선택한 운동메인뷰를 표시
                     ExerciseMainView()
                 }
             }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct OnboardingLoadingView: View {
     @EnvironmentObject var navigationPathFinder: NavigationPathFinder<OnboardingViewOptions>
-    
+
     var body: some View {
         VStack {
             OnboardingGaugeView(progress: 9)

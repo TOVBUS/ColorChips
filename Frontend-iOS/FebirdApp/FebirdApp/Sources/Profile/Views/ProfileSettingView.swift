@@ -27,29 +27,29 @@ struct ProfileSettingView: View {
                 }
                 .padding(.top, -55)
                 .padding(.horizontal, 20)
-                
+
                 Image("profile01")
                     .padding(.top, 121)
-                
+
                 ZStack {
                    Image("cameraButton")
                         .padding(.top, 210)
                         .padding(.leading, 110)
                 }
             }
-            
+
             VStack(spacing: 20) {
                 HStack {
                     Text("닉네임").font(.customFont(size: 14, weight: .bold))
                     Spacer()
                 }
-                
+
                 HStack(spacing: 8) {
                     Image("personIcon")
                         .padding()
-                    
+
                     TextField("어떻게 불러드릴까요?", text: .constant("꽥꽥이"))
-                    
+
                     Image("pencilIcon")
                         .padding()
                 }
@@ -59,14 +59,14 @@ struct ProfileSettingView: View {
                         .fill(.gray10)
                 )
                 .padding(.horizontal, 0)
-                
+
                 OnboardingTextField(question: "나이", placeholder: "17세", unit: "세", inputValue: nil, text: .constant("16"))
-                
+
                 HStack {
                     Text("성별").font(.customFont(size: 14, weight: .bold))
                     Spacer()
                 }
-                
+
                 OnboardingSelectGenderButton()
                     .padding(.bottom, 70)
 

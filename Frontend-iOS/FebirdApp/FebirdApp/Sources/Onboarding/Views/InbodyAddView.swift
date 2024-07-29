@@ -9,7 +9,7 @@ import SwiftUI
 
 struct InbodyAddView: View {
     @EnvironmentObject var navigationPathFinder: NavigationPathFinder<OnboardingViewOptions>
-    
+
     @State private var showOnboardingGaugeView = true
     @State private var showSkipButton = true
     @State private var showActionSheet = false
