@@ -5,7 +5,7 @@ dotenv.config();
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  await app.listen(3000);
+  await app.listen(process.env.PORT || 3000);
   console.log(`Server is running on: ${await app.getUrl()}`);
   console.log('Environment variables:');
   console.log(`DB_HOST: ${process.env.DB_HOST}`);
