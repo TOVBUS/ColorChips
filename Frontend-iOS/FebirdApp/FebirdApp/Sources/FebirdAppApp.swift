@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct FebirdAppApp: App {
+    @StateObject private var tabViewModel = TabViewModel()
     @StateObject private var navigationPathFinder = NavigationPathFinder<OnboardingViewOptions>()
     private var isFirstEnteredApp = true
 
@@ -24,7 +25,19 @@ struct FebirdAppApp: App {
                 } else {
                     // MARK: - 그렇지 않으면 운동메인뷰
                     // 커스텀 탭바로 선택한 운동메인뷰를 표시
-                    ExerciseMainView()
+                    ZStack(alignment: .bottom) {
+                        TabView(selection: $tabViewModel.selectedTab) {
+                            MealMainView()
+                                .tag(TabSelection(rawValue: 0))
+                            ExerciseMainView()
+                                .tag(TabSelection(rawValue: 1))
+                            InbodyMainView()
+                                .tag(TabSelection(rawValue: 2))
+                        }
+                        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+                        CustomTabBarView()
+                    }
+                    .environmentObject(tabViewModel)
                 }
             }
         }
