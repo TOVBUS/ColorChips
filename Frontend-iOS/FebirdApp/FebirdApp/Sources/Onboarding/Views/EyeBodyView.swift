@@ -51,6 +51,20 @@ struct EyeBodyView: View {
                 }
             }).padding(.horizontal, 20)
                 .padding(.bottom, 44)
+            
+            Button(action: {
+                // 저장 로직
+                navigationPathFinder.addPath(option: .onboardingEndView)
+            }, label: {
+                Text("저장하기")
+                    .frame(maxWidth: .infinity, maxHeight: 56)
+                    .foregroundStyle(Color(.white))
+                    .font(.customFont(size: 16, weight: .semibold))
+                    .background(
+                        RoundedRectangle(cornerRadius: 20)
+                            .fill(Color(red: 0.07, green: 0.07, blue: 0.08))
+                    )
+            })
 
             if isOnboarding {
                 Button(action: {
@@ -67,20 +81,6 @@ struct EyeBodyView: View {
                         )
                 })
             }
-
-            Button(action: {
-                // 저장 로직
-                navigationPathFinder.addPath(option: .onboardingEndView)
-            }, label: {
-                Text("저장하기")
-                    .frame(maxWidth: .infinity, maxHeight: 56)
-                    .foregroundStyle(Color(.white))
-                    .font(.customFont(size: 16, weight: .semibold))
-                    .background(
-                        RoundedRectangle(cornerRadius: 20)
-                            .fill(Color(red: 0.07, green: 0.07, blue: 0.08))
-                    )
-            })
         }
         .padding(.horizontal, 24)
         .actionSheet(isPresented: $showActionSheet) {
