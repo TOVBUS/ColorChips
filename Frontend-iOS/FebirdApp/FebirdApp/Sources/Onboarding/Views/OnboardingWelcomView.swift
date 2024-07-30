@@ -23,19 +23,9 @@ struct OnboardingWelcomView: View {
 
             Spacer()
 
-            Button(action: {
+            CustomButtonView(title: "네!") {
                 navigationPathFinder.addPath(option: .onboardingSelectUserInfo)
-            }, label: {
-                Text("네!")
-                    .frame(maxWidth: .infinity, maxHeight: 56)
-                    .foregroundStyle(Color(.white))
-                    .font(.customFont(size: 16, weight: .semibold))
-                    .background(
-                        RoundedRectangle(cornerRadius: 20)
-                            .fill(Color(red: 0.07, green: 0.07, blue: 0.08))
-                            .padding(.horizontal, 24)
-                    )
-            })
+            }
         })
         .navigationBarBackButtonHidden()
     }

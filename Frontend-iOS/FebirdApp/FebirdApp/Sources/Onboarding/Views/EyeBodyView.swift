@@ -52,37 +52,18 @@ struct EyeBodyView: View {
             }).padding(.horizontal, 20)
                 .padding(.bottom, 44)
             
-            Button(action: {
-                // 저장 로직
+            CustomButtonView(title: "저장하기") {
+                // TODO: 저장 로직 필요
                 navigationPathFinder.addPath(option: .onboardingEndView)
-            }, label: {
-                Text("저장하기")
-                    .frame(maxWidth: .infinity, maxHeight: 56)
-                    .foregroundStyle(Color(.white))
-                    .font(.customFont(size: 16, weight: .semibold))
-                    .background(
-                        RoundedRectangle(cornerRadius: 20)
-                            .fill(Color(red: 0.07, green: 0.07, blue: 0.08))
-                    )
-            })
+            }
 
             if isOnboarding {
-                Button(action: {
-                    // 다음뷰로 이동 로직
+                CustomButtonView(title: "건너뛰기") {
                     navigationPathFinder.addPath(option: .onboardingEndView)
-                }, label: {
-                    Text("건너뛰기")
-                        .frame(maxWidth: .infinity, maxHeight: 56)
-                        .foregroundStyle(Color(.white))
-                        .font(.customFont(size: 16, weight: .semibold))
-                        .background(
-                            RoundedRectangle(cornerRadius: 20)
-                                .fill(Color(red: 0.07, green: 0.07, blue: 0.08))
-                        )
-                })
+                }
             }
         }
-        .padding(.horizontal, 24)
+        
         .actionSheet(isPresented: $showActionSheet) {
             ActionSheet(title: Text("사진 선택"), buttons: [
                 .default(Text("사진 찍기")) {

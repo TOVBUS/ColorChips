@@ -58,62 +58,27 @@ struct InbodyAddView: View {
             Spacer()
 
             if !isImageSelected {
-                Button(action: {
+                CustomButtonView(title: "등록하기") {
                     showActionSheet = true
-                }, label: {
-                    Text("등록하기")
-                        .frame(maxWidth: .infinity, maxHeight: 56)
-                        .foregroundStyle(Color(.white))
-                        .font(.customFont(size: 16, weight: .semibold))
-                        .background(
-                            RoundedRectangle(cornerRadius: 20)
-                                .fill(Color(red: 0.07, green: 0.07, blue: 0.08))
-                        )
-                })
-
-                if showSkipButton {
-                    Button(action: {
-                        navigationPathFinder.addPath(option: .inbodyInputView)
-                    }, label: {
-                        Text("건너뛰기")
-                            .frame(maxWidth: .infinity, maxHeight: 56)
-                            .foregroundStyle(Color(.white))
-                            .font(.customFont(size: 16, weight: .semibold))
-                            .background(
-                                RoundedRectangle(cornerRadius: 20)
-                                    .fill(Color(red: 0.07, green: 0.07, blue: 0.08))
-                            )
-                    })
+                }
+                .padding(.top, 40)
+                
+                CustomButtonView(title: "건너뛰기") {
+                    // TODO: 분석 로직 추가
+                    navigationPathFinder.addPath(option: .inbodyInputView)
                 }
             } else {
-                Button(action: {
+                CustomButtonView(title: "다시찍기") {
                     showActionSheet = true
-                }, label: {
-                    Text("다시찍기")
-                        .frame(maxWidth: .infinity, maxHeight: 56)
-                        .foregroundStyle(Color(.white))
-                        .font(.customFont(size: 16, weight: .semibold))
-                        .background(
-                            RoundedRectangle(cornerRadius: 20)
-                                .fill(Color(red: 0.07, green: 0.07, blue: 0.08))
-                        )
-                })
-
-                Button(action: {
+                }
+                .padding(.top, 40)
+                
+                CustomButtonView(title: "분석하기") {
+                    // TODO: 분석 로직 추가
                     navigationPathFinder.addPath(option: .onboardingLoadingView)
-                }, label: {
-                    Text("분석하기")
-                        .frame(maxWidth: .infinity, maxHeight: 56)
-                        .foregroundStyle(Color(.white))
-                        .font(.customFont(size: 16, weight: .semibold))
-                        .background(
-                            RoundedRectangle(cornerRadius: 20)
-                                .fill(Color(red: 0.07, green: 0.07, blue: 0.08))
-                        )
-                })
+                }
             }
         }
-        .padding(.horizontal, 24)
         .cameraActionSheet(isPresented: $showActionSheet) {
             DispatchQueue.main.async {
                 self.showCamera = true

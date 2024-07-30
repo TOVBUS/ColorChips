@@ -37,36 +37,13 @@ struct InbodyInputView: View {
             })
             .padding(.horizontal, 46)
 
-            Button(action: {
+            CustomButtonView(title: "저장하기") {
                 // TODO: 데이터 저장 로직 구현 - SwiftData
-            }, label: {
-                Text("저장하기")
-                    .frame(maxWidth: .infinity)
-                    .frame(height: 56)
-                    .foregroundStyle(Color(.white))
-                    .font(.customFont(size: 16, weight: .semibold))
-                    .background(
-                        RoundedRectangle(cornerRadius: 20)
-                            .fill(Color(red: 0.07, green: 0.07, blue: 0.08))
-                    )
-            })
-            .padding(.top, 40)
-            .padding(.horizontal, 24)
-
-            Button(action: {
-                navigationPathFinder.addPath(option: .eyeBodyView)
-            }, label: {
-                Text("건너뛰기")
-                    .frame(maxWidth: .infinity)
-                    .frame(height: 56)
-                    .foregroundStyle(Color(.white))
-                    .font(.customFont(size: 16, weight: .semibold))
-                    .background(
-                        RoundedRectangle(cornerRadius: 20)
-                            .fill(Color(red: 0.07, green: 0.07, blue: 0.08))
-                    )
-            })
-            .padding(.horizontal, 24)
+            }
+            
+            CustomButtonView(title: "건너뛰기") {
+                navigationPathFinder.addPath(option: .onboardingEndView)
+            }
             .navigationBarBackButtonHidden()
         }
     }

@@ -61,20 +61,14 @@ struct OnboardingSelectUserInfoView: View {
 
             OnboardingSelectGenderButton()
 
-            Button(action: {
-                navigationPathFinder.addPath(option: .inbodyAddView)
-            }, label: {
-                Text("입력하기")
-                    .frame(maxWidth: .infinity, maxHeight: 56)
-                    .foregroundStyle(Color(.white))
-                    .font(.customFont(size: 16, weight: .semibold))
-                    .background(
-                        RoundedRectangle(cornerRadius: 20)
-                            .fill(Color(red: 0.07, green: 0.07, blue: 0.08))
-                    )
-            })
+            
         }
-        .padding(.horizontal, 25)
+        .padding(.horizontal, 24)
+        
+        CustomButtonView(title: "입력하기") {
+            // TODO: API POST 로직 추가
+            navigationPathFinder.addPath(option: .inbodyAddView)
+        }
         .navigationBarBackButtonHidden()
     }
 }
