@@ -70,7 +70,7 @@ struct MemoModalView: View {
                         Text("\(temporaryText.count) / 200")
                             .font(.customFont(size: 16, weight: .medium))
                             .foregroundColor(.gray40)
-                            .onChange(of: temporaryText) { newValue in
+                            .onChange(of: temporaryText) { _, newValue in
                                 if newValue.count > 200 {
                                     temporaryText = String(newValue.prefix(200))
                                 }
