@@ -52,7 +52,6 @@ struct CustomTabBarView: View {
         .background(.white)
         .cornerRadius(20)
         .drawingGroup()
-        .offset(y: -18)
         .shadow(color: .gray20, radius: 10, x: 0, y: 0)
     }
 }
