@@ -22,18 +22,45 @@ let MemberController = class MemberController {
     constructor(memberService) {
         this.memberService = memberService;
     }
-    create(createMemberDto, file) {
-        createMemberDto.profile_image = file.filename;
-        return this.memberService.create(createMemberDto);
-    }
-    update(id, updateMemberDto, file) {
-        if (file) {
-            updateMemberDto.profile_image = file.filename;
+    async create(createMemberDto, file, res) {
+        try {
+            createMemberDto.profile_image = file.filename;
+            const member = await this.memberService.create(createMemberDto);
+            return res.status(common_1.HttpStatus.CREATED).json(member);
         }
-        return this.memberService.update(id, updateMemberDto);
+        catch (error) {
+            return res.status(common_1.HttpStatus.BAD_REQUEST).json({ message: '회원 정보 등록 실패' });
+        }
     }
-    remove(id) {
-        return this.memberService.remove(id);
+    async update(id, updateMemberDto, file, res) {
+        try {
+            if (file) {
+                updateMemberDto.profile_image = file.filename;
+            }
+            const updatedMember = await this.memberService.update(id, updateMemberDto);
+            return res.status(common_1.HttpStatus.OK).json(updatedMember);
+        }
+        catch (error) {
+            return res.status(common_1.HttpStatus.BAD_REQUEST).json({ message: '회원 정보 수정 실패' });
+        }
+    }
+    async findOne(id, res) {
+        try {
+            const member = await this.memberService.findOne(id);
+            return res.status(common_1.HttpStatus.OK).json(member);
+        }
+        catch (error) {
+            return res.status(common_1.HttpStatus.NOT_FOUND).json({ message: '회원을 조회 할 수 없습니다.' });
+        }
+    }
+    async remove(id, res) {
+        try {
+            console.log(await this.memberService.remove(id));
+            return res.status(common_1.HttpStatus.OK).json({ message: 'Member 삭제 성공!' });
+        }
+        catch (error) {
+            return res.status(common_1.HttpStatus.BAD_REQUEST).json({ message: '회원 정보 삭제 실패' });
+        }
     }
 };
 exports.MemberController = MemberController;
@@ -42,9 +69,10 @@ __decorate([
     (0, common_1.UseInterceptors)((0, platform_express_1.FileInterceptor)('profile_image')),
     __param(0, (0, common_1.Body)()),
     __param(1, (0, common_1.UploadedFile)()),
+    __param(2, (0, common_1.Res)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [create_member_dto_1.CreateMemberDto, Object]),
-    __metadata("design:returntype", void 0)
+    __metadata("design:paramtypes", [create_member_dto_1.CreateMemberDto, Object, Object]),
+    __metadata("design:returntype", Promise)
 ], MemberController.prototype, "create", null);
 __decorate([
     (0, common_1.Patch)(':id'),
@@ -52,16 +80,26 @@ __decorate([
     __param(0, (0, common_1.Param)('id')),
     __param(1, (0, common_1.Body)()),
     __param(2, (0, common_1.UploadedFile)()),
+    __param(3, (0, common_1.Res)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Number, update_member_dto_1.UpdateMemberDto, Object]),
-    __metadata("design:returntype", void 0)
+    __metadata("design:paramtypes", [Number, update_member_dto_1.UpdateMemberDto, Object, Object]),
+    __metadata("design:returntype", Promise)
 ], MemberController.prototype, "update", null);
+__decorate([
+    (0, common_1.Get)(':id'),
+    __param(0, (0, common_1.Param)('id')),
+    __param(1, (0, common_1.Res)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number, Object]),
+    __metadata("design:returntype", Promise)
+], MemberController.prototype, "findOne", null);
 __decorate([
     (0, common_1.Delete)(':id'),
     __param(0, (0, common_1.Param)('id')),
+    __param(1, (0, common_1.Res)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Number]),
-    __metadata("design:returntype", void 0)
+    __metadata("design:paramtypes", [Number, Object]),
+    __metadata("design:returntype", Promise)
 ], MemberController.prototype, "remove", null);
 exports.MemberController = MemberController = __decorate([
     (0, common_1.Controller)('member'),
