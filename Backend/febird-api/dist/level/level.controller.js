@@ -15,32 +15,36 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.LevelController = void 0;
 const common_1 = require("@nestjs/common");
 const level_service_1 = require("./level.service");
-const create_level_dto_1 = require("./dto/create-level.dto");
 let LevelController = class LevelController {
     constructor(levelService) {
         this.levelService = levelService;
     }
-    create(createLevelDto) {
-        return this.levelService.create(createLevelDto);
-    }
     findAll() {
         return this.levelService.findAll();
     }
+    async findOne(id) {
+        try {
+            return await this.levelService.findOne(id);
+        }
+        catch (error) {
+            throw new common_1.NotFoundException(`Level with ID ${id} not found`);
+        }
+    }
 };
 exports.LevelController = LevelController;
-__decorate([
-    (0, common_1.Post)(),
-    __param(0, (0, common_1.Body)()),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [create_level_dto_1.CreateLevelDto]),
-    __metadata("design:returntype", void 0)
-], LevelController.prototype, "create", null);
 __decorate([
     (0, common_1.Get)(),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", void 0)
 ], LevelController.prototype, "findAll", null);
+__decorate([
+    (0, common_1.Get)(':id'),
+    __param(0, (0, common_1.Param)('id')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number]),
+    __metadata("design:returntype", Promise)
+], LevelController.prototype, "findOne", null);
 exports.LevelController = LevelController = __decorate([
     (0, common_1.Controller)('level'),
     __metadata("design:paramtypes", [level_service_1.LevelService])

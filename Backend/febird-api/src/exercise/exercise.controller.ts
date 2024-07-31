@@ -14,4 +14,5 @@ export class ExerciseController {
   findAll() {
     return this.exerciseService.findAll();
   }
+  //findOne(@Param('id') id: string) {}
 }

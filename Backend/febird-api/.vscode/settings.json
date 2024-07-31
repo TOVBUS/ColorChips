@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/a77ba22b-a767-4a3c-be93-59f25c31d327/resourceGroups/colorchips/providers/Microsoft.Web/sites/app-feo",
+    "appService.deploySubpath": "."
+}

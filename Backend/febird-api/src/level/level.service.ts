@@ -3,7 +3,6 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Level } from './level.entity';
 import { Routine } from '../routine/routine.entity';
-import { CreateLevelDto } from './dto/create-level.dto';
 
 @Injectable()
 export class LevelService {
@@ -26,18 +25,20 @@ export class LevelService {
     return routine;
   }
 
-  async create(createLevelDto: CreateLevelDto): Promise<Level> {
-    const routine = await this.getRoutineById(createLevelDto.routine_id);
-
-    const level = this.levelRepository.create({
-      ...createLevelDto,
-      routines: [routine],
-    });
-
-    return this.levelRepository.save(level);
+  async findAll(): Promise<Level[]> {
+    return this.levelRepository.find({ relations: ['routines'] });
   }
 
-  async findAll(): Promise<Level[]> {
-    return this.levelRepository.find({ relations: ['routine'] });
+  async findOne(id: number): Promise<Level> {
+    const level = await this.levelRepository.findOne({
+      where: { level_id: id },
+      relations: ['routines'],
+    });
+    
+    if (!level) {
+      throw new NotFoundException(`Level with ID ${id} not found`);
+    }
+
+    return level;
   }
 }

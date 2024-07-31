@@ -19,4 +19,8 @@ export class RoutineService {
   findAll() {
     return this.routineRepository.find();
   }
+
+  // findOne(id: number) {
+  //   return this.routineRepository.findOne(id);
+  // }
 }

@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Member } from './member.entity';
@@ -15,6 +15,14 @@ export class MemberService {
   async create(createMemberDto: CreateMemberDto): Promise<Member> {
     const member = this.memberRepository.create(createMemberDto);
     return this.memberRepository.save(member);
+  }
+
+  async findOne(member_id: number): Promise<Member> {
+    const member = await this.memberRepository.findOne({ where: { member_id } });
+    if (!member) {
+      throw new NotFoundException(`Member with ID ${member_id} not found`);
+    }
+    return member;
   }
 
   // Apple Sign에 필요한 것
