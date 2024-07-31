@@ -10,35 +10,39 @@ import SwiftUI
 @main
 struct FebirdAppApp: App {
     @StateObject var tabViewModel = TabViewModel()
-    @StateObject private var navigationPathFinder = NavigationPathFinder<OnboardingViewOptions>()
-
+    @StateObject private var onboardingNavigationPathFinder = NavigationPathFinder<OnboardingViewOptions>()
+    @StateObject private var mealNavigationPathFinder = NavigationPathFinder<MealViewOptions>()
+    
     var body: some Scene {
         WindowGroup {
-            // MARK: - 최초 진입시 온보딩뷰
-            NavigationStack(path: $navigationPathFinder.path) {
-                if navigationPathFinder.isFirstEnteredApp {
+            if onboardingNavigationPathFinder.isFirstEnteredApp {
+                NavigationStack(path: $onboardingNavigationPathFinder.path) {
                     OnboardingWelcomView()
                         .navigationDestination(for: OnboardingViewOptions.self) { option in
                             option.view()
                         }
-                } else {
-                    // MARK: - 그렇지 않으면 운동메인뷰
-                    // 커스텀 탭바로 선택한 운동메인뷰를 표시
-                    ZStack(alignment: .bottom) {
-                        switch tabViewModel.selectedTab {
+                }
+                .environmentObject(onboardingNavigationPathFinder)
+            } else {
+                ZStack(alignment: .bottom) {
+                    switch tabViewModel.selectedTab {
                         case .meal:
-                            MealMainView()
+                            NavigationStack(path: $mealNavigationPathFinder.path) {
+                                MealMainView()
+                                    .navigationDestination(for: MealViewOptions.self) { option in
+                                        option.view()
+                                    }
+                            }
                         case .exercise:
                             ExerciseMainView()
                         case .profile:
                             InbodyMainView()
-                        }
-                        CustomTabBarView()
                     }
-                    .environmentObject(tabViewModel)
+                    CustomTabBarView()
                 }
+                .environmentObject(tabViewModel)
+                .environmentObject(mealNavigationPathFinder)
             }
-            .environmentObject(navigationPathFinder)
         }
     }
 }

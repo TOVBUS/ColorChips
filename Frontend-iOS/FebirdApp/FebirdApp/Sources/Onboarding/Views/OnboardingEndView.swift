@@ -11,7 +11,7 @@ struct OnboardingEndView: View {
     @EnvironmentObject var navigationPathFinder: NavigationPathFinder<OnboardingViewOptions>
 
     var body: some View {
-        OnboardingGaugeView(progress: 10)
+        OnboardingGaugeView(progress: 8)
             .padding(.top, 26)
 
         Text("운동을 시작해볼까요?")

@@ -12,7 +12,7 @@ struct OnboardingLoadingView: View {
 
     var body: some View {
         VStack {
-            OnboardingGaugeView(progress: 9)
+            OnboardingGaugeView(progress: 6)
             
             Text("🧐")
                 .font(.customFont(size: 200, weight: .bold))

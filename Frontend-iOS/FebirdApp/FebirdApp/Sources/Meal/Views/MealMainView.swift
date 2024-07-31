@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MealMainView: View {
     
+    @EnvironmentObject var mealNavigationPathFinder: NavigationPathFinder<MealViewOptions>
     let meals = ["아침", "점심", "저녁"]
     
     var body: some View {
@@ -40,6 +41,7 @@ struct MealMainView: View {
                 .foregroundStyle(.white)
         )
         .ignoresSafeArea()
+        .environmentObject(mealNavigationPathFinder)
     }
 }
 

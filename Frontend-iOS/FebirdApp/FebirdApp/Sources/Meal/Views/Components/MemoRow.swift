@@ -24,7 +24,7 @@ struct MemoRow: View {
                     .font(.customFont(size: 14, weight: .bold))
                     .padding(.horizontal, 8)
                     .padding(.vertical, 2)
-                    .background(.gray20)
+                    .background(.orange30)
                     .cornerRadius(8)
 
                 // MARK: - 글자수 제한
@@ -45,7 +45,15 @@ struct MemoRow: View {
             Button(action: {
                 showModal.toggle()
             }, label: {
-                Image("vertialIcon")
+                Image(systemName: "plus")
+                    .font(.customFont(size: 22, weight: .bold))
+                    .foregroundStyle(.gray60)
+                    .padding(8)
+                    .background(
+                        Rectangle()
+                            .foregroundStyle(.gray20)
+                            .cornerRadius(4, corners: .allCorners)
+                    )
             })
         }
         .padding(12)

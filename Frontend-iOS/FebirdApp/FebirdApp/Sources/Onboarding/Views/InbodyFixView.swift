@@ -19,10 +19,8 @@ struct InbodyFixView: View {
 
     var body: some View {
         ScrollView {
-            OnboardingGaugeView(progress: 7)
-//                .padding(.top, 24)
-//                .padding(.bottom, 34)
-            
+            OnboardingGaugeView(progress: 4)
+
             Text("정보가 다르게 인식됐나요? \n여기에서 수정할 수 있어요 😉")
                 .font(.customFont(size: 20, weight: .bold))
                 .foregroundStyle(Color(red: 0.07, green: 0.07, blue: 0.08))

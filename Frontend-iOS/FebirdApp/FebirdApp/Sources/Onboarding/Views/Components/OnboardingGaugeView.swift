@@ -10,7 +10,7 @@ import SwiftUI
 struct OnboardingGaugeView: View {
     @State var progress: Int
     var minValue: Int = 0
-    var maxValue: Int = 10
+    var maxValue: Int = 8
 
     var body: some View {
         VStack {

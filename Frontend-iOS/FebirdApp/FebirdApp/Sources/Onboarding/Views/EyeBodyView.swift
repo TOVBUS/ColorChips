@@ -20,7 +20,7 @@ struct EyeBodyView: View {
     var body: some View {
         VStack {
             if isOnboarding {
-                OnboardingGaugeView(progress: 9)
+                OnboardingGaugeView(progress: 7)
             }
             VStack {
                 Text("눈바디를 기록해볼까요?")

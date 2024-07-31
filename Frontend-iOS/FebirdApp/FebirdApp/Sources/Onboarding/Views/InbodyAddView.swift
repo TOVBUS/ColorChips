@@ -22,7 +22,7 @@ struct InbodyAddView: View {
     var body: some View {
         VStack {
             if showOnboardingGaugeView {
-                OnboardingGaugeView(progress: 4)
+                OnboardingGaugeView(progress: 3)
             }
             
             VStack {

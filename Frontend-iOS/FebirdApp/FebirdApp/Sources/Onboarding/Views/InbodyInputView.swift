@@ -19,9 +19,8 @@ struct InbodyInputView: View {
 
     var body: some View {
         VStack {
-            OnboardingGaugeView(progress: 8)
-            //                .padding(.top, 24)
-            //                .padding(.bottom, 34)
+            OnboardingGaugeView(progress: 5)
+            
             ScrollView {
                 Text("체중과 키를 기록하면 변화를 그래프로 보여드릴게요 😉")
                     .font(.customFont(size: 20, weight: .bold))
