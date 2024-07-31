@@ -21,7 +21,6 @@ export class LevelService {
     if (!routine) {
       throw new NotFoundException(`Routine with ID ${routine_id} not found`);
     }
-
     return routine;
   }
 
@@ -38,7 +37,6 @@ export class LevelService {
     if (!level) {
       throw new NotFoundException(`Level with ID ${id} not found`);
     }
-
     return level;
   }
 }

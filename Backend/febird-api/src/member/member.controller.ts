@@ -1,15 +1,5 @@
 import {
-  Controller,
-  Post,
-  Body,
-  Patch,
-  Param,
-  Delete,
-  Get,
-  UseInterceptors,
-  UploadedFile,
-  Res,
-  HttpStatus,
+  Controller, Post, Body, Patch, Param, Delete, Get, UseInterceptors, UploadedFile, Res, HttpStatus
 } from '@nestjs/common';
 import { MemberService } from './member.service';
 import { CreateMemberDto } from './dto/create-member.dto';
@@ -21,7 +11,6 @@ import { Response } from 'express';
 export class MemberController {
   constructor(private memberService: MemberService) {}
 
-  // 회원정보 등록
   @Post()
   @UseInterceptors(FileInterceptor('profile_image'))
   async create(@Body() createMemberDto: CreateMemberDto, @UploadedFile() file: any, @Res() res: Response) {
@@ -34,7 +23,6 @@ export class MemberController {
     }
   }
 
-  // 회원정보 수정
   @Patch(':id')
   @UseInterceptors(FileInterceptor('profile_image'))
   async update(
@@ -54,7 +42,6 @@ export class MemberController {
     }
   }
 
-  // 특정 회원정보 조회
   @Get(':id')
   async findOne(@Param('id') id: number, @Res() res: Response) {
     try {
@@ -65,7 +52,6 @@ export class MemberController {
     }
   }
 
-  // 회원정보 삭제
   @Delete(':id')
   async remove(@Param('id') id: number, @Res() res: Response) {
     try {
