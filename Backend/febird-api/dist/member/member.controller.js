@@ -55,7 +55,7 @@ let MemberController = class MemberController {
     }
     async remove(id, res) {
         try {
-            console.log(await this.memberService.remove(id));
+            await this.memberService.remove(id);
             return res.status(common_1.HttpStatus.OK).json({ message: 'Member 삭제 성공!' });
         }
         catch (error) {

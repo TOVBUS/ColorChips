@@ -45,7 +45,7 @@ __decorate([
     __metadata("design:type", String)
 ], Member.prototype, "kakaoID", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    (0, typeorm_1.Column)({ default: 1 }),
     __metadata("design:type", Number)
 ], Member.prototype, "current_level", void 0);
 __decorate([
