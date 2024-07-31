@@ -1,7 +1,5 @@
-import { Controller, Get, Post, Body, Patch, Param, NotFoundException } from '@nestjs/common';
+import { Controller, Get, Param, NotFoundException } from '@nestjs/common';
 import { LevelService } from './level.service';
-import { CreateLevelDto } from './dto/create-level.dto';
-import { UpdateLevelDto } from './dto/update-level.dto'; // UpdateLevelDto를 추가
 
 @Controller('level')
 export class LevelController {
