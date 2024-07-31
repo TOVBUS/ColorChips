@@ -22,6 +22,7 @@ let ExerciseService = class ExerciseService {
         this.exerciseRepository = exerciseRepository;
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
     async findAll() {
         return this.exerciseRepository.find();
     }
@@ -39,8 +40,20 @@ let ExerciseService = class ExerciseService {
         return this.exerciseRepository.save(exercise);
     }
     findAll() {
+=======
+    async findAll() {
+>>>>>>> 589c371 (✨ :: exercise create 로직 삭제, findOne 로직 추가 #KAN-257)
         return this.exerciseRepository.find();
 >>>>>>> d0bf1f6 (🐛 :: Fix Server Error)
+    }
+    async findOne(id) {
+        const exercise = await this.exerciseRepository.findOne({
+            where: { exercise_id: id },
+        });
+        if (!exercise) {
+            throw new common_1.NotFoundException(`Exercise with ID ${id} not found`);
+        }
+        return exercise;
     }
 };
 exports.ExerciseService = ExerciseService;

@@ -15,6 +15,9 @@ export class ExerciseService {
   }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 589c371 (✨ :: exercise create 로직 삭제, findOne 로직 추가 #KAN-257)
   async findOne(id: number) {
     const exercise = await this.exerciseRepository.findOne({
       where: { exercise_id: id },
@@ -26,8 +29,12 @@ export class ExerciseService {
 
     return exercise;
   }
+<<<<<<< HEAD
 }
 =======
   //findOne(id: number) {}
 }
 >>>>>>> a351c7e (✨ :: Member에 FindOne 추가, Deletle 예외처리 추가 #KAN-257)
+=======
+}
+>>>>>>> 589c371 (✨ :: exercise create 로직 삭제, findOne 로직 추가 #KAN-257)
