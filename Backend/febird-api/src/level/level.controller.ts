@@ -1,20 +1,23 @@
-import { Controller, Get, Post, Body, Patch, Param } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, NotFoundException } from '@nestjs/common';
 import { LevelService } from './level.service';
 import { CreateLevelDto } from './dto/create-level.dto';
+import { UpdateLevelDto } from './dto/update-level.dto'; // UpdateLevelDto를 추가
 
 @Controller('level')
 export class LevelController {
   constructor(private readonly levelService: LevelService) {}
-  @Post()
-  create(@Body() createLevelDto: CreateLevelDto) {
-    return this.levelService.create(createLevelDto);
-  }
 
   @Get()
   findAll() {
     return this.levelService.findAll();
   }
 
-  //findOne(@Param('id') id: string) {}
-  //update(@Param('id') id: string, @Body() updateLevelDto: UpdateLevelDto) {}
+  @Get(':id')
+  async findOne(@Param('id') id: number) {
+    try {
+      return await this.levelService.findOne(id);
+    } catch (error) {
+      throw new NotFoundException(`Level with ID ${id} not found`);
+    }
+  }
 }
