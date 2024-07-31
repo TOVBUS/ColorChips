@@ -33,6 +33,7 @@ let LevelService = class LevelService {
         return routine;
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
     async findAll() {
         return this.levelRepository.find({ relations: ['routines'] });
     }
@@ -57,6 +58,20 @@ let LevelService = class LevelService {
     async findAll() {
         return this.levelRepository.find({ relations: ['routine'] });
 >>>>>>> d0bf1f6 (🐛 :: Fix Server Error)
+=======
+    async findAll() {
+        return this.levelRepository.find({ relations: ['routines'] });
+    }
+    async findOne(id) {
+        const level = await this.levelRepository.findOne({
+            where: { level_id: id },
+            relations: ['routines'],
+        });
+        if (!level) {
+            throw new common_1.NotFoundException(`Level with ID ${id} not found`);
+        }
+        return level;
+>>>>>>> 221e99d (✨ :: level의 FindOne 로직 예외처리 #KAN-257)
     }
 };
 exports.LevelService = LevelService;

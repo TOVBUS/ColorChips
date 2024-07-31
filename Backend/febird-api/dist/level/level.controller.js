@@ -16,13 +16,17 @@ exports.LevelController = void 0;
 const common_1 = require("@nestjs/common");
 const level_service_1 = require("./level.service");
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 const create_level_dto_1 = require("./dto/create-level.dto");
 >>>>>>> d0bf1f6 (🐛 :: Fix Server Error)
+=======
+>>>>>>> 221e99d (✨ :: level의 FindOne 로직 예외처리 #KAN-257)
 let LevelController = class LevelController {
     constructor(levelService) {
         this.levelService = levelService;
     }
+<<<<<<< HEAD
 <<<<<<< HEAD
     findAll() {
         return this.levelService.findAll();
@@ -42,12 +46,23 @@ __decorate([
     create(createLevelDto) {
         return this.levelService.create(createLevelDto);
     }
+=======
+>>>>>>> 221e99d (✨ :: level의 FindOne 로직 예외처리 #KAN-257)
     findAll() {
         return this.levelService.findAll();
+    }
+    async findOne(id) {
+        try {
+            return await this.levelService.findOne(id);
+        }
+        catch (error) {
+            throw new common_1.NotFoundException(`Level with ID ${id} not found`);
+        }
     }
 };
 exports.LevelController = LevelController;
 __decorate([
+<<<<<<< HEAD
     (0, common_1.Post)(),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
@@ -56,12 +71,17 @@ __decorate([
 ], LevelController.prototype, "create", null);
 __decorate([
 >>>>>>> d0bf1f6 (🐛 :: Fix Server Error)
+=======
+>>>>>>> 221e99d (✨ :: level의 FindOne 로직 예외처리 #KAN-257)
     (0, common_1.Get)(),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", void 0)
 ], LevelController.prototype, "findAll", null);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 221e99d (✨ :: level의 FindOne 로직 예외처리 #KAN-257)
 __decorate([
     (0, common_1.Get)(':id'),
     __param(0, (0, common_1.Param)('id')),
@@ -69,8 +89,11 @@ __decorate([
     __metadata("design:paramtypes", [Number]),
     __metadata("design:returntype", Promise)
 ], LevelController.prototype, "findOne", null);
+<<<<<<< HEAD
 =======
 >>>>>>> d0bf1f6 (🐛 :: Fix Server Error)
+=======
+>>>>>>> 221e99d (✨ :: level의 FindOne 로직 예외처리 #KAN-257)
 exports.LevelController = LevelController = __decorate([
     (0, common_1.Controller)('level'),
     __metadata("design:paramtypes", [level_service_1.LevelService])

@@ -61,6 +61,7 @@ let MemberController = class MemberController {
     async remove(id, res) {
         try {
             await this.memberService.remove(id);
+<<<<<<< HEAD
             return res.status(common_1.HttpStatus.OK).json({ message: 'Member 삭제 성공!' });
         }
         catch (error) {
@@ -107,6 +108,8 @@ let MemberController = class MemberController {
     async remove(id, res) {
         try {
             console.log(await this.memberService.remove(id));
+=======
+>>>>>>> 221e99d (✨ :: level의 FindOne 로직 예외처리 #KAN-257)
             return res.status(common_1.HttpStatus.OK).json({ message: 'Member 삭제 성공!' });
         }
         catch (error) {

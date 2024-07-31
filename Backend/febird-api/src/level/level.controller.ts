@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { Controller, Get, Param, NotFoundException } from '@nestjs/common';
 import { LevelService } from './level.service';
 =======
@@ -7,6 +8,10 @@ import { LevelService } from './level.service';
 import { CreateLevelDto } from './dto/create-level.dto';
 import { UpdateLevelDto } from './dto/update-level.dto'; // UpdateLevelDto를 추가
 >>>>>>> 82dded9 (✨ :: level의 FindOne, FindAll 로직만 남기기 #KAN-257)
+=======
+import { Controller, Get, Param, NotFoundException } from '@nestjs/common';
+import { LevelService } from './level.service';
+>>>>>>> 221e99d (✨ :: level의 FindOne 로직 예외처리 #KAN-257)
 
 @Controller('level')
 export class LevelController {

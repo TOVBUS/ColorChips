@@ -46,10 +46,14 @@ __decorate([
 ], Member.prototype, "kakaoID", void 0);
 __decorate([
 <<<<<<< HEAD
+<<<<<<< HEAD
     (0, typeorm_1.Column)({ default: 1 }),
 =======
     (0, typeorm_1.Column)(),
 >>>>>>> d0bf1f6 (🐛 :: Fix Server Error)
+=======
+    (0, typeorm_1.Column)({ default: 1 }),
+>>>>>>> 221e99d (✨ :: level의 FindOne 로직 예외처리 #KAN-257)
     __metadata("design:type", Number)
 ], Member.prototype, "current_level", void 0);
 __decorate([
