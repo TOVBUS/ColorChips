@@ -15,32 +15,31 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ExerciseController = void 0;
 const common_1 = require("@nestjs/common");
 const exercise_service_1 = require("./exercise.service");
-const create_exercise_dto_1 = require("./dto/create-exercise.dto");
 let ExerciseController = class ExerciseController {
     constructor(exerciseService) {
         this.exerciseService = exerciseService;
     }
-    create(createExerciseDto) {
-        return this.exerciseService.create(createExerciseDto);
-    }
     findAll() {
         return this.exerciseService.findAll();
     }
+    findOne(id) {
+        return this.exerciseService.findOne(id);
+    }
 };
 exports.ExerciseController = ExerciseController;
-__decorate([
-    (0, common_1.Post)(),
-    __param(0, (0, common_1.Body)()),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [create_exercise_dto_1.CreateExerciseDto]),
-    __metadata("design:returntype", void 0)
-], ExerciseController.prototype, "create", null);
 __decorate([
     (0, common_1.Get)(),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", void 0)
 ], ExerciseController.prototype, "findAll", null);
+__decorate([
+    (0, common_1.Get)(':id'),
+    __param(0, (0, common_1.Param)('id')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number]),
+    __metadata("design:returntype", void 0)
+], ExerciseController.prototype, "findOne", null);
 exports.ExerciseController = ExerciseController = __decorate([
     (0, common_1.Controller)('exercise'),
     __metadata("design:paramtypes", [exercise_service_1.ExerciseService])

@@ -21,12 +21,17 @@ let ExerciseService = class ExerciseService {
     constructor(exerciseRepository) {
         this.exerciseRepository = exerciseRepository;
     }
-    create(createExerciseDto) {
-        const exercise = this.exerciseRepository.create(createExerciseDto);
-        return this.exerciseRepository.save(exercise);
-    }
-    findAll() {
+    async findAll() {
         return this.exerciseRepository.find();
+    }
+    async findOne(id) {
+        const exercise = await this.exerciseRepository.findOne({
+            where: { exercise_id: id },
+        });
+        if (!exercise) {
+            throw new common_1.NotFoundException(`Exercise with ID ${id} not found`);
+        }
+        return exercise;
     }
 };
 exports.ExerciseService = ExerciseService;

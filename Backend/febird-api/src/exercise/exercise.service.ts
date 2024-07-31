@@ -1,8 +1,7 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Exercise } from './exercise.entity';
-import { CreateExerciseDto } from './dto/create-exercise.dto';
 
 @Injectable()
 export class ExerciseService {
@@ -11,14 +10,19 @@ export class ExerciseService {
     private exerciseRepository: Repository<Exercise>,
   ) {}
 
-  create(createExerciseDto: CreateExerciseDto) {
-    const exercise = this.exerciseRepository.create(createExerciseDto);
-    return this.exerciseRepository.save(exercise);
-  }
-
-  findAll() {
+  async findAll() {
     return this.exerciseRepository.find();
   }
 
-  //findOne(id: number) {}
+  async findOne(id: number) {
+    const exercise = await this.exerciseRepository.findOne({
+      where: { exercise_id: id },
+    });
+
+    if (!exercise) {
+      throw new NotFoundException(`Exercise with ID ${id} not found`);
+    }
+
+    return exercise;
+  }
 }
