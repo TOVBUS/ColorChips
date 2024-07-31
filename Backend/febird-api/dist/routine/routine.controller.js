@@ -15,32 +15,35 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.RoutineController = void 0;
 const common_1 = require("@nestjs/common");
 const routine_service_1 = require("./routine.service");
-const create_routine_dto_1 = require("./dto/create-routine.dto");
 let RoutineController = class RoutineController {
     constructor(routineService) {
         this.routineService = routineService;
     }
-    create(createRoutineDto) {
-        return this.routineService.create(createRoutineDto);
-    }
     findAll() {
         return this.routineService.findAll();
     }
+    async findOne(id) {
+        const routine = await this.routineService.findOne(id);
+        if (!routine) {
+            throw new common_1.NotFoundException(`ID ${id}에 해당하는 루틴을 찾을 수 없습니다.`);
+        }
+        return routine;
+    }
 };
 exports.RoutineController = RoutineController;
-__decorate([
-    (0, common_1.Post)(),
-    __param(0, (0, common_1.Body)()),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [create_routine_dto_1.CreateRoutineDto]),
-    __metadata("design:returntype", void 0)
-], RoutineController.prototype, "create", null);
 __decorate([
     (0, common_1.Get)(),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", void 0)
 ], RoutineController.prototype, "findAll", null);
+__decorate([
+    (0, common_1.Get)(':id'),
+    __param(0, (0, common_1.Param)('id')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number]),
+    __metadata("design:returntype", Promise)
+], RoutineController.prototype, "findOne", null);
 exports.RoutineController = RoutineController = __decorate([
     (0, common_1.Controller)('routine'),
     __metadata("design:paramtypes", [routine_service_1.RoutineService])

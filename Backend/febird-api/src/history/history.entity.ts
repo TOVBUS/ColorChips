@@ -1,9 +1,5 @@
 import {
-  Entity,
-  Column,
-  PrimaryGeneratedColumn,
-  ManyToOne,
-  JoinColumn,
+  Entity, Column, PrimaryGeneratedColumn, ManyToOne, JoinColumn
 } from 'typeorm';
 import { Member } from '../member/member.entity';
 import { Level } from 'src/level/level.entity';

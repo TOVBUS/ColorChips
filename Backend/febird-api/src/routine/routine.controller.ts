@@ -1,30 +1,21 @@
-import {
-  Controller,
-  Get,
-  Post,
-  Body,
-  Patch,
-  Param,
-  Delete,
-} from '@nestjs/common';
+import { Controller, Get, Param, NotFoundException } from '@nestjs/common';
 import { RoutineService } from './routine.service';
-import { CreateRoutineDto } from './dto/create-routine.dto';
 
 @Controller('routine')
 export class RoutineController {
   constructor(private readonly routineService: RoutineService) {}
-  @Post()
-  create(@Body() createRoutineDto: CreateRoutineDto) {
-    return this.routineService.create(createRoutineDto);
-  }
 
   @Get()
   findAll() {
     return this.routineService.findAll();
   }
-  
-  // @Get(':id')
-  // findOne(@Param('id') id: string) {
-  //   return this.routineService.findOne(+id);
-  // }
+
+  @Get(':id')
+  async findOne(@Param('id') id: number) {
+    const routine = await this.routineService.findOne(id);
+    if (!routine) {
+      throw new NotFoundException(`ID ${id}에 해당하는 루틴을 찾을 수 없습니다.`);
+    }
+    return routine;
+  }
 }

@@ -1,8 +1,7 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Routine } from './routine.entity';
-import { CreateRoutineDto } from './dto/create-routine.dto';
 
 @Injectable()
 export class RoutineService {
@@ -11,16 +10,15 @@ export class RoutineService {
     private routineRepository: Repository<Routine>,
   ) {}
 
-  create(createRoutineDto: CreateRoutineDto) {
-    const routine = this.routineRepository.create(createRoutineDto);
-    return this.routineRepository.save(routine);
-  }
-
   findAll() {
     return this.routineRepository.find();
   }
 
-  // findOne(id: number) {
-  //   return this.routineRepository.findOne(id);
-  // }
+  async findOne(id: number): Promise<Routine | null> {
+    const routine = await this.routineRepository.findOne({
+      where: { routine_id: id },
+      relations: ['level', 'exercise'],
+    });
+    return routine || null;
+  }
 }
