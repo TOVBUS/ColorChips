@@ -1,9 +1,5 @@
 import {
-  Entity,
-  Column,
-  PrimaryGeneratedColumn,
-  OneToMany,
-  Unique,
+  Entity, Column, PrimaryGeneratedColumn, OneToMany, Unique 
 } from 'typeorm';
 import { Inbody } from '../inbody/inbody.entity';
 import { History } from '../history/history.entity';
