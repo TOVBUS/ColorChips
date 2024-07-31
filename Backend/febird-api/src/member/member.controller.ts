@@ -2,16 +2,19 @@ import {
   Controller,
   Post,
   Body,
+  Get,
   Patch,
   Param,
   Delete,
   UseInterceptors,
   UploadedFile,
+  Res,
 } from '@nestjs/common';
 import { MemberService } from './member.service';
 import { CreateMemberDto } from './dto/create-member.dto';
 import { UpdateMemberDto } from './dto/update-member.dto';
 import { FileInterceptor } from '@nestjs/platform-express';
+import { Response } from 'express';
 
 @Controller('member')
 export class MemberController {
@@ -33,14 +36,21 @@ export class MemberController {
     @UploadedFile() file: any,
   ) {
     if (file) {
-      updateMemberDto.profile_image = file.filename; // 파일명을 DTO에 저장
+      updateMemberDto.profile_image = file.filename;
     }
     return this.memberService.update(id, updateMemberDto);
   }
 
+ // 특정 회원정보 조회
+  @Get(':id')
+  findOne(@Param('id') id: number) {
+    return this.memberService.findOne(id);
+  } 
+
   // 회원정보 삭제
   @Delete(':id')
-  remove(@Param('id') id: number) {
-    return this.memberService.remove(id);
+  async remove(@Param('id') id: number, @Res() res: Response) {
+    await this.memberService.remove(id);
+    return res.status(200).json({ message: 'Member 삭제 성공!' });
   }
 }

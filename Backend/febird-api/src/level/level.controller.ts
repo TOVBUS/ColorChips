@@ -14,4 +14,7 @@ export class LevelController {
   findAll() {
     return this.levelService.findAll();
   }
+
+  //findOne(@Param('id') id: string) {}
+  //update(@Param('id') id: string, @Body() updateLevelDto: UpdateLevelDto) {}
 }

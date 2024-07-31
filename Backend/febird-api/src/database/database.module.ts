@@ -31,7 +31,7 @@ import { Exercise } from '../exercise/exercise.entity'; //  - Azure 블롭 스�
         return {
           type: 'mysql',
           host,
-          port: parseInt(port, 3306),
+          port,
           username,
           password,
           database,

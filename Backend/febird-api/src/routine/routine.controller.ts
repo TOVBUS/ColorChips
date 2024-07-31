@@ -22,4 +22,9 @@ export class RoutineController {
   findAll() {
     return this.routineService.findAll();
   }
+  
+  // @Get(':id')
+  // findOne(@Param('id') id: string) {
+  //   return this.routineService.findOne(+id);
+  // }
 }

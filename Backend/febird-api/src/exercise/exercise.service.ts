@@ -19,4 +19,6 @@ export class ExerciseService {
   findAll() {
     return this.exerciseRepository.find();
   }
+
+  //findOne(id: number) {}
 }
