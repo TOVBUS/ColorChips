@@ -21,10 +21,6 @@ let RoutineService = class RoutineService {
     constructor(routineRepository) {
         this.routineRepository = routineRepository;
     }
-    create(createRoutineDto) {
-        const routine = this.routineRepository.create(createRoutineDto);
-        return this.routineRepository.save(routine);
-    }
     findAll() {
         return this.routineRepository.find();
     }

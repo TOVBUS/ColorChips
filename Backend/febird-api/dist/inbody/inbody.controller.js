@@ -16,6 +16,7 @@ exports.InbodyController = void 0;
 const common_1 = require("@nestjs/common");
 const inbody_service_1 = require("./inbody.service");
 const create_inbody_dto_1 = require("./dto/create-inbody.dto");
+const update_inbody_dto_1 = require("./dto/update-inbody.dto");
 let InbodyController = class InbodyController {
     constructor(inbodyService) {
         this.inbodyService = inbodyService;
@@ -25,6 +26,9 @@ let InbodyController = class InbodyController {
     }
     findAll(memberId) {
         return this.inbodyService.findAll(+memberId);
+    }
+    update(memberId, inbodyId, updateInbodyDto) {
+        return this.inbodyService.update(+memberId, +inbodyId, updateInbodyDto);
     }
 };
 exports.InbodyController = InbodyController;
@@ -43,6 +47,15 @@ __decorate([
     __metadata("design:paramtypes", [Number]),
     __metadata("design:returntype", void 0)
 ], InbodyController.prototype, "findAll", null);
+__decorate([
+    (0, common_1.Patch)(':inbodyId'),
+    __param(0, (0, common_1.Param)('memberId')),
+    __param(1, (0, common_1.Param)('inbodyId')),
+    __param(2, (0, common_1.Body)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number, Number, update_inbody_dto_1.UpdateInbodyDto]),
+    __metadata("design:returntype", void 0)
+], InbodyController.prototype, "update", null);
 exports.InbodyController = InbodyController = __decorate([
     (0, common_1.Controller)('member/:memberId/inbody'),
     __metadata("design:paramtypes", [inbody_service_1.InbodyService])
