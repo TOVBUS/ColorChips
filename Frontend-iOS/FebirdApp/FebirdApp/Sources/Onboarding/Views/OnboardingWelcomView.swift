@@ -11,23 +11,25 @@ struct OnboardingWelcomView: View {
     @EnvironmentObject var navigationPathFinder: NavigationPathFinder<OnboardingViewOptions>
 
     var body: some View {
-        VStack(alignment: .center, content: {
+        VStack {
             OnboardingGaugeView(progress: 1)
-                .padding(.bottom, 44)
+            //.padding(.bottom, 44)
+            
+            VStack(alignment: .center, content: {
+                Text("반가워요 핑! \n 저는 운동 교관 피오에요 핑! \n 운동 습관을 잡아줄게요 핑!")
+                    .multilineTextAlignment(.center)
+                    .font(.customFont(size: 20, weight: .bold))
 
-            Text("반가워요 핑! \n 저는 운동 교관 피오에요 핑! \n 운동 습관을 잡아줄게요 핑!")
-                .multilineTextAlignment(.center)
-                .font(.customFont(size: 20, weight: .bold))
+                Image("peoLogo")
 
-            Image("peoLogo")
+                Spacer()
 
-            Spacer()
-
-            CustomButtonView(title: "네!") {
-                navigationPathFinder.addPath(option: .onboardingSelectUserInfo)
-            }
-        })
-        .navigationBarBackButtonHidden()
+                CustomButtonView(title: "네!") {
+                    navigationPathFinder.addPath(option: .onboardingSelectUserInfo)
+                }
+            })
+            .navigationBarBackButtonHidden()
+        }
     }
 }
 

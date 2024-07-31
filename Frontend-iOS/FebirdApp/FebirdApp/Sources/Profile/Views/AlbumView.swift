@@ -7,8 +7,24 @@
 
 import SwiftUI
 
+let dummyAlbums = generateDummyAlbums()
+
+func generateDummyAlbums() -> [AlbumData] {
+    let albumTitles = ["유치원 씨앗반 시절", "유치원 새싹반 시절", "유치원 열매반 시절"]
+    let photoCounts = [3, 5, 7]
+
+    return zip(albumTitles, photoCounts).map { title, count in
+        let photos = (1...count).map { day -> PhotoData in
+            let imageName = Bool.random() ? "photo_\(title)_day\(day)" : "peoLogo"
+            return PhotoData(day: day, imageName: imageName)
+        }
+        return AlbumData(title: title, photos: photos)
+    }
+}
+
 struct AlbumView: View {
     let album: AlbumData
+    
     @State private var isExpanded = false
 
     var body: some View {
@@ -54,36 +70,6 @@ struct AlbumView: View {
     }
 }
 
-struct MainView: View {
-    let albums: [AlbumData]
-
-    var body: some View {
-        ScrollView {
-            VStack(spacing: 20) {
-                ForEach(albums) { album in
-                    AlbumView(album: album)
-                }
-            }
-            .padding()
-        }
-    }
-}
-
-func generateDummyAlbums() -> [AlbumData] {
-    let albumTitles = ["유치원 씨앗반 시절", "유치원 새싹반 시절", "유치원 열매반 시절"]
-    let photoCounts = [3, 5, 7]
-
-    return zip(albumTitles, photoCounts).map { title, count in
-        let photos = (1...count).map { day -> PhotoData in
-            let imageName = Bool.random() ? "photo_\(title)_day\(day)" : "peoLogo"
-            return PhotoData(day: day, imageName: imageName)
-        }
-        return AlbumData(title: title, photos: photos)
-    }
-}
-
-let dummyAlbums = generateDummyAlbums()
-
 #Preview {
-    MainView(albums: dummyAlbums)
+    AlbumView(album: dummyAlbums[0])
 }

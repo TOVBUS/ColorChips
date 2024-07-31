@@ -20,8 +20,8 @@ struct InbodyFixView: View {
     var body: some View {
         ScrollView {
             OnboardingGaugeView(progress: 7)
-                .padding(.top, 24)
-                .padding(.bottom, 34)
+//                .padding(.top, 24)
+//                .padding(.bottom, 34)
             
             Text("정보가 다르게 인식됐나요? \n여기에서 수정할 수 있어요 😉")
                 .font(.customFont(size: 20, weight: .bold))

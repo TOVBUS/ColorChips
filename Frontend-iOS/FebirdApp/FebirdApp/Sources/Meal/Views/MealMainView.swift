@@ -35,9 +35,9 @@ struct MealMainView: View {
             .padding(.top, -25)
         }
         .ignoresSafeArea()
-
     }
 }
+
 #Preview {
     MealMainView()
 }

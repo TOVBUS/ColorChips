@@ -34,9 +34,12 @@ struct AlbumDetailView: View {
 
             HStack {
                 Image("SolidFire")
+                
                 Text("총 운동시간")
                     .font(.customFont(size: 18, weight: .medium))
+                
                 Spacer()
+                
                 Text("00:21:34")
                     .font(.customFont(size: 18, weight: .medium))
             }
@@ -44,6 +47,7 @@ struct AlbumDetailView: View {
 
             HStack {
                 Image("SolidFire")
+                
                 Text("총 칼로리")
                     .font(.customFont(size: 18, weight: .medium))
 

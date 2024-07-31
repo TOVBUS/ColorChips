@@ -64,7 +64,7 @@
 		E10FD99F2C49FECB00D80139 /* OnboardingLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10FD99E2C49FECB00D80139 /* OnboardingLoadingView.swift */; };
 		E10FD9A12C49FFF100D80139 /* EyeBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10FD9A02C49FFF100D80139 /* EyeBodyView.swift */; };
 		E10FD9A32C4A066200D80139 /* OnboardingEndView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10FD9A22C4A066200D80139 /* OnboardingEndView.swift */; };
-		E10FD9AE2C4C16AA00D80139 /* ProfileTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10FD9AD2C4C16AA00D80139 /* ProfileTopView.swift */; };
+		E10FD9AE2C4C16AA00D80139 /* ProfileSettingHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10FD9AD2C4C16AA00D80139 /* ProfileSettingHeaderView.swift */; };
 		E10FD9B02C4CC01700D80139 /* InbodyMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10FD9AF2C4CC01700D80139 /* InbodyMainView.swift */; };
 		E10FD9B22C4CC06000D80139 /* InbodyGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10FD9B12C4CC06000D80139 /* InbodyGraphView.swift */; };
 		E12911B92C48DC82009A92F7 /* CameraActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12911B82C48DC81009A92F7 /* CameraActionSheet.swift */; };
@@ -182,7 +182,7 @@
 		E10FD99E2C49FECB00D80139 /* OnboardingLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingLoadingView.swift; sourceTree = "<group>"; };
 		E10FD9A02C49FFF100D80139 /* EyeBodyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeBodyView.swift; sourceTree = "<group>"; };
 		E10FD9A22C4A066200D80139 /* OnboardingEndView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingEndView.swift; sourceTree = "<group>"; };
-		E10FD9AD2C4C16AA00D80139 /* ProfileTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTopView.swift; sourceTree = "<group>"; };
+		E10FD9AD2C4C16AA00D80139 /* ProfileSettingHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingHeaderView.swift; sourceTree = "<group>"; };
 		E10FD9AF2C4CC01700D80139 /* InbodyMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InbodyMainView.swift; sourceTree = "<group>"; };
 		E10FD9B12C4CC06000D80139 /* InbodyGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InbodyGraphView.swift; sourceTree = "<group>"; };
 		E12911B82C48DC81009A92F7 /* CameraActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraActionSheet.swift; sourceTree = "<group>"; };
@@ -483,7 +483,7 @@
 			isa = PBXGroup;
 			children = (
 				3E9D1FD42C4E346E00302F7E /* ProfileSelectView.swift */,
-				E10FD9AD2C4C16AA00D80139 /* ProfileTopView.swift */,
+				E10FD9AD2C4C16AA00D80139 /* ProfileSettingHeaderView.swift */,
 				E10FD9AF2C4CC01700D80139 /* InbodyMainView.swift */,
 				E10FD9B12C4CC06000D80139 /* InbodyGraphView.swift */,
 				E1AEFC922C4D10AD000D6441 /* AlbumMainView.swift */,
@@ -803,7 +803,7 @@
 				E10FD9A32C4A066200D80139 /* OnboardingEndView.swift in Sources */,
 				8F92DF932C4D71A40071F336 /* ExerciseRoutineCompletionView.swift in Sources */,
 				E1AEFC932C4D10AD000D6441 /* AlbumMainView.swift in Sources */,
-				E10FD9AE2C4C16AA00D80139 /* ProfileTopView.swift in Sources */,
+				E10FD9AE2C4C16AA00D80139 /* ProfileSettingHeaderView.swift in Sources */,
 				8F92DF832C4BB0970071F336 /* VideoPlayerView.swift in Sources */,
 				8F55A18C2C571ED9004C2314 /* OnboardingViewModel.swift in Sources */,
 				E24CF9502C4F891A00D1548E /* HeaderView.swift in Sources */,

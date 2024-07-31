@@ -13,8 +13,10 @@ struct OnboardingLoadingView: View {
     var body: some View {
         VStack {
             OnboardingGaugeView(progress: 9)
+            
             Text("🧐")
                 .font(.customFont(size: 200, weight: .bold))
+            
             Text("분석중...")
                 .font(.customFont(size: 20, weight: .bold))
         }

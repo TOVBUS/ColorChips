@@ -12,15 +12,15 @@ struct SettingsView: View {
 
     var body: some View {
         VStack {
-            HeaderView()
+            ProfileSettingHeaderView()
+            
             ScrollView {
                 VStack(alignment: .leading) {
                     Text("계정")
                         .font(.customFont(size: 20, weight: .bold))
                         .foregroundStyle(.gray100)
                     Button {
-                        // TODO: 프로필설정뷰
-                        //                AlbumMainView()
+                        // TODO: 프로필 설정뷰로 이동
                     } label: {
                         CustomCell(showDesc: false, showChevron: true, showArrow: false, showToggle: false, showVersion: false, text: "프로필 설정")
                             .foregroundStyle(.gray100)
@@ -48,6 +48,7 @@ struct SettingsView: View {
                     Text("개인정보")
                         .font(.customFont(size: 20, weight: .bold))
                         .foregroundStyle(.gray100)
+                    
                     VStack {
                         CustomCell(showDesc: false, showChevron: true, showArrow: false, showToggle: false, showVersion: false, text: "앱 이용약관")
                         CustomCell(showDesc: true, showChevron: false, showArrow: false, showToggle: true, showVersion: false, text: "애플 헬스 연동")

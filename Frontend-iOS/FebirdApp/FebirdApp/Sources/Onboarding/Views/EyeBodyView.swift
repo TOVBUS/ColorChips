@@ -22,66 +22,68 @@ struct EyeBodyView: View {
             if isOnboarding {
                 OnboardingGaugeView(progress: 9)
             }
-            Text("눈바디를 기록해볼까요?")
-                .font(.customFont(size: 20, weight: .bold))
-                .padding(.bottom, 44)
+            VStack {
+                Text("눈바디를 기록해볼까요?")
+                    .font(.customFont(size: 20, weight: .bold))
+                    .padding(.bottom, 44)
 
-            LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 15, content: {
-                ForEach(0..<4) { index in
-                    RoundedRectangle(cornerRadius: 8)
-                        .fill(Color(red: 0.95, green: 0.95, blue: 0.96))
-                        .frame(height: 210)
-                        .overlay {
-                            Group {
-                                if let image = selectedImages[index] {
-                                    Image(uiImage: image)
-                                        .resizable()
-                                        .frame(width: 140, height: 210)
-                                        .aspectRatio(contentMode: .fill)
-                                } else {
-                                    Text(getPlaceholder(for: index))
-                                        .multilineTextAlignment(.center)
+                LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 15, content: {
+                    ForEach(0..<4) { index in
+                        RoundedRectangle(cornerRadius: 8)
+                            .fill(Color(red: 0.95, green: 0.95, blue: 0.96))
+                            .frame(height: 210)
+                            .overlay {
+                                Group {
+                                    if let image = selectedImages[index] {
+                                        Image(uiImage: image)
+                                            .resizable()
+                                            .frame(width: 140, height: 210)
+                                            .aspectRatio(contentMode: .fill)
+                                    } else {
+                                        Text(getPlaceholder(for: index))
+                                            .multilineTextAlignment(.center)
+                                    }
                                 }
                             }
-                        }
-                        .onTapGesture {
-                            currentImageIndex = index
-                            showActionSheet = true
-                        }
-                }
-            }).padding(.horizontal, 20)
-                .padding(.bottom, 44)
-            
-            CustomButtonView(title: "저장하기") {
-                // TODO: 저장 로직 필요
-                navigationPathFinder.addPath(option: .onboardingEndView)
-            }
-
-            if isOnboarding {
-                CustomButtonView(title: "건너뛰기") {
+                            .onTapGesture {
+                                currentImageIndex = index
+                                showActionSheet = true
+                            }
+                    }
+                }).padding(.horizontal, 20)
+                    .padding(.bottom, 44)
+                
+                CustomButtonView(title: "저장하기") {
+                    // TODO: 저장 로직 필요
                     navigationPathFinder.addPath(option: .onboardingEndView)
                 }
+
+                if isOnboarding {
+                    CustomButtonView(title: "건너뛰기") {
+                        navigationPathFinder.addPath(option: .onboardingEndView)
+                    }
+                }
             }
-        }
-        
-        .actionSheet(isPresented: $showActionSheet) {
-            ActionSheet(title: Text("사진 선택"), buttons: [
-                .default(Text("사진 찍기")) {
-                    self.showCamera = true
-                },
-                .default(Text("앨범에서 선택")) {
-                    self.showImagePicker = true
-                },
-                .cancel()
-            ])
-        }
-        .sheet(isPresented: $showImagePicker) {
-            PhotoPicker(image: $selectedImages[currentImageIndex])
-        }
-        .fullScreenCover(isPresented: $showCamera) {
-            CameraView(image: $selectedImages[currentImageIndex])
-        }
+            
+            .actionSheet(isPresented: $showActionSheet) {
+                ActionSheet(title: Text("사진 선택"), buttons: [
+                    .default(Text("사진 찍기")) {
+                        self.showCamera = true
+                    },
+                    .default(Text("앨범에서 선택")) {
+                        self.showImagePicker = true
+                    },
+                    .cancel()
+                ])
+            }
+            .sheet(isPresented: $showImagePicker) {
+                PhotoPicker(image: $selectedImages[currentImageIndex])
+            }
+            .fullScreenCover(isPresented: $showCamera) {
+                CameraView(image: $selectedImages[currentImageIndex])
+            }
         .navigationBarBackButtonHidden()
+        }
     }
 
     func getPlaceholder(for index: Int) -> String {

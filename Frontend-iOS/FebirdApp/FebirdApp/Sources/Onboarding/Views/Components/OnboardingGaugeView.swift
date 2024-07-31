@@ -13,10 +13,18 @@ struct OnboardingGaugeView: View {
     var maxValue: Int = 10
 
     var body: some View {
-        Gauge(value: Double(progress), in: Double(minValue)...Double(maxValue), label: {
-        })
-        .tint(.orange50)
-        .padding(.horizontal, 40)
+        VStack {
+            Spacer()
+            
+            Gauge(value: Double(progress), in: Double(minValue)...Double(maxValue), label: {})
+                .tint(.orange50)
+                .padding(.horizontal, 24)
+                .padding(.vertical, 50)
+            
+            Spacer()
+        }
+        .frame(maxWidth: .infinity)
+        .frame(height: 80)
     }
 }
 

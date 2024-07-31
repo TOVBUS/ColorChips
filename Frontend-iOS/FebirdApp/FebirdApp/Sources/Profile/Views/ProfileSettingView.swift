@@ -19,10 +19,12 @@ struct ProfileSettingView: View {
 
                 HStack(alignment: .center, spacing: 12) {
                     Image("backButton")
+                    
                     Text("프로필 설정")
                         .foregroundStyle(.white)
                         .font(.customFont(size: 20, weight: .bold))
                         .frame(maxWidth: .infinity, alignment: .top)
+                    
                     Spacer()
                 }
                 .padding(.top, -55)

@@ -46,7 +46,7 @@ struct GenderButton: View {
                 .foregroundStyle(selectedGender == gender ? .white : .black)
                 .overlay(
                     RoundedRectangle(cornerRadius: 20)
-                        .stroke(selectedGender == gender ? Color(red: 103, green: 108, blue: 117) : .clear, lineWidth: 4)
+                        .stroke(selectedGender == gender ? .gray10 : .clear, lineWidth: 4)
                 )
         })
     }

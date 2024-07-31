@@ -1,5 +1,5 @@
 //
-//  ProfileTopView.swift
+//  ProfileHeaderView.swift
 //  FebirdApp
 //
 //  Created by 김혜수 on 7/21/24.
@@ -7,16 +7,16 @@
 
 import SwiftUI
 
-struct ProfileTopView: View {
+struct ProfileHeaderView: View {
     var body: some View {
         VStack {
-            HStack(alignment: .center, spacing: 0) {
+            HStack(alignment: .center) {
                 HStack(alignment: .center, spacing: 16) {
                     Image("profile06")
                         .resizable()
                         .frame(width: 80, height: 80)
 
-                    VStack(alignment: .leading, spacing: 0) {
+                    VStack(alignment: .leading) {
                         HStack {
                             VStack(spacing: 0) {
                                 Text("JULY 16, 2024")
@@ -24,11 +24,13 @@ struct ProfileTopView: View {
                                     .kerning(1)
                                     .multilineTextAlignment(.center)
                                     .foregroundColor(.white)
+                                
                                 HStack(spacing: 0, content: {
                                     Text("꽥꽥이")
                                         .font(.customFont(size: 22, weight: .bold))
                                         .foregroundColor(.white)
                                         .frame(height: 50)
+                                    
                                     Text("님")
                                         .font(.customFont(size: 16, weight: .bold))
                                         .foregroundColor(.white)
@@ -101,5 +103,5 @@ struct ProfileTopView: View {
 }
 
 #Preview {
-    ProfileTopView()
+    ProfileHeaderView()
 }

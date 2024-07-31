@@ -28,6 +28,7 @@ struct InbodyGraphView: View {
             HStack {
                 Text(title)
                     .font(.customFont(size: 22, weight: .bold))
+                
                 Spacer()
             }
 
