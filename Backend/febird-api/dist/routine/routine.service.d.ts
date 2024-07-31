@@ -4,4 +4,5 @@ export declare class RoutineService {
     private routineRepository;
     constructor(routineRepository: Repository<Routine>);
     findAll(): Promise<Routine[]>;
+    findOne(id: number): Promise<Routine | null>;
 }

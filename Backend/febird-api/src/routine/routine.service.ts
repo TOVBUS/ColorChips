@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Routine } from './routine.entity';
@@ -14,7 +14,11 @@ export class RoutineService {
     return this.routineRepository.find();
   }
 
-  // findOne(id: number) {
-  //   return this.routineRepository.findOne(id);
-  // }
+  async findOne(id: number): Promise<Routine | null> {
+    const routine = await this.routineRepository.findOne({
+      where: { routine_id: id },
+      relations: ['level', 'exercise'],
+    });
+    return routine || null;
+  }
 }
