@@ -1,5 +1,6 @@
 import {
 <<<<<<< HEAD
+<<<<<<< HEAD
   Controller, Post, Body, Patch, Param, Delete, Get, UseInterceptors, UploadedFile, Res, HttpStatus
 =======
   Controller,
@@ -17,6 +18,9 @@ import {
 =======
   HttpStatus,
 >>>>>>> ddb64d9 (✨ :: Member의 예외처리 추가 #KAN-257)
+=======
+  Controller, Post, Body, Patch, Param, Delete, Get, UseInterceptors, UploadedFile, Res, HttpStatus
+>>>>>>> 9b09117 (🗑️ :: Member & Level 필요없는 코드, 주석, 띄어쓰기 삭제 #KAN-257)
 } from '@nestjs/common';
 import { MemberService } from './member.service';
 import { CreateMemberDto } from './dto/create-member.dto';
@@ -29,9 +33,12 @@ export class MemberController {
   constructor(private memberService: MemberService) {}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   // 회원정보 등록
 >>>>>>> ddb64d9 (✨ :: Member의 예외처리 추가 #KAN-257)
+=======
+>>>>>>> 9b09117 (🗑️ :: Member & Level 필요없는 코드, 주석, 띄어쓰기 삭제 #KAN-257)
   @Post()
   @UseInterceptors(FileInterceptor('profile_image'))
   async create(@Body() createMemberDto: CreateMemberDto, @UploadedFile() file: any, @Res() res: Response) {
@@ -98,8 +105,11 @@ export class MemberController {
     }
   }
 
+<<<<<<< HEAD
   // 특정 회원정보 조회
 >>>>>>> ddb64d9 (✨ :: Member의 예외처리 추가 #KAN-257)
+=======
+>>>>>>> 9b09117 (🗑️ :: Member & Level 필요없는 코드, 주석, 띄어쓰기 삭제 #KAN-257)
   @Get(':id')
   async findOne(@Param('id') id: number, @Res() res: Response) {
     try {
@@ -110,7 +120,6 @@ export class MemberController {
     }
   }
 
-  // 회원정보 삭제
   @Delete(':id')
   async remove(@Param('id') id: number, @Res() res: Response) {
     try {

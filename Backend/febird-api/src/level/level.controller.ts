@@ -35,6 +35,7 @@ export class LevelController {
     }
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 =======
   //findOne(@Param('id') id: string) {}
@@ -43,3 +44,6 @@ export class LevelController {
 >>>>>>> 82dded9 (✨ :: level의 FindOne, FindAll 로직만 남기기 #KAN-257)
 }
 >>>>>>> a351c7e (✨ :: Member에 FindOne 추가, Deletle 예외처리 추가 #KAN-257)
+=======
+}
+>>>>>>> 9b09117 (🗑️ :: Member & Level 필요없는 코드, 주석, 띄어쓰기 삭제 #KAN-257)
