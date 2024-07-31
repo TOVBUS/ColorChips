@@ -26,6 +26,7 @@ let InbodyService = class InbodyService {
     async create(member_id, createInbodyDto) {
         const member = await this.memberRepository.findOne({
 <<<<<<< HEAD
+<<<<<<< HEAD
             where: { member_id: member_id },
         });
         if (!member) {
@@ -36,6 +37,12 @@ let InbodyService = class InbodyService {
         if (!member) {
             throw new common_1.NotFoundException(`Member with ID ${member_id} not found`);
 >>>>>>> d0bf1f6 (🐛 :: Fix Server Error)
+=======
+            where: { member_id: member_id },
+        });
+        if (!member) {
+            throw new common_1.NotFoundException(`${member_id}에 해당하는 회원을 찾을 수 없습니다.`);
+>>>>>>> 738ef6a (✨ :: Inbody update 로직 추가, routine create&update 로직 삭제 #KAN-257)
         }
         const newInbody = this.inbodyRepository.create({
             ...createInbodyDto,
@@ -49,6 +56,7 @@ let InbodyService = class InbodyService {
             relations: ['inbodies'],
         });
         if (!member) {
+<<<<<<< HEAD
 <<<<<<< HEAD
             throw new common_1.NotFoundException(`${memberId}에 해당하는 회원을 찾을 수 없습니다.`);
         }
@@ -71,6 +79,23 @@ let InbodyService = class InbodyService {
         return member.inbodies;
     }
 >>>>>>> d0bf1f6 (🐛 :: Fix Server Error)
+=======
+            throw new common_1.NotFoundException(`${memberId}에 해당하는 회원을 찾을 수 없습니다.`);
+        }
+        return member.inbodies;
+    }
+    async update(memberId, inbodyId, updateInbodyDto) {
+        const inbody = await this.inbodyRepository.findOne({
+            where: { inbody_id: inbodyId, member: { member_id: memberId } },
+            relations: ['member'],
+        });
+        if (!inbody) {
+            throw new common_1.NotFoundException(`${inbodyId}에 해당하는 인바디를 찾을 수 없습니다.`);
+        }
+        Object.assign(inbody, updateInbodyDto);
+        return await this.inbodyRepository.save(inbody);
+    }
+>>>>>>> 738ef6a (✨ :: Inbody update 로직 추가, routine create&update 로직 삭제 #KAN-257)
 };
 exports.InbodyService = InbodyService;
 exports.InbodyService = InbodyService = __decorate([

@@ -17,9 +17,13 @@ const common_1 = require("@nestjs/common");
 const inbody_service_1 = require("./inbody.service");
 const create_inbody_dto_1 = require("./dto/create-inbody.dto");
 <<<<<<< HEAD
+<<<<<<< HEAD
 const update_inbody_dto_1 = require("./dto/update-inbody.dto");
 =======
 >>>>>>> d0bf1f6 (🐛 :: Fix Server Error)
+=======
+const update_inbody_dto_1 = require("./dto/update-inbody.dto");
+>>>>>>> 738ef6a (✨ :: Inbody update 로직 추가, routine create&update 로직 삭제 #KAN-257)
 let InbodyController = class InbodyController {
     constructor(inbodyService) {
         this.inbodyService = inbodyService;
@@ -31,11 +35,17 @@ let InbodyController = class InbodyController {
         return this.inbodyService.findAll(+memberId);
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
     update(memberId, inbodyId, updateInbodyDto) {
         return this.inbodyService.update(+memberId, +inbodyId, updateInbodyDto);
     }
 =======
 >>>>>>> d0bf1f6 (🐛 :: Fix Server Error)
+=======
+    update(memberId, inbodyId, updateInbodyDto) {
+        return this.inbodyService.update(+memberId, +inbodyId, updateInbodyDto);
+    }
+>>>>>>> 738ef6a (✨ :: Inbody update 로직 추가, routine create&update 로직 삭제 #KAN-257)
 };
 exports.InbodyController = InbodyController;
 __decorate([
@@ -54,6 +64,9 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], InbodyController.prototype, "findAll", null);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 738ef6a (✨ :: Inbody update 로직 추가, routine create&update 로직 삭제 #KAN-257)
 __decorate([
     (0, common_1.Patch)(':inbodyId'),
     __param(0, (0, common_1.Param)('memberId')),
@@ -63,8 +76,11 @@ __decorate([
     __metadata("design:paramtypes", [Number, Number, update_inbody_dto_1.UpdateInbodyDto]),
     __metadata("design:returntype", void 0)
 ], InbodyController.prototype, "update", null);
+<<<<<<< HEAD
 =======
 >>>>>>> d0bf1f6 (🐛 :: Fix Server Error)
+=======
+>>>>>>> 738ef6a (✨ :: Inbody update 로직 추가, routine create&update 로직 삭제 #KAN-257)
 exports.InbodyController = InbodyController = __decorate([
     (0, common_1.Controller)('member/:memberId/inbody'),
     __metadata("design:paramtypes", [inbody_service_1.InbodyService])

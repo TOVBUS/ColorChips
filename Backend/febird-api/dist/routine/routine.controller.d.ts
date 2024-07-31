@@ -1,5 +1,6 @@
 import { RoutineService } from './routine.service';
 <<<<<<< HEAD
+<<<<<<< HEAD
 export declare class RoutineController {
     private readonly routineService;
     constructor(routineService: RoutineService);
@@ -7,10 +8,11 @@ export declare class RoutineController {
     findOne(id: number): Promise<import("./routine.entity").Routine>;
 =======
 import { CreateRoutineDto } from './dto/create-routine.dto';
+=======
+>>>>>>> 738ef6a (✨ :: Inbody update 로직 추가, routine create&update 로직 삭제 #KAN-257)
 export declare class RoutineController {
     private readonly routineService;
     constructor(routineService: RoutineService);
-    create(createRoutineDto: CreateRoutineDto): Promise<import("./routine.entity").Routine>;
     findAll(): Promise<import("./routine.entity").Routine[]>;
 >>>>>>> d0bf1f6 (🐛 :: Fix Server Error)
 }

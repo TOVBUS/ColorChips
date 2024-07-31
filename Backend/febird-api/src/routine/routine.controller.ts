@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { Controller, Get, Param, NotFoundException } from '@nestjs/common';
+=======
+import { Controller, Get } from '@nestjs/common';
+>>>>>>> 738ef6a (✨ :: Inbody update 로직 추가, routine create&update 로직 삭제 #KAN-257)
 import { RoutineService } from './routine.service';
 
 @Controller('routine')

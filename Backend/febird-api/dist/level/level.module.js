@@ -22,10 +22,14 @@ exports.LevelModule = LevelModule = __decorate([
         imports: [
             typeorm_1.TypeOrmModule.forFeature([level_entity_1.Level, routine_entity_1.Routine]),
 <<<<<<< HEAD
+<<<<<<< HEAD
             routine_module_1.RoutineModule
 =======
             routine_module_1.RoutineModule,
 >>>>>>> d0bf1f6 (🐛 :: Fix Server Error)
+=======
+            routine_module_1.RoutineModule
+>>>>>>> 738ef6a (✨ :: Inbody update 로직 추가, routine create&update 로직 삭제 #KAN-257)
         ],
         providers: [level_service_1.LevelService],
         controllers: [level_controller_1.LevelController],

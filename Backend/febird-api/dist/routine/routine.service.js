@@ -22,6 +22,7 @@ let RoutineService = class RoutineService {
         this.routineRepository = routineRepository;
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
     findAll() {
         return this.routineRepository.find();
     }
@@ -37,6 +38,8 @@ let RoutineService = class RoutineService {
         const routine = this.routineRepository.create(createRoutineDto);
         return this.routineRepository.save(routine);
     }
+=======
+>>>>>>> 738ef6a (✨ :: Inbody update 로직 추가, routine create&update 로직 삭제 #KAN-257)
     findAll() {
         return this.routineRepository.find();
     }
