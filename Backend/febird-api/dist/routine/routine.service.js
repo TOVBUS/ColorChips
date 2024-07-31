@@ -24,6 +24,13 @@ let RoutineService = class RoutineService {
     findAll() {
         return this.routineRepository.find();
     }
+    async findOne(id) {
+        const routine = await this.routineRepository.findOne({
+            where: { routine_id: id },
+            relations: ['level', 'exercise'],
+        });
+        return routine || null;
+    }
 };
 exports.RoutineService = RoutineService;
 exports.RoutineService = RoutineService = __decorate([

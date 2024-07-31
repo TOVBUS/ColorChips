@@ -8,6 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.RoutineController = void 0;
 const common_1 = require("@nestjs/common");
@@ -19,6 +22,13 @@ let RoutineController = class RoutineController {
     findAll() {
         return this.routineService.findAll();
     }
+    async findOne(id) {
+        const routine = await this.routineService.findOne(id);
+        if (!routine) {
+            throw new common_1.NotFoundException(`ID ${id}에 해당하는 루틴을 찾을 수 없습니다.`);
+        }
+        return routine;
+    }
 };
 exports.RoutineController = RoutineController;
 __decorate([
@@ -27,6 +37,13 @@ __decorate([
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", void 0)
 ], RoutineController.prototype, "findAll", null);
+__decorate([
+    (0, common_1.Get)(':id'),
+    __param(0, (0, common_1.Param)('id')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number]),
+    __metadata("design:returntype", Promise)
+], RoutineController.prototype, "findOne", null);
 exports.RoutineController = RoutineController = __decorate([
     (0, common_1.Controller)('routine'),
     __metadata("design:paramtypes", [routine_service_1.RoutineService])
