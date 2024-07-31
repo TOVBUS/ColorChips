@@ -25,6 +25,13 @@ let MemberService = class MemberService {
         const member = this.memberRepository.create(createMemberDto);
         return this.memberRepository.save(member);
     }
+    async findOne(member_id) {
+        const member = await this.memberRepository.findOne({ where: { member_id } });
+        if (!member) {
+            throw new common_1.NotFoundException(`Member with ID ${member_id} not found`);
+        }
+        return member;
+    }
     async update(member_id, updateMemberDto) {
         await this.memberRepository.update(member_id, updateMemberDto);
         return await this.memberRepository.findOne({ where: { member_id } });

@@ -34,7 +34,7 @@ export class Member {
   @Column({ length: 255, nullable: true })
   kakaoID: string;
 
-  @Column()
+  @Column({default: 1})
   current_level: number;
 
   @OneToMany(() => Inbody, (inbody) => inbody.member)

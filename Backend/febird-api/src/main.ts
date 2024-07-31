@@ -4,14 +4,9 @@ import * as dotenv from 'dotenv';
 dotenv.config();
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-<<<<<<< Updated upstream
-  await app.listen(process.env.PORT || 3000);
-=======
- 
-  const port = process.env.PORT || 3000;
 
-  await app.listen(port);
->>>>>>> Stashed changes
+  await app.listen(process.env.PORT || 3000);
+
   console.log(`Server is running on: ${await app.getUrl()}`);
   console.log('Environment variables:');
   console.log(`DB_HOST: ${process.env.DB_HOST}`);
