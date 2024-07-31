@@ -8,21 +8,28 @@
 import SwiftUI
 
 struct WeeklyCalendar: View {
+    
     @State private var selectedDate = Date()
+    
     private let calendar = Calendar.current
     private let today = Date()
+    
     var body: some View {
         VStack(alignment: .center, spacing: 20) {
             monthView
                 .foregroundStyle(.white)
+                .padding(.bottom, 40)
+            
             ZStack {
                 dayView
                 blurView
             }
             .frame(height: 30)
-            .padding(.horizontal, 20)
+            .padding(.horizontal, 24)
+            .padding(.top, -40)
         }
     }
+    
     // MARK: - 월 표시 뷰
     private var monthView: some View {
         HStack(alignment: .center, spacing: 12) {
@@ -36,9 +43,12 @@ struct WeeklyCalendar: View {
                 }
             )
             Spacer()
+            
             Text(monthTitle(from: selectedDate))
                 .font(.customFont(size: 18, weight: .medium))
+            
             Spacer()
+            
             Button(
                 action: {
                     changeMonth(1)
@@ -50,6 +60,7 @@ struct WeeklyCalendar: View {
             )
         }
         .frame(width: 343, alignment: .center)
+        .padding(.bottom, 12)
     }
     // MARK: - 일자 표시 뷰
     @ViewBuilder
@@ -67,6 +78,7 @@ struct WeeklyCalendar: View {
                         Text(day(from: date))
                             .foregroundStyle(.gray30)
                             .font(.customFont(size: 12, weight: .medium))
+                        
                         Text("\(calendar.component(.day, from: date))")
                             .foregroundStyle(.white)
                             .font(.customFont(size: 20, weight: .bold))
@@ -75,7 +87,7 @@ struct WeeklyCalendar: View {
                     .padding(.horizontal,8)
                     .padding(.vertical, 3)
                     .background(calendar.isDate(selectedDate, equalTo: date, toGranularity: .day) ? .orange50 : .gray60)
-                    .cornerRadius(18)
+                    .cornerRadius(16)
                     .foregroundColor(calendar.isDate(selectedDate, equalTo: date, toGranularity: .day) ? .white : .black)
                     .onTapGesture {
                         selectedDate = date
@@ -83,8 +95,10 @@ struct WeeklyCalendar: View {
                 }
             }
         }
+        .padding(.bottom, 12)
     }
-    // MARK: - 블러 뷰
+    
+    // MARK: - 가장자리 블러 뷰
     private var blurView: some View {
         HStack {
             LinearGradient(
@@ -97,9 +111,11 @@ struct WeeklyCalendar: View {
                 startPoint: .leading,
                 endPoint: .trailing
             )
-            .frame(width: 20)
+            .frame(width: 40)
             .edgesIgnoringSafeArea(.leading)
+            
             Spacer()
+            
             LinearGradient(
                 gradient: Gradient(
                     colors: [
@@ -110,9 +126,10 @@ struct WeeklyCalendar: View {
                 startPoint: .trailing,
                 endPoint: .leading
             )
-            .frame(width: 20)
-            .edgesIgnoringSafeArea(.leading)
+            .frame(width: 40)
+            .edgesIgnoringSafeArea(.trailing)
         }
+        .padding(.bottom, 12)
     }
 }
 

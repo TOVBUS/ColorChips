@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct MemoRow: View {
+    
     @State private var inputText = ""
     @State private var showModal = false
     @State private var showFullText = false
+    
     var mealTime: String
 
     var body: some View {

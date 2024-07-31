@@ -9,7 +9,9 @@ import SwiftUI
 
 class NavigationPathFinder<Option: ViewOptions>: ObservableObject {
     @Published var path: [Option] = []
-    @Published var isFirstEnteredApp = true
+    
+    // TODO: UserDefaults 에 저장하는 값을 기반으로 가져와야됨
+    @Published var isFirstEnteredApp = false // true로 고쳐야됨
 
     func addPath(option: Option) {
         path.append(option)
