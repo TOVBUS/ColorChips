@@ -7,6 +7,7 @@ export declare class RoutineService {
     constructor(routineRepository: Repository<Routine>);
     findAll(): Promise<Routine[]>;
     findOne(id: number): Promise<Routine | null>;
+<<<<<<< HEAD
 =======
 import { CreateRoutineDto } from './dto/create-routine.dto';
 =======
@@ -16,4 +17,6 @@ export declare class RoutineService {
     constructor(routineRepository: Repository<Routine>);
     findAll(): Promise<Routine[]>;
 >>>>>>> d0bf1f6 (🐛 :: Fix Server Error)
+=======
+>>>>>>> c94d082 (✨ :: routine findOne 로직 추가 #KAN-257)
 }

@@ -15,6 +15,9 @@ export class RoutineService {
   }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c94d082 (✨ :: routine findOne 로직 추가 #KAN-257)
   async findOne(id: number): Promise<Routine | null> {
     const routine = await this.routineRepository.findOne({
       where: { routine_id: id },
@@ -22,6 +25,7 @@ export class RoutineService {
     });
     return routine || null;
   }
+<<<<<<< HEAD
 }
 =======
   // findOne(id: number) {
@@ -29,3 +33,6 @@ export class RoutineService {
   // }
 }
 >>>>>>> a351c7e (✨ :: Member에 FindOne 추가, Deletle 예외처리 추가 #KAN-257)
+=======
+}
+>>>>>>> c94d082 (✨ :: routine findOne 로직 추가 #KAN-257)

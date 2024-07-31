@@ -33,6 +33,7 @@ let RoutineService = class RoutineService {
         });
         return routine || null;
     }
+<<<<<<< HEAD
 =======
     create(createRoutineDto) {
         const routine = this.routineRepository.create(createRoutineDto);
@@ -44,6 +45,8 @@ let RoutineService = class RoutineService {
         return this.routineRepository.find();
     }
 >>>>>>> d0bf1f6 (🐛 :: Fix Server Error)
+=======
+>>>>>>> c94d082 (✨ :: routine findOne 로직 추가 #KAN-257)
 };
 exports.RoutineService = RoutineService;
 exports.RoutineService = RoutineService = __decorate([
