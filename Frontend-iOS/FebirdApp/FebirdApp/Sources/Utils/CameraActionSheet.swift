@@ -26,9 +26,3 @@ struct CameraActionSheet: ViewModifier {
             }
     }
 }
-
-extension View {
-    func cameraActionSheet(isPresented: Binding<Bool>, onCameraTap: @escaping () -> Void, onGalleryTap: @escaping () -> Void) -> some View {
-        self.modifier(CameraActionSheet(isPresented: isPresented, onCameraTap: onCameraTap, onGalleryTap: onGalleryTap))
-    }
-}

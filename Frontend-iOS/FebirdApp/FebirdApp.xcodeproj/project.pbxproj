@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3E3B9A812C5B29A2001F2852 /* NavigationPathFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3B9A802C5B29A2001F2852 /* NavigationPathFinder.swift */; };
 		3E3B9A832C5B29AA001F2852 /* ViewOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3B9A822C5B29AA001F2852 /* ViewOptions.swift */; };
+		3E3B9A872C5B2E3E001F2852 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3B9A862C5B2E3E001F2852 /* View+Extension.swift */; };
+		3E3B9A892C5B2F62001F2852 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3B9A882C5B2F62001F2852 /* Constants.swift */; };
 		3E7521A52C48E6C700920BFD /* ExerciseMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7521A42C48E6C700920BFD /* ExerciseMainView.swift */; };
 		3E7521A82C48F63E00920BFD /* ExerciseMainHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7521A72C48F63E00920BFD /* ExerciseMainHeaderView.swift */; };
 		3E7521AB2C48F66F00920BFD /* RoundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7521AA2C48F66F00920BFD /* RoundedCorners.swift */; };
@@ -119,6 +121,8 @@
 /* Begin PBXFileReference section */
 		3E3B9A802C5B29A2001F2852 /* NavigationPathFinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationPathFinder.swift; sourceTree = "<group>"; };
 		3E3B9A822C5B29AA001F2852 /* ViewOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewOptions.swift; sourceTree = "<group>"; };
+		3E3B9A862C5B2E3E001F2852 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
+		3E3B9A882C5B2F62001F2852 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3E7521A42C48E6C700920BFD /* ExerciseMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseMainView.swift; sourceTree = "<group>"; };
 		3E7521A72C48F63E00920BFD /* ExerciseMainHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseMainHeaderView.swift; sourceTree = "<group>"; };
 		3E7521AA2C48F66F00920BFD /* RoundedCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorners.swift; sourceTree = "<group>"; };
@@ -247,6 +251,28 @@
 			path = NavigationComponents;
 			sourceTree = "<group>";
 		};
+		3E3B9A852C5B2DA3001F2852 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				E2FDD25A2C4BA6F2004067EF /* MealMainheaderView.swift */,
+				E2FDD2562C4B93AF004067EF /* WeeklyCalendar.swift */,
+				E26D48B82C49F18800D63FE7 /* MemoRow.swift */,
+				E26D48B42C48F50D00D63FE7 /* AIMealRecomendationView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		3E3B9A8A2C5B3030001F2852 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				E1BB0D542C47985D002565B2 /* OnboardingGaugeView.swift */,
+				E1BB0D5B2C47B15A002565B2 /* OnboardingProfileSelectionView.swift */,
+				E1BB0D5D2C47F9F7002565B2 /* OnboardingSelectGenderButton.swift */,
+				E1BB0D5F2C4800E2002565B2 /* OnboardingTextField.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		3E7521A32C48E60F00920BFD /* Exercise */ = {
 			isa = PBXGroup;
 			children = (
@@ -290,6 +316,9 @@
 				8F92DF822C4BB0970071F336 /* VideoPlayerView.swift */,
 				8F92DF8E2C4D58710071F336 /* TimerView.swift */,
 				8F92DF882C4D4A440071F336 /* TimerButton.swift */,
+				E12911BA2C48EDFE009A92F7 /* PhotoPicker.swift */,
+				E12911B82C48DC81009A92F7 /* CameraActionSheet.swift */,
+				3E3B9A882C5B2F62001F2852 /* Constants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -298,7 +327,7 @@
 			isa = PBXGroup;
 			children = (
 				3EFC450B2C44F882001052C7 /* Font+Extension.swift */,
-				E12911BA2C48EDFE009A92F7 /* PhotoPicker.swift */,
+				3E3B9A862C5B2E3E001F2852 /* View+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -317,8 +346,8 @@
 			isa = PBXGroup;
 			children = (
 				3EF6F04C2C36937E00EEF18F /* FebirdAppApp.swift */,
-				3E7521A92C48F66000920BFD /* Utils */,
 				3E9E9E0B2C44E5B1002389EB /* Extensions */,
+				3E7521A92C48F66000920BFD /* Utils */,
 				E2EB257C2C4E4DAB0094EC8E /* ChatBot */,
 				E10FD9A92C4C02A600D80139 /* Profile */,
 				E24F5E7F2C48EBC300724DA7 /* Meal */,
@@ -463,19 +492,15 @@
 		E1BB0D562C479C93002565B2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E1BB0D542C47985D002565B2 /* OnboardingGaugeView.swift */,
+				3E3B9A8A2C5B3030001F2852 /* Components */,
 				E1BB0D572C479CF7002565B2 /* OnboardingWelcomView.swift */,
 				E1BB0D592C47A4FB002565B2 /* OnboardingSelectUserInfoView.swift */,
-				E1BB0D5B2C47B15A002565B2 /* OnboardingProfileSelectionView.swift */,
-				E1BB0D5D2C47F9F7002565B2 /* OnboardingSelectGenderButton.swift */,
-				E1BB0D5F2C4800E2002565B2 /* OnboardingTextField.swift */,
 				E1BB0D612C48A875002565B2 /* InbodyAddView.swift */,
-				E12911B82C48DC81009A92F7 /* CameraActionSheet.swift */,
+				E12911BC2C48FDBA009A92F7 /* InbodyFixView.swift */,
+				E10FD99C2C49FB4500D80139 /* InbodyInputView.swift */,
 				E10FD99E2C49FECB00D80139 /* OnboardingLoadingView.swift */,
 				E10FD9A02C49FFF100D80139 /* EyeBodyView.swift */,
 				E10FD9A22C4A066200D80139 /* OnboardingEndView.swift */,
-				E12911BC2C48FDBA009A92F7 /* InbodyFixView.swift */,
-				E10FD99C2C49FB4500D80139 /* InbodyInputView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -491,11 +516,8 @@
 		E24F5E802C48EBD700724DA7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3E3B9A852C5B2DA3001F2852 /* Components */,
 				E24F5E812C48EC3400724DA7 /* MealMainView.swift */,
-				E2FDD25A2C4BA6F2004067EF /* MealMainheaderView.swift */,
-				E26D48B42C48F50D00D63FE7 /* AIMealRecomendationView.swift */,
-				E2FDD2562C4B93AF004067EF /* WeeklyCalendar.swift */,
-				E26D48B82C49F18800D63FE7 /* MemoRow.swift */,
 				E26D48BC2C49FBE300D63FE7 /* MemoModalView.swift */,
 				E26D48BA2C49F93900D63FE7 /* MealChatBotView.swift */,
 			);
@@ -726,8 +748,10 @@
 				E12911BB2C48EDFE009A92F7 /* PhotoPicker.swift in Sources */,
 				8F92DF952C4D74A10071F336 /* ExerciseGraduationView.swift in Sources */,
 				E1BB0D5C2C47B15A002565B2 /* OnboardingProfileSelectionView.swift in Sources */,
+				3E3B9A872C5B2E3E001F2852 /* View+Extension.swift in Sources */,
 				8F92DF872C4D33870071F336 /* ExerciseTimerSettingView.swift in Sources */,
 				E10FD9B22C4CC06000D80139 /* InbodyGraphView.swift in Sources */,
+				3E3B9A892C5B2F62001F2852 /* Constants.swift in Sources */,
 				E10FD9A12C49FFF100D80139 /* EyeBodyView.swift in Sources */,
 				E1BB0D552C47985D002565B2 /* OnboardingGaugeView.swift in Sources */,
 				3E7521AB2C48F66F00920BFD /* RoundedCorners.swift in Sources */,

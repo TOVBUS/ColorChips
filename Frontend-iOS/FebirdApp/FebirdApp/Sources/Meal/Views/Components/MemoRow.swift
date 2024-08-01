@@ -8,22 +8,25 @@
 import SwiftUI
 
 struct MemoRow: View {
+    
     @State private var inputText = ""
     @State private var showModal = false
     @State private var showFullText = false
-    var mealTime: String
     
+    var mealTime: String
+
     var body: some View {
         HStack(spacing: 8) {
             Image("feoFace")
-            
+
             VStack(alignment: .leading, spacing: 8) {
                 Text(mealTime) // 아침, 점심, 저녁
                     .font(.customFont(size: 14, weight: .bold))
                     .padding(.horizontal, 8)
                     .padding(.vertical, 2)
-                    .background(.gray20)
+                    .background(.orange30)
                     .cornerRadius(8)
+
                 // MARK: - 글자수 제한
                 if !inputText.isEmpty {
                     Text(showFullText ? inputText : inputText.prefix(30) + (inputText.count > 30 ? "..." : ""))
@@ -36,13 +39,21 @@ struct MemoRow: View {
                         }
                 }
             }
-            
+
             Spacer()
-            
+
             Button(action: {
                 showModal.toggle()
             }, label: {
-                Image("vertialIcon")
+                Image(systemName: "plus")
+                    .font(.customFont(size: 22, weight: .bold))
+                    .foregroundStyle(.gray60)
+                    .padding(8)
+                    .background(
+                        Rectangle()
+                            .foregroundStyle(.gray20)
+                            .cornerRadius(4, corners: .allCorners)
+                    )
             })
         }
         .padding(12)
