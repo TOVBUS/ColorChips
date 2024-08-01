@@ -17,14 +17,18 @@ struct ProfileSelectView: View {
     @State var selectedProfile: ProfileSelect = .album
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 20)
+            RoundedRectangle(cornerRadius: 16)
                 .fill(Color.gray10)
+
             HStack(spacing: 2, content: {
                 ProfileSelectButton(profile: .album, selectedProfile: $selectedProfile)
                 ProfileSelectButton(profile: .inbody, selectedProfile: $selectedProfile)
                 ProfileSelectButton(profile: .body, selectedProfile: $selectedProfile)
             })
-        }.frame(height: 48)
+            .padding(.horizontal, 4)
+        }
+        .padding(.horizontal, 4)
+        .frame(height: 48)
     }
 }
 
@@ -41,13 +45,15 @@ struct ProfileSelectButton: View {
                 .frame(maxWidth: .infinity)
                 .frame(height: 40)
                 .background(
-                    RoundedRectangle(cornerRadius: 20)
+                    RoundedRectangle(cornerRadius: 10)
                         .fill(selectedProfile == profile ? Color.gray100 : Color.gray10)
+                        .padding(4)
                 )
                 .foregroundStyle(selectedProfile == profile ? .white : .black)
                 .overlay(
-                    RoundedRectangle(cornerRadius: 20)
+                    RoundedRectangle(cornerRadius: 10)
                         .stroke(selectedProfile == profile ? Color.gray60 : .clear, lineWidth: 4)
+                        .padding(4)
                 )
         })
     }

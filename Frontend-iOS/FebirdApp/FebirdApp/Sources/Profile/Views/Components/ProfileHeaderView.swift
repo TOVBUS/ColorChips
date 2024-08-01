@@ -10,7 +10,7 @@ import SwiftUI
 struct ProfileHeaderView: View {
     var body: some View {
         VStack {
-            HStack(alignment: .center, spacing: 0) {
+            HStack(alignment: .center) {
                 HStack(alignment: .center, spacing: 16) {
                     Image("profile06")
                         .resizable()
@@ -24,11 +24,13 @@ struct ProfileHeaderView: View {
                                     .kerning(1)
                                     .multilineTextAlignment(.center)
                                     .foregroundColor(.white)
+
                                 HStack(spacing: 0, content: {
                                     Text("꽥꽥이")
                                         .font(.customFont(size: 22, weight: .bold))
                                         .foregroundColor(.white)
                                         .frame(height: 50)
+
                                     Text("님")
                                         .font(.customFont(size: 16, weight: .bold))
                                         .foregroundColor(.white)
@@ -36,8 +38,11 @@ struct ProfileHeaderView: View {
                                 })
                             }
                             Spacer()
+
                             VStack {
-                                Button(action: {}, label: {
+                                Button(action: {
+                                    // TODO: 설정뷰로 이동
+                                }, label: {
                                     Image("settingIcon")
                                 })
                                 Spacer()
