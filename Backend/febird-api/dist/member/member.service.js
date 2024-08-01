@@ -26,6 +26,9 @@ let MemberService = class MemberService {
         return this.memberRepository.save(member);
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ddb64d9 (✨ :: Member의 예외처리 추가 #KAN-257)
     async findOne(member_id) {
         const member = await this.memberRepository.findOne({ where: { member_id } });
         if (!member) {
@@ -33,8 +36,11 @@ let MemberService = class MemberService {
         }
         return member;
     }
+<<<<<<< HEAD
 =======
 >>>>>>> d0bf1f6 (🐛 :: Fix Server Error)
+=======
+>>>>>>> ddb64d9 (✨ :: Member의 예외처리 추가 #KAN-257)
     async update(member_id, updateMemberDto) {
         await this.memberRepository.update(member_id, updateMemberDto);
         return await this.memberRepository.findOne({ where: { member_id } });

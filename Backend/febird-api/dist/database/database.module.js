@@ -40,10 +40,14 @@ exports.DatabaseModule = DatabaseModule = __decorate([
                         type: 'mysql',
                         host,
 <<<<<<< HEAD
+<<<<<<< HEAD
                         port,
 =======
                         port: parseInt(port, 3306),
 >>>>>>> d0bf1f6 (🐛 :: Fix Server Error)
+=======
+                        port,
+>>>>>>> ddb64d9 (✨ :: Member의 예외처리 추가 #KAN-257)
                         username,
                         password,
                         database,
