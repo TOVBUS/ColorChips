@@ -18,17 +18,14 @@ struct CameraActionSheet: ViewModifier {
                 Button("사진 찍기") {
                     onCameraTap()
                 }
+
                 Button("불러오기") {
                     onGalleryTap()
                 }
+
                 Button("취소", role: .cancel) {
+
                 }
             }
-    }
-}
-
-extension View {
-    func cameraActionSheet(isPresented: Binding<Bool>, onCameraTap: @escaping () -> Void, onGalleryTap: @escaping () -> Void) -> some View {
-        self.modifier(CameraActionSheet(isPresented: isPresented, onCameraTap: onCameraTap, onGalleryTap: onGalleryTap))
     }
 }

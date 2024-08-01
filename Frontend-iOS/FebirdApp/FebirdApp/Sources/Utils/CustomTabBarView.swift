@@ -23,6 +23,7 @@ struct TabItem: Identifiable {
 // MARK: - View Models
 class TabViewModel: ObservableObject {
     @Published var selectedTab: TabSelection = .exercise
+    @Published var isHidden: Bool = false
 
     let tabs: [TabItem] = [
         TabItem(iconName: "MealTabIcon", tab: .meal, action: { print("Meal tab tapped") }),
@@ -37,23 +38,26 @@ class TabViewModel: ObservableObject {
 }
 
 struct CustomTabBarView: View {
-    @StateObject private var tabViewModel = TabViewModel()
+    @EnvironmentObject var tabViewModel: TabViewModel
 
     var body: some View {
-        HStack(alignment: .center, spacing: 48) {
-            ForEach(tabViewModel.tabs) { tab in
-                TabButtonView(
-                    iconName: tab.iconName,
-                    isSelected: tabViewModel.selectedTab == tab.tab,
-                    action: { tabViewModel.selectTab(tab.tab) }
-                )
+        if tabViewModel.isHidden {
+            EmptyView()
+        } else {
+            HStack(alignment: .center, spacing: 48) {
+                ForEach(tabViewModel.tabs) { tab in
+                    TabButtonView(
+                        iconName: tab.iconName,
+                        isSelected: tabViewModel.selectedTab == tab.tab,
+                        action: { tabViewModel.selectTab(tab.tab) }
+                    )
+                }
             }
+            .background(.white)
+            .cornerRadius(20)
+            .drawingGroup()
+            .shadow(color: .gray20, radius: 10, x: 0, y: 0)
         }
-        .background(Color.white)
-        .cornerRadius(20)
-        .drawingGroup()
-        .offset(y: -18)
-        .shadow(color: .gray20, radius: 10, x: 0, y: 0)
     }
 }
 
