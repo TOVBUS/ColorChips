@@ -1,4 +1,4 @@
-import { Controller, Param, Get, Post, Body } from '@nestjs/common';
+import { Controller, Get, Post, Body, Param } from '@nestjs/common';
 import { HistoryService } from './history.service';
 import { CreateHistoryDto } from './dto/create-history.dto';
 
@@ -11,11 +11,11 @@ export class HistoryController {
     @Param('memberId') memberId: number,
     @Body() createHistoryDto: CreateHistoryDto,
   ) {
-    return this.historyService.create(createHistoryDto);
+    return this.historyService.create(+memberId, createHistoryDto);
   }
 
   @Get()
-  findAll() {
-    return this.historyService.findAll();
+  findAll(@Param('memberId') memberId: number) {
+    return this.historyService.findAll(+memberId);
   }
 }
