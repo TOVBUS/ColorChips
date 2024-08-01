@@ -273,6 +273,13 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		3E3B9A8B2C5B3890001F2852 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		3E7521A32C48E60F00920BFD /* Exercise */ = {
 			isa = PBXGroup;
 			children = (
@@ -286,6 +293,7 @@
 		3E7521A62C48E6CE00920BFD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3E3B9A8B2C5B3890001F2852 /* Components */,
 				3E7521A42C48E6C700920BFD /* ExerciseMainView.swift */,
 				3E7521A72C48F63E00920BFD /* ExerciseMainHeaderView.swift */,
 				8FAC18862C4B8CBA00CDF7CF /* ExerciseListView.swift */,

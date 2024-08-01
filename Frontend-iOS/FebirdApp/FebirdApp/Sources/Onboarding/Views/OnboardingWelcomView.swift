@@ -8,30 +8,28 @@
 import SwiftUI
 
 struct OnboardingWelcomView: View {
+    @EnvironmentObject var navigationPathFinder: NavigationPathFinder<OnboardingViewOptions>
+
     var body: some View {
-        VStack(alignment: .center, content: {
+        VStack {
             OnboardingGaugeView(progress: 1)
-                .padding(.bottom, 44)
-            Text("반가워요 핑! \n 저는 운동 교관 피오에요 핑! \n 운동 습관을 잡아줄게요 핑!")
-                .multilineTextAlignment(.center)
-                .font(.customFont(size: 20, weight: .bold))
-            Image("peoLogo")
-            Spacer()
+            //.padding(.bottom, 44)
+            
+            VStack(alignment: .center, content: {
+                Text("반가워요 핑! \n 저는 운동 교관 피오에요 핑! \n 운동 습관을 잡아줄게요 핑!")
+                    .multilineTextAlignment(.center)
+                    .font(.customFont(size: 20, weight: .bold))
 
-            Button(action: {
+                Image("peoLogo")
 
-            }, label: {
-                Text("네!")
-                    .frame(maxWidth: .infinity, maxHeight: 56)
-                    .foregroundStyle(Color(.white))
-                    .font(.customFont(size: 16, weight: .semibold))
-                    .background(
-                        RoundedRectangle(cornerRadius: 20)
-                            .fill(Color(red: 0.07, green: 0.07, blue: 0.08))
-                            .padding(.horizontal, 24)
-                    )
+                Spacer()
+
+                CustomButtonView(title: "네!") {
+                    navigationPathFinder.addPath(option: .onboardingSelectUserInfo)
+                }
             })
-        })
+            .navigationBarBackButtonHidden()
+        }
     }
 }
 

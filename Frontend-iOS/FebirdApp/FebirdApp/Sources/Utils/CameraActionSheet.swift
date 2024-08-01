@@ -18,10 +18,13 @@ struct CameraActionSheet: ViewModifier {
                 Button("사진 찍기") {
                     onCameraTap()
                 }
+
                 Button("불러오기") {
                     onGalleryTap()
                 }
+
                 Button("취소", role: .cancel) {
+
                 }
             }
     }

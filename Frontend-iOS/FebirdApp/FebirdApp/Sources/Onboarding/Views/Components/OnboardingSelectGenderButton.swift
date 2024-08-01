@@ -17,7 +17,7 @@ struct OnboardingSelectGenderButton: View {
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 20)
-                .fill(Color.gray.opacity(0.2))
+                .fill(.gray.opacity(0.2))
 
             HStack(spacing: 0, content: {
                 GenderButton(title: "남", gender: .male, selectedGender: $selectedGender)
@@ -41,12 +41,12 @@ struct GenderButton: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(
                     RoundedRectangle(cornerRadius: 20)
-                        .fill(selectedGender == gender ? Color.black : Color.clear)
+                        .fill(selectedGender == gender ? .black : .clear)
                 )
                 .foregroundStyle(selectedGender == gender ? .white : .black)
                 .overlay(
                     RoundedRectangle(cornerRadius: 20)
-                        .stroke(selectedGender == gender ? Color(red: 103, green: 108, blue: 117) : Color.clear, lineWidth: 4)
+                        .stroke(selectedGender == gender ? .gray10 : .clear, lineWidth: 4)
                 )
         })
     }

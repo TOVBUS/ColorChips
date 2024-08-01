@@ -10,13 +10,21 @@ import SwiftUI
 struct OnboardingGaugeView: View {
     @State var progress: Int
     var minValue: Int = 0
-    var maxValue: Int = 10
+    var maxValue: Int = 8
 
     var body: some View {
-        Gauge(value: Double(progress), in: Double(minValue)...Double(maxValue), label: {
-        })
-        .tint(Color.orange)
-        .padding(.horizontal, 40)
+        VStack {
+            Spacer()
+            
+            Gauge(value: Double(progress), in: Double(minValue)...Double(maxValue), label: {})
+                .tint(.orange50)
+                .padding(.horizontal, 24)
+                .padding(.vertical, 50)
+            
+            Spacer()
+        }
+        .frame(maxWidth: .infinity)
+        .frame(height: 80)
     }
 }
 
