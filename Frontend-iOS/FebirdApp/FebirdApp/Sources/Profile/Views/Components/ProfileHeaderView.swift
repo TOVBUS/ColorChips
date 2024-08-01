@@ -1,5 +1,5 @@
 //
-//  ProfileTopView.swift
+//  ProfileHeaderView.swift
 //  FebirdApp
 //
 //  Created by 김혜수 on 7/21/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ProfileTopView: View {
+struct ProfileHeaderView: View {
     var body: some View {
         VStack {
             HStack(alignment: .center, spacing: 0) {
@@ -108,5 +108,5 @@ struct ProfileTopView: View {
 }
 
 #Preview {
-    ProfileTopView()
+    ProfileHeaderView()
 }

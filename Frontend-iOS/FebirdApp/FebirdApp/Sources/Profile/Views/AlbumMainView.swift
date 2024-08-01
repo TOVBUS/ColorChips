@@ -8,11 +8,24 @@
 import SwiftUI
 
 struct AlbumMainView: View {
+    let albums: [AlbumData]
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            ProfileHeaderView()
+
+            ScrollView {
+                VStack(spacing: 20) {
+                    ForEach(albums) { album in
+                        AlbumView(album: album)
+                    }
+                }
+                .padding()
+            }
+        }
     }
 }
 
 #Preview {
-    AlbumMainView()
+    AlbumMainView(albums: dummyAlbums)
 }

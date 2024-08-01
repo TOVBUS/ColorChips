@@ -17,7 +17,7 @@ struct ExerciseRecordView: View {
                     .cornerRadius(34, corners: [.bottomLeft, .bottomRight])
                     .ignoresSafeArea()
                     .padding(.bottom, -60)
-                
+
                 HStack(alignment: .center) {
                     Image("Back_button")
                     Text("현재기록")

@@ -17,12 +17,12 @@ struct OnboardingSelectUserInfoView: View {
     var body: some View {
         VStack {
             OnboardingGaugeView(progress: 2)
-            
+
             VStack(spacing: 28) {
                 HStack {
                     Text("프로필 이미지를 하나 골라주세요!")
                         .font(.customFont(size: 14, weight: .bold))
-                    
+
                     Spacer()
                 }
 
@@ -63,11 +63,10 @@ struct OnboardingSelectUserInfoView: View {
 
                 OnboardingSelectGenderButton()
 
-                
             }
             .padding(.horizontal, 24)
         }
-        
+
         CustomButtonView(title: "입력하기") {
             // TODO: API POST 로직 추가
             navigationPathFinder.addPath(option: .inbodyAddView)

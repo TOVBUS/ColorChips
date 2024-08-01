@@ -21,25 +21,25 @@ enum OnboardingViewOptions: Hashable, ViewOptions {
     case inbodyInputView
     case onboardingEndView
     case eyeBodyView
-    
+
     @ViewBuilder func view() -> some View {
         switch self {
-            case .onboardingWelcome:
-                OnboardingWelcomView()
-            case .onboardingSelectUserInfo:
-                OnboardingSelectUserInfoView()
-            case .inbodyAddView:
-                InbodyAddView()
-            case .onboardingLoadingView:
-                OnboardingLoadingView()
-            case .inbodyFixView:
-                InbodyFixView(weight: "고쳐야됨", height: "고쳐야됨", bmi: "고쳐야됨", bodyfat: "고쳐야됨", bmr: "고쳐야됨")
-            case .inbodyInputView:
-                InbodyInputView(weight: "고쳐야됨", height: "고쳐야됨", bmi: "고쳐야됨", bodyfat: "고쳐야됨", bmr: "고쳐야됨")
-            case .onboardingEndView:
-                OnboardingEndView()
-            case .eyeBodyView:
-                EyeBodyView()
+        case .onboardingWelcome:
+            OnboardingWelcomView()
+        case .onboardingSelectUserInfo:
+            OnboardingSelectUserInfoView()
+        case .inbodyAddView:
+            InbodyAddView()
+        case .onboardingLoadingView:
+            OnboardingLoadingView()
+        case .inbodyFixView:
+            InbodyFixView(weight: "고쳐야됨", height: "고쳐야됨", bmi: "고쳐야됨", bodyfat: "고쳐야됨", bmr: "고쳐야됨")
+        case .inbodyInputView:
+            InbodyInputView(weight: "고쳐야됨", height: "고쳐야됨", bmi: "고쳐야됨", bodyfat: "고쳐야됨", bmr: "고쳐야됨")
+        case .onboardingEndView:
+            OnboardingEndView()
+        case .eyeBodyView:
+            EyeBodyView()
         }
     }
 }
@@ -47,13 +47,30 @@ enum OnboardingViewOptions: Hashable, ViewOptions {
 enum MealViewOptions: Hashable, ViewOptions {
     case mealMainView
     case mealChatBotView
-    
+
     @ViewBuilder func view() -> some View {
         switch self {
         case .mealMainView:
             MealMainView()
         case .mealChatBotView:
             MealChatBotView()
+        }
+    }
+}
+
+enum ProfileViewOptions: Hashable, ViewOptions {
+    case profileAlbumMainView
+    case profileInbodyMainView
+    case profileEyeBodyMainView
+
+    @ViewBuilder func view() -> some View {
+        switch self {
+        case .profileAlbumMainView:
+            AlbumMainView(albums: dummyAlbums)
+        case .profileInbodyMainView:
+            InbodyMainView()
+        case .profileEyeBodyMainView:
+            EyeBodyView()
         }
     }
 }
