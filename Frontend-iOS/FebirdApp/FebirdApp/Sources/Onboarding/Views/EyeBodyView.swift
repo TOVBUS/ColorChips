@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct EyeBodyView: View {
-    @Binding var isOnboarding: Bool
+    var isOnboarding: Bool = true
     @State private var selectedImages: [UIImage?] = [nil, nil, nil, nil]
     @State private var showActionSheet = false
     @State private var showImagePicker = false
@@ -110,5 +110,5 @@ struct EyeBodyView: View {
 }
 
 #Preview {
-    EyeBodyView(isOnboarding: .constant(true))
+    EyeBodyView(isOnboarding: true)
 }
