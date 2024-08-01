@@ -10,6 +10,7 @@ export class LevelController {
     return this.levelService.findAll();
   }
 
+<<<<<<< HEAD
   @Get(':id')
   async findOne(@Param('id') id: number) {
     try {
@@ -19,3 +20,8 @@ export class LevelController {
     }
   }
 }
+=======
+  //findOne(@Param('id') id: string) {}
+  //update(@Param('id') id: string, @Body() updateLevelDto: UpdateLevelDto) {}
+}
+>>>>>>> a351c7e (✨ :: Member에 FindOne 추가, Deletle 예외처리 추가 #KAN-257)

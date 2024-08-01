@@ -14,6 +14,7 @@ export class RoutineService {
     return this.routineRepository.find();
   }
 
+<<<<<<< HEAD
   async findOne(id: number): Promise<Routine | null> {
     const routine = await this.routineRepository.findOne({
       where: { routine_id: id },
@@ -22,3 +23,9 @@ export class RoutineService {
     return routine || null;
   }
 }
+=======
+  // findOne(id: number) {
+  //   return this.routineRepository.findOne(id);
+  // }
+}
+>>>>>>> a351c7e (✨ :: Member에 FindOne 추가, Deletle 예외처리 추가 #KAN-257)

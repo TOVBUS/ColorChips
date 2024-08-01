@@ -9,9 +9,14 @@ export class ExerciseController {
   findAll() {
     return this.exerciseService.findAll();
   }
+<<<<<<< HEAD
 
   @Get(':id')
   findOne(@Param('id') id: number) {
     return this.exerciseService.findOne(id);
   }
 }
+=======
+  //findOne(@Param('id') id: string) {}
+}
+>>>>>>> a351c7e (✨ :: Member에 FindOne 추가, Deletle 예외처리 추가 #KAN-257)

@@ -9,6 +9,7 @@ export class RoutineController {
   findAll() {
     return this.routineService.findAll();
   }
+<<<<<<< HEAD
 
   @Get(':id')
   async findOne(@Param('id') id: number) {
@@ -19,3 +20,11 @@ export class RoutineController {
     return routine;
   }
 }
+=======
+  
+  // @Get(':id')
+  // findOne(@Param('id') id: string) {
+  //   return this.routineService.findOne(+id);
+  // }
+}
+>>>>>>> a351c7e (✨ :: Member에 FindOne 추가, Deletle 예외처리 추가 #KAN-257)

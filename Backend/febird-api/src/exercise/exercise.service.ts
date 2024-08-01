@@ -14,6 +14,7 @@ export class ExerciseService {
     return this.exerciseRepository.find();
   }
 
+<<<<<<< HEAD
   async findOne(id: number) {
     const exercise = await this.exerciseRepository.findOne({
       where: { exercise_id: id },
@@ -26,3 +27,7 @@ export class ExerciseService {
     return exercise;
   }
 }
+=======
+  //findOne(id: number) {}
+}
+>>>>>>> a351c7e (✨ :: Member에 FindOne 추가, Deletle 예외처리 추가 #KAN-257)

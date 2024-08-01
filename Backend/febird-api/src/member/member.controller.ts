@@ -1,5 +1,18 @@
 import {
+<<<<<<< HEAD
   Controller, Post, Body, Patch, Param, Delete, Get, UseInterceptors, UploadedFile, Res, HttpStatus
+=======
+  Controller,
+  Post,
+  Body,
+  Get,
+  Patch,
+  Param,
+  Delete,
+  UseInterceptors,
+  UploadedFile,
+  Res,
+>>>>>>> a351c7e (✨ :: Member에 FindOne 추가, Deletle 예외처리 추가 #KAN-257)
 } from '@nestjs/common';
 import { MemberService } from './member.service';
 import { CreateMemberDto } from './dto/create-member.dto';
@@ -31,6 +44,7 @@ export class MemberController {
     @UploadedFile() file: any,
     @Res() res: Response
   ) {
+<<<<<<< HEAD
     try {
       if (file) {
         updateMemberDto.profile_image = file.filename;
@@ -39,9 +53,14 @@ export class MemberController {
       return res.status(HttpStatus.OK).json(updatedMember);
     } catch (error) {
       return res.status(HttpStatus.BAD_REQUEST).json({ message: '회원 정보 수정 실패' });
+=======
+    if (file) {
+      updateMemberDto.profile_image = file.filename;
+>>>>>>> a351c7e (✨ :: Member에 FindOne 추가, Deletle 예외처리 추가 #KAN-257)
     }
   }
 
+<<<<<<< HEAD
   @Get(':id')
   async findOne(@Param('id') id: number, @Res() res: Response) {
     try {
@@ -61,4 +80,18 @@ export class MemberController {
       return res.status(HttpStatus.BAD_REQUEST).json({ message: '회원 정보 삭제 실패' });
     }
   }
+=======
+ // 특정 회원정보 조회
+  @Get(':id')
+  findOne(@Param('id') id: number) {
+    return this.memberService.findOne(id);
+  } 
+
+  // 회원정보 삭제
+  @Delete(':id')
+  async remove(@Param('id') id: number, @Res() res: Response) {
+    await this.memberService.remove(id);
+    return res.status(200).json({ message: 'Member 삭제 성공!' });
+  }
+>>>>>>> a351c7e (✨ :: Member에 FindOne 추가, Deletle 예외처리 추가 #KAN-257)
 }
