@@ -37,6 +37,10 @@ export class LevelService {
     if (!level) {
       throw new NotFoundException(`Level with ID ${id} not found`);
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 82dded9 (✨ :: level의 FindOne, FindAll 로직만 남기기 #KAN-257)
     return level;
   }
 }
