@@ -25,10 +25,17 @@ let InbodyService = class InbodyService {
     }
     async create(member_id, createInbodyDto) {
         const member = await this.memberRepository.findOne({
+<<<<<<< HEAD
             where: { member_id: member_id },
         });
         if (!member) {
             throw new common_1.NotFoundException(`${member_id}에 해당하는 회원을 찾을 수 없습니다.`);
+=======
+            where: { member_id: createInbodyDto.member_id },
+        });
+        if (!member) {
+            throw new common_1.NotFoundException(`Member with ID ${member_id} not found`);
+>>>>>>> d0bf1f6 (🐛 :: Fix Server Error)
         }
         const newInbody = this.inbodyRepository.create({
             ...createInbodyDto,
@@ -42,6 +49,7 @@ let InbodyService = class InbodyService {
             relations: ['inbodies'],
         });
         if (!member) {
+<<<<<<< HEAD
             throw new common_1.NotFoundException(`${memberId}에 해당하는 회원을 찾을 수 없습니다.`);
         }
         return member.inbodies;
@@ -57,6 +65,12 @@ let InbodyService = class InbodyService {
         Object.assign(inbody, updateInbodyDto);
         return await this.inbodyRepository.save(inbody);
     }
+=======
+            throw new common_1.NotFoundException(`Member with ID ${memberId} not found`);
+        }
+        return member.inbodies;
+    }
+>>>>>>> d0bf1f6 (🐛 :: Fix Server Error)
 };
 exports.InbodyService = InbodyService;
 exports.InbodyService = InbodyService = __decorate([

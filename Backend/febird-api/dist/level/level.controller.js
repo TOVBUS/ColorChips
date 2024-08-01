@@ -15,10 +15,15 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.LevelController = void 0;
 const common_1 = require("@nestjs/common");
 const level_service_1 = require("./level.service");
+<<<<<<< HEAD
+=======
+const create_level_dto_1 = require("./dto/create-level.dto");
+>>>>>>> d0bf1f6 (🐛 :: Fix Server Error)
 let LevelController = class LevelController {
     constructor(levelService) {
         this.levelService = levelService;
     }
+<<<<<<< HEAD
     findAll() {
         return this.levelService.findAll();
     }
@@ -33,11 +38,30 @@ let LevelController = class LevelController {
 };
 exports.LevelController = LevelController;
 __decorate([
+=======
+    create(createLevelDto) {
+        return this.levelService.create(createLevelDto);
+    }
+    findAll() {
+        return this.levelService.findAll();
+    }
+};
+exports.LevelController = LevelController;
+__decorate([
+    (0, common_1.Post)(),
+    __param(0, (0, common_1.Body)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [create_level_dto_1.CreateLevelDto]),
+    __metadata("design:returntype", void 0)
+], LevelController.prototype, "create", null);
+__decorate([
+>>>>>>> d0bf1f6 (🐛 :: Fix Server Error)
     (0, common_1.Get)(),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", void 0)
 ], LevelController.prototype, "findAll", null);
+<<<<<<< HEAD
 __decorate([
     (0, common_1.Get)(':id'),
     __param(0, (0, common_1.Param)('id')),
@@ -45,6 +69,8 @@ __decorate([
     __metadata("design:paramtypes", [Number]),
     __metadata("design:returntype", Promise)
 ], LevelController.prototype, "findOne", null);
+=======
+>>>>>>> d0bf1f6 (🐛 :: Fix Server Error)
 exports.LevelController = LevelController = __decorate([
     (0, common_1.Controller)('level'),
     __metadata("design:paramtypes", [level_service_1.LevelService])

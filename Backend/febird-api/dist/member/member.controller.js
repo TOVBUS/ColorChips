@@ -22,6 +22,7 @@ let MemberController = class MemberController {
     constructor(memberService) {
         this.memberService = memberService;
     }
+<<<<<<< HEAD
     async create(createMemberDto, file, res) {
         try {
             createMemberDto.profile_image = file.filename;
@@ -61,6 +62,20 @@ let MemberController = class MemberController {
         catch (error) {
             return res.status(common_1.HttpStatus.BAD_REQUEST).json({ message: '회원 정보 삭제 실패' });
         }
+=======
+    create(createMemberDto, file) {
+        createMemberDto.profile_image = file.filename;
+        return this.memberService.create(createMemberDto);
+    }
+    update(id, updateMemberDto, file) {
+        if (file) {
+            updateMemberDto.profile_image = file.filename;
+        }
+        return this.memberService.update(id, updateMemberDto);
+    }
+    remove(id) {
+        return this.memberService.remove(id);
+>>>>>>> d0bf1f6 (🐛 :: Fix Server Error)
     }
 };
 exports.MemberController = MemberController;
@@ -69,10 +84,16 @@ __decorate([
     (0, common_1.UseInterceptors)((0, platform_express_1.FileInterceptor)('profile_image')),
     __param(0, (0, common_1.Body)()),
     __param(1, (0, common_1.UploadedFile)()),
+<<<<<<< HEAD
     __param(2, (0, common_1.Res)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [create_member_dto_1.CreateMemberDto, Object, Object]),
     __metadata("design:returntype", Promise)
+=======
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [create_member_dto_1.CreateMemberDto, Object]),
+    __metadata("design:returntype", void 0)
+>>>>>>> d0bf1f6 (🐛 :: Fix Server Error)
 ], MemberController.prototype, "create", null);
 __decorate([
     (0, common_1.Patch)(':id'),
@@ -80,6 +101,7 @@ __decorate([
     __param(0, (0, common_1.Param)('id')),
     __param(1, (0, common_1.Body)()),
     __param(2, (0, common_1.UploadedFile)()),
+<<<<<<< HEAD
     __param(3, (0, common_1.Res)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Number, update_member_dto_1.UpdateMemberDto, Object, Object]),
@@ -100,6 +122,18 @@ __decorate([
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Number, Object]),
     __metadata("design:returntype", Promise)
+=======
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number, update_member_dto_1.UpdateMemberDto, Object]),
+    __metadata("design:returntype", void 0)
+], MemberController.prototype, "update", null);
+__decorate([
+    (0, common_1.Delete)(':id'),
+    __param(0, (0, common_1.Param)('id')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number]),
+    __metadata("design:returntype", void 0)
+>>>>>>> d0bf1f6 (🐛 :: Fix Server Error)
 ], MemberController.prototype, "remove", null);
 exports.MemberController = MemberController = __decorate([
     (0, common_1.Controller)('member'),

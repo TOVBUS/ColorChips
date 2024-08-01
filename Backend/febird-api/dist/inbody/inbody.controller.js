@@ -16,7 +16,10 @@ exports.InbodyController = void 0;
 const common_1 = require("@nestjs/common");
 const inbody_service_1 = require("./inbody.service");
 const create_inbody_dto_1 = require("./dto/create-inbody.dto");
+<<<<<<< HEAD
 const update_inbody_dto_1 = require("./dto/update-inbody.dto");
+=======
+>>>>>>> d0bf1f6 (🐛 :: Fix Server Error)
 let InbodyController = class InbodyController {
     constructor(inbodyService) {
         this.inbodyService = inbodyService;
@@ -27,9 +30,12 @@ let InbodyController = class InbodyController {
     findAll(memberId) {
         return this.inbodyService.findAll(+memberId);
     }
+<<<<<<< HEAD
     update(memberId, inbodyId, updateInbodyDto) {
         return this.inbodyService.update(+memberId, +inbodyId, updateInbodyDto);
     }
+=======
+>>>>>>> d0bf1f6 (🐛 :: Fix Server Error)
 };
 exports.InbodyController = InbodyController;
 __decorate([
@@ -47,6 +53,7 @@ __decorate([
     __metadata("design:paramtypes", [Number]),
     __metadata("design:returntype", void 0)
 ], InbodyController.prototype, "findAll", null);
+<<<<<<< HEAD
 __decorate([
     (0, common_1.Patch)(':inbodyId'),
     __param(0, (0, common_1.Param)('memberId')),
@@ -56,6 +63,8 @@ __decorate([
     __metadata("design:paramtypes", [Number, Number, update_inbody_dto_1.UpdateInbodyDto]),
     __metadata("design:returntype", void 0)
 ], InbodyController.prototype, "update", null);
+=======
+>>>>>>> d0bf1f6 (🐛 :: Fix Server Error)
 exports.InbodyController = InbodyController = __decorate([
     (0, common_1.Controller)('member/:memberId/inbody'),
     __metadata("design:paramtypes", [inbody_service_1.InbodyService])

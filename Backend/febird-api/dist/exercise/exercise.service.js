@@ -21,6 +21,7 @@ let ExerciseService = class ExerciseService {
     constructor(exerciseRepository) {
         this.exerciseRepository = exerciseRepository;
     }
+<<<<<<< HEAD
     async findAll() {
         return this.exerciseRepository.find();
     }
@@ -32,6 +33,14 @@ let ExerciseService = class ExerciseService {
             throw new common_1.NotFoundException(`Exercise with ID ${id} not found`);
         }
         return exercise;
+=======
+    create(createExerciseDto) {
+        const exercise = this.exerciseRepository.create(createExerciseDto);
+        return this.exerciseRepository.save(exercise);
+    }
+    findAll() {
+        return this.exerciseRepository.find();
+>>>>>>> d0bf1f6 (🐛 :: Fix Server Error)
     }
 };
 exports.ExerciseService = ExerciseService;

@@ -39,7 +39,11 @@ exports.DatabaseModule = DatabaseModule = __decorate([
                     return {
                         type: 'mysql',
                         host,
+<<<<<<< HEAD
                         port,
+=======
+                        port: parseInt(port, 3306),
+>>>>>>> d0bf1f6 (🐛 :: Fix Server Error)
                         username,
                         password,
                         database,

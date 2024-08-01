@@ -15,10 +15,15 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.RoutineController = void 0;
 const common_1 = require("@nestjs/common");
 const routine_service_1 = require("./routine.service");
+<<<<<<< HEAD
+=======
+const create_routine_dto_1 = require("./dto/create-routine.dto");
+>>>>>>> d0bf1f6 (🐛 :: Fix Server Error)
 let RoutineController = class RoutineController {
     constructor(routineService) {
         this.routineService = routineService;
     }
+<<<<<<< HEAD
     findAll() {
         return this.routineService.findAll();
     }
@@ -32,11 +37,30 @@ let RoutineController = class RoutineController {
 };
 exports.RoutineController = RoutineController;
 __decorate([
+=======
+    create(createRoutineDto) {
+        return this.routineService.create(createRoutineDto);
+    }
+    findAll() {
+        return this.routineService.findAll();
+    }
+};
+exports.RoutineController = RoutineController;
+__decorate([
+    (0, common_1.Post)(),
+    __param(0, (0, common_1.Body)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [create_routine_dto_1.CreateRoutineDto]),
+    __metadata("design:returntype", void 0)
+], RoutineController.prototype, "create", null);
+__decorate([
+>>>>>>> d0bf1f6 (🐛 :: Fix Server Error)
     (0, common_1.Get)(),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", void 0)
 ], RoutineController.prototype, "findAll", null);
+<<<<<<< HEAD
 __decorate([
     (0, common_1.Get)(':id'),
     __param(0, (0, common_1.Param)('id')),
@@ -44,6 +68,8 @@ __decorate([
     __metadata("design:paramtypes", [Number]),
     __metadata("design:returntype", Promise)
 ], RoutineController.prototype, "findOne", null);
+=======
+>>>>>>> d0bf1f6 (🐛 :: Fix Server Error)
 exports.RoutineController = RoutineController = __decorate([
     (0, common_1.Controller)('routine'),
     __metadata("design:paramtypes", [routine_service_1.RoutineService])

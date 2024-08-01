@@ -32,6 +32,7 @@ let LevelService = class LevelService {
         }
         return routine;
     }
+<<<<<<< HEAD
     async findAll() {
         return this.levelRepository.find({ relations: ['routines'] });
     }
@@ -44,6 +45,18 @@ let LevelService = class LevelService {
             throw new common_1.NotFoundException(`Level with ID ${id} not found`);
         }
         return level;
+=======
+    async create(createLevelDto) {
+        const routine = await this.getRoutineById(createLevelDto.routine_id);
+        const level = this.levelRepository.create({
+            ...createLevelDto,
+            routines: [routine],
+        });
+        return this.levelRepository.save(level);
+    }
+    async findAll() {
+        return this.levelRepository.find({ relations: ['routine'] });
+>>>>>>> d0bf1f6 (🐛 :: Fix Server Error)
     }
 };
 exports.LevelService = LevelService;

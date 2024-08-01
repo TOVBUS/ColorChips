@@ -1,6 +1,7 @@
 import { MemberService } from './member.service';
 import { CreateMemberDto } from './dto/create-member.dto';
 import { UpdateMemberDto } from './dto/update-member.dto';
+<<<<<<< HEAD
 import { Response } from 'express';
 export declare class MemberController {
     private memberService;
@@ -9,4 +10,12 @@ export declare class MemberController {
     update(id: number, updateMemberDto: UpdateMemberDto, file: any, res: Response): Promise<Response<any, Record<string, any>>>;
     findOne(id: number, res: Response): Promise<Response<any, Record<string, any>>>;
     remove(id: number, res: Response): Promise<Response<any, Record<string, any>>>;
+=======
+export declare class MemberController {
+    private memberService;
+    constructor(memberService: MemberService);
+    create(createMemberDto: CreateMemberDto, file: any): Promise<import("./member.entity").Member>;
+    update(id: number, updateMemberDto: UpdateMemberDto, file: any): Promise<import("./member.entity").Member>;
+    remove(id: number): Promise<void>;
+>>>>>>> d0bf1f6 (🐛 :: Fix Server Error)
 }

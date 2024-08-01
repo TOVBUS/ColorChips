@@ -25,6 +25,7 @@ let MemberService = class MemberService {
         const member = this.memberRepository.create(createMemberDto);
         return this.memberRepository.save(member);
     }
+<<<<<<< HEAD
     async findOne(member_id) {
         const member = await this.memberRepository.findOne({ where: { member_id } });
         if (!member) {
@@ -32,6 +33,8 @@ let MemberService = class MemberService {
         }
         return member;
     }
+=======
+>>>>>>> d0bf1f6 (🐛 :: Fix Server Error)
     async update(member_id, updateMemberDto) {
         await this.memberRepository.update(member_id, updateMemberDto);
         return await this.memberRepository.findOne({ where: { member_id } });

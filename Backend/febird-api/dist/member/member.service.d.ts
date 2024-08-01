@@ -6,7 +6,10 @@ export declare class MemberService {
     private memberRepository;
     constructor(memberRepository: Repository<Member>);
     create(createMemberDto: CreateMemberDto): Promise<Member>;
+<<<<<<< HEAD
     findOne(member_id: number): Promise<Member>;
+=======
+>>>>>>> d0bf1f6 (🐛 :: Fix Server Error)
     update(member_id: number, updateMemberDto: UpdateMemberDto): Promise<Member>;
     remove(member_id: number): Promise<void>;
 }

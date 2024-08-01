@@ -45,7 +45,11 @@ __decorate([
     __metadata("design:type", String)
 ], Member.prototype, "kakaoID", void 0);
 __decorate([
+<<<<<<< HEAD
     (0, typeorm_1.Column)({ default: 1 }),
+=======
+    (0, typeorm_1.Column)(),
+>>>>>>> d0bf1f6 (🐛 :: Fix Server Error)
     __metadata("design:type", Number)
 ], Member.prototype, "current_level", void 0);
 __decorate([

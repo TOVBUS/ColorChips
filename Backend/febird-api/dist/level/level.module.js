@@ -21,7 +21,11 @@ exports.LevelModule = LevelModule = __decorate([
     (0, common_1.Module)({
         imports: [
             typeorm_1.TypeOrmModule.forFeature([level_entity_1.Level, routine_entity_1.Routine]),
+<<<<<<< HEAD
             routine_module_1.RoutineModule
+=======
+            routine_module_1.RoutineModule,
+>>>>>>> d0bf1f6 (🐛 :: Fix Server Error)
         ],
         providers: [level_service_1.LevelService],
         controllers: [level_controller_1.LevelController],

@@ -21,6 +21,7 @@ let RoutineService = class RoutineService {
     constructor(routineRepository) {
         this.routineRepository = routineRepository;
     }
+<<<<<<< HEAD
     findAll() {
         return this.routineRepository.find();
     }
@@ -31,6 +32,15 @@ let RoutineService = class RoutineService {
         });
         return routine || null;
     }
+=======
+    create(createRoutineDto) {
+        const routine = this.routineRepository.create(createRoutineDto);
+        return this.routineRepository.save(routine);
+    }
+    findAll() {
+        return this.routineRepository.find();
+    }
+>>>>>>> d0bf1f6 (🐛 :: Fix Server Error)
 };
 exports.RoutineService = RoutineService;
 exports.RoutineService = RoutineService = __decorate([
