@@ -15,7 +15,7 @@ export class LevelController {
     try {
       return await this.levelService.findOne(id);
     } catch (error) {
-      throw new NotFoundException(`Level with ID ${id} not found`);
+      throw new NotFoundException(`${id}에 해당하는 레벨을 찾을 수 없습니다.`); 
     }
   }
 }

@@ -14,7 +14,7 @@ export class Inbody {
   @Column('float')
   weight: number;
 
-  @Column('date', { nullable: true })
+  @Column('date')
   inbody_date: Date;
 
   @Column('float', { nullable: true })

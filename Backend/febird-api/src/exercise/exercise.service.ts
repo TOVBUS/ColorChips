@@ -20,7 +20,7 @@ export class ExerciseService {
     });
 
     if (!exercise) {
-      throw new NotFoundException(`Exercise with ID ${id} not found`);
+      throw new NotFoundException(`${id}에 해당하는 운동을 찾을 수 없습니다.`);
     }
 
     return exercise;

@@ -19,7 +19,7 @@ export class LevelService {
     });
 
     if (!routine) {
-      throw new NotFoundException(`Routine with ID ${routine_id} not found`);
+      throw new NotFoundException(`${routine_id}에 해당하는 루틴을 찾을 수 없습니다.`);
     }
     return routine;
   }
@@ -35,7 +35,7 @@ export class LevelService {
     });
     
     if (!level) {
-      throw new NotFoundException(`Level with ID ${id} not found`);
+      throw new NotFoundException(`${id}에 해당하는 레벨을 찾을 수 없습니다.`);
     }
     return level;
   }
