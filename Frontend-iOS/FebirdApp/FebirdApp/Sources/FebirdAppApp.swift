@@ -12,7 +12,7 @@ struct FebirdAppApp: App {
     @StateObject var tabViewModel = TabViewModel()
     @StateObject private var onboardingNavigationPathFinder = NavigationPathFinder<OnboardingViewOptions>()
     @StateObject private var mealNavigationPathFinder = NavigationPathFinder<MealViewOptions>()
-    
+
     var body: some Scene {
         WindowGroup {
             if onboardingNavigationPathFinder.isFirstEnteredApp {

@@ -24,12 +24,12 @@ struct InbodyAddView: View {
             if showOnboardingGaugeView {
                 OnboardingGaugeView(progress: 3)
             }
-            
+
             VStack {
                 Text("인바디 사진은 아래와 같이 등록해주세요!")
                     .font(.customFont(size: 20, weight: .bold))
                     .padding(.bottom, 36)
-                
+
                 ZStack {
                     Image(uiImage: image ?? UIImage(named: "InbodyDefault")!)
                         .resizable()
@@ -48,7 +48,7 @@ struct InbodyAddView: View {
                                 .foregroundStyle(Color(white: 1.0))
                                 .font(.customFont(size: 18, weight: .bold))
                                 .padding(.bottom, 26)
-                            
+
                             Text("건강 정보는 개인 기기에만 저장되며\n 그래프로 기록을 보여드리기 위함이니 안심하세요 😔")
                                 .foregroundStyle(Color(white: 1.0))
                                 .font(.customFont(size: 14, weight: .medium))
@@ -64,7 +64,7 @@ struct InbodyAddView: View {
                         showActionSheet = true
                     }
                     .padding(.top, 40)
-                    
+
                     CustomButtonView(title: "건너뛰기") {
                         // TODO: 분석 로직 추가
                         navigationPathFinder.addPath(option: .inbodyInputView)
@@ -74,7 +74,7 @@ struct InbodyAddView: View {
                         showActionSheet = true
                     }
                     .padding(.top, 40)
-                    
+
                     CustomButtonView(title: "분석하기") {
                         // TODO: 분석 로직 추가
                         navigationPathFinder.addPath(option: .onboardingLoadingView)

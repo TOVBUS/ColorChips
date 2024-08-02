@@ -20,7 +20,7 @@ struct InbodyInputView: View {
     var body: some View {
         VStack {
             OnboardingGaugeView(progress: 5)
-            
+
             ScrollView {
                 Text("체중과 키를 기록하면 변화를 그래프로 보여드릴게요 😉")
                     .font(.customFont(size: 20, weight: .bold))
@@ -39,7 +39,7 @@ struct InbodyInputView: View {
                 CustomButtonView(title: "저장하기") {
                     // TODO: 데이터 저장 로직 구현 - SwiftData
                 }
-                
+
                 CustomButtonView(title: "건너뛰기") {
                     navigationPathFinder.addPath(option: .onboardingEndView)
                 }

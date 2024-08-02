@@ -21,7 +21,7 @@ enum OnboardingViewOptions: Hashable, ViewOptions {
     case inbodyInputView
     case onboardingEndView
     case eyeBodyView
-    
+
     @ViewBuilder func view() -> some View {
         switch self {
             case .onboardingWelcome:
@@ -47,7 +47,7 @@ enum OnboardingViewOptions: Hashable, ViewOptions {
 enum MealViewOptions: Hashable, ViewOptions {
     case mealMainView
     case mealChatBotView
-    
+
     @ViewBuilder func view() -> some View {
         switch self {
         case .mealMainView:

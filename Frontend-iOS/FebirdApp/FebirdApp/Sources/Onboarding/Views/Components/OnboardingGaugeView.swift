@@ -15,12 +15,12 @@ struct OnboardingGaugeView: View {
     var body: some View {
         VStack {
             Spacer()
-            
+
             Gauge(value: Double(progress), in: Double(minValue)...Double(maxValue), label: {})
                 .tint(.orange50)
                 .padding(.horizontal, 24)
                 .padding(.vertical, 50)
-            
+
             Spacer()
         }
         .frame(maxWidth: .infinity)
