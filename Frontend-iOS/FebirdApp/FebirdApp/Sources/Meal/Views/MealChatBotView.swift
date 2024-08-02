@@ -10,7 +10,7 @@ import SwiftUI
 struct MealChatBotView: View {
     @EnvironmentObject var tabViewModel: TabViewModel
     @EnvironmentObject var mealNavigationPathFinder: NavigationPathFinder<MealViewOptions>
-    
+
     @State private var messages: [Message] = [
         Message(content: "무엇을 도와드릴까요 핑?", isUser: false),
         Message(content: "지금 내가 하고있는 운동은 너무 쉬워. 조금 더 어려운 방법을 추천해줄래?", isUser: true),
@@ -18,10 +18,10 @@ struct MealChatBotView: View {
         Message(content: "종아리가 점점 두꺼워지고 있어서 고민이야", isUser: true),
         Message(content: "그렇군요! 말씀해주신 내용을 바탕으로 분석하고 알려드릴게요 핑!\n잠시만 기다려주세요 핑!", isUser: false)
     ]
-    
+
     @State private var newMessage = ""
     @State private var mealRecommendation: MealRecommendation?
-    
+
     var body: some View {
         VStack {
             HStack {
@@ -30,21 +30,21 @@ struct MealChatBotView: View {
                 } label: {
                     Image("Chevron-left")
                 }
-                
+
                 HStack {
                     Spacer()
-                    
+
                     Text("피오코치")
                         .font(.customFont(size: 22, weight: .bold))
                         .foregroundStyle(.gray100)
                         .padding(.trailing, 16)
-                    
+
                     Spacer()
                 }
             }
             .padding(16)
             .frame(height: 64)
-            
+
             ScrollView {
                 LazyVStack(alignment: .leading, spacing: 10) {
                     ForEach(messages) { message in

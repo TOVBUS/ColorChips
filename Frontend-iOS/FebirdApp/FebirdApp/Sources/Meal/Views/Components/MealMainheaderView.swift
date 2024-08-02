@@ -23,7 +23,7 @@ struct MealMainheaderView: View {
                 Rectangle()
                     .frame(minHeight: 240)
                     .foregroundStyle(.white)
-                
+
                 Rectangle()
                     .frame(minHeight: 240)
                     .foregroundStyle(.gray100)

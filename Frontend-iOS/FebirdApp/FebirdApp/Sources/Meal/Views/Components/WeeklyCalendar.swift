@@ -8,18 +8,18 @@
 import SwiftUI
 
 struct WeeklyCalendar: View {
-    
+
     @State private var selectedDate = Date()
-    
+
     private let calendar = Calendar.current
     private let today = Date()
-    
+
     var body: some View {
         VStack(alignment: .center, spacing: 20) {
             monthView
                 .foregroundStyle(.white)
                 .padding(.bottom, 40)
-            
+
             ZStack {
                 dayView
                 blurView
@@ -29,7 +29,7 @@ struct WeeklyCalendar: View {
             .padding(.top, -40)
         }
     }
-    
+
     // MARK: - 월 표시 뷰
     private var monthView: some View {
         HStack(alignment: .center, spacing: 12) {
@@ -43,12 +43,12 @@ struct WeeklyCalendar: View {
                 }
             )
             Spacer()
-            
+
             Text(monthTitle(from: selectedDate))
                 .font(.customFont(size: 18, weight: .medium))
-            
+
             Spacer()
-            
+
             Button(
                 action: {
                     changeMonth(1)
@@ -78,7 +78,7 @@ struct WeeklyCalendar: View {
                         Text(day(from: date))
                             .foregroundStyle(.gray30)
                             .font(.customFont(size: 12, weight: .medium))
-                        
+
                         Text("\(calendar.component(.day, from: date))")
                             .foregroundStyle(.white)
                             .font(.customFont(size: 20, weight: .bold))
@@ -97,7 +97,7 @@ struct WeeklyCalendar: View {
         }
         .padding(.bottom, 12)
     }
-    
+
     // MARK: - 가장자리 블러 뷰
     private var blurView: some View {
         HStack {
@@ -113,9 +113,9 @@ struct WeeklyCalendar: View {
             )
             .frame(width: 40)
             .edgesIgnoringSafeArea(.leading)
-            
+
             Spacer()
-            
+
             LinearGradient(
                 gradient: Gradient(
                     colors: [

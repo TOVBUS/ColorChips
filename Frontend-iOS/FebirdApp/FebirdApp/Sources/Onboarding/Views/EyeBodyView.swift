@@ -52,7 +52,7 @@ struct EyeBodyView: View {
                     }
                 }).padding(.horizontal, 20)
                     .padding(.bottom, 44)
-                
+
                 CustomButtonView(title: "저장하기") {
                     // TODO: 저장 로직 필요
                     navigationPathFinder.addPath(option: .onboardingEndView)
@@ -64,7 +64,7 @@ struct EyeBodyView: View {
                     }
                 }
             }
-            
+
             .actionSheet(isPresented: $showActionSheet) {
                 ActionSheet(title: Text("사진 선택"), buttons: [
                     .default(Text("사진 찍기")) {

@@ -35,13 +35,13 @@ struct ProfileSettingView: View {
                         .padding(.leading, 110)
                 }
             }
-            
+
             VStack(spacing: 20) {
                 HStack {
                     Text("닉네임").font(.customFont(size: 14, weight: .bold))
                     Spacer()
                 }
-                
+
                 HStack(spacing: 8) {
                     Image("personIcon")
                         .padding()
@@ -55,14 +55,14 @@ struct ProfileSettingView: View {
                         .fill(.gray10)
                 )
                 .padding(.horizontal, 0)
-                
+
                 OnboardingTextField(question: "나이", placeholder: "17세", unit: "세", inputValue: nil, text: .constant("16"))
-                
+
                 HStack {
                     Text("성별").font(.customFont(size: 14, weight: .bold))
                     Spacer()
                 }
-                
+
                 OnboardingSelectGenderButton()
                     .padding(.bottom, 70)
 
