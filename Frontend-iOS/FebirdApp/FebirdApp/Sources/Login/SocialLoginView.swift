@@ -37,7 +37,6 @@ struct SocialLoginView: View {
                     .frame(width: 204, height: 204)
                     .padding(.vertical, 30)
 
-                // MARK: - 로그인 버튼
                 CustomButtonView(title: "Kakao Sign In", style: .sharing) {
                     // TODO: 로그인 로직 추가
                 }
