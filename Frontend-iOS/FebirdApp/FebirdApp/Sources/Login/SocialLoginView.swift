@@ -21,21 +21,24 @@ struct SocialLoginView: View {
                     .multilineTextAlignment(.leading)
                     .padding(.trailing, 100)
                     .font(.customFont(size: 16, weight: .regular))
+                    .fixedSize(horizontal: false, vertical: true)
 
                 Text("또, 3일 이상 해야지! 마음먹고\n금방 포기하게 되지는 않았나요?")
                     .multilineTextAlignment(.trailing)
                     .padding(.leading, 100)
                     .font(.customFont(size: 16, weight: .regular))
+                    .fixedSize(horizontal: false, vertical: true)
 
                 Text("앞으로는 피오코치가 \n올바른 자세로, 꾸준히 할 수 있도록 도와줄게요!")
                     .font(.customFont(size: 18, weight: .bold))
                     .multilineTextAlignment(.center)
                     .padding(.horizontal)
+                    .fixedSize(horizontal: false, vertical: true)
 
                 Image("peoLogo")
                     .resizable()
-                    .frame(width: 204, height: 204)
-                    .padding(.vertical, 30)
+                    .frame(width: 200, height: 200)
+                    .padding(.vertical, 15)
 
                 CustomButtonView(title: "Kakao Sign In", style: .sharing) {
                     // TODO: 로그인 로직 추가
