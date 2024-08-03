@@ -87,8 +87,8 @@ struct ExerciseRecordListView: View {
                 .resizable()
                 .frame(width: 40, height: 40)
             if schools[schoolIndex] == "유치원" {
-                Text(kindergarden[num])
-                    .font(.customFont(size: 18, weight: .medium))
+                Text(kindergarden[num-1])
+                    .font(.customFont(size: 17, weight: .medium))
             }
             else {
                 Text("\(num)학년")
@@ -97,7 +97,7 @@ struct ExerciseRecordListView: View {
         }
         .padding(.horizontal, 12)
         .padding(.vertical, 24)
-        .frame(width: 71, height: 95)
+        .frame(width: 80, height: 95)
         .foregroundStyle(.gray50)
         .background(.white)
         .cornerRadius(24)
