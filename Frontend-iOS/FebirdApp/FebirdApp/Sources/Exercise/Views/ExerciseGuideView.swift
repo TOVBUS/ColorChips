@@ -13,6 +13,7 @@ struct ExerciseGuideView: View {
     @EnvironmentObject var tabViewModel: TabViewModel
     @EnvironmentObject var navigationPathFinder: NavigationPathFinder<ExerciseViewOptions>
     var isStarted = true
+    @State private var exercises = 3
     
     var body: some View {
         VStack {
