@@ -87,6 +87,7 @@ enum ExerciseViewOptions: Hashable, ViewOptions {
     case exerciseRoutineCompletionView
     case exerciseGraduationView
     case exerciseRecordView
+    case exerciseChatBotView
 
     @ViewBuilder func view() -> some View {
         switch self {
@@ -106,6 +107,8 @@ enum ExerciseViewOptions: Hashable, ViewOptions {
             ExerciseGraduationView()
         case .exerciseRecordView:
             ExerciseRecordView()
+        case .exerciseChatBotView:
+            ExerciseChatBotView()
         }
     }
 }

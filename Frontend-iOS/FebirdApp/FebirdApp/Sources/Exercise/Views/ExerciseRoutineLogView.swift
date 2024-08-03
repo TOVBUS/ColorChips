@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ExerciseRoutineLogView: View {
+    @EnvironmentObject var tabViewModel: TabViewModel
     @EnvironmentObject var navigationPathFinder: NavigationPathFinder<ExerciseViewOptions>
     var body: some View {
         ZStack {
@@ -39,6 +40,7 @@ struct ExerciseRoutineLogView: View {
                     CustomButtonView(title: "사진찍기")
                     CustomButtonView(title: "건너뛰기") {
                         navigationPathFinder.popToRoot()
+                        tabViewModel.isHidden = false
                     }
                 }
                 
@@ -50,5 +52,6 @@ struct ExerciseRoutineLogView: View {
 
 #Preview {
     ExerciseRoutineLogView()
+        .environmentObject(TabViewModel())
         .environmentObject(NavigationPathFinder<ExerciseViewOptions>())
 }

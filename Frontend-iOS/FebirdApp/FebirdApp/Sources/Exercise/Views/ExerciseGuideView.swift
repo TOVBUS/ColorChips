@@ -12,8 +12,7 @@ struct ExerciseGuideView: View {
     @StateObject private var viewModel = ExerciseGuideViewModel()
     @EnvironmentObject var tabViewModel: TabViewModel
     @EnvironmentObject var navigationPathFinder: NavigationPathFinder<ExerciseViewOptions>
-    var isStarted = true
-    @State private var exercises = 3
+    @State var isStarted = true
     
     var body: some View {
         VStack {
@@ -62,7 +61,7 @@ struct ExerciseGuideView: View {
                         .padding(.leading, 24)
                     
                     CustomButtonView(title: "피버 코치에게 질문할래요! 🤔") {
-                        // TODO: 운동챗봇뷰로 이동
+                        navigationPathFinder.addPath(option: .exerciseChatBotView)
                     }
                 }
                 .padding(.bottom, 20)
@@ -79,7 +78,20 @@ struct ExerciseGuideView: View {
             viewModel.loadVideo()
             tabViewModel.isHidden = true
         }
-        // TODO: MainView로 이동 코드 추가
+        .navigationBarBackButtonHidden() // 커스텀 백 버튼을 숨김
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button(action: {
+                    // 뒤로가기 버튼의 동작 정의
+                    navigationPathFinder.popPath()
+                    tabViewModel.isHidden = false
+                }) {
+                    HStack {
+                        Image("Chevron-left")
+                    }
+                }
+            }
+        }
     }
     
     
@@ -98,7 +110,7 @@ struct ExerciseGuideView: View {
 }
 
 #Preview {
-    ExerciseGuideView()
+    ExerciseGuideView(isStarted: false)
         .environmentObject(TabViewModel())
         .environmentObject(NavigationPathFinder<ExerciseViewOptions>())
     

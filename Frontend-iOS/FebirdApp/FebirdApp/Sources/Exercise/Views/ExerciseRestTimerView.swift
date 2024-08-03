@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ExerciseRestTimerView: View {
-    @EnvironmentObject var tabViewModel: TabViewModel
     @EnvironmentObject var navigationPathFinder: NavigationPathFinder<ExerciseViewOptions>
     
     var body: some View {
@@ -46,6 +45,5 @@ struct ExerciseRestTimerView: View {
 
 #Preview {
     ExerciseRestTimerView()
-        .environmentObject(TabViewModel())
         .environmentObject(NavigationPathFinder<ExerciseViewOptions>())
 }
