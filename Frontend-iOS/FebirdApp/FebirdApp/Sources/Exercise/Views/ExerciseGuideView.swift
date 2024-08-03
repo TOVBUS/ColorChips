@@ -17,13 +17,13 @@ struct ExerciseGuideView: View {
     var body: some View {
         VStack {
             CustomNavigationBar(title: "스모 스쿼트")
-                .padding(.top, 50)
+                .padding(.top, 70)
             
             if let player = viewModel.player {
                 VideoPlayerView(player: player)
                     .frame(height: 200)
                     .cornerRadius(32)
-                    .padding(.vertical, 24)
+                    .padding(20)
             } else {
                 ProgressView()
                     .frame(height: 200)
@@ -39,12 +39,13 @@ struct ExerciseGuideView: View {
                     VStack(alignment: .leading, spacing: 16) {
                         ForEach(viewModel.guideSteps.indices, id: \.self) { index in
                             ExerciseGuideTextView(makeAttributedText("\(index + 1). \(viewModel.guideSteps[index])"))
+                                .foregroundStyle(.gray100)
                         }
                     }
                 }
             }
             .frame(maxWidth: .infinity)
-            .padding(.horizontal, 16)
+            .padding(.horizontal, 25)
             
             Spacer()
             
@@ -67,7 +68,6 @@ struct ExerciseGuideView: View {
                 .padding(.bottom, 20)
             }
         }
-        .padding(16)
         .frame(maxWidth: .infinity)
         .background(
             Rectangle()
@@ -78,11 +78,10 @@ struct ExerciseGuideView: View {
             viewModel.loadVideo()
             tabViewModel.isHidden = true
         }
-        .navigationBarBackButtonHidden() // 커스텀 백 버튼을 숨김
+        .navigationBarBackButtonHidden()
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
                 Button(action: {
-                    // 뒤로가기 버튼의 동작 정의
                     navigationPathFinder.popPath()
                     tabViewModel.isHidden = false
                 }) {
