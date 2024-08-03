@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SettingsView: View {
 
+    @StateObject private var settingsViewModel = SettingsViewModel()
     @EnvironmentObject private var tabViewModel: TabViewModel
     @EnvironmentObject private var profileNavigationPathFinder: NavigationPathFinder<ProfileViewOptions>
 
@@ -29,8 +30,9 @@ struct SettingsView: View {
 
                         Button {
                             // TODO: 프로필설정뷰
+                            settingsViewModel.openProfileSettings()
                         } label: {
-                            CustomCell(showDesc: false, showChevron: true, showArrow: false, showToggle: false, showVersion: false, text: "프로필 설정")
+                            CustomCell(configuration: settingsViewModel.profileSettingsCell)
                         }
                         .padding(.bottom, 20)
 
@@ -39,8 +41,10 @@ struct SettingsView: View {
                             .foregroundStyle(.gray100)
 
                         VStack {
-                            CustomCell(showDesc: false, showChevron: false, showArrow: false, showToggle: true, showVersion: false, text: "시스템 알림")
-                            CustomCell(showDesc: false, showChevron: false, showArrow: false, showToggle: true, showVersion: false, text: "앱 푸시 알림")
+                            CustomCell(configuration: settingsViewModel.systemNotificationsCell)
+                                .onTapGesture(perform: settingsViewModel.toggleSystemNotifications)
+                            CustomCell(configuration: settingsViewModel.appPushNotificationsCell)
+                                .onTapGesture(perform: settingsViewModel.toggleAppPushNotifications)
                         }
                         .padding(.bottom, 20)
 
@@ -49,8 +53,9 @@ struct SettingsView: View {
                             .foregroundStyle(.gray100)
 
                         VStack {
-                            CustomCell(showDesc: false, showChevron: false, showArrow: false, showToggle: false, showVersion: true, text: "버전")
-                            CustomCell(showDesc: false, showChevron: false, showArrow: true, showToggle: false, showVersion: false, text: "리뷰 남기기")
+                            CustomCell(configuration: settingsViewModel.versionCell)
+                            CustomCell(configuration: settingsViewModel.reviewCell)
+                                .onTapGesture(perform: settingsViewModel.leaveReview)
                         }
                         .padding(.bottom, 20)
 
@@ -59,13 +64,16 @@ struct SettingsView: View {
                             .foregroundStyle(.gray100)
 
                         VStack {
-                            CustomCell(showDesc: false, showChevron: true, showArrow: false, showToggle: false, showVersion: false, text: "앱 이용약관")
-                            CustomCell(showDesc: true, showChevron: false, showArrow: false, showToggle: true, showVersion: false, text: "애플 헬스 연동")
+                            CustomCell(configuration: settingsViewModel.termsOfUseCell)
+                                .onTapGesture(perform: settingsViewModel.openTermsOfUse)
+                            CustomCell(configuration: settingsViewModel.appleHealthSyncCell)
+                                .onTapGesture(perform: settingsViewModel.toggleAppleHealthSync)
                         }
 
                         VStack {
                             Button(action: {
                                 // TODO: 로그아웃
+                                settingsViewModel.logout()
                             }, label: {
                                 VStack(alignment: .center) {
                                     Text("로그아웃")
@@ -80,6 +88,7 @@ struct SettingsView: View {
 
                             Button(action: {
                                 // TODO: 회원탈퇴
+                                settingsViewModel.withdrawAccount()
                             }, label: {
                                 VStack(alignment: .center) {
                                     Text("회원탈퇴")
@@ -103,11 +112,14 @@ struct SettingsView: View {
             }
             .onDisappear {
                 tabViewModel.isHidden = false
+            }
         }
-        }
+        .environmentObject(settingsViewModel)
     }
 }
 
 #Preview {
     SettingsView()
+        .environmentObject(TabViewModel())
+        .environmentObject(NavigationPathFinder<ProfileViewOptions>())
 }
