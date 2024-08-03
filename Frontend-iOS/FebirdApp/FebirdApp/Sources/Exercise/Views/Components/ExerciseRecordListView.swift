@@ -41,23 +41,24 @@ struct ExerciseRecordListView: View {
                 }
             }
         }) {
-            HStack(spacing: 10) {
+            HStack(spacing: 7) {
                 Image("feoFace")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 64, height: 64)
 
                 VStack(alignment: .leading) {
-                    Text(schools[index])
-                        .font(.customFont(size: 18, weight: .medium))
+                    Text(" \(schools[index])")
+                        .font(.customFont(size: 19, weight: .medium))
                         .foregroundStyle(.gray100)
                     OnboardingGaugeView(progress: gauge[index])
-                        .padding(.horizontal, -40)
+                        .padding(.vertical, -30)
+                        .padding(.horizontal, -20)
                 }
 
                 Image(gauge[index] == 10 ? "Badge_color" : "Badge_gray")
                     .resizable()
-                    .scaledToFit()
+                    .scaledToFill()
                     .frame(width: 64, height: 64)
             }
             .padding(12)
