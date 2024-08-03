@@ -1,5 +1,5 @@
 //
-//  HeaderView.swift
+//  ProfileSettingHeaderView.swift
 //  FebirdApp
 //
 //  Created by 이유경 on 7/23/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct HeaderView: View {
+struct ProfileSettingHeaderView: View {
     var body: some View {
         ZStack {
             Rectangle()
@@ -34,5 +34,5 @@ struct HeaderView: View {
 }
 
 #Preview {
-    HeaderView()
+    ProfileSettingHeaderView()
 }

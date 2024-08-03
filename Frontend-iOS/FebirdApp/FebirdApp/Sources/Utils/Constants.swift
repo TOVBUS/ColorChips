@@ -8,5 +8,7 @@
 import Foundation
 
 enum ConstantsPadding: CGFloat {
-    case onCustomTabBar = 160
+    case mealMainOnCustomTabBar = 160
+    case exerciseMainOnCustomTabBar = 118 // TODO: Exercise Tab에 사용하는 방식으로 UI 업데이트 필요
+    case profileMainOnCustomTabBar = 114
 }

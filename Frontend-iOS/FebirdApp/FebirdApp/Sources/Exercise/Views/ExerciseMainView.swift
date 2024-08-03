@@ -21,13 +21,11 @@ struct ExerciseMainView: View {
                 ExerciseListView()
 
                 CustomButtonView(title: "운동 시작하기")
-                    .padding(.bottom, 12)
-
-                CustomTabBarView()
             }
-            .ignoresSafeArea()
-            .preferredColorScheme(.dark)
+            .padding(.bottom, ConstantsPadding.mealMainOnCustomTabBar.rawValue)
         }
+        .ignoresSafeArea()
+        .preferredColorScheme(.dark)
     }
 }
 

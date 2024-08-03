@@ -14,6 +14,7 @@ struct CustomToggle: ToggleStyle {
     func makeBody(configuration: Configuration) -> some View {
         HStack {
             configuration.label
+
             ZStack(alignment: configuration.isOn ? .trailing : .leading) {
                 RoundedRectangle(cornerRadius: 10)
                     .frame(width: 56, height: 28)
@@ -24,7 +25,6 @@ struct CustomToggle: ToggleStyle {
                     .padding(4)
                     .foregroundColor(.white)
                     .shadow(color: Color(red: 0.07, green: 0.07, blue: 0.07).opacity(0.35), radius: 4, x: 0, y: 4)
-
                     .onTapGesture {
                         withAnimation {
                             configuration.$isOn.wrappedValue.toggle()

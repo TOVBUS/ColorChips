@@ -19,16 +19,20 @@ struct ProfileSettingView: View {
 
                 HStack(alignment: .center, spacing: 12) {
                     Image("backButton")
+
                     Text("프로필 설정")
                         .foregroundStyle(.white)
                         .font(.customFont(size: 20, weight: .bold))
                         .frame(maxWidth: .infinity, alignment: .top)
+
                     Spacer()
                 }
                 .padding(.top, -55)
                 .padding(.horizontal, 20)
+
                 Image("profile01")
                     .padding(.top, 121)
+
                 ZStack {
                    Image("cameraButton")
                         .padding(.top, 210)
@@ -67,7 +71,7 @@ struct ProfileSettingView: View {
                     .padding(.bottom, 70)
 
                 Button(action: {
-                    //
+                    // TODO: 저장 로직
                 }, label: {
                     Text("저장하기")
                         .frame(maxWidth: .infinity, maxHeight: 56)
