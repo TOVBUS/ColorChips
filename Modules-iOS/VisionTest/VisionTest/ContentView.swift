@@ -57,7 +57,6 @@ struct ContentView: View {
     var body: some View {
         GeometryReader { geometry in
             ZStack {
-                // 운동 상태 초기화, 카메라 방향, 줌 아웃, 삑, title/state 표시
                 ZStack {
                     if let previewLayer = exerciseDetector.previewLayer {
                         CameraPreview(previewLayer: previewLayer)
@@ -245,6 +244,8 @@ class ExerciseDetector: NSObject, ObservableObject {
     private var isInExercisePosition = false
     var previewLayer: AVCaptureVideoPreviewLayer?
 
+    private var lastPlayedSound: SystemSoundID?
+
     var exerciseStateString: String {
         switch currentExercise {
         case "Overhead-Clap":
@@ -403,6 +404,9 @@ extension ExerciseDetector: AVCaptureVideoDataOutputSampleBufferDelegate {
     }
 
     private func processBodyPoseObservation(_ observation: VNHumanBodyPoseObservation) {
+        let previousState = exerciseStateString
+        let previousCount = count
+
         switch currentExercise {
         case "Overhead-Clap":
             currentJoints = [.leftWrist, .rightWrist, .leftShoulder, .rightShoulder, .leftElbow, .rightElbow]
@@ -415,6 +419,14 @@ extension ExerciseDetector: AVCaptureVideoDataOutputSampleBufferDelegate {
             detectSumoSquat(observation)
         default:
             break
+        }
+
+        if exerciseStateString != previousState {
+            AudioServicesPlaySystemSound(1000)
+        }
+
+        if count > previousCount {
+            AudioServicesPlaySystemSound(1033)
         }
     }
 
