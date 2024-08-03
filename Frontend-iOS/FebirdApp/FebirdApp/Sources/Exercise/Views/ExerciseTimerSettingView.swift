@@ -60,7 +60,7 @@ struct ExerciseTimerSettingView: View {
 
                 CustomButtonView(title: "준비됐어요! 💪🏻", style: .orange){
                     // TODO: 운동 카운트 화면으로 이동
-                    navigationPathFinder.addPath(option: .exerciseRestTimerView)
+                    navigationPathFinder.addPath(option: .exerciseCountView)
                 }
                     .padding(24)
             }
