@@ -39,8 +39,7 @@ struct ExerciseRoutineLogView: View {
                     CustomButtonView(title: "SNS 공유하기", style: .sharing)
                     CustomButtonView(title: "사진찍기")
                     CustomButtonView(title: "건너뛰기") {
-                        navigationPathFinder.popToRoot()
-                        tabViewModel.isHidden = false
+                        navigationPathFinder.addPath(option: .exerciseGraduationView)
                     }
                 }
                 
