@@ -22,6 +22,7 @@ struct CustomCell: View {
         HStack(spacing: 10) {
             VStack(alignment: .leading) {
                 Text(text)
+                    .foregroundStyle(.gray100)
 
                 if showDesc {
                     Text("허용 후부터 인바디로 측정된 데이터의 일부를 가져옵니다.")

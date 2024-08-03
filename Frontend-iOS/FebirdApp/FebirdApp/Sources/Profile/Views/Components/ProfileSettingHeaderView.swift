@@ -8,16 +8,23 @@
 import SwiftUI
 
 struct ProfileSettingHeaderView: View {
+
+    @EnvironmentObject private var profileNavigationPathFinder: NavigationPathFinder<ProfileViewOptions>
+
     var body: some View {
         ZStack {
             Rectangle()
                 .frame(height: 120)
                 .foregroundStyle(.gray100)
                 .cornerRadius(34, corners: [.bottomLeft, .bottomRight])
-            .ignoresSafeArea()
+                .ignoresSafeArea()
 
             HStack(alignment: .center, spacing: 12) {
-                Image("backButton")
+                Button(action: {
+                    profileNavigationPathFinder.popPath()
+                }, label: {
+                    Image("backButton")
+                })
                 Text("설정")
                     .foregroundStyle(.white)
                     .font(.customFont(size: 20, weight: .bold))

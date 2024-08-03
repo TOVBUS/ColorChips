@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct ProfileHeaderView: View {
+
+    @EnvironmentObject private var profileNavigationPathFinder: NavigationPathFinder<ProfileViewOptions>
+    @State private var showSettingView = false
+
     var body: some View {
         ZStack {
             Color.white.ignoresSafeArea()
@@ -45,9 +49,14 @@ struct ProfileHeaderView: View {
                                 VStack {
                                     Button(action: {
                                         // TODO: 설정뷰로 이동
+                                         profileNavigationPathFinder.addPath(option: .settingView)
+                                        // showSettingView = true
                                     }, label: {
                                         Image("settingIcon")
                                     })
+//                                    .sheet(isPresented: $showSettingView, content: {
+//                                        SettingsView()
+//                                    })
                                     Spacer()
                                 }
                             }
