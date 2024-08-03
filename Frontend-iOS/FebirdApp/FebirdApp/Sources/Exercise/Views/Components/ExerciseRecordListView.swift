@@ -42,7 +42,7 @@ struct ExerciseRecordListView: View {
             }
         }) {
             HStack(spacing: 10) {
-                Image("BigfaceFeo")
+                Image("feoFace")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 64, height: 64)
