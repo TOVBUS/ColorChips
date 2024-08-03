@@ -12,6 +12,7 @@ enum CustomButtonStyle {
     case black
     case warning
     case sharing
+    case kakao
 
     var backgroundColor: Color {
         switch self {
@@ -19,34 +20,49 @@ enum CustomButtonStyle {
         case .black: return .gray100
         case .warning: return .red60
         case .sharing: return .orange40
+        case .kakao: return Color(red: 0.99, green: 0.9, blue: 0.02)
         }
     }
 
     var foregroundColor: Color {
-        return .white
+        switch self {
+        case .orange, .black, .sharing, .warning:
+            return .white
+        case .kakao : return Color(red: 0.24, green: 0.12, blue: 0.12)
+        }
     }
 }
 
 struct CustomButtonView: View {
     let title: String
+    let image: String?
     let style: CustomButtonStyle
     let action: () -> Void
 
-    init(title: String, style: CustomButtonStyle = .black, action: @escaping () -> Void = {}) {
+    init(image: String? = nil, title: String, style: CustomButtonStyle = .black, action: @escaping () -> Void = {}) {
         self.title = title
+        self.image = image
         self.style = style
         self.action = action
     }
 
     var body: some View {
         Button(action: action) {
-            Text(title)
-                .font(.customFont(size: 16, weight: .semibold))
-                .foregroundColor(style.foregroundColor)
-                .frame(maxWidth: .infinity)
-                .frame(height: 56)
-                .background(style.backgroundColor)
-                .cornerRadius(20)
+            HStack {
+                if image != nil {
+                    Image(image ?? "")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 24, height: 24)
+                }
+                Text(title)
+                    .font(.customFont(size: 16, weight: .semibold))
+            }
+            .foregroundColor(style.foregroundColor)
+            .frame(maxWidth: .infinity)
+            .frame(height: 56)
+            .background(style.backgroundColor)
+            .cornerRadius(20)
         }
         .accessibilityLabel(title)
         .padding(.horizontal, 20)
@@ -54,7 +70,7 @@ struct CustomButtonView: View {
 }
 
 #Preview {
-    CustomButtonView(title: "삭제하기", style: .warning) {
+    CustomButtonView(image: "cameraButton", title: "kakao Login", style: .kakao) {
         print("Warning button tapped")
     }
 }
