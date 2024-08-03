@@ -8,24 +8,23 @@
 import SwiftUI
 
 struct ExerciseMainView: View {
-
     var body: some View {
         ZStack {
             Rectangle()
                 .foregroundStyle(.white)
                 .ignoresSafeArea()
-
+            
             VStack {
                 ExerciseMainHeaderView()
-
+                
                 ExerciseListView()
-
+                
                 CustomButtonView(title: "운동 시작하기")
             }
             .padding(.bottom, ConstantsPadding.mealMainOnCustomTabBar.rawValue)
+            .ignoresSafeArea()
+            .preferredColorScheme(.dark)
         }
-        .ignoresSafeArea()
-        .preferredColorScheme(.dark)
     }
 }
 
