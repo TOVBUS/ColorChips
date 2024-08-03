@@ -10,12 +10,15 @@ import SwiftUI
 struct ExerciseRoutineCompletionView: View {
     var body: some View {
         VStack {
-            Spacer()
+            Text("좋아! 아주 잘 해냈군\n오늘도 한층 건강해졌는 걸?")
+                .font(.customFont(size: 22, weight: .bold))
+                .multilineTextAlignment(.center)
+                .padding(.top, 120)
 
-            Image("ddabong")
+            Image("feoTA")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 260)
+                .frame(width: 300)
 
             Spacer()
 
