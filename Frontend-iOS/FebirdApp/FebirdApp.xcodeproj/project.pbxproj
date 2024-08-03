@@ -15,6 +15,7 @@
 		3E5F3EFC2C5B57A9007023DC /* ProfileSelectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5F3EFB2C5B57A9007023DC /* ProfileSelectViewModel.swift */; };
 		3E5F3F002C5B94CA007023DC /* AlbumData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5F3EFD2C5B94CA007023DC /* AlbumData.swift */; };
 		3E5F3F012C5B94CA007023DC /* PhotoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5F3EFE2C5B94CA007023DC /* PhotoData.swift */; };
+		3E5F3F032C5C6953007023DC /* ProfileMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5F3F022C5C6953007023DC /* ProfileMainView.swift */; };
 		3E7521A52C48E6C700920BFD /* ExerciseMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7521A42C48E6C700920BFD /* ExerciseMainView.swift */; };
 		3E7521A82C48F63E00920BFD /* ExerciseMainHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7521A72C48F63E00920BFD /* ExerciseMainHeaderView.swift */; };
 		3E7521AB2C48F66F00920BFD /* RoundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7521AA2C48F66F00920BFD /* RoundedCorners.swift */; };
@@ -131,6 +132,7 @@
 		3E5F3EFB2C5B57A9007023DC /* ProfileSelectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSelectViewModel.swift; sourceTree = "<group>"; };
 		3E5F3EFD2C5B94CA007023DC /* AlbumData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumData.swift; sourceTree = "<group>"; };
 		3E5F3EFE2C5B94CA007023DC /* PhotoData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoData.swift; sourceTree = "<group>"; };
+		3E5F3F022C5C6953007023DC /* ProfileMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMainView.swift; sourceTree = "<group>"; };
 		3E7521A42C48E6C700920BFD /* ExerciseMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseMainView.swift; sourceTree = "<group>"; };
 		3E7521A72C48F63E00920BFD /* ExerciseMainHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseMainHeaderView.swift; sourceTree = "<group>"; };
 		3E7521AA2C48F66F00920BFD /* RoundedCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorners.swift; sourceTree = "<group>"; };
@@ -363,17 +365,17 @@
 			isa = PBXGroup;
 			children = (
 				3E3B9A7F2C5B298C001F2852 /* NavigationComponents */,
-				3E7521AA2C48F66F00920BFD /* RoundedCorners.swift */,
-				8FAC187E2C494BDE00CDF7CF /* ExerciseGaugeBarView.swift */,
-				3E7521AC2C49F88B00920BFD /* CustomTabBarView.swift */,
-				3ED5FD8D2C4A020200CD4508 /* CustomButtonView.swift */,
-				8F92DF7B2C4B9A390071F336 /* CustomNavigationBar.swift */,
-				8F92DF822C4BB0970071F336 /* VideoPlayerView.swift */,
-				8F92DF8E2C4D58710071F336 /* TimerView.swift */,
-				8F92DF882C4D4A440071F336 /* TimerButton.swift */,
-				E12911BA2C48EDFE009A92F7 /* PhotoPicker.swift */,
 				E12911B82C48DC81009A92F7 /* CameraActionSheet.swift */,
 				3E3B9A882C5B2F62001F2852 /* Constants.swift */,
+				3ED5FD8D2C4A020200CD4508 /* CustomButtonView.swift */,
+				8F92DF7B2C4B9A390071F336 /* CustomNavigationBar.swift */,
+				3E7521AC2C49F88B00920BFD /* CustomTabBarView.swift */,
+				8FAC187E2C494BDE00CDF7CF /* ExerciseGaugeBarView.swift */,
+				E12911BA2C48EDFE009A92F7 /* PhotoPicker.swift */,
+				3E7521AA2C48F66F00920BFD /* RoundedCorners.swift */,
+				8F92DF882C4D4A440071F336 /* TimerButton.swift */,
+				8F92DF8E2C4D58710071F336 /* TimerView.swift */,
+				8F92DF822C4BB0970071F336 /* VideoPlayerView.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -522,6 +524,7 @@
 		E10FD9AA2C4C02CA00D80139 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3E5F3F022C5C6953007023DC /* ProfileMainView.swift */,
 				3E5F3EF72C5B562B007023DC /* Components */,
 				E10FD9AF2C4CC01700D80139 /* InbodyMainView.swift */,
 				E1AEFC922C4D10AD000D6441 /* AlbumMainView.swift */,
@@ -832,6 +835,7 @@
 				3E3B9A8E2C5B500E001F2852 /* SocialLoginView.swift in Sources */,
 				E1BB0D582C479CF7002565B2 /* OnboardingWelcomView.swift in Sources */,
 				E1AEFC992C4D3F50000D6441 /* EyeBodyMainView.swift in Sources */,
+				3E5F3F032C5C6953007023DC /* ProfileMainView.swift in Sources */,
 				E2FDD25B2C4BA6F2004067EF /* MealMainheaderView.swift in Sources */,
 				8F92DF812C4BB0230071F336 /* ExerciseGuideViewModel.swift in Sources */,
 				E1BB0D5A2C47A4FB002565B2 /* OnboardingSelectUserInfoView.swift in Sources */,

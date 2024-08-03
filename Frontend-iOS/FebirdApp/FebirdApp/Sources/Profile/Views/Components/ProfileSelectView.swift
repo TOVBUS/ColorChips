@@ -7,24 +7,19 @@
 
 import SwiftUI
 
-enum ProfileSelect: String {
-    case album = "앨범"
-    case inbody = "인바디"
-    case body = "체형"
-}
-
 struct ProfileSelectView: View {
-    @State var selectedProfile: ProfileSelect = .album
+    @EnvironmentObject var profileSelectViewModel: ProfileSelectViewModel
+
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 16)
                 .fill(Color.gray10)
 
-            HStack(spacing: 2, content: {
-                ProfileSelectButton(profile: .album, selectedProfile: $selectedProfile)
-                ProfileSelectButton(profile: .inbody, selectedProfile: $selectedProfile)
-                ProfileSelectButton(profile: .body, selectedProfile: $selectedProfile)
-            })
+            HStack(spacing: 2) {
+                ProfileSelectButton(profile: .album)
+                ProfileSelectButton(profile: .inbody)
+                ProfileSelectButton(profile: .eyeBody)
+            }
             .padding(.horizontal, 4)
         }
         .padding(.horizontal, 4)
@@ -34,11 +29,11 @@ struct ProfileSelectView: View {
 
 struct ProfileSelectButton: View {
     let profile: ProfileSelect
-    @Binding var selectedProfile: ProfileSelect
+    @EnvironmentObject var profileSelectViewModel: ProfileSelectViewModel
 
     var body: some View {
         Button(action: {
-            selectedProfile = profile
+            profileSelectViewModel.mainContentType = profile
         }, label: {
             Text(profile.rawValue)
                 .font(.customFont(size: 14, weight: .bold))
@@ -46,13 +41,13 @@ struct ProfileSelectButton: View {
                 .frame(height: 40)
                 .background(
                     RoundedRectangle(cornerRadius: 10)
-                        .fill(selectedProfile == profile ? Color.gray100 : Color.gray10)
+                        .fill(profileSelectViewModel.mainContentType == profile ? Color.gray100 : Color.gray10)
                         .padding(4)
                 )
-                .foregroundStyle(selectedProfile == profile ? .white : .black)
+                .foregroundStyle(profileSelectViewModel.mainContentType == profile ? .white : .black)
                 .overlay(
                     RoundedRectangle(cornerRadius: 10)
-                        .stroke(selectedProfile == profile ? Color.gray60 : .clear, lineWidth: 4)
+                        .stroke(profileSelectViewModel.mainContentType == profile ? Color.gray60 : .clear, lineWidth: 4)
                         .padding(4)
                 )
         })
@@ -60,5 +55,8 @@ struct ProfileSelectButton: View {
 }
 
 #Preview {
-    ProfileSelectView().background(Color.black)
+    ProfileSelectView()
+        .background(Color.black)
+        .previewLayout(.sizeThatFits)
+        .padding()
 }

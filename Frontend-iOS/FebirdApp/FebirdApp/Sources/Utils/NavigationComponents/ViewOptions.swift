@@ -59,12 +59,15 @@ enum MealViewOptions: Hashable, ViewOptions {
 }
 
 enum ProfileViewOptions: Hashable, ViewOptions {
+    case profileMainView
     case profileAlbumMainView
     case profileInbodyMainView
     case profileEyeBodyMainView
 
     @ViewBuilder func view() -> some View {
         switch self {
+        case .profileMainView:
+            ProfileMainView()
         case .profileAlbumMainView:
             AlbumMainView(albums: dummyAlbums)
         case .profileInbodyMainView:

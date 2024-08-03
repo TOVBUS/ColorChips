@@ -7,5 +7,12 @@
 
 import SwiftUI
 
-@Observable
-class ProfileSelectViewModel {}
+enum ProfileSelect: String {
+    case album = "앨범"
+    case inbody = "인바디"
+    case eyeBody = "눈바디"
+}
+
+class ProfileSelectViewModel: ObservableObject {
+    @Published var mainContentType: ProfileSelect = .inbody
+}

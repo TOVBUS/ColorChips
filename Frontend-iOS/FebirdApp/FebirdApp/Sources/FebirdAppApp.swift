@@ -38,7 +38,7 @@ struct FebirdAppApp: App {
                         ExerciseMainView()
                     case .profile:
                         NavigationStack(path: $profileNavigationPathFinder.path) {
-                            InbodyMainView()
+                            ProfileMainView()
                                 .navigationDestination(for: ProfileViewOptions.self) { option in
                                     option.view()
                                 }

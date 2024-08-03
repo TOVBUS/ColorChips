@@ -8,19 +8,22 @@
 import SwiftUI
 
 struct AlbumMainView: View {
+    @EnvironmentObject var profileSelectViewModel: ProfileSelectViewModel
     let albums: [AlbumData]
 
     var body: some View {
-        VStack {
-            ProfileHeaderView()
+        ZStack {
+            Color.white.ignoresSafeArea()
 
-            ScrollView {
-                VStack(spacing: 20) {
-                    ForEach(albums) { album in
-                        AlbumView(album: album)
+            VStack {
+                ScrollView {
+                    VStack(spacing: 20) {
+                        ForEach(albums) { album in
+                            AlbumView(album: album)
+                        }
                     }
+                    .padding()
                 }
-                .padding()
             }
         }
     }
@@ -28,4 +31,5 @@ struct AlbumMainView: View {
 
 #Preview {
     AlbumMainView(albums: dummyAlbums)
+        .environmentObject(ProfileSelectViewModel())
 }

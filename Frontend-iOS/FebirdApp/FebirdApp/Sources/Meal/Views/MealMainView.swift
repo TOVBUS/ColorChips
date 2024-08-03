@@ -34,7 +34,7 @@ struct MealMainView: View {
                 }
                 .padding()
             }
-            .padding(.bottom, ConstantsPadding.onCustomTabBar.rawValue)
+            .padding(.bottom, ConstantsPadding.mealMainOnCustomTabBar.rawValue)
         }
         .background(
             Rectangle()
