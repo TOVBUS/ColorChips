@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct ExerciseTimerSettingView: View {
-
+    @EnvironmentObject var tabViewModel: TabViewModel
+    @EnvironmentObject var navigationPathFinder: NavigationPathFinder<ExerciseViewOptions>
     @State private var timerSeconds: Int = 10
     @State private var isMinusPressed = false
     @State private var isPlusPressed = false
@@ -57,11 +58,17 @@ struct ExerciseTimerSettingView: View {
             VStack {
                 Spacer()
 
-                CustomButtonView(title: "준비됐어요! 💪🏻", style: .orange)
+                CustomButtonView(title: "준비됐어요! 💪🏻", style: .orange){
+                    // TODO: 운동 카운트 화면으로 이동
+                    navigationPathFinder.addPath(option: .exerciseRestTimerView)
+                }
                     .padding(24)
             }
             .ignoresSafeArea()
             .padding(24)
+            .onAppear{
+                tabViewModel.isHidden = true
+            }
         }
         .ignoresSafeArea()
     }
@@ -75,4 +82,6 @@ struct ExerciseTimerSettingView: View {
 
 #Preview {
     ExerciseTimerSettingView()
+        .environmentObject(TabViewModel())
+        .environmentObject(NavigationPathFinder<ExerciseViewOptions>())
 }

@@ -78,9 +78,7 @@ struct ExerciseGuideView: View {
             viewModel.loadVideo()
             tabViewModel.isHidden = true
         }
-        .onDisappear {
-            tabViewModel.isHidden = false
-        }
+        // TODO: MainView로 이동 코드 추가
     }
     
     
