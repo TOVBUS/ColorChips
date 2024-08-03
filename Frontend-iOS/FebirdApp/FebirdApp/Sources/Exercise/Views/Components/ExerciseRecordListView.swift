@@ -10,7 +10,8 @@ import SwiftUI
 struct ExerciseRecordListView: View {
     let schools = ["유치원", "초등학교", "중학교"]
     let schoolGrades = [3, 6, 3] // 각 학교의 학년 수
-    let gauge = [10, 5, 0]
+    let kindergarden = ["씨앗반", "새싹반", "열매반"]
+    let gauge = [8, 4, 0]
 
     @State private var expandedSchools: Set<Int> = []
 
@@ -56,7 +57,7 @@ struct ExerciseRecordListView: View {
                         .padding(.horizontal, -20)
                 }
 
-                Image(gauge[index] == 10 ? "Badge_color" : "Badge_gray")
+                Image(gauge[index] == 8 ? "Badge_color" : "Badge_gray")
                     .resizable()
                     .scaledToFill()
                     .frame(width: 64, height: 64)
@@ -72,7 +73,7 @@ struct ExerciseRecordListView: View {
     private func gradeGrid(for schoolIndex: Int) -> some View {
         LazyVGrid(columns: [GridItem(.adaptive(minimum: 100))], spacing: 10) {
             ForEach(1...schoolGrades[schoolIndex], id: \.self) { num in
-                gradeItem(num: num)
+                gradeItem(schoolIndex: schoolIndex, num: num)
             }
         }
         .padding()
@@ -80,13 +81,19 @@ struct ExerciseRecordListView: View {
         .cornerRadius(24)
     }
 
-    private func gradeItem(num: Int) -> some View {
+    private func gradeItem(schoolIndex: Int, num: Int) -> some View {
         VStack {
             Image("SolidFire")
                 .resizable()
                 .frame(width: 40, height: 40)
-            Text("\(num)학년")
-                .font(.customFont(size: 18, weight: .medium))
+            if schools[schoolIndex] == "유치원" {
+                Text(kindergarden[num])
+                    .font(.customFont(size: 18, weight: .medium))
+            }
+            else {
+                Text("\(num)학년")
+                    .font(.customFont(size: 18, weight: .medium))
+            }
         }
         .padding(.horizontal, 12)
         .padding(.vertical, 24)
