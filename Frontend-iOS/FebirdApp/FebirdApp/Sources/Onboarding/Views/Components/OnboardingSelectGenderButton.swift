@@ -19,10 +19,10 @@ struct OnboardingSelectGenderButton: View {
             RoundedRectangle(cornerRadius: 20)
                 .fill(.gray.opacity(0.2))
 
-            HStack(spacing: 0, content: {
+            HStack {
                 GenderButton(title: "남", gender: .male, selectedGender: $selectedGender)
                 GenderButton(title: "여", gender: .female, selectedGender: $selectedGender)
-            })
+            }
         }
         .frame(height: 50)
     }

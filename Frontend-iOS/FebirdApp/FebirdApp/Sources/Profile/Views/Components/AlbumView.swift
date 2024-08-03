@@ -28,7 +28,7 @@ struct AlbumView: View {
     @State private var isExpanded = false
 
     var body: some View {
-        VStack(spacing: 0) {
+        VStack {
             Button(action: {
                 withAnimation(.easeInOut(duration: 0.3)) {
                     isExpanded.toggle()

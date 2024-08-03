@@ -23,16 +23,16 @@ struct ProfileHeaderView: View {
                             .resizable()
                             .frame(width: 80, height: 80)
 
-                        VStack(alignment: .leading, spacing: 0) {
+                        VStack(alignment: .leading) {
                             HStack {
-                                VStack(spacing: 0) {
+                                VStack {
                                     Text("JULY 16, 2024")
                                         .font(.customFont(size: 10, weight: .bold, language: .english))
                                         .kerning(1)
                                         .multilineTextAlignment(.center)
                                         .foregroundColor(.white)
 
-                                    HStack(spacing: 0, content: {
+                                    HStack {
                                         Text("꽥꽥이")
                                             .font(.customFont(size: 22, weight: .bold))
                                             .foregroundColor(.white)
@@ -42,21 +42,18 @@ struct ProfileHeaderView: View {
                                             .font(.customFont(size: 16, weight: .bold))
                                             .foregroundColor(.white)
                                             .frame(height: 50)
-                                    })
+                                    }
                                 }
                                 Spacer()
 
                                 VStack {
                                     Button(action: {
                                         // TODO: 설정뷰로 이동
-                                         profileNavigationPathFinder.addPath(option: .settingView)
-                                        // showSettingView = true
+                                        profileNavigationPathFinder.addPath(option: .settingView)
                                     }, label: {
                                         Image("settingIcon")
                                     })
-//                                    .sheet(isPresented: $showSettingView, content: {
-//                                        SettingsView()
-//                                    })
+
                                     Spacer()
                                 }
                             }
