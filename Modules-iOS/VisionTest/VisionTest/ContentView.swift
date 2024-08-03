@@ -57,7 +57,7 @@ struct ContentView: View {
     var body: some View {
         GeometryReader { geometry in
             ZStack {
-                // 현재 운동 상태 화면에 표시, 운동 상태 초기화, 카메라 방향, 줌 아웃, 점 -> 선으로 연결하기
+                // 운동 상태 초기화, 카메라 방향, 줌 아웃, 삑, title/state 표시
                 ZStack {
                     if let previewLayer = exerciseDetector.previewLayer {
                         CameraPreview(previewLayer: previewLayer)
@@ -75,7 +75,13 @@ struct ContentView: View {
 
                         HStack {
                             Spacer()
+                            Text("\(selectedExercise) - \(exerciseDetector.exerciseStateString)")
+                                .font(.title3)
+                                .fontWeight(.bold)
+                            Spacer()
                             Text("\(exerciseDetector.count) / \(totalCount)")
+                                .font(.title)
+                                .fontWeight(.bold)
                                 .foregroundColor(.white)
                             Spacer()
                         }
@@ -85,17 +91,17 @@ struct ContentView: View {
 
                     HStack {
                         Spacer()
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 8)
-                                .fill(Color.black.opacity(0.5))
-                                .frame(width: 100, height: 40)
-
-                            Text("\(selectedExercise) | \(exerciseDetector.downwardPunchState)")
-                                .foregroundColor(.white)
+                        Button {
+                            exerciseDetector.resetExerciseState()
+                        } label: {
+                            Image("refreshButton")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 24, height: 24)
                         }
+                        .padding(10)
                     }
-                    .padding(.top, 44)
-                    .padding(.trailing, 32)
+                    .padding(.trailing, 10)
 
                     Spacer()
 
@@ -239,32 +245,58 @@ class ExerciseDetector: NSObject, ObservableObject {
     private var isInExercisePosition = false
     var previewLayer: AVCaptureVideoPreviewLayer?
 
-    enum ClappingState {
-        case start
-        case handsUp
-        case handsDown
+    var exerciseStateString: String {
+        switch currentExercise {
+        case "Overhead-Clap":
+            return clappingState.rawValue
+        case "Downward-Punch":
+            return downwardPunchState.rawValue
+        case "Sumo_Squat":
+            return sumoSquatState.rawValue
+        default:
+            return "알 수 없음"
+        }
+    }
+
+    enum ClappingState: String {
+        case start = "시작 자세"
+        case handsUp = "손 올리기"
+        case handsDown = "손 내리기"
     }
 
     var clappingState: ClappingState = .start
 
-    enum DownwardPunchState {
-        case standing
-        case start
-        case handsUp
-        case handsDown
-        case armsExtended
+    enum DownwardPunchState: String {
+        case standing = "서있기"
+        case start = "시작 자세"
+        case handsUp = "손 올리기"
+        case handsDown = "손 내리기"
+        case armsExtended = "팔 뻗기"
     }
 
     var downwardPunchState: DownwardPunchState = .standing
 
-    enum SumoSquatState {
-        case standing
-        case squatting
+    enum SumoSquatState: String {
+        case standing = "서있기"
+        case squatting = "스쿼트중"
     }
 
     var sumoSquatState: SumoSquatState = .standing
     private var initialHipHeight: CGFloat = 0
     private var initialHipToAnkleDistance: CGFloat = 0
+
+    func resetExerciseState() {
+        switch currentExercise {
+        case "Overhead-Clap":
+            clappingState = .start
+        case "Downward-Punch":
+            downwardPunchState = .standing
+        case "Sumo_Squat":
+            sumoSquatState = .standing
+        default:
+            break
+        }
+    }
 
     func toggleDetection() {
         isDetecting.toggle()
