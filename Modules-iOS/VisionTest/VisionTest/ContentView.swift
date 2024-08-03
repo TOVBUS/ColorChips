@@ -11,7 +11,7 @@ import AVFoundation
 
 struct ExerciseTimerSettingView: View {
     @StateObject private var exerciseDetector = ExerciseDetector()
-    @State private var selectedExercise: String = "Downward-Punch"
+    @State private var selectedExercise: String = "Sumo_Squat"
     @State private var totalCount: Int = 10
     @State private var showAlert = false
 
@@ -278,8 +278,10 @@ class ExerciseDetector: NSObject, ObservableObject {
     var downwardPunchState: DownwardPunchState = .standing
 
     enum SumoSquatState: String {
-        case standing = "서있기"
-        case squatting = "스쿼트중"
+        case standing = "서있는 상태"
+        case goingDown = "내려가는 중"
+        case squatting = "스쿼트 자세"
+        case goingUp = "올라가는 중"
     }
 
     var sumoSquatState: SumoSquatState = .standing
@@ -512,7 +514,13 @@ extension ExerciseDetector: AVCaptureVideoDataOutputSampleBufferDelegate {
         }
     }
 
-    private func detectSumoSquat(_ observation: VNHumanBodyPoseObservation) {
+    func detectSumoSquat(_ observation: VNHumanBodyPoseObservation) {
+        var lastAngle: CGFloat = 180
+        let standingAngleThreshold: CGFloat = 160
+        let squattingAngleThreshold: CGFloat = 90
+        let maxAngleDifference: CGFloat = 20
+
+
         guard let leftHip = try? observation.recognizedPoint(.leftHip),
               let rightHip = try? observation.recognizedPoint(.rightHip),
               let leftKnee = try? observation.recognizedPoint(.leftKnee),
@@ -522,44 +530,67 @@ extension ExerciseDetector: AVCaptureVideoDataOutputSampleBufferDelegate {
             return
         }
 
-        let averageHipHeight = (leftHip.y + rightHip.y) / 2
-        let averageKneeHeight = (leftKnee.y + rightKnee.y) / 2
-        let averageAnkleHeight = (leftAnkle.y + rightAnkle.y) / 2
+        let leftAngle = angleBetweenThreePoints(
+            p1: CGPoint(x: leftHip.x, y: leftHip.y),
+            p2: CGPoint(x: leftKnee.x, y: leftKnee.y),
+            p3: CGPoint(x: leftAnkle.x, y: leftAnkle.y)
+        )
 
-        let currentHipToAnkleDistance = averageHipHeight - averageAnkleHeight
+        let rightAngle = angleBetweenThreePoints(
+            p1: CGPoint(x: rightHip.x, y: rightHip.y),
+            p2: CGPoint(x: rightKnee.x, y: rightKnee.y),
+            p3: CGPoint(x: rightAnkle.x, y: rightAnkle.y)
+        )
 
-        if initialHipHeight == 0 {
-            initialHipHeight = averageHipHeight
-            initialHipToAnkleDistance = currentHipToAnkleDistance
-        }
-
-        let hipHeightChangeRatio = (initialHipHeight - averageHipHeight) / initialHipToAnkleDistance
-        let kneeFlexionRatio = (averageHipHeight - averageKneeHeight) / (averageHipHeight - averageAnkleHeight)
+        let currentAngle = (leftAngle + rightAngle) / 2
 
         switch sumoSquatState {
         case .standing:
-            if hipHeightChangeRatio > 0.2 && kneeFlexionRatio > 0.4 {
+            if currentAngle < standingAngleThreshold {
+                sumoSquatState = .goingDown
+            }
+        case .goingDown:
+            if currentAngle <= squattingAngleThreshold {
                 sumoSquatState = .squatting
             }
         case .squatting:
-            if hipHeightChangeRatio < 0.1 && kneeFlexionRatio < 0.3 {
+            if currentAngle > squattingAngleThreshold {
+                sumoSquatState = .goingUp
+            }
+        case .goingUp:
+            if currentAngle >= standingAngleThreshold {
                 sumoSquatState = .standing
                 count += 1
             }
         }
+        lastAngle = currentAngle
     }
 
-    private func distance(from point1: VNRecognizedPoint, to point2: VNRecognizedPoint) -> CGFloat {
-        let dx = point2.x - point1.x
-        let dy = point2.y - point1.y
-        return sqrt(dx*dx + dy*dy)
+    private func angleBetweenThreePoints(p1: CGPoint, p2: CGPoint, p3: CGPoint) -> CGFloat {
+        let v1 = CGPoint(x: p1.x - p2.x, y: p1.y - p2.y)
+        let v2 = CGPoint(x: p3.x - p2.x, y: p3.y - p2.y)
+        let angle = atan2(v2.y, v2.x) - atan2(v1.y, v1.x)
+        return abs(angle * 180 / .pi)
     }
+}
 
-    private func angleBetweenPoints(shoulder: VNRecognizedPoint, elbow: VNRecognizedPoint, wrist: VNRecognizedPoint) -> CGFloat {
-        let v1 = CGPoint(x: elbow.x - shoulder.x, y: elbow.y - shoulder.y)
-        let v2 = CGPoint(x: wrist.x - elbow.x, y: wrist.y - elbow.y)
-        return abs(atan2(v2.y, v2.x) - atan2(v1.y, v1.x))
-    }
+private func distance(from point1: VNRecognizedPoint, to point2: VNRecognizedPoint) -> CGFloat {
+    let dx = point2.x - point1.x
+    let dy = point2.y - point1.y
+    return sqrt(dx*dx + dy*dy)
+}
+
+private func angleBetweenPoints(shoulder: VNRecognizedPoint, elbow: VNRecognizedPoint, wrist: VNRecognizedPoint) -> CGFloat {
+    let v1 = CGPoint(x: elbow.x - shoulder.x, y: elbow.y - shoulder.y)
+    let v2 = CGPoint(x: wrist.x - elbow.x, y: wrist.y - elbow.y)
+    return abs(atan2(v2.y, v2.x) - atan2(v1.y, v1.x))
+}
+
+private func angleBetweenThreePoints(p1: CGPoint, p2: CGPoint, p3: CGPoint) -> CGFloat {
+    let v1 = CGPoint(x: p1.x - p2.x, y: p1.y - p2.y)
+    let v2 = CGPoint(x: p3.x - p2.x, y: p3.y - p2.y)
+    let angle = atan2(v2.y, v2.x) - atan2(v1.y, v1.x)
+    return abs(angle * 180 / .pi)
 }
 
 #Preview {
