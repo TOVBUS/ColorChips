@@ -56,7 +56,7 @@ struct ExerciseMainHeaderView: View {
                         }
 
                         Button(action: {
-                            // TODO: ExerciseRecordView
+                            navigationPathFinder.addPath(option: .exerciseRecordView)
                         }, label: {
                             HStack(alignment: .center, spacing: 8) {
                                 HStack(alignment: .center, spacing: 4) {
