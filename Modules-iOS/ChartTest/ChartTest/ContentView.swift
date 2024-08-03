@@ -111,6 +111,8 @@ struct InbodyChartView<T: Plottable & BinaryFloatingPoint>: View {
                             }
                         }
                     }
+                    .frame(width: max(UIScreen.main.bounds.width - 120, CGFloat(filteredInbodys.count * 70)))
+                    .padding(.horizontal, 18)
                     .chartXAxis {
                         AxisMarks(values: filteredInbodys.map { $0.inbodyDate }) { value in
                             if let date = value.as(Date.self) {
@@ -123,6 +125,14 @@ struct InbodyChartView<T: Plottable & BinaryFloatingPoint>: View {
                             AxisGridLine()
                         }
                     }
+                    .id(filteredInbodys.last!.inbodyDate)
+                    .chartXScale(domain: filteredInbodys.first!.inbodyDate...filteredInbodys.last!.inbodyDate.addingTimeInterval(2000000))
+                    .chartYScale(domain: minValue...maxValue)
+                    .onAppear(perform: {
+                        withAnimation {
+                            proxy.scrollTo(filteredInbodys.last!.inbodyDate, anchor: .trailing)
+                        }
+                    })
                     .overlay(
                         GeometryReader { geometry in
                             ForEach(filteredInbodys, id: \.inbodyDate) { inbody in
@@ -134,31 +144,21 @@ struct InbodyChartView<T: Plottable & BinaryFloatingPoint>: View {
                                             x: xPosition(for: inbody.inbodyDate, in: geometry),
                                             y: yPosition(for: value, in: geometry)
                                         )
-                                        .offset(y: -30)
+                                        .offset(y: -25)
                                 }
                             }
                         }
                     )
-                    .frame(width: max(UIScreen.main.bounds.width, CGFloat(filteredInbodys.count) * 70), height: 200)
-                    .id(filteredInbodys.last!.inbodyDate)
-                    .chartXScale(domain: filteredInbodys.first!.inbodyDate...filteredInbodys.last!.inbodyDate.addingTimeInterval(2000000))
-                    .chartYScale(domain: minValue...maxValue)
-                    .onAppear(perform: {
-                        withAnimation {
-                            proxy.scrollTo(filteredInbodys.last!.inbodyDate, anchor: .trailing)
-                        }
-                    })
                 }
             }
             .frame(height: 200)
-            .padding()
+            .padding(.horizontal, 18)
             .background(
                 RoundedRectangle(cornerRadius: 32)
                     .fill(Color.gray.opacity(0.1))
             )
             .padding(25)
         }
-
     }
 }
 
