@@ -51,7 +51,11 @@ struct ProfileSettingHeaderView: View {
                 .ignoresSafeArea()
 
             HStack(alignment: .center) {
-                Image("backButton")
+                Button {
+                    profileNavigationPathFinder.popPath()
+                } label: {
+                    Image("backButton")
+                }
 
                 HStack {
                     Spacer()
