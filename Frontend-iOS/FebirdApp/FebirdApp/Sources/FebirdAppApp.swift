@@ -70,5 +70,5 @@ struct FebirdAppApp: App {
             }
         }
         .modelContainer(modelContainer)
-    }
+    }
 }

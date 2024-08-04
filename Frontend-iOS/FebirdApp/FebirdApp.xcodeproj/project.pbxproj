@@ -78,6 +78,8 @@
 		E12911B92C48DC82009A92F7 /* CameraActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12911B82C48DC81009A92F7 /* CameraActionSheet.swift */; };
 		E12911BB2C48EDFE009A92F7 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12911BA2C48EDFE009A92F7 /* PhotoPicker.swift */; };
 		E12911BD2C48FDBA009A92F7 /* InbodyFixView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12911BC2C48FDBA009A92F7 /* InbodyFixView.swift */; };
+		E15BF01D2C5FBB190033E5C3 /* EyeBodyPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15BF01C2C5FBB190033E5C3 /* EyeBodyPhoto.swift */; };
+		E15BF01F2C5FBE3C0033E5C3 /* EyeBodyPhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15BF01E2C5FBE3C0033E5C3 /* EyeBodyPhotoViewModel.swift */; };
 		E1AEFC932C4D10AD000D6441 /* AlbumMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AEFC922C4D10AD000D6441 /* AlbumMainView.swift */; };
 		E1AEFC952C4D10BE000D6441 /* AlbumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AEFC942C4D10BE000D6441 /* AlbumView.swift */; };
 		E1AEFC972C4D2E69000D6441 /* AlbumDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AEFC962C4D2E69000D6441 /* AlbumDetailView.swift */; };
@@ -206,6 +208,8 @@
 		E12911B82C48DC81009A92F7 /* CameraActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraActionSheet.swift; sourceTree = "<group>"; };
 		E12911BA2C48EDFE009A92F7 /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
 		E12911BC2C48FDBA009A92F7 /* InbodyFixView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InbodyFixView.swift; sourceTree = "<group>"; };
+		E15BF01C2C5FBB190033E5C3 /* EyeBodyPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeBodyPhoto.swift; sourceTree = "<group>"; };
+		E15BF01E2C5FBE3C0033E5C3 /* EyeBodyPhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeBodyPhotoViewModel.swift; sourceTree = "<group>"; };
 		E1AEFC922C4D10AD000D6441 /* AlbumMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumMainView.swift; sourceTree = "<group>"; };
 		E1AEFC942C4D10BE000D6441 /* AlbumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumView.swift; sourceTree = "<group>"; };
 		E1AEFC962C4D2E69000D6441 /* AlbumDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailView.swift; sourceTree = "<group>"; };
@@ -333,6 +337,7 @@
 			isa = PBXGroup;
 			children = (
 				3E5F3EFB2C5B57A9007023DC /* ProfileSelectViewModel.swift */,
+				E15BF01E2C5FBE3C0033E5C3 /* EyeBodyPhotoViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -342,6 +347,7 @@
 			children = (
 				3E5F3EFD2C5B94CA007023DC /* AlbumData.swift */,
 				3E5F3EFE2C5B94CA007023DC /* PhotoData.swift */,
+				E15BF01C2C5FBB190033E5C3 /* EyeBodyPhoto.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -895,6 +901,7 @@
 				E1AEFC952C4D10BE000D6441 /* AlbumView.swift in Sources */,
 				3E9D1FD52C4E346E00302F7E /* ProfileSelectView.swift in Sources */,
 				E12911B92C48DC82009A92F7 /* CameraActionSheet.swift in Sources */,
+				E15BF01F2C5FBE3C0033E5C3 /* EyeBodyPhotoViewModel.swift in Sources */,
 				E10FD99F2C49FECB00D80139 /* OnboardingLoadingView.swift in Sources */,
 				8F8A77F02C5F734B008E61D7 /* SettingHeaderView.swift in Sources */,
 				E1BB0D622C48A875002565B2 /* InbodyAddView.swift in Sources */,
@@ -909,6 +916,7 @@
 				E1BB0D5A2C47A4FB002565B2 /* OnboardingSelectUserInfoView.swift in Sources */,
 				E10FD9A32C4A066200D80139 /* OnboardingEndView.swift in Sources */,
 				8F92DF932C4D71A40071F336 /* ExerciseRoutineCompletionView.swift in Sources */,
+				E15BF01D2C5FBB190033E5C3 /* EyeBodyPhoto.swift in Sources */,
 				E1AEFC932C4D10AD000D6441 /* AlbumMainView.swift in Sources */,
 				E10FD9AE2C4C16AA00D80139 /* ProfileHeaderView.swift in Sources */,
 				8F92DF832C4BB0970071F336 /* VideoPlayerView.swift in Sources */,

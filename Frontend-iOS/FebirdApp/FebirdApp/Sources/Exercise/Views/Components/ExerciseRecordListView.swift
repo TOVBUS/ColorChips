@@ -89,8 +89,7 @@ struct ExerciseRecordListView: View {
             if schools[schoolIndex] == "유치원" {
                 Text(kindergarden[num-1])
                     .font(.customFont(size: 17, weight: .medium))
-            }
-            else {
+            } else {
                 Text("\(num)학년")
                     .font(.customFont(size: 18, weight: .medium))
             }

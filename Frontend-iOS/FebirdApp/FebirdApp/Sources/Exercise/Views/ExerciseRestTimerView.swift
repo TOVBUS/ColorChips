@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ExerciseRestTimerView: View {
     @EnvironmentObject var navigationPathFinder: NavigationPathFinder<ExerciseViewOptions>
-    
+
     var body: some View {
         VStack {
             Text("휴식 타이머")
@@ -32,7 +32,7 @@ struct ExerciseRestTimerView: View {
 
             Spacer()
 
-            CustomButtonView(title: "휴식 중단하기", style: .warning){
+            CustomButtonView(title: "휴식 중단하기", style: .warning) {
                 navigationPathFinder.addPath(option: .exerciseRoutineLogView)
             }
                 .padding(.bottom, 24)

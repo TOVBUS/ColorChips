@@ -58,7 +58,7 @@ struct ExerciseTimerSettingView: View {
             VStack {
                 Spacer()
 
-                CustomButtonView(title: "준비됐어요! 💪🏻", style: .orange){
+                CustomButtonView(title: "준비됐어요! 💪🏻", style: .orange) {
                     // TODO: 운동 카운트 화면으로 이동
                     navigationPathFinder.addPath(option: .exerciseCountView)
                 }
@@ -66,7 +66,7 @@ struct ExerciseTimerSettingView: View {
             }
             .ignoresSafeArea()
             .padding(24)
-            .onAppear{
+            .onAppear {
                 tabViewModel.isHidden = true
             }
         }

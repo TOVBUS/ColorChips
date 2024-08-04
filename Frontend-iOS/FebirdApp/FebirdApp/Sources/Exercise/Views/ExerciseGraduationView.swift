@@ -10,7 +10,7 @@ import SwiftUI
 struct ExerciseGraduationView: View {
     @EnvironmentObject var tabViewModel: TabViewModel
     @EnvironmentObject var navigationPathFinder: NavigationPathFinder<ExerciseViewOptions>
-    
+
     var body: some View {
         ZStack {
             Color.white.ignoresSafeArea()
@@ -19,15 +19,13 @@ struct ExerciseGraduationView: View {
                     .font(.customFont(size: 22, weight: .bold))
                     .foregroundStyle(.gray100)
                     .padding(.top, 30)
-                
+
                 Image("feoPrincipal")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 380)
-                
 
-                
-                CustomButtonView(title: "이얏호~! 졸업이다~! 🎓", style: .orange){
+                CustomButtonView(title: "이얏호~! 졸업이다~! 🎓", style: .orange) {
                     navigationPathFinder.popToRoot()
                     tabViewModel.isHidden = false
                 }

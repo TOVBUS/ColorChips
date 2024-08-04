@@ -66,7 +66,7 @@ struct ExerciseChatBotView: View {
             Rectangle()
                 .foregroundStyle(.white)
         )
-        .onAppear{
+        .onAppear {
             tabViewModel.isHidden = true
         }
         .navigationBarBackButtonHidden()
