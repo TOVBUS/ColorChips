@@ -77,3 +77,41 @@ enum ProfileViewOptions: Hashable, ViewOptions {
         }
     }
 }
+
+enum ExerciseViewOptions: Hashable, ViewOptions {
+    case exerciseMainView
+    case exerciseGuideView
+    case exerciseTimerSettingView
+    case exerciseRestTimerView
+    case exerciseRoutineLogView
+    case exerciseRoutineCompletionView
+    case exerciseGraduationView
+    case exerciseRecordView
+    case exerciseChatBotView
+    case exerciseCountView
+
+    @ViewBuilder func view() -> some View {
+        switch self {
+        case .exerciseMainView:
+            ExerciseMainView()
+        case .exerciseGuideView:
+            ExerciseGuideView()
+        case .exerciseTimerSettingView:
+            ExerciseTimerSettingView()
+        case .exerciseRestTimerView:
+            ExerciseRestTimerView() 
+        case .exerciseRoutineLogView:
+            ExerciseRoutineLogView()
+        case .exerciseRoutineCompletionView:
+            ExerciseRoutineCompletionView()
+        case .exerciseGraduationView:
+            ExerciseGraduationView()
+        case .exerciseRecordView:
+            ExerciseRecordView()
+        case .exerciseChatBotView:
+            ExerciseChatBotView()
+        case .exerciseCountView:
+            ExerciseCountView()
+        }
+    }
+}

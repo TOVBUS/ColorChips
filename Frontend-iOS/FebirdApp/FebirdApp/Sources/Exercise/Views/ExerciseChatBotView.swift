@@ -1,15 +1,15 @@
 //
-//  MealChatBotView.swift
+//  ExerciseChatBotView.swift
 //  FebirdApp
 //
-//  Created by 이유경 on 7/19/24.
+//  Created by 이유경 on 8/4/24.
 //
 
 import SwiftUI
 
-struct MealChatBotView: View {
+struct ExerciseChatBotView: View {
     @EnvironmentObject var tabViewModel: TabViewModel
-    @EnvironmentObject var mealNavigationPathFinder: NavigationPathFinder<MealViewOptions>
+    @EnvironmentObject var exerciseNavigationPathFinder: NavigationPathFinder<ExerciseViewOptions>
 
     @State private var messages: [Message] = [
         Message(content: "무엇을 도와드릴까요 핑?", isUser: false),
@@ -26,7 +26,7 @@ struct MealChatBotView: View {
         VStack {
             HStack {
                 Button {
-                    mealNavigationPathFinder.popPath()
+                    exerciseNavigationPathFinder.popPath()
                 } label: {
                     Image("Chevron-left")
                 }
@@ -61,23 +61,20 @@ struct MealChatBotView: View {
                 .foregroundStyle(.white)
         )
         .background(ignoresSafeAreaEdges: .bottom)
-        .onAppear {
-            tabViewModel.isHidden = true
-        }
-        .onDisappear {
-            tabViewModel.isHidden = false
-        }
         .ignoresSafeArea()
         .background(
             Rectangle()
                 .foregroundStyle(.white)
         )
+        .onAppear{
+            tabViewModel.isHidden = true
+        }
         .navigationBarBackButtonHidden()
     }
 }
 
 #Preview {
-    MealChatBotView()
+    ExerciseChatBotView()
         .environmentObject(TabViewModel())
         .environmentObject(NavigationPathFinder<MealViewOptions>())
 }

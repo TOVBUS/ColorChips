@@ -14,9 +14,11 @@ struct MessageBubble: View {
         HStack(alignment: .bottom) {
             if message.isUser { Spacer() }
 
-            Image(message.isUser ? "" : "BigfaceFeo")
-                .resizable()
-                .frame(width: 48, height: 48)
+            if !message.isUser {
+                Image("feoFace")
+                    .resizable()
+                    .frame(width: 48, height: 48)
+            }
 
             Text(message.content)
                 .padding(12)

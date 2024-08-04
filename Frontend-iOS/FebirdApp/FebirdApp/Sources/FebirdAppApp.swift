@@ -12,6 +12,7 @@ struct FebirdAppApp: App {
     @StateObject var tabViewModel = TabViewModel()
     @StateObject private var onboardingNavigationPathFinder = NavigationPathFinder<OnboardingViewOptions>()
     @StateObject private var mealNavigationPathFinder = NavigationPathFinder<MealViewOptions>()
+    @StateObject private var exerciseNavigationPathFinder = NavigationPathFinder<ExerciseViewOptions>()
     @StateObject private var profileNavigationPathFinder = NavigationPathFinder<ProfileViewOptions>()
 
     var body: some Scene {
@@ -35,7 +36,12 @@ struct FebirdAppApp: App {
                                 }
                         }
                     case .exercise:
-                        ExerciseMainView()
+                        NavigationStack(path: $exerciseNavigationPathFinder.path) {
+                            ExerciseMainView()
+                                .navigationDestination(for: ExerciseViewOptions.self) { option in
+                                    option.view()
+                                }
+                        }
                     case .profile:
                         NavigationStack(path: $profileNavigationPathFinder.path) {
                             ProfileMainView()
@@ -48,6 +54,7 @@ struct FebirdAppApp: App {
                 }
                 .environmentObject(tabViewModel)
                 .environmentObject(mealNavigationPathFinder)
+                .environmentObject(exerciseNavigationPathFinder)
                 .environmentObject(profileNavigationPathFinder)
             }
         }

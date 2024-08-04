@@ -10,62 +10,90 @@ import AVKit
 
 struct ExerciseGuideView: View {
     @StateObject private var viewModel = ExerciseGuideViewModel()
-    var isStarted = false
-
+    @EnvironmentObject var tabViewModel: TabViewModel
+    @EnvironmentObject var navigationPathFinder: NavigationPathFinder<ExerciseViewOptions>
+    @State var isStarted = true
+    
     var body: some View {
         VStack {
             CustomNavigationBar(title: "스모 스쿼트")
-
+                .padding(.top, 70)
+            
             if let player = viewModel.player {
                 VideoPlayerView(player: player)
                     .frame(height: 200)
                     .cornerRadius(32)
-                    .padding(.vertical, 24)
+                    .padding(20)
             } else {
                 ProgressView()
                     .frame(height: 200)
             }
-
+            
             VStack(alignment: .leading) {
                 Text("이렇게 운동하세요 🥸")
                     .font(.customFont(size: 20, weight: .bold))
                     .foregroundColor(.gray90)
                     .padding(.vertical, 16)
-
+                
                 ScrollView {
                     VStack(alignment: .leading, spacing: 16) {
                         ForEach(viewModel.guideSteps.indices, id: \.self) { index in
                             ExerciseGuideTextView(makeAttributedText("\(index + 1). \(viewModel.guideSteps[index])"))
+                                .foregroundStyle(.gray100)
                         }
                     }
                 }
             }
             .frame(maxWidth: .infinity)
-            .padding(.horizontal, 16)
-
+            .padding(.horizontal, 25)
+            
             Spacer()
-
+            
             if isStarted {
-                CustomButtonView(title: "시작할래요! 😉")
+                CustomButtonView(title: "시작할래요! 😉") {
+                    navigationPathFinder.addPath(option: .exerciseTimerSettingView)
+                }
+                .padding(.bottom, 20)
             } else {
                 VStack(alignment: .leading) {
                     Text("이 운동에 대해 더 궁금한게 있나요?")
                         .font(.customFont(size: 14, weight: .light))
                         .foregroundStyle(.gray90)
                         .padding(.leading, 24)
-                        .offset(y: 22)
-
-                    CustomButtonView(title: "피버 코치에게 질문할래요! 🤔")
+                    
+                    CustomButtonView(title: "피버 코치에게 질문할래요! 🤔") {
+                        navigationPathFinder.addPath(option: .exerciseChatBotView)
+                    }
+                }
+                .padding(.bottom, 20)
+            }
+        }
+        .frame(maxWidth: .infinity)
+        .background(
+            Rectangle()
+                .foregroundStyle(.white)
+        )
+        .ignoresSafeArea()
+        .onAppear {
+            viewModel.loadVideo()
+            tabViewModel.isHidden = true
+        }
+        .navigationBarBackButtonHidden()
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button(action: {
+                    navigationPathFinder.popPath()
+                    tabViewModel.isHidden = false
+                }) {
+                    HStack {
+                        Image("Chevron-left")
+                    }
                 }
             }
         }
-        .padding(16)
-        .frame(maxWidth: .infinity)
-        .onAppear {
-            viewModel.loadVideo()
-        }
     }
-
+    
+    
     func makeAttributedText(_ text: String) -> AttributedString {
         var attributedString = AttributedString(text)
         let style = NSMutableParagraphStyle()
@@ -73,13 +101,16 @@ struct ExerciseGuideView: View {
         style.alignment = .left
         style.headIndent = 12
         style.lineBreakMode = .byWordWrapping
-
+        
         attributedString.mergeAttributes(.init([.paragraphStyle: style]))
-
+        
         return attributedString
     }
 }
 
 #Preview {
-    ExerciseGuideView()
+    ExerciseGuideView(isStarted: false)
+        .environmentObject(TabViewModel())
+        .environmentObject(NavigationPathFinder<ExerciseViewOptions>())
+    
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ExerciseMainHeaderView: View {
-
+    @EnvironmentObject var navigationPathFinder: NavigationPathFinder<ExerciseViewOptions>
     @State private var progress: CGFloat = 0.5 // 예시 값
 
     var body: some View {
@@ -32,63 +32,71 @@ struct ExerciseMainHeaderView: View {
                                 .foregroundColor(.white)
                                 .frame(height: 50)
 
-                            Rectangle()
-                                .foregroundColor(.clear)
-                                .frame(width: 50, height: 50)
-                                .background(
-                                    ZStack {
-                                        Image("peoLogo")
-                                            .resizable()
-                                            .aspectRatio(contentMode: .fill)
-                                            .frame(width: 50, height: 50)
-                                            .clipped()
+                            Button(action: {
+                                navigationPathFinder.addPath(option: .exerciseChatBotView)
+                            }, label: {
+                                Rectangle()
+                                    .foregroundColor(.clear)
+                                    .frame(width: 50, height: 50)
+                                    .background(
+                                        ZStack {
+                                            Image("peoLogo")
+                                                .resizable()
+                                                .aspectRatio(contentMode: .fill)
+                                                .frame(width: 50, height: 50)
+                                                .clipped()
 
-                                        Image("NotificationPopup8")
-                                            .resizable()
-                                            .frame(width: 12, height: 12)
-                                            .offset(x: 14, y: -10)
-                                    }
+                                            Image("NotificationPopup8")
+                                                .resizable()
+                                                .frame(width: 12, height: 12)
+                                                .offset(x: 14, y: -10)
+                                        }
                                 )
+                            })
                         }
 
-                        HStack(alignment: .center, spacing: 8) {
-                            HStack(alignment: .center, spacing: 4) {
-                                Image("SolidFire")
+                        Button(action: {
+                            navigationPathFinder.addPath(option: .exerciseRecordView)
+                        }, label: {
+                            HStack(alignment: .center, spacing: 8) {
+                                HStack(alignment: .center, spacing: 4) {
+                                    Image("SolidFire")
 
-                                Text("피오유치원")
-                                    .font(.customFont(size: 12, weight: .regular))
-                                    .multilineTextAlignment(.center)
-                                    .foregroundColor(.white)
+                                    Text("피오유치원")
+                                        .font(.customFont(size: 12, weight: .regular))
+                                        .multilineTextAlignment(.center)
+                                        .foregroundColor(.white)
+                                }
+                                .padding(0)
+
+                                Image("SandowCore")
+
+                                HStack(alignment: .center, spacing: 4) {
+                                    Text("🌱")
+                                        .font(.customFont(size: 14, weight: .medium, language: .english))
+                                        .multilineTextAlignment(.center)
+                                        .foregroundColor(.white)
+
+                                    Text("새싹반")
+                                        .font(.customFont(size: 12, weight: .regular))
+                                        .multilineTextAlignment(.center)
+                                        .foregroundColor(.white)
+                                }
+                                Image("SandowCore")
+
+                                HStack(alignment: .center, spacing: 4) {
+                                    Text("💪🏻")
+                                        .font(.customFont(size: 14, weight: .medium, language: .english))
+                                        .multilineTextAlignment(.center)
+                                        .foregroundColor(.white)
+
+                                    Text("2일차")
+                                        .font(.customFont(size: 12, weight: .regular))
+                                        .multilineTextAlignment(.center)
+                                        .foregroundColor(.white)
+                                }
                             }
-                            .padding(0)
-
-                            Image("SandowCore")
-
-                            HStack(alignment: .center, spacing: 4) {
-                                Text("🌱")
-                                    .font(.customFont(size: 14, weight: .medium, language: .english))
-                                    .multilineTextAlignment(.center)
-                                    .foregroundColor(.white)
-
-                                Text("새싹반")
-                                    .font(.customFont(size: 12, weight: .regular))
-                                    .multilineTextAlignment(.center)
-                                    .foregroundColor(.white)
-                            }
-                            Image("SandowCore")
-
-                            HStack(alignment: .center, spacing: 4) {
-                                Text("💪🏻")
-                                    .font(.customFont(size: 14, weight: .medium, language: .english))
-                                    .multilineTextAlignment(.center)
-                                    .foregroundColor(.white)
-
-                                Text("2일차")
-                                    .font(.customFont(size: 12, weight: .regular))
-                                    .multilineTextAlignment(.center)
-                                    .foregroundColor(.white)
-                            }
-                        }
+                        })
                     }
                 }
             }
@@ -113,4 +121,5 @@ struct ExerciseMainHeaderView: View {
 
 #Preview {
     ExerciseMainHeaderView()
+        .environmentObject(NavigationPathFinder<ExerciseViewOptions>())
 }

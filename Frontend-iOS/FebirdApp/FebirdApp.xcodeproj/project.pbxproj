@@ -85,6 +85,8 @@
 		E1BB0D5E2C47F9F7002565B2 /* OnboardingSelectGenderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BB0D5D2C47F9F7002565B2 /* OnboardingSelectGenderButton.swift */; };
 		E1BB0D602C4800E2002565B2 /* OnboardingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BB0D5F2C4800E2002565B2 /* OnboardingTextField.swift */; };
 		E1BB0D622C48A875002565B2 /* InbodyAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BB0D612C48A875002565B2 /* InbodyAddView.swift */; };
+		E246A8DE2C5EAAF600B86617 /* ExerciseChatBotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E246A8DD2C5EAAF600B86617 /* ExerciseChatBotView.swift */; };
+		E246A8E02C5EC4A200B86617 /* ExerciseCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E246A8DF2C5EC4A200B86617 /* ExerciseCountView.swift */; };
 		E24CF94E2C4F887100D1548E /* CustomToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24CF94D2C4F887100D1548E /* CustomToggle.swift */; };
 		E24CF9502C4F891A00D1548E /* ProfileSettingHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24CF94F2C4F891A00D1548E /* ProfileSettingHeaderView.swift */; };
 		E24CF9542C4F99E500D1548E /* ProfileSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24CF9532C4F99E500D1548E /* ProfileSettingView.swift */; };
@@ -206,6 +208,8 @@
 		E1BB0D5D2C47F9F7002565B2 /* OnboardingSelectGenderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSelectGenderButton.swift; sourceTree = "<group>"; };
 		E1BB0D5F2C4800E2002565B2 /* OnboardingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTextField.swift; sourceTree = "<group>"; };
 		E1BB0D612C48A875002565B2 /* InbodyAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InbodyAddView.swift; sourceTree = "<group>"; };
+		E246A8DD2C5EAAF600B86617 /* ExerciseChatBotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseChatBotView.swift; sourceTree = "<group>"; };
+		E246A8DF2C5EC4A200B86617 /* ExerciseCountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCountView.swift; sourceTree = "<group>"; };
 		E24CF94D2C4F887100D1548E /* CustomToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomToggle.swift; sourceTree = "<group>"; };
 		E24CF94F2C4F891A00D1548E /* ProfileSettingHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingHeaderView.swift; sourceTree = "<group>"; };
 		E24CF9532C4F99E500D1548E /* ProfileSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingView.swift; sourceTree = "<group>"; };
@@ -357,6 +361,8 @@
 				8F92DF922C4D71A40071F336 /* ExerciseRoutineCompletionView.swift */,
 				8F92DF942C4D74A10071F336 /* ExerciseGraduationView.swift */,
 				E2CFF2152C4EBC5500540500 /* ExerciseRecordView.swift */,
+				E246A8DD2C5EAAF600B86617 /* ExerciseChatBotView.swift */,
+				E246A8DF2C5EC4A200B86617 /* ExerciseCountView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -550,11 +556,11 @@
 				3E3B9A8A2C5B3030001F2852 /* Components */,
 				E1BB0D572C479CF7002565B2 /* OnboardingWelcomView.swift */,
 				E1BB0D592C47A4FB002565B2 /* OnboardingSelectUserInfoView.swift */,
+				E10FD9A02C49FFF100D80139 /* EyeBodyView.swift */,
 				E1BB0D612C48A875002565B2 /* InbodyAddView.swift */,
 				E12911BC2C48FDBA009A92F7 /* InbodyFixView.swift */,
 				E10FD99C2C49FB4500D80139 /* InbodyInputView.swift */,
 				E10FD99E2C49FECB00D80139 /* OnboardingLoadingView.swift */,
-				E10FD9A02C49FFF100D80139 /* EyeBodyView.swift */,
 				E10FD9A22C4A066200D80139 /* OnboardingEndView.swift */,
 			);
 			path = Views;
@@ -789,6 +795,7 @@
 				E24F5E822C48EC3400724DA7 /* MealMainView.swift in Sources */,
 				8F92DF7C2C4B9A390071F336 /* CustomNavigationBar.swift in Sources */,
 				3ED5FD8E2C4A020200CD4508 /* CustomButtonView.swift in Sources */,
+				E246A8DE2C5EAAF600B86617 /* ExerciseChatBotView.swift in Sources */,
 				E1BB0D602C4800E2002565B2 /* OnboardingTextField.swift in Sources */,
 				3E5F3EFC2C5B57A9007023DC /* ProfileSelectViewModel.swift in Sources */,
 				E12911BD2C48FDBA009A92F7 /* InbodyFixView.swift in Sources */,
@@ -798,6 +805,7 @@
 				8FAC18822C4B8BA800CDF7CF /* ExerciseItemView.swift in Sources */,
 				8FAC18872C4B8CBA00CDF7CF /* ExerciseListView.swift in Sources */,
 				3E5F3F002C5B94CA007023DC /* AlbumData.swift in Sources */,
+				E246A8E02C5EC4A200B86617 /* ExerciseCountView.swift in Sources */,
 				E2CFF2162C4EBC5500540500 /* ExerciseRecordView.swift in Sources */,
 				8F92DF8D2C4D58570071F336 /* ExerciseTimerViewModel.swift in Sources */,
 				8F92DF7E2C4BA9750071F336 /* ExerciseGuideListView.swift in Sources */,
