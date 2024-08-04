@@ -1,13 +1,13 @@
 //
-//  ProfileSettingHeaderView.swift
+//  SettingHeaderView.swift
 //  FebirdApp
 //
-//  Created by 이유경 on 7/23/24.
+//  Created by DOYEON JEONG on 8/4/24.
 //
 
 import SwiftUI
 
-struct ProfileSettingHeaderView: View {
+struct SettingHeaderView: View {
 
     @EnvironmentObject private var profileNavigationPathFinder: NavigationPathFinder<ProfileViewOptions>
 
@@ -35,11 +35,10 @@ struct ProfileSettingHeaderView: View {
             .padding(.trailing, 87)
             .padding(.top, 60)
             .padding(.bottom, 10)
-
         }
     }
 }
 
 #Preview {
-    ProfileSettingHeaderView()
+    SettingHeaderView()
 }

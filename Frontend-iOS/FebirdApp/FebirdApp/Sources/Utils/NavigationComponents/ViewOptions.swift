@@ -61,6 +61,7 @@ enum MealViewOptions: Hashable, ViewOptions {
 enum ProfileViewOptions: Hashable, ViewOptions {
     case profileMainView
     case settingView
+    case profileSettingView
 
     @ViewBuilder func view() -> some View {
         switch self {
@@ -68,6 +69,9 @@ enum ProfileViewOptions: Hashable, ViewOptions {
             ProfileMainView()
         case .settingView:
             SettingsView()
+        case .profileSettingView:
+            ProfileSettingView()
+                .environmentObject(ProfileSettingViewModel())
         }
     }
 }

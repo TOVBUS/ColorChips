@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct FebirdAppApp: App {
@@ -13,6 +14,16 @@ struct FebirdAppApp: App {
     @StateObject private var onboardingNavigationPathFinder = NavigationPathFinder<OnboardingViewOptions>()
     @StateObject private var mealNavigationPathFinder = NavigationPathFinder<MealViewOptions>()
     @StateObject private var profileNavigationPathFinder = NavigationPathFinder<ProfileViewOptions>()
+
+    let modelContainer: ModelContainer
+
+    init() {
+        do {
+            modelContainer = try ModelContainer(for: UserProfile.self)
+        } catch {
+            fatalError("Could not initialize ModelContainer: \(error)")
+        }
+    }
 
     var body: some Scene {
         WindowGroup {
@@ -51,5 +62,6 @@ struct FebirdAppApp: App {
                 .environmentObject(profileNavigationPathFinder)
             }
         }
+        .modelContainer(modelContainer)
     }
 }

@@ -61,7 +61,7 @@ struct OnboardingSelectUserInfoView: View {
                     Spacer()
                 }
 
-                OnboardingSelectGenderButton()
+                OnboardingSelectGenderButton(selectedGender: .constant(.female))
 
             }
             .padding(.horizontal, 24)

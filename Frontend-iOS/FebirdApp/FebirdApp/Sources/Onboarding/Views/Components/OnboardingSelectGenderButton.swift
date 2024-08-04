@@ -12,7 +12,7 @@ enum Gender {
 }
 
 struct OnboardingSelectGenderButton: View {
-    @State var selectedGender: Gender = .female
+    @Binding var selectedGender: UserProfile.Gender
 
     var body: some View {
         ZStack {
@@ -30,8 +30,8 @@ struct OnboardingSelectGenderButton: View {
 
 struct GenderButton: View {
     let title: String
-    let gender: Gender
-    @Binding var selectedGender: Gender
+    let gender: UserProfile.Gender
+    @Binding var selectedGender: UserProfile.Gender
 
     var body: some View {
         Button(action: {
@@ -52,6 +52,6 @@ struct GenderButton: View {
     }
 }
 
-#Preview {
-    OnboardingSelectGenderButton()
-}
+// #Preview {
+//    OnboardingSelectGenderButton()
+// }

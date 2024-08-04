@@ -12,6 +12,7 @@ struct OnboardingTextField: View {
     let placeholder: String
     let unit: String
     let inputValue: String?
+
     @Binding var text: String
 
     init(question: String, placeholder: String, unit: String, inputValue: String?, text: Binding<String>) {

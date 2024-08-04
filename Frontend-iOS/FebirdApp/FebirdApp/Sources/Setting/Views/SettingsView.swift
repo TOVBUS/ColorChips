@@ -6,21 +6,28 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct SettingsView: View {
 
+    @Environment(\.modelContext) private var modelContext
     @StateObject private var settingsViewModel = SettingsViewModel()
+    @StateObject private var profileSettingViewModel: ProfileSettingViewModel
     @EnvironmentObject private var tabViewModel: TabViewModel
     @EnvironmentObject private var profileNavigationPathFinder: NavigationPathFinder<ProfileViewOptions>
 
     @State var text: String = ""
+
+    init() {
+        _profileSettingViewModel = StateObject(wrappedValue: ProfileSettingViewModel())
+    }
 
     var body: some View {
         ZStack {
             Color.white.ignoresSafeArea()
 
             VStack {
-                ProfileSettingHeaderView()
+                SettingHeaderView()
 
                 ScrollView {
                     VStack(alignment: .leading) {
@@ -29,8 +36,7 @@ struct SettingsView: View {
                             .foregroundStyle(.gray100)
 
                         Button {
-                            // TODO: 프로필설정뷰
-                            settingsViewModel.openProfileSettings()
+                            profileNavigationPathFinder.addPath(option: .profileSettingView)
                         } label: {
                             CustomCell(configuration: settingsViewModel.profileSettingsCell)
                         }
@@ -110,16 +116,14 @@ struct SettingsView: View {
             .onAppear {
                 tabViewModel.isHidden = true
             }
-            .onDisappear {
-                tabViewModel.isHidden = false
-            }
         }
         .environmentObject(settingsViewModel)
+        .environmentObject(profileSettingViewModel)
     }
 }
 
-#Preview {
-    SettingsView()
-        .environmentObject(TabViewModel())
-        .environmentObject(NavigationPathFinder<ProfileViewOptions>())
-}
+// #Preview {
+//    SettingsView()
+//        .environmentObject(TabViewModel())
+//        .environmentObject(NavigationPathFinder<ProfileViewOptions>())
+// }
