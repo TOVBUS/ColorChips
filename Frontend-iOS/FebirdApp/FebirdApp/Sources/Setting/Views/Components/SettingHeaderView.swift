@@ -1,23 +1,30 @@
 //
-//  ProfileSettingHeaderView.swift
+//  SettingHeaderView.swift
 //  FebirdApp
 //
-//  Created by 이유경 on 7/23/24.
+//  Created by DOYEON JEONG on 8/4/24.
 //
 
 import SwiftUI
 
-struct ProfileSettingHeaderView: View {
+struct SettingHeaderView: View {
+
+    @EnvironmentObject private var profileNavigationPathFinder: NavigationPathFinder<ProfileViewOptions>
+
     var body: some View {
         ZStack {
             Rectangle()
                 .frame(height: 120)
                 .foregroundStyle(.gray100)
                 .cornerRadius(34, corners: [.bottomLeft, .bottomRight])
-            .ignoresSafeArea()
+                .ignoresSafeArea()
 
             HStack(alignment: .center, spacing: 12) {
-                Image("backButton")
+                Button(action: {
+                    profileNavigationPathFinder.popPath()
+                }, label: {
+                    Image("backButton")
+                })
                 Text("설정")
                     .foregroundStyle(.white)
                     .font(.customFont(size: 20, weight: .bold))
@@ -28,11 +35,10 @@ struct ProfileSettingHeaderView: View {
             .padding(.trailing, 87)
             .padding(.top, 60)
             .padding(.bottom, 10)
-
         }
     }
 }
 
 #Preview {
-    ProfileSettingHeaderView()
+    SettingHeaderView()
 }

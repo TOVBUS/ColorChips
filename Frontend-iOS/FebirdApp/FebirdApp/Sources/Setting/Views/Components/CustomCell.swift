@@ -9,21 +9,16 @@ import SwiftUI
 
 struct CustomCell: View {
 
-    @State private var isExpanded: Bool = false
-
-    var showDesc: Bool
-    var showChevron: Bool
-    var showArrow: Bool
-    var showToggle: Bool
-    var showVersion: Bool
-    var text: String = "프로필"
+    @EnvironmentObject private var settingViewModel: SettingsViewModel
+    let configuration: CellConfiguration
 
     var body: some View {
         HStack(spacing: 10) {
             VStack(alignment: .leading) {
-                Text(text)
+                Text(configuration.text)
+                    .foregroundStyle(.gray100)
 
-                if showDesc {
+                if configuration.showDesc {
                     Text("허용 후부터 인바디로 측정된 데이터의 일부를 가져옵니다.")
                         .font(.customFont(size: 14, weight: .regular))
                         .foregroundColor(.gray60)
@@ -33,32 +28,37 @@ struct CustomCell: View {
 
             Spacer()
 
-            if showChevron {
+            if configuration.showChevron {
                 Image("Chevron-right")
             }
 
-            if showArrow {
+            if configuration.showArrow {
                 Image("arrowRightIcon")
             }
 
-            if showToggle {
-               Toggle(isOn: $isExpanded, label: {})
+            if configuration.showToggle, let isOn = configuration.isOn {
+                Toggle(isOn: Binding(
+                    get: { isOn },
+                    set: { newValue in
+                        settingViewModel.updateToggle(for: configuration.text, newValue: newValue)
+                    }
+                )) {}
                     .toggleStyle(CustomToggle())
             }
 
-            if showVersion {
-                Text("1.0.0")
+            if configuration.showVersion {
+                Text(settingViewModel.appVersion)
                     .font(.customFont(size: 14, weight: .medium))
                     .foregroundStyle(.gray30)
             }
         }
         .padding(20)
-        .frame(maxWidth: 344, maxHeight: (showDesc ? 120 : 55))
+        .frame(maxWidth: 344, maxHeight: (configuration.showDesc ? 120 : 55))
         .background(.gray10)
         .cornerRadius(20)
     }
 }
 
-#Preview {
-    CustomCell(showDesc: true, showChevron: false, showArrow: false, showToggle: true, showVersion: false, text: "애플 헬스 연동")
-}
+// #Preview {
+//    CustomCell(showDesc: true, showChevron: false, showArrow: false, showToggle: true, showVersion: false, text: "애플 헬스 연동")
+// }

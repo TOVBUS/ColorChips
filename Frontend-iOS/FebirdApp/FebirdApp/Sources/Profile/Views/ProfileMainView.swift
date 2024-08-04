@@ -36,6 +36,9 @@ struct ProfileMainView: View {
         .preferredColorScheme(.dark)
         .ignoresSafeArea()
         .environmentObject(profileSelectViewModel)
+        .onAppear {
+            tabViewModel.isHidden = false
+        }
     }
 }
 

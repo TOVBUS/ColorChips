@@ -13,7 +13,7 @@ struct ExerciseMainHeaderView: View {
 
     var body: some View {
         VStack {
-            HStack(alignment: .center, spacing: 0) {
+            HStack(alignment: .center) {
                 HStack(alignment: .center, spacing: 16) {
                     Image("profile06")
                         .resizable()

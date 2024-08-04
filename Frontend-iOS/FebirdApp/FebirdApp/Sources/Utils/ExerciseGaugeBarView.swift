@@ -66,7 +66,7 @@ struct ExerciseGaugeBarView: View {
             .frame(width: barWidth, height: indicatorSize)
 
             // Step indicators
-            HStack(spacing: 0) {
+            HStack {
                 ForEach(1...totalSteps, id: \.self) { step in
                     Text("\(step)")
                         .font(.customFont(size: 16, weight: .regular, language: .english))

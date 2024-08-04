@@ -12,17 +12,17 @@ enum Gender {
 }
 
 struct OnboardingSelectGenderButton: View {
-    @State var selectedGender: Gender = .female
+    @Binding var selectedGender: UserProfile.Gender
 
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 20)
                 .fill(.gray.opacity(0.2))
 
-            HStack(spacing: 0, content: {
+            HStack {
                 GenderButton(title: "남", gender: .male, selectedGender: $selectedGender)
                 GenderButton(title: "여", gender: .female, selectedGender: $selectedGender)
-            })
+            }
         }
         .frame(height: 50)
     }
@@ -30,8 +30,8 @@ struct OnboardingSelectGenderButton: View {
 
 struct GenderButton: View {
     let title: String
-    let gender: Gender
-    @Binding var selectedGender: Gender
+    let gender: UserProfile.Gender
+    @Binding var selectedGender: UserProfile.Gender
 
     var body: some View {
         Button(action: {
@@ -52,6 +52,6 @@ struct GenderButton: View {
     }
 }
 
-#Preview {
-    OnboardingSelectGenderButton()
-}
+// #Preview {
+//    OnboardingSelectGenderButton()
+// }
