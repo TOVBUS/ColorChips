@@ -32,8 +32,11 @@ struct ExerciseRecordView: View {
                 .foregroundStyle(.white)
         )
         .ignoresSafeArea()
-        .onAppear{
+        .onAppear {
             tabViewModel.isHidden = true
+        }
+        .onDisappear {
+            tabViewModel.isHidden = false
         }
     }
 }
