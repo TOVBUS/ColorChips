@@ -38,7 +38,7 @@ class KeychainManager {
         let query = [
             kSecAttrService: service,
             kSecAttrAccount: account,
-            kSecClass: kSecClassGenericPassword,
+            kSecClass: kSecClassGenericPassword
         ] as CFDictionary
 
         SecItemDelete(query)

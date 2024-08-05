@@ -21,7 +21,7 @@ class AuthViewModel: NSObject, ObservableObject {
     @Published var isAuthenticated = false
     // 에러 발생 시 저장하는 변수
     @Published var error: Error?
-    
+
     // Combine 프레임워크의 취소 가능한 객체들을 저장하는 집합
     private var cancellables = Set<AnyCancellable>()
     // API 기본 URL
@@ -38,7 +38,7 @@ class AuthViewModel: NSObject, ObservableObject {
         }
         self.baseURL = baseURL
         self.apiKey = apiKey
-        
+
         // NSObject의 초기화 메서드 호출
         super.init()
 
@@ -55,7 +55,7 @@ class AuthViewModel: NSObject, ObservableObject {
         let appleIDProvider = ASAuthorizationAppleIDProvider()
         let request = appleIDProvider.createRequest()
         request.requestedScopes = [.fullName, .email]
-        
+
         let authorizationController = ASAuthorizationController(authorizationRequests: [request])
         authorizationController.delegate = self
         authorizationController.performRequests()
@@ -74,12 +74,12 @@ class AuthViewModel: NSObject, ObservableObject {
     private func authenticateWithServer(idToken: String) async throws {
         let url = "\(baseURL)/auth/apple"
         let parameters: [String: String] = ["id_token": idToken]
-        
+
         let task = AF.request(url, method: .post, parameters: parameters, headers: ["Authorization": "Bearer \(apiKey)"])
             .validate()
             .serializingDecodable(AuthResponse.self)
         let response = await task.response
-        
+
         switch response.result {
         case .success(let authResponse):
             // 서버로부터 받은 토큰을 키체인에 저장
@@ -108,7 +108,7 @@ extension AuthViewModel: ASAuthorizationControllerDelegate {
         if let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential,
            let idToken = appleIDCredential.identityToken,
            let idTokenString = String(data: idToken, encoding: .utf8) {
-            
+
             Task {
                 do {
                     try await authenticateWithServer(idToken: idTokenString)
