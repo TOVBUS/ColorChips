@@ -66,15 +66,17 @@ struct AIMealRecomendationView: View {
                         )
                     })
                 }
-                .padding(.trailing, 32)
+                .padding(.trailing, 26)
                 .padding(.bottom, 12)
             }
-            .frame(maxWidth: .infinity, alignment: .topLeading)
-            .padding(.leading, 32)
+            .padding(.leading, 26)
         }
+        .padding(.horizontal, 18)
+        .frame(maxWidth: .infinity, alignment: .topLeading)
     }
 }
 
 #Preview {
     AIMealRecomendationView()
+        .environmentObject(NavigationPathFinder<MealViewOptions>())
 }
