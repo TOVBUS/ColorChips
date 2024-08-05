@@ -13,12 +13,12 @@ struct ExerciseGuideView: View {
     @EnvironmentObject var tabViewModel: TabViewModel
     @EnvironmentObject var navigationPathFinder: NavigationPathFinder<ExerciseViewOptions>
     @State var isStarted = true
-    
+
     var body: some View {
         VStack {
             CustomNavigationBar(title: "스모 스쿼트")
                 .padding(.top, 70)
-            
+
             if let player = viewModel.player {
                 VideoPlayerView(player: player)
                     .frame(height: 200)
@@ -28,13 +28,13 @@ struct ExerciseGuideView: View {
                 ProgressView()
                     .frame(height: 200)
             }
-            
+
             VStack(alignment: .leading) {
                 Text("이렇게 운동하세요 🥸")
                     .font(.customFont(size: 20, weight: .bold))
                     .foregroundColor(.gray90)
                     .padding(.vertical, 16)
-                
+
                 ScrollView {
                     VStack(alignment: .leading, spacing: 16) {
                         ForEach(viewModel.guideSteps.indices, id: \.self) { index in
@@ -46,9 +46,9 @@ struct ExerciseGuideView: View {
             }
             .frame(maxWidth: .infinity)
             .padding(.horizontal, 25)
-            
+
             Spacer()
-            
+
             if isStarted {
                 CustomButtonView(title: "시작할래요! 😉") {
                     navigationPathFinder.addPath(option: .exerciseTimerSettingView)
@@ -60,7 +60,7 @@ struct ExerciseGuideView: View {
                         .font(.customFont(size: 14, weight: .light))
                         .foregroundStyle(.gray90)
                         .padding(.leading, 24)
-                    
+
                     CustomButtonView(title: "피버 코치에게 질문할래요! 🤔") {
                         navigationPathFinder.addPath(option: .exerciseChatBotView)
                     }
@@ -92,8 +92,7 @@ struct ExerciseGuideView: View {
             }
         }
     }
-    
-    
+
     func makeAttributedText(_ text: String) -> AttributedString {
         var attributedString = AttributedString(text)
         let style = NSMutableParagraphStyle()
@@ -101,9 +100,9 @@ struct ExerciseGuideView: View {
         style.alignment = .left
         style.headIndent = 12
         style.lineBreakMode = .byWordWrapping
-        
+
         attributedString.mergeAttributes(.init([.paragraphStyle: style]))
-        
+
         return attributedString
     }
 }
@@ -112,5 +111,5 @@ struct ExerciseGuideView: View {
     ExerciseGuideView(isStarted: false)
         .environmentObject(TabViewModel())
         .environmentObject(NavigationPathFinder<ExerciseViewOptions>())
-    
+
 }

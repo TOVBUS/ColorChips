@@ -10,7 +10,7 @@ import SwiftUI
 struct ExerciseRecordView: View {
     @EnvironmentObject var tabViewModel: TabViewModel
     @EnvironmentObject var navigationPathFinder: NavigationPathFinder<ExerciseViewOptions>
-    
+
     var body: some View {
         VStack {
             ZStack {
@@ -18,7 +18,7 @@ struct ExerciseRecordView: View {
                     .frame(height: 160)
                     .foregroundStyle(.gray100)
                     .cornerRadius(34, corners: [.bottomLeft, .bottomRight])
-                
+
                     Text("현재기록")
                         .font(.customFont(size: 20, weight: .bold))
                         .foregroundStyle(.white)

@@ -10,7 +10,7 @@ import SwiftUI
 struct ExerciseRoutineCompletionView: View {
     @EnvironmentObject var tabViewModel: TabViewModel
     @EnvironmentObject var navigationPathFinder: NavigationPathFinder<ExerciseViewOptions>
-    
+
     var body: some View {
         VStack {
             Text("좋아! 아주 잘 해냈군\n오늘도 한층 건강해졌는 걸?")
@@ -26,7 +26,7 @@ struct ExerciseRoutineCompletionView: View {
 
             Spacer()
 
-            CustomButtonView(title: "오늘 루틴 끝났다!!!!!! 👊🏻👊🏻👊🏻", style: .orange){
+            CustomButtonView(title: "오늘 루틴 끝났다!!!!!! 👊🏻👊🏻👊🏻", style: .orange) {
                 navigationPathFinder.popToRoot()
                 tabViewModel.isHidden = false
             }

@@ -12,7 +12,7 @@ struct ExerciseCountView: View {
     var body: some View {
         VStack {
             Text("여기여기")
-            
+
             CustomButtonView(title: "다음", style: .orange) {
                 navigationPathFinder.addPath(option: .exerciseRestTimerView)
             }

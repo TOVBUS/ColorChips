@@ -11,6 +11,7 @@ struct ProfileMainView: View {
 
     @EnvironmentObject var tabViewModel: TabViewModel
     @StateObject var profileSelectViewModel = ProfileSelectViewModel()
+    @Environment(\.modelContext) private var modelContext
 
     var body: some View {
         ZStack {
@@ -26,7 +27,7 @@ struct ProfileMainView: View {
                     case .inbody:
                         InbodyMainView()
                     case .eyeBody:
-                        EyeBodyMainView()
+                        EyeBodyMainView(viewModel: EyeBodyPhotoViewModel(context: modelContext))
                     }
                 }
                 .padding(.top, 24)
