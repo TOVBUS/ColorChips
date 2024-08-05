@@ -68,6 +68,10 @@
 		8FAC18822C4B8BA800CDF7CF /* ExerciseItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FAC18812C4B8BA800CDF7CF /* ExerciseItemView.swift */; };
 		8FAC18852C4B8C4200CDF7CF /* ExerciseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FAC18842C4B8C4200CDF7CF /* ExerciseItem.swift */; };
 		8FAC18872C4B8CBA00CDF7CF /* ExerciseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FAC18862C4B8CBA00CDF7CF /* ExerciseListView.swift */; };
+		8FE8FB362C60BA2E009CFAE9 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE8FB352C60BA2E009CFAE9 /* NetworkManager.swift */; };
+		8FE8FB392C60BD14009CFAE9 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8FE8FB382C60BD14009CFAE9 /* Alamofire */; };
+		8FE8FB3B2C60BDB3009CFAE9 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE8FB3A2C60BDB3009CFAE9 /* AuthViewModel.swift */; };
+		8FE8FB3D2C60BDF1009CFAE9 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE8FB3C2C60BDF1009CFAE9 /* KeychainManager.swift */; };
 		E10FD99D2C49FB4500D80139 /* InbodyInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10FD99C2C49FB4500D80139 /* InbodyInputView.swift */; };
 		E10FD99F2C49FECB00D80139 /* OnboardingLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10FD99E2C49FECB00D80139 /* OnboardingLoadingView.swift */; };
 		E10FD9A12C49FFF100D80139 /* EyeBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10FD9A02C49FFF100D80139 /* EyeBodyView.swift */; };
@@ -208,6 +212,9 @@
 		8FAC18812C4B8BA800CDF7CF /* ExerciseItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseItemView.swift; sourceTree = "<group>"; };
 		8FAC18842C4B8C4200CDF7CF /* ExerciseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseItem.swift; sourceTree = "<group>"; };
 		8FAC18862C4B8CBA00CDF7CF /* ExerciseListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseListView.swift; sourceTree = "<group>"; };
+		8FE8FB352C60BA2E009CFAE9 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		8FE8FB3A2C60BDB3009CFAE9 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		8FE8FB3C2C60BDF1009CFAE9 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		E10FD99C2C49FB4500D80139 /* InbodyInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InbodyInputView.swift; sourceTree = "<group>"; };
 		E10FD99E2C49FECB00D80139 /* OnboardingLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingLoadingView.swift; sourceTree = "<group>"; };
 		E10FD9A02C49FFF100D80139 /* EyeBodyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeBodyView.swift; sourceTree = "<group>"; };
@@ -270,6 +277,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FE8FB392C60BD14009CFAE9 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,6 +456,7 @@
 			isa = PBXGroup;
 			children = (
 				3EF6F04C2C36937E00EEF18F /* FebirdAppApp.swift */,
+				8FE8FB342C60B9FA009CFAE9 /* Managers */,
 				3E3B9A8C2C5B4FEF001F2852 /* Login */,
 				3E9E9E0B2C44E5B1002389EB /* Extensions */,
 				3E7521A92C48F66000920BFD /* Utils */,
@@ -609,6 +618,16 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		8FE8FB342C60B9FA009CFAE9 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				8FE8FB352C60BA2E009CFAE9 /* NetworkManager.swift */,
+				8FE8FB3C2C60BDF1009CFAE9 /* KeychainManager.swift */,
+				8FE8FB3A2C60BDB3009CFAE9 /* AuthViewModel.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		E10FD9A92C4C02A600D80139 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -730,6 +749,7 @@
 			);
 			name = FebirdApp;
 			packageProductDependencies = (
+				8FE8FB382C60BD14009CFAE9 /* Alamofire */,
 			);
 			productName = FebirdApp;
 			productReference = 3EF6F0492C36937E00EEF18F /* FebirdApp.app */;
@@ -805,6 +825,7 @@
 			mainGroup = 3EF6F0402C36937D00EEF18F;
 			packageReferences = (
 				3E3B9A842C5B2CDF001F2852 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */,
+				8FE8FB372C60BD13009CFAE9 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 3EF6F04A2C36937E00EEF18F /* Products */;
 			projectDirPath = "";
@@ -886,6 +907,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FE8FB362C60BA2E009CFAE9 /* NetworkManager.swift in Sources */,
 				E2EB25792C4E48C30094EC8E /* ChatBotMainView.swift in Sources */,
 				8F92DF912C4D68B40071F336 /* ExerciseRoutineLogView.swift in Sources */,
 				E2CFF2122C4E9D6300540500 /* InputFieldView.swift in Sources */,
@@ -911,6 +933,7 @@
 				E15BF02A2C609ACC0033E5C3 /* ExerciseType.swift in Sources */,
 				8F92DF8D2C4D58570071F336 /* ExerciseTimerViewModel.swift in Sources */,
 				8F92DF7E2C4BA9750071F336 /* ExerciseGuideListView.swift in Sources */,
+				8FE8FB3B2C60BDB3009CFAE9 /* AuthViewModel.swift in Sources */,
 				E24CF94E2C4F887100D1548E /* CustomToggle.swift in Sources */,
 				E15BF03C2C60BAC10033E5C3 /* TrendAnalysisView.swift in Sources */,
 				E12911BB2C48EDFE009A92F7 /* PhotoPicker.swift in Sources */,
@@ -947,6 +970,7 @@
 				E1AEFC952C4D10BE000D6441 /* AlbumView.swift in Sources */,
 				3E9D1FD52C4E346E00302F7E /* ProfileSelectView.swift in Sources */,
 				E12911B92C48DC82009A92F7 /* CameraActionSheet.swift in Sources */,
+				8FE8FB3D2C60BDF1009CFAE9 /* KeychainManager.swift in Sources */,
 				E15BF01F2C5FBE3C0033E5C3 /* EyeBodyPhotoViewModel.swift in Sources */,
 				E10FD99F2C49FECB00D80139 /* OnboardingLoadingView.swift in Sources */,
 				8F8A77F02C5F734B008E61D7 /* SettingHeaderView.swift in Sources */,
@@ -1325,7 +1349,23 @@
 				minimumVersion = 0.55.1;
 			};
 		};
+		8FE8FB372C60BD13009CFAE9 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8FE8FB382C60BD14009CFAE9 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8FE8FB372C60BD13009CFAE9 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3EF6F0412C36937D00EEF18F /* Project object */;
 }
