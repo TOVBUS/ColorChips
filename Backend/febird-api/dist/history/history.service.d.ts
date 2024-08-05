@@ -8,6 +8,6 @@ export declare class HistoryService {
     private memberRepository;
     private levelRepository;
     constructor(historyRepository: Repository<History>, memberRepository: Repository<Member>, levelRepository: Repository<Level>);
-    create(createHistoryDto: CreateHistoryDto): Promise<History>;
-    findAll(): Promise<History[]>;
+    create(member_id: number, createHistoryDto: CreateHistoryDto): Promise<History>;
+    findAll(memberId: number): Promise<History[]>;
 }

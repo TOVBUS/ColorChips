@@ -28,16 +28,30 @@ let MemberService = class MemberService {
     async findOne(member_id) {
         const member = await this.memberRepository.findOne({ where: { member_id } });
         if (!member) {
-            throw new common_1.NotFoundException(`Member with ID ${member_id} not found`);
+            throw new common_1.NotFoundException(`MemberID ${member_id}의 회원을 찾을 수 없습니다.`);
+        }
+        return member;
+    }
+    async findByAppleId(appleID) {
+        const member = await this.memberRepository.findOne({ where: { appleID } });
+        if (!member) {
+            throw new common_1.NotFoundException(` ${appleID} 애플아이디를 가진 회원을 찾을 수 없습니다.`);
         }
         return member;
     }
     async update(member_id, updateMemberDto) {
         await this.memberRepository.update(member_id, updateMemberDto);
-        return await this.memberRepository.findOne({ where: { member_id } });
+        const updatedMember = await this.memberRepository.findOne({ where: { member_id } });
+        if (!updatedMember) {
+            throw new common_1.NotFoundException(`MemberID ${member_id}의 회원을 찾을 수 없습니다.`);
+        }
+        return updatedMember;
     }
     async remove(member_id) {
-        await this.memberRepository.delete(member_id);
+        const result = await this.memberRepository.delete(member_id);
+        if (result.affected === 0) {
+            throw new common_1.NotFoundException(`MemberID ${member_id}의 회원을 찾을 수 없습니다.`);
+        }
     }
 };
 exports.MemberService = MemberService;

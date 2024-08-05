@@ -29,7 +29,7 @@ let ExerciseService = class ExerciseService {
             where: { exercise_id: id },
         });
         if (!exercise) {
-            throw new common_1.NotFoundException(`Exercise with ID ${id} not found`);
+            throw new common_1.NotFoundException(`${id}에 해당하는 운동을 찾을 수 없습니다.`);
         }
         return exercise;
     }
