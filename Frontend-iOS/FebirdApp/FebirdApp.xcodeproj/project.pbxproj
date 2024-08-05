@@ -74,7 +74,7 @@
 		E10FD9A32C4A066200D80139 /* OnboardingEndView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10FD9A22C4A066200D80139 /* OnboardingEndView.swift */; };
 		E10FD9AE2C4C16AA00D80139 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10FD9AD2C4C16AA00D80139 /* ProfileHeaderView.swift */; };
 		E10FD9B02C4CC01700D80139 /* InbodyMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10FD9AF2C4CC01700D80139 /* InbodyMainView.swift */; };
-		E10FD9B22C4CC06000D80139 /* InbodyGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10FD9B12C4CC06000D80139 /* InbodyGraphView.swift */; };
+		E10FD9B22C4CC06000D80139 /* InbodyChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10FD9B12C4CC06000D80139 /* InbodyChartView.swift */; };
 		E12911B92C48DC82009A92F7 /* CameraActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12911B82C48DC81009A92F7 /* CameraActionSheet.swift */; };
 		E12911BB2C48EDFE009A92F7 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12911BA2C48EDFE009A92F7 /* PhotoPicker.swift */; };
 		E12911BD2C48FDBA009A92F7 /* InbodyFixView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12911BC2C48FDBA009A92F7 /* InbodyFixView.swift */; };
@@ -87,6 +87,9 @@
 		E15BF02C2C609AF80033E5C3 /* ExerciseState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15BF02B2C609AF80033E5C3 /* ExerciseState.swift */; };
 		E15BF02E2C609B6B0033E5C3 /* ExerciseDetector+CameraSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15BF02D2C609B6B0033E5C3 /* ExerciseDetector+CameraSetup.swift */; };
 		E15BF0302C609C300033E5C3 /* ExerciseDetector+ExerciseDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15BF02F2C609C300033E5C3 /* ExerciseDetector+ExerciseDetection.swift */; };
+		E15BF0362C60B6C30033E5C3 /* InbodyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15BF0352C60B6C30033E5C3 /* InbodyData.swift */; };
+		E15BF0382C60B8510033E5C3 /* InbodyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15BF0372C60B8510033E5C3 /* InbodyViewModel.swift */; };
+		E15BF03C2C60BAC10033E5C3 /* TrendAnalysisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15BF03B2C60BAC10033E5C3 /* TrendAnalysisView.swift */; };
 		E1AEFC932C4D10AD000D6441 /* AlbumMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AEFC922C4D10AD000D6441 /* AlbumMainView.swift */; };
 		E1AEFC952C4D10BE000D6441 /* AlbumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AEFC942C4D10BE000D6441 /* AlbumView.swift */; };
 		E1AEFC972C4D2E69000D6441 /* AlbumDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AEFC962C4D2E69000D6441 /* AlbumDetailView.swift */; };
@@ -211,7 +214,7 @@
 		E10FD9A22C4A066200D80139 /* OnboardingEndView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingEndView.swift; sourceTree = "<group>"; };
 		E10FD9AD2C4C16AA00D80139 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		E10FD9AF2C4CC01700D80139 /* InbodyMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InbodyMainView.swift; sourceTree = "<group>"; };
-		E10FD9B12C4CC06000D80139 /* InbodyGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InbodyGraphView.swift; sourceTree = "<group>"; };
+		E10FD9B12C4CC06000D80139 /* InbodyChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InbodyChartView.swift; sourceTree = "<group>"; };
 		E12911B82C48DC81009A92F7 /* CameraActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraActionSheet.swift; sourceTree = "<group>"; };
 		E12911BA2C48EDFE009A92F7 /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
 		E12911BC2C48FDBA009A92F7 /* InbodyFixView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InbodyFixView.swift; sourceTree = "<group>"; };
@@ -224,6 +227,9 @@
 		E15BF02B2C609AF80033E5C3 /* ExerciseState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseState.swift; sourceTree = "<group>"; };
 		E15BF02D2C609B6B0033E5C3 /* ExerciseDetector+CameraSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExerciseDetector+CameraSetup.swift"; sourceTree = "<group>"; };
 		E15BF02F2C609C300033E5C3 /* ExerciseDetector+ExerciseDetection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExerciseDetector+ExerciseDetection.swift"; sourceTree = "<group>"; };
+		E15BF0352C60B6C30033E5C3 /* InbodyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InbodyData.swift; sourceTree = "<group>"; };
+		E15BF0372C60B8510033E5C3 /* InbodyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InbodyViewModel.swift; sourceTree = "<group>"; };
+		E15BF03B2C60BAC10033E5C3 /* TrendAnalysisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendAnalysisView.swift; sourceTree = "<group>"; };
 		E1AEFC922C4D10AD000D6441 /* AlbumMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumMainView.swift; sourceTree = "<group>"; };
 		E1AEFC942C4D10BE000D6441 /* AlbumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumView.swift; sourceTree = "<group>"; };
 		E1AEFC962C4D2E69000D6441 /* AlbumDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailView.swift; sourceTree = "<group>"; };
@@ -342,8 +348,9 @@
 			children = (
 				E10FD9AD2C4C16AA00D80139 /* ProfileHeaderView.swift */,
 				3E9D1FD42C4E346E00302F7E /* ProfileSelectView.swift */,
-				E10FD9B12C4CC06000D80139 /* InbodyGraphView.swift */,
+				E10FD9B12C4CC06000D80139 /* InbodyChartView.swift */,
 				E1AEFC942C4D10BE000D6441 /* AlbumView.swift */,
+				E15BF03B2C60BAC10033E5C3 /* TrendAnalysisView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -353,6 +360,7 @@
 			children = (
 				3E5F3EFB2C5B57A9007023DC /* ProfileSelectViewModel.swift */,
 				E15BF01E2C5FBE3C0033E5C3 /* EyeBodyPhotoViewModel.swift */,
+				E15BF0372C60B8510033E5C3 /* InbodyViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -363,6 +371,7 @@
 				3E5F3EFD2C5B94CA007023DC /* AlbumData.swift */,
 				3E5F3EFE2C5B94CA007023DC /* PhotoData.swift */,
 				E15BF01C2C5FBB190033E5C3 /* EyeBodyPhoto.swift */,
+				E15BF0352C60B6C30033E5C3 /* InbodyData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -903,13 +912,15 @@
 				8F92DF8D2C4D58570071F336 /* ExerciseTimerViewModel.swift in Sources */,
 				8F92DF7E2C4BA9750071F336 /* ExerciseGuideListView.swift in Sources */,
 				E24CF94E2C4F887100D1548E /* CustomToggle.swift in Sources */,
+				E15BF03C2C60BAC10033E5C3 /* TrendAnalysisView.swift in Sources */,
 				E12911BB2C48EDFE009A92F7 /* PhotoPicker.swift in Sources */,
 				8F92DF952C4D74A10071F336 /* ExerciseGraduationView.swift in Sources */,
+				E15BF0382C60B8510033E5C3 /* InbodyViewModel.swift in Sources */,
 				E1BB0D5C2C47B15A002565B2 /* OnboardingProfileSelectionView.swift in Sources */,
 				E15BF0272C609A5E0033E5C3 /* ExerciseDetector.swift in Sources */,
 				3E3B9A872C5B2E3E001F2852 /* View+Extension.swift in Sources */,
 				8F92DF872C4D33870071F336 /* ExerciseTimerSettingView.swift in Sources */,
-				E10FD9B22C4CC06000D80139 /* InbodyGraphView.swift in Sources */,
+				E10FD9B22C4CC06000D80139 /* InbodyChartView.swift in Sources */,
 				3E3B9A892C5B2F62001F2852 /* Constants.swift in Sources */,
 				E10FD9A12C49FFF100D80139 /* EyeBodyView.swift in Sources */,
 				E1BB0D552C47985D002565B2 /* OnboardingGaugeView.swift in Sources */,
@@ -943,6 +954,7 @@
 				E1BB0D622C48A875002565B2 /* InbodyAddView.swift in Sources */,
 				E2FDD2572C4B93AF004067EF /* WeeklyCalendar.swift in Sources */,
 				3E3B9A8E2C5B500E001F2852 /* SocialLoginView.swift in Sources */,
+				E15BF0362C60B6C30033E5C3 /* InbodyData.swift in Sources */,
 				E1BB0D582C479CF7002565B2 /* OnboardingWelcomView.swift in Sources */,
 				E1AEFC992C4D3F50000D6441 /* EyeBodyMainView.swift in Sources */,
 				3E5F3F032C5C6953007023DC /* ProfileMainView.swift in Sources */,

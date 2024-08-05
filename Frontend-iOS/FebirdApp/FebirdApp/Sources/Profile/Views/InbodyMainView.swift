@@ -8,16 +8,16 @@
 import SwiftUI
 
 struct InbodyMainView: View {
+    let inbodys: [InbodyModel]
+
     var body: some View {
         VStack {
-//            ProfileHeaderView()
-
             ScrollView {
-                InbodyGraphView(title: "체중")
-                InbodyGraphView(title: "기초대사량")
-                InbodyGraphView(title: "체지방량")
+                InbodyChartView(inbodys: inbodys, title: "체중", xAxisTitle: "날짜", yAxisTitle: "체중", color: .red) { $0.weight }
+                InbodyChartView(inbodys: inbodys, title: "기초 대사량", xAxisTitle: "날짜", yAxisTitle: "기초 대사량", color: .orange) { $0.bmr }
+                InbodyChartView(inbodys: inbodys, title: "체지방량", xAxisTitle: "날짜", yAxisTitle: "체지방량", color: .green) { $0.bodyfat }
+                InbodyChartView(inbodys: inbodys, title: "BMI", xAxisTitle: "날짜", yAxisTitle: "BMI", color: .blue) { $0.bmi }
             }
-            .padding(.horizontal, 20)
 
             Button(action: {
                 // TODO: 스마트 체중계 결과 화면 추가
@@ -41,5 +41,5 @@ struct InbodyMainView: View {
 }
 
 #Preview {
-    InbodyMainView()
+    InbodyMainView(inbodys: inbodyDummyData)
 }

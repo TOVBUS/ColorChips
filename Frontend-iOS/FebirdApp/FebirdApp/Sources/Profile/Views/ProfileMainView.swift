@@ -25,7 +25,7 @@ struct ProfileMainView: View {
                     case .album:
                         AlbumMainView(albums: dummyAlbums)
                     case .inbody:
-                        InbodyMainView()
+                        InbodyMainView(inbodys: inbodyDummyData)
                     case .eyeBody:
                         EyeBodyMainView(viewModel: EyeBodyPhotoViewModel(context: modelContext))
                     }
