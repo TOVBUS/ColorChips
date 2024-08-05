@@ -18,7 +18,6 @@
 		3E5F3F032C5C6953007023DC /* ProfileMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5F3F022C5C6953007023DC /* ProfileMainView.swift */; };
 		3E7521A52C48E6C700920BFD /* ExerciseMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7521A42C48E6C700920BFD /* ExerciseMainView.swift */; };
 		3E7521A82C48F63E00920BFD /* ExerciseMainHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7521A72C48F63E00920BFD /* ExerciseMainHeaderView.swift */; };
-		3E7521AB2C48F66F00920BFD /* RoundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7521AA2C48F66F00920BFD /* RoundedCorners.swift */; };
 		3E7521AD2C49F88B00920BFD /* CustomTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7521AC2C49F88B00920BFD /* CustomTabBarView.swift */; };
 		3E9D1FD52C4E346E00302F7E /* ProfileSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9D1FD42C4E346E00302F7E /* ProfileSelectView.swift */; };
 		3E9E9E202C44E7DB002389EB /* WorkSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E9E9E172C44E7DA002389EB /* WorkSans-Light.ttf */; };
@@ -158,7 +157,6 @@
 		3E5F3F022C5C6953007023DC /* ProfileMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMainView.swift; sourceTree = "<group>"; };
 		3E7521A42C48E6C700920BFD /* ExerciseMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseMainView.swift; sourceTree = "<group>"; };
 		3E7521A72C48F63E00920BFD /* ExerciseMainHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseMainHeaderView.swift; sourceTree = "<group>"; };
-		3E7521AA2C48F66F00920BFD /* RoundedCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorners.swift; sourceTree = "<group>"; };
 		3E7521AC2C49F88B00920BFD /* CustomTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarView.swift; sourceTree = "<group>"; };
 		3E9D1FD42C4E346E00302F7E /* ProfileSelectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileSelectView.swift; sourceTree = "<group>"; };
 		3E9E9E172C44E7DA002389EB /* WorkSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-Light.ttf"; sourceTree = "<group>"; };
@@ -277,7 +275,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E18289402C60C940006FB058 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,7 +422,6 @@
 				3E7521AC2C49F88B00920BFD /* CustomTabBarView.swift */,
 				8FAC187E2C494BDE00CDF7CF /* ExerciseGaugeBarView.swift */,
 				E12911BA2C48EDFE009A92F7 /* PhotoPicker.swift */,
-				3E7521AA2C48F66F00920BFD /* RoundedCorners.swift */,
 				8F92DF882C4D4A440071F336 /* TimerButton.swift */,
 				8F92DF8E2C4D58710071F336 /* TimerView.swift */,
 				8F92DF822C4BB0970071F336 /* VideoPlayerView.swift */,
@@ -749,7 +745,6 @@
 			);
 			name = FebirdApp;
 			packageProductDependencies = (
-				E182893F2C60C940006FB058 /* Alamofire */,
 			);
 			productName = FebirdApp;
 			productReference = 3EF6F0492C36937E00EEF18F /* FebirdApp.app */;
@@ -824,8 +819,6 @@
 			);
 			mainGroup = 3EF6F0402C36937D00EEF18F;
 			packageReferences = (
-				E182893E2C60C940006FB058 /* XCRemoteSwiftPackageReference "Alamofire" */,
-				E18289412C60C953006FB058 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */,
 			);
 			productRefGroup = 3EF6F04A2C36937E00EEF18F /* Products */;
 			projectDirPath = "";
@@ -947,7 +940,6 @@
 				3E3B9A892C5B2F62001F2852 /* Constants.swift in Sources */,
 				E10FD9A12C49FFF100D80139 /* EyeBodyView.swift in Sources */,
 				E1BB0D552C47985D002565B2 /* OnboardingGaugeView.swift in Sources */,
-				3E7521AB2C48F66F00920BFD /* RoundedCorners.swift in Sources */,
 				3E3B9A832C5B29AA001F2852 /* ViewOptions.swift in Sources */,
 				3E5F3F012C5B94CA007023DC /* PhotoData.swift in Sources */,
 				E2CFF2142C4EA29500540500 /* MessageBubble.swift in Sources */,
@@ -1183,7 +1175,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = org.colorchips.FebirdApp;
+				PRODUCT_BUNDLE_IDENTIFIER = org.colorchips.feofit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1215,7 +1207,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = org.colorchips.FebirdApp;
+				PRODUCT_BUNDLE_IDENTIFIER = org.colorchips.feofit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1357,12 +1349,20 @@
 				minimumVersion = 0.55.1;
 			};
 		};
+		8FE8FB372C60BD13009CFAE9 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		E182893F2C60C940006FB058 /* Alamofire */ = {
+		8FE8FB382C60BD14009CFAE9 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = E182893E2C60C940006FB058 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = 8FE8FB372C60BD13009CFAE9 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */

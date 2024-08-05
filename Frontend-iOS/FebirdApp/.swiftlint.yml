@@ -25,12 +25,12 @@ force_try:
 # 함수 길이 제한
 function_body_length:
   warning: 80
-  error: 120
+  # error: 120
 
 # 순환 복잡도 제한
 cyclomatic_complexity:
   warning: 10
-  error: 15
+  # error: 15
 
 line_length: 400
 # 값을 나열해서 암시적으로 양쪽 다 지정할 수 있음
@@ -42,7 +42,7 @@ type_body_length:
 # 둘 다 명시적으로 지정할 수도 있음
 file_length:
   warning: 500
-  error: 1200
+  # error: 1200
 
 # 네이밍 룰은 경고/에러에 min_length와 max_length를 각각 설정 가능
 # 제외할 이름을 설정할 수 있음
@@ -50,12 +50,12 @@ type_name:
   min_length: 4
   max_length:
     warning: 40
-    error: 50
+    # error: 50
   excluded: iPhone # 제외할 문자열 값 사용
 
 identifier_name:
   min_length:
-    warning: 3    
+    warning: 3
   excluded: # 제외할 문자열 목록 사용
     - id
     - URL
