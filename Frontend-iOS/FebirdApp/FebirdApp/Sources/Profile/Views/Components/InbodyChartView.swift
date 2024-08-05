@@ -16,7 +16,7 @@ struct InbodyChartView<T: Plottable & BinaryFloatingPoint>: View {
     let color: Color
     let getValue: (InbodyModel) -> T?
 
-    @StateObject private var viewModel = InbodyViewModel()
+    @StateObject private var inbodyViewModel = InbodyViewModel()
 
     private var sortedInbodys: [InbodyModel] {
         return inbodys.sorted { $0.inbodyDate < $1.inbodyDate}
@@ -60,18 +60,18 @@ struct InbodyChartView<T: Plottable & BinaryFloatingPoint>: View {
         VStack(spacing: 0) {
             HStack {
                 Text(title)
-                    .font(.title3)
+                    .font(.customFont(size: 22, weight: .bold))
                     .foregroundStyle(.black)
-                    .bold()
                     .padding(.leading, 25)
                 Spacer()
             }
             .padding(.bottom, 20)
 
             if filteredInbodys.isEmpty {
-                Image("EmptyInbodyGraph")
+                Image("EmptyChart")
                     .padding(.bottom, 50)
             } else {
+
                 ScrollView(.horizontal, showsIndicators: false) {
                     ScrollViewReader { proxy in
                         Chart {
@@ -98,31 +98,26 @@ struct InbodyChartView<T: Plottable & BinaryFloatingPoint>: View {
                                 if let date = value.as(Date.self) {
                                     AxisValueLabel {
                                         Text(dateFormatter.string(from: date))
-                                            .font(.custom)
-                                            .fontWeight(.semibold)
-                                            .foregroundStyle(.gray40)
+                                            .font(.caption)
                                     }
                                 }
                                 AxisTick()
-                                    .foregroundStyle(.gray40)
+                                    .foregroundStyle(.gray.opacity(0.6))
                                 AxisGridLine()
-//                                    .foregroundStyle(.gray40)
+                                    .foregroundStyle(.gray.opacity(0.6))
                             }
                         }
                         .chartYAxis {
                             AxisMarks { value in
-                                AxisValueLabel {
-                                    if let doubleValue = value.as(Double.self) {
-                                        Text(String(format: "%.1f", doubleValue))
-                                            .font(.caption)
-                                            .fontWeight(.semibold)
-//                                            .foregroundColor(.gray60)
-                                    }
-                                }
-                                AxisTick()
-//                                    .foregroundStyle(.gray60)
                                 AxisGridLine()
-//                                    .foregroundStyle(.gray60)
+                                    .foregroundStyle(.gray)
+                                AxisTick()
+                                    .foregroundStyle(.gray)
+                                AxisValueLabel {
+                                    Text(value.as(T.self).map { String(format: "%.1f", Double($0)) } ?? "")
+                                        .font(.caption)
+                                        .foregroundStyle(.gray)
+                                }
                             }
                         }
                         .id(filteredInbodys.last!.inbodyDate)
@@ -139,11 +134,12 @@ struct InbodyChartView<T: Plottable & BinaryFloatingPoint>: View {
                                     if let value = getValue(inbody) {
                                         Text(String(format: "%.1f", Double(value)))
                                             .font(.caption)
-                                            .foregroundStyle(Color.gray)
+                                            .foregroundStyle(.gray)
                                             .position(
                                                 x: xPosition(for: inbody.inbodyDate, in: geometry),
                                                 y: yPosition(for: value, in: geometry)
                                             )
+                                            .offset(x: -10)
                                             .offset(y: -25)
                                     }
                                 }
@@ -158,9 +154,8 @@ struct InbodyChartView<T: Plottable & BinaryFloatingPoint>: View {
                         .fill(Color.gray.opacity(0.1))
                 )
                 .padding(.horizontal, 25)
-                .padding(.bottom, 10)
 
-                TrendAnalysisView(trendMessage: viewModel.analyzeTrend(for: inbodys, getValue: getValue))
+                TrendAnalysisView(trendMessage: inbodyViewModel.analyzeTrend(for: filteredInbodys, getValue: getValue))
                     .padding(.bottom, 50)
                     .padding(.top, 15)
                     .padding(.horizontal, 20)

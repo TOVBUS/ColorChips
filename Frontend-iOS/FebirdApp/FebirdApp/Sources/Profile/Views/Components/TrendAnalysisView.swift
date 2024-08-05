@@ -12,7 +12,8 @@ struct TrendAnalysisView: View {
 
     var body: some View {
         Text(trendMessage)
-            .font(.footnote)
+            .font(.customFont(size: 12, weight: .semibold))
             .foregroundStyle(.orange)
+            .multilineTextAlignment(.center)
     }
 }

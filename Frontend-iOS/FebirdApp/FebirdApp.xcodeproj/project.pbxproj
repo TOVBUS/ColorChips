@@ -69,7 +69,6 @@
 		8FAC18852C4B8C4200CDF7CF /* ExerciseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FAC18842C4B8C4200CDF7CF /* ExerciseItem.swift */; };
 		8FAC18872C4B8CBA00CDF7CF /* ExerciseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FAC18862C4B8CBA00CDF7CF /* ExerciseListView.swift */; };
 		8FE8FB362C60BA2E009CFAE9 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE8FB352C60BA2E009CFAE9 /* NetworkManager.swift */; };
-		8FE8FB392C60BD14009CFAE9 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8FE8FB382C60BD14009CFAE9 /* Alamofire */; };
 		8FE8FB3B2C60BDB3009CFAE9 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE8FB3A2C60BDB3009CFAE9 /* AuthViewModel.swift */; };
 		8FE8FB3D2C60BDF1009CFAE9 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE8FB3C2C60BDF1009CFAE9 /* KeychainManager.swift */; };
 		E10FD99D2C49FB4500D80139 /* InbodyInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10FD99C2C49FB4500D80139 /* InbodyInputView.swift */; };
@@ -94,6 +93,7 @@
 		E15BF0362C60B6C30033E5C3 /* InbodyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15BF0352C60B6C30033E5C3 /* InbodyData.swift */; };
 		E15BF0382C60B8510033E5C3 /* InbodyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15BF0372C60B8510033E5C3 /* InbodyViewModel.swift */; };
 		E15BF03C2C60BAC10033E5C3 /* TrendAnalysisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15BF03B2C60BAC10033E5C3 /* TrendAnalysisView.swift */; };
+		E18289402C60C940006FB058 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = E182893F2C60C940006FB058 /* Alamofire */; };
 		E1AEFC932C4D10AD000D6441 /* AlbumMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AEFC922C4D10AD000D6441 /* AlbumMainView.swift */; };
 		E1AEFC952C4D10BE000D6441 /* AlbumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AEFC942C4D10BE000D6441 /* AlbumView.swift */; };
 		E1AEFC972C4D2E69000D6441 /* AlbumDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AEFC962C4D2E69000D6441 /* AlbumDetailView.swift */; };
@@ -277,7 +277,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8FE8FB392C60BD14009CFAE9 /* Alamofire in Frameworks */,
+				E18289402C60C940006FB058 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -749,7 +749,7 @@
 			);
 			name = FebirdApp;
 			packageProductDependencies = (
-				8FE8FB382C60BD14009CFAE9 /* Alamofire */,
+				E182893F2C60C940006FB058 /* Alamofire */,
 			);
 			productName = FebirdApp;
 			productReference = 3EF6F0492C36937E00EEF18F /* FebirdApp.app */;
@@ -824,8 +824,8 @@
 			);
 			mainGroup = 3EF6F0402C36937D00EEF18F;
 			packageReferences = (
-				3E3B9A842C5B2CDF001F2852 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */,
-				8FE8FB372C60BD13009CFAE9 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				E182893E2C60C940006FB058 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				E18289412C60C953006FB058 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */,
 			);
 			productRefGroup = 3EF6F04A2C36937E00EEF18F /* Products */;
 			projectDirPath = "";
@@ -1341,15 +1341,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		3E3B9A842C5B2CDF001F2852 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SimplyDanny/SwiftLintPlugins.git";
-			requirement = {
-				kind = upToNextMinorVersion;
-				minimumVersion = 0.55.1;
-			};
-		};
-		8FE8FB372C60BD13009CFAE9 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		E182893E2C60C940006FB058 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
@@ -1357,12 +1349,20 @@
 				minimumVersion = 5.9.1;
 			};
 		};
+		E18289412C60C953006FB058 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SimplyDanny/SwiftLintPlugins";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 0.55.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		8FE8FB382C60BD14009CFAE9 /* Alamofire */ = {
+		E182893F2C60C940006FB058 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 8FE8FB372C60BD13009CFAE9 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = E182893E2C60C940006FB058 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
