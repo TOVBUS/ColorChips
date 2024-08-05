@@ -44,6 +44,7 @@
 		3EF6F06A2C36938000EEF18F /* FebirdAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF6F0692C36938000EEF18F /* FebirdAppUITests.swift */; };
 		3EF6F06C2C36938000EEF18F /* FebirdAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF6F06B2C36938000EEF18F /* FebirdAppUITestsLaunchTests.swift */; };
 		3EFC450C2C44F882001052C7 /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFC450B2C44F882001052C7 /* Font+Extension.swift */; };
+		8F0ECAAA2C60EDFA0050FD88 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8F0ECAA92C60EDFA0050FD88 /* Alamofire */; };
 		8F8A77E72C5E7AF9008E61D7 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8A77E62C5E7AF9008E61D7 /* SettingsViewModel.swift */; };
 		8F8A77EA2C5E7CE1008E61D7 /* CellConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8A77E92C5E7CE1008E61D7 /* CellConfiguration.swift */; };
 		8F8A77EC2C5F554F008E61D7 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8A77EB2C5F554F008E61D7 /* UserProfile.swift */; };
@@ -92,7 +93,6 @@
 		E15BF0362C60B6C30033E5C3 /* InbodyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15BF0352C60B6C30033E5C3 /* InbodyData.swift */; };
 		E15BF0382C60B8510033E5C3 /* InbodyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15BF0372C60B8510033E5C3 /* InbodyViewModel.swift */; };
 		E15BF03C2C60BAC10033E5C3 /* TrendAnalysisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15BF03B2C60BAC10033E5C3 /* TrendAnalysisView.swift */; };
-		E18289402C60C940006FB058 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = E182893F2C60C940006FB058 /* Alamofire */; };
 		E1AEFC932C4D10AD000D6441 /* AlbumMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AEFC922C4D10AD000D6441 /* AlbumMainView.swift */; };
 		E1AEFC952C4D10BE000D6441 /* AlbumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AEFC942C4D10BE000D6441 /* AlbumView.swift */; };
 		E1AEFC972C4D2E69000D6441 /* AlbumDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AEFC962C4D2E69000D6441 /* AlbumDetailView.swift */; };
@@ -275,6 +275,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F0ECAAA2C60EDFA0050FD88 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -745,6 +746,7 @@
 			);
 			name = FebirdApp;
 			packageProductDependencies = (
+				8F0ECAA92C60EDFA0050FD88 /* Alamofire */,
 			);
 			productName = FebirdApp;
 			productReference = 3EF6F0492C36937E00EEF18F /* FebirdApp.app */;
@@ -819,6 +821,8 @@
 			);
 			mainGroup = 3EF6F0402C36937D00EEF18F;
 			packageReferences = (
+				8F0ECAA82C60EDFA0050FD88 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				8F0ECAAB2C60EE020050FD88 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */,
 			);
 			productRefGroup = 3EF6F04A2C36937E00EEF18F /* Products */;
 			projectDirPath = "";
@@ -1333,7 +1337,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		E182893E2C60C940006FB058 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		8F0ECAA82C60EDFA0050FD88 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
@@ -1341,28 +1345,20 @@
 				minimumVersion = 5.9.1;
 			};
 		};
-		E18289412C60C953006FB058 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */ = {
+		8F0ECAAB2C60EE020050FD88 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SimplyDanny/SwiftLintPlugins";
+			repositoryURL = "https://github.com/SimplyDanny/SwiftLintPlugins.git";
 			requirement = {
 				kind = upToNextMinorVersion;
 				minimumVersion = 0.55.1;
 			};
 		};
-		8FE8FB372C60BD13009CFAE9 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
-			requirement = {
-				kind = upToNextMinorVersion;
-				minimumVersion = 5.9.1;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		8FE8FB382C60BD14009CFAE9 /* Alamofire */ = {
+		8F0ECAA92C60EDFA0050FD88 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 8FE8FB372C60BD13009CFAE9 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = 8F0ECAA82C60EDFA0050FD88 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
