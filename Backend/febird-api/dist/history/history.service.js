@@ -25,31 +25,35 @@ let HistoryService = class HistoryService {
         this.memberRepository = memberRepository;
         this.levelRepository = levelRepository;
     }
-    async create(createHistoryDto) {
-        const { member_id, level_id, achievement_date } = createHistoryDto;
+    async create(member_id, createHistoryDto) {
         const member = await this.memberRepository.findOne({
-            where: { member_id },
+            where: { member_id: member_id },
         });
         if (!member) {
-            throw new common_1.NotFoundException(`Member with ID ${member_id} not found`);
+            throw new common_1.NotFoundException(`${member_id}에 해당하는 회원이 없습니다.`);
         }
         const level = await this.levelRepository.findOne({
-            where: { level_id },
+            where: { level_id: createHistoryDto.level_id },
         });
         if (!level) {
-            throw new common_1.NotFoundException(`Level with ID ${level_id} not found`);
+            throw new common_1.NotFoundException(`${createHistoryDto.level_id}에 해당하는 레벨을 찾을 수 없습니다.`);
         }
         const newHistory = this.historyRepository.create({
-            achievement_date,
-            member,
-            level,
+            ...createHistoryDto,
+            member: member,
+            level: level,
         });
         return await this.historyRepository.save(newHistory);
     }
-    async findAll() {
-        return await this.historyRepository.find({
-            relations: ['member', 'level'],
+    async findAll(memberId) {
+        const member = await this.memberRepository.findOne({
+            where: { member_id: memberId },
+            relations: ['histories'],
         });
+        if (!member) {
+            throw new common_1.NotFoundException(`${memberId}에 해당하는 회원이 없습니다.`);
+        }
+        return member.histories;
     }
 };
 exports.HistoryService = HistoryService;

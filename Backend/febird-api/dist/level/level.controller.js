@@ -27,7 +27,7 @@ let LevelController = class LevelController {
             return await this.levelService.findOne(id);
         }
         catch (error) {
-            throw new common_1.NotFoundException(`Level with ID ${id} not found`);
+            throw new common_1.NotFoundException(`${id}에 해당하는 레벨을 찾을 수 없습니다.`);
         }
     }
 };

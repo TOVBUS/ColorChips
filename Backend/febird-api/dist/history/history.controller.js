@@ -21,10 +21,10 @@ let HistoryController = class HistoryController {
         this.historyService = historyService;
     }
     create(memberId, createHistoryDto) {
-        return this.historyService.create(createHistoryDto);
+        return this.historyService.create(+memberId, createHistoryDto);
     }
-    findAll() {
-        return this.historyService.findAll();
+    findAll(memberId) {
+        return this.historyService.findAll(+memberId);
     }
 };
 exports.HistoryController = HistoryController;
@@ -38,8 +38,9 @@ __decorate([
 ], HistoryController.prototype, "create", null);
 __decorate([
     (0, common_1.Get)(),
+    __param(0, (0, common_1.Param)('memberId')),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
+    __metadata("design:paramtypes", [Number]),
     __metadata("design:returntype", void 0)
 ], HistoryController.prototype, "findAll", null);
 exports.HistoryController = HistoryController = __decorate([

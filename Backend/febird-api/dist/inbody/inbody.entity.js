@@ -28,7 +28,7 @@ __decorate([
     __metadata("design:type", Number)
 ], Inbody.prototype, "weight", void 0);
 __decorate([
-    (0, typeorm_1.Column)('date', { nullable: true }),
+    (0, typeorm_1.Column)('date'),
     __metadata("design:type", Date)
 ], Inbody.prototype, "inbody_date", void 0);
 __decorate([

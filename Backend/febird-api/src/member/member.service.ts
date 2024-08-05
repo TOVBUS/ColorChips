@@ -20,25 +20,35 @@ export class MemberService {
   async findOne(member_id: number): Promise<Member> {
     const member = await this.memberRepository.findOne({ where: { member_id } });
     if (!member) {
-      throw new NotFoundException(`Member with ID ${member_id} not found`);
+      throw new NotFoundException(`MemberID ${member_id}의 회원을 찾을 수 없습니다.`);
     }
     return member;
   }
 
-  // Apple Sign에 필요한 것
-  // async findByAppleId(appleId: string): Promise<Member> {
-  //   return await this.memberRepository.findOne({ where: { appleId } });
-  // }
+  async findByAppleId(appleID: string): Promise<Member | null> {
+    const member = await this.memberRepository.findOne({ where: { appleID } });
+    if (!member) {
+      throw new NotFoundException(` ${appleID} 애플아이디를 가진 회원을 찾을 수 없습니다.`);
+    }
+    return member;
+  }
 
   async update(
     member_id: number,
     updateMemberDto: UpdateMemberDto,
   ): Promise<Member> {
     await this.memberRepository.update(member_id, updateMemberDto);
-    return await this.memberRepository.findOne({ where: { member_id } });
+    const updatedMember = await this.memberRepository.findOne({ where: { member_id } });
+    if (!updatedMember) {
+      throw new NotFoundException(`MemberID ${member_id}의 회원을 찾을 수 없습니다.`);
+    }
+    return updatedMember;
   }
 
   async remove(member_id: number): Promise<void> {
-    await this.memberRepository.delete(member_id);
+    const result = await this.memberRepository.delete(member_id);
+    if (result.affected === 0) {
+      throw new NotFoundException(`MemberID ${member_id}의 회원을 찾을 수 없습니다.`);
+    }
   }
 }

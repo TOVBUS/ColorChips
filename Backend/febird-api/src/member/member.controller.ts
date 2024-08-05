@@ -6,6 +6,7 @@ import { CreateMemberDto } from './dto/create-member.dto';
 import { UpdateMemberDto } from './dto/update-member.dto';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { Response } from 'express';
+import * as jwt from 'jsonwebtoken';
 
 @Controller('member')
 export class MemberController {
@@ -59,6 +60,25 @@ export class MemberController {
       return res.status(HttpStatus.OK).json({ message: 'Member 삭제 성공!' });
     } catch (error) {
       return res.status(HttpStatus.BAD_REQUEST).json({ message: '회원 정보 삭제 실패' });
+    }
+  }
+
+  // Apple 로그인 엔드포인트 추가
+  @Post('apple-login')
+  async appleLogin(@Body('appleID') appleID: string, @Res() res: Response) {
+    try {
+      let member = await this.memberService.findByAppleId(appleID);
+      if (!member) {
+      // 신규 회원 등록
+      member = await this.memberService.create({ appleID } as CreateMemberDto);
+    }
+
+    // JWT 토큰 생성
+      const token = jwt.sign({ member_id: member.member_id }, 'your-secret-key', { expiresIn: '1h' });
+      return res.status(HttpStatus.OK).json({ token });
+    } catch (error) {
+      console.error(error); // 상세한 오류 로그 출력
+      return res.status(HttpStatus.BAD_REQUEST).json({ message: '애플 로그인 실패', error: error.message });
     }
   }
 }

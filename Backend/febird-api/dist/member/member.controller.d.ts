@@ -9,4 +9,5 @@ export declare class MemberController {
     update(id: number, updateMemberDto: UpdateMemberDto, file: any, res: Response): Promise<Response<any, Record<string, any>>>;
     findOne(id: number, res: Response): Promise<Response<any, Record<string, any>>>;
     remove(id: number, res: Response): Promise<Response<any, Record<string, any>>>;
+    appleLogin(appleID: string, res: Response): Promise<Response<any, Record<string, any>>>;
 }

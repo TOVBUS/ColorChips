@@ -18,6 +18,7 @@ const member_service_1 = require("./member.service");
 const create_member_dto_1 = require("./dto/create-member.dto");
 const update_member_dto_1 = require("./dto/update-member.dto");
 const platform_express_1 = require("@nestjs/platform-express");
+const jwt = require("jsonwebtoken");
 let MemberController = class MemberController {
     constructor(memberService) {
         this.memberService = memberService;
@@ -62,6 +63,20 @@ let MemberController = class MemberController {
             return res.status(common_1.HttpStatus.BAD_REQUEST).json({ message: '회원 정보 삭제 실패' });
         }
     }
+    async appleLogin(appleID, res) {
+        try {
+            let member = await this.memberService.findByAppleId(appleID);
+            if (!member) {
+                member = await this.memberService.create({ appleID });
+            }
+            const token = jwt.sign({ member_id: member.member_id }, 'your-secret-key', { expiresIn: '1h' });
+            return res.status(common_1.HttpStatus.OK).json({ token });
+        }
+        catch (error) {
+            console.error(error);
+            return res.status(common_1.HttpStatus.BAD_REQUEST).json({ message: '애플 로그인 실패', error: error.message });
+        }
+    }
 };
 exports.MemberController = MemberController;
 __decorate([
@@ -101,6 +116,14 @@ __decorate([
     __metadata("design:paramtypes", [Number, Object]),
     __metadata("design:returntype", Promise)
 ], MemberController.prototype, "remove", null);
+__decorate([
+    (0, common_1.Post)('apple-login'),
+    __param(0, (0, common_1.Body)('appleID')),
+    __param(1, (0, common_1.Res)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, Object]),
+    __metadata("design:returntype", Promise)
+], MemberController.prototype, "appleLogin", null);
 exports.MemberController = MemberController = __decorate([
     (0, common_1.Controller)('member'),
     __metadata("design:paramtypes", [member_service_1.MemberService])
