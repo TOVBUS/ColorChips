@@ -13,6 +13,10 @@ struct ExerciseTimerSettingView: View {
     @State private var timerSeconds: Int = 10
     @State private var isMinusPressed = false
     @State private var isPlusPressed = false
+    @StateObject private var exerciseDetector = ExerciseDetector()
+    @State private var selectedExercise: ExerciseType = .sumoSquat
+    @State private var totalCount: Int = 3
+    @State private var showAlert = false
 
     var body: some View {
         ZStack {
@@ -59,24 +63,56 @@ struct ExerciseTimerSettingView: View {
                 Spacer()
 
                 CustomButtonView(title: "준비됐어요! 💪🏻", style: .orange) {
-                    // TODO: 운동 카운트 화면으로 이동
-                    navigationPathFinder.addPath(option: .exerciseCountView)
+                    cameraCheckAndProceed()
                 }
-                    .padding(24)
+                .padding(24)
             }
             .ignoresSafeArea()
             .padding(24)
             .onAppear {
                 tabViewModel.isHidden = true
+                exerciseDetector.currentExercise = selectedExercise
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                    exerciseDetector.checkCameraPermission()
+                }
             }
         }
         .ignoresSafeArea()
+        .alert(isPresented: $showAlert) {
+            Alert(
+                title: Text("카메라 권한 필요"),
+                message: Text("이 앱은 카메라 접근 권한이 필요합니다. 설정에서 권한을 허용해주세요."),
+                primaryButton: .default(Text("설정으로 이동")) {
+                    if let settingsUrl = URL(string: UIApplication.openSettingsURLString) {
+                        UIApplication.shared.open(settingsUrl)
+                    }
+                },
+                secondaryButton: .cancel()
+            )
+        }
+        .onChange(of: exerciseDetector.cameraPermissionStatus) { _, newValue in
+            if newValue == .denied {
+                showAlert = true
+            }
+        }
     }
 
     private func timeString(from seconds: Int) -> String {
         let minutes = seconds / 60
         let remainingSeconds = seconds % 60
         return String(format: "%02d:%02d", minutes, remainingSeconds)
+    }
+
+    private func cameraCheckAndProceed() {
+        exerciseDetector.checkCameraPermission()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            if exerciseDetector.cameraPermissionStatus == .authorized {
+                navigationPathFinder.addPath(option: .exerciseCountView(ExerciseDetector(), .sumoSquat, 3))
+
+            } else {
+                showAlert = true
+            }
+        }
     }
 }
 
