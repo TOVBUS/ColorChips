@@ -44,6 +44,7 @@
 		3EF6F06A2C36938000EEF18F /* FebirdAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF6F0692C36938000EEF18F /* FebirdAppUITests.swift */; };
 		3EF6F06C2C36938000EEF18F /* FebirdAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF6F06B2C36938000EEF18F /* FebirdAppUITestsLaunchTests.swift */; };
 		3EFC450C2C44F882001052C7 /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFC450B2C44F882001052C7 /* Font+Extension.swift */; };
+		8F0ECAAA2C60EDFA0050FD88 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8F0ECAA92C60EDFA0050FD88 /* Alamofire */; };
 		8F8A77E72C5E7AF9008E61D7 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8A77E62C5E7AF9008E61D7 /* SettingsViewModel.swift */; };
 		8F8A77EA2C5E7CE1008E61D7 /* CellConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8A77E92C5E7CE1008E61D7 /* CellConfiguration.swift */; };
 		8F8A77EC2C5F554F008E61D7 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8A77EB2C5F554F008E61D7 /* UserProfile.swift */; };
@@ -68,7 +69,6 @@
 		8FAC18852C4B8C4200CDF7CF /* ExerciseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FAC18842C4B8C4200CDF7CF /* ExerciseItem.swift */; };
 		8FAC18872C4B8CBA00CDF7CF /* ExerciseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FAC18862C4B8CBA00CDF7CF /* ExerciseListView.swift */; };
 		8FE8FB362C60BA2E009CFAE9 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE8FB352C60BA2E009CFAE9 /* NetworkManager.swift */; };
-		8FE8FB392C60BD14009CFAE9 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8FE8FB382C60BD14009CFAE9 /* Alamofire */; };
 		8FE8FB3B2C60BDB3009CFAE9 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE8FB3A2C60BDB3009CFAE9 /* AuthViewModel.swift */; };
 		8FE8FB3D2C60BDF1009CFAE9 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE8FB3C2C60BDF1009CFAE9 /* KeychainManager.swift */; };
 		E10FD99D2C49FB4500D80139 /* InbodyInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10FD99C2C49FB4500D80139 /* InbodyInputView.swift */; };
@@ -77,7 +77,7 @@
 		E10FD9A32C4A066200D80139 /* OnboardingEndView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10FD9A22C4A066200D80139 /* OnboardingEndView.swift */; };
 		E10FD9AE2C4C16AA00D80139 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10FD9AD2C4C16AA00D80139 /* ProfileHeaderView.swift */; };
 		E10FD9B02C4CC01700D80139 /* InbodyMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10FD9AF2C4CC01700D80139 /* InbodyMainView.swift */; };
-		E10FD9B22C4CC06000D80139 /* InbodyGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10FD9B12C4CC06000D80139 /* InbodyGraphView.swift */; };
+		E10FD9B22C4CC06000D80139 /* InbodyChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10FD9B12C4CC06000D80139 /* InbodyChartView.swift */; };
 		E12911B92C48DC82009A92F7 /* CameraActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12911B82C48DC81009A92F7 /* CameraActionSheet.swift */; };
 		E12911BB2C48EDFE009A92F7 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12911BA2C48EDFE009A92F7 /* PhotoPicker.swift */; };
 		E12911BD2C48FDBA009A92F7 /* InbodyFixView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12911BC2C48FDBA009A92F7 /* InbodyFixView.swift */; };
@@ -90,6 +90,9 @@
 		E15BF02C2C609AF80033E5C3 /* ExerciseState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15BF02B2C609AF80033E5C3 /* ExerciseState.swift */; };
 		E15BF02E2C609B6B0033E5C3 /* ExerciseDetector+CameraSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15BF02D2C609B6B0033E5C3 /* ExerciseDetector+CameraSetup.swift */; };
 		E15BF0302C609C300033E5C3 /* ExerciseDetector+ExerciseDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15BF02F2C609C300033E5C3 /* ExerciseDetector+ExerciseDetection.swift */; };
+		E15BF0362C60B6C30033E5C3 /* InbodyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15BF0352C60B6C30033E5C3 /* InbodyData.swift */; };
+		E15BF0382C60B8510033E5C3 /* InbodyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15BF0372C60B8510033E5C3 /* InbodyViewModel.swift */; };
+		E15BF03C2C60BAC10033E5C3 /* TrendAnalysisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15BF03B2C60BAC10033E5C3 /* TrendAnalysisView.swift */; };
 		E1AEFC932C4D10AD000D6441 /* AlbumMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AEFC922C4D10AD000D6441 /* AlbumMainView.swift */; };
 		E1AEFC952C4D10BE000D6441 /* AlbumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AEFC942C4D10BE000D6441 /* AlbumView.swift */; };
 		E1AEFC972C4D2E69000D6441 /* AlbumDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AEFC962C4D2E69000D6441 /* AlbumDetailView.swift */; };
@@ -216,7 +219,7 @@
 		E10FD9A22C4A066200D80139 /* OnboardingEndView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingEndView.swift; sourceTree = "<group>"; };
 		E10FD9AD2C4C16AA00D80139 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		E10FD9AF2C4CC01700D80139 /* InbodyMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InbodyMainView.swift; sourceTree = "<group>"; };
-		E10FD9B12C4CC06000D80139 /* InbodyGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InbodyGraphView.swift; sourceTree = "<group>"; };
+		E10FD9B12C4CC06000D80139 /* InbodyChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InbodyChartView.swift; sourceTree = "<group>"; };
 		E12911B82C48DC81009A92F7 /* CameraActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraActionSheet.swift; sourceTree = "<group>"; };
 		E12911BA2C48EDFE009A92F7 /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
 		E12911BC2C48FDBA009A92F7 /* InbodyFixView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InbodyFixView.swift; sourceTree = "<group>"; };
@@ -229,6 +232,9 @@
 		E15BF02B2C609AF80033E5C3 /* ExerciseState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseState.swift; sourceTree = "<group>"; };
 		E15BF02D2C609B6B0033E5C3 /* ExerciseDetector+CameraSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExerciseDetector+CameraSetup.swift"; sourceTree = "<group>"; };
 		E15BF02F2C609C300033E5C3 /* ExerciseDetector+ExerciseDetection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExerciseDetector+ExerciseDetection.swift"; sourceTree = "<group>"; };
+		E15BF0352C60B6C30033E5C3 /* InbodyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InbodyData.swift; sourceTree = "<group>"; };
+		E15BF0372C60B8510033E5C3 /* InbodyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InbodyViewModel.swift; sourceTree = "<group>"; };
+		E15BF03B2C60BAC10033E5C3 /* TrendAnalysisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendAnalysisView.swift; sourceTree = "<group>"; };
 		E1AEFC922C4D10AD000D6441 /* AlbumMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumMainView.swift; sourceTree = "<group>"; };
 		E1AEFC942C4D10BE000D6441 /* AlbumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumView.swift; sourceTree = "<group>"; };
 		E1AEFC962C4D2E69000D6441 /* AlbumDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailView.swift; sourceTree = "<group>"; };
@@ -269,7 +275,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8FE8FB392C60BD14009CFAE9 /* Alamofire in Frameworks */,
+				8F0ECAAA2C60EDFA0050FD88 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,8 +354,9 @@
 			children = (
 				E10FD9AD2C4C16AA00D80139 /* ProfileHeaderView.swift */,
 				3E9D1FD42C4E346E00302F7E /* ProfileSelectView.swift */,
-				E10FD9B12C4CC06000D80139 /* InbodyGraphView.swift */,
+				E10FD9B12C4CC06000D80139 /* InbodyChartView.swift */,
 				E1AEFC942C4D10BE000D6441 /* AlbumView.swift */,
+				E15BF03B2C60BAC10033E5C3 /* TrendAnalysisView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -359,6 +366,7 @@
 			children = (
 				3E5F3EFB2C5B57A9007023DC /* ProfileSelectViewModel.swift */,
 				E15BF01E2C5FBE3C0033E5C3 /* EyeBodyPhotoViewModel.swift */,
+				E15BF0372C60B8510033E5C3 /* InbodyViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -369,6 +377,7 @@
 				3E5F3EFD2C5B94CA007023DC /* AlbumData.swift */,
 				3E5F3EFE2C5B94CA007023DC /* PhotoData.swift */,
 				E15BF01C2C5FBB190033E5C3 /* EyeBodyPhoto.swift */,
+				E15BF0352C60B6C30033E5C3 /* InbodyData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -737,7 +746,7 @@
 			);
 			name = FebirdApp;
 			packageProductDependencies = (
-				8FE8FB382C60BD14009CFAE9 /* Alamofire */,
+				8F0ECAA92C60EDFA0050FD88 /* Alamofire */,
 			);
 			productName = FebirdApp;
 			productReference = 3EF6F0492C36937E00EEF18F /* FebirdApp.app */;
@@ -812,8 +821,8 @@
 			);
 			mainGroup = 3EF6F0402C36937D00EEF18F;
 			packageReferences = (
-				3E3B9A842C5B2CDF001F2852 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */,
-				8FE8FB372C60BD13009CFAE9 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				8F0ECAA82C60EDFA0050FD88 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				8F0ECAAB2C60EE020050FD88 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */,
 			);
 			productRefGroup = 3EF6F04A2C36937E00EEF18F /* Products */;
 			projectDirPath = "";
@@ -923,13 +932,15 @@
 				8F92DF7E2C4BA9750071F336 /* ExerciseGuideListView.swift in Sources */,
 				8FE8FB3B2C60BDB3009CFAE9 /* AuthViewModel.swift in Sources */,
 				E24CF94E2C4F887100D1548E /* CustomToggle.swift in Sources */,
+				E15BF03C2C60BAC10033E5C3 /* TrendAnalysisView.swift in Sources */,
 				E12911BB2C48EDFE009A92F7 /* PhotoPicker.swift in Sources */,
 				8F92DF952C4D74A10071F336 /* ExerciseGraduationView.swift in Sources */,
+				E15BF0382C60B8510033E5C3 /* InbodyViewModel.swift in Sources */,
 				E1BB0D5C2C47B15A002565B2 /* OnboardingProfileSelectionView.swift in Sources */,
 				E15BF0272C609A5E0033E5C3 /* ExerciseDetector.swift in Sources */,
 				3E3B9A872C5B2E3E001F2852 /* View+Extension.swift in Sources */,
 				8F92DF872C4D33870071F336 /* ExerciseTimerSettingView.swift in Sources */,
-				E10FD9B22C4CC06000D80139 /* InbodyGraphView.swift in Sources */,
+				E10FD9B22C4CC06000D80139 /* InbodyChartView.swift in Sources */,
 				3E3B9A892C5B2F62001F2852 /* Constants.swift in Sources */,
 				E10FD9A12C49FFF100D80139 /* EyeBodyView.swift in Sources */,
 				E1BB0D552C47985D002565B2 /* OnboardingGaugeView.swift in Sources */,
@@ -963,6 +974,7 @@
 				E1BB0D622C48A875002565B2 /* InbodyAddView.swift in Sources */,
 				E2FDD2572C4B93AF004067EF /* WeeklyCalendar.swift in Sources */,
 				3E3B9A8E2C5B500E001F2852 /* SocialLoginView.swift in Sources */,
+				E15BF0362C60B6C30033E5C3 /* InbodyData.swift in Sources */,
 				E1BB0D582C479CF7002565B2 /* OnboardingWelcomView.swift in Sources */,
 				E1AEFC992C4D3F50000D6441 /* EyeBodyMainView.swift in Sources */,
 				3E5F3F032C5C6953007023DC /* ProfileMainView.swift in Sources */,
@@ -1325,15 +1337,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		3E3B9A842C5B2CDF001F2852 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SimplyDanny/SwiftLintPlugins.git";
-			requirement = {
-				kind = upToNextMinorVersion;
-				minimumVersion = 0.55.1;
-			};
-		};
-		8FE8FB372C60BD13009CFAE9 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		8F0ECAA82C60EDFA0050FD88 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
@@ -1341,12 +1345,20 @@
 				minimumVersion = 5.9.1;
 			};
 		};
+		8F0ECAAB2C60EE020050FD88 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SimplyDanny/SwiftLintPlugins.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 0.55.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		8FE8FB382C60BD14009CFAE9 /* Alamofire */ = {
+		8F0ECAA92C60EDFA0050FD88 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 8FE8FB372C60BD13009CFAE9 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = 8F0ECAA82C60EDFA0050FD88 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
