@@ -80,6 +80,13 @@
 		E12911BD2C48FDBA009A92F7 /* InbodyFixView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12911BC2C48FDBA009A92F7 /* InbodyFixView.swift */; };
 		E15BF01D2C5FBB190033E5C3 /* EyeBodyPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15BF01C2C5FBB190033E5C3 /* EyeBodyPhoto.swift */; };
 		E15BF01F2C5FBE3C0033E5C3 /* EyeBodyPhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15BF01E2C5FBE3C0033E5C3 /* EyeBodyPhotoViewModel.swift */; };
+		E15BF0232C6097CC0033E5C3 /* JointOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15BF0222C6097CC0033E5C3 /* JointOverlayView.swift */; };
+		E15BF0252C6097EE0033E5C3 /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15BF0242C6097EE0033E5C3 /* CameraPreview.swift */; };
+		E15BF0272C609A5E0033E5C3 /* ExerciseDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15BF0262C609A5E0033E5C3 /* ExerciseDetector.swift */; };
+		E15BF02A2C609ACC0033E5C3 /* ExerciseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15BF0292C609ACC0033E5C3 /* ExerciseType.swift */; };
+		E15BF02C2C609AF80033E5C3 /* ExerciseState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15BF02B2C609AF80033E5C3 /* ExerciseState.swift */; };
+		E15BF02E2C609B6B0033E5C3 /* ExerciseDetector+CameraSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15BF02D2C609B6B0033E5C3 /* ExerciseDetector+CameraSetup.swift */; };
+		E15BF0302C609C300033E5C3 /* ExerciseDetector+ExerciseDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15BF02F2C609C300033E5C3 /* ExerciseDetector+ExerciseDetection.swift */; };
 		E1AEFC932C4D10AD000D6441 /* AlbumMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AEFC922C4D10AD000D6441 /* AlbumMainView.swift */; };
 		E1AEFC952C4D10BE000D6441 /* AlbumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AEFC942C4D10BE000D6441 /* AlbumView.swift */; };
 		E1AEFC972C4D2E69000D6441 /* AlbumDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AEFC962C4D2E69000D6441 /* AlbumDetailView.swift */; };
@@ -210,6 +217,13 @@
 		E12911BC2C48FDBA009A92F7 /* InbodyFixView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InbodyFixView.swift; sourceTree = "<group>"; };
 		E15BF01C2C5FBB190033E5C3 /* EyeBodyPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeBodyPhoto.swift; sourceTree = "<group>"; };
 		E15BF01E2C5FBE3C0033E5C3 /* EyeBodyPhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeBodyPhotoViewModel.swift; sourceTree = "<group>"; };
+		E15BF0222C6097CC0033E5C3 /* JointOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JointOverlayView.swift; sourceTree = "<group>"; };
+		E15BF0242C6097EE0033E5C3 /* CameraPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
+		E15BF0262C609A5E0033E5C3 /* ExerciseDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetector.swift; sourceTree = "<group>"; };
+		E15BF0292C609ACC0033E5C3 /* ExerciseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseType.swift; sourceTree = "<group>"; };
+		E15BF02B2C609AF80033E5C3 /* ExerciseState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseState.swift; sourceTree = "<group>"; };
+		E15BF02D2C609B6B0033E5C3 /* ExerciseDetector+CameraSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExerciseDetector+CameraSetup.swift"; sourceTree = "<group>"; };
+		E15BF02F2C609C300033E5C3 /* ExerciseDetector+ExerciseDetection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExerciseDetector+ExerciseDetection.swift"; sourceTree = "<group>"; };
 		E1AEFC922C4D10AD000D6441 /* AlbumMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumMainView.swift; sourceTree = "<group>"; };
 		E1AEFC942C4D10BE000D6441 /* AlbumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumView.swift; sourceTree = "<group>"; };
 		E1AEFC962C4D2E69000D6441 /* AlbumDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailView.swift; sourceTree = "<group>"; };
@@ -310,6 +324,7 @@
 				8F92DF7D2C4BA9750071F336 /* ExerciseGuideListView.swift */,
 				8F92DF842C4BB0B40071F336 /* ExerciseGuideTextView.swift */,
 				E2CFF2172C4EBED700540500 /* ExerciseRecordListView.swift */,
+				E15BF0242C6097EE0033E5C3 /* CameraPreview.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -355,6 +370,7 @@
 		3E7521A32C48E60F00920BFD /* Exercise */ = {
 			isa = PBXGroup;
 			children = (
+				E15BF0282C609A680033E5C3 /* Extensions */,
 				8FAC18832C4B8C1600CDF7CF /* Models */,
 				8F92DF7F2C4BB0060071F336 /* ViewModels */,
 				3E7521A62C48E6CE00920BFD /* Views */,
@@ -376,6 +392,7 @@
 				E2CFF2152C4EBC5500540500 /* ExerciseRecordView.swift */,
 				E246A8DD2C5EAAF600B86617 /* ExerciseChatBotView.swift */,
 				E246A8DF2C5EC4A200B86617 /* ExerciseCountView.swift */,
+				E15BF0222C6097CC0033E5C3 /* JointOverlayView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -568,6 +585,7 @@
 			children = (
 				8F92DF802C4BB0230071F336 /* ExerciseGuideViewModel.swift */,
 				8F92DF8C2C4D58560071F336 /* ExerciseTimerViewModel.swift */,
+				E15BF0262C609A5E0033E5C3 /* ExerciseDetector.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -576,6 +594,8 @@
 			isa = PBXGroup;
 			children = (
 				8FAC18842C4B8C4200CDF7CF /* ExerciseItem.swift */,
+				E15BF0292C609ACC0033E5C3 /* ExerciseType.swift */,
+				E15BF02B2C609AF80033E5C3 /* ExerciseState.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -601,6 +621,15 @@
 				E1AEFC982C4D3F50000D6441 /* EyeBodyMainView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		E15BF0282C609A680033E5C3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E15BF02D2C609B6B0033E5C3 /* ExerciseDetector+CameraSetup.swift */,
+				E15BF02F2C609C300033E5C3 /* ExerciseDetector+ExerciseDetection.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		E1BB0D532C4797C9002565B2 /* Onboarding */ = {
@@ -852,6 +881,7 @@
 				8F92DF912C4D68B40071F336 /* ExerciseRoutineLogView.swift in Sources */,
 				E2CFF2122C4E9D6300540500 /* InputFieldView.swift in Sources */,
 				8F92DF892C4D4A440071F336 /* TimerButton.swift in Sources */,
+				E15BF0232C6097CC0033E5C3 /* JointOverlayView.swift in Sources */,
 				E26D48B52C48F50D00D63FE7 /* AIMealRecomendationView.swift in Sources */,
 				E24F5E822C48EC3400724DA7 /* MealMainView.swift in Sources */,
 				8F92DF7C2C4B9A390071F336 /* CustomNavigationBar.swift in Sources */,
@@ -861,6 +891,7 @@
 				3E5F3EFC2C5B57A9007023DC /* ProfileSelectViewModel.swift in Sources */,
 				E12911BD2C48FDBA009A92F7 /* InbodyFixView.swift in Sources */,
 				3E7521A52C48E6C700920BFD /* ExerciseMainView.swift in Sources */,
+				E15BF02E2C609B6B0033E5C3 /* ExerciseDetector+CameraSetup.swift in Sources */,
 				8F92DF852C4BB0B40071F336 /* ExerciseGuideTextView.swift in Sources */,
 				E2A2F7E42C4F3C09000AD404 /* SettingsView.swift in Sources */,
 				8FAC18822C4B8BA800CDF7CF /* ExerciseItemView.swift in Sources */,
@@ -868,12 +899,14 @@
 				3E5F3F002C5B94CA007023DC /* AlbumData.swift in Sources */,
 				E246A8E02C5EC4A200B86617 /* ExerciseCountView.swift in Sources */,
 				E2CFF2162C4EBC5500540500 /* ExerciseRecordView.swift in Sources */,
+				E15BF02A2C609ACC0033E5C3 /* ExerciseType.swift in Sources */,
 				8F92DF8D2C4D58570071F336 /* ExerciseTimerViewModel.swift in Sources */,
 				8F92DF7E2C4BA9750071F336 /* ExerciseGuideListView.swift in Sources */,
 				E24CF94E2C4F887100D1548E /* CustomToggle.swift in Sources */,
 				E12911BB2C48EDFE009A92F7 /* PhotoPicker.swift in Sources */,
 				8F92DF952C4D74A10071F336 /* ExerciseGraduationView.swift in Sources */,
 				E1BB0D5C2C47B15A002565B2 /* OnboardingProfileSelectionView.swift in Sources */,
+				E15BF0272C609A5E0033E5C3 /* ExerciseDetector.swift in Sources */,
 				3E3B9A872C5B2E3E001F2852 /* View+Extension.swift in Sources */,
 				8F92DF872C4D33870071F336 /* ExerciseTimerSettingView.swift in Sources */,
 				E10FD9B22C4CC06000D80139 /* InbodyGraphView.swift in Sources */,
@@ -889,6 +922,7 @@
 				E24CF9542C4F99E500D1548E /* ProfileSettingView.swift in Sources */,
 				E1BB0D5E2C47F9F7002565B2 /* OnboardingSelectGenderButton.swift in Sources */,
 				8F8A77EC2C5F554F008E61D7 /* UserProfile.swift in Sources */,
+				E15BF0252C6097EE0033E5C3 /* CameraPreview.swift in Sources */,
 				8F92DF8B2C4D506E0071F336 /* ExerciseRestTimerView.swift in Sources */,
 				E26D48B92C49F18800D63FE7 /* MemoRow.swift in Sources */,
 				E26D48BB2C49F93900D63FE7 /* MealChatBotView.swift in Sources */,
@@ -898,12 +932,14 @@
 				E10FD9B02C4CC01700D80139 /* InbodyMainView.swift in Sources */,
 				8F8A77EE2C5F56BD008E61D7 /* ProfileSettingViewModel.swift in Sources */,
 				E2CFF20E2C4E999E00540500 /* Message.swift in Sources */,
+				E15BF0302C609C300033E5C3 /* ExerciseDetector+ExerciseDetection.swift in Sources */,
 				E1AEFC952C4D10BE000D6441 /* AlbumView.swift in Sources */,
 				3E9D1FD52C4E346E00302F7E /* ProfileSelectView.swift in Sources */,
 				E12911B92C48DC82009A92F7 /* CameraActionSheet.swift in Sources */,
 				E15BF01F2C5FBE3C0033E5C3 /* EyeBodyPhotoViewModel.swift in Sources */,
 				E10FD99F2C49FECB00D80139 /* OnboardingLoadingView.swift in Sources */,
 				8F8A77F02C5F734B008E61D7 /* SettingHeaderView.swift in Sources */,
+				E15BF02C2C609AF80033E5C3 /* ExerciseState.swift in Sources */,
 				E1BB0D622C48A875002565B2 /* InbodyAddView.swift in Sources */,
 				E2FDD2572C4B93AF004067EF /* WeeklyCalendar.swift in Sources */,
 				3E3B9A8E2C5B500E001F2852 /* SocialLoginView.swift in Sources */,
@@ -1100,7 +1136,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FebirdApp/Resources/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "사용자가 인바디 사진과 프로필 사진을 등록하기 위해 권한이 필요합니다.";
+				INFOPLIST_KEY_NSCameraUsageDescription = "사용자의 운동 움직임을 감지하고 횟수를 세주기 위해 권한이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1132,7 +1168,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FebirdApp/Resources/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "사용자가 인바디 사진과 프로필 사진을 등록하기 위해 권한이 필요합니다.";
+				INFOPLIST_KEY_NSCameraUsageDescription = "사용자의 운동 움직임을 감지하고 횟수를 세주기 위해 권한이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
