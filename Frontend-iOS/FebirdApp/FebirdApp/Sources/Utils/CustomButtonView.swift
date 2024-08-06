@@ -12,7 +12,6 @@ enum CustomButtonStyle {
     case black
     case warning
     case sharing
-    case kakao
 
     var backgroundColor: Color {
         switch self {
@@ -20,7 +19,6 @@ enum CustomButtonStyle {
         case .black: return .gray100
         case .warning: return .red60
         case .sharing: return .orange40
-        case .kakao: return Color(red: 0.99, green: 0.9, blue: 0.02)
         }
     }
 
@@ -28,7 +26,6 @@ enum CustomButtonStyle {
         switch self {
         case .orange, .black, .sharing, .warning:
             return .white
-        case .kakao : return Color(red: 0.24, green: 0.12, blue: 0.12)
         }
     }
 }
@@ -70,7 +67,7 @@ struct CustomButtonView: View {
 }
 
 #Preview {
-    CustomButtonView(image: "cameraButton", title: "kakao Login", style: .kakao) {
+    CustomButtonView(image: "cameraButton", title: "kakao Login", style: .orange) {
         print("Warning button tapped")
     }
 }

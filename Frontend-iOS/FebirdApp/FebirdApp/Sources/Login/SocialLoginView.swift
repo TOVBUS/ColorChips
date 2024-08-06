@@ -40,10 +40,6 @@ struct SocialLoginView: View {
                     .frame(width: 200, height: 200)
                     .padding(.vertical, 15)
 
-                CustomButtonView(image: "kakaoIcon", title: "Kakao Sign In", style: .kakao) {
-                    // TODO: 로그인 로직 추가
-                }
-
                 CustomButtonView(title: "Apple Sign In") {
                     // TODO: 로그인 로직 추가
                 }
