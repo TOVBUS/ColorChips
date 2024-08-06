@@ -8,9 +8,7 @@
 import SwiftUI
 
 struct WeeklyCalendar: View {
-
     @State private var selectedDate = Date()
-
     private let calendar = Calendar.current
     private let today = Date()
 
