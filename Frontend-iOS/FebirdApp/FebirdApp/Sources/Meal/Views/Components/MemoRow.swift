@@ -26,9 +26,9 @@ struct MemoRow: View {
         HStack(spacing: 8) {
             Image(uiImage: mealImage ?? UIImage(named: "feoFace")!)
                 .resizable()
-                .scaledToFit()
-                .frame(height: 70)
-                .cornerRadius(8)
+                .scaledToFill()
+                .frame(width: 70, height: 70)
+                .cornerRadius(10)
 
             VStack(alignment: .leading, spacing: 8) {
                 Text(mealTime)

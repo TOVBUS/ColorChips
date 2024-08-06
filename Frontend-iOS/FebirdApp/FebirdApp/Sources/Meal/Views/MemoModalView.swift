@@ -74,14 +74,8 @@ struct MemoModalView: View {
                 Image(uiImage: image ?? UIImage(named: "uploadIcon")!)
                     .resizable()
                     .scaledToFit()
-                    .frame(height: image == UIImage(named: "uploadIcon") ? 50 : 200)
+                    .frame(height: image == nil || image == UIImage(named: "uploadIcon") ? 70 : 200)
                     .cornerRadius(10)
-
-                if image == UIImage(named: "uploadIcon") {
-                    Text("이미지 등록하기")
-                        .font(.customFont(size: 14, weight: .medium))
-                        .foregroundStyle(.gray60)
-                }
             }
         }
         .padding()
