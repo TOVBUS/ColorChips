@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct MealMainheaderView: View {
+    @Binding var selectedDate: Date
+
     var body: some View {
         VStack {
             Text("나의 식단 기록")
@@ -15,7 +17,7 @@ struct MealMainheaderView: View {
                 .foregroundStyle(.white)
                 .padding(.top, 60)
 
-            WeeklyCalendar()
+            WeeklyCalendar(selectedDate: $selectedDate)
                 .padding(.bottom, 24)
         }
         .background(
@@ -35,5 +37,5 @@ struct MealMainheaderView: View {
 }
 
 #Preview {
-    MealMainheaderView()
+    MealMainheaderView(selectedDate: .constant(Date()))
 }

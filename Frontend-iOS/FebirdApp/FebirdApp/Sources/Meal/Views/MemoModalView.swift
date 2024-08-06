@@ -6,24 +6,31 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct MemoModalView: View {
     @Environment(\.presentationMode) var presentationMode
+    @ObservedObject var viewModel: MemoViewModel
+    let date: Date
+    let mealType: MealType
     @State private var showActionSheet = false
     @State private var showImagePicker = false
     @State private var showCamera = false
-    @Binding var image: UIImage?
-    @Binding var contentText: String
-    @Binding var titleText: String
-    @State private var temporaryTitleText: String
-    @State private var temporaryContentText: String
+    @State private var image: UIImage?
+    @State private var temporaryTitleText: String = ""
+    @State private var temporaryContentText: String = ""
 
-    init(image: Binding<UIImage?>, contentText: Binding<String>, titleText: Binding<String>) {
-        self._image = image
-        self._contentText = contentText
-        self._titleText = titleText
-        self._temporaryTitleText = State(initialValue: titleText.wrappedValue)
-        self._temporaryContentText = State(initialValue: contentText.wrappedValue)
+    init(viewModel: MemoViewModel, date: Date, mealType: MealType) {
+        self.viewModel = viewModel
+        self.date = date
+        self.mealType = mealType
+        if let mealMemo = viewModel.getMealMemo(for: date, mealType: mealType) {
+            _temporaryTitleText = State(initialValue: mealMemo.title ?? "")
+            _temporaryContentText = State(initialValue: mealMemo.content ?? "")
+            if let imageData = mealMemo.image {
+                _image = State(initialValue: UIImage(data: imageData))
+            }
+        }
     }
 
     var body: some View {
@@ -46,15 +53,14 @@ struct MemoModalView: View {
             CameraView(image: $image)
         }
     }
-    // MARK: - 식단 기록
+
     private var headerView: some View {
         HStack {
             Text("식단을 기록하세요")
                 .font(.customFont(size: 20, weight: .bold))
             Spacer()
             Button("추가하기") {
-                titleText = temporaryTitleText
-                contentText = temporaryContentText
+                viewModel.saveMealMemo(for: date, mealType: mealType, image: image, title: temporaryTitleText, content: temporaryContentText)
                 presentationMode.wrappedValue.dismiss()
             }
             .padding(.horizontal, 15)
@@ -122,5 +128,13 @@ struct MemoModalView: View {
 }
 
 #Preview {
-    MemoModalView(image: .constant(UIImage(contentsOfFile: "feoFace")), contentText: .constant("content"), titleText: .constant("title"))
+    let mockModelContext = ModelContext(try! ModelContainer(for: DailyMemo.self, MealMemo.self))
+    let mockViewModel = MemoViewModel(modelContext: mockModelContext)
+
+    // 미리 몇 가지 데이터를 추가합니다
+    let today = Date()
+    mockViewModel.saveMealMemo(for: today, mealType: .breakfast, image: UIImage(named: "sampleBreakfast"), title: "건강한 아침", content: "오늘 아침은 그릭 요거트와 과일 샐러드")
+
+    return MemoModalView(viewModel: mockViewModel, date: today, mealType: .lunch)
+        .environmentObject(mockViewModel)
 }
