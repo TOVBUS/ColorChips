@@ -8,9 +8,15 @@
 import SwiftUI
 
 struct ProfileHeaderView: View {
-
     @EnvironmentObject private var profileNavigationPathFinder: NavigationPathFinder<ProfileViewOptions>
     @State private var showSettingView = false
+
+    let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMMM d, yyyy"
+        formatter.locale = Locale(identifier: "en_US")
+        return formatter
+    }()
 
     var body: some View {
         ZStack {
@@ -25,8 +31,8 @@ struct ProfileHeaderView: View {
 
                         VStack(alignment: .leading) {
                             HStack {
-                                VStack {
-                                    Text("JULY 16, 2024")
+                                VStack {// JULY 16, 2024
+                                    Text(dateFormatter.string(from: Date()).uppercased())
                                         .font(.customFont(size: 10, weight: .bold, language: .english))
                                         .kerning(1)
                                         .multilineTextAlignment(.center)
@@ -48,7 +54,6 @@ struct ProfileHeaderView: View {
 
                                 VStack {
                                     Button(action: {
-                                        // TODO: 설정뷰로 이동
                                         profileNavigationPathFinder.addPath(option: .settingView)
                                     }, label: {
                                         Image("settingIcon")
@@ -66,6 +71,8 @@ struct ProfileHeaderView: View {
                                         .font(.customFont(size: 12, weight: .regular))
                                         .multilineTextAlignment(.center)
                                         .foregroundColor(.white)
+                                        .lineLimit(1)
+                                        .minimumScaleFactor(0.5)
                                 }
                                 .padding(0)
 
@@ -81,6 +88,8 @@ struct ProfileHeaderView: View {
                                         .font(.customFont(size: 12, weight: .regular))
                                         .multilineTextAlignment(.center)
                                         .foregroundColor(.white)
+                                        .lineLimit(1)
+                                        .minimumScaleFactor(0.5)
                                 }
                                 Image("SandowCore")
 
@@ -94,6 +103,8 @@ struct ProfileHeaderView: View {
                                         .font(.customFont(size: 12, weight: .regular))
                                         .multilineTextAlignment(.center)
                                         .foregroundColor(.white)
+                                        .lineLimit(1)
+                                        .minimumScaleFactor(0.5)
                                 }
                             }
                         }

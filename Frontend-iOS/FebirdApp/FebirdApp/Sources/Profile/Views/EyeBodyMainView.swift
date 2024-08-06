@@ -24,7 +24,7 @@ struct EyeBodyMainView: View {
                         VStack(alignment: .leading) {
                             Text(photo.date)
                                 .font(.customFont(size: 20, weight: .bold))
-                                .foregroundStyle(.black)
+                                .foregroundStyle(.gray100)
                             ScrollView(.horizontal, showsIndicators: false) {
                                 HStack(spacing: 10) {
                                     ForEach(0..<4, id: \.self) { index in

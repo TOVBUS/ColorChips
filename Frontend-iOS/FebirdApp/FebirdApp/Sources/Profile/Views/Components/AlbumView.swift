@@ -15,7 +15,7 @@ func generateDummyAlbums() -> [AlbumData] {
 
     return zip(albumTitles, photoCounts).map { title, count in
         let photos = (1...count).map { day -> PhotoData in
-            let imageName = Bool.random() ? "photo_\(title)_day\(day)" : "peoLogo"
+            let imageName = "peoLogo"
             return PhotoData(day: day, imageName: imageName)
         }
         return AlbumData(title: title, photos: photos)
@@ -46,11 +46,12 @@ struct AlbumView: View {
             }
 
             if isExpanded {
-                LazyVGrid(columns: [GridItem(.adaptive(minimum: 100))], spacing: 10) {
+                LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 3), spacing: 10) {
                     ForEach(album.photos) { photo in
                         VStack {
                             Text("Day \(photo.day)")
                                 .font(.customFont(size: 14, weight: .regular))
+                                .foregroundStyle(.black)
                             Image(photo.imageName)
                                 .resizable()
                                 .scaledToFit()
