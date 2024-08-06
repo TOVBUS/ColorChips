@@ -15,8 +15,16 @@ struct MemoModalView: View {
     @Binding var image: UIImage?
     @Binding var contentText: String
     @Binding var titleText: String
-    @State private var temporaryTitleText = ""
-    @State private var temporaryContentText = ""
+    @State private var temporaryTitleText: String
+    @State private var temporaryContentText: String
+
+    init(image: Binding<UIImage?>, contentText: Binding<String>, titleText: Binding<String>) {
+        self._image = image
+        self._contentText = contentText
+        self._titleText = titleText
+        self._temporaryTitleText = State(initialValue: titleText.wrappedValue)
+        self._temporaryContentText = State(initialValue: contentText.wrappedValue)
+    }
 
     var body: some View {
         ScrollView {
@@ -101,9 +109,7 @@ struct MemoModalView: View {
 
                 HStack {
                     Spacer()
-
                     Image("fileIcon")
-
                     Text("\(temporaryContentText.count) / 200")
                         .font(.customFont(size: 16, weight: .medium))
                         .foregroundStyle(.gray40)
@@ -121,11 +127,6 @@ struct MemoModalView: View {
     }
 }
 
-extension View {
-    func hideKeyboard() {
-        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-    }
-}
 #Preview {
     MemoModalView(image: .constant(UIImage(contentsOfFile: "feoFace")), contentText: .constant("content"), titleText: .constant("title"))
 }

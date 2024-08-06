@@ -8,12 +8,19 @@
 import SwiftUI
 
 struct MemoRow: View {
-    @State private var titleText = ""
-    @State private var contentText = ""
+    @State private var titleText: String
+    @State private var contentText: String
     @State private var showModal = false
     @State private var showFullText = false
     @State private var mealImage: UIImage?
     var mealTime: String
+
+    init(mealTime: String, initialTitle: String = "", initialContent: String = "", initialImage: UIImage? = nil) {
+        self.mealTime = mealTime
+        self._titleText = State(initialValue: initialTitle)
+        self._contentText = State(initialValue: initialContent)
+        self._mealImage = State(initialValue: initialImage)
+    }
 
     var body: some View {
         HStack(spacing: 8) {
@@ -47,7 +54,6 @@ struct MemoRow: View {
                         }
                 }
             }
-
             Spacer()
 
             Button(action: {
@@ -68,6 +74,7 @@ struct MemoRow: View {
         }
     }
 }
+
 #Preview {
     MemoRow(mealTime: "점심")
 }
