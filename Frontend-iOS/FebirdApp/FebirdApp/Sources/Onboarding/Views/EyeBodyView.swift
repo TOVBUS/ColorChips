@@ -9,7 +9,8 @@ import SwiftUI
 
 struct EyeBodyView: View {
     @EnvironmentObject var navigationPathFinder: NavigationPathFinder<OnboardingViewOptions>
-    @EnvironmentObject var viewModel: EyeBodyPhotoViewModel
+    @StateObject private var viewModel = EyeBodyPhotoViewModel()
+    @Environment(\.modelContext) private var modelContext
 
     var isOnboarding: Bool = true
     @State private var selectedImages: [UIImage?] = [nil, nil, nil, nil]
@@ -55,13 +56,14 @@ struct EyeBodyView: View {
                     .padding(.bottom, 44)
 
                 CustomButtonView(title: "저장하기") {
-                    // TODO: 저장 로직 필요
                     let dateFormatter = DateFormatter()
                     dateFormatter.dateFormat = "yyyy년 MM월 dd일"
                     let currentDate = dateFormatter.string(from: Date())
 
-                    viewModel.saveOrUpdateEyeBodyPhoto(date: currentDate, images: selectedImages)
-                    navigationPathFinder.addPath(option: .onboardingEndView)
+                    viewModel.saveOrUpdateEyeBodyPhoto(date: currentDate, images: selectedImages, context: modelContext)
+                    if isOnboarding {
+                        navigationPathFinder.addPath(option: .onboardingEndView)
+                    }
                 }
 
                 if isOnboarding {
@@ -88,8 +90,8 @@ struct EyeBodyView: View {
             .fullScreenCover(isPresented: $showCamera) {
                 CameraView(image: $selectedImages[currentImageIndex])
             }
-        .navigationBarBackButtonHidden()
         }
+        .navigationBarBackButtonHidden()
     }
 
     func getPlaceholder(for index: Int) -> String {
@@ -97,7 +99,7 @@ struct EyeBodyView: View {
         case 0: return "정면 사진\n추가하기"
         case 1: return "후면 사진\n추가하기"
         case 2: return "좌측면 사진\n추가하기"
-        case 3: return"우측면 사진\n추가하기"
+        case 3: return "우측면 사진\n추가하기"
         default: return "사진\n추가하기"
         }
     }

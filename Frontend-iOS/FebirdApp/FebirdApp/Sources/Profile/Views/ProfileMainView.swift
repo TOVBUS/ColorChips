@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ProfileMainView: View {
-
     @EnvironmentObject var tabViewModel: TabViewModel
     @StateObject var profileSelectViewModel = ProfileSelectViewModel()
     @Environment(\.modelContext) private var modelContext
@@ -27,7 +26,7 @@ struct ProfileMainView: View {
                     case .inbody:
                         InbodyMainView(inbodys: inbodyDummyData)
                     case .eyeBody:
-                        EyeBodyMainView(viewModel: EyeBodyPhotoViewModel(context: modelContext))
+                        EyeBodyMainView()
                     }
                 }
                 .padding(.top, 24)

@@ -10,7 +10,8 @@ import SwiftUI
 let eyeBodyDummy: [EyeBodyPhoto] = [EyeBodyPhoto(date: "2024년 7월 17일")]
 
 struct EyeBodyMainView: View {
-    @ObservedObject var viewModel: EyeBodyPhotoViewModel
+    @Environment(\.modelContext) private var modelContext
+    @StateObject private var viewModel = EyeBodyPhotoViewModel()
     @State private var selectedDate: String?
 
     var body: some View {
@@ -46,7 +47,7 @@ struct EyeBodyMainView: View {
             }
         }
         .onAppear {
-            viewModel.fetchEyeBodyPhotos()
+            viewModel.fetchEyeBodyPhotos(context: modelContext)
         }
     }
 }

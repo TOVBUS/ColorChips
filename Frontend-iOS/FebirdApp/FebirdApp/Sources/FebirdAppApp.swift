@@ -20,7 +20,7 @@ struct FebirdAppApp: App {
 
     init() {
         do {
-            modelContainer = try ModelContainer(for: UserProfile.self)
+            modelContainer = try ModelContainer(for: UserProfile.self, EyeBodyPhoto.self)
         } catch {
             fatalError("Could not initialize ModelContainer: \(error)")
         }
