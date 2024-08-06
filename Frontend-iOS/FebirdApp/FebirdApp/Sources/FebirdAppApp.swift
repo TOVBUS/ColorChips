@@ -28,48 +28,48 @@ struct FebirdAppApp: App {
 
     var body: some Scene {
         WindowGroup {
-            //SocialLoginView()
-            if onboardingNavigationPathFinder.isFirstEnteredApp {
-                NavigationStack(path: $onboardingNavigationPathFinder.path) {
-                    OnboardingWelcomView()
-                        .navigationDestination(for: OnboardingViewOptions.self) { option in
-                            option.view()
-                        }
-                }
-                .environmentObject(onboardingNavigationPathFinder)
-            } else {
-                ZStack(alignment: .bottom) {
-                    switch tabViewModel.selectedTab {
-                    case .meal:
-                        NavigationStack(path: $mealNavigationPathFinder.path) {
-                            MealMainView()
-                                .navigationDestination(for: MealViewOptions.self) { option in
-                                    option.view()
-                                }
-                        }
-                    case .exercise:
-                        NavigationStack(path: $exerciseNavigationPathFinder.path) {
-                            ExerciseMainView()
-                                .navigationDestination(for: ExerciseViewOptions.self) { option in
-                                    option.view()
-                                }
-                        }
-                    case .profile:
-                        NavigationStack(path: $profileNavigationPathFinder.path) {
-                            ProfileMainView()
-                                .navigationDestination(for: ProfileViewOptions.self) { option in
-                                    option.view()
-                                }
-                        }
-                    }
-                    CustomTabBarView()
-                }
-                .environmentObject(tabViewModel)
-                .environmentObject(mealNavigationPathFinder)
-                .environmentObject(exerciseNavigationPathFinder)
-                .environmentObject(profileNavigationPathFinder)
-            }
-        }
-        .modelContainer(modelContainer)
+            SocialLoginView() }
+//            if onboardingNavigationPathFinder.isFirstEnteredApp {
+//                NavigationStack(path: $onboardingNavigationPathFinder.path) {
+//                    OnboardingWelcomView()
+//                        .navigationDestination(for: OnboardingViewOptions.self) { option in
+//                            option.view()
+//                        }
+//                }
+//                .environmentObject(onboardingNavigationPathFinder)
+//            } else {
+//                ZStack(alignment: .bottom) {
+//                    switch tabViewModel.selectedTab {
+//                    case .meal:
+//                        NavigationStack(path: $mealNavigationPathFinder.path) {
+//                            MealMainView()
+//                                .navigationDestination(for: MealViewOptions.self) { option in
+//                                    option.view()
+//                                }
+//                        }
+//                    case .exercise:
+//                        NavigationStack(path: $exerciseNavigationPathFinder.path) {
+//                            ExerciseMainView()
+//                                .navigationDestination(for: ExerciseViewOptions.self) { option in
+//                                    option.view()
+//                                }
+//                        }
+//                    case .profile:
+//                        NavigationStack(path: $profileNavigationPathFinder.path) {
+//                            ProfileMainView()
+//                                .navigationDestination(for: ProfileViewOptions.self) { option in
+//                                    option.view()
+//                                }
+//                        }
+//                    }
+//                    CustomTabBarView()
+//                }
+//                .environmentObject(tabViewModel)
+//                .environmentObject(mealNavigationPathFinder)
+//                .environmentObject(exerciseNavigationPathFinder)
+//                .environmentObject(profileNavigationPathFinder)
+//            }
+//        }
+//        .modelContainer(modelContainer)
     }
 }

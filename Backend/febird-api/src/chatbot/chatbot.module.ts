@@ -1,10 +1,9 @@
-// import { Module } from '@nestjs/common';
-// import { ChatbotService } from './chatbot.service';
-// import { ChatbotController } from './chatbot.controller';
+import { Module } from '@nestjs/common';
+import { ChatbotController } from './chatbot.controller';
+import { OpenAIModule } from './openai.module';
 
-// @Module({
-//   providers: [ChatbotService],
-//   exports: [ChatbotService],
-//   controllers: [ChatbotController],
-// })
-// export class ChatbotModule {}
+@Module({
+  imports: [OpenAIModule],
+  controllers: [ChatbotController],
+})
+export class ChatbotModule {}

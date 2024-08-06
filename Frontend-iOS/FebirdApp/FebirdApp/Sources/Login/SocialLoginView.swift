@@ -52,7 +52,7 @@ struct SocialLoginView: View {
                         appleLoginViewModel.startSignInWithAppleFlow()
                     }
                 
-                // 애플 로그인 후 얻은 정보 보여주기
+                // 애플 로그인 후 얻은 정보 보여주기 -> Test용 나중에 지우기
                 if !appleLoginViewModel.userIdentifier.isEmpty {
                     Text("User ID: \(appleLoginViewModel.userIdentifier)")
                     Text("User Name: \(appleLoginViewModel.userName)")
@@ -62,11 +62,6 @@ struct SocialLoginView: View {
                         loginViewModel.loginWithApple(appleID: appleLoginViewModel.userIdentifier)
                     }
                 }
-              
-                CustomButtonView(title: "Apple Sign In") {
-                    // TODO: 로그인 로직 추가
-                }.padding(.top, 40)
-
 
                 Button(action: {
                     if let url = URL(string: "https://qsgm7ewnrc9l.sg.larksuite.com/wiki/QBgKwS3NvifpysksdIZlK8J9gvb?from=from_copylink") {
