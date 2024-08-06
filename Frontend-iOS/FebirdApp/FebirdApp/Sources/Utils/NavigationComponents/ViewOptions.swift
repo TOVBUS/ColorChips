@@ -62,6 +62,7 @@ enum ProfileViewOptions: Hashable, ViewOptions {
     case profileMainView
     case settingView
     case profileSettingView
+    case eyeBodyView(isOnboarding: Bool)
 
     @ViewBuilder func view() -> some View {
         switch self {
@@ -72,6 +73,8 @@ enum ProfileViewOptions: Hashable, ViewOptions {
         case .profileSettingView:
             ProfileSettingView()
                 .environmentObject(ProfileSettingViewModel())
+        case .eyeBodyView(let isOnboarding):
+            EyeBodyView(isOnboarding: isOnboarding)
         }
     }
 }
