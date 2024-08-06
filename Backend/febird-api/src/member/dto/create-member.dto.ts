@@ -1,21 +1,21 @@
 import { IsNotEmpty, IsString, IsInt, IsOptional } from 'class-validator';
 
 export class CreateMemberDto {
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
-  nickname: string;
+  nickname?: string;
 
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
-  profile_image: string;
+  profile_image?: string;
 
-  @IsNotEmpty()
+  @IsOptional()
   @IsInt()
-  age: number;
+  age?: number;
 
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
-  gender: string;
+  gender?: string;
 
   @IsOptional()
   @IsString()

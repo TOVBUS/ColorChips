@@ -21,19 +21,19 @@ __decorate([
     __metadata("design:type", Number)
 ], Member.prototype, "member_id", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ length: 50 }),
+    (0, typeorm_1.Column)({ length: 50, nullable: true }),
     __metadata("design:type", String)
 ], Member.prototype, "nickname", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ length: 255 }),
+    (0, typeorm_1.Column)({ length: 255, nullable: true }),
     __metadata("design:type", String)
 ], Member.prototype, "profile_image", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    (0, typeorm_1.Column)({ nullable: true }),
     __metadata("design:type", Number)
 ], Member.prototype, "age", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ length: 10 }),
+    (0, typeorm_1.Column)({ length: 10, nullable: true }),
     __metadata("design:type", String)
 ], Member.prototype, "gender", void 0);
 __decorate([
@@ -58,7 +58,6 @@ __decorate([
 ], Member.prototype, "histories", void 0);
 exports.Member = Member = __decorate([
     (0, typeorm_1.Entity)(),
-    (0, typeorm_1.Unique)(['nickname']),
     (0, typeorm_1.Unique)(['appleID']),
     (0, typeorm_1.Unique)(['kakaoID'])
 ], Member);

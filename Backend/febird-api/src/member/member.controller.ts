@@ -63,15 +63,17 @@ export class MemberController {
     }
   }
 
-  // Apple 로그인 엔드포인트 추가
   @Post('apple-login')
   async appleLogin(@Body('appleID') appleID: string, @Res() res: Response) {
     try {
+      // 애플 ID로 회원을 조회
       let member = await this.memberService.findByAppleId(appleID);
+      
+      // 회원이 없으면 신규 회원 등록
       if (!member) {
-      // 신규 회원 등록
-      member = await this.memberService.create({ appleID } as CreateMemberDto);
-    }
+        member = await this.memberService.create({ appleID } as CreateMemberDto);
+      }
+  
 
     // JWT 토큰 생성
       const token = jwt.sign({ member_id: member.member_id }, 'your-secret-key', { expiresIn: '1h' });
