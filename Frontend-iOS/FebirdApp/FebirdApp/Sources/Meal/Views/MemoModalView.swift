@@ -59,36 +59,40 @@ struct MemoModalView: View {
     }
     // MARK: - 이미지 업로드
     private var imageUploadView: some View {
-            Button(action: {
-                showActionSheet = true
-            }) {
-                VStack {
-                    Image(uiImage: image ?? UIImage(named: "uploadIcon")!)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(height: image == UIImage(named: "uploadIcon") ? 50 : 200)
-                        .cornerRadius(10)
+        Button(action: {
+            showActionSheet = true
+        }) {
+            VStack {
+                Image(uiImage: image ?? UIImage(named: "uploadIcon")!)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(height: image == UIImage(named: "uploadIcon") ? 50 : 200)
+                    .cornerRadius(10)
 
-                    if image == UIImage(named: "uploadIcon") {
-                        Text("이미지 등록하기")
-                            .font(.customFont(size: 14, weight: .medium))
-                            .foregroundStyle(.gray60)
-                    }
+                if image == UIImage(named: "uploadIcon") {
+                    Text("이미지 등록하기")
+                        .font(.customFont(size: 14, weight: .medium))
+                        .foregroundStyle(.gray60)
                 }
             }
-            .padding()
-            .frame(maxWidth: .infinity)
-            .background(.white)
-            .overlay(
-                RoundedRectangle(cornerRadius: 32)
-                    .stroke(.gray100)
-            )
         }
+        .padding()
+        .frame(maxWidth: .infinity)
+        .background(
+            RoundedRectangle(cornerRadius: 32)
+                .stroke(Color.gray100, lineWidth: 1)
+                .fill(Color.white)
+        )
+    }
     // MARK: - 텍스트 입력
     private var textInputView: some View {
         VStack {
             TextField("제목을 입력하세요", text: $temporaryTitleText)
-                .padding(10)
+                .padding(15)
+                .frame(height: 70)
+                .background(.white)
+                .cornerRadius(20, corners: .allCorners)
+
             VStack {
                 TextEditor(text: $temporaryContentText)
                     .padding(15)
@@ -112,11 +116,16 @@ struct MemoModalView: View {
                 if newValue.count > 200 {
                     temporaryContentText = String(newValue.prefix(200))
                 }
-        }
+            }
         }
     }
 }
 
+extension View {
+    func hideKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
+}
 #Preview {
     MemoModalView(image: .constant(UIImage(contentsOfFile: "feoFace")), contentText: .constant("content"), titleText: .constant("title"))
 }
