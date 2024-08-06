@@ -46,20 +46,23 @@ struct AlbumView: View {
                                     Image(uiImage: uiImage)
                                         .resizable()
                                         .scaledToFill()
-                                        .frame(height: 100)
+                                        .frame(width: 100, height: 100)
+                                        .clipShape(Rectangle())
                                         .cornerRadius(10)
                                 } else {
                                     Image("defaultAlbum")
                                         .resizable()
-                                        .scaledToFit()
-                                        .frame(height: 120)
+                                        .scaledToFill()
+                                        .frame(width: 100, height: 100)
+                                        .clipShape(Rectangle())
                                         .cornerRadius(10)
                                 }
                             } else {
                                 Image("defaultAlbumGray")
                                     .resizable()
-                                    .scaledToFit()
-                                    .frame(height: 120)
+                                    .scaledToFill()
+                                    .frame(width: 100, height: 100)
+                                    .clipShape(Rectangle())
                                     .cornerRadius(10)
                             }
                         }
