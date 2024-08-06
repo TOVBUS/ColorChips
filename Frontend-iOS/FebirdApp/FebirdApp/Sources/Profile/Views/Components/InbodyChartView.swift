@@ -99,6 +99,7 @@ struct InbodyChartView<T: Plottable & BinaryFloatingPoint>: View {
                                     AxisValueLabel {
                                         Text(dateFormatter.string(from: date))
                                             .font(.caption)
+                                            .foregroundStyle(.gray.opacity(0.6))
                                     }
                                 }
                                 AxisTick()
@@ -110,13 +111,13 @@ struct InbodyChartView<T: Plottable & BinaryFloatingPoint>: View {
                         .chartYAxis {
                             AxisMarks { value in
                                 AxisGridLine()
-                                    .foregroundStyle(.gray)
+                                    .foregroundStyle(.gray.opacity(0.6))
                                 AxisTick()
-                                    .foregroundStyle(.gray)
+                                    .foregroundStyle(.gray.opacity(0.6))
                                 AxisValueLabel {
                                     Text(value.as(T.self).map { String(format: "%.1f", Double($0)) } ?? "")
                                         .font(.caption)
-                                        .foregroundStyle(.gray)
+                                        .foregroundStyle(.gray.opacity(0.6))
                                 }
                             }
                         }

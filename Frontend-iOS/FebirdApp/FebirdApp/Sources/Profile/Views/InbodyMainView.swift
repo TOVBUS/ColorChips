@@ -19,21 +19,10 @@ struct InbodyMainView: View {
                 InbodyChartView(inbodys: inbodys, title: "BMI", xAxisTitle: "날짜", yAxisTitle: "BMI", color: .blue) { $0.bmi }
             }
 
-            Button(action: {
+            CustomButtonView(title: "인바디 추가하기", style: .black) {
                 // TODO: 스마트 체중계 결과 화면 추가
                 // TODO: 스마트 체중계 결과 이미지로 변경
-            }, label: {
-                Text("인바디 추가하기")
-                    .frame(maxWidth: .infinity, maxHeight: 56)
-                    .foregroundStyle(Color(.white))
-                    .font(.customFont(size: 16, weight: .semibold))
-                    .background(
-                        RoundedRectangle(cornerRadius: 20)
-                            .fill(Color(red: 0.07, green: 0.07, blue: 0.08))
-                    )
-            })
-            .padding(.horizontal, 30)
-            .padding(.bottom, 20)
+            }
         }
         .ignoresSafeArea()
         .preferredColorScheme(.light)
