@@ -77,5 +77,5 @@ struct AlbumView: View {
 }
 
 #Preview {
-    AlbumView(album: AlbumData(educationLevel: .kindergarten, grade: .kindergarten1, levelRecords: [LevelRecordData(levelId: 1, schoolName: "피오 유치원", imageData: UIImage(named: "peoLogo") ?? UIImage()), LevelRecordData(levelId: 2, schoolName: "피오 유치원", imageData: UIImage(named: "peoLogo") ?? UIImage())]))
+    AlbumView(album: AlbumData(educationLevel: .kindergarten, grade: .kindergarten1, levelRecords: [LevelRecordData(routineId: 1001, levelId: 1, schoolName: "피오 유치원", grade: 1, imageData: UIImage(named: "peoLogo") ?? UIImage())]))
 }

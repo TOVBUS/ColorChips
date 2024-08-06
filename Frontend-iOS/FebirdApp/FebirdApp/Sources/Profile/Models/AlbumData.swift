@@ -9,9 +9,9 @@ import Foundation
 
 struct AlbumData: Identifiable {
     let id = UUID()
-    let educationLevel: EducationLevel // 학교 
-    let grade: Grade // 학년
-    let levelRecords: [LevelRecordData]? // day1, day2에 해당하는 데이터
+    var educationLevel: EducationLevel // 학교
+    var grade: Grade // 반
+    var levelRecords: [LevelRecordData]?
 
     var title: String {
         "\(educationLevel.rawValue) \(grade.toString(for: educationLevel)) 시절"

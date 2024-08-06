@@ -6,19 +6,20 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct AlbumMainView: View {
     @EnvironmentObject var profileSelectViewModel: ProfileSelectViewModel
-    let albums: [AlbumData] = [AlbumData(educationLevel: .kindergarten, grade: .kindergarten1, levelRecords: [LevelRecordData(levelId: 1, schoolName: "피오 유치원", imageData: UIImage(systemName: "photo") ?? UIImage())])]
+    @EnvironmentObject private var albumViewModel : AlbumViewModel
+    @Environment(\.modelContext) private var modelContext
 
     var body: some View {
         ZStack {
             Color.white.ignoresSafeArea()
-
             VStack {
                 ScrollView {
                     VStack(spacing: 20) {
-                        ForEach(albums) { album in
+                        ForEach(albumViewModel.albums) { album in
                             AlbumView(album: album)
                         }
                     }
@@ -26,10 +27,8 @@ struct AlbumMainView: View {
                 }
             }
         }
+        .onAppear {
+            albumViewModel.fetchAlbums(context: modelContext)
+        }
     }
 }
-
-// #Preview {
-//    AlbumMainView(albums: dummyAlbums)
-//        .environmentObject(ProfileSelectViewModel())
-// }
