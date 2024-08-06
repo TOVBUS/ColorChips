@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ProfileHeaderView: View {
-
     @EnvironmentObject private var profileNavigationPathFinder: NavigationPathFinder<ProfileViewOptions>
     @State private var showSettingView = false
 
@@ -48,7 +47,6 @@ struct ProfileHeaderView: View {
 
                                 VStack {
                                     Button(action: {
-                                        // TODO: 설정뷰로 이동
                                         profileNavigationPathFinder.addPath(option: .settingView)
                                     }, label: {
                                         Image("settingIcon")
@@ -66,6 +64,8 @@ struct ProfileHeaderView: View {
                                         .font(.customFont(size: 12, weight: .regular))
                                         .multilineTextAlignment(.center)
                                         .foregroundColor(.white)
+                                        .lineLimit(1)
+                                        .minimumScaleFactor(0.5)
                                 }
                                 .padding(0)
 
@@ -81,6 +81,8 @@ struct ProfileHeaderView: View {
                                         .font(.customFont(size: 12, weight: .regular))
                                         .multilineTextAlignment(.center)
                                         .foregroundColor(.white)
+                                        .lineLimit(1)
+                                        .minimumScaleFactor(0.5)
                                 }
                                 Image("SandowCore")
 
@@ -94,6 +96,8 @@ struct ProfileHeaderView: View {
                                         .font(.customFont(size: 12, weight: .regular))
                                         .multilineTextAlignment(.center)
                                         .foregroundColor(.white)
+                                        .lineLimit(1)
+                                        .minimumScaleFactor(0.5)
                                 }
                             }
                         }
