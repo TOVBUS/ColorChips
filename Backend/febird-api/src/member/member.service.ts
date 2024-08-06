@@ -26,11 +26,7 @@ export class MemberService {
   }
 
   async findByAppleId(appleID: string): Promise<Member | null> {
-    const member = await this.memberRepository.findOne({ where: { appleID } });
-    if (!member) {
-      throw new NotFoundException(` ${appleID} 애플아이디를 가진 회원을 찾을 수 없습니다.`);
-    }
-    return member;
+    return await this.memberRepository.findOne({ where: { appleID } });
   }
 
   async update(

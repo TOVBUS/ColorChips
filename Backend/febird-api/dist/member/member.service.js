@@ -33,11 +33,7 @@ let MemberService = class MemberService {
         return member;
     }
     async findByAppleId(appleID) {
-        const member = await this.memberRepository.findOne({ where: { appleID } });
-        if (!member) {
-            throw new common_1.NotFoundException(` ${appleID} 애플아이디를 가진 회원을 찾을 수 없습니다.`);
-        }
-        return member;
+        return await this.memberRepository.findOne({ where: { appleID } });
     }
     async update(member_id, updateMemberDto) {
         await this.memberRepository.update(member_id, updateMemberDto);

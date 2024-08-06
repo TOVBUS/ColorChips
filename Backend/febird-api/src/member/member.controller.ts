@@ -30,8 +30,7 @@ export class MemberController {
     @Param('id') id: number,
     @Body() updateMemberDto: UpdateMemberDto,
     @UploadedFile() file: any,
-    @Res() res: Response
-  ) {
+    @Res() res: Response) { 
     try {
       if (file) {
         updateMemberDto.profile_image = file.filename;
@@ -63,21 +62,18 @@ export class MemberController {
     }
   }
 
-  // Apple 로그인 엔드포인트 추가
   @Post('apple-login')
   async appleLogin(@Body('appleID') appleID: string, @Res() res: Response) {
     try {
-      let member = await this.memberService.findByAppleId(appleID);
+      let member = await this.memberService.findByAppleId(appleID);    
       if (!member) {
-      // 신규 회원 등록
-      member = await this.memberService.create({ appleID } as CreateMemberDto);
-    }
+        member = await this.memberService.create({ appleID } as CreateMemberDto);
+      }
 
-    // JWT 토큰 생성
       const token = jwt.sign({ member_id: member.member_id }, 'your-secret-key', { expiresIn: '1h' });
       return res.status(HttpStatus.OK).json({ token });
     } catch (error) {
-      console.error(error); // 상세한 오류 로그 출력
+      console.error(error);
       return res.status(HttpStatus.BAD_REQUEST).json({ message: '애플 로그인 실패', error: error.message });
     }
   }

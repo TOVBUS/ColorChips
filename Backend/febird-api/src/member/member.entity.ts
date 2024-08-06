@@ -5,23 +5,22 @@ import { Inbody } from '../inbody/inbody.entity';
 import { History } from '../history/history.entity';
 
 @Entity()
-@Unique(['nickname'])
 @Unique(['appleID'])
 @Unique(['kakaoID'])
 export class Member {
   @PrimaryGeneratedColumn()
   member_id: number;
 
-  @Column({ length: 50 })
+  @Column({ length: 50, nullable: true })
   nickname: string;
 
-  @Column({ length: 255 })
+  @Column({ length: 255, nullable: true })
   profile_image: string;
 
-  @Column()
+  @Column({ nullable: true})
   age: number;
 
-  @Column({ length: 10 })
+  @Column({ length: 10, nullable: true })
   gender: string;
 
   @Column({ length: 255, nullable: true })

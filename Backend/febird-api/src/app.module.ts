@@ -8,7 +8,6 @@ import { LevelModule } from './level/level.module';
 import { RoutineModule } from './routine/routine.module';
 import { ExerciseModule } from './exercise/exercise.module';
 
-
 @Module({
   imports: [
     ConfigModule.forRoot({
