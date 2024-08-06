@@ -16,45 +16,44 @@ struct MemoRow: View {
     var mealTime: String
 
     var body: some View {
-        HStack(spacing: 8) {
-            Image("feoFace")
+        VStack(alignment: .leading, spacing: 10) {
+            Text(mealTime) // 아침, 점심, 저녁
+                .font(.customFont(size: 14, weight: .bold))
+                .foregroundStyle(.white)
+                .padding(.horizontal, 8)
+                .padding(.vertical, 2)
+                .background(.orange40)
+                .cornerRadius(8)
 
-            VStack(alignment: .leading, spacing: 8) {
-                Text(mealTime) // 아침, 점심, 저녁
-                    .font(.customFont(size: 14, weight: .bold))
-                    .padding(.horizontal, 8)
-                    .padding(.vertical, 2)
-                    .background(.orange30)
-                    .cornerRadius(8)
+            HStack(spacing: 8) {
+                Image("feoFace")
 
-                // MARK: - 글자수 제한
-                if !inputText.isEmpty {
-                    Text(showFullText ? inputText : inputText.prefix(30) + (inputText.count > 30 ? "..." : ""))
-                        .font(.customFont(size: 14, weight: .medium))
-                        .lineLimit(showFullText ? nil : 1)
-                        .onTapGesture {
-                            withAnimation {
-                                showFullText.toggle()
+                VStack(alignment: .leading, spacing: 8) {
+                    // MARK: - 글자수 제한
+                    if !inputText.isEmpty {
+                        Text(showFullText ? inputText : inputText.prefix(30) + (inputText.count > 30 ? "..." : ""))
+                            .font(.customFont(size: 14, weight: .medium))
+                            .foregroundStyle(.gray100)
+                            .lineLimit(showFullText ? nil : 1)
+                            .onTapGesture {
+                                withAnimation {
+                                    showFullText.toggle()
+                                }
                             }
-                        }
+                    }
                 }
+
+                Spacer()
+
+                Button(action: {
+                    showModal.toggle()
+                }, label: {
+                    Image("pencilIcon")
+                        .font(.customFont(size: 22, weight: .bold))
+                        .foregroundStyle(.gray60)
+                        .padding(8)
+                })
             }
-
-            Spacer()
-
-            Button(action: {
-                showModal.toggle()
-            }, label: {
-                Image(systemName: "plus")
-                    .font(.customFont(size: 22, weight: .bold))
-                    .foregroundStyle(.gray60)
-                    .padding(8)
-                    .background(
-                        Rectangle()
-                            .foregroundStyle(.gray20)
-                            .cornerRadius(4, corners: .allCorners)
-                    )
-            })
         }
         .padding(12)
         .frame(maxWidth: .infinity)
