@@ -12,6 +12,8 @@ let eyeBodyDummy: [EyeBodyPhoto] = [EyeBodyPhoto(date: "2024년 7월 17일")]
 struct EyeBodyMainView: View {
     @Environment(\.modelContext) private var modelContext
     @StateObject private var viewModel = EyeBodyPhotoViewModel()
+    @EnvironmentObject var navigationPathFinder: NavigationPathFinder<ProfileViewOptions>
+
     @State private var selectedDate: String?
 
     var body: some View {
@@ -21,8 +23,8 @@ struct EyeBodyMainView: View {
                     ForEach(viewModel.photos, id: \.date) { photo in
                         VStack(alignment: .leading) {
                             Text(photo.date)
-                                .font(.headline)
-
+                                .font(.customFont(size: 20, weight: .bold))
+                                .foregroundStyle(.black)
                             ScrollView(.horizontal, showsIndicators: false) {
                                 HStack(spacing: 10) {
                                     ForEach(0..<4, id: \.self) { index in
@@ -41,9 +43,8 @@ struct EyeBodyMainView: View {
                     }
                 }
             }
-
             CustomButtonView(title: "눈바디 추가하기") {
-                // TODO:  - EyeBodyView로 이동 (isOnboarding: false로 설정)
+                navigationPathFinder.addPath(option: .eyeBodyView(isOnboarding: false))
             }
         }
         .onAppear {
@@ -52,6 +53,6 @@ struct EyeBodyMainView: View {
     }
 }
 
-// #Preview {
-//    EyeBodyMainView()
-// }
+ #Preview {
+    EyeBodyMainView()
+ }

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ProfileMainView: View {
+    @EnvironmentObject var navigationPathFinder: NavigationPathFinder<ProfileViewOptions>
     @EnvironmentObject var tabViewModel: TabViewModel
     @StateObject var profileSelectViewModel = ProfileSelectViewModel()
     @Environment(\.modelContext) private var modelContext
@@ -19,7 +20,7 @@ struct ProfileMainView: View {
             VStack {
                 ProfileHeaderView()
 
-                ScrollView {
+                VStack {
                     switch profileSelectViewModel.mainContentType {
                     case .album:
                         AlbumMainView(albums: dummyAlbums)
