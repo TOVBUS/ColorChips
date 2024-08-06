@@ -16,7 +16,7 @@ struct MemoRow: View {
     var mealTime: String
 
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 10) {
             Text(mealTime) // 아침, 점심, 저녁
                 .font(.customFont(size: 14, weight: .bold))
                 .foregroundStyle(.white)
@@ -33,6 +33,7 @@ struct MemoRow: View {
                     if !inputText.isEmpty {
                         Text(showFullText ? inputText : inputText.prefix(30) + (inputText.count > 30 ? "..." : ""))
                             .font(.customFont(size: 14, weight: .medium))
+                            .foregroundStyle(.gray100)
                             .lineLimit(showFullText ? nil : 1)
                             .onTapGesture {
                                 withAnimation {

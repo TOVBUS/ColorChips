@@ -35,6 +35,8 @@ struct SocialLoginView: View {
                     .padding(.horizontal)
                     .fixedSize(horizontal: false, vertical: true)
 
+                Spacer()
+
                 Image("peoLogo")
                     .resizable()
                     .frame(width: 200, height: 200)
@@ -42,7 +44,7 @@ struct SocialLoginView: View {
 
                 CustomButtonView(title: "Apple Sign In") {
                     // TODO: 로그인 로직 추가
-                }
+                }.padding(.top, 40)
 
                 Button(action: {
                     // TODO: 서비스 이용약관으로 넘어감
