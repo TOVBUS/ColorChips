@@ -6,7 +6,7 @@ import { History } from '../history/history.entity';
 import { Inbody } from '../inbody/inbody.entity';
 import { Level } from '../level/level.entity';
 import { Routine } from '../routine/routine.entity';
-import { Exercise } from '../exercise/exercise.entity'; //  - Azure 블롭 스토리지 연결 필요
+import { Exercise } from '../exercise/exercise.entity';
 
 @Module({
   imports: [
@@ -36,7 +36,7 @@ import { Exercise } from '../exercise/exercise.entity'; //  - Azure 블롭 스�
           password,
           database,
           entities: [Member, History, Inbody, Level, Routine, Exercise],
-          synchronize: true, //추후 false로 변경 필요
+          synchronize: true,
         };
       },
       inject: [ConfigService],
