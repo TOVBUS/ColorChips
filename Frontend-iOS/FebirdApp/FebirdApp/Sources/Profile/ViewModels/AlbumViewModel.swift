@@ -41,12 +41,14 @@ class AlbumViewModel: ObservableObject {
         self.albums = newAlbums
     }
 
-    func saveOrUpdateLevelRecord(routineId: Int, levelId: Int, schoolName: String, grade: Int, image: UIImage, context: ModelContext) {
-        let educationLevel = EducationLevel(rawValue: schoolName)
-        let gradeEnum = Grade(rawValue: grade)
+    func saveOrUpdateLevelRecord(routineId: Int, levelId: Int, schoolName: String, apiGrade: Int, image: UIImage, context: ModelContext) {
+        guard let educationLevel = EducationLevel(rawValue: schoolName) else {
+            print("Invalid education level: schoolName = \(schoolName)")
+            return
+        }
 
-        guard let educationLevel = educationLevel, let gradeEnum = gradeEnum else {
-            print("Invalid education level or grade: schoolName = \(schoolName), grade = \(grade)")
+        guard let gradeEnum = convertToGradeEnum(apiGrade: apiGrade, educationLevel: educationLevel) else {
+            print("Invalid grade: apiGrade = \(apiGrade), educationLevel = \(educationLevel)")
             return
         }
 
@@ -54,7 +56,7 @@ class AlbumViewModel: ObservableObject {
            let existingRecordIndex = existingAlbum.levelRecords?.firstIndex(where: { $0.levelId == levelId }) {
             updateLevelRecord(existingAlbum.levelRecords![existingRecordIndex], image: image, context: context)
         } else {
-            let newRecord = LevelRecordData(routineId: routineId, levelId: levelId, schoolName: schoolName, grade: grade, imageData: image)
+            let newRecord = LevelRecordData(routineId: routineId, levelId: levelId, schoolName: schoolName, grade: apiGrade, imageData: image)
             context.insert(newRecord)
 
             if let index = albums.firstIndex(where: { $0.educationLevel == educationLevel && $0.grade == gradeEnum }) {
@@ -75,5 +77,22 @@ class AlbumViewModel: ObservableObject {
 
     func getAllAlbums() -> [AlbumData] {
         return albums
+    }
+}
+
+extension AlbumViewModel {
+    func convertToGradeEnum(apiGrade: Int, educationLevel: EducationLevel) -> Grade? {
+        switch educationLevel {
+        case .kindergarten:
+            return Grade(rawValue: apiGrade)
+        case .elementary:
+            return Grade(rawValue: apiGrade + 10)
+        case .middleSchool:
+            return Grade(rawValue: apiGrade + 20)
+        case .highSchool:
+            return Grade(rawValue: apiGrade + 30)
+        case .university:
+            return Grade(rawValue: apiGrade + 40)
+        }
     }
 }

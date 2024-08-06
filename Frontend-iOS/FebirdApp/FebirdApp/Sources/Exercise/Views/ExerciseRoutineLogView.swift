@@ -58,7 +58,7 @@ struct ExerciseRoutineLogView: View {
                         }
                         CustomButtonView(title: "저장하기") {
                             if let image = image {
-                                albumViewModel.saveOrUpdateLevelRecord(routineId: 1001, levelId: 1, schoolName: "유치원", grade: Grade.kindergarten1.rawValue, image: image, context: modelContext)
+                                albumViewModel.saveOrUpdateLevelRecord(routineId: 1001, levelId: 1, schoolName: "유치원", apiGrade: 1, image: image, context: modelContext)
                             }
                             navigationPathFinder.addPath(option: .exerciseGraduationView)
                         }
