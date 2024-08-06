@@ -21,18 +21,20 @@ struct MealMainView: View {
                     Text("AI 식단추천")
                         .font(.customFont(size: 20, weight: .bold))
                         .foregroundStyle(.gray100)
+                        .padding(.horizontal, 25)
 
                     AIMealRecomendationView()
 
                     Text("식단 기록")
                         .foregroundStyle(.gray100)
                         .font(.customFont(size: 20, weight: .bold))
+                        .padding(.horizontal, 25)
 
                     ForEach(meals, id: \.self) { meal in
                         MemoRow(mealTime: meal)
-                    }
+                    }.padding(.horizontal, 25)
                 }
-                .padding()
+
             }
             .padding(.bottom, ConstantsPadding.mealMainOnCustomTabBar.rawValue)
         }

@@ -37,7 +37,9 @@ struct SocialLoginView: View {
                     .multilineTextAlignment(.center)
                     .padding(.horizontal)
                     .fixedSize(horizontal: false, vertical: true)
-                
+
+                Spacer()
+
                 Image("peoLogo")
                     .resizable()
                     .frame(width: 200, height: 200)
@@ -60,6 +62,11 @@ struct SocialLoginView: View {
                         loginViewModel.loginWithApple(appleID: appleLoginViewModel.userIdentifier)
                     }
                 }
+              
+                CustomButtonView(title: "Apple Sign In") {
+                    // TODO: 로그인 로직 추가
+                }.padding(.top, 40)
+
 
                 Button(action: {
                     if let url = URL(string: "https://qsgm7ewnrc9l.sg.larksuite.com/wiki/QBgKwS3NvifpysksdIZlK8J9gvb?from=from_copylink") {

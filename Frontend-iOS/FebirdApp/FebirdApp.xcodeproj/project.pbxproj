@@ -21,7 +21,6 @@
 		3E5F3F032C5C6953007023DC /* ProfileMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5F3F022C5C6953007023DC /* ProfileMainView.swift */; };
 		3E7521A52C48E6C700920BFD /* ExerciseMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7521A42C48E6C700920BFD /* ExerciseMainView.swift */; };
 		3E7521A82C48F63E00920BFD /* ExerciseMainHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7521A72C48F63E00920BFD /* ExerciseMainHeaderView.swift */; };
-		3E7521AB2C48F66F00920BFD /* RoundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7521AA2C48F66F00920BFD /* RoundedCorners.swift */; };
 		3E7521AD2C49F88B00920BFD /* CustomTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7521AC2C49F88B00920BFD /* CustomTabBarView.swift */; };
 		3E9D1FD52C4E346E00302F7E /* ProfileSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9D1FD42C4E346E00302F7E /* ProfileSelectView.swift */; };
 		3E9E9E202C44E7DB002389EB /* WorkSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E9E9E172C44E7DA002389EB /* WorkSans-Light.ttf */; };
@@ -48,6 +47,7 @@
 		3EF6F06A2C36938000EEF18F /* FebirdAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF6F0692C36938000EEF18F /* FebirdAppUITests.swift */; };
 		3EF6F06C2C36938000EEF18F /* FebirdAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF6F06B2C36938000EEF18F /* FebirdAppUITestsLaunchTests.swift */; };
 		3EFC450C2C44F882001052C7 /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFC450B2C44F882001052C7 /* Font+Extension.swift */; };
+		8F0ECAAA2C60EDFA0050FD88 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8F0ECAA92C60EDFA0050FD88 /* Alamofire */; };
 		8F8A77E72C5E7AF9008E61D7 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8A77E62C5E7AF9008E61D7 /* SettingsViewModel.swift */; };
 		8F8A77EA2C5E7CE1008E61D7 /* CellConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8A77E92C5E7CE1008E61D7 /* CellConfiguration.swift */; };
 		8F8A77EC2C5F554F008E61D7 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8A77EB2C5F554F008E61D7 /* UserProfile.swift */; };
@@ -71,18 +71,31 @@
 		8FAC18822C4B8BA800CDF7CF /* ExerciseItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FAC18812C4B8BA800CDF7CF /* ExerciseItemView.swift */; };
 		8FAC18852C4B8C4200CDF7CF /* ExerciseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FAC18842C4B8C4200CDF7CF /* ExerciseItem.swift */; };
 		8FAC18872C4B8CBA00CDF7CF /* ExerciseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FAC18862C4B8CBA00CDF7CF /* ExerciseListView.swift */; };
+		8FE8FB362C60BA2E009CFAE9 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE8FB352C60BA2E009CFAE9 /* NetworkManager.swift */; };
+		8FE8FB3B2C60BDB3009CFAE9 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE8FB3A2C60BDB3009CFAE9 /* AuthViewModel.swift */; };
+		8FE8FB3D2C60BDF1009CFAE9 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE8FB3C2C60BDF1009CFAE9 /* KeychainManager.swift */; };
 		E10FD99D2C49FB4500D80139 /* InbodyInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10FD99C2C49FB4500D80139 /* InbodyInputView.swift */; };
 		E10FD99F2C49FECB00D80139 /* OnboardingLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10FD99E2C49FECB00D80139 /* OnboardingLoadingView.swift */; };
 		E10FD9A12C49FFF100D80139 /* EyeBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10FD9A02C49FFF100D80139 /* EyeBodyView.swift */; };
 		E10FD9A32C4A066200D80139 /* OnboardingEndView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10FD9A22C4A066200D80139 /* OnboardingEndView.swift */; };
 		E10FD9AE2C4C16AA00D80139 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10FD9AD2C4C16AA00D80139 /* ProfileHeaderView.swift */; };
 		E10FD9B02C4CC01700D80139 /* InbodyMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10FD9AF2C4CC01700D80139 /* InbodyMainView.swift */; };
-		E10FD9B22C4CC06000D80139 /* InbodyGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10FD9B12C4CC06000D80139 /* InbodyGraphView.swift */; };
+		E10FD9B22C4CC06000D80139 /* InbodyChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10FD9B12C4CC06000D80139 /* InbodyChartView.swift */; };
 		E12911B92C48DC82009A92F7 /* CameraActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12911B82C48DC81009A92F7 /* CameraActionSheet.swift */; };
 		E12911BB2C48EDFE009A92F7 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12911BA2C48EDFE009A92F7 /* PhotoPicker.swift */; };
 		E12911BD2C48FDBA009A92F7 /* InbodyFixView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12911BC2C48FDBA009A92F7 /* InbodyFixView.swift */; };
 		E15BF01D2C5FBB190033E5C3 /* EyeBodyPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15BF01C2C5FBB190033E5C3 /* EyeBodyPhoto.swift */; };
 		E15BF01F2C5FBE3C0033E5C3 /* EyeBodyPhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15BF01E2C5FBE3C0033E5C3 /* EyeBodyPhotoViewModel.swift */; };
+		E15BF0232C6097CC0033E5C3 /* JointOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15BF0222C6097CC0033E5C3 /* JointOverlayView.swift */; };
+		E15BF0252C6097EE0033E5C3 /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15BF0242C6097EE0033E5C3 /* CameraPreview.swift */; };
+		E15BF0272C609A5E0033E5C3 /* ExerciseDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15BF0262C609A5E0033E5C3 /* ExerciseDetector.swift */; };
+		E15BF02A2C609ACC0033E5C3 /* ExerciseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15BF0292C609ACC0033E5C3 /* ExerciseType.swift */; };
+		E15BF02C2C609AF80033E5C3 /* ExerciseState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15BF02B2C609AF80033E5C3 /* ExerciseState.swift */; };
+		E15BF02E2C609B6B0033E5C3 /* ExerciseDetector+CameraSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15BF02D2C609B6B0033E5C3 /* ExerciseDetector+CameraSetup.swift */; };
+		E15BF0302C609C300033E5C3 /* ExerciseDetector+ExerciseDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15BF02F2C609C300033E5C3 /* ExerciseDetector+ExerciseDetection.swift */; };
+		E15BF0362C60B6C30033E5C3 /* InbodyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15BF0352C60B6C30033E5C3 /* InbodyData.swift */; };
+		E15BF0382C60B8510033E5C3 /* InbodyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15BF0372C60B8510033E5C3 /* InbodyViewModel.swift */; };
+		E15BF03C2C60BAC10033E5C3 /* TrendAnalysisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15BF03B2C60BAC10033E5C3 /* TrendAnalysisView.swift */; };
 		E1AEFC932C4D10AD000D6441 /* AlbumMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AEFC922C4D10AD000D6441 /* AlbumMainView.swift */; };
 		E1AEFC952C4D10BE000D6441 /* AlbumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AEFC942C4D10BE000D6441 /* AlbumView.swift */; };
 		E1AEFC972C4D2E69000D6441 /* AlbumDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AEFC962C4D2E69000D6441 /* AlbumDetailView.swift */; };
@@ -151,7 +164,6 @@
 		3E5F3F022C5C6953007023DC /* ProfileMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMainView.swift; sourceTree = "<group>"; };
 		3E7521A42C48E6C700920BFD /* ExerciseMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseMainView.swift; sourceTree = "<group>"; };
 		3E7521A72C48F63E00920BFD /* ExerciseMainHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseMainHeaderView.swift; sourceTree = "<group>"; };
-		3E7521AA2C48F66F00920BFD /* RoundedCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorners.swift; sourceTree = "<group>"; };
 		3E7521AC2C49F88B00920BFD /* CustomTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarView.swift; sourceTree = "<group>"; };
 		3E9D1FD42C4E346E00302F7E /* ProfileSelectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileSelectView.swift; sourceTree = "<group>"; };
 		3E9E9E172C44E7DA002389EB /* WorkSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-Light.ttf"; sourceTree = "<group>"; };
@@ -205,18 +217,31 @@
 		8FAC18812C4B8BA800CDF7CF /* ExerciseItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseItemView.swift; sourceTree = "<group>"; };
 		8FAC18842C4B8C4200CDF7CF /* ExerciseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseItem.swift; sourceTree = "<group>"; };
 		8FAC18862C4B8CBA00CDF7CF /* ExerciseListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseListView.swift; sourceTree = "<group>"; };
+		8FE8FB352C60BA2E009CFAE9 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		8FE8FB3A2C60BDB3009CFAE9 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		8FE8FB3C2C60BDF1009CFAE9 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		E10FD99C2C49FB4500D80139 /* InbodyInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InbodyInputView.swift; sourceTree = "<group>"; };
 		E10FD99E2C49FECB00D80139 /* OnboardingLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingLoadingView.swift; sourceTree = "<group>"; };
 		E10FD9A02C49FFF100D80139 /* EyeBodyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeBodyView.swift; sourceTree = "<group>"; };
 		E10FD9A22C4A066200D80139 /* OnboardingEndView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingEndView.swift; sourceTree = "<group>"; };
 		E10FD9AD2C4C16AA00D80139 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		E10FD9AF2C4CC01700D80139 /* InbodyMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InbodyMainView.swift; sourceTree = "<group>"; };
-		E10FD9B12C4CC06000D80139 /* InbodyGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InbodyGraphView.swift; sourceTree = "<group>"; };
+		E10FD9B12C4CC06000D80139 /* InbodyChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InbodyChartView.swift; sourceTree = "<group>"; };
 		E12911B82C48DC81009A92F7 /* CameraActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraActionSheet.swift; sourceTree = "<group>"; };
 		E12911BA2C48EDFE009A92F7 /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
 		E12911BC2C48FDBA009A92F7 /* InbodyFixView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InbodyFixView.swift; sourceTree = "<group>"; };
 		E15BF01C2C5FBB190033E5C3 /* EyeBodyPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeBodyPhoto.swift; sourceTree = "<group>"; };
 		E15BF01E2C5FBE3C0033E5C3 /* EyeBodyPhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeBodyPhotoViewModel.swift; sourceTree = "<group>"; };
+		E15BF0222C6097CC0033E5C3 /* JointOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JointOverlayView.swift; sourceTree = "<group>"; };
+		E15BF0242C6097EE0033E5C3 /* CameraPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
+		E15BF0262C609A5E0033E5C3 /* ExerciseDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetector.swift; sourceTree = "<group>"; };
+		E15BF0292C609ACC0033E5C3 /* ExerciseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseType.swift; sourceTree = "<group>"; };
+		E15BF02B2C609AF80033E5C3 /* ExerciseState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseState.swift; sourceTree = "<group>"; };
+		E15BF02D2C609B6B0033E5C3 /* ExerciseDetector+CameraSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExerciseDetector+CameraSetup.swift"; sourceTree = "<group>"; };
+		E15BF02F2C609C300033E5C3 /* ExerciseDetector+ExerciseDetection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExerciseDetector+ExerciseDetection.swift"; sourceTree = "<group>"; };
+		E15BF0352C60B6C30033E5C3 /* InbodyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InbodyData.swift; sourceTree = "<group>"; };
+		E15BF0372C60B8510033E5C3 /* InbodyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InbodyViewModel.swift; sourceTree = "<group>"; };
+		E15BF03B2C60BAC10033E5C3 /* TrendAnalysisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendAnalysisView.swift; sourceTree = "<group>"; };
 		E1AEFC922C4D10AD000D6441 /* AlbumMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumMainView.swift; sourceTree = "<group>"; };
 		E1AEFC942C4D10BE000D6441 /* AlbumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumView.swift; sourceTree = "<group>"; };
 		E1AEFC962C4D2E69000D6441 /* AlbumDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailView.swift; sourceTree = "<group>"; };
@@ -257,6 +282,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F0ECAAA2C60EDFA0050FD88 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,6 +343,7 @@
 				8F92DF7D2C4BA9750071F336 /* ExerciseGuideListView.swift */,
 				8F92DF842C4BB0B40071F336 /* ExerciseGuideTextView.swift */,
 				E2CFF2172C4EBED700540500 /* ExerciseRecordListView.swift */,
+				E15BF0242C6097EE0033E5C3 /* CameraPreview.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -337,8 +364,9 @@
 			children = (
 				E10FD9AD2C4C16AA00D80139 /* ProfileHeaderView.swift */,
 				3E9D1FD42C4E346E00302F7E /* ProfileSelectView.swift */,
-				E10FD9B12C4CC06000D80139 /* InbodyGraphView.swift */,
+				E10FD9B12C4CC06000D80139 /* InbodyChartView.swift */,
 				E1AEFC942C4D10BE000D6441 /* AlbumView.swift */,
+				E15BF03B2C60BAC10033E5C3 /* TrendAnalysisView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -348,6 +376,7 @@
 			children = (
 				3E5F3EFB2C5B57A9007023DC /* ProfileSelectViewModel.swift */,
 				E15BF01E2C5FBE3C0033E5C3 /* EyeBodyPhotoViewModel.swift */,
+				E15BF0372C60B8510033E5C3 /* InbodyViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -358,6 +387,7 @@
 				3E5F3EFD2C5B94CA007023DC /* AlbumData.swift */,
 				3E5F3EFE2C5B94CA007023DC /* PhotoData.swift */,
 				E15BF01C2C5FBB190033E5C3 /* EyeBodyPhoto.swift */,
+				E15BF0352C60B6C30033E5C3 /* InbodyData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -365,6 +395,7 @@
 		3E7521A32C48E60F00920BFD /* Exercise */ = {
 			isa = PBXGroup;
 			children = (
+				E15BF0282C609A680033E5C3 /* Extensions */,
 				8FAC18832C4B8C1600CDF7CF /* Models */,
 				8F92DF7F2C4BB0060071F336 /* ViewModels */,
 				3E7521A62C48E6CE00920BFD /* Views */,
@@ -386,6 +417,7 @@
 				E2CFF2152C4EBC5500540500 /* ExerciseRecordView.swift */,
 				E246A8DD2C5EAAF600B86617 /* ExerciseChatBotView.swift */,
 				E246A8DF2C5EC4A200B86617 /* ExerciseCountView.swift */,
+				E15BF0222C6097CC0033E5C3 /* JointOverlayView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -401,7 +433,6 @@
 				3E7521AC2C49F88B00920BFD /* CustomTabBarView.swift */,
 				8FAC187E2C494BDE00CDF7CF /* ExerciseGaugeBarView.swift */,
 				E12911BA2C48EDFE009A92F7 /* PhotoPicker.swift */,
-				3E7521AA2C48F66F00920BFD /* RoundedCorners.swift */,
 				8F92DF882C4D4A440071F336 /* TimerButton.swift */,
 				8F92DF8E2C4D58710071F336 /* TimerView.swift */,
 				8F92DF822C4BB0970071F336 /* VideoPlayerView.swift */,
@@ -432,6 +463,7 @@
 			isa = PBXGroup;
 			children = (
 				3EF6F04C2C36937E00EEF18F /* FebirdAppApp.swift */,
+				8FE8FB342C60B9FA009CFAE9 /* Managers */,
 				3E3B9A8C2C5B4FEF001F2852 /* Login */,
 				3E9E9E0B2C44E5B1002389EB /* Extensions */,
 				3E7521A92C48F66000920BFD /* Utils */,
@@ -579,6 +611,7 @@
 			children = (
 				8F92DF802C4BB0230071F336 /* ExerciseGuideViewModel.swift */,
 				8F92DF8C2C4D58560071F336 /* ExerciseTimerViewModel.swift */,
+				E15BF0262C609A5E0033E5C3 /* ExerciseDetector.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -587,8 +620,20 @@
 			isa = PBXGroup;
 			children = (
 				8FAC18842C4B8C4200CDF7CF /* ExerciseItem.swift */,
+				E15BF0292C609ACC0033E5C3 /* ExerciseType.swift */,
+				E15BF02B2C609AF80033E5C3 /* ExerciseState.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		8FE8FB342C60B9FA009CFAE9 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				8FE8FB352C60BA2E009CFAE9 /* NetworkManager.swift */,
+				8FE8FB3C2C60BDF1009CFAE9 /* KeychainManager.swift */,
+				8FE8FB3A2C60BDB3009CFAE9 /* AuthViewModel.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		E10FD9A92C4C02A600D80139 /* Profile */ = {
@@ -612,6 +657,15 @@
 				E1AEFC982C4D3F50000D6441 /* EyeBodyMainView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		E15BF0282C609A680033E5C3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E15BF02D2C609B6B0033E5C3 /* ExerciseDetector+CameraSetup.swift */,
+				E15BF02F2C609C300033E5C3 /* ExerciseDetector+ExerciseDetection.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		E1BB0D532C4797C9002565B2 /* Onboarding */ = {
@@ -703,6 +757,7 @@
 			);
 			name = FebirdApp;
 			packageProductDependencies = (
+				8F0ECAA92C60EDFA0050FD88 /* Alamofire */,
 			);
 			productName = FebirdApp;
 			productReference = 3EF6F0492C36937E00EEF18F /* FebirdApp.app */;
@@ -777,7 +832,8 @@
 			);
 			mainGroup = 3EF6F0402C36937D00EEF18F;
 			packageReferences = (
-				3E3B9A842C5B2CDF001F2852 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */,
+				8F0ECAA82C60EDFA0050FD88 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				8F0ECAAB2C60EE020050FD88 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */,
 			);
 			productRefGroup = 3EF6F04A2C36937E00EEF18F /* Products */;
 			projectDirPath = "";
@@ -859,10 +915,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FE8FB362C60BA2E009CFAE9 /* NetworkManager.swift in Sources */,
 				E2EB25792C4E48C30094EC8E /* ChatBotMainView.swift in Sources */,
 				8F92DF912C4D68B40071F336 /* ExerciseRoutineLogView.swift in Sources */,
 				E2CFF2122C4E9D6300540500 /* InputFieldView.swift in Sources */,
 				8F92DF892C4D4A440071F336 /* TimerButton.swift in Sources */,
+				E15BF0232C6097CC0033E5C3 /* JointOverlayView.swift in Sources */,
 				E26D48B52C48F50D00D63FE7 /* AIMealRecomendationView.swift in Sources */,
 				E24F5E822C48EC3400724DA7 /* MealMainView.swift in Sources */,
 				8F92DF7C2C4B9A390071F336 /* CustomNavigationBar.swift in Sources */,
@@ -872,6 +930,7 @@
 				3E5F3EFC2C5B57A9007023DC /* ProfileSelectViewModel.swift in Sources */,
 				E12911BD2C48FDBA009A92F7 /* InbodyFixView.swift in Sources */,
 				3E7521A52C48E6C700920BFD /* ExerciseMainView.swift in Sources */,
+				E15BF02E2C609B6B0033E5C3 /* ExerciseDetector+CameraSetup.swift in Sources */,
 				8F92DF852C4BB0B40071F336 /* ExerciseGuideTextView.swift in Sources */,
 				E2A2F7E42C4F3C09000AD404 /* SettingsView.swift in Sources */,
 				8FAC18822C4B8BA800CDF7CF /* ExerciseItemView.swift in Sources */,
@@ -879,19 +938,23 @@
 				3E5F3F002C5B94CA007023DC /* AlbumData.swift in Sources */,
 				E246A8E02C5EC4A200B86617 /* ExerciseCountView.swift in Sources */,
 				E2CFF2162C4EBC5500540500 /* ExerciseRecordView.swift in Sources */,
+				E15BF02A2C609ACC0033E5C3 /* ExerciseType.swift in Sources */,
 				8F92DF8D2C4D58570071F336 /* ExerciseTimerViewModel.swift in Sources */,
 				8F92DF7E2C4BA9750071F336 /* ExerciseGuideListView.swift in Sources */,
+				8FE8FB3B2C60BDB3009CFAE9 /* AuthViewModel.swift in Sources */,
 				E24CF94E2C4F887100D1548E /* CustomToggle.swift in Sources */,
+				E15BF03C2C60BAC10033E5C3 /* TrendAnalysisView.swift in Sources */,
 				E12911BB2C48EDFE009A92F7 /* PhotoPicker.swift in Sources */,
 				8F92DF952C4D74A10071F336 /* ExerciseGraduationView.swift in Sources */,
+				E15BF0382C60B8510033E5C3 /* InbodyViewModel.swift in Sources */,
 				E1BB0D5C2C47B15A002565B2 /* OnboardingProfileSelectionView.swift in Sources */,
+				E15BF0272C609A5E0033E5C3 /* ExerciseDetector.swift in Sources */,
 				3E3B9A872C5B2E3E001F2852 /* View+Extension.swift in Sources */,
 				8F92DF872C4D33870071F336 /* ExerciseTimerSettingView.swift in Sources */,
-				E10FD9B22C4CC06000D80139 /* InbodyGraphView.swift in Sources */,
+				E10FD9B22C4CC06000D80139 /* InbodyChartView.swift in Sources */,
 				3E3B9A892C5B2F62001F2852 /* Constants.swift in Sources */,
 				E10FD9A12C49FFF100D80139 /* EyeBodyView.swift in Sources */,
 				E1BB0D552C47985D002565B2 /* OnboardingGaugeView.swift in Sources */,
-				3E7521AB2C48F66F00920BFD /* RoundedCorners.swift in Sources */,
 				3E3B9A832C5B29AA001F2852 /* ViewOptions.swift in Sources */,
 				3E5F3F012C5B94CA007023DC /* PhotoData.swift in Sources */,
 				E2CFF2142C4EA29500540500 /* MessageBubble.swift in Sources */,
@@ -900,6 +963,7 @@
 				E24CF9542C4F99E500D1548E /* ProfileSettingView.swift in Sources */,
 				E1BB0D5E2C47F9F7002565B2 /* OnboardingSelectGenderButton.swift in Sources */,
 				8F8A77EC2C5F554F008E61D7 /* UserProfile.swift in Sources */,
+				E15BF0252C6097EE0033E5C3 /* CameraPreview.swift in Sources */,
 				8F92DF8B2C4D506E0071F336 /* ExerciseRestTimerView.swift in Sources */,
 				E26D48B92C49F18800D63FE7 /* MemoRow.swift in Sources */,
 				E26D48BB2C49F93900D63FE7 /* MealChatBotView.swift in Sources */,
@@ -911,16 +975,20 @@
 				323408F52C61B3CE00FCB9B6 /* SocialLoginViewModel.swift in Sources */,
 				8F8A77EE2C5F56BD008E61D7 /* ProfileSettingViewModel.swift in Sources */,
 				E2CFF20E2C4E999E00540500 /* Message.swift in Sources */,
+				E15BF0302C609C300033E5C3 /* ExerciseDetector+ExerciseDetection.swift in Sources */,
 				E1AEFC952C4D10BE000D6441 /* AlbumView.swift in Sources */,
 				3E9D1FD52C4E346E00302F7E /* ProfileSelectView.swift in Sources */,
 				E12911B92C48DC82009A92F7 /* CameraActionSheet.swift in Sources */,
+				8FE8FB3D2C60BDF1009CFAE9 /* KeychainManager.swift in Sources */,
 				E15BF01F2C5FBE3C0033E5C3 /* EyeBodyPhotoViewModel.swift in Sources */,
 				E10FD99F2C49FECB00D80139 /* OnboardingLoadingView.swift in Sources */,
 				8F8A77F02C5F734B008E61D7 /* SettingHeaderView.swift in Sources */,
 				323408F72C61C91D00FCB9B6 /* SignInWithAppleViewModel.swift in Sources */,
+				E15BF02C2C609AF80033E5C3 /* ExerciseState.swift in Sources */,
 				E1BB0D622C48A875002565B2 /* InbodyAddView.swift in Sources */,
 				E2FDD2572C4B93AF004067EF /* WeeklyCalendar.swift in Sources */,
 				3E3B9A8E2C5B500E001F2852 /* SocialLoginView.swift in Sources */,
+				E15BF0362C60B6C30033E5C3 /* InbodyData.swift in Sources */,
 				E1BB0D582C479CF7002565B2 /* OnboardingWelcomView.swift in Sources */,
 				E1AEFC992C4D3F50000D6441 /* EyeBodyMainView.swift in Sources */,
 				3E5F3F032C5C6953007023DC /* ProfileMainView.swift in Sources */,
@@ -1115,7 +1183,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FebirdApp/Resources/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "사용자가 인바디 사진과 프로필 사진을 등록하기 위해 권한이 필요합니다.";
+				INFOPLIST_KEY_NSCameraUsageDescription = "사용자의 운동 움직임을 감지하고 횟수를 세주기 위해 권한이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1148,7 +1216,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FebirdApp/Resources/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "사용자가 인바디 사진과 프로필 사진을 등록하기 위해 권한이 필요합니다.";
+				INFOPLIST_KEY_NSCameraUsageDescription = "사용자의 운동 움직임을 감지하고 횟수를 세주기 위해 권한이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1285,7 +1353,15 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		3E3B9A842C5B2CDF001F2852 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */ = {
+		8F0ECAA82C60EDFA0050FD88 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
+		8F0ECAAB2C60EE020050FD88 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SimplyDanny/SwiftLintPlugins.git";
 			requirement = {
@@ -1294,6 +1370,14 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8F0ECAA92C60EDFA0050FD88 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8F0ECAA82C60EDFA0050FD88 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3EF6F0412C36937D00EEF18F /* Project object */;
 }

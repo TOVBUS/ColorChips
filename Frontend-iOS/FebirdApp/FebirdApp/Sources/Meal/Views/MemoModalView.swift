@@ -14,8 +14,8 @@ struct MemoModalView: View {
     @State private var temporaryText = ""
 
     var body: some View {
-        ZStack(alignment: .topLeading) {
-            Color.gray20
+        ZStack(alignment: .top) {
+            Color.gray10
                 .ignoresSafeArea()
 
             VStack {
@@ -61,6 +61,7 @@ struct MemoModalView: View {
                 VStack {
                     TextEditor(text: $temporaryText)
                         .scrollContentBackground(.hidden)
+                        .foregroundStyle(.gray100)
 
                     HStack {
                         Spacer()
@@ -69,7 +70,7 @@ struct MemoModalView: View {
 
                         Text("\(temporaryText.count) / 200")
                             .font(.customFont(size: 16, weight: .medium))
-                            .foregroundColor(.gray40)
+                            .foregroundStyle(.gray40)
                             .onChange(of: temporaryText) { _, newValue in
                                 if newValue.count > 200 {
                                     temporaryText = String(newValue.prefix(200))
