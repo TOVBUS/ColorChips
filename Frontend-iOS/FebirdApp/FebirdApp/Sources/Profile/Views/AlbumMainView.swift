@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AlbumMainView: View {
     @EnvironmentObject var profileSelectViewModel: ProfileSelectViewModel
-    let albums: [AlbumData]
+    let albums: [AlbumData] = [AlbumData(educationLevel: .kindergarten, grade: .kindergarten1, levelRecords: [LevelRecordData(levelId: 1, schoolName: "피오 유치원", imageData: UIImage(systemName: "photo") ?? UIImage())])]
 
     var body: some View {
         ZStack {
@@ -29,7 +29,7 @@ struct AlbumMainView: View {
     }
 }
 
-#Preview {
-    AlbumMainView(albums: dummyAlbums)
-        .environmentObject(ProfileSelectViewModel())
-}
+// #Preview {
+//    AlbumMainView(albums: dummyAlbums)
+//        .environmentObject(ProfileSelectViewModel())
+// }

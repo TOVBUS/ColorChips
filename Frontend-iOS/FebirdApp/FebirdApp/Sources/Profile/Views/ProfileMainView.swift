@@ -23,7 +23,7 @@ struct ProfileMainView: View {
                 VStack {
                     switch profileSelectViewModel.mainContentType {
                     case .album:
-                        AlbumMainView(albums: dummyAlbums)
+                        AlbumMainView()
                     case .inbody:
                         InbodyMainView(inbodys: inbodyDummyData)
                     case .eyeBody:
