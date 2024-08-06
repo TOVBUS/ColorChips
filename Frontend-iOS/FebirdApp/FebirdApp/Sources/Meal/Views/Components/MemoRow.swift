@@ -8,63 +8,67 @@
 import SwiftUI
 
 struct MemoRow: View {
-
-    @State private var inputText = ""
+    @State private var titleText = ""
+    @State private var contentText = ""
     @State private var showModal = false
     @State private var showFullText = false
-
+    @State private var mealImage: UIImage? = UIImage(named: "feoFace")
+    
     var mealTime: String
-
+    
     var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            Text(mealTime) // 아침, 점심, 저녁
+        
+        HStack(spacing: 8) {
+            
+            Image(uiImage: mealImage ?? UIImage(named: "feoFace")!)
+                .resizable()
+                .scaledToFit()
+                .frame(height: mealImage == UIImage(named: "feoFace") ? 70 : 200)
+                .cornerRadius(8)
+            
+            Text(mealTime)
                 .font(.customFont(size: 14, weight: .bold))
                 .foregroundStyle(.white)
                 .padding(.horizontal, 8)
                 .padding(.vertical, 2)
                 .background(.orange40)
                 .cornerRadius(8)
-
-            HStack(spacing: 8) {
-                Image("feoFace")
-
-                VStack(alignment: .leading, spacing: 8) {
-                    // MARK: - 글자수 제한
-                    if !inputText.isEmpty {
-                        Text(showFullText ? inputText : inputText.prefix(30) + (inputText.count > 30 ? "..." : ""))
-                            .font(.customFont(size: 14, weight: .medium))
-                            .foregroundStyle(.gray100)
-                            .lineLimit(showFullText ? nil : 1)
-                            .onTapGesture {
-                                withAnimation {
-                                    showFullText.toggle()
-                                }
+            
+            VStack(alignment: .leading, spacing: 8) {
+                if !contentText.isEmpty {
+                    Text(showFullText ? contentText : contentText.prefix(30) + (contentText.count > 30 ? "..." : ""))
+                        .font(.customFont(size: 14, weight: .medium))
+                        .foregroundStyle(.gray100)
+                        .lineLimit(showFullText ? nil : 1)
+                        .onTapGesture {
+                            withAnimation {
+                                showFullText.toggle()
                             }
-                    }
+                        }
                 }
-
-                Spacer()
-
-                Button(action: {
-                    showModal.toggle()
-                }, label: {
-                    Image("pencilIcon")
-                        .font(.customFont(size: 22, weight: .bold))
-                        .foregroundStyle(.gray60)
-                        .padding(8)
-                })
             }
+            
+            Spacer()
+            
+            Button(action: {
+                showModal.toggle()
+            }, label: {
+                Image("pencilIcon")
+                    .font(.customFont(size: 22, weight: .bold))
+                    .foregroundStyle(.gray60)
+                    .padding(8)
+            })
         }
+
         .padding(12)
         .frame(maxWidth: .infinity)
         .background(.gray10)
         .cornerRadius(32)
         .sheet(isPresented: $showModal) {
-            MemoModalView(text: $inputText)
+            MemoModalView(image: $mealImage, contentText: $contentText, titleText: $titleText)
         }
     }
 }
-
 #Preview {
     MemoRow(mealTime: "점심")
 }
