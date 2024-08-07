@@ -25,12 +25,15 @@ exports.MemberModule = MemberModule = __decorate([
             platform_express_1.MulterModule.register({
                 storage: (0, multer_1.diskStorage)({
                     destination: './uploads',
-                    filename: (req, file, callback) => {
+                    filename: (_req, file, callback) => {
                         const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1e9);
                         const ext = (0, path_1.extname)(file.originalname);
                         callback(null, `${file.fieldname}-${uniqueSuffix}${ext}`);
                     },
                 }),
+                limits: {
+                    fileSize: 500 * 1024 * 1024,
+                },
             }),
         ],
         exports: [typeorm_1.TypeOrmModule],

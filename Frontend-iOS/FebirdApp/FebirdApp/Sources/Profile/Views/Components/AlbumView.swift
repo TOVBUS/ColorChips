@@ -7,56 +7,64 @@
 
 import SwiftUI
 
-let dummyAlbums = generateDummyAlbums()
-
-func generateDummyAlbums() -> [AlbumData] {
-    let albumTitles = ["유치원 씨앗반 시절", "유치원 새싹반 시절", "유치원 열매반 시절"]
-    let photoCounts = [3, 5, 7]
-
-    return zip(albumTitles, photoCounts).map { title, count in
-        let photos = (1...count).map { day -> PhotoData in
-            let imageName = "peoLogo"
-            return PhotoData(day: day, imageName: imageName)
-        }
-        return AlbumData(title: title, photos: photos)
-    }
-}
-
 struct AlbumView: View {
     let album: AlbumData
-
     @State private var isExpanded = false
 
     var body: some View {
         VStack {
             Button(action: {
-                withAnimation(.easeInOut(duration: 0.3)) {
-                    isExpanded.toggle()
+                if album.hasData {
+                    withAnimation(.easeInOut(duration: 0.3)) {
+                        isExpanded.toggle()
+                    }
                 }
             }) {
                 HStack {
                     Text(album.title)
                         .font(.customFont(size: 18, weight: .medium))
-                        .foregroundStyle(.black)
+                        .foregroundStyle(album.hasData ? .black : .gray)
                     Spacer()
                     Image(isExpanded ? "Chevron-down" : "Chevron-right")
                 }
                 .padding()
-                .background(.gray10)
+                .background(album.hasData ? .gray10 : .gray30)
             }
+            .disabled(!album.hasData)
 
-            if isExpanded {
+            if isExpanded && album.hasData {
                 LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 3), spacing: 10) {
-                    ForEach(album.photos) { photo in
+                    ForEach(1...album.dayCount, id: \.self) { day in
                         VStack {
-                            Text("Day \(photo.day)")
+                            Text("Day \(day)")
                                 .font(.customFont(size: 14, weight: .regular))
                                 .foregroundStyle(.black)
-                            Image(photo.imageName)
-                                .resizable()
-                                .scaledToFit()
-                                .frame(height: 100)
-                                .cornerRadius(10)
+
+                            if let record = album.levelRecords?.first(where: { $0.levelId == day }) {
+
+                                if let imageData = record.imageData, let uiImage = UIImage(data: imageData) {
+                                    Image(uiImage: uiImage)
+                                        .resizable()
+                                        .scaledToFill()
+                                        .frame(width: 100, height: 100)
+                                        .clipShape(Rectangle())
+                                        .cornerRadius(10)
+                                } else {
+                                    Image("defaultAlbum")
+                                        .resizable()
+                                        .scaledToFill()
+                                        .frame(width: 100, height: 100)
+                                        .clipShape(Rectangle())
+                                        .cornerRadius(10)
+                                }
+                            } else {
+                                Image("defaultAlbumGray")
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 100, height: 100)
+                                    .clipShape(Rectangle())
+                                    .cornerRadius(10)
+                            }
                         }
                     }
                 }
@@ -72,5 +80,5 @@ struct AlbumView: View {
 }
 
 #Preview {
-    AlbumView(album: dummyAlbums[0])
+    AlbumView(album: AlbumData(educationLevel: .kindergarten, grade: .kindergarten1, levelRecords: [LevelRecordData(routineId: 1001, levelId: 1, schoolName: "피오 유치원", grade: 1, imageData: UIImage(named: "peoLogo") ?? UIImage())]))
 }

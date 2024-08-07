@@ -20,6 +20,9 @@ import { extname } from 'path';
           callback(null, `${file.fieldname}-${uniqueSuffix}${ext}`);
         },
       }),
+      limits: {
+        fileSize: 500 * 1024 * 1024,
+      },
     }),
   ],
   exports: [TypeOrmModule],

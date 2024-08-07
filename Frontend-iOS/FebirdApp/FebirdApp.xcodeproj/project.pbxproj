@@ -96,6 +96,9 @@
 		E15BF0362C60B6C30033E5C3 /* InbodyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15BF0352C60B6C30033E5C3 /* InbodyData.swift */; };
 		E15BF0382C60B8510033E5C3 /* InbodyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15BF0372C60B8510033E5C3 /* InbodyViewModel.swift */; };
 		E15BF03C2C60BAC10033E5C3 /* TrendAnalysisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15BF03B2C60BAC10033E5C3 /* TrendAnalysisView.swift */; };
+		E18289462C621C02006FB058 /* EducationLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18289452C621C02006FB058 /* EducationLevel.swift */; };
+		E18289482C621F78006FB058 /* LevelRecordData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18289472C621F78006FB058 /* LevelRecordData.swift */; };
+		E182894A2C627BB8006FB058 /* AlbumViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18289492C627BB8006FB058 /* AlbumViewModel.swift */; };
 		E1AEFC932C4D10AD000D6441 /* AlbumMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AEFC922C4D10AD000D6441 /* AlbumMainView.swift */; };
 		E1AEFC952C4D10BE000D6441 /* AlbumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AEFC942C4D10BE000D6441 /* AlbumView.swift */; };
 		E1AEFC972C4D2E69000D6441 /* AlbumDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AEFC962C4D2E69000D6441 /* AlbumDetailView.swift */; };
@@ -246,6 +249,9 @@
 		E15BF0352C60B6C30033E5C3 /* InbodyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InbodyData.swift; sourceTree = "<group>"; };
 		E15BF0372C60B8510033E5C3 /* InbodyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InbodyViewModel.swift; sourceTree = "<group>"; };
 		E15BF03B2C60BAC10033E5C3 /* TrendAnalysisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendAnalysisView.swift; sourceTree = "<group>"; };
+		E18289452C621C02006FB058 /* EducationLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationLevel.swift; sourceTree = "<group>"; };
+		E18289472C621F78006FB058 /* LevelRecordData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelRecordData.swift; sourceTree = "<group>"; };
+		E18289492C627BB8006FB058 /* AlbumViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewModel.swift; sourceTree = "<group>"; };
 		E1AEFC922C4D10AD000D6441 /* AlbumMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumMainView.swift; sourceTree = "<group>"; };
 		E1AEFC942C4D10BE000D6441 /* AlbumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumView.swift; sourceTree = "<group>"; };
 		E1AEFC962C4D2E69000D6441 /* AlbumDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailView.swift; sourceTree = "<group>"; };
@@ -385,6 +391,7 @@
 				3E5F3EFB2C5B57A9007023DC /* ProfileSelectViewModel.swift */,
 				E15BF01E2C5FBE3C0033E5C3 /* EyeBodyPhotoViewModel.swift */,
 				E15BF0372C60B8510033E5C3 /* InbodyViewModel.swift */,
+				E18289492C627BB8006FB058 /* AlbumViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -396,6 +403,8 @@
 				3E5F3EFE2C5B94CA007023DC /* PhotoData.swift */,
 				E15BF01C2C5FBB190033E5C3 /* EyeBodyPhoto.swift */,
 				E15BF0352C60B6C30033E5C3 /* InbodyData.swift */,
+				E18289452C621C02006FB058 /* EducationLevel.swift */,
+				E18289472C621F78006FB058 /* LevelRecordData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -953,6 +962,7 @@
 				E26D48B52C48F50D00D63FE7 /* AIMealRecomendationView.swift in Sources */,
 				E24F5E822C48EC3400724DA7 /* MealMainView.swift in Sources */,
 				8F92DF7C2C4B9A390071F336 /* CustomNavigationBar.swift in Sources */,
+				E182894A2C627BB8006FB058 /* AlbumViewModel.swift in Sources */,
 				3ED5FD8E2C4A020200CD4508 /* CustomButtonView.swift in Sources */,
 				E246A8DE2C5EAAF600B86617 /* ExerciseChatBotView.swift in Sources */,
 				E1BB0D602C4800E2002565B2 /* OnboardingTextField.swift in Sources */,
@@ -1012,6 +1022,7 @@
 				3E9D1FD52C4E346E00302F7E /* ProfileSelectView.swift in Sources */,
 				E12911B92C48DC82009A92F7 /* CameraActionSheet.swift in Sources */,
 				8FE8FB3D2C60BDF1009CFAE9 /* KeychainManager.swift in Sources */,
+				E18289462C621C02006FB058 /* EducationLevel.swift in Sources */,
 				E15BF01F2C5FBE3C0033E5C3 /* EyeBodyPhotoViewModel.swift in Sources */,
 				E10FD99F2C49FECB00D80139 /* OnboardingLoadingView.swift in Sources */,
 				8F8A77F02C5F734B008E61D7 /* SettingHeaderView.swift in Sources */,
@@ -1036,6 +1047,7 @@
 				8F92DF832C4BB0970071F336 /* VideoPlayerView.swift in Sources */,
 				E24CF9502C4F891A00D1548E /* ProfileSettingHeaderView.swift in Sources */,
 				3E3B9A812C5B29A2001F2852 /* NavigationPathFinder.swift in Sources */,
+				E18289482C621F78006FB058 /* LevelRecordData.swift in Sources */,
 				E1AEFC972C4D2E69000D6441 /* AlbumDetailView.swift in Sources */,
 				8FAC18852C4B8C4200CDF7CF /* ExerciseItem.swift in Sources */,
 				3EFC450C2C44F882001052C7 /* Font+Extension.swift in Sources */,

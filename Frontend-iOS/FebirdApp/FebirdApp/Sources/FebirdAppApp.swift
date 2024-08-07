@@ -11,6 +11,7 @@ import SwiftData
 @main
 struct FebirdAppApp: App {
     @StateObject var tabViewModel = TabViewModel()
+    @StateObject var albumViewModel = AlbumViewModel()
     @StateObject private var onboardingNavigationPathFinder = NavigationPathFinder<OnboardingViewOptions>()
     @StateObject private var mealNavigationPathFinder = NavigationPathFinder<MealViewOptions>()
     @StateObject private var exerciseNavigationPathFinder = NavigationPathFinder<ExerciseViewOptions>()
@@ -20,7 +21,7 @@ struct FebirdAppApp: App {
 
     init() {
         do {
-            modelContainer = try ModelContainer(for: UserProfile.self, EyeBodyPhoto.self, DailyMemo.self, MealMemo.self)
+            modelContainer = try ModelContainer(for: UserProfile.self, EyeBodyPhoto.self, LevelRecordData.self, DailyMemo.self, MealMemo.self)
         } catch {
             fatalError("Could not initialize ModelContainer: \(error)")
         }
@@ -28,7 +29,8 @@ struct FebirdAppApp: App {
 
     var body: some Scene {
         WindowGroup {
-            // SocialLoginView()
+           // SocialLoginView() }   // apple sign test
+          
             if onboardingNavigationPathFinder.isFirstEnteredApp {
                 NavigationStack(path: $onboardingNavigationPathFinder.path) {
                     OnboardingWelcomView()
@@ -65,6 +67,7 @@ struct FebirdAppApp: App {
                     CustomTabBarView()
                 }
                 .environmentObject(tabViewModel)
+                .environmentObject(albumViewModel)
                 .environmentObject(mealNavigationPathFinder)
                 .environmentObject(exerciseNavigationPathFinder)
                 .environmentObject(profileNavigationPathFinder)
