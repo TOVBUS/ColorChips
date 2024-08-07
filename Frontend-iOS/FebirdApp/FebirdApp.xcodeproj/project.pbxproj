@@ -49,6 +49,7 @@
 		3EF6F06C2C36938000EEF18F /* FebirdAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF6F06B2C36938000EEF18F /* FebirdAppUITestsLaunchTests.swift */; };
 		3EFC450C2C44F882001052C7 /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFC450B2C44F882001052C7 /* Font+Extension.swift */; };
 		8F0F47D72C6366AB004E3B86 /* Secret.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 8F0F47D62C6366AB004E3B86 /* Secret.xcconfig */; };
+		8F0F47DC2C636BF6004E3B86 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F47DB2C636BF6004E3B86 /* Config.swift */; };
 		8F8A77E72C5E7AF9008E61D7 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8A77E62C5E7AF9008E61D7 /* SettingsViewModel.swift */; };
 		8F8A77EA2C5E7CE1008E61D7 /* CellConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8A77E92C5E7CE1008E61D7 /* CellConfiguration.swift */; };
 		8F8A77EC2C5F554F008E61D7 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8A77EB2C5F554F008E61D7 /* UserProfile.swift */; };
@@ -203,6 +204,7 @@
 		3EF6F06B2C36938000EEF18F /* FebirdAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FebirdAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3EFC450B2C44F882001052C7 /* Font+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extension.swift"; sourceTree = "<group>"; };
 		8F0F47D62C6366AB004E3B86 /* Secret.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secret.xcconfig; sourceTree = "<group>"; };
+		8F0F47DB2C636BF6004E3B86 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		8F8A77E62C5E7AF9008E61D7 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		8F8A77E92C5E7CE1008E61D7 /* CellConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellConfiguration.swift; sourceTree = "<group>"; };
 		8F8A77EB2C5F554F008E61D7 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
@@ -455,6 +457,7 @@
 				8F92DF882C4D4A440071F336 /* TimerButton.swift */,
 				8F92DF8E2C4D58710071F336 /* TimerView.swift */,
 				8F92DF822C4BB0970071F336 /* VideoPlayerView.swift */,
+				8F0F47DB2C636BF6004E3B86 /* Config.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1011,6 +1014,7 @@
 				E15BF0252C6097EE0033E5C3 /* CameraPreview.swift in Sources */,
 				8F92DF8B2C4D506E0071F336 /* ExerciseRestTimerView.swift in Sources */,
 				E26D48B92C49F18800D63FE7 /* MemoRow.swift in Sources */,
+				8F0F47DC2C636BF6004E3B86 /* Config.swift in Sources */,
 				E26D48BB2C49F93900D63FE7 /* MealChatBotView.swift in Sources */,
 				323408FB2C61C97500FCB9B6 /* SignInWithAppleButton.swift in Sources */,
 				E10FD99D2C49FB4500D80139 /* InbodyInputView.swift in Sources */,

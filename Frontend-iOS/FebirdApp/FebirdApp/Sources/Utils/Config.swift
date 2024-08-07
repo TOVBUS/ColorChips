@@ -1,6 +1,6 @@
 //
 //  Config.swift
-//  ViewModelSample
+//  FebirdApp
 //
 //  Created by DOYEON JEONG on 8/7/24.
 //
