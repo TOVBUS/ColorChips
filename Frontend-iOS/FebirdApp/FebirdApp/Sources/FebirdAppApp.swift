@@ -12,6 +12,7 @@ import SwiftData
 struct FebirdAppApp: App {
     @StateObject var tabViewModel = TabViewModel()
     @StateObject var albumViewModel = AlbumViewModel()
+    @StateObject private var socialLoginViewModel = SocialLoginViewModel()
     @StateObject private var onboardingNavigationPathFinder = NavigationPathFinder<OnboardingViewOptions>()
     @StateObject private var mealNavigationPathFinder = NavigationPathFinder<MealViewOptions>()
     @StateObject private var exerciseNavigationPathFinder = NavigationPathFinder<ExerciseViewOptions>()
@@ -29,8 +30,11 @@ struct FebirdAppApp: App {
 
     var body: some Scene {
         WindowGroup {
-           // SocialLoginView() }   // apple sign test
-
+            Group {
+            //            if socialLoginViewModel.loginResult == nil {
+            //                SocialLoginView()
+            //                    .environmentObject(socialLoginViewModel)
+            //            } else
             if onboardingNavigationPathFinder.isFirstEnteredApp {
                 NavigationStack(path: $onboardingNavigationPathFinder.path) {
                     OnboardingWelcomView()
@@ -73,6 +77,15 @@ struct FebirdAppApp: App {
                 .environmentObject(profileNavigationPathFinder)
             }
         }
+                .onAppear(perform: {
+                    socialLoginViewModel.checkNickname()
+                })
+        }
+        .onChange(of: socialLoginViewModel.hasNickname, { _, newValue in
+            if let hasNickname = newValue {
+                onboardingNavigationPathFinder.setIsFirstenteredApp(!hasNickname)
+            }
+        })
         .modelContainer(modelContainer)
     }
 }

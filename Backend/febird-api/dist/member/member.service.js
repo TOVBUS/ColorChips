@@ -33,7 +33,9 @@ let MemberService = class MemberService {
         return member;
     }
     async findByAppleId(appleID) {
-        return await this.memberRepository.findOne({ where: { appleID } });
+        console.log('Searching for member with appleID:', appleID);
+        const member = await this.memberRepository.findOne({ where: { appleID } });
+        return member;
     }
     async update(member_id, updateMemberDto) {
         await this.memberRepository.update(member_id, updateMemberDto);

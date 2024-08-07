@@ -10,19 +10,19 @@ import * as jwt from 'jsonwebtoken';
 
 @Controller('member')
 export class MemberController {
-  constructor(private memberService: MemberService) {}
+  constructor(private readonly memberService: MemberService) {}
 
-  @Post()
-  @UseInterceptors(FileInterceptor('profile_image'))
-  async create(@Body() createMemberDto: CreateMemberDto, @UploadedFile() file: any, @Res() res: Response) {
-    try {
-      createMemberDto.profile_image = file.filename;
-      const member = await this.memberService.create(createMemberDto);
-      return res.status(HttpStatus.CREATED).json(member);
-    } catch (error) {
-      return res.status(HttpStatus.BAD_REQUEST).json({ message: '회원 정보 등록 실패' });
-    }
-  }
+  // @Post()
+  // @UseInterceptors(FileInterceptor('profile_image'))
+  // async create(@Body() createMemberDto: CreateMemberDto, @UploadedFile() file: any, @Res() res: Response) {
+  //   try {
+  //     createMemberDto.profile_image = file.filename;
+  //     const member = await this.memberService.create(createMemberDto);
+  //     return res.status(HttpStatus.CREATED).json(member);
+  //   } catch (error) {
+  //     return res.status(HttpStatus.BAD_REQUEST).json({ message: '회원 정보 등록 실패' });
+  //   }
+  // }
 
   @Patch(':id')
   @UseInterceptors(FileInterceptor('profile_image'))
@@ -30,7 +30,7 @@ export class MemberController {
     @Param('id') id: number,
     @Body() updateMemberDto: UpdateMemberDto,
     @UploadedFile() file: any,
-    @Res() res: Response) { 
+    @Res() res: Response) {
     try {
       if (file) {
         updateMemberDto.profile_image = file.filename;
@@ -65,16 +65,31 @@ export class MemberController {
   @Post('apple-login')
   async appleLogin(@Body('appleID') appleID: string, @Res() res: Response) {
     try {
-      let member = await this.memberService.findByAppleId(appleID);    
+      let member = await this.memberService.findByAppleId(appleID);
       if (!member) {
         member = await this.memberService.create({ appleID } as CreateMemberDto);
       }
-
       const token = jwt.sign({ member_id: member.member_id }, 'your-secret-key', { expiresIn: '1h' });
       return res.status(HttpStatus.OK).json({ token });
     } catch (error) {
       console.error(error);
       return res.status(HttpStatus.BAD_REQUEST).json({ message: '애플 로그인 실패', error: error.message });
+    }
+  }
+
+  @Get('apple/:appleID')
+  async findByAppleID(@Param('appleID') appleID: string, @Res() res: Response) {
+    try {
+      console.log('Received appleID:', appleID);
+      const member = await this.memberService.findByAppleId(appleID);
+      console.log('Found member:', member);
+      if (!member) {
+        return res.status(HttpStatus.NOT_FOUND).json({ message: '회원을 찾을 수 없습니다.' });
+      }
+      return res.status(HttpStatus.OK).json({ member_id: member.member_id });
+    } catch (error) {
+      console.error('Error occurred:', error);
+      return res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({ message: '서버 오류', error: error.message });
     }
   }
 }
