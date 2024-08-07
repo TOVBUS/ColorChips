@@ -77,6 +77,21 @@ let MemberController = class MemberController {
             return res.status(common_1.HttpStatus.BAD_REQUEST).json({ message: '애플 로그인 실패', error: error.message });
         }
     }
+    async findByAppleID(appleID, res) {
+        try {
+            console.log('Received appleID:', appleID);
+            const member = await this.memberService.findByAppleId(appleID);
+            console.log('Found member:', member);
+            if (!member) {
+                return res.status(common_1.HttpStatus.NOT_FOUND).json({ message: '회원을 찾을 수 없습니다.' });
+            }
+            return res.status(common_1.HttpStatus.OK).json({ member_id: member.member_id });
+        }
+        catch (error) {
+            console.error('Error occurred:', error);
+            return res.status(common_1.HttpStatus.INTERNAL_SERVER_ERROR).json({ message: '서버 오류', error: error.message });
+        }
+    }
 };
 exports.MemberController = MemberController;
 __decorate([
@@ -124,6 +139,14 @@ __decorate([
     __metadata("design:paramtypes", [String, Object]),
     __metadata("design:returntype", Promise)
 ], MemberController.prototype, "appleLogin", null);
+__decorate([
+    (0, common_1.Get)('apple/:appleID'),
+    __param(0, (0, common_1.Param)('appleID')),
+    __param(1, (0, common_1.Res)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, Object]),
+    __metadata("design:returntype", Promise)
+], MemberController.prototype, "findByAppleID", null);
 exports.MemberController = MemberController = __decorate([
     (0, common_1.Controller)('member'),
     __metadata("design:paramtypes", [member_service_1.MemberService])
