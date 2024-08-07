@@ -8,12 +8,12 @@
 import Foundation
 
 struct Member: Codable {
-    let id: Int
-    let age: Int?
-    let nickname, profileImage, gender: String?
-    let appleID: String?
-    let kakaoID: String?
-    let currentLevel: Int
+    var id: Int
+    var age: Int?
+    var nickname, profileImage, gender: String?
+    var appleID: String?
+    var kakaoID: String?
+    var currentLevel: Int
 
     enum CodingKeys: String, CodingKey {
         case id = "member_id"

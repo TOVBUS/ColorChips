@@ -38,18 +38,17 @@ struct FebirdAppApp: App {
     var body: some Scene {
         WindowGroup {
             Group {
-            //            if socialLoginViewModel.loginResult == nil {
-            //                SocialLoginView()
-            //                    .environmentObject(socialLoginViewModel)
-            //            } else
-            if onboardingNavigationPathFinder.isFirstEnteredApp {
-                NavigationStack(path: $onboardingNavigationPathFinder.path) {
+                if socialLoginViewModel.loginResult == nil {
+                    SocialLoginView()
+
+                } else
+                if onboardingNavigationPathFinder.isFirstEnteredApp {
+                    NavigationStack(path: $onboardingNavigationPathFinder.path) {
                     OnboardingWelcomView()
                         .navigationDestination(for: OnboardingViewOptions.self) { option in
                             option.view()
                         }
                 }
-                .environmentObject(onboardingNavigationPathFinder)
             } else {
                 ZStack(alignment: .bottom) {
                     switch tabViewModel.selectedTab {
@@ -84,22 +83,16 @@ struct FebirdAppApp: App {
                 .environmentObject(profileNavigationPathFinder)
             }
         }
-                .onAppear(perform: {
-                    socialLoginViewModel.checkNickname()
-                })
+                .environmentObject(socialLoginViewModel)
                 .environmentObject(chatViewModel)
                 .environmentObject(routineViewModel)
                 .environmentObject(levelViewModel)
                 .environmentObject(exerciseViewModel)
                 .environmentObject(inbodyViewModel)
                 .environmentObject(historyViewModel)
+                .environmentObject(onboardingNavigationPathFinder)
         }
         .environmentObject(memberViewModel)
-        .onChange(of: socialLoginViewModel.hasNickname, { _, newValue in
-            if let hasNickname = newValue {
-                onboardingNavigationPathFinder.setIsFirstenteredApp(!hasNickname)
-            }
-        })
         .modelContainer(modelContainer)
     }
 }

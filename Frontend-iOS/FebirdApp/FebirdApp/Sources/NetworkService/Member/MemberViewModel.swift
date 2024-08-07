@@ -13,6 +13,8 @@ class MemberViewModel: ObservableObject {
     @Published var member: Member?
     @Published var memberID: MemberIDFromAppleID?
     @Published var errorMessage: String?
+    @Published var isFirst: Bool?
+    @Published var newMember: Member?
 
     func createMember(_ member: MemberCreateWithAppleID) async {
         let url = "\(Config.baseURL)/member/apple-login"
@@ -77,8 +79,11 @@ class MemberViewModel: ObservableObject {
     func findOneMemberID(appleID: String) async {
         do {
             let id: MemberIDFromAppleID = try await NetworkManager.fetch("/member/apple/\(appleID)", method: .get)
-            self.memberID = id
+            self.isFirst = false
+            print("성공")
         } catch {
+            print("실패")
+            self.isFirst = true
             errorMessage = error.localizedDescription
         }
     }
