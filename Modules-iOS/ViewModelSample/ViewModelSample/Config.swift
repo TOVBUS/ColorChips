@@ -14,4 +14,18 @@ struct Config {
         }
         return url
     }
+    
+    static var chatURL: String {
+        guard let url = Bundle.main.object(forInfoDictionaryKey: "CHAT_URL") as? String else {
+            fatalError("CHAT_URL not set in plist for this environment")
+        }
+        return url
+    }
+    
+    static var apiKey: String {
+        guard let url = Bundle.main.object(forInfoDictionaryKey: "CHAT_API_KEY") as? String else {
+            fatalError("CHAT_API_KEY not set in plist for this environment")
+        }
+        return url
+    }
 }

@@ -48,6 +48,7 @@
 		3EF6F06A2C36938000EEF18F /* FebirdAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF6F0692C36938000EEF18F /* FebirdAppUITests.swift */; };
 		3EF6F06C2C36938000EEF18F /* FebirdAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF6F06B2C36938000EEF18F /* FebirdAppUITestsLaunchTests.swift */; };
 		3EFC450C2C44F882001052C7 /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFC450B2C44F882001052C7 /* Font+Extension.swift */; };
+		8F0F47D72C6366AB004E3B86 /* Secret.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 8F0F47D62C6366AB004E3B86 /* Secret.xcconfig */; };
 		8F8A77E72C5E7AF9008E61D7 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8A77E62C5E7AF9008E61D7 /* SettingsViewModel.swift */; };
 		8F8A77EA2C5E7CE1008E61D7 /* CellConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8A77E92C5E7CE1008E61D7 /* CellConfiguration.swift */; };
 		8F8A77EC2C5F554F008E61D7 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8A77EB2C5F554F008E61D7 /* UserProfile.swift */; };
@@ -201,6 +202,7 @@
 		3EF6F0692C36938000EEF18F /* FebirdAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FebirdAppUITests.swift; sourceTree = "<group>"; };
 		3EF6F06B2C36938000EEF18F /* FebirdAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FebirdAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3EFC450B2C44F882001052C7 /* Font+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extension.swift"; sourceTree = "<group>"; };
+		8F0F47D62C6366AB004E3B86 /* Secret.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secret.xcconfig; sourceTree = "<group>"; };
 		8F8A77E62C5E7AF9008E61D7 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		8F8A77E92C5E7CE1008E61D7 /* CellConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellConfiguration.swift; sourceTree = "<group>"; };
 		8F8A77EB2C5F554F008E61D7 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
@@ -521,6 +523,7 @@
 			isa = PBXGroup;
 			children = (
 				E1BB0D4B2C450F1C002565B2 /* .swiftlint.yml */,
+				8F0F47D62C6366AB004E3B86 /* Secret.xcconfig */,
 				3EF6F04B2C36937E00EEF18F /* FebirdApp */,
 				3EF6F05E2C36938000EEF18F /* FebirdAppTests */,
 				3EF6F0682C36938000EEF18F /* FebirdAppUITests */,
@@ -904,6 +907,7 @@
 				3EF6F0532C36937F00EEF18F /* Assets.xcassets in Resources */,
 				3E9E9E222C44E7DB002389EB /* WorkSans-Black.ttf in Resources */,
 				3E9E9E332C44E7FC002389EB /* IBMPlexSansKR-Regular.ttf in Resources */,
+				8F0F47D72C6366AB004E3B86 /* Secret.xcconfig in Resources */,
 				3E9E9E232C44E7DB002389EB /* WorkSans-Bold.ttf in Resources */,
 				3E9E9E262C44E7DB002389EB /* WorkSans-ExtraLight.ttf in Resources */,
 				3E9E9E252C44E7DB002389EB /* WorkSans-Regular.ttf in Resources */,

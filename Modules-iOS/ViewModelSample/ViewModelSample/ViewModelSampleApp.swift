@@ -12,8 +12,8 @@ import SwiftData
 struct ViewModelSampleApp: App {
     var body: some Scene {
         WindowGroup {
-            TestView()
-//            ContentView()
+//            TestView()
+            ContentView()
         }
     }
 }

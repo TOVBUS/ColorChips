@@ -14,10 +14,10 @@ class ChatViewModel: ObservableObject {
     @Published var errorMessage: String?
 
     func sendMessage(content: String) async {
-        let url = "https://chat-feofit.openai.azure.com/openai/deployments/gpt-4o-mini/chat/completions?api-version=2024-07-01-preview"
+        let url = "\(Config.chatURL)"
         let headers: HTTPHeaders = [
             "Content-Type": "application/json",
-            "api-key": "a64e1fed3ef44770ad86e3e23563bf75"  // 여기에 실제 API 키를 입력하세요.
+            "api-key": "\(Config.apiKey)"  // 여기에 실제 API 키를 입력하세요.
         ]
         
         let body: [String: Any] = [
