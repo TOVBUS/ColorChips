@@ -22,7 +22,6 @@
 		3E7521A52C48E6C700920BFD /* ExerciseMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7521A42C48E6C700920BFD /* ExerciseMainView.swift */; };
 		3E7521A82C48F63E00920BFD /* ExerciseMainHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7521A72C48F63E00920BFD /* ExerciseMainHeaderView.swift */; };
 		3E7521AD2C49F88B00920BFD /* CustomTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7521AC2C49F88B00920BFD /* CustomTabBarView.swift */; };
-		3E8BE55E2C61B03A004DCC9A /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 3E8BE55D2C61B03A004DCC9A /* Alamofire */; };
 		3E9D1FD52C4E346E00302F7E /* ProfileSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9D1FD42C4E346E00302F7E /* ProfileSelectView.swift */; };
 		3E9E9E202C44E7DB002389EB /* WorkSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E9E9E172C44E7DA002389EB /* WorkSans-Light.ttf */; };
 		3E9E9E212C44E7DB002389EB /* WorkSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E9E9E182C44E7DA002389EB /* WorkSans-ExtraBold.ttf */; };
@@ -50,6 +49,20 @@
 		3EFC450C2C44F882001052C7 /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFC450B2C44F882001052C7 /* Font+Extension.swift */; };
 		8F0F47D72C6366AB004E3B86 /* Secret.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 8F0F47D62C6366AB004E3B86 /* Secret.xcconfig */; };
 		8F0F47DC2C636BF6004E3B86 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F47DB2C636BF6004E3B86 /* Config.swift */; };
+		8F0F47F62C636F69004E3B86 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F47F52C636F69004E3B86 /* Member.swift */; };
+		8F0F47F82C636F88004E3B86 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F47F72C636F88004E3B86 /* History.swift */; };
+		8F0F47FA2C636FA0004E3B86 /* Inbody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F47F92C636FA0004E3B86 /* Inbody.swift */; };
+		8F0F47FC2C636FD6004E3B86 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F47FB2C636FD6004E3B86 /* Exercise.swift */; };
+		8F0F47FE2C636FEC004E3B86 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F47FD2C636FEC004E3B86 /* Level.swift */; };
+		8F0F48002C637000004E3B86 /* Routine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F47FF2C637000004E3B86 /* Routine.swift */; };
+		8F0F48022C637025004E3B86 /* ChatResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F48012C637025004E3B86 /* ChatResponse.swift */; };
+		8F0F48042C63710D004E3B86 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F48032C63710D004E3B86 /* ChatViewModel.swift */; };
+		8F0F48062C63723F004E3B86 /* RoutineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F48052C63723F004E3B86 /* RoutineViewModel.swift */; };
+		8F0F48082C637261004E3B86 /* LevelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F48072C637261004E3B86 /* LevelViewModel.swift */; };
+		8F0F480A2C6372EA004E3B86 /* ExerciseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F48092C6372EA004E3B86 /* ExerciseViewModel.swift */; };
+		8F0F48132C637905004E3B86 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8F0F48122C637905004E3B86 /* Alamofire */; };
+		8F0F48152C63795A004E3B86 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F48142C63795A004E3B86 /* HistoryViewModel.swift */; };
+		8F0F48172C637985004E3B86 /* MemberViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F48162C637985004E3B86 /* MemberViewModel.swift */; };
 		8F8A77E72C5E7AF9008E61D7 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8A77E62C5E7AF9008E61D7 /* SettingsViewModel.swift */; };
 		8F8A77EA2C5E7CE1008E61D7 /* CellConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8A77E92C5E7CE1008E61D7 /* CellConfiguration.swift */; };
 		8F8A77EC2C5F554F008E61D7 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8A77EB2C5F554F008E61D7 /* UserProfile.swift */; };
@@ -129,7 +142,7 @@
 		E26D48BB2C49F93900D63FE7 /* MealChatBotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D48BA2C49F93900D63FE7 /* MealChatBotView.swift */; };
 		E26D48BD2C49FBE300D63FE7 /* MemoModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D48BC2C49FBE300D63FE7 /* MemoModalView.swift */; };
 		E2A2F7E42C4F3C09000AD404 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A2F7E32C4F3C09000AD404 /* SettingsView.swift */; };
-		E2CFF20E2C4E999E00540500 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CFF20D2C4E999E00540500 /* Message.swift */; };
+		E2CFF20E2C4E999E00540500 /* MessageInUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CFF20D2C4E999E00540500 /* MessageInUI.swift */; };
 		E2CFF2102C4E9A1700540500 /* MealRecommendation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CFF20F2C4E9A1700540500 /* MealRecommendation.swift */; };
 		E2CFF2122C4E9D6300540500 /* InputFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CFF2112C4E9D6300540500 /* InputFieldView.swift */; };
 		E2CFF2142C4EA29500540500 /* MessageBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CFF2132C4EA29500540500 /* MessageBubble.swift */; };
@@ -205,6 +218,19 @@
 		3EFC450B2C44F882001052C7 /* Font+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extension.swift"; sourceTree = "<group>"; };
 		8F0F47D62C6366AB004E3B86 /* Secret.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secret.xcconfig; sourceTree = "<group>"; };
 		8F0F47DB2C636BF6004E3B86 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		8F0F47F52C636F69004E3B86 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
+		8F0F47F72C636F88004E3B86 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
+		8F0F47F92C636FA0004E3B86 /* Inbody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inbody.swift; sourceTree = "<group>"; };
+		8F0F47FB2C636FD6004E3B86 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
+		8F0F47FD2C636FEC004E3B86 /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
+		8F0F47FF2C637000004E3B86 /* Routine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routine.swift; sourceTree = "<group>"; };
+		8F0F48012C637025004E3B86 /* ChatResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatResponse.swift; sourceTree = "<group>"; };
+		8F0F48032C63710D004E3B86 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		8F0F48052C63723F004E3B86 /* RoutineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineViewModel.swift; sourceTree = "<group>"; };
+		8F0F48072C637261004E3B86 /* LevelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelViewModel.swift; sourceTree = "<group>"; };
+		8F0F48092C6372EA004E3B86 /* ExerciseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewModel.swift; sourceTree = "<group>"; };
+		8F0F48142C63795A004E3B86 /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
+		8F0F48162C637985004E3B86 /* MemberViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberViewModel.swift; sourceTree = "<group>"; };
 		8F8A77E62C5E7AF9008E61D7 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		8F8A77E92C5E7CE1008E61D7 /* CellConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellConfiguration.swift; sourceTree = "<group>"; };
 		8F8A77EB2C5F554F008E61D7 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
@@ -284,7 +310,7 @@
 		E26D48BA2C49F93900D63FE7 /* MealChatBotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealChatBotView.swift; sourceTree = "<group>"; };
 		E26D48BC2C49FBE300D63FE7 /* MemoModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoModalView.swift; sourceTree = "<group>"; };
 		E2A2F7E32C4F3C09000AD404 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		E2CFF20D2C4E999E00540500 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		E2CFF20D2C4E999E00540500 /* MessageInUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageInUI.swift; sourceTree = "<group>"; };
 		E2CFF20F2C4E9A1700540500 /* MealRecommendation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealRecommendation.swift; sourceTree = "<group>"; };
 		E2CFF2112C4E9D6300540500 /* InputFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFieldView.swift; sourceTree = "<group>"; };
 		E2CFF2132C4EA29500540500 /* MessageBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBubble.swift; sourceTree = "<group>"; };
@@ -300,7 +326,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E8BE55E2C61B03A004DCC9A /* Alamofire in Frameworks */,
+				8F0F48132C637905004E3B86 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -580,6 +606,68 @@
 			path = FebirdAppUITests;
 			sourceTree = "<group>";
 		};
+		8F0F47EE2C636F2B004E3B86 /* Member */ = {
+			isa = PBXGroup;
+			children = (
+				8F0F47F52C636F69004E3B86 /* Member.swift */,
+				8F0F48162C637985004E3B86 /* MemberViewModel.swift */,
+			);
+			path = Member;
+			sourceTree = "<group>";
+		};
+		8F0F47EF2C636F32004E3B86 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				8F0F47F72C636F88004E3B86 /* History.swift */,
+				8F0F48142C63795A004E3B86 /* HistoryViewModel.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		8F0F47F02C636F39004E3B86 /* Inbody */ = {
+			isa = PBXGroup;
+			children = (
+				8F0F47F92C636FA0004E3B86 /* Inbody.swift */,
+			);
+			path = Inbody;
+			sourceTree = "<group>";
+		};
+		8F0F47F12C636F44004E3B86 /* Exercise */ = {
+			isa = PBXGroup;
+			children = (
+				8F0F47FB2C636FD6004E3B86 /* Exercise.swift */,
+				8F0F48092C6372EA004E3B86 /* ExerciseViewModel.swift */,
+			);
+			path = Exercise;
+			sourceTree = "<group>";
+		};
+		8F0F47F22C636F4C004E3B86 /* Level */ = {
+			isa = PBXGroup;
+			children = (
+				8F0F47FD2C636FEC004E3B86 /* Level.swift */,
+				8F0F48072C637261004E3B86 /* LevelViewModel.swift */,
+			);
+			path = Level;
+			sourceTree = "<group>";
+		};
+		8F0F47F32C636F52004E3B86 /* Routine */ = {
+			isa = PBXGroup;
+			children = (
+				8F0F47FF2C637000004E3B86 /* Routine.swift */,
+				8F0F48052C63723F004E3B86 /* RoutineViewModel.swift */,
+			);
+			path = Routine;
+			sourceTree = "<group>";
+		};
+		8F0F47F42C636F59004E3B86 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				8F0F48012C637025004E3B86 /* ChatResponse.swift */,
+				8F0F48032C63710D004E3B86 /* ChatViewModel.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
 		8F8A77E22C5E2490008E61D7 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
@@ -652,6 +740,13 @@
 		8FE8FB342C60B9FA009CFAE9 /* NetworkService */ = {
 			isa = PBXGroup;
 			children = (
+				8F0F47F42C636F59004E3B86 /* Chat */,
+				8F0F47F32C636F52004E3B86 /* Routine */,
+				8F0F47F22C636F4C004E3B86 /* Level */,
+				8F0F47F12C636F44004E3B86 /* Exercise */,
+				8F0F47F02C636F39004E3B86 /* Inbody */,
+				8F0F47EF2C636F32004E3B86 /* History */,
+				8F0F47EE2C636F2B004E3B86 /* Member */,
 				8FE8FB352C60BA2E009CFAE9 /* NetworkManager.swift */,
 				8FE8FB3C2C60BDF1009CFAE9 /* KeychainManager.swift */,
 				8FE8FB3A2C60BDB3009CFAE9 /* AuthViewModel.swift */,
@@ -757,7 +852,7 @@
 		E2CFF20C2C4E996900540500 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				E2CFF20D2C4E999E00540500 /* Message.swift */,
+				E2CFF20D2C4E999E00540500 /* MessageInUI.swift */,
 				E2CFF20F2C4E9A1700540500 /* MealRecommendation.swift */,
 			);
 			path = Models;
@@ -800,7 +895,7 @@
 			);
 			name = FebirdApp;
 			packageProductDependencies = (
-				3E8BE55D2C61B03A004DCC9A /* Alamofire */,
+				8F0F48122C637905004E3B86 /* Alamofire */,
 			);
 			productName = FebirdApp;
 			productReference = 3EF6F0492C36937E00EEF18F /* FebirdApp.app */;
@@ -875,8 +970,8 @@
 			);
 			mainGroup = 3EF6F0402C36937D00EEF18F;
 			packageReferences = (
-				3E8BE55B2C61B012004DCC9A /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */,
-				3E8BE55C2C61B03A004DCC9A /* XCRemoteSwiftPackageReference "Alamofire" */,
+				8F0F48102C6375A9004E3B86 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */,
+				8F0F48112C637905004E3B86 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 3EF6F04A2C36937E00EEF18F /* Products */;
 			projectDirPath = "";
@@ -959,6 +1054,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F0F47FA2C636FA0004E3B86 /* Inbody.swift in Sources */,
 				8FE8FB362C60BA2E009CFAE9 /* NetworkManager.swift in Sources */,
 				E2EB25792C4E48C30094EC8E /* ChatBotMainView.swift in Sources */,
 				8F92DF912C4D68B40071F336 /* ExerciseRoutineLogView.swift in Sources */,
@@ -972,6 +1068,7 @@
 				E182894A2C627BB8006FB058 /* AlbumViewModel.swift in Sources */,
 				3ED5FD8E2C4A020200CD4508 /* CustomButtonView.swift in Sources */,
 				E246A8DE2C5EAAF600B86617 /* ExerciseChatBotView.swift in Sources */,
+				8F0F480A2C6372EA004E3B86 /* ExerciseViewModel.swift in Sources */,
 				E1BB0D602C4800E2002565B2 /* OnboardingTextField.swift in Sources */,
 				3E5F3EFC2C5B57A9007023DC /* ProfileSelectViewModel.swift in Sources */,
 				E12911BD2C48FDBA009A92F7 /* InbodyFixView.swift in Sources */,
@@ -990,11 +1087,13 @@
 				8FE8FB3B2C60BDB3009CFAE9 /* AuthViewModel.swift in Sources */,
 				E24CF94E2C4F887100D1548E /* CustomToggle.swift in Sources */,
 				E15BF03C2C60BAC10033E5C3 /* TrendAnalysisView.swift in Sources */,
+				8F0F47F62C636F69004E3B86 /* Member.swift in Sources */,
 				E12911BB2C48EDFE009A92F7 /* PhotoPicker.swift in Sources */,
 				8F92DF952C4D74A10071F336 /* ExerciseGraduationView.swift in Sources */,
 				E15BF0382C60B8510033E5C3 /* InbodyViewModel.swift in Sources */,
 				E1BB0D5C2C47B15A002565B2 /* OnboardingProfileSelectionView.swift in Sources */,
 				E15BF0272C609A5E0033E5C3 /* ExerciseDetector.swift in Sources */,
+				8F0F48022C637025004E3B86 /* ChatResponse.swift in Sources */,
 				E208BDEC2C6294F10094CC16 /* MealType.swift in Sources */,
 				3E3B9A872C5B2E3E001F2852 /* View+Extension.swift in Sources */,
 				8F92DF872C4D33870071F336 /* ExerciseTimerSettingView.swift in Sources */,
@@ -1010,29 +1109,35 @@
 				E24CF9542C4F99E500D1548E /* ProfileSettingView.swift in Sources */,
 				E1BB0D5E2C47F9F7002565B2 /* OnboardingSelectGenderButton.swift in Sources */,
 				E208BDEA2C6288780094CC16 /* MealMemoViewModel.swift in Sources */,
+				8F0F48152C63795A004E3B86 /* HistoryViewModel.swift in Sources */,
 				8F8A77EC2C5F554F008E61D7 /* UserProfile.swift in Sources */,
 				E15BF0252C6097EE0033E5C3 /* CameraPreview.swift in Sources */,
+				8F0F47F82C636F88004E3B86 /* History.swift in Sources */,
 				8F92DF8B2C4D506E0071F336 /* ExerciseRestTimerView.swift in Sources */,
 				E26D48B92C49F18800D63FE7 /* MemoRow.swift in Sources */,
 				8F0F47DC2C636BF6004E3B86 /* Config.swift in Sources */,
 				E26D48BB2C49F93900D63FE7 /* MealChatBotView.swift in Sources */,
 				323408FB2C61C97500FCB9B6 /* SignInWithAppleButton.swift in Sources */,
 				E10FD99D2C49FB4500D80139 /* InbodyInputView.swift in Sources */,
+				8F0F47FC2C636FD6004E3B86 /* Exercise.swift in Sources */,
 				E208BDEE2C62952F0094CC16 /* DailyMemo.swift in Sources */,
 				3E7521AD2C49F88B00920BFD /* CustomTabBarView.swift in Sources */,
+				8F0F48172C637985004E3B86 /* MemberViewModel.swift in Sources */,
 				8F8A77E72C5E7AF9008E61D7 /* SettingsViewModel.swift in Sources */,
 				E10FD9B02C4CC01700D80139 /* InbodyMainView.swift in Sources */,
 				323408F52C61B3CE00FCB9B6 /* SocialLoginViewModel.swift in Sources */,
 				8F8A77EE2C5F56BD008E61D7 /* ProfileSettingViewModel.swift in Sources */,
-				E2CFF20E2C4E999E00540500 /* Message.swift in Sources */,
+				E2CFF20E2C4E999E00540500 /* MessageInUI.swift in Sources */,
 				E15BF0302C609C300033E5C3 /* ExerciseDetector+ExerciseDetection.swift in Sources */,
 				E1AEFC952C4D10BE000D6441 /* AlbumView.swift in Sources */,
 				3E9D1FD52C4E346E00302F7E /* ProfileSelectView.swift in Sources */,
 				E12911B92C48DC82009A92F7 /* CameraActionSheet.swift in Sources */,
+				8F0F48082C637261004E3B86 /* LevelViewModel.swift in Sources */,
 				8FE8FB3D2C60BDF1009CFAE9 /* KeychainManager.swift in Sources */,
 				E18289462C621C02006FB058 /* EducationLevel.swift in Sources */,
 				E15BF01F2C5FBE3C0033E5C3 /* EyeBodyPhotoViewModel.swift in Sources */,
 				E10FD99F2C49FECB00D80139 /* OnboardingLoadingView.swift in Sources */,
+				8F0F47FE2C636FEC004E3B86 /* Level.swift in Sources */,
 				8F8A77F02C5F734B008E61D7 /* SettingHeaderView.swift in Sources */,
 				323408F72C61C91D00FCB9B6 /* SignInWithAppleViewModel.swift in Sources */,
 				E15BF02C2C609AF80033E5C3 /* ExerciseState.swift in Sources */,
@@ -1051,13 +1156,16 @@
 				8F92DF932C4D71A40071F336 /* ExerciseRoutineCompletionView.swift in Sources */,
 				E15BF01D2C5FBB190033E5C3 /* EyeBodyPhoto.swift in Sources */,
 				E1AEFC932C4D10AD000D6441 /* AlbumMainView.swift in Sources */,
+				8F0F48042C63710D004E3B86 /* ChatViewModel.swift in Sources */,
 				E10FD9AE2C4C16AA00D80139 /* ProfileHeaderView.swift in Sources */,
 				8F92DF832C4BB0970071F336 /* VideoPlayerView.swift in Sources */,
 				E24CF9502C4F891A00D1548E /* ProfileSettingHeaderView.swift in Sources */,
 				3E3B9A812C5B29A2001F2852 /* NavigationPathFinder.swift in Sources */,
 				E18289482C621F78006FB058 /* LevelRecordData.swift in Sources */,
+				8F0F48002C637000004E3B86 /* Routine.swift in Sources */,
 				E1AEFC972C4D2E69000D6441 /* AlbumDetailView.swift in Sources */,
 				8FAC18852C4B8C4200CDF7CF /* ExerciseItem.swift in Sources */,
+				8F0F48062C63723F004E3B86 /* RoutineViewModel.swift in Sources */,
 				3EFC450C2C44F882001052C7 /* Font+Extension.swift in Sources */,
 				E2CFF2102C4E9A1700540500 /* MealRecommendation.swift in Sources */,
 				E26D48BD2C49FBE300D63FE7 /* MemoModalView.swift in Sources */,
@@ -1405,15 +1513,15 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		3E8BE55B2C61B012004DCC9A /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */ = {
+		8F0F48102C6375A9004E3B86 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SimplyDanny/SwiftLintPlugins.git";
 			requirement = {
 				kind = upToNextMinorVersion;
-				minimumVersion = 0.55.1;
+				minimumVersion = 0.56.1;
 			};
 		};
-		3E8BE55C2C61B03A004DCC9A /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		8F0F48112C637905004E3B86 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
@@ -1424,9 +1532,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		3E8BE55D2C61B03A004DCC9A /* Alamofire */ = {
+		8F0F48122C637905004E3B86 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 3E8BE55C2C61B03A004DCC9A /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = 8F0F48112C637905004E3B86 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */

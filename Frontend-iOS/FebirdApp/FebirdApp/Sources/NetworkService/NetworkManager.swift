@@ -61,6 +61,47 @@ class NetworkManager {
             }
         }
     }
+
+    static func fetchInbodies(memberId: Int) async throws -> [Inbody] {
+        let url = "\(Config.baseURL)/member/\(memberId)/inbody"
+
+        return try await withCheckedThrowingContinuation { continuation in
+            AF.request(url).responseDecodable(of: [Inbody].self) { response in
+                switch response.result {
+                case .success(let inbodies):
+                    continuation.resume(returning: inbodies)
+                case .failure(let error):
+                    continuation.resume(throwing: error)
+                }
+            }
+        }
+    }
+
+    static func createInbody(createInbodyDto: CreateInbodyDto) async throws -> InbodyResponse {
+        let url = "\(Config.baseURL)/member/\(createInbodyDto.memberID)/inbody"
+
+        var request = URLRequest(url: URL(string: url)!)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+
+        do {
+            let jsonData = try JSONEncoder().encode(createInbodyDto)
+            request.httpBody = jsonData
+
+            return try await withCheckedThrowingContinuation { continuation in
+                AF.request(request).responseDecodable(of: InbodyResponse.self) { response in
+                    switch response.result {
+                    case .success(let inbodyResponse):
+                        continuation.resume(returning: inbodyResponse)
+                    case .failure(let error):
+                        continuation.resume(throwing: error)
+                    }
+                }
+            }
+        } catch {
+            throw error
+        }
+    }
 }
 
 extension JSONDecoder {

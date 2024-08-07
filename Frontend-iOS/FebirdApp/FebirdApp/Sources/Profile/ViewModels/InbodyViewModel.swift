@@ -8,7 +8,13 @@
 import Foundation
 import SwiftUI
 
+@MainActor
 class InbodyViewModel: ObservableObject {
+
+    @Published var inbodies: [Inbody] = []
+    @Published var createdInbody: InbodyResponse?
+    @Published var errorMessage: String?
+
     func analyzeTrend<T: BinaryFloatingPoint>(for inbodys: [InbodyModel], getValue: (InbodyModel) -> T?) -> String {
         let filteredInbodys = inbodys.filter { getValue($0) != nil }.sorted { $0.inbodyDate < $1.inbodyDate }
 
@@ -58,5 +64,25 @@ class InbodyViewModel: ObservableObject {
         }
 
         return trendMessage
+    }
+
+    func findAllInbodies(memberId: Int) async {
+        do {
+            let inbodies = try await NetworkManager.fetchInbodies(memberId: memberId)
+            self.inbodies = inbodies
+        } catch {
+            self.errorMessage = error.localizedDescription
+            print("Error fetching inbodies: \(error)")
+        }
+    }
+
+    func createInbody(createInbodyDto: CreateInbodyDto) async {
+        do {
+            let inbodies = try await NetworkManager.createInbody(createInbodyDto: createInbodyDto)
+            self.createdInbody = inbodies
+        } catch {
+            self.errorMessage = error.localizedDescription
+            print("Error fetching inbodies: \(error)")
+        }
     }
 }

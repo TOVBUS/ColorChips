@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MessageBubble: View {
-    let message: Message
+    let message: MessageInUI
 
     var body: some View {
         HStack(alignment: .bottom) {
@@ -35,5 +35,5 @@ struct MessageBubble: View {
 }
 
 #Preview {
-    MessageBubble(message: Message(content: "안녕 피오!", isUser: true))
+    MessageBubble(message: MessageInUI(content: "안녕 피오!", isUser: true))
 }
