@@ -485,7 +485,7 @@
 			isa = PBXGroup;
 			children = (
 				3EF6F04C2C36937E00EEF18F /* FebirdAppApp.swift */,
-				8FE8FB342C60B9FA009CFAE9 /* Managers */,
+				8FE8FB342C60B9FA009CFAE9 /* NetworkService */,
 				3E3B9A8C2C5B4FEF001F2852 /* Login */,
 				3E9E9E0B2C44E5B1002389EB /* Extensions */,
 				3E7521A92C48F66000920BFD /* Utils */,
@@ -649,14 +649,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		8FE8FB342C60B9FA009CFAE9 /* Managers */ = {
+		8FE8FB342C60B9FA009CFAE9 /* NetworkService */ = {
 			isa = PBXGroup;
 			children = (
 				8FE8FB352C60BA2E009CFAE9 /* NetworkManager.swift */,
 				8FE8FB3C2C60BDF1009CFAE9 /* KeychainManager.swift */,
 				8FE8FB3A2C60BDB3009CFAE9 /* AuthViewModel.swift */,
 			);
-			path = Managers;
+			path = NetworkService;
 			sourceTree = "<group>";
 		};
 		E10FD9A92C4C02A600D80139 /* Profile */ = {
