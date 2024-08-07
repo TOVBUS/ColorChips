@@ -7,9 +7,15 @@
 
 import Foundation
 
-struct Routine: Codable, Identifiable {
-    var id: Int
-    var name: String
-    var description: String
-    var exercises: [Exercise]
+// MARK: - RoutineResponseElement
+struct Routine: Codable {
+    let routineID, value, routineResponseSet: Int
+
+    enum CodingKeys: String, CodingKey {
+        case routineID = "routine_id"
+        case value
+        case routineResponseSet = "set"
+    }
 }
+
+typealias RoutineResponse = [Routine]

@@ -21,11 +21,11 @@ struct TestView: View {
             Text("Fetching data...")
                 .onAppear {
                     Task {
-                        await testInbodyViewModel()
-                        await testExerciseViewModel()
-                        await testHistoryViewModel()
+//                        await testInbodyViewModel()
+//                        await testExerciseViewModel()
+//                        await testHistoryViewModel()
 //                        await testLevelViewModel()
-//                        await testRoutineViewModel()
+                        await testRoutineViewModel()
 //                        await testMemberViewModel()
                     }
                 }
@@ -57,25 +57,29 @@ struct TestView: View {
         await historyViewModel.findAllHistories(memberId: 27)
         print("Histories: \(historyViewModel.histories)")
         
-        // Create History ❌
+        // Create History ✅
         let newHistory = CreateHistoryDto(achievementDate: Date())
         await historyViewModel.createHistory(memberID: 27, createHistoryDto: newHistory)
         print("Histories after creation: \(historyViewModel.histories)")
     }
     
     private func testLevelViewModel() async {
+        // FindAll Level ✅
         await levelViewModel.findAllLevels()
         print("Levels: \(levelViewModel.levels)")
         
-        await levelViewModel.findOneLevel(levelId: 80212)
+        // FindOne Level ✅
+        await levelViewModel.findOneLevel(levelId: 3)
         print("Level: \(String(describing: levelViewModel.level))")
     }
     
     private func testRoutineViewModel() async {
+        // FindAll Routine ✅
         await routineViewModel.findAllRoutines()
         print("Routines: \(routineViewModel.routines)")
         
-        await routineViewModel.findOneRoutine(routineId: 1)
+        // FindOne Routine ✅
+        await routineViewModel.findOneRoutine(routineId: 1003)
         print("Routine: \(String(describing: routineViewModel.routine))")
     }
     
