@@ -26,7 +26,9 @@ export class MemberService {
   }
 
   async findByAppleId(appleID: string): Promise<Member | null> {
-    return await this.memberRepository.findOne({ where: { appleID } });
+    console.log('Searching for member with appleID:', appleID);
+    const member = await this.memberRepository.findOne({ where: { appleID } });
+    return member;
   }
 
   async update(
