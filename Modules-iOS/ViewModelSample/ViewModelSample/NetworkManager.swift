@@ -33,56 +33,85 @@ enum HTTPMethod: String {
 }
 
 class NetworkManager {
-    static func fetch<T: Codable>(_ url: String, method: HTTPMethod = .get, body: T? = nil, multipartData: [String: Data]? = nil) async throws -> T {
-        guard let requestURL = URL(string: url) else {
-            throw NetworkError.invalidURL
-        }
-
-        let headers: HTTPHeaders = [
-            "Content-Type": "multipart/form-data"
-        ]
+    static func fetchInbodies(memberId: Int) async throws -> [Inbody] {
+        let url = "\(Config.baseURL)/member/\(memberId)/inbody"
         
-        let response: AFDataResponse<Data>
-        
-        if let multipartData = multipartData {
-            response = await AF.upload(multipartFormData: { multipartFormData in
-                for (key, value) in multipartData {
-                    multipartFormData.append(value, withName: key)
-                }
-                if let body = body {
-                    let jsonData = try? JSONEncoder().encode(body)
-                    multipartFormData.append(jsonData ?? Data(), withName: "json")
-                }
-            }, to: requestURL, method: Alamofire.HTTPMethod(rawValue: method.rawValue), headers: headers).serializingData().response
-        } else {
-            response = await AF.request(requestURL,
-                                        method: Alamofire.HTTPMethod(rawValue: method.rawValue),
-                                        parameters: body,
-                                        encoder: JSONParameterEncoder.default,
-                                        headers: headers).serializingData().response
-        }
-
-        print("Response Data: \(String(data: response.data ?? Data(), encoding: .utf8) ?? "No Data")")
-        
-        switch response.result {
-        case .success(let data):
-            let decodedData = try JSONDecoder().decode(T.self, from: data)
-            return decodedData
-        case .failure(let error):
-            if let data = response.data {
-                do {
-                    let decodedError = try JSONDecoder().decode(ErrorResponse.self, from: data)
-                    print("Decoded Error: \(decodedError.message)")
-                } catch {
-                    print("Failed to decode error response: \(error)")
+        return try await withCheckedThrowingContinuation { continuation in
+            AF.request(url).responseDecodable(of: [Inbody].self) { response in
+                switch response.result {
+                case .success(let inbodies):
+                    continuation.resume(returning: inbodies)
+                case .failure(let error):
+                    continuation.resume(throwing: error)
                 }
             }
-            throw NetworkError.decodingFailed(error)
+        }
+    }
+    
+    static func createInbody(createInbodyDto: CreateInbodyDto) async throws -> InbodyResponse {
+            let url = "\(Config.baseURL)/member/\(createInbodyDto.memberID)/inbody"
+            
+            var request = URLRequest(url: URL(string: url)!)
+            request.httpMethod = "POST"
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            
+            do {
+                let jsonData = try JSONEncoder().encode(createInbodyDto)
+                request.httpBody = jsonData
+                
+                return try await withCheckedThrowingContinuation { continuation in
+                    AF.request(request).responseDecodable(of: InbodyResponse.self) { response in
+                        switch response.result {
+                        case .success(let inbodyResponse):
+                            continuation.resume(returning: inbodyResponse)
+                        case .failure(let error):
+                            continuation.resume(throwing: error)
+                        }
+                    }
+                }
+            } catch {
+                throw error
+            }
+        }
+    
+    static func fetch<T: Codable>(_ endpoint: String, method: HTTPMethod = .get, body: T? = nil, multipartData: [String: Data]? = nil) async throws -> T {
+        let requestURL = URL(string: Config.baseURL + endpoint)!
+        
+        return try await withCheckedThrowingContinuation { continuation in
+            let request: DataRequest
+            if let multipartData = multipartData {
+                request = AF.upload(multipartFormData: { multipartFormData in
+                    for (key, value) in multipartData {
+                        multipartFormData.append(value, withName: key)
+                    }
+                }, to: requestURL)
+            } else {
+                request = AF.request(requestURL,
+                                     method: Alamofire.HTTPMethod(rawValue: method.rawValue),
+                                     parameters: body,
+                                     encoder: JSONParameterEncoder.default)
+            }
+            
+            request.responseDecodable(of: T.self) { response in
+                switch response.result {
+                case .success(let value):
+                    continuation.resume(returning: value)
+                case .failure(let error):
+                    continuation.resume(throwing: error)
+                }
+            }
         }
     }
 }
 
-// 에러 응답 구조체 정의
-struct ErrorResponse: Codable {
-    let message: String
+extension JSONDecoder {
+    static var iso8601: JSONDecoder {
+        let decoder = JSONDecoder()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        decoder.dateDecodingStrategy = .formatted(formatter)
+        return decoder
+    }
 }
+
+struct EmptyResponse: Codable {}

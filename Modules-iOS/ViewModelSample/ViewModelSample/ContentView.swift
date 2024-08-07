@@ -2,60 +2,42 @@
 //  ContentView.swift
 //  ViewModelSample
 //
-//  Created by doyeonjeong on 8/6/24.
+//  Created by DOYEON JEONG on 8/7/24.
 //
 
 import SwiftUI
-import SwiftData
 
 struct ContentView: View {
-    @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
+    @StateObject private var viewModel = HistoryViewModel()
 
     var body: some View {
-        NavigationSplitView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
-                    } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
-                    }
-                }
-                .onDelete(perform: deleteItems)
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
+        VStack {
+            Button("Create History") {
+                Task {
+                    let createHistoryDto = CreateHistoryDto(achievementDate: Date())
+                    await viewModel.createHistory(memberID: 27, createHistoryDto: createHistoryDto)
                 }
             }
-        } detail: {
-            Text("Select an item")
-        }
-    }
 
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
-        }
-    }
+            Button("Fetch Histories") {
+                Task {
+                    await viewModel.findAllHistories(memberId: 27)
+                }
+            }
 
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                modelContext.delete(items[index])
+            List(viewModel.histories, id: \.historyID) { history in
+                Text("History ID: \(history.historyID)")
+            }
+
+            if let errorMessage = viewModel.errorMessage {
+                Text("Error: \(errorMessage)")
+                    .foregroundColor(.red)
             }
         }
     }
 }
 
+
 #Preview {
     ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
 }
