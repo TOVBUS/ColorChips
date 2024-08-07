@@ -28,4 +28,18 @@ struct Config {
         }
         return url
     }
+    
+    static var docURL: String {
+        guard let url = Bundle.main.object(forInfoDictionaryKey: "DOC_URL") as? String else {
+            fatalError("DOC_URL not set in plist for this environment")
+        }
+        return url
+    }
+    
+    static var docApiKey: String {
+        guard let url = Bundle.main.object(forInfoDictionaryKey: "DOC_API_KEY") as? String else {
+            fatalError("DOC_API_KEY not set in plist for this environment")
+        }
+        return url
+    }
 }
