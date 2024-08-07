@@ -47,7 +47,6 @@
 		3EF6F06A2C36938000EEF18F /* FebirdAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF6F0692C36938000EEF18F /* FebirdAppUITests.swift */; };
 		3EF6F06C2C36938000EEF18F /* FebirdAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF6F06B2C36938000EEF18F /* FebirdAppUITestsLaunchTests.swift */; };
 		3EFC450C2C44F882001052C7 /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFC450B2C44F882001052C7 /* Font+Extension.swift */; };
-		8F0F47D72C6366AB004E3B86 /* Secret.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 8F0F47D62C6366AB004E3B86 /* Secret.xcconfig */; };
 		8F0F47DC2C636BF6004E3B86 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F47DB2C636BF6004E3B86 /* Config.swift */; };
 		8F0F47F62C636F69004E3B86 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F47F52C636F69004E3B86 /* Member.swift */; };
 		8F0F47F82C636F88004E3B86 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F47F72C636F88004E3B86 /* History.swift */; };
@@ -216,7 +215,6 @@
 		3EF6F0692C36938000EEF18F /* FebirdAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FebirdAppUITests.swift; sourceTree = "<group>"; };
 		3EF6F06B2C36938000EEF18F /* FebirdAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FebirdAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3EFC450B2C44F882001052C7 /* Font+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extension.swift"; sourceTree = "<group>"; };
-		8F0F47D62C6366AB004E3B86 /* Secret.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secret.xcconfig; sourceTree = "<group>"; };
 		8F0F47DB2C636BF6004E3B86 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		8F0F47F52C636F69004E3B86 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		8F0F47F72C636F88004E3B86 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
@@ -298,6 +296,7 @@
 		E208BDEB2C6294F10094CC16 /* MealType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealType.swift; sourceTree = "<group>"; };
 		E208BDED2C62952F0094CC16 /* DailyMemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMemo.swift; sourceTree = "<group>"; };
 		E208BDEF2C6295660094CC16 /* MealMemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealMemo.swift; sourceTree = "<group>"; };
+		E241DB512C63864600F4BFC8 /* Secret.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secret.xcconfig; sourceTree = "<group>"; };
 		E246A8DD2C5EAAF600B86617 /* ExerciseChatBotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseChatBotView.swift; sourceTree = "<group>"; };
 		E246A8DF2C5EC4A200B86617 /* ExerciseCountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCountView.swift; sourceTree = "<group>"; };
 		E24CF94D2C4F887100D1548E /* CustomToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomToggle.swift; sourceTree = "<group>"; };
@@ -552,7 +551,7 @@
 			isa = PBXGroup;
 			children = (
 				E1BB0D4B2C450F1C002565B2 /* .swiftlint.yml */,
-				8F0F47D62C6366AB004E3B86 /* Secret.xcconfig */,
+				E241DB512C63864600F4BFC8 /* Secret.xcconfig */,
 				3EF6F04B2C36937E00EEF18F /* FebirdApp */,
 				3EF6F05E2C36938000EEF18F /* FebirdAppTests */,
 				3EF6F0682C36938000EEF18F /* FebirdAppUITests */,
@@ -1005,7 +1004,6 @@
 				3EF6F0532C36937F00EEF18F /* Assets.xcassets in Resources */,
 				3E9E9E222C44E7DB002389EB /* WorkSans-Black.ttf in Resources */,
 				3E9E9E332C44E7FC002389EB /* IBMPlexSansKR-Regular.ttf in Resources */,
-				8F0F47D72C6366AB004E3B86 /* Secret.xcconfig in Resources */,
 				3E9E9E232C44E7DB002389EB /* WorkSans-Bold.ttf in Resources */,
 				3E9E9E262C44E7DB002389EB /* WorkSans-ExtraLight.ttf in Resources */,
 				3E9E9E252C44E7DB002389EB /* WorkSans-Regular.ttf in Resources */,
@@ -1212,6 +1210,7 @@
 /* Begin XCBuildConfiguration section */
 		3EF6F06D2C36938000EEF18F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E241DB512C63864600F4BFC8 /* Secret.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -1275,6 +1274,7 @@
 		};
 		3EF6F06E2C36938000EEF18F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E241DB512C63864600F4BFC8 /* Secret.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
