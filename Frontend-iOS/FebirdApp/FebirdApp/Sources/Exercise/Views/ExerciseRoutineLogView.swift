@@ -82,6 +82,7 @@ struct ExerciseRoutineLogView: View {
             }
             .foregroundStyle(.gray100)
         }
+        .navigationBarBackButtonHidden()
     }
 }
 

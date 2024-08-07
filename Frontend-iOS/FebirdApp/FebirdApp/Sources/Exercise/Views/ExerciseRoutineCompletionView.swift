@@ -37,6 +37,7 @@ struct ExerciseRoutineCompletionView: View {
                 .foregroundStyle(.white)
         )
         .ignoresSafeArea()
+        .navigationBarBackButtonHidden()
     }
 }
 

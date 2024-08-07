@@ -33,6 +33,7 @@ struct ExerciseGraduationView: View {
                 }
             }
         }
+        .navigationBarBackButtonHidden()
     }
 }
 
