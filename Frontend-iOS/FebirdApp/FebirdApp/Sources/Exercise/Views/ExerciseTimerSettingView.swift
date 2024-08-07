@@ -66,6 +66,7 @@ struct ExerciseTimerSettingView: View {
                     cameraCheckAndProceed()
                 }
                 .padding(24)
+                .padding(.bottom, 10)
             }
             .ignoresSafeArea()
             .padding(24)
@@ -95,6 +96,7 @@ struct ExerciseTimerSettingView: View {
                 showAlert = true
             }
         }
+        .navigationBarBackButtonHidden()
     }
 
     private func timeString(from seconds: Int) -> String {

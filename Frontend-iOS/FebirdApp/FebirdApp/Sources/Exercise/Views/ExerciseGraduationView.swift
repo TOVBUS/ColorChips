@@ -27,10 +27,13 @@ struct ExerciseGraduationView: View {
 
                 CustomButtonView(title: "이얏호~! 졸업이다~! 🎓", style: .orange) {
                     navigationPathFinder.popToRoot()
+                    exercises[0].isStarted = false
+                    exercises[0].isFinished = true
                     tabViewModel.isHidden = false
                 }
             }
         }
+        .navigationBarBackButtonHidden()
     }
 }
 

@@ -12,12 +12,32 @@ struct ExerciseGuideView: View {
     @StateObject private var viewModel = ExerciseGuideViewModel()
     @EnvironmentObject var tabViewModel: TabViewModel
     @EnvironmentObject var navigationPathFinder: NavigationPathFinder<ExerciseViewOptions>
-    @State var isStarted = true
+    @Binding var isStarted: Bool
 
     var body: some View {
         VStack {
-            CustomNavigationBar(title: "스모 스쿼트")
-                .padding(.top, 70)
+            HStack(spacing: 12) {
+                Button(action: {
+                    navigationPathFinder.popPath()
+                    tabViewModel.isHidden = false
+                }, label: {
+                    Image("Chevron-left")
+                        .resizable()
+                        .frame(width: 30, height: 30)
+
+                })
+
+                Text(exercises[0].name)
+                    .font(.customFont(size: 22, weight: .bold))
+                    .lineSpacing(32)
+                    .foregroundColor(.gray90)
+                    .frame(maxWidth: .infinity)
+                    .padding(.trailing, 30)
+
+            }
+            .frame(maxWidth: .infinity, minHeight: 32, maxHeight: 32)
+            .padding(.top, 70)
+            .padding(.horizontal, 20)
 
             if let player = viewModel.player {
                 VideoPlayerView(player: player)
@@ -79,18 +99,6 @@ struct ExerciseGuideView: View {
             tabViewModel.isHidden = true
         }
         .navigationBarBackButtonHidden()
-        .toolbar {
-            ToolbarItem(placement: .navigationBarLeading) {
-                Button(action: {
-                    navigationPathFinder.popPath()
-                    tabViewModel.isHidden = false
-                }) {
-                    HStack {
-                        Image("Chevron-left")
-                    }
-                }
-            }
-        }
     }
 
     func makeAttributedText(_ text: String) -> AttributedString {
@@ -108,7 +116,7 @@ struct ExerciseGuideView: View {
 }
 
 #Preview {
-    ExerciseGuideView(isStarted: false)
+    ExerciseGuideView(isStarted: .constant(false))
         .environmentObject(TabViewModel())
         .environmentObject(NavigationPathFinder<ExerciseViewOptions>())
 

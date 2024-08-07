@@ -81,7 +81,7 @@ enum ProfileViewOptions: Hashable, ViewOptions {
 
 enum ExerciseViewOptions: Hashable, ViewOptions {
     case exerciseMainView
-    case exerciseGuideView
+    case exerciseGuideView(isStarted: Bool)
     case exerciseTimerSettingView
     case exerciseRestTimerView
     case exerciseRoutineLogView
@@ -95,8 +95,8 @@ enum ExerciseViewOptions: Hashable, ViewOptions {
         switch self {
         case .exerciseMainView:
             ExerciseMainView()
-        case .exerciseGuideView:
-            ExerciseGuideView()
+        case .exerciseGuideView(let isStarted):
+            ExerciseGuideView(isStarted: .constant(isStarted))
         case .exerciseTimerSettingView:
             ExerciseTimerSettingView()
         case .exerciseRestTimerView:
