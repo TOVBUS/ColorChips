@@ -98,6 +98,9 @@ struct TestView: View {
         // Delete Member ✅
         await memberViewModel.deleteMember(memberId: 16)
         print("Member after delete: \(memberViewModel.member)")
+        
+        await memberViewModel.findOneMemberID(appleID: "test")
+        print("Get MemberID using Apple ID: \(memberViewModel.memberID)")
     }
 }
 

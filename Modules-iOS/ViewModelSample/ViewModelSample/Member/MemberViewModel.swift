@@ -16,6 +16,7 @@ struct LoginResponse: Codable {
 @MainActor
 class MemberViewModel: ObservableObject {
     @Published var member: Member?
+    @Published var memberID: MemberIDFromAppleID?
     @Published var errorMessage: String?
     
     func createMember(_ member: MemberCreateWithAppleID) async {
@@ -73,6 +74,15 @@ class MemberViewModel: ObservableObject {
         do {
             _ = try await NetworkManager.fetch("/member/\(memberId)", method: .delete) as EmptyResponse
             self.member = nil
+        } catch {
+            errorMessage = error.localizedDescription
+        }
+    }
+    
+    func findOneMemberID(appleID: String) async {
+        do {
+            let id: MemberIDFromAppleID = try await NetworkManager.fetch("/member/apple/\(appleID)", method: .get)
+            self.memberID = id
         } catch {
             errorMessage = error.localizedDescription
         }
