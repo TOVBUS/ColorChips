@@ -40,6 +40,7 @@ struct ExerciseRestTimerView: View {
         .background(LinearGradient(gradient: Gradient(colors: [Color(red: 0.07, green: 0.07, blue: 0.08).opacity(0), Color(red: 0.07, green: 0.07, blue: 0.08).opacity(0.6)]), startPoint: .top, endPoint: .bottom))
         .background(Color(red: 0.98, green: 0.45, blue: 0.09))
         .ignoresSafeArea()
+        .navigationBarBackButtonHidden()
     }
 }
 

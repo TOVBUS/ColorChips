@@ -18,7 +18,7 @@ struct ExerciseItemView: View {
                 .padding(.horizontal, 14)
                 .padding(.top, 8)
 
-            Text(item.set)
+            Text("\(item.value)회 \(item.set)세트")
                 .font(.customFont(size: 14, weight: .regular))
                 .foregroundColor(foregroundColor)
                 .padding(.horizontal, 14)
@@ -47,5 +47,5 @@ struct ExerciseItemView: View {
 }
 
 #Preview {
-    ExerciseItemView(item: ExerciseItem(name: "스모 스쿼트", set: "15회 3세트", isFinished: false, isStarted: true))
+    ExerciseItemView(item: ExerciseItem(name: "스모 스쿼트", value: 3, set: 1, isFinished: false, isStarted: false))
 }

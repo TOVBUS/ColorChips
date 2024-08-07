@@ -31,7 +31,6 @@ struct ExerciseRoutineLogView: View {
                     .font(.customFont(size: 20, weight: .semibold))
 
                 Spacer()
-                // TODO: 이미지가 추가되면 Text가 아닌 Image로 보여줘야함
 
                 if let image = image {
                     Image(uiImage: image)

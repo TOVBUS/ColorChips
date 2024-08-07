@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ExerciseMainView: View {
     @EnvironmentObject var navigationPathFinder: NavigationPathFinder<ExerciseViewOptions>
+    @State private var isStarted = true
 
     var body: some View {
         ZStack {
@@ -22,7 +23,7 @@ struct ExerciseMainView: View {
                 ExerciseListView()
 
                 CustomButtonView(title: "운동 시작하기") {
-                    navigationPathFinder.addPath(option: .exerciseGuideView)
+                    navigationPathFinder.addPath(option: .exerciseGuideView(isStarted: isStarted))
                 }
 
             }

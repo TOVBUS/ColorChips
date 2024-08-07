@@ -51,7 +51,7 @@ struct SocialLoginView: View {
                     .onTapGesture {
                         appleLoginViewModel.startSignInWithAppleFlow()
                     }
-                
+
                 // 애플 로그인 후 얻은 정보 보여주기 -> Test용 나중에 지우기
 
                 if !appleLoginViewModel.userIdentifier.isEmpty {
@@ -63,7 +63,7 @@ struct SocialLoginView: View {
                         loginViewModel.loginWithApple(appleID: appleLoginViewModel.userIdentifier)
                     }
                 }
-              
+
                 Button(action: {
                     if let url = URL(string: "https://qsgm7ewnrc9l.sg.larksuite.com/wiki/QBgKwS3NvifpysksdIZlK8J9gvb?from=from_copylink") {
                         UIApplication.shared.open(url)

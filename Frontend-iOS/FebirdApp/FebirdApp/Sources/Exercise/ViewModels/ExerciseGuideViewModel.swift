@@ -10,9 +10,9 @@ import AVKit
 class ExerciseGuideViewModel: ObservableObject {
     @Published var player: AVPlayer?
     let guideSteps = [
-        "발을 어깨 너비보다 넓게 벌리고, 발끝을 바깥쪽으로 향하게 서세요.",
-        "등을 곧게 펴고, 무릎이 발끝을 넘지 않도록 하며 스쿼트 자세를 취하세요.",
-        "발뒤꿈치로 밀어 원래 위치로 돌아오세요."
+        "발을 어깨 너비로 벌리고 서서, 팔을 몸 옆에 자연스럽게 내려놓습니다.",
+        "양팔을 천천히 위로 들어 머리 위에서 손뼉을 칩니다.",
+        "팔을 천천히 내리면서 시작 자세로 돌아옵니다."
     ]
 
     func loadVideo() {
