@@ -108,9 +108,10 @@
 		E1BB0D5E2C47F9F7002565B2 /* OnboardingSelectGenderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BB0D5D2C47F9F7002565B2 /* OnboardingSelectGenderButton.swift */; };
 		E1BB0D602C4800E2002565B2 /* OnboardingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BB0D5F2C4800E2002565B2 /* OnboardingTextField.swift */; };
 		E1BB0D622C48A875002565B2 /* InbodyAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BB0D612C48A875002565B2 /* InbodyAddView.swift */; };
-		E208BDE42C6247BA0094CC16 /* MemoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E208BDE32C6247BA0094CC16 /* MemoModel.swift */; };
-		E208BDE82C62493A0094CC16 /* MemoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E208BDE72C62493A0094CC16 /* MemoData.swift */; };
 		E208BDEA2C6288780094CC16 /* MealMemoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E208BDE92C6288780094CC16 /* MealMemoViewModel.swift */; };
+		E208BDEC2C6294F10094CC16 /* MealType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E208BDEB2C6294F10094CC16 /* MealType.swift */; };
+		E208BDEE2C62952F0094CC16 /* DailyMemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E208BDED2C62952F0094CC16 /* DailyMemo.swift */; };
+		E208BDF02C6295660094CC16 /* MealMemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E208BDEF2C6295660094CC16 /* MealMemo.swift */; };
 		E246A8DE2C5EAAF600B86617 /* ExerciseChatBotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E246A8DD2C5EAAF600B86617 /* ExerciseChatBotView.swift */; };
 		E246A8E02C5EC4A200B86617 /* ExerciseCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E246A8DF2C5EC4A200B86617 /* ExerciseCountView.swift */; };
 		E24CF94E2C4F887100D1548E /* CustomToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24CF94D2C4F887100D1548E /* CustomToggle.swift */; };
@@ -257,9 +258,10 @@
 		E1BB0D5D2C47F9F7002565B2 /* OnboardingSelectGenderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSelectGenderButton.swift; sourceTree = "<group>"; };
 		E1BB0D5F2C4800E2002565B2 /* OnboardingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTextField.swift; sourceTree = "<group>"; };
 		E1BB0D612C48A875002565B2 /* InbodyAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InbodyAddView.swift; sourceTree = "<group>"; };
-		E208BDE32C6247BA0094CC16 /* MemoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoModel.swift; sourceTree = "<group>"; };
-		E208BDE72C62493A0094CC16 /* MemoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoData.swift; sourceTree = "<group>"; };
 		E208BDE92C6288780094CC16 /* MealMemoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealMemoViewModel.swift; sourceTree = "<group>"; };
+		E208BDEB2C6294F10094CC16 /* MealType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealType.swift; sourceTree = "<group>"; };
+		E208BDED2C62952F0094CC16 /* DailyMemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMemo.swift; sourceTree = "<group>"; };
+		E208BDEF2C6295660094CC16 /* MealMemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealMemo.swift; sourceTree = "<group>"; };
 		E246A8DD2C5EAAF600B86617 /* ExerciseChatBotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseChatBotView.swift; sourceTree = "<group>"; };
 		E246A8DF2C5EC4A200B86617 /* ExerciseCountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCountView.swift; sourceTree = "<group>"; };
 		E24CF94D2C4F887100D1548E /* CustomToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomToggle.swift; sourceTree = "<group>"; };
@@ -709,8 +711,9 @@
 		E208BDE22C6247AC0094CC16 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				E208BDE32C6247BA0094CC16 /* MemoModel.swift */,
-				E208BDE72C62493A0094CC16 /* MemoData.swift */,
+				E208BDEB2C6294F10094CC16 /* MealType.swift */,
+				E208BDED2C62952F0094CC16 /* DailyMemo.swift */,
+				E208BDEF2C6295660094CC16 /* MealMemo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -946,6 +949,7 @@
 				E2CFF2122C4E9D6300540500 /* InputFieldView.swift in Sources */,
 				8F92DF892C4D4A440071F336 /* TimerButton.swift in Sources */,
 				E15BF0232C6097CC0033E5C3 /* JointOverlayView.swift in Sources */,
+				E208BDF02C6295660094CC16 /* MealMemo.swift in Sources */,
 				E26D48B52C48F50D00D63FE7 /* AIMealRecomendationView.swift in Sources */,
 				E24F5E822C48EC3400724DA7 /* MealMainView.swift in Sources */,
 				8F92DF7C2C4B9A390071F336 /* CustomNavigationBar.swift in Sources */,
@@ -967,7 +971,6 @@
 				8F92DF8D2C4D58570071F336 /* ExerciseTimerViewModel.swift in Sources */,
 				8F92DF7E2C4BA9750071F336 /* ExerciseGuideListView.swift in Sources */,
 				8FE8FB3B2C60BDB3009CFAE9 /* AuthViewModel.swift in Sources */,
-				E208BDE82C62493A0094CC16 /* MemoData.swift in Sources */,
 				E24CF94E2C4F887100D1548E /* CustomToggle.swift in Sources */,
 				E15BF03C2C60BAC10033E5C3 /* TrendAnalysisView.swift in Sources */,
 				E12911BB2C48EDFE009A92F7 /* PhotoPicker.swift in Sources */,
@@ -975,6 +978,7 @@
 				E15BF0382C60B8510033E5C3 /* InbodyViewModel.swift in Sources */,
 				E1BB0D5C2C47B15A002565B2 /* OnboardingProfileSelectionView.swift in Sources */,
 				E15BF0272C609A5E0033E5C3 /* ExerciseDetector.swift in Sources */,
+				E208BDEC2C6294F10094CC16 /* MealType.swift in Sources */,
 				3E3B9A872C5B2E3E001F2852 /* View+Extension.swift in Sources */,
 				8F92DF872C4D33870071F336 /* ExerciseTimerSettingView.swift in Sources */,
 				E10FD9B22C4CC06000D80139 /* InbodyChartView.swift in Sources */,
@@ -986,7 +990,6 @@
 				E2CFF2142C4EA29500540500 /* MessageBubble.swift in Sources */,
 				8FAC187F2C494BDE00CDF7CF /* ExerciseGaugeBarView.swift in Sources */,
 				8F92DF8F2C4D58710071F336 /* TimerView.swift in Sources */,
-				E208BDE42C6247BA0094CC16 /* MemoModel.swift in Sources */,
 				E24CF9542C4F99E500D1548E /* ProfileSettingView.swift in Sources */,
 				E1BB0D5E2C47F9F7002565B2 /* OnboardingSelectGenderButton.swift in Sources */,
 				E208BDEA2C6288780094CC16 /* MealMemoViewModel.swift in Sources */,
@@ -997,6 +1000,7 @@
 				E26D48BB2C49F93900D63FE7 /* MealChatBotView.swift in Sources */,
 				323408FB2C61C97500FCB9B6 /* SignInWithAppleButton.swift in Sources */,
 				E10FD99D2C49FB4500D80139 /* InbodyInputView.swift in Sources */,
+				E208BDEE2C62952F0094CC16 /* DailyMemo.swift in Sources */,
 				3E7521AD2C49F88B00920BFD /* CustomTabBarView.swift in Sources */,
 				8F8A77E72C5E7AF9008E61D7 /* SettingsViewModel.swift in Sources */,
 				E10FD9B02C4CC01700D80139 /* InbodyMainView.swift in Sources */,

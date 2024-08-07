@@ -10,6 +10,7 @@ import SwiftData
 
 @MainActor
 class MemoViewModel: ObservableObject {
+    @Published var mealMemos: [Date: [MealType: MealMemo]] = [:]
     let modelContext: ModelContext
 
     init(modelContext: ModelContext) {

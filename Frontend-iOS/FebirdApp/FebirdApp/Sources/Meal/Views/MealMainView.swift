@@ -38,7 +38,7 @@ struct MealMainView: View {
                         .padding(.horizontal, 25)
 
                     ForEach(MealType.allCases, id: \.self) { mealType in
-                        MemoRow(viewModel: viewModel, date: selectedDate, mealType: mealType)
+                        MemoRow(viewModel: viewModel, date: selectedDate, mealType: MealType(rawValue: mealType.rawValue) ?? mealType)
                     }.padding(.horizontal, 25)
                 }
             }
