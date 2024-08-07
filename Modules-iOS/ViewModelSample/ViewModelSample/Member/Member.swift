@@ -29,3 +29,11 @@ struct Member: Codable {
 struct MemberCreateWithAppleID: Codable {
     let appleID: String?
 }
+
+struct MemberIDFromAppleID: Codable {
+    let memberID: Int
+    
+    enum CodingKeys: String, CodingKey {
+        case memberID = "member_id"
+    }
+}
