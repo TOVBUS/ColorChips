@@ -16,6 +16,7 @@ const inbody_module_1 = require("./inbody/inbody.module");
 const level_module_1 = require("./level/level.module");
 const routine_module_1 = require("./routine/routine.module");
 const exercise_module_1 = require("./exercise/exercise.module");
+const chatbot_module_1 = require("./chatbot/chatbot.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -32,6 +33,7 @@ exports.AppModule = AppModule = __decorate([
             level_module_1.LevelModule,
             routine_module_1.RoutineModule,
             exercise_module_1.ExerciseModule,
+            chatbot_module_1.ChatbotModule
         ],
     })
 ], AppModule);

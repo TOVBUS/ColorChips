@@ -7,7 +7,11 @@ export class OpenAIService {
   private apiKey: string;
 
   constructor() {
-    this.endpoint = 'https://chat-feofit.openai.azure.com/openai/deployments/gpt-4o-mini/chat/completions?api-version=2024-07-01-preview';
+    const baseUrl = process.env.AZURE_OPENAI_ENDPOINT!;
+    const deployment = process.env.AZURE_OPENAI_DEPLOYMENT!;
+    const apiVersion = process.env.AZURE_OPENAI_API_VERSION!;
+    
+    this.endpoint = `${baseUrl}/openai/deployments/${deployment}/chat/completions?api-version=${apiVersion}`;
     this.apiKey = process.env.AZURE_OPENAI_API_KEY!;
   }
 
