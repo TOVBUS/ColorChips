@@ -8,45 +8,69 @@
 import Foundation
 import Alamofire
 
-enum NetworkError: Error {
+enum NetworkError: Error, LocalizedError {
     case invalidURL
     case requestFailed
+    case decodingFailed(Error)
+
+    var errorDescription: String? {
+        switch self {
+        case .invalidURL:
+            return "The URL is invalid."
+        case .requestFailed:
+            return "The network request failed."
+        case .decodingFailed(let error):
+            return "Decoding the response failed: \(error.localizedDescription)"
+        }
+    }
+}
+
+enum HTTPMethod: String {
+    case get = "GET"
+    case post = "POST"
+    case patch = "PATCH"
+    case delete = "DELETE"
 }
 
 class NetworkManager {
-    static func fetch<T: Decodable>(_ url: String) async throws -> T {
-        guard let url = URL(string: url) else {
-            throw NetworkError.invalidURL
-        }
+    static func fetch<T: Codable>(_ endpoint: String, method: HTTPMethod = .get, body: T? = nil, multipartData: [String: Data]? = nil) async throws -> T {
+        let requestURL = URL(string: Config.baseURL + endpoint)!
 
-        let task = AF.request(url).serializingDecodable(T.self)
-        let response = await task.response
-
-        switch response.result {
-        case .success(let value):
-            return value
-        case .failure(let error):
-            throw error
-        }
-    }
-}
-
-/* MARK: - 사용 예시
-class ViewModel: ObservableObject {
-    @Published var data: SomeData?
-    @Published var isLoading = false
-    @Published var error: Error?
-    
-    func fetchData() {
-        Task {
-            isLoading = true
-            do {
-                data = try await NetworkManager.fetch("https://api.example.com/data")
-            } catch {
-                self.error = error
+        return try await withCheckedThrowingContinuation { continuation in
+            let request: DataRequest
+            if let multipartData = multipartData {
+                request = AF.upload(multipartFormData: { multipartFormData in
+                    for (key, value) in multipartData {
+                        multipartFormData.append(value, withName: key)
+                    }
+                }, to: requestURL)
+            } else {
+                request = AF.request(requestURL,
+                                     method: Alamofire.HTTPMethod(rawValue: method.rawValue),
+                                     parameters: body,
+                                     encoder: JSONParameterEncoder.default)
             }
-            isLoading = false
+
+            request.responseDecodable(of: T.self) { response in
+                switch response.result {
+                case .success(let value):
+                    continuation.resume(returning: value)
+                case .failure(let error):
+                    continuation.resume(throwing: error)
+                }
+            }
         }
     }
 }
-*/
+
+extension JSONDecoder {
+    static var iso8601: JSONDecoder {
+        let decoder = JSONDecoder()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        decoder.dateDecodingStrategy = .formatted(formatter)
+        return decoder
+    }
+}
+
+struct EmptyResponse: Codable {}
