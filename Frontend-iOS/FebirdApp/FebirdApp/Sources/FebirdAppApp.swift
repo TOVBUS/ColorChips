@@ -28,7 +28,7 @@ struct FebirdAppApp: App {
 
     var body: some Scene {
         WindowGroup {
-            //SocialLoginView()
+           // SocialLoginView() }   // apple sign test
             if onboardingNavigationPathFinder.isFirstEnteredApp {
                 NavigationStack(path: $onboardingNavigationPathFinder.path) {
                     OnboardingWelcomView()

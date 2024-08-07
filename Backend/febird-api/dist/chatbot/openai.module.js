@@ -6,17 +6,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ChatbotModule = void 0;
+exports.OpenAIModule = void 0;
 const common_1 = require("@nestjs/common");
-const chatbot_controller_1 = require("./chatbot.controller");
-const openai_module_1 = require("./openai.module");
-let ChatbotModule = class ChatbotModule {
+const openai_service_1 = require("./openai.service");
+let OpenAIModule = class OpenAIModule {
 };
-exports.ChatbotModule = ChatbotModule;
-exports.ChatbotModule = ChatbotModule = __decorate([
+exports.OpenAIModule = OpenAIModule;
+exports.OpenAIModule = OpenAIModule = __decorate([
     (0, common_1.Module)({
-        imports: [openai_module_1.OpenAIModule],
-        controllers: [chatbot_controller_1.ChatbotController],
+        providers: [openai_service_1.OpenAIService],
+        exports: [openai_service_1.OpenAIService],
     })
-], ChatbotModule);
-//# sourceMappingURL=chatbot.module.js.map
+], OpenAIModule);
+//# sourceMappingURL=openai.module.js.map
