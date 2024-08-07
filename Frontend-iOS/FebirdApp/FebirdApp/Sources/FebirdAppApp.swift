@@ -11,6 +11,7 @@ import SwiftData
 @main
 struct FebirdAppApp: App {
     @StateObject var tabViewModel = TabViewModel()
+    @StateObject var albumViewModel = AlbumViewModel()
     @StateObject private var onboardingNavigationPathFinder = NavigationPathFinder<OnboardingViewOptions>()
     @StateObject private var mealNavigationPathFinder = NavigationPathFinder<MealViewOptions>()
     @StateObject private var exerciseNavigationPathFinder = NavigationPathFinder<ExerciseViewOptions>()
@@ -20,7 +21,7 @@ struct FebirdAppApp: App {
 
     init() {
         do {
-            modelContainer = try ModelContainer(for: UserProfile.self, EyeBodyPhoto.self)
+            modelContainer = try ModelContainer(for: UserProfile.self, EyeBodyPhoto.self, LevelRecordData.self)
         } catch {
             fatalError("Could not initialize ModelContainer: \(error)")
         }
@@ -65,6 +66,7 @@ struct FebirdAppApp: App {
                     CustomTabBarView()
                 }
                 .environmentObject(tabViewModel)
+                .environmentObject(albumViewModel)
                 .environmentObject(mealNavigationPathFinder)
                 .environmentObject(exerciseNavigationPathFinder)
                 .environmentObject(profileNavigationPathFinder)
