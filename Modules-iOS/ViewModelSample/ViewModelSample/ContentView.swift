@@ -8,31 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject private var viewModel = HistoryViewModel()
 
     var body: some View {
-        VStack {
-            Button("Create History") {
-                Task {
-                    let createHistoryDto = CreateHistoryDto(achievementDate: Date())
-                    await viewModel.createHistory(memberID: 27, createHistoryDto: createHistoryDto)
+        NavigationView {
+            VStack {
+                NavigationLink("Chat with GPT-4o-mini") {
+                    ChatView()
                 }
+                .padding()
             }
-
-            Button("Fetch Histories") {
-                Task {
-                    await viewModel.findAllHistories(memberId: 27)
-                }
-            }
-
-            List(viewModel.histories, id: \.historyID) { history in
-                Text("History ID: \(history.historyID)")
-            }
-
-            if let errorMessage = viewModel.errorMessage {
-                Text("Error: \(errorMessage)")
-                    .foregroundColor(.red)
-            }
+            .navigationTitle("Main Menu")
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }
