@@ -69,7 +69,8 @@ struct ProtectedMaterialCode: Codable {
 
 // MARK: - Message
 struct Message: Codable {
-    let content, role: String
+    let content: String
+    let role: String
 }
 
 // MARK: - PromptFilterResult

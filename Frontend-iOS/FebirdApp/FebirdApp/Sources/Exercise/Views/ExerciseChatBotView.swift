@@ -10,17 +10,8 @@ import SwiftUI
 struct ExerciseChatBotView: View {
     @EnvironmentObject var tabViewModel: TabViewModel
     @EnvironmentObject var exerciseNavigationPathFinder: NavigationPathFinder<ExerciseViewOptions>
-
-    @State private var messages: [MessageInUI] = [
-        MessageInUI(content: "무엇을 도와드릴까요 핑?", isUser: false),
-        MessageInUI(content: "지금 내가 하고있는 운동은 너무 쉬워. 조금 더 어려운 방법을 추천해줄래?", isUser: true),
-        MessageInUI(content: "좋아요 핑! 하고싶은 운동 부위 또는 운동할때 고민되는 부분이 있다면 지금 알려주세요 핑!", isUser: false),
-        MessageInUI(content: "종아리가 점점 두꺼워지고 있어서 고민이야", isUser: true),
-        MessageInUI(content: "그렇군요! 말씀해주신 내용을 바탕으로 분석하고 알려드릴게요 핑!\n잠시만 기다려주세요 핑!", isUser: false)
-    ]
-
-    @State private var newMessage = ""
-    @State private var mealRecommendation: MealRecommendation?
+    @StateObject private var viewModel = ChatViewModel.shared
+    @State private var inputText = ""
 
     var body: some View {
         VStack {
@@ -47,13 +38,13 @@ struct ExerciseChatBotView: View {
 
             ScrollView {
                 LazyVStack(alignment: .leading, spacing: 10) {
-                    ForEach(messages) { message in
+                    ForEach(viewModel.messages, id: \.content) { message in
                         MessageBubble(message: message)
                     }
                 }
                 .padding()
             }
-            InputFieldView(text: $newMessage, onSend: {})
+            InputFieldView(text: $inputText, viewModel: viewModel)
         }
         .padding(.top, 60)
         .background(

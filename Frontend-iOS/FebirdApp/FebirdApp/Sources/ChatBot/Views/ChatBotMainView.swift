@@ -17,16 +17,15 @@ struct ChatBotMainView: View {
             VStack {
                 ScrollView {
                     LazyVStack(alignment: .leading, spacing: 10) {
-                        ForEach(messages) { message in
-                            MessageBubble(message: message)
+                        ForEach(messages) { _ in
+//                            MessageBubble(message: message)
                         }
                     }
                     .padding()
                 }
                 ZStack {
-                    InputFieldView(text: $newMessage, onSend: sendMessage)
+//                    InputFieldView(text: $newMessage, viewModel: <#ChatViewModel#>)
                 }
-                .ignoresSafeArea()
             }
             .navigationTitle("피오코치")
             .navigationBarTitleDisplayMode(.inline)

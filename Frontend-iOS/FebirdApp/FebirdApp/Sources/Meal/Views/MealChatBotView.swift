@@ -47,13 +47,13 @@ struct MealChatBotView: View {
 
             ScrollView {
                 LazyVStack(alignment: .leading, spacing: 10) {
-                    ForEach(messages) { message in
-                        MessageBubble(message: message)
+                    ForEach(messages) { _ in
+//                        MessageBubble(message: message)
                     }
                 }
                 .padding()
             }
-            InputFieldView(text: $newMessage, onSend: {})
+//            InputFieldView(text: $newMessage)
         }
         .padding(.top, 60)
         .background(
