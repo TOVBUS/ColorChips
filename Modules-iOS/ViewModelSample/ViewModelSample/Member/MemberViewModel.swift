@@ -6,18 +6,48 @@
 //
 
 import SwiftUI
+import Alamofire
+
+// MARK: - LoginResponse
+struct LoginResponse: Codable {
+    let token: String
+}
 
 @MainActor
 class MemberViewModel: ObservableObject {
     @Published var member: Member?
     @Published var errorMessage: String?
-/*
-    func createMember(_ member: Member) async {
+    
+    func createMember(_ member: MemberCreateWithAppleID) async {
+        let url = "\(Config.baseURL)/member/apple-login"
+        
+        // Apple ID를 헤더에 포함시키기 위해 필요
+        guard let appleID = member.appleID else {
+            self.errorMessage = "Apple ID가 필요합니다."
+            return
+        }
+        
+        let headers: HTTPHeaders = [
+            "Content-Type": "application/json",
+            "appleID": appleID
+        ]
+        
         do {
-            let createdMember: Member = try await NetworkManager.fetch("/member", method: .post, body: member)
-            self.member = createdMember
+            let request = AF.request(url, method: .post, headers: headers)
+            
+            let response = try await request.serializingDecodable(LoginResponse.self).response
+            
+            switch response.result {
+            case .success(let loginResponse):
+                print("JWT 토큰: \(loginResponse.token)")
+                // 받은 토큰을 저장하거나, 다음 작업을 수행합니다.
+            case .failure(let error):
+                self.errorMessage = error.localizedDescription
+                print("Error creating member: \(error)")
+            }
         } catch {
-            errorMessage = error.localizedDescription
+            self.errorMessage = error.localizedDescription
+            print("Error creating member: \(error)")
         }
     }
     
@@ -29,7 +59,7 @@ class MemberViewModel: ObservableObject {
             errorMessage = error.localizedDescription
         }
     }
-
+    
     func findOneMember(memberId: Int) async {
         do {
             let foundMember: Member = try await NetworkManager.fetch("/member/\(memberId)", method: .get)
@@ -38,7 +68,7 @@ class MemberViewModel: ObservableObject {
             errorMessage = error.localizedDescription
         }
     }
-
+    
     func deleteMember(memberId: Int) async {
         do {
             _ = try await NetworkManager.fetch("/member/\(memberId)", method: .delete) as EmptyResponse
@@ -47,5 +77,4 @@ class MemberViewModel: ObservableObject {
             errorMessage = error.localizedDescription
         }
     }
- */
 }

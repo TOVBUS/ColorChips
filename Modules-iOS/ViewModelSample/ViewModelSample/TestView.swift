@@ -25,8 +25,8 @@ struct TestView: View {
 //                        await testExerciseViewModel()
 //                        await testHistoryViewModel()
 //                        await testLevelViewModel()
-                        await testRoutineViewModel()
-//                        await testMemberViewModel()
+//                        await testRoutineViewModel()
+                        await testMemberViewModel()
                     }
                 }
         }
@@ -83,39 +83,22 @@ struct TestView: View {
         print("Routine: \(String(describing: routineViewModel.routine))")
     }
     
-    
-    /*
     private func testMemberViewModel() async {
-        let newMember = Member(id: nil, name: "John Doe", email: "john.doe@example.com", age: 30, height: 175, weight: 70, gender: "Male")
-        await memberViewModel.createMember(newMember)
-        print("Member: \(String(describing: memberViewModel.member))")
+        // Apple-login Member(Create Member) ✅
+        await memberViewModel.createMember(MemberCreateWithAppleID(appleID: "testdy"))
         
-        if let member = memberViewModel.member {
-            var updatedMember = member
-            updatedMember.weight = 72
-            await memberViewModel.updateMember(updatedMember)
-            print("Updated Member: \(String(describing: memberViewModel.member))")
-            
-            await memberViewModel.findOneMember(memberId: member.id ?? 0)
-            print("Found Member: \(String(describing: memberViewModel.member))")
-            
-            await memberViewModel.deleteMember(memberId: member.id ?? 0)
-            print("Deleted Member: \(String(describing: memberViewModel.member))")
-        }
+        // Update Member ✅
+        await memberViewModel.updateMember(Member(id: 27, age: 22, nickname: "테스트중", profileImage: "dddd.png", gender: "male", appleID: "test", kakaoID: "없어용", currentLevel: 3))
+        print("Member after creation: \(memberViewModel.member)")
+        
+        // FindOne Member ✅
+        await memberViewModel.findOneMember(memberId: 27)
+        print("Member after findOne: \(memberViewModel.member)")
+        
+        // Delete Member ✅
+        await memberViewModel.deleteMember(memberId: 16)
+        print("Member after delete: \(memberViewModel.member)")
     }
-     */
-    /*
-    private func inbodyGetAllTest() {
-        AF.request("\(Config.baseURL)/member/15/inbody").responseDecodable(of: [Inbody].self) { response in
-            switch response.result {
-            case .success(let inbodies):
-                print(inbodies)
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
-    }
-     */
 }
 
 
