@@ -45,7 +45,6 @@ struct SocialLoginView: View {
                     .frame(width: 200, height: 200)
                     .padding(.vertical, 15)
 
-                // 애플 로그인 버튼 추가
                 SignInWithAppleButton()
                     .frame(width: 280, height: 60)
                     .onTapGesture {
