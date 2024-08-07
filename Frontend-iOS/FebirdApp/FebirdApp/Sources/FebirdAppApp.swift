@@ -10,13 +10,20 @@ import SwiftData
 
 @main
 struct FebirdAppApp: App {
-    @StateObject var tabViewModel = TabViewModel()
-    @StateObject var albumViewModel = AlbumViewModel()
+    @StateObject private var tabViewModel = TabViewModel()
+    @StateObject private var albumViewModel = AlbumViewModel()
     @StateObject private var socialLoginViewModel = SocialLoginViewModel()
     @StateObject private var onboardingNavigationPathFinder = NavigationPathFinder<OnboardingViewOptions>()
     @StateObject private var mealNavigationPathFinder = NavigationPathFinder<MealViewOptions>()
     @StateObject private var exerciseNavigationPathFinder = NavigationPathFinder<ExerciseViewOptions>()
     @StateObject private var profileNavigationPathFinder = NavigationPathFinder<ProfileViewOptions>()
+    @StateObject private var chatViewModel = ChatViewModel()
+    @StateObject private var routineViewModel = RoutineViewModel()
+    @StateObject private var levelViewModel = LevelViewModel()
+    @StateObject private var exerciseViewModel = ExerciseViewModel()
+    @StateObject private var inbodyViewModel = InbodyViewModel()
+    @StateObject private var historyViewModel = HistoryViewModel()
+    @StateObject private var memberViewModel = MemberViewModel()
 
     let modelContainer: ModelContainer
 
@@ -80,7 +87,14 @@ struct FebirdAppApp: App {
                 .onAppear(perform: {
                     socialLoginViewModel.checkNickname()
                 })
+                .environmentObject(chatViewModel)
+                .environmentObject(routineViewModel)
+                .environmentObject(levelViewModel)
+                .environmentObject(exerciseViewModel)
+                .environmentObject(inbodyViewModel)
+                .environmentObject(historyViewModel)
         }
+        .environmentObject(memberViewModel)
         .onChange(of: socialLoginViewModel.hasNickname, { _, newValue in
             if let hasNickname = newValue {
                 onboardingNavigationPathFinder.setIsFirstenteredApp(!hasNickname)
