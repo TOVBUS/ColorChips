@@ -13,6 +13,7 @@ struct ContentView: View {
         NavigationView {
             VStack {
                 NavigationLink("Chat with GPT-4o-mini") {
+//                    ChatView()
                     ChatView()
                 }
                 .padding()

@@ -34,16 +34,21 @@ class ChatViewModel: ObservableObject {
             ]
         ]
 
-        let request = AF.request(url, method: .post, parameters: body, encoding: JSONEncoding.default, headers: headers)
+        do {
+            let request = AF.request(url, method: .post, parameters: body, encoding: JSONEncoding.default, headers: headers)
 
-        let response = await request.serializingDecodable(ChatResponse.self).response
+            let response = try await request.serializingDecodable(ChatResponse.self).response
 
-        switch response.result {
-        case .success(let chatResponse):
-            if let message = chatResponse.choices.first?.message {
-                messages.append(message)
+            switch response.result {
+            case .success(let chatResponse):
+                if let message = chatResponse.choices.first?.message {
+                    messages.append(message)
+                }
+            case .failure(let error):
+                self.errorMessage = error.localizedDescription
+                print("Error sending message: \(error)")
             }
-        case .failure(let error):
+        } catch {
             self.errorMessage = error.localizedDescription
             print("Error sending message: \(error)")
         }

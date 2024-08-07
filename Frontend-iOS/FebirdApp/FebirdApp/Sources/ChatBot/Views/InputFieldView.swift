@@ -46,9 +46,9 @@ struct InputFieldView: View {
         }
     }
 }
-
+//
 // #Preview {
 //    @State var previewText = "안녕하세요"
-//    
+//
 //    return InputFieldView(text: $previewText, viewModel: ChatViewModel())
 // }
