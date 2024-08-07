@@ -21,7 +21,7 @@ struct FebirdAppApp: App {
 
     init() {
         do {
-            modelContainer = try ModelContainer(for: UserProfile.self, EyeBodyPhoto.self, LevelRecordData.self)
+            modelContainer = try ModelContainer(for: UserProfile.self, EyeBodyPhoto.self, LevelRecordData.self, DailyMemo.self, MealMemo.self)
         } catch {
             fatalError("Could not initialize ModelContainer: \(error)")
         }
@@ -30,6 +30,7 @@ struct FebirdAppApp: App {
     var body: some Scene {
         WindowGroup {
            // SocialLoginView() }   // apple sign test
+          
             if onboardingNavigationPathFinder.isFirstEnteredApp {
                 NavigationStack(path: $onboardingNavigationPathFinder.path) {
                     OnboardingWelcomView()

@@ -21,9 +21,9 @@ class SocialLoginViewModel: ObservableObject {
 
         let body = ["appleID": appleID]
         request.httpBody = try? JSONSerialization.data(withJSONObject: body, options: [])
-        
+
         print("Sending request to \(url) with body: \(body)") // 요청 정보 로깅
-        
+
         URLSession.shared.dataTaskPublisher(for: request)
             .tryMap { result -> Data in
                 guard let httpResponse = result.response as? HTTPURLResponse else {

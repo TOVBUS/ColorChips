@@ -8,11 +8,10 @@
 import SwiftUI
 
 struct WeeklyCalendar: View {
-
-    @State private var selectedDate = Date()
-
+    @Binding var selectedDate: Date
     private let calendar = Calendar.current
     private let today = Date()
+    @State private var scrolledToToday = false
 
     var body: some View {
         VStack(alignment: .center, spacing: 20) {
@@ -66,38 +65,39 @@ struct WeeklyCalendar: View {
     @ViewBuilder
     private var dayView: some View {
         let startDate = calendar.date(from: Calendar.current.dateComponents([.year, .month], from: selectedDate))!
-        ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 10) {
-                let components = (
-                    0..<calendar.range(of: .day, in: .month, for: startDate)!.count)
-                    .map {
-                        calendar.date(byAdding: .day, value: $0, to: startDate)!
-                    }
-                ForEach(components, id: \.self) { date in
-                    VStack {
-                        Text(day(from: date))
-                            .foregroundStyle(.gray30)
-                            .font(.customFont(size: 12, weight: .medium))
 
-                        Text("\(calendar.component(.day, from: date))")
-                            .foregroundStyle(.white)
-                            .font(.customFont(size: 20, weight: .bold))
-                    }
-                    .frame(width: 30, height: 60)
-                    .padding(.horizontal,8)
-                    .padding(.vertical, 3)
-                    .background(calendar.isDate(selectedDate, equalTo: date, toGranularity: .day) ? .orange50 : .gray60)
-                    .cornerRadius(16)
-                    .foregroundColor(calendar.isDate(selectedDate, equalTo: date, toGranularity: .day) ? .white : .black)
-                    .onTapGesture {
-                        selectedDate = date
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 10) {
+                    let components = (
+                        0..<calendar.range(of: .day, in: .month, for: startDate)!.count)
+                        .map {
+                            calendar.date(byAdding: .day, value: $0, to: startDate)!
+                        }
+
+                    ForEach(components, id: \.self) { date in
+                        VStack {
+                            Text(day(from: date))
+                                .foregroundStyle(.gray30)
+                                .font(.customFont(size: 12, weight: .medium))
+
+                            Text("\(calendar.component(.day, from: date))")
+                                .foregroundStyle(.white)
+                                .font(.customFont(size: 20, weight: .bold))
+                        }
+                        .frame(width: 30, height: 60)
+                        .padding(.horizontal,8)
+                        .padding(.vertical, 3)
+                        .background(calendar.isDate(selectedDate, equalTo: date, toGranularity: .day) ? .orange50 : .gray60)
+                        .cornerRadius(16)
+                        .foregroundColor(calendar.isDate(selectedDate, equalTo: date, toGranularity: .day) ? .white : .black)
+                        .onTapGesture {
+                            selectedDate = date
+                        }
                     }
                 }
             }
-        }
-        .padding(.bottom, 12)
+            .padding(.bottom, 12)
     }
-
     // MARK: - 가장자리 블러 뷰
     private var blurView: some View {
         HStack {
@@ -161,5 +161,5 @@ private extension WeeklyCalendar {
 }
 
 #Preview {
-    WeeklyCalendar()
+    WeeklyCalendar(selectedDate: .constant(Date()))
 }

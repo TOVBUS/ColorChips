@@ -6,15 +6,22 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct MealMainView: View {
-
     @EnvironmentObject var mealNavigationPathFinder: NavigationPathFinder<MealViewOptions>
-    let meals = ["아침", "점심", "저녁"]
+    @Environment(\.modelContext) private var modelContext
+    @StateObject private var viewModel: MemoViewModel
+    @State private var selectedDate = Date()
+
+    init() {
+        let context = ModelContext(try! ModelContainer(for: DailyMemo.self, MealMemo.self))
+        _viewModel = StateObject(wrappedValue: MemoViewModel(modelContext: context))
+    }
 
     var body: some View {
         VStack {
-            MealMainheaderView()
+            MealMainheaderView(selectedDate: $selectedDate)
 
             ScrollView {
                 VStack(alignment: .leading, spacing: 24) {
@@ -30,11 +37,10 @@ struct MealMainView: View {
                         .font(.customFont(size: 20, weight: .bold))
                         .padding(.horizontal, 25)
 
-                    ForEach(meals, id: \.self) { meal in
-                        MemoRow(mealTime: meal)
+                    ForEach(MealType.allCases, id: \.self) { mealType in
+                        MemoRow(viewModel: viewModel, date: selectedDate, mealType: MealType(rawValue: mealType.rawValue) ?? mealType)
                     }.padding(.horizontal, 25)
                 }
-
             }
             .padding(.bottom, ConstantsPadding.mealMainOnCustomTabBar.rawValue)
         }
@@ -46,7 +52,6 @@ struct MealMainView: View {
         .environmentObject(mealNavigationPathFinder)
     }
 }
-
 #Preview {
     MealMainView()
         .environmentObject(TabViewModel())
