@@ -18,6 +18,7 @@ struct ExerciseChatBotView: View {
             HStack {
                 Button {
                     exerciseNavigationPathFinder.popPath()
+                    tabViewModel.isHidden = false
                 } label: {
                     Image("Chevron-left")
                 }
