@@ -13,14 +13,26 @@ class SignInWithAppleViewModel: NSObject, ObservableObject, ASAuthorizationContr
     @Published var userName: String = ""
     @Published var userEmail: String = ""
 
-    func startSignInWithAppleFlow() {
+    private var continueWithAuthorization: ((ASAuthorization) -> Void)?
+    private var continueWithError: ((Error) -> Void)?
+
+    func startSignInWithAppleFlow() async throws {
         let request = ASAuthorizationAppleIDProvider().createRequest()
         request.requestedScopes = [.fullName, .email]
 
-        let authorizationController = ASAuthorizationController(authorizationRequests: [request])
-        authorizationController.delegate = self
-        authorizationController.presentationContextProvider = self
-        authorizationController.performRequests()
+        let result = try await withCheckedThrowingContinuation { (continuation: CheckedContinuation<ASAuthorization, Error>) in
+            let authorizationController = ASAuthorizationController(authorizationRequests: [request])
+            authorizationController.delegate = self
+            authorizationController.presentationContextProvider = self
+            authorizationController.performRequests()
+
+            self.continueWithAuthorization = { authorization in
+                continuation.resume(returning: authorization)
+            }
+            self.continueWithError = { error in
+                continuation.resume(throwing: error)
+            }
+        }
     }
 
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
@@ -31,6 +43,7 @@ class SignInWithAppleViewModel: NSObject, ObservableObject, ASAuthorizationContr
             }
             userEmail = appleIDCredential.email ?? ""
         }
+        continueWithAuthorization?(authorization)
     }
 
     func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SocialLoginView: View {
     @StateObject private var loginViewModel = SocialLoginViewModel()
-    @StateObject private var appleLoginViewModel = SignInWithAppleViewModel() // SignInWithAppleViewModel 추가
+    @StateObject private var appleLoginViewModel = SignInWithAppleViewModel()
 
     var body: some View {
         ZStack {
@@ -49,21 +49,18 @@ struct SocialLoginView: View {
                 SignInWithAppleButton()
                     .frame(width: 280, height: 60)
                     .onTapGesture {
-                        appleLoginViewModel.startSignInWithAppleFlow()
+                        Task {
+                            do {
+                                let authorization: () = try await appleLoginViewModel.startSignInWithAppleFlow()
+                                if !appleLoginViewModel.userIdentifier.isEmpty {
+                                    try await loginViewModel.loginWithApple(appleID: appleLoginViewModel.userIdentifier)
+                                }
+                            } catch {
+                                print("Error: \(error.localizedDescription)")
+                            }
+                        }
                     }
-                
-                // 애플 로그인 후 얻은 정보 보여주기 -> Test용 나중에 지우기
 
-                if !appleLoginViewModel.userIdentifier.isEmpty {
-                    Text("User ID: \(appleLoginViewModel.userIdentifier)")
-                    Text("User Name: \(appleLoginViewModel.userName)")
-                    Text("User Email: \(appleLoginViewModel.userEmail)")
-
-                    CustomButtonView(title: "Send Apple ID to Server") {
-                        loginViewModel.loginWithApple(appleID: appleLoginViewModel.userIdentifier)
-                    }
-                }
-              
                 Button(action: {
                     if let url = URL(string: "https://qsgm7ewnrc9l.sg.larksuite.com/wiki/QBgKwS3NvifpysksdIZlK8J9gvb?from=from_copylink") {
                         UIApplication.shared.open(url)

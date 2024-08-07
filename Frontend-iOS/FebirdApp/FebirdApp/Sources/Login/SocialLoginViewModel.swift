@@ -13,7 +13,7 @@ class SocialLoginViewModel: ObservableObject {
     @Published var loginResult: String?
     private var cancellables = Set<AnyCancellable>()
 
-    func loginWithApple(appleID: String) {
+    func loginWithApple(appleID: String) async throws {
         let url = URL(string: "https://app-feo.azurewebsites.net/member/apple-login")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
