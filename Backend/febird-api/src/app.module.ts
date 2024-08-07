@@ -7,7 +7,7 @@ import { InbodyModule } from './inbody/inbody.module';
 import { LevelModule } from './level/level.module';
 import { RoutineModule } from './routine/routine.module';
 import { ExerciseModule } from './exercise/exercise.module';
-//import { ChatbotModule } from './chatbot/chatbot.module';
+import { ChatbotModule } from './chatbot/chatbot.module';
 
 @Module({
   imports: [
@@ -21,7 +21,7 @@ import { ExerciseModule } from './exercise/exercise.module';
     LevelModule,
     RoutineModule,
     ExerciseModule,
-    //ChatbotModule
+    ChatbotModule
   ],
 })
 export class AppModule {}

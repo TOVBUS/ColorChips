@@ -21,7 +21,7 @@ import { extname } from 'path';
         },
       }),
       limits: {
-        fileSize: 500 * 1024 * 1024, // 500MB
+        fileSize: 500 * 1024 * 1024,
       },
     }),
   ],

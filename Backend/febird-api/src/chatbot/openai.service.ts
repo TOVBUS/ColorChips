@@ -27,7 +27,6 @@ export class OpenAIService {
         },
       });
 
-      // 응답에서 생성된 텍스트 추출
       const completion = response.data.choices[0].message.content;
       return completion.trim();
     } catch (error) {
