@@ -44,7 +44,7 @@ struct ExerciseChatBotView: View {
                 }
                 .padding()
             }
-            InputFieldView(text: $inputText, viewModel: viewModel)
+            ChatTextFieldView(placeholder: "메시지를 입력하세요", text: $inputText, keyboardType: .default, viewModel: viewModel)
         }
         .padding(.top, 60)
         .background(
