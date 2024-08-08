@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct SocialLoginView: View {
-    @StateObject private var loginViewModel = SocialLoginViewModel()
+    @EnvironmentObject private var socialLoginViewModel : SocialLoginViewModel
+    @EnvironmentObject private var memberViewModel : MemberViewModel
     @StateObject private var appleLoginViewModel = SignInWithAppleViewModel()
+    @EnvironmentObject private var onboardingNavigationPathFinder: NavigationPathFinder<OnboardingViewOptions>
 
     var body: some View {
         ZStack {
@@ -50,9 +52,13 @@ struct SocialLoginView: View {
                     .onTapGesture {
                         Task {
                             do {
-                                let authorization: () = try await appleLoginViewModel.startSignInWithAppleFlow()
+                                let _: () = try await appleLoginViewModel.startSignInWithAppleFlow()
+
                                 if !appleLoginViewModel.userIdentifier.isEmpty {
-                                    try await loginViewModel.loginWithApple(appleID: appleLoginViewModel.userIdentifier)
+                                    try await socialLoginViewModel.loginWithApple(appleID: appleLoginViewModel.userIdentifier)
+
+                                    memberViewModel.newMember.appleID = appleLoginViewModel.userIdentifier
+                                    onboardingNavigationPathFinder.setIsFirstenteredApp(true)
                                 }
                             } catch {
                                 print("Error: \(error.localizedDescription)")

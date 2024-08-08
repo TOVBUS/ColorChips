@@ -9,6 +9,7 @@ import SwiftUI
 
 struct OnboardingEndView: View {
     @EnvironmentObject var navigationPathFinder: NavigationPathFinder<OnboardingViewOptions>
+    @EnvironmentObject var memberViewModel: MemberViewModel
 
     var body: some View {
         OnboardingGaugeView(progress: 8)

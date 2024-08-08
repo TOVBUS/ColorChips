@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ExerciseRestTimerView: View {
     @EnvironmentObject var navigationPathFinder: NavigationPathFinder<ExerciseViewOptions>
+    @EnvironmentObject var memberViewModel: MemberViewModel
 
     var body: some View {
         VStack {
@@ -23,7 +24,7 @@ struct ExerciseRestTimerView: View {
             TimerView(viewModel: ExerciseTimerViewModel())
                 .padding(.bottom, 32)
 
-            Text("꽥꽥이님! 잘 하고 있어요!!  아주 조금만 더 힘내볼까요~?")
+            Text("\(memberViewModel.newMember.nickname)님! 잘 하고 있어요!!  아주 조금만 더 힘내볼까요~?")
                 .font(.customFont(size: 20, weight: .bold))
                 .frame(maxWidth: .infinity)
                 .foregroundColor(.white)

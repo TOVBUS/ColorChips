@@ -41,42 +41,40 @@ struct FebirdAppApp: App {
     var body: some Scene {
         WindowGroup {
             Group {
-                //            if socialLoginViewModel.loginResult == nil {
-                //                SocialLoginView()
-                //                    .environmentObject(socialLoginViewModel)
-                //            } else
+                if socialLoginViewModel.loginResult == nil {
+                    SocialLoginView()
+
+                } else
                 if onboardingNavigationPathFinder.isFirstEnteredApp {
                     NavigationStack(path: $onboardingNavigationPathFinder.path) {
-                        OnboardingWelcomView()
-                            .navigationDestination(for: OnboardingViewOptions.self) { option in
-                                option.view()
-                            }
-                    }
-                    .environmentObject(onboardingNavigationPathFinder)
-                } else {
-                    ZStack(alignment: .bottom) {
-                        switch tabViewModel.selectedTab {
-                        case .meal:
-                            NavigationStack(path: $mealNavigationPathFinder.path) {
-                                MealMainView()
-                                    .navigationDestination(for: MealViewOptions.self) { option in
-                                        option.view()
-                                    }
-                            }
-                        case .exercise:
-                            NavigationStack(path: $exerciseNavigationPathFinder.path) {
-                                ExerciseMainView()
-                                    .navigationDestination(for: ExerciseViewOptions.self) { option in
-                                        option.view()
-                                    }
-                            }
-                        case .profile:
-                            NavigationStack(path: $profileNavigationPathFinder.path) {
-                                ProfileMainView()
-                                    .navigationDestination(for: ProfileViewOptions.self) { option in
-                                        option.view()
-                                    }
-                            }
+                    OnboardingWelcomView()
+                        .navigationDestination(for: OnboardingViewOptions.self) { option in
+                            option.view()
+                        }
+                }
+            } else {
+                ZStack(alignment: .bottom) {
+                    switch tabViewModel.selectedTab {
+                    case .meal:
+                        NavigationStack(path: $mealNavigationPathFinder.path) {
+                            MealMainView()
+                                .navigationDestination(for: MealViewOptions.self) { option in
+                                    option.view()
+                                }
+                        }
+                    case .exercise:
+                        NavigationStack(path: $exerciseNavigationPathFinder.path) {
+                            ExerciseMainView()
+                                .navigationDestination(for: ExerciseViewOptions.self) { option in
+                                    option.view()
+                                }
+                        }
+                    case .profile:
+                        NavigationStack(path: $profileNavigationPathFinder.path) {
+                            ProfileMainView()
+                                .navigationDestination(for: ProfileViewOptions.self) { option in
+                                    option.view()
+                                }
                         }
                         CustomTabBarView()
                     }
@@ -87,24 +85,19 @@ struct FebirdAppApp: App {
                     .environmentObject(profileNavigationPathFinder)
                 }
             }
-            .onAppear(perform: {
-                socialLoginViewModel.checkNickname()
-            })
-            .environmentObject(chatViewModel)
-            .environmentObject(routineViewModel)
-            .environmentObject(levelViewModel)
-            .environmentObject(exerciseViewModel)
-            .environmentObject(inbodyViewModel)
-            .environmentObject(historyViewModel)
-            .environmentObject(profileSelectViewModel)
-            .environmentObject(profileSettingViewModel)
+        }
+                .environmentObject(socialLoginViewModel)
+                .environmentObject(onboardingNavigationPathFinder)
+                .environmentObject(chatViewModel)
+                .environmentObject(routineViewModel)
+                .environmentObject(levelViewModel)
+                .environmentObject(exerciseViewModel)
+                .environmentObject(inbodyViewModel)
+                .environmentObject(historyViewModel)
+                .environmentObject(profileSelectViewModel)
+                .environmentObject(profileSettingViewModel)
         }
         .environmentObject(memberViewModel)
-        .onChange(of: socialLoginViewModel.hasNickname, { _, newValue in
-            if let hasNickname = newValue {
-                onboardingNavigationPathFinder.setIsFirstenteredApp(!hasNickname)
-            }
-        })
         .modelContainer(modelContainer)
     }
 }
