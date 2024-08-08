@@ -63,6 +63,7 @@ enum ProfileViewOptions: Hashable, ViewOptions {
     case settingView
     case profileSettingView
     case eyeBodyView(isOnboarding: Bool)
+    case inbodyInputView
 
     @ViewBuilder func view() -> some View {
         switch self {
@@ -75,6 +76,8 @@ enum ProfileViewOptions: Hashable, ViewOptions {
                 .environmentObject(ProfileSettingViewModel())
         case .eyeBodyView(let isOnboarding):
             EyeBodyView(isOnboarding: isOnboarding)
+        case .inbodyInputView:
+            InbodyInputView(weight: "", height: "", bmi: "", bodyfat: "", bmr: "")
         }
     }
 }
