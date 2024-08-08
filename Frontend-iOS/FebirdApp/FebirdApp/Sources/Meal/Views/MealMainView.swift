@@ -13,6 +13,7 @@ struct MealMainView: View {
     @Environment(\.modelContext) private var modelContext
     @StateObject private var viewModel: MemoViewModel
     @State private var selectedDate = Date()
+    @State private var needsRefresh = false
 
     init() {
         let context = ModelContext(try! ModelContainer(for: DailyMemo.self, MealMemo.self))
@@ -50,8 +51,13 @@ struct MealMainView: View {
         )
         .ignoresSafeArea()
         .environmentObject(mealNavigationPathFinder)
+        .onReceive(NotificationCenter.default.publisher(for: Notification.Name("MealMemoUpdated"))) { _ in
+            needsRefresh.toggle()
+        }
+        .id(needsRefresh)
     }
 }
+
 #Preview {
     MealMainView()
         .environmentObject(TabViewModel())
