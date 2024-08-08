@@ -18,10 +18,11 @@ class ChatViewModel: ObservableObject {
     private init() {}
 
     func sendMessage(content: String) async {
-        // 사용자 메시지 추가
         let userMessage = Message(content: content, role: "user")
         messages.append(userMessage)
+
         print(messages)
+
         let url = "\(Config.chatURL)"
         let headers: HTTPHeaders = [
             "Content-Type": "application/json",
