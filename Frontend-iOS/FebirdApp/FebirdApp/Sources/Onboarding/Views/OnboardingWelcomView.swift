@@ -16,11 +16,14 @@ struct OnboardingWelcomView: View {
             // .padding(.bottom, 44)
 
             VStack(alignment: .center, content: {
-                Text("반가워요 핑! \n 저는 운동 교관 피오에요 핑! \n 운동 습관을 잡아줄게요 핑!")
+                Text("반가워요 핑! \n 저는 운동 교관 피오에요 핑! \n 오늘부터 운동 습관을 잡아줄게요 핑!")
                     .multilineTextAlignment(.center)
                     .font(.customFont(size: 20, weight: .bold))
 
-                Image("peoLogo")
+                Image("feoTA")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(maxWidth: .infinity)
 
                 Spacer()
 

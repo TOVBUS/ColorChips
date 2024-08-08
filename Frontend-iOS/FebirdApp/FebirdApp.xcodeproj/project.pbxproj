@@ -47,7 +47,6 @@
 		3EF6F06A2C36938000EEF18F /* FebirdAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF6F0692C36938000EEF18F /* FebirdAppUITests.swift */; };
 		3EF6F06C2C36938000EEF18F /* FebirdAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF6F06B2C36938000EEF18F /* FebirdAppUITestsLaunchTests.swift */; };
 		3EFC450C2C44F882001052C7 /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFC450B2C44F882001052C7 /* Font+Extension.swift */; };
-		8F0F47D72C6366AB004E3B86 /* Secret.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 8F0F47D62C6366AB004E3B86 /* Secret.xcconfig */; };
 		8F0F47DC2C636BF6004E3B86 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F47DB2C636BF6004E3B86 /* Config.swift */; };
 		8F0F47F62C636F69004E3B86 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F47F52C636F69004E3B86 /* Member.swift */; };
 		8F0F47F82C636F88004E3B86 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F47F72C636F88004E3B86 /* History.swift */; };
@@ -130,6 +129,13 @@
 		E208BDEC2C6294F10094CC16 /* MealType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E208BDEB2C6294F10094CC16 /* MealType.swift */; };
 		E208BDEE2C62952F0094CC16 /* DailyMemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E208BDED2C62952F0094CC16 /* DailyMemo.swift */; };
 		E208BDF02C6295660094CC16 /* MealMemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E208BDEF2C6295660094CC16 /* MealMemo.swift */; };
+		E20F9CF62C63DB20006A034B /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20F9CF52C63DB20006A034B /* CustomTextField.swift */; };
+		E20F9CF82C63DEA9006A034B /* ChatTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20F9CF72C63DEA9006A034B /* ChatTextFieldView.swift */; };
+		E20F9CFB2C640776006A034B /* AzureInbody.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20F9CFA2C640776006A034B /* AzureInbody.swift */; };
+		E20F9CFF2C64086F006A034B /* AzureInbodyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20F9CFE2C64086F006A034B /* AzureInbodyViewModel.swift */; };
+		E20F9D012C6408A0006A034B /* AzureInbodyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20F9D002C6408A0006A034B /* AzureInbodyService.swift */; };
+		E20F9D052C6475F8006A034B /* TextFieldTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20F9D042C6475F8006A034B /* TextFieldTest.swift */; };
+		E20F9D082C64F156006A034B /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E20F9D072C64F156006A034B /* Launch Screen.storyboard */; };
 		E246A8DE2C5EAAF600B86617 /* ExerciseChatBotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E246A8DD2C5EAAF600B86617 /* ExerciseChatBotView.swift */; };
 		E246A8E02C5EC4A200B86617 /* ExerciseCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E246A8DF2C5EC4A200B86617 /* ExerciseCountView.swift */; };
 		E24CF94E2C4F887100D1548E /* CustomToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24CF94D2C4F887100D1548E /* CustomToggle.swift */; };
@@ -216,7 +222,6 @@
 		3EF6F0692C36938000EEF18F /* FebirdAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FebirdAppUITests.swift; sourceTree = "<group>"; };
 		3EF6F06B2C36938000EEF18F /* FebirdAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FebirdAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3EFC450B2C44F882001052C7 /* Font+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extension.swift"; sourceTree = "<group>"; };
-		8F0F47D62C6366AB004E3B86 /* Secret.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secret.xcconfig; sourceTree = "<group>"; };
 		8F0F47DB2C636BF6004E3B86 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		8F0F47F52C636F69004E3B86 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		8F0F47F72C636F88004E3B86 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
@@ -298,6 +303,14 @@
 		E208BDEB2C6294F10094CC16 /* MealType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealType.swift; sourceTree = "<group>"; };
 		E208BDED2C62952F0094CC16 /* DailyMemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMemo.swift; sourceTree = "<group>"; };
 		E208BDEF2C6295660094CC16 /* MealMemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealMemo.swift; sourceTree = "<group>"; };
+		E20F9CF52C63DB20006A034B /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		E20F9CF72C63DEA9006A034B /* ChatTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTextFieldView.swift; sourceTree = "<group>"; };
+		E20F9CFA2C640776006A034B /* AzureInbody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AzureInbody.swift; sourceTree = "<group>"; };
+		E20F9CFE2C64086F006A034B /* AzureInbodyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AzureInbodyViewModel.swift; sourceTree = "<group>"; };
+		E20F9D002C6408A0006A034B /* AzureInbodyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AzureInbodyService.swift; sourceTree = "<group>"; };
+		E20F9D042C6475F8006A034B /* TextFieldTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldTest.swift; sourceTree = "<group>"; };
+		E20F9D062C64DBBD006A034B /* Secret.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secret.xcconfig; sourceTree = "<group>"; };
+		E20F9D072C64F156006A034B /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		E246A8DD2C5EAAF600B86617 /* ExerciseChatBotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseChatBotView.swift; sourceTree = "<group>"; };
 		E246A8DF2C5EC4A200B86617 /* ExerciseCountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCountView.swift; sourceTree = "<group>"; };
 		E24CF94D2C4F887100D1548E /* CustomToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomToggle.swift; sourceTree = "<group>"; };
@@ -484,6 +497,9 @@
 				8F92DF8E2C4D58710071F336 /* TimerView.swift */,
 				8F92DF822C4BB0970071F336 /* VideoPlayerView.swift */,
 				8F0F47DB2C636BF6004E3B86 /* Config.swift */,
+				E20F9CF72C63DEA9006A034B /* ChatTextFieldView.swift */,
+				E20F9D042C6475F8006A034B /* TextFieldTest.swift */,
+				E20F9CF52C63DB20006A034B /* CustomTextField.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -500,6 +516,7 @@
 		3E9E9E102C44E5ED002389EB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E20F9D072C64F156006A034B /* Launch Screen.storyboard */,
 				3E9E9E142C44E66A002389EB /* Fonts */,
 				3EF6F0522C36937F00EEF18F /* Assets.xcassets */,
 				3E9E9E372C44E821002389EB /* Info.plist */,
@@ -551,8 +568,8 @@
 		3EF6F0402C36937D00EEF18F = {
 			isa = PBXGroup;
 			children = (
+				E20F9D062C64DBBD006A034B /* Secret.xcconfig */,
 				E1BB0D4B2C450F1C002565B2 /* .swiftlint.yml */,
-				8F0F47D62C6366AB004E3B86 /* Secret.xcconfig */,
 				3EF6F04B2C36937E00EEF18F /* FebirdApp */,
 				3EF6F05E2C36938000EEF18F /* FebirdAppTests */,
 				3EF6F0682C36938000EEF18F /* FebirdAppUITests */,
@@ -789,6 +806,8 @@
 		E1BB0D532C4797C9002565B2 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				E20F9CFD2C64085C006A034B /* ViewModels */,
+				E20F9CF92C64075A006A034B /* Models */,
 				E1BB0D562C479C93002565B2 /* Views */,
 			);
 			path = Onboarding;
@@ -826,6 +845,23 @@
 				E208BDEF2C6295660094CC16 /* MealMemo.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		E20F9CF92C64075A006A034B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E20F9CFA2C640776006A034B /* AzureInbody.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E20F9CFD2C64085C006A034B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				E20F9CFE2C64086F006A034B /* AzureInbodyViewModel.swift */,
+				E20F9D002C6408A0006A034B /* AzureInbodyService.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		E24F5E7F2C48EBC300724DA7 /* Meal */ = {
@@ -1005,9 +1041,9 @@
 				3EF6F0532C36937F00EEF18F /* Assets.xcassets in Resources */,
 				3E9E9E222C44E7DB002389EB /* WorkSans-Black.ttf in Resources */,
 				3E9E9E332C44E7FC002389EB /* IBMPlexSansKR-Regular.ttf in Resources */,
-				8F0F47D72C6366AB004E3B86 /* Secret.xcconfig in Resources */,
 				3E9E9E232C44E7DB002389EB /* WorkSans-Bold.ttf in Resources */,
 				3E9E9E262C44E7DB002389EB /* WorkSans-ExtraLight.ttf in Resources */,
+				E20F9D082C64F156006A034B /* Launch Screen.storyboard in Resources */,
 				3E9E9E252C44E7DB002389EB /* WorkSans-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1055,9 +1091,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F0F47FA2C636FA0004E3B86 /* Inbody.swift in Sources */,
+				E20F9CF62C63DB20006A034B /* CustomTextField.swift in Sources */,
+				E20F9D012C6408A0006A034B /* AzureInbodyService.swift in Sources */,
 				8FE8FB362C60BA2E009CFAE9 /* NetworkManager.swift in Sources */,
+				E20F9CF82C63DEA9006A034B /* ChatTextFieldView.swift in Sources */,
 				E2EB25792C4E48C30094EC8E /* ChatBotMainView.swift in Sources */,
 				8F92DF912C4D68B40071F336 /* ExerciseRoutineLogView.swift in Sources */,
+				E20F9D052C6475F8006A034B /* TextFieldTest.swift in Sources */,
 				E2CFF2122C4E9D6300540500 /* InputFieldView.swift in Sources */,
 				8F92DF892C4D4A440071F336 /* TimerButton.swift in Sources */,
 				E15BF0232C6097CC0033E5C3 /* JointOverlayView.swift in Sources */,
@@ -1087,6 +1127,7 @@
 				8FE8FB3B2C60BDB3009CFAE9 /* AuthViewModel.swift in Sources */,
 				E24CF94E2C4F887100D1548E /* CustomToggle.swift in Sources */,
 				E15BF03C2C60BAC10033E5C3 /* TrendAnalysisView.swift in Sources */,
+				E20F9CFB2C640776006A034B /* AzureInbody.swift in Sources */,
 				8F0F47F62C636F69004E3B86 /* Member.swift in Sources */,
 				E12911BB2C48EDFE009A92F7 /* PhotoPicker.swift in Sources */,
 				8F92DF952C4D74A10071F336 /* ExerciseGraduationView.swift in Sources */,
@@ -1116,6 +1157,7 @@
 				8F92DF8B2C4D506E0071F336 /* ExerciseRestTimerView.swift in Sources */,
 				E26D48B92C49F18800D63FE7 /* MemoRow.swift in Sources */,
 				8F0F47DC2C636BF6004E3B86 /* Config.swift in Sources */,
+				E20F9CFF2C64086F006A034B /* AzureInbodyViewModel.swift in Sources */,
 				E26D48BB2C49F93900D63FE7 /* MealChatBotView.swift in Sources */,
 				323408FB2C61C97500FCB9B6 /* SignInWithAppleButton.swift in Sources */,
 				E10FD99D2C49FB4500D80139 /* InbodyInputView.swift in Sources */,
@@ -1347,6 +1389,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1380,6 +1423,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

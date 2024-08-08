@@ -12,6 +12,13 @@ struct ExerciseMainHeaderView: View {
     @EnvironmentObject var memberViewModel: MemberViewModel
     @State private var progress: CGFloat = 0.5 // 예시 값
 
+    let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMMM d, yyyy"
+        formatter.locale = Locale(identifier: "en_US")
+        return formatter
+    }()
+
     var body: some View {
         VStack {
             HStack(alignment: .center) {
@@ -21,7 +28,7 @@ struct ExerciseMainHeaderView: View {
                         .frame(width: 80, height: 80)
 
                     VStack(alignment: .leading, spacing: 4) {
-                        Text("JULY 16, 2024")
+                        Text(dateFormatter.string(from: Date()).uppercased())
                             .font(.customFont(size: 10, weight: .bold, language: .english))
                             .kerning(1)
                             .multilineTextAlignment(.center)
@@ -31,6 +38,7 @@ struct ExerciseMainHeaderView: View {
                             Text("\(memberViewModel.newMember.nickname!)님이 접속하다니\n이거 완전 럭키비키잖앙 🍀")
                                 .font(.customFont(size: 16, weight: .bold))
                                 .foregroundColor(.white)
+
                                 .frame(height: 50)
 
                             Button(action: {
@@ -78,7 +86,7 @@ struct ExerciseMainHeaderView: View {
                                         .multilineTextAlignment(.center)
                                         .foregroundColor(.white)
 
-                                    Text("새싹반")
+                                    Text("씨앗반")
                                         .font(.customFont(size: 12, weight: .regular))
                                         .multilineTextAlignment(.center)
                                         .foregroundColor(.white)
@@ -91,7 +99,7 @@ struct ExerciseMainHeaderView: View {
                                         .multilineTextAlignment(.center)
                                         .foregroundColor(.white)
 
-                                    Text("2일차")
+                                    Text("1일차")
                                         .font(.customFont(size: 12, weight: .regular))
                                         .multilineTextAlignment(.center)
                                         .foregroundColor(.white)
@@ -103,7 +111,9 @@ struct ExerciseMainHeaderView: View {
             }
             .frame(maxWidth: .infinity)
 
-            ExerciseGaugeBarView(progress: $progress, totalSteps: 3)
+            ExerciseGaugeBarView(selection: .constant(1), range: 1...3)
+                .previewLayout(.sizeThatFits)
+                .padding()
         }
         .padding(.top, 26)
         .padding(.vertical, 30)

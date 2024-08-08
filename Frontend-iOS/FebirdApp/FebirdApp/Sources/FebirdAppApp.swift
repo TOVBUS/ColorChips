@@ -10,6 +10,7 @@ import SwiftData
 
 @main
 struct FebirdAppApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @StateObject private var tabViewModel = TabViewModel()
     @StateObject private var albumViewModel = AlbumViewModel()
     @StateObject private var socialLoginViewModel = SocialLoginViewModel()
@@ -24,6 +25,8 @@ struct FebirdAppApp: App {
     @StateObject private var inbodyViewModel = InbodyViewModel()
     @StateObject private var historyViewModel = HistoryViewModel()
     @StateObject private var memberViewModel = MemberViewModel()
+    @StateObject private var profileSelectViewModel = ProfileSelectViewModel()
+    @StateObject private var profileSettingViewModel = ProfileSettingViewModel()
 
     let modelContainer: ModelContainer
 
@@ -73,26 +76,38 @@ struct FebirdAppApp: App {
                                     option.view()
                                 }
                         }
+                        CustomTabBarView()
                     }
-                    CustomTabBarView()
+                    .environmentObject(tabViewModel)
+                    .environmentObject(albumViewModel)
+                    .environmentObject(mealNavigationPathFinder)
+                    .environmentObject(exerciseNavigationPathFinder)
+                    .environmentObject(profileNavigationPathFinder)
                 }
-                .environmentObject(tabViewModel)
-                .environmentObject(albumViewModel)
-                .environmentObject(mealNavigationPathFinder)
-                .environmentObject(exerciseNavigationPathFinder)
-                .environmentObject(profileNavigationPathFinder)
             }
         }
                 .environmentObject(socialLoginViewModel)
+                .environmentObject(onboardingNavigationPathFinder)
                 .environmentObject(chatViewModel)
                 .environmentObject(routineViewModel)
                 .environmentObject(levelViewModel)
                 .environmentObject(exerciseViewModel)
                 .environmentObject(inbodyViewModel)
                 .environmentObject(historyViewModel)
-                .environmentObject(onboardingNavigationPathFinder)
+                .environmentObject(profileSelectViewModel)
+                .environmentObject(profileSettingViewModel)
         }
         .environmentObject(memberViewModel)
         .modelContainer(modelContainer)
+    }
+}
+
+class AppDelegate: NSObject, UIApplicationDelegate {
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        ChatViewModel.shared.clearMessages()
+    }
+
+    func applicationWillTerminate(_ application: UIApplication) {
+        ChatViewModel.shared.clearMessages()
     }
 }

@@ -35,7 +35,7 @@ enum OnboardingViewOptions: Hashable, ViewOptions {
         case .inbodyFixView:
             InbodyFixView(weight: "고쳐야됨", height: "고쳐야됨", bmi: "고쳐야됨", bodyfat: "고쳐야됨", bmr: "고쳐야됨")
         case .inbodyInputView:
-            InbodyInputView(weight: "고쳐야됨", height: "고쳐야됨", bmi: "고쳐야됨", bodyfat: "고쳐야됨", bmr: "고쳐야됨")
+            InbodyInputView(weight: "", height: "", bmi: "", bodyfat: "", bmr: "")
         case .onboardingEndView:
             OnboardingEndView()
         case .eyeBodyView:
@@ -63,6 +63,7 @@ enum ProfileViewOptions: Hashable, ViewOptions {
     case settingView
     case profileSettingView
     case eyeBodyView(isOnboarding: Bool)
+    case inbodyInputView
 
     @ViewBuilder func view() -> some View {
         switch self {
@@ -75,6 +76,8 @@ enum ProfileViewOptions: Hashable, ViewOptions {
                 .environmentObject(ProfileSettingViewModel())
         case .eyeBodyView(let isOnboarding):
             EyeBodyView(isOnboarding: isOnboarding)
+        case .inbodyInputView:
+            InbodyInputView(weight: "", height: "", bmi: "", bodyfat: "", bmr: "")
         }
     }
 }

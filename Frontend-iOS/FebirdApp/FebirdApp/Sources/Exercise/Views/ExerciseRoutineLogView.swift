@@ -5,6 +5,7 @@
 //  Created by DOYEON JEONG on 7/22/24.
 //
 
+import UIKit
 import SwiftUI
 import SwiftData
 
@@ -51,7 +52,13 @@ struct ExerciseRoutineLogView: View {
 
                 VStack(spacing: 12) {
                     if isImage {
-                        CustomButtonView(title: "SNS 공유하기", style: .sharing)
+                        CustomButtonView(title: "SNS 공유하기", style: .sharing) {
+                            guard let image = image else { return }
+                            let activityViewController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+                            if let topViewController = UIApplication.shared.currentlyPresentedViewController {
+                                topViewController.present(activityViewController, animated: true)
+                            }
+                        }
                         CustomButtonView(title: "다시찍기") {
                             self.showCamera = true
                         }
@@ -59,14 +66,14 @@ struct ExerciseRoutineLogView: View {
                             if let image = image {
                                 albumViewModel.saveOrUpdateLevelRecord(routineId: 1001, levelId: 1, schoolName: "유치원", apiGrade: 1, image: image, context: modelContext)
                             }
-                            navigationPathFinder.addPath(option: .exerciseGraduationView)
+                            navigationPathFinder.addPath(option: .exerciseRoutineCompletionView)
                         }
                     } else {
                         CustomButtonView(title: "사진찍기") {
                             self.showCamera = true
                         }
                         CustomButtonView(title: "건너뛰기") {
-                            navigationPathFinder.addPath(option: .exerciseGraduationView)
+                            navigationPathFinder.addPath(option: .exerciseRoutineCompletionView)
                         }
                     }
                 }
@@ -90,4 +97,14 @@ struct ExerciseRoutineLogView: View {
     ExerciseRoutineLogView()
         .environmentObject(TabViewModel())
         .environmentObject(NavigationPathFinder<ExerciseViewOptions>())
+}
+
+extension UIApplication {
+    var currentlyPresentedViewController: UIViewController? {
+        var currentViewController = keyWindow?.rootViewController
+        while let presentedViewController = currentViewController?.presentedViewController {
+            currentViewController = presentedViewController
+        }
+        return currentViewController
+    }
 }

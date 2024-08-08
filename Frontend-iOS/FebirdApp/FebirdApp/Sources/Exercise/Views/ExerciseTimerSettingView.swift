@@ -10,11 +10,9 @@ import SwiftUI
 struct ExerciseTimerSettingView: View {
     @EnvironmentObject var tabViewModel: TabViewModel
     @EnvironmentObject var navigationPathFinder: NavigationPathFinder<ExerciseViewOptions>
-    @State private var timerSeconds: Int = 10
-    @State private var isMinusPressed = false
-    @State private var isPlusPressed = false
+    @StateObject private var timerViewModel = ExerciseTimerViewModel()
     @StateObject private var exerciseDetector = ExerciseDetector()
-    @State private var selectedExercise: ExerciseType = .sumoSquat
+    @State private var selectedExercise: ExerciseType = .overheadClap
     @State private var totalCount: Int = 3
     @State private var showAlert = false
 
@@ -49,7 +47,7 @@ struct ExerciseTimerSettingView: View {
 
             // MARK: - 메인 컨텐츠
             VStack {
-                TimerView(viewModel: ExerciseTimerViewModel())
+                TimerView(viewModel: timerViewModel)
 
                 Text("전신이 잘 보이도록\n카메라를 고정해주세요!")
                     .font(.customFont(size: 20, weight: .bold))
@@ -63,10 +61,14 @@ struct ExerciseTimerSettingView: View {
                 Spacer()
 
                 CustomButtonView(title: "준비됐어요! 💪🏻", style: .orange) {
-                    cameraCheckAndProceed()
+                    if !timerViewModel.isTimerRunning {
+                        // startTimerAndProceed()
+                        navigationPathFinder.addPath(option: .exerciseRoutineLogView)
+                    }
                 }
                 .padding(24)
                 .padding(.bottom, 10)
+                .disabled(timerViewModel.isTimerRunning)
             }
             .ignoresSafeArea()
             .padding(24)
@@ -99,17 +101,17 @@ struct ExerciseTimerSettingView: View {
         .navigationBarBackButtonHidden()
     }
 
-    private func timeString(from seconds: Int) -> String {
-        let minutes = seconds / 60
-        let remainingSeconds = seconds % 60
-        return String(format: "%02d:%02d", minutes, remainingSeconds)
+    private func startTimerAndProceed() {
+        timerViewModel.startTimer {
+            cameraCheckAndProceed()
+        }
     }
 
     private func cameraCheckAndProceed() {
         exerciseDetector.checkCameraPermission()
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             if exerciseDetector.cameraPermissionStatus == .authorized {
-                navigationPathFinder.addPath(option: .exerciseCountView(ExerciseDetector(), .sumoSquat, 3))
+                navigationPathFinder.addPath(option: .exerciseCountView(ExerciseDetector(), .overheadClap, 5))
 
             } else {
                 showAlert = true

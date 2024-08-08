@@ -7,6 +7,16 @@
 
 import Foundation
 
+struct UserInbody {
+    var inbodyId: Int
+    var height: Float
+    var weight: Float
+    var inbodyDate: Date
+    var bmr: Float
+    var bodyfat: Float
+    var bmi: Float
+}
+
 struct Inbody: Codable {
     var inbodyId: Int
     var height: Float

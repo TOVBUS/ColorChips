@@ -18,35 +18,41 @@ struct EyeBodyMainView: View {
 
     var body: some View {
         VStack {
-            ScrollView {
-                LazyVStack(spacing: 20) {
-                    ForEach(viewModel.photos, id: \.date) { photo in
-                        VStack(alignment: .leading) {
-                            Text(photo.date)
-                                .font(.customFont(size: 20, weight: .bold))
-                                .foregroundStyle(.gray100)
-                            ScrollView(.horizontal, showsIndicators: false) {
-                                HStack(spacing: 10) {
-                                    ForEach(0..<4, id: \.self) { index in
-                                        if let image = photo.images[index] {
-                                            Image(uiImage: image)
-                                                .resizable()
-                                                .scaledToFit()
-                                                .frame(height: 200)
-                                                .cornerRadius(10)
+            if !viewModel.photos.isEmpty {
+                ScrollView {
+                    LazyVStack(spacing: 20) {
+                        ForEach(viewModel.photos, id: \.date) { photo in
+                            VStack(alignment: .leading) {
+                                Text(photo.date)
+                                    .font(.customFont(size: 20, weight: .bold))
+                                    .foregroundStyle(.gray100)
+                                ScrollView(.horizontal, showsIndicators: false) {
+                                    HStack(spacing: 10) {
+                                        ForEach(0..<4, id: \.self) { index in
+                                            if let image = photo.images[index] {
+                                                Image(uiImage: image)
+                                                    .resizable()
+                                                    .scaledToFit()
+                                                    .frame(height: 200)
+                                                    .cornerRadius(10)
+                                            }
                                         }
                                     }
                                 }
                             }
+                            .padding(.horizontal)
                         }
-                        .padding(.horizontal)
                     }
                 }
+            } else {
+                Image("EyeBodyEmpty")
+                Spacer()
             }
             CustomButtonView(title: "눈바디 추가하기") {
                 navigationPathFinder.addPath(option: .eyeBodyView(isOnboarding: false))
             }
         }
+        .ignoresSafeArea()
         .onAppear {
             viewModel.fetchEyeBodyPhotos(context: modelContext)
         }

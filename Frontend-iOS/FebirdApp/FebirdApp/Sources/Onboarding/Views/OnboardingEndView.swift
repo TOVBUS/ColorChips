@@ -13,13 +13,16 @@ struct OnboardingEndView: View {
 
     var body: some View {
         OnboardingGaugeView(progress: 8)
-            .padding(.top, 26)
 
-        Text("운동을 시작해볼까요?")
+        Text("모두 완료하셨군요!\n 이제부터 운동을 시작해볼까요?🔥")
+            .multilineTextAlignment(.center)
             .font(.customFont(size: 20, weight: .bold))
             .padding(.top, 30)
 
-        Image("peoLogo")
+        Image("feoTA")
+            .resizable()
+            .scaledToFit()
+            .frame(maxWidth: .infinity)
 
         Spacer()
 
