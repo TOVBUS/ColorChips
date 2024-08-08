@@ -130,6 +130,7 @@
 		E208BDEE2C62952F0094CC16 /* DailyMemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E208BDED2C62952F0094CC16 /* DailyMemo.swift */; };
 		E208BDF02C6295660094CC16 /* MealMemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E208BDEF2C6295660094CC16 /* MealMemo.swift */; };
 		E20F9CF82C63DEA9006A034B /* ChatTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20F9CF72C63DEA9006A034B /* ChatTextFieldView.swift */; };
+		E20F9D052C6475F8006A034B /* TextFieldTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20F9D042C6475F8006A034B /* TextFieldTest.swift */; };
 		E246A8DE2C5EAAF600B86617 /* ExerciseChatBotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E246A8DD2C5EAAF600B86617 /* ExerciseChatBotView.swift */; };
 		E246A8E02C5EC4A200B86617 /* ExerciseCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E246A8DF2C5EC4A200B86617 /* ExerciseCountView.swift */; };
 		E24CF94E2C4F887100D1548E /* CustomToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24CF94D2C4F887100D1548E /* CustomToggle.swift */; };
@@ -298,6 +299,7 @@
 		E208BDED2C62952F0094CC16 /* DailyMemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMemo.swift; sourceTree = "<group>"; };
 		E208BDEF2C6295660094CC16 /* MealMemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealMemo.swift; sourceTree = "<group>"; };
 		E20F9CF72C63DEA9006A034B /* ChatTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTextFieldView.swift; sourceTree = "<group>"; };
+		E20F9D042C6475F8006A034B /* TextFieldTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldTest.swift; sourceTree = "<group>"; };
 		E241DB512C63864600F4BFC8 /* Secret.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secret.xcconfig; sourceTree = "<group>"; };
 		E246A8DD2C5EAAF600B86617 /* ExerciseChatBotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseChatBotView.swift; sourceTree = "<group>"; };
 		E246A8DF2C5EC4A200B86617 /* ExerciseCountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCountView.swift; sourceTree = "<group>"; };
@@ -486,6 +488,7 @@
 				8F92DF822C4BB0970071F336 /* VideoPlayerView.swift */,
 				8F0F47DB2C636BF6004E3B86 /* Config.swift */,
 				E20F9CF72C63DEA9006A034B /* ChatTextFieldView.swift */,
+				E20F9D042C6475F8006A034B /* TextFieldTest.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1060,6 +1063,7 @@
 				E20F9CF82C63DEA9006A034B /* ChatTextFieldView.swift in Sources */,
 				E2EB25792C4E48C30094EC8E /* ChatBotMainView.swift in Sources */,
 				8F92DF912C4D68B40071F336 /* ExerciseRoutineLogView.swift in Sources */,
+				E20F9D052C6475F8006A034B /* TextFieldTest.swift in Sources */,
 				E2CFF2122C4E9D6300540500 /* InputFieldView.swift in Sources */,
 				8F92DF892C4D4A440071F336 /* TimerButton.swift in Sources */,
 				E15BF0232C6097CC0033E5C3 /* JointOverlayView.swift in Sources */,

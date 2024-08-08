@@ -12,57 +12,63 @@ struct ExerciseChatBotView: View {
     @EnvironmentObject var exerciseNavigationPathFinder: NavigationPathFinder<ExerciseViewOptions>
     @StateObject private var viewModel = ChatViewModel.shared
     @State private var inputText = ""
+    @FocusState private var isTextFieldFocused: Bool
+    @StateObject private var keyboardHandler = KeyboardHandler()
 
     var body: some View {
-        VStack {
-            HStack {
-                Button {
-                    exerciseNavigationPathFinder.popPath()
-                    tabViewModel.isHidden = false
-                } label: {
-                    Image("Chevron-left")
-                }
+        GeometryReader { geometry in
+            VStack(spacing: 0) {
+                // Header
+                VStack {
+                    HStack {
+                        Button {
+                            exerciseNavigationPathFinder.popPath()
+                            tabViewModel.isHidden = false
+                        } label: {
+                            Image("Chevron-left")
+                        }
 
-                HStack {
-                    Spacer()
+                        Spacer()
 
-                    Text("피오코치")
-                        .font(.customFont(size: 22, weight: .bold))
-                        .foregroundStyle(.gray100)
-                        .padding(.trailing, 16)
+                        Text("피오코치")
+                            .font(.customFont(size: 22, weight: .bold))
+                            .foregroundStyle(.gray100)
 
-                    Spacer()
-                }
-            }
-            .padding(16)
-            .frame(height: 64)
-
-            ScrollView {
-                LazyVStack(alignment: .leading, spacing: 10) {
-                    ForEach(viewModel.messages, id: \.content) { message in
-                        MessageBubble(message: message)
+                        Spacer()
                     }
+                    .padding(.horizontal, 20)
                 }
-                .padding()
+                .padding(.top, 100)
+                .frame(height: 164)
+                .background(Color.white)
+                .zIndex(1) // Ensure header stays on top
+
+                // Chat area
+                ScrollView {
+                    LazyVStack(alignment: .leading, spacing: 10) {
+                        ForEach(viewModel.messages, id: \.content) { message in
+                            MessageBubble(message: message)
+                        }
+                    }
+                    .padding()
+                }
+                .padding(.top, 10) // Add some padding to separate from header
+                .frame(height: max(0, geometry.size.height - 264 - keyboardHandler.keyboardHeight))
+
+                // Input field
+                TextFieldTest(placeholder: "메시지를 입력하세요", text: $inputText, viewModel: viewModel)
+                    .focused($isTextFieldFocused)
             }
-//            InputFieldView(text: $inputText, viewModel: viewModel)
-            ChatTextFieldView(placeholder: "메시지를 입력하세요", text: $inputText, keyboardType: .default, viewModel: viewModel)
         }
-        .padding(.top, 60)
-        .background(
-            Rectangle()
-                .foregroundStyle(.white)
-        )
-        .background(ignoresSafeAreaEdges: .bottom)
+        .background(Color.white)
         .ignoresSafeArea()
-        .background(
-            Rectangle()
-                .foregroundStyle(.white)
-        )
         .onAppear {
             tabViewModel.isHidden = true
         }
         .navigationBarBackButtonHidden()
+        .onTapGesture {
+            isTextFieldFocused = false
+        }
     }
 }
 
