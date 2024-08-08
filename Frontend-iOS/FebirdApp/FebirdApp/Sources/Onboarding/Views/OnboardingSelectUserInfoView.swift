@@ -9,6 +9,7 @@ import SwiftUI
 
 struct OnboardingSelectUserInfoView: View {
     @EnvironmentObject var navigationPathFinder: NavigationPathFinder<OnboardingViewOptions>
+    @EnvironmentObject var profilleSettingViewModel : ProfileSettingViewModel
 
     @State private var name = ""
     @State private var age = ""
@@ -36,7 +37,7 @@ struct OnboardingSelectUserInfoView: View {
                     }
                     HStack {
                         Image("personIcon")
-                        TextField("어떻게 불러드릴까요?", text: $name)
+                        CustomTextField(placeholder: "어떻게 불러드릴까요?", text: $name, keyboardType: .defaultType, autoFocus: false)
                         Image("pencilIcon")
                     }
                     .padding()
@@ -51,6 +52,8 @@ struct OnboardingSelectUserInfoView: View {
                         placeholder: "17세",
                         unit: "세",
                         inputValue: nil,
+                        keyboardType: .numberPad,
+                        autoFocus: false,
                         text: $age
                     )
 
@@ -61,12 +64,18 @@ struct OnboardingSelectUserInfoView: View {
                         Spacer()
                     }
 
-                    OnboardingSelectGenderButton(selectedGender: .constant(.female))
+                     OnboardingSelectGenderButton(selectedGender: $profilleSettingViewModel.gender)
 
                 }
+                .ignoresSafeArea(.keyboard, edges: .bottom)
                 .padding(.horizontal, 24)
             }
-        }
+        }.gesture(
+            TapGesture()
+                .onEnded { _ in
+                    UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+                }
+        )
 
         CustomButtonView(title: "입력하기") {
             // TODO: API POST 로직 추가
@@ -77,6 +86,6 @@ struct OnboardingSelectUserInfoView: View {
     }
 }
 
-#Preview {
-    OnboardingSelectUserInfoView()
-}
+// #Preview {
+//    OnboardingSelectUserInfoView()
+// }

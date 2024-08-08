@@ -12,14 +12,18 @@ struct OnboardingTextField: View {
     let placeholder: String
     let unit: String
     let inputValue: String?
+    let keyboardType: KeyboardType
+    let autoFocus: Bool
 
     @Binding var text: String
 
-    init(question: String, placeholder: String, unit: String, inputValue: String?, text: Binding<String>) {
+    init(question: String, placeholder: String, unit: String, inputValue: String?, keyboardType: KeyboardType = .defaultType, autoFocus: Bool, text: Binding<String>) {
         self.question = question
         self.placeholder = placeholder
         self.unit = unit
         self.inputValue = inputValue
+        self.keyboardType = keyboardType
+        self.autoFocus = autoFocus
         self._text = text
     }
 
@@ -29,7 +33,7 @@ struct OnboardingTextField: View {
                 .font(.customFont(size: 14, weight: .bold))
                 .foregroundStyle(Color(red: 0.07, green: 0.07, blue: 0.08))
             HStack {
-                TextField(placeholder, text: $text)
+                CustomTextField(placeholder: placeholder, text: $text, keyboardType: keyboardType, autoFocus: autoFocus)
                     .font(.customFont(size: 18, weight: .medium))
                     .foregroundStyle(text == "" ? .gray100 : Color(red: 0.61, green: 0.64, blue: 0.69))
                 Text(unit)
@@ -48,6 +52,6 @@ struct OnboardingTextField: View {
     }
 }
 
-#Preview {
-    OnboardingTextField(question: "체중", placeholder: "46.3", unit: "kg", inputValue: "46.3", text: .constant(""))
-}
+// #Preview {
+//    OnboardingTextField(question: "체중", placeholder: "46.3", unit: "kg", inputValue: "46.3", autoFocus: true, text: .constant(""))
+// }

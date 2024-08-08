@@ -24,6 +24,8 @@ struct FebirdAppApp: App {
     @StateObject private var inbodyViewModel = InbodyViewModel()
     @StateObject private var historyViewModel = HistoryViewModel()
     @StateObject private var memberViewModel = MemberViewModel()
+    @StateObject private var profileSelectViewModel = ProfileSelectViewModel()
+    @StateObject private var profileSettingViewModel = ProfileSettingViewModel()
 
     let modelContainer: ModelContainer
 
@@ -93,6 +95,8 @@ struct FebirdAppApp: App {
             .environmentObject(exerciseViewModel)
             .environmentObject(inbodyViewModel)
             .environmentObject(historyViewModel)
+            .environmentObject(profileSelectViewModel)
+            .environmentObject(profileSettingViewModel)
         }
         .environmentObject(memberViewModel)
         .onChange(of: socialLoginViewModel.hasNickname, { _, newValue in
