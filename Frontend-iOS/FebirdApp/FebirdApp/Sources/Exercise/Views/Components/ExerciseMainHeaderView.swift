@@ -11,6 +11,13 @@ struct ExerciseMainHeaderView: View {
     @EnvironmentObject var navigationPathFinder: NavigationPathFinder<ExerciseViewOptions>
     @State private var progress: CGFloat = 0.5 // 예시 값
 
+    let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMMM d, yyyy"
+        formatter.locale = Locale(identifier: "en_US")
+        return formatter
+    }()
+
     var body: some View {
         VStack {
             HStack(alignment: .center) {
@@ -20,7 +27,7 @@ struct ExerciseMainHeaderView: View {
                         .frame(width: 80, height: 80)
 
                     VStack(alignment: .leading, spacing: 4) {
-                        Text("JULY 16, 2024")
+                        Text(dateFormatter.string(from: Date()).uppercased())
                             .font(.customFont(size: 10, weight: .bold, language: .english))
                             .kerning(1)
                             .multilineTextAlignment(.center)

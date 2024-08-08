@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct InbodyMainView: View {
+    @EnvironmentObject var navigationPathFinder: NavigationPathFinder<ProfileViewOptions>
     let inbodys: [InbodyModel]
 
     var body: some View {
@@ -22,6 +23,8 @@ struct InbodyMainView: View {
             CustomButtonView(title: "인바디 추가하기", style: .black) {
                 // TODO: 스마트 체중계 결과 화면 추가
                 // TODO: 스마트 체중계 결과 이미지로 변경
+                // inbodyInputView로 이동
+                navigationPathFinder.addPath(option: .inbodyInputView)
             }
         }
         .ignoresSafeArea()
