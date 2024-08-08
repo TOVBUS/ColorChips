@@ -31,7 +31,6 @@ struct FebirdAppApp: App {
     let modelContainer: ModelContainer
 
     init() {
-        Thread.sleep(forTimeInterval: 1) // 런치스크린 시간 지연
         do {
             modelContainer = try ModelContainer(for: UserProfile.self, EyeBodyPhoto.self, LevelRecordData.self, DailyMemo.self, MealMemo.self)
         } catch {

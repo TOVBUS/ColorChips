@@ -28,6 +28,8 @@ struct ExerciseRoutineCompletionView: View {
 
             CustomButtonView(title: "오늘 루틴 끝났다!!!!!! 👊🏻👊🏻👊🏻", style: .orange) {
                 navigationPathFinder.popToRoot()
+                exercises[0].isStarted = false
+                exercises[0].isFinished = true
                 tabViewModel.isHidden = false
             }
             .padding(.bottom, 20)

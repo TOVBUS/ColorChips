@@ -85,7 +85,7 @@ struct ExerciseMainHeaderView: View {
                                         .multilineTextAlignment(.center)
                                         .foregroundColor(.white)
 
-                                    Text("새싹반")
+                                    Text("씨앗반")
                                         .font(.customFont(size: 12, weight: .regular))
                                         .multilineTextAlignment(.center)
                                         .foregroundColor(.white)
@@ -98,7 +98,7 @@ struct ExerciseMainHeaderView: View {
                                         .multilineTextAlignment(.center)
                                         .foregroundColor(.white)
 
-                                    Text("2일차")
+                                    Text("1일차")
                                         .font(.customFont(size: 12, weight: .regular))
                                         .multilineTextAlignment(.center)
                                         .foregroundColor(.white)
@@ -110,7 +110,9 @@ struct ExerciseMainHeaderView: View {
             }
             .frame(maxWidth: .infinity)
 
-            ExerciseGaugeBarView(progress: $progress, totalSteps: 3)
+            ExerciseGaugeBarView(selection: .constant(1), range: 1...3)
+                .previewLayout(.sizeThatFits)
+                .padding()
         }
         .padding(.top, 26)
         .padding(.vertical, 30)

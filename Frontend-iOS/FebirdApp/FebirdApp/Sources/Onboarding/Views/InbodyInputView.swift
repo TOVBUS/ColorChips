@@ -23,7 +23,6 @@ struct InbodyInputView: View {
             OnboardingGaugeView(progress: 5)
 
             VStack {
-
                 ScrollView {
                     Text("체중과 키를 기록하면 변화를 그래프로 보여드릴게요 😉")
                         .font(.customFont(size: 20, weight: .bold))
@@ -37,7 +36,7 @@ struct InbodyInputView: View {
                         OnboardingTextField(question: "체지방량", placeholder: "9.6", unit: "%", inputValue: nil, keyboardType: .numberPad, autoFocus: false, text: $bodyfat)
                         OnboardingTextField(question: "기초대사량", placeholder: "kcal", unit: "kg", inputValue: nil, keyboardType: .numberPad, autoFocus: false, text: $bmr)
                     })
-                    .padding(.horizontal, 20)
+                    .padding(.horizontal, 30)
                 }
 
                 CustomButtonView(title: "저장하기") {
