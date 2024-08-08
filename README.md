@@ -1,4 +1,3 @@
-# FeoFit: AI 챗봇 피오와 함께 ‘작은 운동 습관’ 기르기 서비스
 ![FeoFit_표지 001](https://github.com/user-attachments/assets/768cacf3-a902-497b-b413-18b18dff6c32)
 
 ## 👥 팀 ColorChips
@@ -44,8 +43,6 @@ pnpm run start
 ![FeoFit_표지 015](https://github.com/user-attachments/assets/4c07bd52-f612-4c06-8930-a21aed82444a)
 
 ![FeoFit_표지 016](https://github.com/user-attachments/assets/d1d2788a-b363-4457-bde8-65b0c80dc4cf)
-
-![FeoFit_표지 016](https://github.com/user-attachments/assets/065f5427-c8a8-426a-b8c0-5dd6aea2aa40)
 
 ![FeoFit_표지 017](https://github.com/user-attachments/assets/d86d3ebc-7c65-4aed-8ec7-0893c4464124)
 
