@@ -85,7 +85,7 @@ struct ProfileHeaderView: View {
                                         .multilineTextAlignment(.center)
                                         .foregroundColor(.white)
 
-                                    Text("새싹반")
+                                    Text("씨앗반")
                                         .font(.customFont(size: 12, weight: .regular))
                                         .multilineTextAlignment(.center)
                                         .foregroundColor(.white)
@@ -100,7 +100,7 @@ struct ProfileHeaderView: View {
                                         .multilineTextAlignment(.center)
                                         .foregroundColor(.white)
 
-                                    Text("2일차")
+                                    Text("1일차")
                                         .font(.customFont(size: 12, weight: .regular))
                                         .multilineTextAlignment(.center)
                                         .foregroundColor(.white)
