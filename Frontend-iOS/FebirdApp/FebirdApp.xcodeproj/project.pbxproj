@@ -516,6 +516,7 @@
 		3E9E9E102C44E5ED002389EB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E20F9D072C64F156006A034B /* Launch Screen.storyboard */,
 				3E9E9E142C44E66A002389EB /* Fonts */,
 				3EF6F0522C36937F00EEF18F /* Assets.xcassets */,
 				3E9E9E372C44E821002389EB /* Info.plist */,
@@ -537,7 +538,6 @@
 				E24F5E7F2C48EBC300724DA7 /* Meal */,
 				3E7521A32C48E60F00920BFD /* Exercise */,
 				E1BB0D532C4797C9002565B2 /* Onboarding */,
-				E20F9D072C64F156006A034B /* Launch Screen.storyboard */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
