@@ -9,7 +9,7 @@ import SwiftUI
 
 struct InbodyInputView: View {
     @EnvironmentObject var navigationPathFinder: NavigationPathFinder<OnboardingViewOptions>
-//    @StateObject
+    @EnvironmentObject var inbodyViewModel: InbodyViewModel
 
     @State var weight: String
     @State var height: String
@@ -31,8 +31,8 @@ struct InbodyInputView: View {
                         .padding(.bottom, 46)
 
                     VStack(spacing: 20, content: {
-                        OnboardingTextField(question: "체중 *", placeholder: "46.3", unit: "kg", inputValue: nil, text: $weight)
-                        OnboardingTextField(question: "키 *", placeholder: "160.3", unit: "cm", inputValue: nil, text: $height)
+                        OnboardingTextField(question: "체중 *", placeholder: "\(inbodyViewModel.userInbody.weight)", unit: "kg", inputValue: nil, text: $weight)
+                        OnboardingTextField(question: "키 *", placeholder: "\(inbodyViewModel.userInbody.height)", unit: "cm", inputValue: nil, text: $height)
                         OnboardingTextField(question: "BMI", placeholder: "17.6", unit: "%", inputValue: nil, text: $bmi)
                         OnboardingTextField(question: "체지방량", placeholder: "9.6", unit: "%", inputValue: nil, text: $bodyfat)
                         OnboardingTextField(question: "기초대사량", placeholder: "kcal", unit: "kg", inputValue: nil, text: $bmr)

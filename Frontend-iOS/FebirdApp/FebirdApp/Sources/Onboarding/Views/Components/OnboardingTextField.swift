@@ -31,7 +31,7 @@ struct OnboardingTextField: View {
             HStack {
                 TextField(placeholder, text: $text)
                     .font(.customFont(size: 18, weight: .medium))
-                    .foregroundStyle(Color(red: 0.61, green: 0.64, blue: 0.69))
+                    .foregroundStyle(text == "" ? .gray100 : Color(red: 0.61, green: 0.64, blue: 0.69))
                 Text(unit)
                     .foregroundStyle(Color(red: 31/255, green: 41/255, blue: 55/255))
             }.padding()
