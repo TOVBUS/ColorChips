@@ -37,6 +37,7 @@ struct ExerciseMainHeaderView: View {
                             Text("꽥꽥이님이 접속하다니\n이거 완전 럭키비키잖앙 🍀")
                                 .font(.customFont(size: 16, weight: .bold))
                                 .foregroundColor(.white)
+
                                 .frame(height: 50)
 
                             Button(action: {

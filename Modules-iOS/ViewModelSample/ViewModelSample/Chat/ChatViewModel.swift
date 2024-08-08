@@ -17,7 +17,7 @@ class ChatViewModel: ObservableObject {
         let url = "\(Config.chatURL)"
         let headers: HTTPHeaders = [
             "Content-Type": "application/json",
-            "api-key": "\(Config.apiKey)"  // 여기에 실제 API 키를 입력하세요.
+            "api-key": "\(Config.chatApiKey)"  // 여기에 실제 API 키를 입력하세요.
         ]
         
         let body: [String: Any] = [

@@ -25,8 +25,6 @@
 		8F0F47C12C6270AC004E3B86 /* Inbody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F47C02C6270AC004E3B86 /* Inbody.swift */; };
 		8F0F47C32C6270B6004E3B86 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F47C22C6270B6004E3B86 /* History.swift */; };
 		8F0F47C52C6270C2004E3B86 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F47C42C6270C2004E3B86 /* Member.swift */; };
-		8F0F47C72C627426004E3B86 /* Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 8F0F47C62C627426004E3B86 /* Debug.xcconfig */; };
-		8F0F47C92C62743E004E3B86 /* Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 8F0F47C82C627438004E3B86 /* Release.xcconfig */; };
 		8F0F47CC2C6274AA004E3B86 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F47CB2C6274AA004E3B86 /* Config.swift */; };
 		8F0F47CE2C634904004E3B86 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F47CD2C634904004E3B86 /* ContentView.swift */; };
 		8F0F47D12C6353B5004E3B86 /* ChatResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F47D02C6353B5004E3B86 /* ChatResponse.swift */; };
@@ -55,14 +53,13 @@
 		8F0F47C02C6270AC004E3B86 /* Inbody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inbody.swift; sourceTree = "<group>"; };
 		8F0F47C22C6270B6004E3B86 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		8F0F47C42C6270C2004E3B86 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
-		8F0F47C62C627426004E3B86 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
-		8F0F47C82C627438004E3B86 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		8F0F47CA2C62748F004E3B86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8F0F47CB2C6274AA004E3B86 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		8F0F47CD2C634904004E3B86 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8F0F47D02C6353B5004E3B86 /* ChatResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatResponse.swift; sourceTree = "<group>"; };
 		8F0F47D22C6353D2004E3B86 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		8F0F47D42C635499004E3B86 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		E241DB522C638B5C00F4BFC8 /* Secret.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secret.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				8F0F47CA2C62748F004E3B86 /* Info.plist */,
+				E241DB522C638B5C00F4BFC8 /* Secret.xcconfig */,
 				3E8BE56B2C61B217004DCC9A /* ViewModelSampleApp.swift */,
 				8F0F47CB2C6274AA004E3B86 /* Config.swift */,
 				8F0F47B82C626E95004E3B86 /* TestView.swift */,
@@ -121,8 +119,6 @@
 				3E8BE5842C61CADB004DCC9A /* Member */,
 				3E8BE5712C61B219004DCC9A /* Assets.xcassets */,
 				3E8BE5732C61B219004DCC9A /* Preview Content */,
-				8F0F47C62C627426004E3B86 /* Debug.xcconfig */,
-				8F0F47C82C627438004E3B86 /* Release.xcconfig */,
 			);
 			path = ViewModelSample;
 			sourceTree = "<group>";
@@ -254,10 +250,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8F0F47C92C62743E004E3B86 /* Release.xcconfig in Resources */,
 				3E8BE5752C61B219004DCC9A /* Preview Assets.xcassets in Resources */,
 				3E8BE5722C61B219004DCC9A /* Assets.xcassets in Resources */,
-				8F0F47C72C627426004E3B86 /* Debug.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,7 +291,7 @@
 /* Begin XCBuildConfiguration section */
 		3E8BE5762C61B219004DCC9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8F0F47C62C627426004E3B86 /* Debug.xcconfig */;
+			baseConfigurationReference = E241DB522C638B5C00F4BFC8 /* Secret.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -361,7 +355,7 @@
 		};
 		3E8BE5772C61B219004DCC9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8F0F47C82C627438004E3B86 /* Release.xcconfig */;
+			baseConfigurationReference = E241DB522C638B5C00F4BFC8 /* Secret.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -418,7 +412,6 @@
 		};
 		3E8BE5792C61B219004DCC9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8F0F47C62C627426004E3B86 /* Debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -449,7 +442,6 @@
 		};
 		3E8BE57A2C61B219004DCC9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8F0F47C82C627438004E3B86 /* Release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

@@ -10,6 +10,7 @@ import SwiftData
 
 @main
 struct FebirdAppApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @StateObject private var tabViewModel = TabViewModel()
     @StateObject private var albumViewModel = AlbumViewModel()
     @StateObject private var socialLoginViewModel = SocialLoginViewModel()
@@ -105,5 +106,15 @@ struct FebirdAppApp: App {
             }
         })
         .modelContainer(modelContainer)
+    }
+}
+
+class AppDelegate: NSObject, UIApplicationDelegate {
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        ChatViewModel.shared.clearMessages()
+    }
+
+    func applicationWillTerminate(_ application: UIApplication) {
+        ChatViewModel.shared.clearMessages()
     }
 }
