@@ -9,10 +9,10 @@ import SwiftUI
 
 struct OnboardingSelectUserInfoView: View {
     @EnvironmentObject var navigationPathFinder: NavigationPathFinder<OnboardingViewOptions>
-
+    @EnvironmentObject var memberViewModel : MemberViewModel
     @State private var name = ""
     @State private var age = ""
-    @State private var selectedGender: Gender = .female
+    @State private var selectedGender: UserProfile.Gender = .female
 
     var body: some View {
         VStack {
@@ -37,6 +37,9 @@ struct OnboardingSelectUserInfoView: View {
                 HStack {
                     Image("personIcon")
                     TextField("어떻게 불러드릴까요?", text: $name)
+                        .onChange(of: name) { _, newValue in
+                            memberViewModel.newMember.nickname = newValue
+                        }
                     Image("pencilIcon")
                 }
                 .padding()
@@ -52,7 +55,9 @@ struct OnboardingSelectUserInfoView: View {
                     unit: "세",
                     inputValue: nil,
                     text: $age
-                )
+                ).onChange(of: age) {
+                    memberViewModel.newMember.age = Int(age)
+                }
 
                 HStack {
                     Text("성별을 알려주세요!")
@@ -61,7 +66,10 @@ struct OnboardingSelectUserInfoView: View {
                     Spacer()
                 }
 
-                OnboardingSelectGenderButton(selectedGender: .constant(.female))
+                OnboardingSelectGenderButton(selectedGender: $selectedGender)
+                    .onChange(of: selectedGender) {
+                        memberViewModel.newMember.gender = selectedGender.rawValue
+                    }
 
             }
             .padding(.horizontal, 24)

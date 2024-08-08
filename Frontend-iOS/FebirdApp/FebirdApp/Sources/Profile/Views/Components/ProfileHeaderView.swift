@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ProfileHeaderView: View {
     @EnvironmentObject private var profileNavigationPathFinder: NavigationPathFinder<ProfileViewOptions>
+    @EnvironmentObject private var memberViewModel: MemberViewModel
     @State private var showSettingView = false
 
     let dateFormatter: DateFormatter = {
@@ -39,7 +40,7 @@ struct ProfileHeaderView: View {
                                         .foregroundColor(.white)
 
                                     HStack {
-                                        Text("꽥꽥이")
+                                        Text(memberViewModel.newMember.nickname ?? "꽥꽥이")
                                             .font(.customFont(size: 22, weight: .bold))
                                             .foregroundColor(.white)
                                             .frame(height: 50)

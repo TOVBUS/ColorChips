@@ -52,23 +52,13 @@ struct SocialLoginView: View {
                     .onTapGesture {
                         Task {
                             do {
-                                // 애플 로그인
-                                let authorization: () = try await appleLoginViewModel.startSignInWithAppleFlow()
+                                let _: () = try await appleLoginViewModel.startSignInWithAppleFlow()
 
-                                // 애플 로그인을 했으면
                                 if !appleLoginViewModel.userIdentifier.isEmpty {
-
-                                    // 신규회원 / 기존 회원 판별 로직
-                                    await memberViewModel.findOneMemberID(appleID: appleLoginViewModel.userIdentifier)
-
-                                    print("memberViewModel.memberID : \(memberViewModel.memberID)")
-
-                                    // apple로그인
                                     try await socialLoginViewModel.loginWithApple(appleID: appleLoginViewModel.userIdentifier)
 
-                                    if let isFirst = memberViewModel.isFirst {
-                                        onboardingNavigationPathFinder.setIsFirstenteredApp(isFirst)
-                                    }
+                                    memberViewModel.newMember.appleID = appleLoginViewModel.userIdentifier
+                                    onboardingNavigationPathFinder.setIsFirstenteredApp(true)
                                 }
                             } catch {
                                 print("Error: \(error.localizedDescription)")

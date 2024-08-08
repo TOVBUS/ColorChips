@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ExerciseMainHeaderView: View {
     @EnvironmentObject var navigationPathFinder: NavigationPathFinder<ExerciseViewOptions>
+    @EnvironmentObject var memberViewModel: MemberViewModel
     @State private var progress: CGFloat = 0.5 // 예시 값
 
     var body: some View {
@@ -27,7 +28,7 @@ struct ExerciseMainHeaderView: View {
                             .foregroundColor(.white)
 
                         HStack {
-                            Text("꽥꽥이님이 접속하다니\n이거 완전 럭키비키잖앙 🍀")
+                            Text("\(memberViewModel.newMember.nickname!)님이 접속하다니\n이거 완전 럭키비키잖앙 🍀")
                                 .font(.customFont(size: 16, weight: .bold))
                                 .foregroundColor(.white)
                                 .frame(height: 50)

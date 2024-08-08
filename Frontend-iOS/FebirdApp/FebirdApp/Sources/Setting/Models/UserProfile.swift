@@ -18,7 +18,8 @@ class UserProfile {
     var updatedAt: Date
 
     enum Gender: String, Codable {
-        case male, female
+        case male = "남성"
+        case female = "여성"
     }
 
     init(id: UUID = UUID(), nickname: String, age: Int, gender: Gender) {
