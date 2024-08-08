@@ -9,6 +9,7 @@ import SwiftUI
 
 struct InbodyInputView: View {
     @EnvironmentObject var navigationPathFinder: NavigationPathFinder<OnboardingViewOptions>
+//    @StateObject
 
     @State var weight: String
     @State var height: String
