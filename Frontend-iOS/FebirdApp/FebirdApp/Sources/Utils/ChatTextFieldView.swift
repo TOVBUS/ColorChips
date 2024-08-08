@@ -18,41 +18,37 @@ struct ChatTextFieldView: View {
 
     var body: some View {
         GeometryReader { _ in
-            VStack {
-                Spacer()
-                ZStack {
-                    Rectangle()
-                        .foregroundStyle(.white)
-                        .cornerRadius(20, corners: [.topLeft, .topRight])
-                        .frame(maxWidth: .infinity, maxHeight: 100)
-                        .shadow(color: Color.gray20, radius: 5, x: 0, y: 2)
+            ZStack {
+                Rectangle()
+                    .foregroundStyle(.white)
+                    .cornerRadius(20, corners: [.topLeft, .topRight])
+                    .frame(maxWidth: .infinity, maxHeight: 100)
+                    .shadow(color: Color.gray20, radius: 5, x: 0, y: 2)
 
-                    HStack(spacing: 8) {
-                        TextField(placeholder, text: $text)
-                            .keyboardType(keyboardType)
-                            .focused($isTextFieldFocused)
-                            .padding(.horizontal, 16)
-                            .padding(.vertical, 8)
-                            .frame(height: 56, alignment: .leading)
-                            .foregroundStyle(.gray100)
-                            .background(.gray10)
-                            .cornerRadius(19)
-                            .padding()
+                HStack(spacing: 8) {
+                    TextField(placeholder, text: $text)
+                        .keyboardType(keyboardType)
+                        .focused($isTextFieldFocused)
+                        .padding(.horizontal, 16)
+                        .padding(.vertical, 8)
+                        .frame(height: 56, alignment: .leading)
+                        .foregroundStyle(.gray100)
+                        .background(.gray10)
+                        .cornerRadius(18)
 
-                        Button {
-                            Task {
-                                await viewModel.sendMessage(content: text)
-                                text = ""
-                            }
-                            hideKeyboard()
-                        } label: {
-                            Image("sendIcon")
+                    Button {
+                        Task {
+                            await viewModel.sendMessage(content: text)
+                            text = ""
                         }
-                        .padding(.trailing)
+                        hideKeyboard()
+                    } label: {
+                        Image("sendIcon")
                     }
-                    .padding(.bottom, 10)
                 }
-                .frame(height: 100)
+                .padding(.horizontal, 10)
+                .padding(.bottom, 10)
+
             }
             .offset(y: -keyboardHeight)
         }

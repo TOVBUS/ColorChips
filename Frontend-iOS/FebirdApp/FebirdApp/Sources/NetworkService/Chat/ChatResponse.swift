@@ -14,8 +14,8 @@ struct ChatResponse: Codable {
     let choices: [Choice]
     let created: Int
     let id, model, object: String
-    let promptFilterResults: [PromptFilterResult]
-    let systemFingerprint: String
+    let promptFilterResults: [PromptFilterResult]?
+    let systemFingerprint: String?
     let usage: Usage
 
     enum CodingKeys: String, CodingKey {
@@ -28,7 +28,7 @@ struct ChatResponse: Codable {
 
 // MARK: - Choice
 struct Choice: Codable {
-    let contentFilterResults: ChoiceContentFilterResults
+    let contentFilterResults: ChoiceContentFilterResults?
     let finishReason: String
     let index: Int
     let logprobs: JSONNull?
@@ -43,9 +43,9 @@ struct Choice: Codable {
 
 // MARK: - ChoiceContentFilterResults
 struct ChoiceContentFilterResults: Codable {
-    let hate: Hate
-    let protectedMaterialCode, protectedMaterialText: ProtectedMaterialCode
-    let selfHarm, sexual, violence: Hate
+    let hate: Hate?
+    let protectedMaterialCode, protectedMaterialText: ProtectedMaterial?
+    let selfHarm, sexual, violence: Hate?
 
     enum CodingKeys: String, CodingKey {
         case hate
@@ -62,9 +62,9 @@ struct Hate: Codable {
     let severity: String
 }
 
-// MARK: - ProtectedMaterialCode
-struct ProtectedMaterialCode: Codable {
-    let filtered, detected: Bool
+// MARK: - ProtectedMaterial
+struct ProtectedMaterial: Codable {
+    let filtered, detected: Bool?
 }
 
 // MARK: - Message
@@ -86,9 +86,9 @@ struct PromptFilterResult: Codable {
 
 // MARK: - PromptFilterResultContentFilterResults
 struct PromptFilterResultContentFilterResults: Codable {
-    let hate: Hate
-    let jailbreak: ProtectedMaterialCode
-    let selfHarm, sexual, violence: Hate
+    let hate: Hate?
+    let jailbreak: ProtectedMaterial?
+    let selfHarm, sexual, violence: Hate?
 
     enum CodingKeys: String, CodingKey {
         case hate, jailbreak
@@ -110,7 +110,6 @@ struct Usage: Codable {
 
 // MARK: - Encode/decode helpers
 class JSONNull: Codable, Hashable {
-
     public static func == (lhs: JSONNull, rhs: JSONNull) -> Bool {
         return true
     }

@@ -45,13 +45,29 @@ class ChatViewModel: ObservableObject {
                     messages.append(message)
                 }
             case .failure(let error):
-                self.errorMessage = error.localizedDescription
-                print("Error sending message: \(error)")
+                handleError(error)
             }
         } catch {
-            self.errorMessage = error.localizedDescription
-            print("Error sending message: \(error)")
+            handleError(error)
         }
+    }
+
+    private func handleError(_ error: Error) {
+        if let afError = error as? AFError {
+            switch afError {
+            case .responseSerializationFailed(let reason):
+                if case .decodingFailed(let decodingError) = reason {
+                    errorMessage = "Decoding failed: \(decodingError.localizedDescription)"
+                } else {
+                    errorMessage = "Response serialization failed: \(reason)"
+                }
+            default:
+                errorMessage = afError.localizedDescription
+            }
+        } else {
+            errorMessage = error.localizedDescription
+        }
+        print("Error sending message: \(errorMessage ?? "Unknown error")")
     }
 
     func clearMessages() {
