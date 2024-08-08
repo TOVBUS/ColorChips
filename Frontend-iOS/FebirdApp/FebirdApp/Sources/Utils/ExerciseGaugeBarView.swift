@@ -36,13 +36,11 @@ struct ExerciseGaugeBarView: View {
                     .frame(width: barWidth, height: barHeight)
                     .cornerRadius(3)
 
-                // Progress bar
                 Rectangle()
                     .foregroundColor(Color(red: 0.98, green: 0.45, blue: 0.09))
                     .frame(width: xPosition(for: selection), height: barHeight)
                     .cornerRadius(3)
 
-                // Gradient overlay (only show when selection is not the first step)
                 if selection > range.lowerBound {
                     LinearGradient(gradient: Gradient(colors: [Color(red: 0.98, green: 0.45, blue: 0.09).opacity(0), Color(red: 0.98, green: 0.45, blue: 0.09)]), startPoint: .leading, endPoint: .trailing)
                         .frame(width: 70, height: indicatorSize)
@@ -51,7 +49,6 @@ struct ExerciseGaugeBarView: View {
                         .offset(x: xPosition(for: selection) - 70)
                 }
 
-                // Indicator
                 ZStack {
                     Rectangle()
                         .foregroundColor(.white)
@@ -67,7 +64,6 @@ struct ExerciseGaugeBarView: View {
             }
             .frame(width: barWidth, height: indicatorSize)
 
-            // Step indicators
             HStack(spacing: 0) {
                 ForEach(range, id: \.self) { step in
                     Text("\(step)")
