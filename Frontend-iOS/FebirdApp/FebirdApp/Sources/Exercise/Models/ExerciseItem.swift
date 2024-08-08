@@ -16,4 +16,4 @@ struct ExerciseItem: Identifiable {
     var isStarted: Bool
 }
 
-var exercises: [ExerciseItem] = [ExerciseItem(name: ExerciseType.overheadClap.rawValue, value: 3, set: 1, isFinished: false, isStarted: true)]
+var exercises: [ExerciseItem] = [ExerciseItem(name: ExerciseType.overheadClap.rawValue, value: 5, set: 1, isFinished: false, isStarted: true)]

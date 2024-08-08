@@ -9,7 +9,7 @@ import SwiftUI
 
 struct InbodyInputView: View {
     @EnvironmentObject var navigationPathFinder: NavigationPathFinder<OnboardingViewOptions>
-//    @StateObject
+    @EnvironmentObject var inbodyViewModel: InbodyViewModel
 
     @State var weight: String
     @State var height: String
@@ -31,17 +31,17 @@ struct InbodyInputView: View {
                         .padding(.bottom, 46)
 
                     VStack(spacing: 20, content: {
-                        OnboardingTextField(question: "체중 *", placeholder: "46.3", unit: "kg", inputValue: nil, text: $weight)
-                        OnboardingTextField(question: "키 *", placeholder: "160.3", unit: "cm", inputValue: nil, text: $height)
-                        OnboardingTextField(question: "BMI", placeholder: "17.6", unit: "%", inputValue: nil, text: $bmi)
-                        OnboardingTextField(question: "체지방량", placeholder: "9.6", unit: "%", inputValue: nil, text: $bodyfat)
-                        OnboardingTextField(question: "기초대사량", placeholder: "kcal", unit: "kg", inputValue: nil, text: $bmr)
+                        OnboardingTextField(question: "체중 *", placeholder: "\(inbodyViewModel.userInbody.weight)", unit: "kg", inputValue: nil, keyboardType: .numberPad, autoFocus: true, text: $weight)
+                        OnboardingTextField(question: "키 *", placeholder: "\(inbodyViewModel.userInbody.height)", unit: "cm", inputValue: nil, keyboardType: .numberPad, autoFocus: false, text: $height)
+                        OnboardingTextField(question: "BMI", placeholder: "17.6", unit: "%", inputValue: nil, keyboardType: .numberPad, autoFocus: false, text: $bmi)
+                        OnboardingTextField(question: "체지방량", placeholder: "9.6", unit: "%", inputValue: nil, keyboardType: .numberPad, autoFocus: false, text: $bodyfat)
+                        OnboardingTextField(question: "기초대사량", placeholder: "kcal", unit: "kg", inputValue: nil, keyboardType: .numberPad, autoFocus: false, text: $bmr)
                     })
-                    .padding(.horizontal, 46)
+                    .padding(.horizontal, 20)
                 }
 
                 CustomButtonView(title: "저장하기") {
-                    // TODO: 데이터 저장 로직 구현 - SwiftData
+                    // TODO: 데이터 저장 로직 구현 - DB
                 }
 
                 CustomButtonView(title: "건너뛰기") {
@@ -50,9 +50,15 @@ struct InbodyInputView: View {
                 .navigationBarBackButtonHidden()
             }
         }
+        .gesture(
+            TapGesture()
+                .onEnded { _ in
+                    UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+                }
+        )
     }
 }
 
-#Preview {
-    InbodyInputView(weight: "", height: "", bmi: "", bodyfat: "", bmr: "")
-}
+// #Preview {
+//    InbodyInputView(weight: "", height: "", bmi: "", bodyfat: "", bmr: "")
+// }

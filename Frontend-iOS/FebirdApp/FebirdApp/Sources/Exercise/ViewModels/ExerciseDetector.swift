@@ -10,7 +10,7 @@ import Vision
 import AVFoundation
 
 class ExerciseDetector: NSObject, ObservableObject {
-    @Published var currentExercise: ExerciseType = .sumoSquat
+    @Published var currentExercise: ExerciseType = .overheadClap
     @Published var count: Int = 0
     @Published var cameraPermissionStatus: AVAuthorizationStatus = .notDetermined
     @Published var isDetecting: Bool = false

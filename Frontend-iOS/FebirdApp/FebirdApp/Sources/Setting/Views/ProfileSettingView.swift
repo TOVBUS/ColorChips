@@ -10,7 +10,7 @@ import SwiftUI
 struct ProfileSettingView: View {
 
     @Environment(\.modelContext) private var modelContext
-    @EnvironmentObject private var viewModel: ProfileSettingViewModel
+    @EnvironmentObject private var profilleSettingViewModel: ProfileSettingViewModel
     @EnvironmentObject private var tabViewModel: TabViewModel
     @EnvironmentObject private var profileNavigationPathFinder: NavigationPathFinder<ProfileViewOptions>
 
@@ -34,21 +34,21 @@ struct ProfileSettingView: View {
                             Image("personIcon")
                                 .padding()
 
-                            TextField("어떻게 불러드릴까요?", text: $viewModel.nickname)
+                            TextField("어떻게 불러드릴까요?", text: $profilleSettingViewModel.nickname)
                                 .font(.customFont(size: 18, weight: .medium))
-                                .foregroundColor(viewModel.nickname.isEmpty ? .gray40 : .gray100)
+                                .foregroundColor(profilleSettingViewModel.nickname.isEmpty ? .gray40 : .gray100)
 
                             Image("pencilIcon")
                                 .padding()
                         }
                         .background(
                             RoundedRectangle(cornerRadius: 20)
-                                .stroke(viewModel.isFocused ? .orange40 : .clear, lineWidth: 1)
+                                .stroke(profilleSettingViewModel.isFocused ? .orange40 : .clear, lineWidth: 1)
                                 .fill(.gray10)
                         )
                         .padding(.horizontal, 0)
 
-                        OnboardingTextField(question: "나이", placeholder: "17세", unit: "세", inputValue: nil, text: $viewModel.age)
+                        OnboardingTextField(question: "나이", placeholder: "17세", unit: "세", inputValue: nil, keyboardType: .numberPad, autoFocus: false, text: $profilleSettingViewModel.age)
 
                         HStack {
                             Text("성별")
@@ -57,13 +57,13 @@ struct ProfileSettingView: View {
                             Spacer()
                         }
 
-                        OnboardingSelectGenderButton(selectedGender: $viewModel.gender)
+                        OnboardingSelectGenderButton(selectedGender: $profilleSettingViewModel.gender)
                             .padding(.bottom, 70)
                     }
                     .padding(25)
 
                     CustomButtonView(title: "저장하기") {
-                        viewModel.saveProfile()
+                        profilleSettingViewModel.saveProfile()
                     }
                 }
             }

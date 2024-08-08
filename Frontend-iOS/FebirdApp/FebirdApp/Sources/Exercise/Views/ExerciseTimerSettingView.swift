@@ -12,7 +12,7 @@ struct ExerciseTimerSettingView: View {
     @EnvironmentObject var navigationPathFinder: NavigationPathFinder<ExerciseViewOptions>
     @StateObject private var timerViewModel = ExerciseTimerViewModel()
     @StateObject private var exerciseDetector = ExerciseDetector()
-    @State private var selectedExercise: ExerciseType = .sumoSquat
+    @State private var selectedExercise: ExerciseType = .overheadClap
     @State private var totalCount: Int = 3
     @State private var showAlert = false
 
@@ -110,7 +110,8 @@ struct ExerciseTimerSettingView: View {
         exerciseDetector.checkCameraPermission()
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             if exerciseDetector.cameraPermissionStatus == .authorized {
-                navigationPathFinder.addPath(option: .exerciseCountView(ExerciseDetector(), .sumoSquat, 3))
+                navigationPathFinder.addPath(option: .exerciseCountView(ExerciseDetector(), .overheadClap, 5))
+
             } else {
                 showAlert = true
             }

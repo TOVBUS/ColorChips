@@ -24,6 +24,8 @@ struct FebirdAppApp: App {
     @StateObject private var inbodyViewModel = InbodyViewModel()
     @StateObject private var historyViewModel = HistoryViewModel()
     @StateObject private var memberViewModel = MemberViewModel()
+    @StateObject private var profileSelectViewModel = ProfileSelectViewModel()
+    @StateObject private var profileSettingViewModel = ProfileSettingViewModel()
 
     let modelContainer: ModelContainer
 
@@ -38,61 +40,63 @@ struct FebirdAppApp: App {
     var body: some Scene {
         WindowGroup {
             Group {
-            //            if socialLoginViewModel.loginResult == nil {
-            //                SocialLoginView()
-            //                    .environmentObject(socialLoginViewModel)
-            //            } else
-            if onboardingNavigationPathFinder.isFirstEnteredApp {
-                NavigationStack(path: $onboardingNavigationPathFinder.path) {
-                    OnboardingWelcomView()
-                        .navigationDestination(for: OnboardingViewOptions.self) { option in
-                            option.view()
-                        }
-                }
-                .environmentObject(onboardingNavigationPathFinder)
-            } else {
-                ZStack(alignment: .bottom) {
-                    switch tabViewModel.selectedTab {
-                    case .meal:
-                        NavigationStack(path: $mealNavigationPathFinder.path) {
-                            MealMainView()
-                                .navigationDestination(for: MealViewOptions.self) { option in
-                                    option.view()
-                                }
-                        }
-                    case .exercise:
-                        NavigationStack(path: $exerciseNavigationPathFinder.path) {
-                            ExerciseMainView()
-                                .navigationDestination(for: ExerciseViewOptions.self) { option in
-                                    option.view()
-                                }
-                        }
-                    case .profile:
-                        NavigationStack(path: $profileNavigationPathFinder.path) {
-                            ProfileMainView()
-                                .navigationDestination(for: ProfileViewOptions.self) { option in
-                                    option.view()
-                                }
-                        }
+                //            if socialLoginViewModel.loginResult == nil {
+                //                SocialLoginView()
+                //                    .environmentObject(socialLoginViewModel)
+                //            } else
+                if onboardingNavigationPathFinder.isFirstEnteredApp {
+                    NavigationStack(path: $onboardingNavigationPathFinder.path) {
+                        OnboardingWelcomView()
+                            .navigationDestination(for: OnboardingViewOptions.self) { option in
+                                option.view()
+                            }
                     }
-                    CustomTabBarView()
+                    .environmentObject(onboardingNavigationPathFinder)
+                } else {
+                    ZStack(alignment: .bottom) {
+                        switch tabViewModel.selectedTab {
+                        case .meal:
+                            NavigationStack(path: $mealNavigationPathFinder.path) {
+                                MealMainView()
+                                    .navigationDestination(for: MealViewOptions.self) { option in
+                                        option.view()
+                                    }
+                            }
+                        case .exercise:
+                            NavigationStack(path: $exerciseNavigationPathFinder.path) {
+                                ExerciseMainView()
+                                    .navigationDestination(for: ExerciseViewOptions.self) { option in
+                                        option.view()
+                                    }
+                            }
+                        case .profile:
+                            NavigationStack(path: $profileNavigationPathFinder.path) {
+                                ProfileMainView()
+                                    .navigationDestination(for: ProfileViewOptions.self) { option in
+                                        option.view()
+                                    }
+                            }
+                        }
+                        CustomTabBarView()
+                    }
+                    .environmentObject(tabViewModel)
+                    .environmentObject(albumViewModel)
+                    .environmentObject(mealNavigationPathFinder)
+                    .environmentObject(exerciseNavigationPathFinder)
+                    .environmentObject(profileNavigationPathFinder)
                 }
-                .environmentObject(tabViewModel)
-                .environmentObject(albumViewModel)
-                .environmentObject(mealNavigationPathFinder)
-                .environmentObject(exerciseNavigationPathFinder)
-                .environmentObject(profileNavigationPathFinder)
             }
-        }
-                .onAppear(perform: {
-                    socialLoginViewModel.checkNickname()
-                })
-                .environmentObject(chatViewModel)
-                .environmentObject(routineViewModel)
-                .environmentObject(levelViewModel)
-                .environmentObject(exerciseViewModel)
-                .environmentObject(inbodyViewModel)
-                .environmentObject(historyViewModel)
+            .onAppear(perform: {
+                socialLoginViewModel.checkNickname()
+            })
+            .environmentObject(chatViewModel)
+            .environmentObject(routineViewModel)
+            .environmentObject(levelViewModel)
+            .environmentObject(exerciseViewModel)
+            .environmentObject(inbodyViewModel)
+            .environmentObject(historyViewModel)
+            .environmentObject(profileSelectViewModel)
+            .environmentObject(profileSettingViewModel)
         }
         .environmentObject(memberViewModel)
         .onChange(of: socialLoginViewModel.hasNickname, { _, newValue in

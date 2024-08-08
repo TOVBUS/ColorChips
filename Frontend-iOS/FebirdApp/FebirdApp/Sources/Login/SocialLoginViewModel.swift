@@ -56,7 +56,7 @@ class SocialLoginViewModel: ObservableObject {
 //        do {
 //            //  if 서버에서 가져온 닉네임 == nil 닉네임이 있다면 true else 없다면 false
 //            DispatchQueue.main.async {
-                self.hasNickname = true
+                self.hasNickname = false
 //            }
 //        } catch {
 //            DispatchQueue.main.async {

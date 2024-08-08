@@ -61,6 +61,7 @@ struct MemoModalView: View {
             Spacer()
             Button("추가하기") {
                 viewModel.saveMealMemo(for: date, mealType: mealType, image: image, title: temporaryTitleText, content: temporaryContentText)
+                NotificationCenter.default.post(name: Notification.Name("MealMemoUpdated"), object: nil)
                 presentationMode.wrappedValue.dismiss()
             }
             .padding(.horizontal, 15)

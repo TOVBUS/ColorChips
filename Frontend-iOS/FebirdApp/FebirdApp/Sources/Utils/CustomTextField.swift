@@ -17,6 +17,7 @@ struct CustomTextField: UIViewRepresentable {
     var placeholder: String
     @Binding var text: String
     var keyboardType: KeyboardType
+    var autoFocus: Bool
 
     class Coordinator: NSObject, UITextFieldDelegate {
         @Binding var text: String
@@ -46,8 +47,10 @@ struct CustomTextField: UIViewRepresentable {
             textField.keyboardType = .numberPad
         }
 
-        DispatchQueue.main.async {
-            textField.becomeFirstResponder()
+        if autoFocus {
+            DispatchQueue.main.async {
+                textField.becomeFirstResponder()
+            }
         }
 
         return textField

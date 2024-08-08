@@ -116,6 +116,6 @@ struct ExerciseCountView: View {
 }
 
 #Preview {
-    ExerciseCountView(exerciseDetector: ExerciseDetector(), selectedExercise: .sumoSquat, totalCount: 3)
+    ExerciseCountView(exerciseDetector: ExerciseDetector(), selectedExercise: .overheadClap, totalCount: 5)
         .environmentObject(NavigationPathFinder<ExerciseViewOptions>())
 }
