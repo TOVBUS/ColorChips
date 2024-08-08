@@ -17,7 +17,7 @@ struct OnboardingSelectUserInfoView: View {
 
     var body: some View {
         VStack {
-            OnboardingGaugeView(progress: 2)
+            OnboardingGaugeView(progress: 3)
             ScrollView {
                 VStack(spacing: 28) {
                     HStack {

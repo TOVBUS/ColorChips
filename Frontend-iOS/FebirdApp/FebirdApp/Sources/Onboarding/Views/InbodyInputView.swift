@@ -42,6 +42,7 @@ struct InbodyInputView: View {
 
                 CustomButtonView(title: "저장하기") {
                     // TODO: 데이터 저장 로직 구현 - DB
+                    navigationPathFinder.addPath(option: .onboardingEndView)
                 }
 
                 CustomButtonView(title: "건너뛰기") {

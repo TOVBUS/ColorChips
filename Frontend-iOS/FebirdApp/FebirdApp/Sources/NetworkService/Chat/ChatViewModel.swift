@@ -15,7 +15,7 @@ class ChatViewModel: ObservableObject {
     @Published var messages: [Message] = []
     @Published var errorMessage: String?
 
-    private init() {}
+    init() {}
 
     func sendMessage(content: String) async {
         let userMessage = Message(content: content, role: "user")
