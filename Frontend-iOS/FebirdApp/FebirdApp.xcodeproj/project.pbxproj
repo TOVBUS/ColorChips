@@ -269,6 +269,7 @@
 		E10FD9AD2C4C16AA00D80139 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		E10FD9AF2C4CC01700D80139 /* InbodyMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InbodyMainView.swift; sourceTree = "<group>"; };
 		E10FD9B12C4CC06000D80139 /* InbodyChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InbodyChartView.swift; sourceTree = "<group>"; };
+		E114B7C02C65475B009A8E77 /* Secret.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Secret.xcconfig; path = "../../../../../../.Trash/ColorChips 오전 3.34.15/Frontend-iOS/FebirdApp/Secret.xcconfig"; sourceTree = "<group>"; };
 		E12911B82C48DC81009A92F7 /* CameraActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraActionSheet.swift; sourceTree = "<group>"; };
 		E12911BA2C48EDFE009A92F7 /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
 		E12911BC2C48FDBA009A92F7 /* InbodyFixView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InbodyFixView.swift; sourceTree = "<group>"; };
@@ -309,7 +310,6 @@
 		E20F9CFE2C64086F006A034B /* AzureInbodyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AzureInbodyViewModel.swift; sourceTree = "<group>"; };
 		E20F9D002C6408A0006A034B /* AzureInbodyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AzureInbodyService.swift; sourceTree = "<group>"; };
 		E20F9D042C6475F8006A034B /* TextFieldTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldTest.swift; sourceTree = "<group>"; };
-		E20F9D062C64DBBD006A034B /* Secret.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secret.xcconfig; sourceTree = "<group>"; };
 		E20F9D072C64F156006A034B /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		E246A8DD2C5EAAF600B86617 /* ExerciseChatBotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseChatBotView.swift; sourceTree = "<group>"; };
 		E246A8DF2C5EC4A200B86617 /* ExerciseCountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCountView.swift; sourceTree = "<group>"; };
@@ -568,7 +568,7 @@
 		3EF6F0402C36937D00EEF18F = {
 			isa = PBXGroup;
 			children = (
-				E20F9D062C64DBBD006A034B /* Secret.xcconfig */,
+				E114B7C02C65475B009A8E77 /* Secret.xcconfig */,
 				E1BB0D4B2C450F1C002565B2 /* .swiftlint.yml */,
 				3EF6F04B2C36937E00EEF18F /* FebirdApp */,
 				3EF6F05E2C36938000EEF18F /* FebirdAppTests */,
@@ -1254,6 +1254,7 @@
 /* Begin XCBuildConfiguration section */
 		3EF6F06D2C36938000EEF18F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E114B7C02C65475B009A8E77 /* Secret.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -1317,6 +1318,7 @@
 		};
 		3EF6F06E2C36938000EEF18F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E114B7C02C65475B009A8E77 /* Secret.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;

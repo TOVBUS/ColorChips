@@ -43,38 +43,37 @@ struct FebirdAppApp: App {
             Group {
                 if socialLoginViewModel.loginResult == nil {
                     SocialLoginView()
-
-                } else
-                if onboardingNavigationPathFinder.isFirstEnteredApp {
+                } else if onboardingNavigationPathFinder.isFirstEnteredApp {
                     NavigationStack(path: $onboardingNavigationPathFinder.path) {
-                    OnboardingWelcomView()
-                        .navigationDestination(for: OnboardingViewOptions.self) { option in
-                            option.view()
-                        }
-                }
-            } else {
-                ZStack(alignment: .bottom) {
-                    switch tabViewModel.selectedTab {
-                    case .meal:
-                        NavigationStack(path: $mealNavigationPathFinder.path) {
-                            MealMainView()
-                                .navigationDestination(for: MealViewOptions.self) { option in
-                                    option.view()
-                                }
-                        }
-                    case .exercise:
-                        NavigationStack(path: $exerciseNavigationPathFinder.path) {
-                            ExerciseMainView()
-                                .navigationDestination(for: ExerciseViewOptions.self) { option in
-                                    option.view()
-                                }
-                        }
-                    case .profile:
-                        NavigationStack(path: $profileNavigationPathFinder.path) {
-                            ProfileMainView()
-                                .navigationDestination(for: ProfileViewOptions.self) { option in
-                                    option.view()
-                                }
+                        OnboardingWelcomView()
+                            .navigationDestination(for: OnboardingViewOptions.self) { option in
+                                option.view()
+                            }
+                    }
+                } else {
+                    ZStack(alignment: .bottom) {
+                        switch tabViewModel.selectedTab {
+                        case .meal:
+                            NavigationStack(path: $mealNavigationPathFinder.path) {
+                                MealMainView()
+                                    .navigationDestination(for: MealViewOptions.self) { option in
+                                        option.view()
+                                    }
+                            }
+                        case .exercise:
+                            NavigationStack(path: $exerciseNavigationPathFinder.path) {
+                                ExerciseMainView()
+                                    .navigationDestination(for: ExerciseViewOptions.self) { option in
+                                        option.view()
+                                    }
+                            }
+                        case .profile:
+                            NavigationStack(path: $profileNavigationPathFinder.path) {
+                                ProfileMainView()
+                                    .navigationDestination(for: ProfileViewOptions.self) { option in
+                                        option.view()
+                                    }
+                            }
                         }
                         CustomTabBarView()
                     }
@@ -83,19 +82,19 @@ struct FebirdAppApp: App {
                     .environmentObject(mealNavigationPathFinder)
                     .environmentObject(exerciseNavigationPathFinder)
                     .environmentObject(profileNavigationPathFinder)
+
                 }
             }
-        }
-                .environmentObject(socialLoginViewModel)
-                .environmentObject(onboardingNavigationPathFinder)
-                .environmentObject(chatViewModel)
-                .environmentObject(routineViewModel)
-                .environmentObject(levelViewModel)
-                .environmentObject(exerciseViewModel)
-                .environmentObject(inbodyViewModel)
-                .environmentObject(historyViewModel)
-                .environmentObject(profileSelectViewModel)
-                .environmentObject(profileSettingViewModel)
+            .environmentObject(socialLoginViewModel)
+            .environmentObject(onboardingNavigationPathFinder)
+            .environmentObject(chatViewModel)
+            .environmentObject(routineViewModel)
+            .environmentObject(levelViewModel)
+            .environmentObject(exerciseViewModel)
+            .environmentObject(inbodyViewModel)
+            .environmentObject(historyViewModel)
+            .environmentObject(profileSelectViewModel)
+            .environmentObject(profileSettingViewModel)
         }
         .environmentObject(memberViewModel)
         .modelContainer(modelContainer)
