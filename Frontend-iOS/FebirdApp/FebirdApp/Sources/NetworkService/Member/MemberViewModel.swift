@@ -14,7 +14,7 @@ class MemberViewModel: ObservableObject {
     @Published var memberID: MemberIDFromAppleID?
     @Published var errorMessage: String?
     @Published var isFirst: Bool?
-    @Published var newMember: Member?
+    @Published var newMember = Member(id: 0, currentLevel: 1)
 
     func createMember(_ member: MemberCreateWithAppleID) async {
         let url = "\(Config.baseURL)/member/apple-login"

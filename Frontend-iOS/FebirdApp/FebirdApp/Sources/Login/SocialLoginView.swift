@@ -62,6 +62,7 @@ struct SocialLoginView: View {
                                     await memberViewModel.findOneMemberID(appleID: appleLoginViewModel.userIdentifier)
 
                                     print("memberViewModel.memberID : \(memberViewModel.memberID)")
+
                                     // apple로그인
                                     try await socialLoginViewModel.loginWithApple(appleID: appleLoginViewModel.userIdentifier)
 
