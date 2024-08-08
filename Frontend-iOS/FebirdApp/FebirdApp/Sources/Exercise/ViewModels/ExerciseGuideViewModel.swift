@@ -16,7 +16,7 @@ class ExerciseGuideViewModel: ObservableObject {
     ]
 
     func loadVideo() {
-        guard let url = URL(string: "YOUR_VIDEO_URL_HERE") else { return }
+        guard let url = URL(string: "https://strfeo.blob.core.windows.net/exercise-video/466512^Overhead_Clap^Shoulders.mp4") else { return }
         let player = AVPlayer(url: url)
         self.player = player
         player.play()
