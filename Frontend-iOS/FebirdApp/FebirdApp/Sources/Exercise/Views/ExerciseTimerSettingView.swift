@@ -62,8 +62,7 @@ struct ExerciseTimerSettingView: View {
 
                 CustomButtonView(title: "준비됐어요! 💪🏻", style: .orange) {
                     if !timerViewModel.isTimerRunning {
-                        // startTimerAndProceed()
-                        navigationPathFinder.addPath(option: .exerciseRoutineLogView)
+                        startTimerAndProceed()
                     }
                 }
                 .padding(24)

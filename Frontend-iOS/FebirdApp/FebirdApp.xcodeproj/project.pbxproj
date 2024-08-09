@@ -88,7 +88,6 @@
 		8FE8FB362C60BA2E009CFAE9 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE8FB352C60BA2E009CFAE9 /* NetworkManager.swift */; };
 		8FE8FB3B2C60BDB3009CFAE9 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE8FB3A2C60BDB3009CFAE9 /* AuthViewModel.swift */; };
 		8FE8FB3D2C60BDF1009CFAE9 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE8FB3C2C60BDF1009CFAE9 /* KeychainManager.swift */; };
-		8FEF7EE32C65578B001082D9 /* Secret.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 8FEF7EE22C65578B001082D9 /* Secret.xcconfig */; };
 		E10FD99D2C49FB4500D80139 /* InbodyInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10FD99C2C49FB4500D80139 /* InbodyInputView.swift */; };
 		E10FD99F2C49FECB00D80139 /* OnboardingLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10FD99E2C49FECB00D80139 /* OnboardingLoadingView.swift */; };
 		E10FD9A12C49FFF100D80139 /* EyeBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10FD9A02C49FFF100D80139 /* EyeBodyView.swift */; };
@@ -263,7 +262,6 @@
 		8FE8FB352C60BA2E009CFAE9 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		8FE8FB3A2C60BDB3009CFAE9 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		8FE8FB3C2C60BDF1009CFAE9 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
-		8FEF7EE22C65578B001082D9 /* Secret.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secret.xcconfig; sourceTree = "<group>"; };
 		E10FD99C2C49FB4500D80139 /* InbodyInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InbodyInputView.swift; sourceTree = "<group>"; };
 		E10FD99E2C49FECB00D80139 /* OnboardingLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingLoadingView.swift; sourceTree = "<group>"; };
 		E10FD9A02C49FFF100D80139 /* EyeBodyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeBodyView.swift; sourceTree = "<group>"; };
@@ -271,6 +269,7 @@
 		E10FD9AD2C4C16AA00D80139 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		E10FD9AF2C4CC01700D80139 /* InbodyMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InbodyMainView.swift; sourceTree = "<group>"; };
 		E10FD9B12C4CC06000D80139 /* InbodyChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InbodyChartView.swift; sourceTree = "<group>"; };
+		E114B7C12C659610009A8E77 /* Secret.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secret.xcconfig; sourceTree = "<group>"; };
 		E12911B82C48DC81009A92F7 /* CameraActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraActionSheet.swift; sourceTree = "<group>"; };
 		E12911BA2C48EDFE009A92F7 /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
 		E12911BC2C48FDBA009A92F7 /* InbodyFixView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InbodyFixView.swift; sourceTree = "<group>"; };
@@ -569,8 +568,8 @@
 		3EF6F0402C36937D00EEF18F = {
 			isa = PBXGroup;
 			children = (
+				E114B7C12C659610009A8E77 /* Secret.xcconfig */,
 				E1BB0D4B2C450F1C002565B2 /* .swiftlint.yml */,
-				8FEF7EE22C65578B001082D9 /* Secret.xcconfig */,
 				3EF6F04B2C36937E00EEF18F /* FebirdApp */,
 				3EF6F05E2C36938000EEF18F /* FebirdAppTests */,
 				3EF6F0682C36938000EEF18F /* FebirdAppUITests */,
@@ -1038,7 +1037,6 @@
 				3E9E9E312C44E7FC002389EB /* IBMPlexSansKR-Light.ttf in Resources */,
 				3E9E9E362C44E7FC002389EB /* IBMPlexSansKR-Medium.ttf in Resources */,
 				3E9E9E202C44E7DB002389EB /* WorkSans-Light.ttf in Resources */,
-				8FEF7EE32C65578B001082D9 /* Secret.xcconfig in Resources */,
 				3E9E9E282C44E7DB002389EB /* WorkSans-Thin.ttf in Resources */,
 				3EF6F0532C36937F00EEF18F /* Assets.xcassets in Resources */,
 				3E9E9E222C44E7DB002389EB /* WorkSans-Black.ttf in Resources */,
@@ -1256,6 +1254,7 @@
 /* Begin XCBuildConfiguration section */
 		3EF6F06D2C36938000EEF18F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E114B7C12C659610009A8E77 /* Secret.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -1319,6 +1318,7 @@
 		};
 		3EF6F06E2C36938000EEF18F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E114B7C12C659610009A8E77 /* Secret.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;

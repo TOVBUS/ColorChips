@@ -24,7 +24,7 @@ struct InbodyMainView: View {
                 // TODO: 스마트 체중계 결과 화면 추가
                 // TODO: 스마트 체중계 결과 이미지로 변경
                 // inbodyInputView로 이동
-                navigationPathFinder.addPath(option: .inbodyInputView)
+                // navigationPathFinder.addPath(option: .inbodyInputView)
             }
         }
         .ignoresSafeArea()

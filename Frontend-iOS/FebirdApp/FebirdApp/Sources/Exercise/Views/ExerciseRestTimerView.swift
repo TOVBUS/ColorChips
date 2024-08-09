@@ -24,7 +24,7 @@ struct ExerciseRestTimerView: View {
             TimerView(viewModel: ExerciseTimerViewModel())
                 .padding(.bottom, 32)
 
-            Text("\(memberViewModel.newMember.nickname)님! 잘 하고 있어요!!  아주 조금만 더 힘내볼까요~?")
+            Text("\(memberViewModel.newMember.nickname!)님! 잘 하고 있어요!!  아주 조금만 더 힘내볼까요~?")
                 .font(.customFont(size: 20, weight: .bold))
                 .frame(maxWidth: .infinity)
                 .foregroundColor(.white)
