@@ -30,7 +30,7 @@ struct InbodyInputView: View {
                         .padding(.bottom, 46)
 
                     VStack(spacing: 20, content: {
-                        OnboardingTextField(question: "체중 *", placeholder: "\(inbodyViewModel.userInbody.weight)", unit: "kg", inputValue: nil, keyboardType: .numberPad, autoFocus: true, text: $weight)
+                        OnboardingTextField(question: "체중 *", placeholder: "\(inbodyViewModel.userInbody.weight)", unit: "kg", inputValue: nil, keyboardType: .numberPad, autoFocus: false, text: $weight)
                         OnboardingTextField(question: "키 *", placeholder: "\(inbodyViewModel.userInbody.height)", unit: "cm", inputValue: nil, keyboardType: .numberPad, autoFocus: false, text: $height)
                         OnboardingTextField(question: "BMI", placeholder: "17.6", unit: "%", inputValue: nil, keyboardType: .numberPad, autoFocus: false, text: $bmi)
                         OnboardingTextField(question: "체지방량", placeholder: "9.6", unit: "%", inputValue: nil, keyboardType: .numberPad, autoFocus: false, text: $bodyfat)

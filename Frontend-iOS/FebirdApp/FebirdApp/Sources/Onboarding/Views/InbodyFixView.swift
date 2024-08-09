@@ -27,11 +27,11 @@ struct InbodyFixView: View {
                 .padding(.bottom, 46)
 
             VStack(spacing: 20, content: {
-                OnboardingTextField(question: "체중 *", placeholder: "46.3", unit: "kg", inputValue: "46.3", keyboardType: .numberPad, autoFocus: true, text: $weight)
-                OnboardingTextField(question: "키 *", placeholder: "160.3", unit: "cm", inputValue: "160.2", keyboardType: .numberPad, autoFocus: true, text: $height)
-                OnboardingTextField(question: "BMI", placeholder: "17.6", unit: "%", inputValue: "17.6", keyboardType: .numberPad, autoFocus: true, text: $bmi)
-                OnboardingTextField(question: "체지방량", placeholder: "9.6", unit: "%", inputValue: "9.6", keyboardType: .numberPad, autoFocus: true, text: $bodyfat)
-                OnboardingTextField(question: "기초대사량", placeholder: "kcal", unit: "kg", inputValue: "46.3", keyboardType: .numberPad, autoFocus: true, text: $bmr)
+                OnboardingTextField(question: "체중 *", placeholder: "46.3", unit: "kg", inputValue: "46.3", keyboardType: .numberPad, autoFocus: false, text: $weight)
+                OnboardingTextField(question: "키 *", placeholder: "160.3", unit: "cm", inputValue: "160.2", keyboardType: .numberPad, autoFocus: false, text: $height)
+                OnboardingTextField(question: "BMI", placeholder: "17.6", unit: "%", inputValue: "17.6", keyboardType: .numberPad, autoFocus: false, text: $bmi)
+                OnboardingTextField(question: "체지방량", placeholder: "9.6", unit: "%", inputValue: "9.6", keyboardType: .numberPad, autoFocus: false, text: $bodyfat)
+                OnboardingTextField(question: "기초대사량", placeholder: "kcal", unit: "kg", inputValue: "46.3", keyboardType: .numberPad, autoFocus: false, text: $bmr)
             }).padding(.horizontal, 20)
 
             CustomButtonView(title: "다시찍기") {
