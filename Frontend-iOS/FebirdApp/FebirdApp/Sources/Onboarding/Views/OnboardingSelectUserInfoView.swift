@@ -56,6 +56,7 @@ struct OnboardingSelectUserInfoView: View {
                         placeholder: "17세",
                         unit: "세",
                         inputValue: nil,
+                        keyboardType: .numberPad,
                         autoFocus: false, text: $age
                     ).onChange(of: age) {
                         memberViewModel.newMember.age = Int(age)
