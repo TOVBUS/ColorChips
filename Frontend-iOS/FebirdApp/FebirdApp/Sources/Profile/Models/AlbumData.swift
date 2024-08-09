@@ -18,7 +18,7 @@ struct AlbumData: Identifiable {
     }
 
     var hasData: Bool {
-        return levelRecords != nil
+        return levelRecords != nil && !levelRecords!.isEmpty
     }
 
     var dayCount: Int {
