@@ -25,10 +25,10 @@ struct AlbumView: View {
                         .font(.customFont(size: 18, weight: .medium))
                         .foregroundStyle(album.hasData ? .black : .gray)
                     Spacer()
-                    Image(isExpanded ? "Chevron-down" : "Chevron-right")
+                    Image(systemName: isExpanded ? "chevron.down" : "chevron.right")
                 }
                 .padding()
-                .background(album.hasData ? .gray10 : .gray30)
+                .background(album.hasData ? Color.gray.opacity(0.1) : Color.gray.opacity(0.3))
             }
             .disabled(!album.hasData)
 
@@ -37,11 +37,10 @@ struct AlbumView: View {
                     ForEach(1...album.dayCount, id: \.self) { day in
                         VStack {
                             Text("Day \(day)")
-                                .font(.customFont(size: 14, weight: .regular))
+                                .font(.system(size: 14, weight: .regular))
                                 .foregroundStyle(.black)
 
                             if let record = album.levelRecords?.first(where: { $0.levelId == day }) {
-
                                 if let imageData = record.imageData, let uiImage = UIImage(data: imageData) {
                                     Image(uiImage: uiImage)
                                         .resizable()
@@ -69,12 +68,12 @@ struct AlbumView: View {
                     }
                 }
                 .padding()
-                .background(.gray10)
+                .background(Color.gray.opacity(0.1))
             }
         }
-        .background(.gray10)
+        .background(Color.gray.opacity(0.1))
         .cornerRadius(14)
-        .shadow(color: .gray20, radius: 5, x: 0, y: 2)
+        .shadow(color: Color.gray.opacity(0.2), radius: 5, x: 0, y: 2)
         .animation(.easeInOut(duration: 0.3), value: isExpanded)
     }
 }

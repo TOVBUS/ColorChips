@@ -12,18 +12,20 @@ import SwiftData
 class AlbumViewModel: ObservableObject {
     @Published var albums: [AlbumData] = []
 
-    func fetchAlbums(context: ModelContext) {
+    func fetchAlbums(context: ModelContext) async {
         let descriptor = FetchDescriptor<LevelRecordData>(sortBy: [SortDescriptor(\.levelId)])
         do {
-            let levelRecords = try context.fetch(descriptor)
-            createAlbums(with: levelRecords)
+            let levelRecords = try await context.fetch(descriptor)
+            await createAlbums(with: levelRecords)
         } catch {
             print("Failed to fetch LevelRecordData: \(error)")
-            albums = []
+            await MainActor.run {
+                self.albums = []
+            }
         }
     }
 
-    private func createAlbums(with levelRecords: [LevelRecordData]) {
+    private func createAlbums(with levelRecords: [LevelRecordData]) async {
         var newAlbums: [AlbumData] = []
         for level in EducationLevel.allCases {
             for grade in Grade.gradesFor(level) {
@@ -38,10 +40,12 @@ class AlbumViewModel: ObservableObject {
                 newAlbums.append(album)
             }
         }
-        self.albums = newAlbums
+        await MainActor.run {
+            self.albums = newAlbums
+        }
     }
 
-    func saveOrUpdateLevelRecord(routineId: Int, levelId: Int, schoolName: String, apiGrade: Int, image: UIImage, context: ModelContext) {
+    func saveOrUpdateLevelRecord(routineId: Int, levelId: Int, schoolName: String, apiGrade: Int, image: UIImage, context: ModelContext) async {
         guard let educationLevel = EducationLevel(rawValue: schoolName) else {
             print("Invalid education level: schoolName = \(schoolName)")
             return
@@ -54,25 +58,34 @@ class AlbumViewModel: ObservableObject {
 
         if let existingAlbum = albums.first(where: { $0.educationLevel == educationLevel && $0.grade == gradeEnum }),
            let existingRecordIndex = existingAlbum.levelRecords?.firstIndex(where: { $0.levelId == levelId }) {
-            updateLevelRecord(existingAlbum.levelRecords![existingRecordIndex], image: image, context: context)
+            await updateLevelRecord(existingAlbum.levelRecords![existingRecordIndex], image: image, context: context)
         } else {
             let newRecord = LevelRecordData(routineId: routineId, levelId: levelId, schoolName: schoolName, grade: apiGrade, imageData: image)
             context.insert(newRecord)
 
-            if let index = albums.firstIndex(where: { $0.educationLevel == educationLevel && $0.grade == gradeEnum }) {
-                albums[index].levelRecords = (albums[index].levelRecords ?? []) + [newRecord]
+            await MainActor.run {
+                if let index = self.albums.firstIndex(where: { $0.educationLevel == educationLevel && $0.grade == gradeEnum }) {
+                    self.albums[index].levelRecords = (self.albums[index].levelRecords ?? []) + [newRecord]
+                }
             }
         }
 
-        try? context.save()
-        fetchAlbums(context: context)
+        do {
+            try await context.save()
+        } catch {
+            print("Failed to save context: \(error)")
+        }
+
+        await fetchAlbums(context: context)
     }
 
-    private func updateLevelRecord(_ record: LevelRecordData, image: UIImage, context: ModelContext) {
-        record.imageData = image.pngData()
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy년 MM월 dd일"
-        record.savedDate = dateFormatter.string(from: Date())
+    private func updateLevelRecord(_ record: LevelRecordData, image: UIImage, context: ModelContext) async {
+        await MainActor.run {
+            record.imageData = image.pngData()
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy년 MM월 dd일"
+            record.savedDate = dateFormatter.string(from: Date())
+        }
     }
 
     func getAllAlbums() -> [AlbumData] {

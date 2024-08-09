@@ -10,7 +10,7 @@ import SwiftData
 
 struct AlbumMainView: View {
     @EnvironmentObject var profileSelectViewModel: ProfileSelectViewModel
-    @EnvironmentObject private var albumViewModel : AlbumViewModel
+    @EnvironmentObject private var albumViewModel: AlbumViewModel
     @Environment(\.modelContext) private var modelContext
 
     var body: some View {
@@ -27,8 +27,8 @@ struct AlbumMainView: View {
                 }
             }
         }
-        .onAppear {
-            albumViewModel.fetchAlbums(context: modelContext)
+        .task {
+            await albumViewModel.fetchAlbums(context: modelContext)
         }
     }
 }
