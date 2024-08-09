@@ -12,19 +12,21 @@ import SwiftData
 class EyeBodyPhotoViewModel: ObservableObject {
     @Published var photos: [EyeBodyPhoto] = []
 
-    func fetchEyeBodyPhotos(context: ModelContext) {
+    func fetchEyeBodyPhotos(context: ModelContext) async {
         let descriptor = FetchDescriptor<EyeBodyPhoto>(sortBy: [SortDescriptor(\.date, order: .reverse)])
         do {
-            photos = try context.fetch(descriptor)
+            self.photos = try await context.fetch(descriptor)
         } catch {
             print("Failed to fetch EyeBodyPhotos: \(error)")
-            photos = []
+            await MainActor.run {
+                self.photos = []
+            }
         }
     }
 
-    func saveOrUpdateEyeBodyPhoto(date: String, images: [UIImage?], context: ModelContext) {
+    func saveOrUpdateEyeBodyPhoto(date: String, images: [UIImage?], context: ModelContext) async {
         if let existingPhoto = photos.first(where: { $0.date == date }) {
-            updateEyeBodyPhoto(existingPhoto, images: images, context: context)
+            await updateEyeBodyPhoto(existingPhoto, images: images, context: context)
         } else {
             let newPhoto = EyeBodyPhoto(date: date,
                                         frontImage: images[0],
@@ -33,21 +35,35 @@ class EyeBodyPhotoViewModel: ObservableObject {
                                         rightImage: images[3])
             context.insert(newPhoto)
         }
-        try? context.save()
-        fetchEyeBodyPhotos(context: context)
+        do {
+            try await context.save()
+        } catch {
+            print("Failed to save context: \(error)")
+        }
+        await fetchEyeBodyPhotos(context: context)
     }
 
-    func updateEyeBodyPhoto(_ photo: EyeBodyPhoto, images: [UIImage?], context: ModelContext) {
-        photo.frontImageData = images[0]?.pngData()
-        photo.backImageData = images[1]?.pngData()
-        photo.leftImageData = images[2]?.pngData()
-        photo.rightImageData = images[3]?.pngData()
-        try? context.save()
+    func updateEyeBodyPhoto(_ photo: EyeBodyPhoto, images: [UIImage?], context: ModelContext) async {
+        await MainActor.run {
+            photo.frontImageData = images[0]?.pngData()
+            photo.backImageData = images[1]?.pngData()
+            photo.leftImageData = images[2]?.pngData()
+            photo.rightImageData = images[3]?.pngData()
+        }
+        do {
+            try await context.save()
+        } catch {
+            print("Failed to save context: \(error)")
+        }
     }
 
-    func deleteEyeBodyPhoto(_ photo: EyeBodyPhoto, context: ModelContext) {
+    func deleteEyeBodyPhoto(_ photo: EyeBodyPhoto, context: ModelContext) async {
         context.delete(photo)
-        try? context.save()
-        fetchEyeBodyPhotos(context: context)
+        do {
+            try await context.save()
+        } catch {
+            print("Failed to save context: \(error)")
+        }
+        await fetchEyeBodyPhotos(context: context)
     }
 }

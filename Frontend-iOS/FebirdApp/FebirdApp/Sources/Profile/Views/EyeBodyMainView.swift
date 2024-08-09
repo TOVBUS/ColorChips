@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 let eyeBodyDummy: [EyeBodyPhoto] = [EyeBodyPhoto(date: "2024년 7월 17일")]
 
@@ -53,8 +54,8 @@ struct EyeBodyMainView: View {
             }
         }
         .ignoresSafeArea()
-        .onAppear {
-            viewModel.fetchEyeBodyPhotos(context: modelContext)
+        .task {
+            await viewModel.fetchEyeBodyPhotos(context: modelContext)
         }
     }
 }

@@ -68,7 +68,9 @@ struct EyeBodyView: View {
                         let currentDate = dateFormatter.string(from: Date())
 
                         if selectedImages.contains(where: { $0 != nil }) {
-                            viewModel.saveOrUpdateEyeBodyPhoto(date: currentDate, images: selectedImages, context: modelContext)
+                            Task {
+                                await viewModel.saveOrUpdateEyeBodyPhoto(date: currentDate, images: selectedImages, context: modelContext)
+                            }
                         }
 
                         if isOnboarding {
