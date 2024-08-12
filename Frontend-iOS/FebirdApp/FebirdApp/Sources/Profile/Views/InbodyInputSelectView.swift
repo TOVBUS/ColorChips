@@ -17,8 +17,10 @@ struct InbodyInputSelectView: View {
                 Spacer()
                 Text("인바디를 등록하세요")
                     .font(.customFont(size: 20, weight: .bold))
+                    .foregroundStyle(.gray100)
                 Spacer()
             }
+            .padding(.top, 32)
             .padding(.bottom, 56)
 
             ZStack {
@@ -36,10 +38,15 @@ struct InbodyInputSelectView: View {
 
             Spacer()
 
-            CustomButtonView(title: "사진찍기")
-            CustomButtonView(title: "수기입력")
+            CustomButtonView(title: "사진찍기") {
 
+            }.padding(.bottom, 10)
+
+            CustomButtonView(title: "수기입력") {
+
+            }
         }
+        .background(.white)
     }
 }
 
