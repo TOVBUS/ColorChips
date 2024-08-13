@@ -15,6 +15,15 @@ struct InbodyModel {
     var bodyfat: Float?
     var bmi: Float?
 
+    init(height: Float, weight: Float, inbodyDate: Date, bmr: Float? = nil, bodyfat: Float? = nil, bmi: Float? = nil) {
+        self.height = height
+        self.weight = weight
+        self.inbodyDate = inbodyDate
+        self.bmr = bmr
+        self.bodyfat = bodyfat
+        self.bmi = bmi
+    }
+
     static let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"

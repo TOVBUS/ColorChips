@@ -21,12 +21,12 @@ struct TestView: View {
             Text("Fetching data...")
                 .onAppear {
                     Task {
-//                        await testInbodyViewModel()
+                        await testInbodyViewModel()
 //                        await testExerciseViewModel()
 //                        await testHistoryViewModel()
 //                        await testLevelViewModel()
 //                        await testRoutineViewModel()
-                        await testMemberViewModel()
+//                        await testMemberViewModel()
                     }
                 }
         }

@@ -7,16 +7,6 @@
 
 import Foundation
 
-struct UserInbody {
-    var inbodyId: Int
-    var height: Float
-    var weight: Float
-    var inbodyDate: Date
-    var bmr: Float
-    var bodyfat: Float
-    var bmi: Float
-}
-
 struct Inbody: Codable {
     var inbodyId: Int
     var height: Float
@@ -52,7 +42,7 @@ struct Inbody: Codable {
 struct CreateInbodyDto: Codable {
     let height: Float
     let weight: Float
-    let inbodyDate: Date
+    let inbodyDate: String
     let bmr: Float?
     let bodyfat: Double?
     let bmi: Double?
@@ -67,12 +57,12 @@ struct CreateInbodyDto: Codable {
 }
 
 struct InbodyResponse: Codable {
-    let height: String?
-    let weight: String?
-    let inbodyDate: String?
-    let bmr: String?
-    let bodyfat: String?
-    let bmi: String?
+    let height: Float
+    let weight: Float
+    let inbodyDate: String
+    let bmr: Float?
+    let bodyfat: Float?
+    let bmi: Float?
     let member: Member?
     let inbodyID: Int?
 
