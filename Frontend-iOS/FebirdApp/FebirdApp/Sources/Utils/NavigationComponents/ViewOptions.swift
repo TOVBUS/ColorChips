@@ -33,7 +33,7 @@ enum OnboardingViewOptions: Hashable, ViewOptions {
         case .onboardingLoadingView:
             OnboardingLoadingView()
         case .inbodyFixView:
-            InbodyFixView(weight: "고쳐야됨", height: "고쳐야됨", bmi: "고쳐야됨", bodyfat: "고쳐야됨", bmr: "고쳐야됨")
+            InbodyFixView()
         case .inbodyInputView:
             InbodyInputView(weight: "", height: "", bmi: "", bodyfat: "", bmr: "")
         case .onboardingEndView:

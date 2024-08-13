@@ -131,9 +131,6 @@
 		E208BDF02C6295660094CC16 /* MealMemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E208BDEF2C6295660094CC16 /* MealMemo.swift */; };
 		E20F9CF62C63DB20006A034B /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20F9CF52C63DB20006A034B /* CustomTextField.swift */; };
 		E20F9CF82C63DEA9006A034B /* ChatTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20F9CF72C63DEA9006A034B /* ChatTextFieldView.swift */; };
-		E20F9CFB2C640776006A034B /* AzureInbody.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20F9CFA2C640776006A034B /* AzureInbody.swift */; };
-		E20F9CFF2C64086F006A034B /* AzureInbodyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20F9CFE2C64086F006A034B /* AzureInbodyViewModel.swift */; };
-		E20F9D012C6408A0006A034B /* AzureInbodyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20F9D002C6408A0006A034B /* AzureInbodyService.swift */; };
 		E20F9D052C6475F8006A034B /* TextFieldTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20F9D042C6475F8006A034B /* TextFieldTest.swift */; };
 		E20F9D082C64F156006A034B /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E20F9D072C64F156006A034B /* Launch Screen.storyboard */; };
 		E246A8DE2C5EAAF600B86617 /* ExerciseChatBotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E246A8DD2C5EAAF600B86617 /* ExerciseChatBotView.swift */; };
@@ -148,6 +145,9 @@
 		E26D48BB2C49F93900D63FE7 /* MealChatBotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D48BA2C49F93900D63FE7 /* MealChatBotView.swift */; };
 		E26D48BD2C49FBE300D63FE7 /* MemoModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D48BC2C49FBE300D63FE7 /* MemoModalView.swift */; };
 		E2A2F7E42C4F3C09000AD404 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A2F7E32C4F3C09000AD404 /* SettingsView.swift */; };
+		E2ACDA732C6B99FB00B4EE9F /* AzureInbody.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ACDA722C6B99FB00B4EE9F /* AzureInbody.swift */; };
+		E2ACDA752C6B9A4A00B4EE9F /* AzureInbodyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ACDA742C6B9A4A00B4EE9F /* AzureInbodyService.swift */; };
+		E2ACDA772C6B9A7D00B4EE9F /* AzureInbodyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ACDA762C6B9A7D00B4EE9F /* AzureInbodyViewModel.swift */; };
 		E2CFF20E2C4E999E00540500 /* MessageInUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CFF20D2C4E999E00540500 /* MessageInUI.swift */; };
 		E2CFF2102C4E9A1700540500 /* MealRecommendation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CFF20F2C4E9A1700540500 /* MealRecommendation.swift */; };
 		E2CFF2122C4E9D6300540500 /* InputFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CFF2112C4E9D6300540500 /* InputFieldView.swift */; };
@@ -269,7 +269,6 @@
 		E10FD9AD2C4C16AA00D80139 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		E10FD9AF2C4CC01700D80139 /* InbodyMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InbodyMainView.swift; sourceTree = "<group>"; };
 		E10FD9B12C4CC06000D80139 /* InbodyChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InbodyChartView.swift; sourceTree = "<group>"; };
-		E114B7C12C659610009A8E77 /* Secret.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secret.xcconfig; sourceTree = "<group>"; };
 		E12911B82C48DC81009A92F7 /* CameraActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraActionSheet.swift; sourceTree = "<group>"; };
 		E12911BA2C48EDFE009A92F7 /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
 		E12911BC2C48FDBA009A92F7 /* InbodyFixView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InbodyFixView.swift; sourceTree = "<group>"; };
@@ -306,9 +305,6 @@
 		E208BDEF2C6295660094CC16 /* MealMemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealMemo.swift; sourceTree = "<group>"; };
 		E20F9CF52C63DB20006A034B /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		E20F9CF72C63DEA9006A034B /* ChatTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTextFieldView.swift; sourceTree = "<group>"; };
-		E20F9CFA2C640776006A034B /* AzureInbody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AzureInbody.swift; sourceTree = "<group>"; };
-		E20F9CFE2C64086F006A034B /* AzureInbodyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AzureInbodyViewModel.swift; sourceTree = "<group>"; };
-		E20F9D002C6408A0006A034B /* AzureInbodyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AzureInbodyService.swift; sourceTree = "<group>"; };
 		E20F9D042C6475F8006A034B /* TextFieldTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldTest.swift; sourceTree = "<group>"; };
 		E20F9D072C64F156006A034B /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		E246A8DD2C5EAAF600B86617 /* ExerciseChatBotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseChatBotView.swift; sourceTree = "<group>"; };
@@ -323,6 +319,10 @@
 		E26D48BA2C49F93900D63FE7 /* MealChatBotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealChatBotView.swift; sourceTree = "<group>"; };
 		E26D48BC2C49FBE300D63FE7 /* MemoModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoModalView.swift; sourceTree = "<group>"; };
 		E2A2F7E32C4F3C09000AD404 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		E2ACDA712C6B999000B4EE9F /* Secret.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secret.xcconfig; sourceTree = "<group>"; };
+		E2ACDA722C6B99FB00B4EE9F /* AzureInbody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AzureInbody.swift; sourceTree = "<group>"; };
+		E2ACDA742C6B9A4A00B4EE9F /* AzureInbodyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AzureInbodyService.swift; sourceTree = "<group>"; };
+		E2ACDA762C6B9A7D00B4EE9F /* AzureInbodyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AzureInbodyViewModel.swift; sourceTree = "<group>"; };
 		E2CFF20D2C4E999E00540500 /* MessageInUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageInUI.swift; sourceTree = "<group>"; };
 		E2CFF20F2C4E9A1700540500 /* MealRecommendation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealRecommendation.swift; sourceTree = "<group>"; };
 		E2CFF2112C4E9D6300540500 /* InputFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFieldView.swift; sourceTree = "<group>"; };
@@ -568,7 +568,7 @@
 		3EF6F0402C36937D00EEF18F = {
 			isa = PBXGroup;
 			children = (
-				E114B7C12C659610009A8E77 /* Secret.xcconfig */,
+				E2ACDA712C6B999000B4EE9F /* Secret.xcconfig */,
 				E1BB0D4B2C450F1C002565B2 /* .swiftlint.yml */,
 				3EF6F04B2C36937E00EEF18F /* FebirdApp */,
 				3EF6F05E2C36938000EEF18F /* FebirdAppTests */,
@@ -645,6 +645,9 @@
 			isa = PBXGroup;
 			children = (
 				8F0F47F92C636FA0004E3B86 /* Inbody.swift */,
+				E2ACDA722C6B99FB00B4EE9F /* AzureInbody.swift */,
+				E2ACDA742C6B9A4A00B4EE9F /* AzureInbodyService.swift */,
+				E2ACDA762C6B9A7D00B4EE9F /* AzureInbodyViewModel.swift */,
 			);
 			path = Inbody;
 			sourceTree = "<group>";
@@ -806,8 +809,6 @@
 		E1BB0D532C4797C9002565B2 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				E20F9CFD2C64085C006A034B /* ViewModels */,
-				E20F9CF92C64075A006A034B /* Models */,
 				E1BB0D562C479C93002565B2 /* Views */,
 			);
 			path = Onboarding;
@@ -845,23 +846,6 @@
 				E208BDEF2C6295660094CC16 /* MealMemo.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		E20F9CF92C64075A006A034B /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				E20F9CFA2C640776006A034B /* AzureInbody.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		E20F9CFD2C64085C006A034B /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				E20F9CFE2C64086F006A034B /* AzureInbodyViewModel.swift */,
-				E20F9D002C6408A0006A034B /* AzureInbodyService.swift */,
-			);
-			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		E24F5E7F2C48EBC300724DA7 /* Meal */ = {
@@ -1092,7 +1076,6 @@
 			files = (
 				8F0F47FA2C636FA0004E3B86 /* Inbody.swift in Sources */,
 				E20F9CF62C63DB20006A034B /* CustomTextField.swift in Sources */,
-				E20F9D012C6408A0006A034B /* AzureInbodyService.swift in Sources */,
 				8FE8FB362C60BA2E009CFAE9 /* NetworkManager.swift in Sources */,
 				E20F9CF82C63DEA9006A034B /* ChatTextFieldView.swift in Sources */,
 				E2EB25792C4E48C30094EC8E /* ChatBotMainView.swift in Sources */,
@@ -1127,8 +1110,8 @@
 				8FE8FB3B2C60BDB3009CFAE9 /* AuthViewModel.swift in Sources */,
 				E24CF94E2C4F887100D1548E /* CustomToggle.swift in Sources */,
 				E15BF03C2C60BAC10033E5C3 /* TrendAnalysisView.swift in Sources */,
-				E20F9CFB2C640776006A034B /* AzureInbody.swift in Sources */,
 				8F0F47F62C636F69004E3B86 /* Member.swift in Sources */,
+				E2ACDA772C6B9A7D00B4EE9F /* AzureInbodyViewModel.swift in Sources */,
 				E12911BB2C48EDFE009A92F7 /* PhotoPicker.swift in Sources */,
 				8F92DF952C4D74A10071F336 /* ExerciseGraduationView.swift in Sources */,
 				E15BF0382C60B8510033E5C3 /* InbodyViewModel.swift in Sources */,
@@ -1157,7 +1140,6 @@
 				8F92DF8B2C4D506E0071F336 /* ExerciseRestTimerView.swift in Sources */,
 				E26D48B92C49F18800D63FE7 /* MemoRow.swift in Sources */,
 				8F0F47DC2C636BF6004E3B86 /* Config.swift in Sources */,
-				E20F9CFF2C64086F006A034B /* AzureInbodyViewModel.swift in Sources */,
 				E26D48BB2C49F93900D63FE7 /* MealChatBotView.swift in Sources */,
 				323408FB2C61C97500FCB9B6 /* SignInWithAppleButton.swift in Sources */,
 				E10FD99D2C49FB4500D80139 /* InbodyInputView.swift in Sources */,
@@ -1205,10 +1187,12 @@
 				3E3B9A812C5B29A2001F2852 /* NavigationPathFinder.swift in Sources */,
 				E18289482C621F78006FB058 /* LevelRecordData.swift in Sources */,
 				8F0F48002C637000004E3B86 /* Routine.swift in Sources */,
+				E2ACDA732C6B99FB00B4EE9F /* AzureInbody.swift in Sources */,
 				E1AEFC972C4D2E69000D6441 /* AlbumDetailView.swift in Sources */,
 				8FAC18852C4B8C4200CDF7CF /* ExerciseItem.swift in Sources */,
 				8F0F48062C63723F004E3B86 /* RoutineViewModel.swift in Sources */,
 				3EFC450C2C44F882001052C7 /* Font+Extension.swift in Sources */,
+				E2ACDA752C6B9A4A00B4EE9F /* AzureInbodyService.swift in Sources */,
 				E2CFF2102C4E9A1700540500 /* MealRecommendation.swift in Sources */,
 				E26D48BD2C49FBE300D63FE7 /* MemoModalView.swift in Sources */,
 				3EF6F04D2C36937E00EEF18F /* FebirdAppApp.swift in Sources */,
@@ -1254,7 +1238,6 @@
 /* Begin XCBuildConfiguration section */
 		3EF6F06D2C36938000EEF18F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E114B7C12C659610009A8E77 /* Secret.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -1318,7 +1301,6 @@
 		};
 		3EF6F06E2C36938000EEF18F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E114B7C12C659610009A8E77 /* Secret.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;

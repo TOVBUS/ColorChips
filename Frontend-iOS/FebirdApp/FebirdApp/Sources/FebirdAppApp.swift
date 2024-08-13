@@ -27,6 +27,7 @@ struct FebirdAppApp: App {
     @StateObject private var memberViewModel = MemberViewModel()
     @StateObject private var profileSelectViewModel = ProfileSelectViewModel()
     @StateObject private var profileSettingViewModel = ProfileSettingViewModel()
+    @StateObject private var azureInbodyViewModel = AzureInbodyViewModel()
 
     let modelContainer: ModelContainer
 
@@ -95,6 +96,7 @@ struct FebirdAppApp: App {
             .environmentObject(historyViewModel)
             .environmentObject(profileSelectViewModel)
             .environmentObject(profileSettingViewModel)
+            .environmentObject(azureInbodyViewModel)
         }
         .environmentObject(memberViewModel)
         .modelContainer(modelContainer)
