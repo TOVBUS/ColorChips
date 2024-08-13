@@ -47,12 +47,4 @@ struct InbodyFixView: View {
         }
         .navigationBarBackButtonHidden()
     }
-
-    private func updateValues() {
-        weight = viewModel.weight?.content ?? ""
-        height = ""
-        bmi = viewModel.bmi?.content ?? ""
-        bodyfat = viewModel.bodyFat?.content ?? ""
-        bmr = viewModel.bmr?.content ?? ""
-    }
 }

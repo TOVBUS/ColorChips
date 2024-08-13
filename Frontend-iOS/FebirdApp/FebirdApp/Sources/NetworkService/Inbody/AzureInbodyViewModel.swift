@@ -52,7 +52,6 @@ class AzureInbodyViewModel: ObservableObject {
         service.analyzeImage(imageData: imageData) { [weak self] result in
             switch result {
             case .success(let operationLocation):
-//                self?.isLoading = false
                 self?.getAnalyzeResult(operationLocation: operationLocation)
             case .failure:
                 DispatchQueue.main.async {
@@ -90,20 +89,19 @@ class AzureInbodyViewModel: ObservableObject {
                     } else {
                         // 예상치 못한 상태
                         DispatchQueue.main.async {
-//                            self?.isLoading = false
+                            self?.isLoading = false
                             self?.error = .dataParsingError
                         }
                     }
                 case .failure(let error):
                     DispatchQueue.main.async {
-//                        self?.isLoading = false
+                        self?.isLoading = false
                         self?.error = .networkError
                         print(error.localizedDescription)
                     }
                 }
             }
         }
-
         poll() // 첫 번째 폴링 시작
     }
 }
