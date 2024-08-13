@@ -1,28 +1,20 @@
 import {
-  Controller, Post, Body, Patch, Param, Delete, Get, UseInterceptors, UploadedFile, Res, HttpStatus
+  Controller, Post, Body, Patch, Param, Delete, Get, UseGuards, UseInterceptors, UploadedFile, Res, HttpStatus, Request,
 } from '@nestjs/common';
 import { MemberService } from './member.service';
 import { CreateMemberDto } from './dto/create-member.dto';
 import { UpdateMemberDto } from './dto/update-member.dto';
 import { FileInterceptor } from '@nestjs/platform-express';
+import { AuthGuard } from '@nestjs/passport';
 import { Response } from 'express';
-import * as jwt from 'jsonwebtoken';
+import { AuthService } from '../auth/auth.service';
 
 @Controller('member')
 export class MemberController {
-  constructor(private readonly memberService: MemberService) {}
-
-  // @Post()
-  // @UseInterceptors(FileInterceptor('profile_image'))
-  // async create(@Body() createMemberDto: CreateMemberDto, @UploadedFile() file: any, @Res() res: Response) {
-  //   try {
-  //     createMemberDto.profile_image = file.filename;
-  //     const member = await this.memberService.create(createMemberDto);
-  //     return res.status(HttpStatus.CREATED).json(member);
-  //   } catch (error) {
-  //     return res.status(HttpStatus.BAD_REQUEST).json({ message: '회원 정보 등록 실패' });
-  //   }
-  // }
+  constructor(
+    private readonly memberService: MemberService,
+    private readonly authService: AuthService,
+  ) {}
 
   @Patch(':id')
   @UseInterceptors(FileInterceptor('profile_image'))
@@ -30,7 +22,8 @@ export class MemberController {
     @Param('id') id: number,
     @Body() updateMemberDto: UpdateMemberDto,
     @UploadedFile() file: any,
-    @Res() res: Response) {
+    @Res() res: Response,
+  ) {
     try {
       if (file) {
         updateMemberDto.profile_image = file.filename;
@@ -69,7 +62,7 @@ export class MemberController {
       if (!member) {
         member = await this.memberService.create({ appleID } as CreateMemberDto);
       }
-      const token = jwt.sign({ member_id: member.member_id }, 'your-secret-key', { expiresIn: '1h' });
+      const token = await this.authService.generateToken(member.member_id); 
       return res.status(HttpStatus.OK).json({ token });
     } catch (error) {
       console.error(error);
@@ -92,4 +85,24 @@ export class MemberController {
       return res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({ message: '서버 오류', error: error.message });
     }
   }
+
+  @Get('protected')
+  @UseGuards(AuthGuard('jwt'))
+  getProtected(@Request() req) {
+    return { member_id: req.user.member_id };
+  }
 }
+
+
+
+  // @Post()
+  // @UseInterceptors(FileInterceptor('profile_image'))
+  // async create(@Body() createMemberDto: CreateMemberDto, @UploadedFile() file: any, @Res() res: Response) {
+  //   try {
+  //     createMemberDto.profile_image = file.filename;
+  //     const member = await this.memberService.create(createMemberDto);
+  //     return res.status(HttpStatus.CREATED).json(member);
+  //   } catch (error) {
+  //     return res.status(HttpStatus.BAD_REQUEST).json({ message: '회원 정보 등록 실패' });
+  //   }
+  // }
