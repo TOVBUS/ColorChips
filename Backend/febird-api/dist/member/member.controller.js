@@ -15,23 +15,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.MemberController = void 0;
 const common_1 = require("@nestjs/common");
 const member_service_1 = require("./member.service");
-const create_member_dto_1 = require("./dto/create-member.dto");
 const update_member_dto_1 = require("./dto/update-member.dto");
 const platform_express_1 = require("@nestjs/platform-express");
-const jwt = require("jsonwebtoken");
+const passport_1 = require("@nestjs/passport");
+const auth_service_1 = require("../auth/auth.service");
 let MemberController = class MemberController {
-    constructor(memberService) {
+    constructor(memberService, authService) {
         this.memberService = memberService;
-    }
-    async create(createMemberDto, file, res) {
-        try {
-            createMemberDto.profile_image = file.filename;
-            const member = await this.memberService.create(createMemberDto);
-            return res.status(common_1.HttpStatus.CREATED).json(member);
-        }
-        catch (error) {
-            return res.status(common_1.HttpStatus.BAD_REQUEST).json({ message: '회원 정보 등록 실패' });
-        }
+        this.authService = authService;
     }
     async update(id, updateMemberDto, file, res) {
         try {
@@ -67,43 +58,25 @@ let MemberController = class MemberController {
         try {
             let member = await this.memberService.findByAppleId(appleID);
             if (!member) {
-                member = await this.memberService.create({ appleID });
+                member = await this.memberService.create({
+                    appleID,
+                });
             }
-            const token = jwt.sign({ member_id: member.member_id }, 'your-secret-key', { expiresIn: '1h' });
-            return res.status(common_1.HttpStatus.OK).json({ token });
+            const token = await this.authService.generateToken(member.member_id);
+            return res.status(common_1.HttpStatus.OK).json({ token, member_id: member.member_id });
         }
         catch (error) {
-            console.error(error);
-            return res.status(common_1.HttpStatus.BAD_REQUEST).json({ message: '애플 로그인 실패', error: error.message });
+            return res.status(common_1.HttpStatus.INTERNAL_SERVER_ERROR).json({
+                message: '서버 오류로 애플 로그인 실패',
+                error: error.message,
+            });
         }
     }
-    async findByAppleID(appleID, res) {
-        try {
-            console.log('Received appleID:', appleID);
-            const member = await this.memberService.findByAppleId(appleID);
-            console.log('Found member:', member);
-            if (!member) {
-                return res.status(common_1.HttpStatus.NOT_FOUND).json({ message: '회원을 찾을 수 없습니다.' });
-            }
-            return res.status(common_1.HttpStatus.OK).json({ member_id: member.member_id });
-        }
-        catch (error) {
-            console.error('Error occurred:', error);
-            return res.status(common_1.HttpStatus.INTERNAL_SERVER_ERROR).json({ message: '서버 오류', error: error.message });
-        }
+    getProtected(req) {
+        return { member_id: req.user.member_id };
     }
 };
 exports.MemberController = MemberController;
-__decorate([
-    (0, common_1.Post)(),
-    (0, common_1.UseInterceptors)((0, platform_express_1.FileInterceptor)('profile_image')),
-    __param(0, (0, common_1.Body)()),
-    __param(1, (0, common_1.UploadedFile)()),
-    __param(2, (0, common_1.Res)()),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [create_member_dto_1.CreateMemberDto, Object, Object]),
-    __metadata("design:returntype", Promise)
-], MemberController.prototype, "create", null);
 __decorate([
     (0, common_1.Patch)(':id'),
     (0, common_1.UseInterceptors)((0, platform_express_1.FileInterceptor)('profile_image')),
@@ -140,15 +113,16 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], MemberController.prototype, "appleLogin", null);
 __decorate([
-    (0, common_1.Get)('apple/:appleID'),
-    __param(0, (0, common_1.Param)('appleID')),
-    __param(1, (0, common_1.Res)()),
+    (0, common_1.Get)('protected'),
+    (0, common_1.UseGuards)((0, passport_1.AuthGuard)('jwt')),
+    __param(0, (0, common_1.Request)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String, Object]),
-    __metadata("design:returntype", Promise)
-], MemberController.prototype, "findByAppleID", null);
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", void 0)
+], MemberController.prototype, "getProtected", null);
 exports.MemberController = MemberController = __decorate([
     (0, common_1.Controller)('member'),
-    __metadata("design:paramtypes", [member_service_1.MemberService])
+    __metadata("design:paramtypes", [member_service_1.MemberService,
+        auth_service_1.AuthService])
 ], MemberController);
 //# sourceMappingURL=member.controller.js.map
