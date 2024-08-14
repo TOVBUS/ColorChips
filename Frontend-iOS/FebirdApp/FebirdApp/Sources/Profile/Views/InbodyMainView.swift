@@ -9,6 +9,7 @@ import SwiftUI
 
 struct InbodyMainView: View {
     @EnvironmentObject var navigationPathFinder: NavigationPathFinder<ProfileViewOptions>
+    @EnvironmentObject var inbodyViewModel: InbodyViewModel
     @State private var isShowModal = false
     let inbodys: [InbodyModel]
 

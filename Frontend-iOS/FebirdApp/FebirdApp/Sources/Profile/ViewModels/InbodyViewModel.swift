@@ -13,7 +13,6 @@ class InbodyViewModel: ObservableObject {
 
     @Published var inbodies: [Inbody] = []
     @Published var createdInbody: InbodyResponse?
-   // @Published var userInbody: UserInbody = UserInbody(inbodyId: 0, height: 0, weight: 0, inbodyDate: Date(), bmr: 0, bodyfat: 0, bmi: 0)
     @Published var errorMessage: String?
 
     func analyzeTrend<T: BinaryFloatingPoint>(for inbodys: [InbodyModel], getValue: (InbodyModel) -> T?) -> String {
@@ -81,59 +80,9 @@ class InbodyViewModel: ObservableObject {
         do {
             let inbodies = try await NetworkManager.createInbody(createInbodyDto: createInbodyDto)
             self.createdInbody = inbodies
-            print("\(createdInbody)")
         } catch {
             self.errorMessage = error.localizedDescription
             print("Error fetching inbodies: \(error)")
         }
     }
 }
-
-/**
- import SwiftUI
- import Alamofire
-
- @MainActor
- class InbodyViewModel: ObservableObject {
-     @Published var inbodyResponse: InbodyResponse?
-     @Published var errorMessage: String?
-
-     static let dateFormatter: DateFormatter = {
-         let formatter = DateFormatter()
-         formatter.dateFormat = "yyyy-MM-dd"
-         formatter.locale = Locale(identifier: "en_US_POSIX")
-         formatter.timeZone = TimeZone(secondsFromGMT: 0)
-         return formatter
-     }()
-
-     func createInbody(inbody: InbodyModel, memberId: Int) async {
-         let createInbodyDto = CreateInbodyDto(
-             height: inbody.height,
-             weight: inbody.weight,
-             inbodyDate: inbody.inbodyDate,
-             bmr: inbody.bmr,
-             bodyfat: inbody.bodyfat,
-             bmi: inbody.bmi,
-             memberID: memberId
-         )
-
-         do {
-             let response = try await NetworkManager.createInbody(createInbodyDto: createInbodyDto)
-             self.inbodyResponse = response
-         } catch {
-             self.errorMessage = error.localizedDescription
-             print("Error creating inbody: \(error)")
-         }
-     }
-
-     func fetchInbodies(memberId: Int) async {
-         do {
-             let inbodies = try await NetworkManager.fetchInbodies(memberId: memberId)
-             // Use fetched inbodies as needed in your ViewModel
-         } catch {
-             self.errorMessage = error.localizedDescription
-             print("Error fetching inbodies: \(error)")
-         }
-     }
- }
- */
