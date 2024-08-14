@@ -86,13 +86,8 @@ struct OnboardingSelectUserInfoView: View {
 
         CustomButtonView(title: "입력하기") {
             // TODO: API POST 로직 추가
-            //            navigationPathFinder.addPath(option: .inbodyAddView)
-            navigationPathFinder.addPath(option: .inbodyInputView)
+            navigationPathFinder.addPath(option: .inbodyAddView)
         }
         .navigationBarBackButtonHidden()
     }
 }
-
-// #Preview {
-//    OnboardingSelectUserInfoView()
-// }

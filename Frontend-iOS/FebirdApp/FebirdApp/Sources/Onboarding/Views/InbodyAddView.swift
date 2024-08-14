@@ -9,7 +9,7 @@ import SwiftUI
 
 struct InbodyAddView: View {
     @EnvironmentObject var navigationPathFinder: NavigationPathFinder<OnboardingViewOptions>
-    @StateObject var azureInbodyViewModel = AzureInbodyViewModel()
+    @EnvironmentObject var viewModel: AzureInbodyViewModel
 
     @State private var showOnboardingGaugeView = true
     @State private var showSkipButton = true
@@ -57,7 +57,6 @@ struct InbodyAddView: View {
                         }
                     }
                 }
-
                 Spacer()
 
                 if !isImageSelected {
@@ -76,9 +75,10 @@ struct InbodyAddView: View {
                     .padding(.top, 40)
 
                     CustomButtonView(title: "분석하기") {
-                        // TODO: 분석 로직 추가
-                        analyzeImage(image: image!)
-                        navigationPathFinder.addPath(option: .onboardingLoadingView)
+                        viewModel.analyzeImage(image!)
+                        if viewModel.isLoading && viewModel.error == nil {
+                            navigationPathFinder.addPath(option: .onboardingLoadingView)
+                        }
                     }
                 }
             }
@@ -105,10 +105,7 @@ struct InbodyAddView: View {
             })
             .navigationBarBackButtonHidden()
         }
-    }
-    private func analyzeImage(image: UIImage) {
-        guard let imageData = image.jpegData(compressionQuality: 0.8) else { return }
-        azureInbodyViewModel.analyzeImage(imageData: imageData)
+
     }
 }
 
