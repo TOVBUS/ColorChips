@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		323408F52C61B3CE00FCB9B6 /* SocialLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323408F42C61B3CE00FCB9B6 /* SocialLoginViewModel.swift */; };
-		323408F72C61C91D00FCB9B6 /* SignInWithAppleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323408F62C61C91D00FCB9B6 /* SignInWithAppleViewModel.swift */; };
 		323408FB2C61C97500FCB9B6 /* SignInWithAppleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323408FA2C61C97500FCB9B6 /* SignInWithAppleButton.swift */; };
 		3E3B9A812C5B29A2001F2852 /* NavigationPathFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3B9A802C5B29A2001F2852 /* NavigationPathFinder.swift */; };
 		3E3B9A832C5B29AA001F2852 /* ViewOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3B9A822C5B29AA001F2852 /* ViewOptions.swift */; };
@@ -59,9 +57,10 @@
 		8F0F48062C63723F004E3B86 /* RoutineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F48052C63723F004E3B86 /* RoutineViewModel.swift */; };
 		8F0F48082C637261004E3B86 /* LevelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F48072C637261004E3B86 /* LevelViewModel.swift */; };
 		8F0F480A2C6372EA004E3B86 /* ExerciseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F48092C6372EA004E3B86 /* ExerciseViewModel.swift */; };
-		8F0F48132C637905004E3B86 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8F0F48122C637905004E3B86 /* Alamofire */; };
 		8F0F48152C63795A004E3B86 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F48142C63795A004E3B86 /* HistoryViewModel.swift */; };
 		8F0F48172C637985004E3B86 /* MemberViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F48162C637985004E3B86 /* MemberViewModel.swift */; };
+		8F1409232C6DFDC6003DD085 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1409222C6DFDC6003DD085 /* MainView.swift */; };
+		8F60F9D62C6DEC3D0022A733 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8F60F9D52C6DEC3D0022A733 /* Alamofire */; };
 		8F8A77E72C5E7AF9008E61D7 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8A77E62C5E7AF9008E61D7 /* SettingsViewModel.swift */; };
 		8F8A77EA2C5E7CE1008E61D7 /* CellConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8A77E92C5E7CE1008E61D7 /* CellConfiguration.swift */; };
 		8F8A77EC2C5F554F008E61D7 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8A77EB2C5F554F008E61D7 /* UserProfile.swift */; };
@@ -178,8 +177,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		323408F42C61B3CE00FCB9B6 /* SocialLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLoginViewModel.swift; sourceTree = "<group>"; };
-		323408F62C61C91D00FCB9B6 /* SignInWithAppleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleViewModel.swift; sourceTree = "<group>"; };
 		323408FA2C61C97500FCB9B6 /* SignInWithAppleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleButton.swift; sourceTree = "<group>"; };
 		323408FC2C61CA3B00FCB9B6 /* FebirdApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FebirdApp.entitlements; sourceTree = "<group>"; };
 		3E3B9A802C5B29A2001F2852 /* NavigationPathFinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationPathFinder.swift; sourceTree = "<group>"; };
@@ -237,6 +234,7 @@
 		8F0F48092C6372EA004E3B86 /* ExerciseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewModel.swift; sourceTree = "<group>"; };
 		8F0F48142C63795A004E3B86 /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
 		8F0F48162C637985004E3B86 /* MemberViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberViewModel.swift; sourceTree = "<group>"; };
+		8F1409222C6DFDC6003DD085 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		8F8A77E62C5E7AF9008E61D7 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		8F8A77E92C5E7CE1008E61D7 /* CellConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellConfiguration.swift; sourceTree = "<group>"; };
 		8F8A77EB2C5F554F008E61D7 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
@@ -341,7 +339,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8F0F48132C637905004E3B86 /* Alamofire in Frameworks */,
+				8F60F9D62C6DEC3D0022A733 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,8 +409,6 @@
 			isa = PBXGroup;
 			children = (
 				3E3B9A8D2C5B500E001F2852 /* SocialLoginView.swift */,
-				323408F42C61B3CE00FCB9B6 /* SocialLoginViewModel.swift */,
-				323408F62C61C91D00FCB9B6 /* SignInWithAppleViewModel.swift */,
 				323408FA2C61C97500FCB9B6 /* SignInWithAppleButton.swift */,
 			);
 			path = Login;
@@ -530,6 +526,7 @@
 			isa = PBXGroup;
 			children = (
 				3EF6F04C2C36937E00EEF18F /* FebirdAppApp.swift */,
+				8F1409222C6DFDC6003DD085 /* MainView.swift */,
 				8FE8FB342C60B9FA009CFAE9 /* NetworkService */,
 				3E3B9A8C2C5B4FEF001F2852 /* Login */,
 				3E9E9E0B2C44E5B1002389EB /* Extensions */,
@@ -918,7 +915,7 @@
 			);
 			name = FebirdApp;
 			packageProductDependencies = (
-				8F0F48122C637905004E3B86 /* Alamofire */,
+				8F60F9D52C6DEC3D0022A733 /* Alamofire */,
 			);
 			productName = FebirdApp;
 			productReference = 3EF6F0492C36937E00EEF18F /* FebirdApp.app */;
@@ -993,8 +990,8 @@
 			);
 			mainGroup = 3EF6F0402C36937D00EEF18F;
 			packageReferences = (
-				8F0F48102C6375A9004E3B86 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */,
-				8F0F48112C637905004E3B86 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				8F60F9D32C6DEC320022A733 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */,
+				8F60F9D42C6DEC3D0022A733 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 3EF6F04A2C36937E00EEF18F /* Products */;
 			projectDirPath = "";
@@ -1078,6 +1075,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F0F47FA2C636FA0004E3B86 /* Inbody.swift in Sources */,
+				8F1409232C6DFDC6003DD085 /* MainView.swift in Sources */,
 				E20F9CF62C63DB20006A034B /* CustomTextField.swift in Sources */,
 				8FE8FB362C60BA2E009CFAE9 /* NetworkManager.swift in Sources */,
 				E20F9CF82C63DEA9006A034B /* ChatTextFieldView.swift in Sources */,
@@ -1153,7 +1151,6 @@
 				8F0F48172C637985004E3B86 /* MemberViewModel.swift in Sources */,
 				8F8A77E72C5E7AF9008E61D7 /* SettingsViewModel.swift in Sources */,
 				E10FD9B02C4CC01700D80139 /* InbodyMainView.swift in Sources */,
-				323408F52C61B3CE00FCB9B6 /* SocialLoginViewModel.swift in Sources */,
 				8F8A77EE2C5F56BD008E61D7 /* ProfileSettingViewModel.swift in Sources */,
 				E2CFF20E2C4E999E00540500 /* MessageInUI.swift in Sources */,
 				E15BF0302C609C300033E5C3 /* ExerciseDetector+ExerciseDetection.swift in Sources */,
@@ -1167,7 +1164,6 @@
 				E10FD99F2C49FECB00D80139 /* OnboardingLoadingView.swift in Sources */,
 				8F0F47FE2C636FEC004E3B86 /* Level.swift in Sources */,
 				8F8A77F02C5F734B008E61D7 /* SettingHeaderView.swift in Sources */,
-				323408F72C61C91D00FCB9B6 /* SignInWithAppleViewModel.swift in Sources */,
 				E15BF02C2C609AF80033E5C3 /* ExerciseState.swift in Sources */,
 				E1BB0D622C48A875002565B2 /* InbodyAddView.swift in Sources */,
 				E2FDD2572C4B93AF004067EF /* WeeklyCalendar.swift in Sources */,
@@ -1553,7 +1549,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		8F0F48102C6375A9004E3B86 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */ = {
+		8F60F9D32C6DEC320022A733 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SimplyDanny/SwiftLintPlugins.git";
 			requirement = {
@@ -1561,7 +1557,7 @@
 				minimumVersion = 0.56.1;
 			};
 		};
-		8F0F48112C637905004E3B86 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		8F60F9D42C6DEC3D0022A733 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
@@ -1572,9 +1568,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		8F0F48122C637905004E3B86 /* Alamofire */ = {
+		8F60F9D52C6DEC3D0022A733 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 8F0F48112C637905004E3B86 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = 8F60F9D42C6DEC3D0022A733 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
