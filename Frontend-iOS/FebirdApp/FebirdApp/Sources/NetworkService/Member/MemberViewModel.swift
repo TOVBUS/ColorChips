@@ -29,23 +29,18 @@ class MemberViewModel: ObservableObject {
             "Content-Type": "application/json",
             "appleID": appleID
         ]
-
-        do {
-            let request = AF.request(url, method: .post, headers: headers)
-
-            let response = try await request.serializingDecodable(LoginResponse.self).response
-
-            switch response.result {
+        
+        let request = AF.request(url, method: .post, headers: headers)
+        
+        let response = await request.serializingDecodable(LoginResponse.self).response
+        
+        switch response.result {
             case .success(let loginResponse):
                 print("JWT 토큰: \(loginResponse.token)")
                 // 받은 토큰을 저장하거나, 다음 작업을 수행합니다.
             case .failure(let error):
                 self.errorMessage = error.localizedDescription
                 print("Error creating member: \(error)")
-            }
-        } catch {
-            self.errorMessage = error.localizedDescription
-            print("Error creating member: \(error)")
         }
     }
 
