@@ -91,3 +91,7 @@ struct OnboardingSelectUserInfoView: View {
         .navigationBarBackButtonHidden()
     }
 }
+
+#Preview {
+    OnboardingSelectUserInfoView()
+}

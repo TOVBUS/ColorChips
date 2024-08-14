@@ -28,22 +28,24 @@ struct OnboardingTextField: View {
     }
 
     var body: some View {
-        VStack(alignment: .leading, content: {
+        VStack(alignment: .leading) {
             Text(question)
                 .font(.customFont(size: 14, weight: .bold))
-                .foregroundStyle(Color(red: 0.07, green: 0.07, blue: 0.08))
+                .foregroundStyle(.gray100)
             HStack {
                 CustomTextField(placeholder: placeholder, text: $text, keyboardType: keyboardType, autoFocus: autoFocus)
                     .font(.customFont(size: 18, weight: .medium))
-                    .foregroundStyle(text == "" ? .gray100 : Color(red: 0.61, green: 0.64, blue: 0.69))
-                Text(unit)
-                    .foregroundStyle(Color(red: 31/255, green: 41/255, blue: 55/255))
+                    .foregroundStyle(text == "" ? .gray30 : .gray100)
+                Text(/*unit*/"durldurl")
+                    .foregroundStyle(.gray100)
+                    .font(.customFont(size: 18, weight: .medium))
             }.padding()
                 .background(
                     RoundedRectangle(cornerRadius: 20)
-                        .fill(Color(red: 0.95, green: 0.95, blue: 0.96))
+                        .fill(.gray10)
                 )
-        })
+        }
+        .frame(maxWidth: .infinity, minHeight: 56, maxHeight: 56, alignment: .leading)
         .onAppear(perform: {
             if text.isEmpty, let inputValue = inputValue {
                 text = inputValue
@@ -52,6 +54,6 @@ struct OnboardingTextField: View {
     }
 }
 
-// #Preview {
-//    OnboardingTextField(question: "체중", placeholder: "46.3", unit: "kg", inputValue: "46.3", autoFocus: true, text: .constant(""))
-// }
+ #Preview {
+    OnboardingTextField(question: "체중", placeholder: "46.3", unit: "kg", inputValue: "46.3", autoFocus: true, text: .constant(""))
+ }
