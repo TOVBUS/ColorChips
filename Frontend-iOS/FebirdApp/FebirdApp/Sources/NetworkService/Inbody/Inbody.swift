@@ -20,7 +20,6 @@ struct Inbody: Codable {
         case inbodyId = "inbody_id", height, weight, inbodyDate = "inbody_date", bmr, bodyfat, bmi
     }
 
-    // 날짜 문자열을 처리하는 커스텀 디코딩
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         inbodyId = try container.decode(Int.self, forKey: .inbodyId)

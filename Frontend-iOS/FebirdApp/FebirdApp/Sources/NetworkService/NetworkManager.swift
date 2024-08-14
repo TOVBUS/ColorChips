@@ -79,7 +79,6 @@ class NetworkManager {
 
     static func createInbody(createInbodyDto: CreateInbodyDto) async throws -> InbodyResponse {
         let url = "\(Config.baseURL)/member/\(createInbodyDto.memberID)/inbody"
-        print(url)
         var request = URLRequest(url: URL(string: url)!)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")

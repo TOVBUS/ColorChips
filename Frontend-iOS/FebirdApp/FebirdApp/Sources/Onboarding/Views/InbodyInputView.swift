@@ -82,7 +82,6 @@ struct InbodyInputView: View {
                 let response = try await NetworkManager.createInbody(createInbodyDto: createInbodyDto)
                 await MainActor.run {
                     inbodyViewModel.createdInbody = response
-                    print("Created inbody: \(response)")
                 }
             } catch {
                 print("Error creating inbody: \(error)")
