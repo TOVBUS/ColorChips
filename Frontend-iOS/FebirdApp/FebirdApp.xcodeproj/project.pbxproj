@@ -95,6 +95,7 @@
 		E10FD9AE2C4C16AA00D80139 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10FD9AD2C4C16AA00D80139 /* ProfileHeaderView.swift */; };
 		E10FD9B02C4CC01700D80139 /* InbodyMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10FD9AF2C4CC01700D80139 /* InbodyMainView.swift */; };
 		E10FD9B22C4CC06000D80139 /* InbodyChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10FD9B12C4CC06000D80139 /* InbodyChartView.swift */; };
+		E114B7C32C6A4962009A8E77 /* InbodyInputSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E114B7C22C6A4962009A8E77 /* InbodyInputSelectView.swift */; };
 		E12911B92C48DC82009A92F7 /* CameraActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12911B82C48DC81009A92F7 /* CameraActionSheet.swift */; };
 		E12911BB2C48EDFE009A92F7 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12911BA2C48EDFE009A92F7 /* PhotoPicker.swift */; };
 		E12911BD2C48FDBA009A92F7 /* InbodyFixView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12911BC2C48FDBA009A92F7 /* InbodyFixView.swift */; };
@@ -269,6 +270,8 @@
 		E10FD9AD2C4C16AA00D80139 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		E10FD9AF2C4CC01700D80139 /* InbodyMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InbodyMainView.swift; sourceTree = "<group>"; };
 		E10FD9B12C4CC06000D80139 /* InbodyChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InbodyChartView.swift; sourceTree = "<group>"; };
+		E114B7C12C659610009A8E77 /* Secret.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secret.xcconfig; sourceTree = "<group>"; };
+		E114B7C22C6A4962009A8E77 /* InbodyInputSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InbodyInputSelectView.swift; sourceTree = "<group>"; };
 		E12911B82C48DC81009A92F7 /* CameraActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraActionSheet.swift; sourceTree = "<group>"; };
 		E12911BA2C48EDFE009A92F7 /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
 		E12911BC2C48FDBA009A92F7 /* InbodyFixView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InbodyFixView.swift; sourceTree = "<group>"; };
@@ -793,6 +796,7 @@
 				E1AEFC922C4D10AD000D6441 /* AlbumMainView.swift */,
 				E1AEFC962C4D2E69000D6441 /* AlbumDetailView.swift */,
 				E1AEFC982C4D3F50000D6441 /* EyeBodyMainView.swift */,
+				E114B7C22C6A4962009A8E77 /* InbodyInputSelectView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1146,6 +1150,7 @@
 				8F0F47FC2C636FD6004E3B86 /* Exercise.swift in Sources */,
 				E208BDEE2C62952F0094CC16 /* DailyMemo.swift in Sources */,
 				3E7521AD2C49F88B00920BFD /* CustomTabBarView.swift in Sources */,
+				E114B7C32C6A4962009A8E77 /* InbodyInputSelectView.swift in Sources */,
 				8F0F48172C637985004E3B86 /* MemberViewModel.swift in Sources */,
 				8F8A77E72C5E7AF9008E61D7 /* SettingsViewModel.swift in Sources */,
 				E10FD9B02C4CC01700D80139 /* InbodyMainView.swift in Sources */,

@@ -35,7 +35,7 @@ enum OnboardingViewOptions: Hashable, ViewOptions {
         case .inbodyFixView:
             InbodyFixView()
         case .inbodyInputView:
-            InbodyInputView(weight: "", height: "", bmi: "", bodyfat: "", bmr: "")
+            InbodyInputView()
         case .onboardingEndView:
             OnboardingEndView()
         case .eyeBodyView:
@@ -77,7 +77,7 @@ enum ProfileViewOptions: Hashable, ViewOptions {
         case .eyeBodyView(let isOnboarding):
             EyeBodyView(isOnboarding: isOnboarding)
         case .inbodyInputView:
-            InbodyInputView(weight: "", height: "", bmi: "", bodyfat: "", bmr: "")
+            InbodyInputView()
         }
     }
 }

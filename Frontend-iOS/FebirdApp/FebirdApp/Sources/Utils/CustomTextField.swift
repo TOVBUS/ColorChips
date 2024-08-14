@@ -11,6 +11,7 @@ import SwiftUI
 enum KeyboardType {
     case defaultType
     case numberPad
+    case decimalPad
 }
 
 struct CustomTextField: UIViewRepresentable {
@@ -45,6 +46,8 @@ struct CustomTextField: UIViewRepresentable {
             textField.keyboardType = .default
         case .numberPad:
             textField.keyboardType = .numberPad
+        case .decimalPad:
+            textField.keyboardType = .decimalPad
         }
 
         if autoFocus {

@@ -79,7 +79,6 @@ class NetworkManager {
 
     static func createInbody(createInbodyDto: CreateInbodyDto) async throws -> InbodyResponse {
         let url = "\(Config.baseURL)/member/\(createInbodyDto.memberID)/inbody"
-
         var request = URLRequest(url: URL(string: url)!)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -89,10 +88,19 @@ class NetworkManager {
             request.httpBody = jsonData
 
             return try await withCheckedThrowingContinuation { continuation in
-                AF.request(request).responseDecodable(of: InbodyResponse.self) { response in
+                AF.request(request).responseData { response in
                     switch response.result {
-                    case .success(let inbodyResponse):
-                        continuation.resume(returning: inbodyResponse)
+                    case .success(let data):
+                        do {
+                            let inbodyResponse = try JSONDecoder().decode(InbodyResponse.self, from: data)
+                            continuation.resume(returning: inbodyResponse)
+                        } catch {
+                            print("Decoding error: \(error)")
+                            if let jsonString = String(data: data, encoding: .utf8) {
+                                print("Received JSON: \(jsonString)")
+                            }
+                            continuation.resume(throwing: error)
+                        }
                     case .failure(let error):
                         continuation.resume(throwing: error)
                     }

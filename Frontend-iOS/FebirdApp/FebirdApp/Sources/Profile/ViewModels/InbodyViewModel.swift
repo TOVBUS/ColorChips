@@ -13,7 +13,6 @@ class InbodyViewModel: ObservableObject {
 
     @Published var inbodies: [Inbody] = []
     @Published var createdInbody: InbodyResponse?
-    @Published var userInbody: UserInbody = UserInbody(inbodyId: 0, height: 0, weight: 0, inbodyDate: Date(), bmr: 0, bodyfat: 0, bmi: 0)
     @Published var errorMessage: String?
 
     func analyzeTrend<T: BinaryFloatingPoint>(for inbodys: [InbodyModel], getValue: (InbodyModel) -> T?) -> String {
