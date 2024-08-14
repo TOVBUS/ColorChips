@@ -9,6 +9,7 @@ import SwiftUI
 
 struct OnboardingLoadingView: View {
     @EnvironmentObject var navigationPathFinder: NavigationPathFinder<OnboardingViewOptions>
+    @EnvironmentObject var viewModel: AzureInbodyViewModel
 
     var body: some View {
         VStack {
@@ -20,8 +21,9 @@ struct OnboardingLoadingView: View {
             Text("분석중...")
                 .font(.customFont(size: 20, weight: .bold))
         }
-        .onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+        .onReceive(viewModel.$isLoading) { isLoading in
+            if !isLoading {
+                print("-------------로딩 완료----------------")
                 navigationPathFinder.addPath(option: .inbodyFixView)
             }
         }

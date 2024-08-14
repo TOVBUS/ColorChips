@@ -1,25 +1,22 @@
 //
-//  AzureInbodyNetService.swift
+//  AzureInbodyService.swift
 //  FebirdApp
 //
-//  Created by 이유경 on 8/8/24.
+//  Created by 이유경 on 8/13/24.
 //
 
 import Foundation
 import Alamofire
 
 class AzureInbodyService: ObservableObject {
-    private var subscriptionKey: String = "9ac5258525594353a9852e94af9f2ab6"
-
     // MARK: - 이미지 분석
     func analyzeImage(imageData: Data, completion: @escaping (Result<String, Error>) -> Void) {
-        let url = "https://doc-feo.cognitiveservices.azure.com/formrecognizer/documentModels/feo-inbody-model2:analyze?api-version=2023-07-31"
         let headers: HTTPHeaders = [
-            "Ocp-Apim-Subscription-Key": subscriptionKey,
+            "Ocp-Apim-Subscription-Key": Config.docApiKey,
             "Content-Type": "application/octet-stream"
         ]
 
-        AF.upload(imageData, to: url, headers: headers)
+        AF.upload(imageData, to: Config.docURL, headers: headers)
             .response { response in
                 debugPrint(response)
 
@@ -32,10 +29,11 @@ class AzureInbodyService: ObservableObject {
                 }
             }
     }
+
     // MARK: - 이미지 분석 결과
     func getAnalyzeResult(operationLocation: String, completion: @escaping (Result<InbodyRoot, Error>) -> Void) {
         let headers: HTTPHeaders = [
-            "Ocp-Apim-Subscription-Key": subscriptionKey
+            "Ocp-Apim-Subscription-Key": Config.docApiKey
         ]
 
         AF.request(operationLocation, headers: headers)
@@ -47,9 +45,6 @@ class AzureInbodyService: ObservableObject {
                     completion(.success(value))
                 case .failure(let error):
                     print("network af.request 메서드에서 문제발생! getAnalyzeResult 메서드임")
-                    if let data = response.data, let str = String(data: data, encoding: .utf8) {
-                        print("Response data: \(str)")
-                    }
                     completion(.failure(error))
                 }
             }
