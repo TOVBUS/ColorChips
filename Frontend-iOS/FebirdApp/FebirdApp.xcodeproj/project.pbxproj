@@ -270,7 +270,6 @@
 		E10FD9AD2C4C16AA00D80139 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		E10FD9AF2C4CC01700D80139 /* InbodyMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InbodyMainView.swift; sourceTree = "<group>"; };
 		E10FD9B12C4CC06000D80139 /* InbodyChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InbodyChartView.swift; sourceTree = "<group>"; };
-		E114B7C12C659610009A8E77 /* Secret.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secret.xcconfig; sourceTree = "<group>"; };
 		E114B7C22C6A4962009A8E77 /* InbodyInputSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InbodyInputSelectView.swift; sourceTree = "<group>"; };
 		E12911B82C48DC81009A92F7 /* CameraActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraActionSheet.swift; sourceTree = "<group>"; };
 		E12911BA2C48EDFE009A92F7 /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
@@ -1243,6 +1242,7 @@
 /* Begin XCBuildConfiguration section */
 		3EF6F06D2C36938000EEF18F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2ACDA712C6B999000B4EE9F /* Secret.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -1306,6 +1306,7 @@
 		};
 		3EF6F06E2C36938000EEF18F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2ACDA712C6B999000B4EE9F /* Secret.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -1362,6 +1363,7 @@
 		};
 		3EF6F0702C36938000EEF18F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2ACDA712C6B999000B4EE9F /* Secret.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1396,6 +1398,7 @@
 		};
 		3EF6F0712C36938000EEF18F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2ACDA712C6B999000B4EE9F /* Secret.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1430,6 +1433,7 @@
 		};
 		3EF6F0732C36938000EEF18F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2ACDA712C6B999000B4EE9F /* Secret.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1450,6 +1454,7 @@
 		};
 		3EF6F0742C36938000EEF18F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2ACDA712C6B999000B4EE9F /* Secret.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1470,6 +1475,7 @@
 		};
 		3EF6F0762C36938000EEF18F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2ACDA712C6B999000B4EE9F /* Secret.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1488,6 +1494,7 @@
 		};
 		3EF6F0772C36938000EEF18F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2ACDA712C6B999000B4EE9F /* Secret.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

@@ -10,6 +10,8 @@
 	<string>$(CHAT_API_KEY)</string>
 	<key>CHAT_URL</key>
 	<string>$(CHAT_URL)</string>
+	<key>DOC_API_KEY</key>
+	<string>$(DOC_API_KEY)</string>
 	<key>DOC_URL</key>
 	<string>$(DOC_URL)</string>
 	<key>UIAppFonts</key>
