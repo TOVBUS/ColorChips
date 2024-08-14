@@ -59,6 +59,6 @@ struct CustomCell: View {
     }
 }
 
-// #Preview {
-//    CustomCell(showDesc: true, showChevron: false, showArrow: false, showToggle: true, showVersion: false, text: "애플 헬스 연동")
-// }
+ #Preview {
+     CustomCell(configuration: CellConfiguration.init(showDesc: false, showChevron: false, showArrow: false, showToggle: true, showVersion: false, text: "애플 헬스 연동"))
+ }

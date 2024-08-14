@@ -36,16 +36,14 @@ struct OnboardingTextField: View {
                 CustomTextField(placeholder: placeholder, text: $text, keyboardType: keyboardType, autoFocus: autoFocus)
                     .font(.customFont(size: 18, weight: .medium))
                     .foregroundStyle(text == "" ? .gray30 : .gray100)
-                Text(/*unit*/"durldurl")
+                Text(unit)
                     .foregroundStyle(.gray100)
-                    .font(.customFont(size: 18, weight: .medium))
             }.padding()
                 .background(
                     RoundedRectangle(cornerRadius: 20)
                         .fill(.gray10)
                 )
         }
-        .frame(maxWidth: .infinity, minHeight: 56, maxHeight: 56, alignment: .leading)
         .onAppear(perform: {
             if text.isEmpty, let inputValue = inputValue {
                 text = inputValue
@@ -55,5 +53,5 @@ struct OnboardingTextField: View {
 }
 
  #Preview {
-    OnboardingTextField(question: "체중", placeholder: "46.3", unit: "kg", inputValue: "46.3", autoFocus: true, text: .constant(""))
+    OnboardingTextField(question: "체중", placeholder: "46.3", unit: "kg", inputValue: "46.3", autoFocus: true, text: .constant("하이"))
  }

@@ -20,22 +20,15 @@ struct OnboardingSelectUserInfoView: View {
         VStack {
             OnboardingGaugeView(progress: 3)
             ScrollView {
-                VStack(spacing: 28) {
-                    HStack {
+                VStack(alignment: .leading, spacing: 28) {
                         Text("프로필 이미지를 하나 골라주세요!")
                             .font(.customFont(size: 14, weight: .bold))
 
-                        Spacer()
-                    }
-
                     OnboardingProfileSelectionView(selectedImageIndex: 1)
 
-                    HStack {
-                        Text("어떻게 불러드릴까요?")
-                            .font(.customFont(size: 14, weight: .bold))
+                    Text("어떻게 불러드릴까요?")
+                        .font(.customFont(size: 14, weight: .bold))
 
-                        Spacer()
-                    }
                     HStack {
                         Image("personIcon")
                         TextField("어떻게 불러드릴까요?", text: $name)
