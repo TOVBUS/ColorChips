@@ -6,6 +6,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { MulterModule } from '@nestjs/platform-express';
 import { diskStorage } from 'multer';
 import { extname } from 'path';
+import { AuthModule } from '../auth/auth.module';
 
 @Module({
   imports: [
@@ -24,6 +25,7 @@ import { extname } from 'path';
         fileSize: 500 * 1024 * 1024,
       },
     }),
+    AuthModule,
   ],
   exports: [TypeOrmModule],
   controllers: [MemberController],

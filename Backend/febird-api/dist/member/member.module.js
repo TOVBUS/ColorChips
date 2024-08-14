@@ -15,6 +15,7 @@ const typeorm_1 = require("@nestjs/typeorm");
 const platform_express_1 = require("@nestjs/platform-express");
 const multer_1 = require("multer");
 const path_1 = require("path");
+const auth_module_1 = require("../auth/auth.module");
 let MemberModule = class MemberModule {
 };
 exports.MemberModule = MemberModule;
@@ -35,6 +36,7 @@ exports.MemberModule = MemberModule = __decorate([
                     fileSize: 500 * 1024 * 1024,
                 },
             }),
+            auth_module_1.AuthModule,
         ],
         exports: [typeorm_1.TypeOrmModule],
         controllers: [member_controller_1.MemberController],
