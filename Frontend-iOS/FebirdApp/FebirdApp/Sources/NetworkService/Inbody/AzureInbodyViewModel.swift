@@ -28,7 +28,6 @@ enum AnalyzeError: Error {
 }
 
 class AzureInbodyViewModel: ObservableObject {
-    //    @Published var inbodyData: AzureInbody?
     @Published var status: String = ""
     @Published var weight: Weights?
     @Published var bmr: Bmr?

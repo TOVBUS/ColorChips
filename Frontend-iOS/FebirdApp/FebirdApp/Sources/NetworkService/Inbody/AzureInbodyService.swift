@@ -9,7 +9,6 @@ import Foundation
 import Alamofire
 
 class AzureInbodyService: ObservableObject {
-
     // MARK: - 이미지 분석
     func analyzeImage(imageData: Data, completion: @escaping (Result<String, Error>) -> Void) {
         let headers: HTTPHeaders = [
