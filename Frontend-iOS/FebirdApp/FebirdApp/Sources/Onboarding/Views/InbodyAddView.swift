@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct InbodyAddView: View {
-    @EnvironmentObject var navigationPathFinder: NavigationPathFinder<OnboardingViewOptions>
+    @EnvironmentObject var onboardingNavigationPathFinder: NavigationPathFinder<OnboardingViewOptions>
+    @EnvironmentObject var profileNavigationPathFinder: NavigationPathFinder<ProfileViewOptions>
     @EnvironmentObject var viewModel: AzureInbodyViewModel
-
-    @State private var showOnboardingGaugeView = true
+    @EnvironmentObject var tabViewModel: TabViewModel
     @State private var showSkipButton = true
     @State private var showActionSheet = false
     @State private var showImagePicker = false
@@ -19,18 +19,37 @@ struct InbodyAddView: View {
     @State private var isImageSelected = false
     @State private var image: UIImage? = UIImage(named: "InbodyDefault")
     @State private var showCamera = false
-
+    
     var body: some View {
         VStack {
-            if showOnboardingGaugeView {
+            if !profileNavigationPathFinder.isFirstEnteredApp {
                 OnboardingGaugeView(progress: 3)
             }
-
+            else {
+                HStack {
+                    Button {
+                        profileNavigationPathFinder.popPath()
+                        tabViewModel.isHidden = false
+                    } label: {
+                        Image("Chevron-left")
+                    }
+                    
+                    Spacer()
+                    
+                    Text("인바디 수정")
+                        .font(.customFont(size: 22, weight: .bold))
+                        .foregroundStyle(.gray100)
+                    
+                    Spacer()
+                }
+                .padding(.horizontal, 20)
+            }
+            
             VStack {
                 Text("인바디 사진은 아래와 같이 등록해주세요!")
                     .font(.customFont(size: 20, weight: .bold))
                     .padding(.bottom, 36)
-
+                
                 ZStack {
                     Image(uiImage: image ?? UIImage(named: "InbodyDefault")!)
                         .resizable()
@@ -38,18 +57,18 @@ struct InbodyAddView: View {
                         .frame(width: 300, height: 400)
                         .padding()
                         .clipShape(RoundedRectangle(cornerRadius: 10))
-
+                    
                     if !isImageSelected {
                         RoundedRectangle(cornerRadius: 10)
                             .fill(.black.opacity(0.7))
                             .frame(width: 345, height: 434)
-
+                        
                         VStack {
                             Text("민감 정보는 서버에 저장되지 않아요!")
                                 .foregroundStyle(Color(white: 1.0))
                                 .font(.customFont(size: 18, weight: .bold))
                                 .padding(.bottom, 26)
-
+                            
                             Text("건강 정보는 개인 기기에만 저장되며\n 그래프로 기록을 보여드리기 위함이니 안심하세요 😔")
                                 .foregroundStyle(Color(white: 1.0))
                                 .font(.customFont(size: 14, weight: .medium))
@@ -58,26 +77,32 @@ struct InbodyAddView: View {
                     }
                 }
                 Spacer()
-
+                
                 if !isImageSelected {
                     CustomButtonView(title: "등록하기") {
                         showActionSheet = true
                     }
                     .padding(.top, 40)
-
-                    CustomButtonView(title: "건너뛰기") {
-                        navigationPathFinder.addPath(option: .inbodyInputView)
+                    if !profileNavigationPathFinder.isFirstEnteredApp {
+                        CustomButtonView(title: "건너뛰기") {
+                            onboardingNavigationPathFinder.addPath(option: .inbodyInputView)
+                        }
                     }
                 } else {
                     CustomButtonView(title: "다시찍기") {
                         showActionSheet = true
                     }
                     .padding(.top, 40)
-
+                    
                     CustomButtonView(title: "분석하기") {
                         viewModel.analyzeImage(image!)
                         if viewModel.isLoading && viewModel.error == nil {
-                            navigationPathFinder.addPath(option: .onboardingLoadingView)
+                            if !profileNavigationPathFinder.isFirstEnteredApp {
+                                onboardingNavigationPathFinder.addPath(option: .onboardingLoadingView)
+                            } else {
+                                profileNavigationPathFinder.addPath(option: .inbodyFixView)
+                            }
+                            
                         }
                     }
                 }
@@ -105,10 +130,9 @@ struct InbodyAddView: View {
             })
             .navigationBarBackButtonHidden()
         }
-
+        .onAppear {
+            tabViewModel.isHidden = true
+        }
+        
     }
-}
-
-#Preview {
-    InbodyAddView()
 }

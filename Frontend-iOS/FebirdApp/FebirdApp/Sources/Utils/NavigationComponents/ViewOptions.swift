@@ -66,6 +66,7 @@ enum ProfileViewOptions: Hashable, ViewOptions {
     case inbodyInputView
     case inbodyInputSelectView
     case inbodyAddView
+    case inbodyFixView
 
     @ViewBuilder func view() -> some View {
         switch self {
@@ -84,6 +85,8 @@ enum ProfileViewOptions: Hashable, ViewOptions {
             InbodyInputSelectView()
         case .inbodyAddView:
             InbodyAddView()
+        case .inbodyFixView:
+            InbodyFixView()
         }
     }
 }
