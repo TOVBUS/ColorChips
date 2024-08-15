@@ -52,6 +52,7 @@ struct InbodyInputView: View {
                         .font(.customFont(size: 20, weight: .bold))
                         .foregroundStyle(Color(red: 0.07, green: 0.07, blue: 0.08))
                         .padding(.bottom, 46)
+                        .padding(.horizontal, 20)
                     
                     VStack(spacing: 20) {
                         OnboardingTextField(question: "체중 *", placeholder: "70", unit: "kg", inputValue: nil, keyboardType: .numberPad, autoFocus: false, text: $weight)
