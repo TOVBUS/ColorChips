@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct InbodyInputSelectView: View {
-    @Binding var isPresented: Bool
+    @EnvironmentObject var navigationPathFinder: NavigationPathFinder<ProfileViewOptions>
 
     var body: some View {
 
@@ -39,11 +39,11 @@ struct InbodyInputSelectView: View {
             Spacer()
 
             CustomButtonView(title: "사진찍기") {
-
+                navigationPathFinder.addPath(option: .inbodyAddView)
             }.padding(.bottom, 10)
 
             CustomButtonView(title: "수기입력") {
-
+                navigationPathFinder.addPath(option: .inbodyInputView)
             }
         }
         .background(.white)
@@ -51,5 +51,5 @@ struct InbodyInputSelectView: View {
 }
 
 #Preview {
-    InbodyInputSelectView(isPresented: .constant(true))
+    InbodyInputSelectView()
 }

@@ -10,7 +10,6 @@ import SwiftUI
 struct InbodyMainView: View {
     @EnvironmentObject var navigationPathFinder: NavigationPathFinder<ProfileViewOptions>
     @EnvironmentObject var inbodyViewModel: InbodyViewModel
-    @State private var isShowModal = false
 
     var body: some View {
         VStack {
@@ -22,11 +21,8 @@ struct InbodyMainView: View {
             }
 
             CustomButtonView(title: "인바디 추가하기", style: .black) {
-                isShowModal = true
+                navigationPathFinder.addPath(option: .inbodyInputSelectView)
             }
-            .sheet(isPresented: $isShowModal, content: {
-                InbodyInputSelectView(isPresented: $isShowModal)
-            })
         }
         .ignoresSafeArea()
         .preferredColorScheme(.light)
