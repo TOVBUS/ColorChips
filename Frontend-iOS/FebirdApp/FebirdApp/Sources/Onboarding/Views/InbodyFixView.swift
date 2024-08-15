@@ -10,6 +10,7 @@ import SwiftUI
 struct InbodyFixView: View {
     @EnvironmentObject var navigationPathFinder: NavigationPathFinder<OnboardingViewOptions>
     @EnvironmentObject var viewModel: AzureInbodyViewModel
+    @EnvironmentObject var inbodyViewModel: InbodyViewModel
 
     @State private var weight: String = ""
     @State private var height: String = ""
@@ -41,10 +42,42 @@ struct InbodyFixView: View {
             .padding(.top, 40)
 
             CustomButtonView(title: "저장하기") {
-                // TODO: 백엔드에 회원 정보 저장
+                saveInbodyData()
                 navigationPathFinder.addPath(option: .eyeBodyView)
             }
         }
         .navigationBarBackButtonHidden()
+    }
+
+    private func saveInbodyData() {
+
+        guard let weightValue = Float(weight),
+              let heightValue = Float(height) else {
+            return
+        }
+
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let inbodyDateString = dateFormatter.string(from: Date())
+
+        let createInbodyDto = CreateInbodyDto(
+            height: heightValue,
+            weight: weightValue,
+            inbodyDate: inbodyDateString,
+            bmr: Float(bmr),
+            bodyfat: Double(bodyfat),
+            bmi: Double(bmi),
+            memberID: 27)
+
+        Task {
+            do {
+                let response = try await NetworkManager.createInbody(createInbodyDto: createInbodyDto)
+                await MainActor.run {
+                    inbodyViewModel.createdInbody = response
+                }
+            } catch {
+                print("Error creating inbody: \(error)")
+            }
+        }
     }
 }

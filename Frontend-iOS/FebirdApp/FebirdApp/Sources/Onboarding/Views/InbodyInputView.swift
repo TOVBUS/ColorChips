@@ -42,6 +42,7 @@ struct InbodyInputView: View {
 
                 CustomButtonView(title: "저장하기") {
                     saveInbodyData()
+                    navigationPathFinder.addPath(option: .onboardingEndView)
                 }
 
                 CustomButtonView(title: "건너뛰기") {
