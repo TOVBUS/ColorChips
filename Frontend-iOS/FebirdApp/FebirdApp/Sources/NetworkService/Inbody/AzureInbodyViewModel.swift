@@ -90,6 +90,7 @@ class AzureInbodyViewModel: ObservableObject {
                         DispatchQueue.main.async {
                             self?.isLoading = false
                             self?.error = .dataParsingError
+                            print("data parsing error")
                         }
                     }
                 case .failure(let error):

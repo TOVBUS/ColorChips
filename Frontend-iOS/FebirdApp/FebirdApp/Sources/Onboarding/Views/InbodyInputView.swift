@@ -23,13 +23,14 @@ struct InbodyInputView: View {
     
     var body: some View {
         VStack {
-            if !profileNavigationPathFinder.isFirstEnteredApp {
+            if onboardingNavigationPathFinder.isFirstEnteredApp {
                 OnboardingGaugeView(progress: 5)
+                    .padding(.top, 50)
             }
             else {
                 HStack {
                     Button {
-                        profileNavigationPathFinder.popToRoot()
+                        profileNavigationPathFinder.popPath()
                         tabViewModel.isHidden = false
                     } label: {
                         Image("Chevron-left")
@@ -37,13 +38,14 @@ struct InbodyInputView: View {
 
                     Spacer()
 
-                    Text("인바디 추가")
+                    Text("인바디 직접 추가")
                         .font(.customFont(size: 22, weight: .bold))
                         .foregroundStyle(.gray100)
 
                     Spacer()
                 }
                 .padding(.horizontal, 20)
+                .padding(.top, 50)
             }
             
             VStack {
@@ -62,26 +64,34 @@ struct InbodyInputView: View {
                         OnboardingTextField(question: "기초대사량", placeholder: "1500", unit: "kcal", inputValue: nil, keyboardType: .numberPad, autoFocus: false, text: $bmr)
                     }
                     .padding(.horizontal, 30)
+                    .foregroundStyle(.gray100)
                 }
                 
-                CustomButtonView(title: "저장하기") {
-                    saveInbodyData()
-                    if !profileNavigationPathFinder.isFirstEnteredApp {
+                if onboardingNavigationPathFinder.isFirstEnteredApp {
+                    CustomButtonView(title: "저장하기") {
+                        saveInbodyData()
                         onboardingNavigationPathFinder.addPath(option: .onboardingEndView)
-                    } else {
+                    }
+                    
+                    CustomButtonView(title: "건너뛰기") {
+                        onboardingNavigationPathFinder.addPath(option: .onboardingEndView)
+                    }.padding(.bottom, 20)
+                } else {
+                    CustomButtonView(title: "저장하기") {
+                        saveInbodyData()
                         profileNavigationPathFinder.popToRoot()
                         tabViewModel.isHidden = false
                     }
-                }
-                if !profileNavigationPathFinder.isFirstEnteredApp {
-                    CustomButtonView(title: "건너뛰기") {
-                        onboardingNavigationPathFinder.addPath(option: .onboardingEndView)
-                    }
+                    .padding(.bottom, 20)
                 }
             }
         }
         .navigationBarBackButtonHidden()
-        
+        .background(
+            Rectangle()
+                .foregroundStyle(.white)
+        )
+        .ignoresSafeArea()
         .gesture(
             TapGesture()
                 .onEnded { _ in
@@ -89,7 +99,9 @@ struct InbodyInputView: View {
                 }
         )
         .onAppear {
-            tabViewModel.isHidden = true
+            if !onboardingNavigationPathFinder.isFirstEnteredApp {
+                tabViewModel.isHidden = true
+            }
         }
     }
     

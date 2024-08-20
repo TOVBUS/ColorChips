@@ -22,8 +22,9 @@ struct InbodyAddView: View {
     
     var body: some View {
         VStack {
-            if !profileNavigationPathFinder.isFirstEnteredApp {
+            if onboardingNavigationPathFinder.isFirstEnteredApp {
                 OnboardingGaugeView(progress: 3)
+                    .padding(.top, 40)
             }
             else {
                 HStack {
@@ -36,7 +37,7 @@ struct InbodyAddView: View {
                     
                     Spacer()
                     
-                    Text("인바디 수정")
+                    Text("인바디 사진 추가")
                         .font(.customFont(size: 22, weight: .bold))
                         .foregroundStyle(.gray100)
                     
@@ -48,6 +49,7 @@ struct InbodyAddView: View {
             VStack {
                 Text("인바디 사진은 아래와 같이 등록해주세요!")
                     .font(.customFont(size: 20, weight: .bold))
+                    .foregroundStyle(.gray100)
                     .padding(.bottom, 36)
                 
                 ZStack {
@@ -79,28 +81,36 @@ struct InbodyAddView: View {
                 Spacer()
                 
                 if !isImageSelected {
-                    CustomButtonView(title: "등록하기") {
-                        showActionSheet = true
-                    }
-                    .padding(.top, 40)
-                    if !profileNavigationPathFinder.isFirstEnteredApp {
+                    if onboardingNavigationPathFinder.isFirstEnteredApp { // 온보딩일 때만 건너뛰깇
+                        CustomButtonView(title: "등록하기") {
+                            showActionSheet = true
+                        }.padding(.top, 10)
+                        
                         CustomButtonView(title: "건너뛰기") {
                             onboardingNavigationPathFinder.addPath(option: .inbodyInputView)
                         }
+                        .padding(.bottom, 20)
                     }
-                } else {
+                    else {
+                        CustomButtonView(title: "등록하기") {
+                            showActionSheet = true
+                        }
+                    }
+                }
+                else {
                     CustomButtonView(title: "다시찍기") {
                         showActionSheet = true
                     }
                     .padding(.top, 40)
                     
                     CustomButtonView(title: "분석하기") {
-                        viewModel.analyzeImage(image!)
+                        viewModel.analyzeImage(image!) // 분석하는 로직
                         if viewModel.isLoading && viewModel.error == nil {
-                            if !profileNavigationPathFinder.isFirstEnteredApp {
+                            if onboardingNavigationPathFinder.isFirstEnteredApp {
                                 onboardingNavigationPathFinder.addPath(option: .onboardingLoadingView)
-                            } else {
-                                profileNavigationPathFinder.addPath(option: .inbodyFixView)
+                            } 
+                            else if !profileNavigationPathFinder.isFirstEnteredApp {
+                                profileNavigationPathFinder.addPath(option: .onboardingLoadingView)
                             }
                             
                         }
@@ -128,11 +138,14 @@ struct InbodyAddView: View {
                     isImageSelected = true
                 }
             })
-            .navigationBarBackButtonHidden()
         }
+        .background(Color.white.ignoresSafeArea())
+        .preferredColorScheme(.light)
+        .navigationBarBackButtonHidden()
         .onAppear {
-            tabViewModel.isHidden = true
+            if !onboardingNavigationPathFinder.isFirstEnteredApp {
+                tabViewModel.isHidden = true
+            }
         }
-        
     }
 }
