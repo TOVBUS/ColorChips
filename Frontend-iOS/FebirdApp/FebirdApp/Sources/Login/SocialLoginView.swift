@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct SocialLoginView: View {
-    @EnvironmentObject private var socialLoginViewModel : SocialLoginViewModel
-    @EnvironmentObject private var memberViewModel : MemberViewModel
-    @StateObject private var appleLoginViewModel = SignInWithAppleViewModel()
+    @EnvironmentObject private var authViewModel: AuthViewModel
     @EnvironmentObject private var onboardingNavigationPathFinder: NavigationPathFinder<OnboardingViewOptions>
+
+    @State private var showingAlert = false
+    @State private var alertMessage = ""
 
     var body: some View {
         ZStack {
@@ -52,16 +53,18 @@ struct SocialLoginView: View {
                     .onTapGesture {
                         Task {
                             do {
-                                let _: () = try await appleLoginViewModel.startSignInWithAppleFlow()
+                                try await authViewModel.startSignInWithApple()
 
-                                if !appleLoginViewModel.userIdentifier.isEmpty {
-                                    try await socialLoginViewModel.loginWithApple(appleID: appleLoginViewModel.userIdentifier)
-
-                                    memberViewModel.newMember.appleID = appleLoginViewModel.userIdentifier
-                                    onboardingNavigationPathFinder.setIsFirstenteredApp(true)
+                                if authViewModel.loginResult {
+                                    // 로그인 성공 후, 첫 진입 시 온보딩 화면으로 이동
+                                    if onboardingNavigationPathFinder.isFirstEnteredApp {
+                                        onboardingNavigationPathFinder.addPath(option: .onboardingWelcome)
+                                    } else {
+                                        onboardingNavigationPathFinder.popToRoot()
+                                    }
                                 }
                             } catch {
-                                print("Error: \(error.localizedDescription)")
+                                print("Apple 로그인 실패: \(error.localizedDescription)")
                             }
                         }
                     }

@@ -10,10 +10,9 @@ import SwiftData
 
 @main
 struct FebirdAppApp: App {
-    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    // ViewModel 객체들 초기화
     @StateObject private var tabViewModel = TabViewModel()
     @StateObject private var albumViewModel = AlbumViewModel()
-    @StateObject private var socialLoginViewModel = SocialLoginViewModel()
     @StateObject private var onboardingNavigationPathFinder = NavigationPathFinder<OnboardingViewOptions>()
     @StateObject private var mealNavigationPathFinder = NavigationPathFinder<MealViewOptions>()
     @StateObject private var exerciseNavigationPathFinder = NavigationPathFinder<ExerciseViewOptions>()
@@ -28,12 +27,14 @@ struct FebirdAppApp: App {
     @StateObject private var profileSelectViewModel = ProfileSelectViewModel()
     @StateObject private var profileSettingViewModel = ProfileSettingViewModel()
     @StateObject private var azureInbodyViewModel = AzureInbodyViewModel()
+    @StateObject private var authViewModel = AuthViewModel()
 
     let modelContainer: ModelContainer
 
     init() {
         do {
-            modelContainer = try ModelContainer(for: UserProfile.self, EyeBodyPhoto.self, LevelRecordData.self, DailyMemo.self, MealMemo.self)
+            // ModelContainer 초기화
+            modelContainer = try ModelContainer(for: EyeBodyPhoto.self, LevelRecordData.self, DailyMemo.self, MealMemo.self)
         } catch {
             fatalError("Could not initialize ModelContainer: \(error)")
         }
@@ -42,73 +43,33 @@ struct FebirdAppApp: App {
     var body: some Scene {
         WindowGroup {
             Group {
-                if socialLoginViewModel.loginResult == nil {
+                // 로그인 여부에 따라 화면을 분기
+                if !authViewModel.loginResult {
                     SocialLoginView()
-                } else if onboardingNavigationPathFinder.isFirstEnteredApp {
-                    NavigationStack(path: $onboardingNavigationPathFinder.path) {
-                        OnboardingWelcomView()
-                            .navigationDestination(for: OnboardingViewOptions.self) { option in
-                                option.view()
-                            }
-                    }
                 } else {
-                    ZStack(alignment: .bottom) {
-                        switch tabViewModel.selectedTab {
-                        case .meal:
-                            NavigationStack(path: $mealNavigationPathFinder.path) {
-                                MealMainView()
-                                    .navigationDestination(for: MealViewOptions.self) { option in
-                                        option.view()
-                                    }
-                            }
-                        case .exercise:
-                            NavigationStack(path: $exerciseNavigationPathFinder.path) {
-                                ExerciseMainView()
-                                    .navigationDestination(for: ExerciseViewOptions.self) { option in
-                                        option.view()
-                                    }
-                            }
-                        case .profile:
-                            NavigationStack(path: $profileNavigationPathFinder.path) {
-                                ProfileMainView()
-                                    .navigationDestination(for: ProfileViewOptions.self) { option in
-                                        option.view()
-                                    }
-                            }
-                        }
-                        CustomTabBarView()
-                    }
-                    .environmentObject(tabViewModel)
-                    .environmentObject(albumViewModel)
-                    .environmentObject(mealNavigationPathFinder)
-                    .environmentObject(exerciseNavigationPathFinder)
-                    .environmentObject(profileNavigationPathFinder)
-
+                    // 메인 화면
+                    MainView()
+                        .environmentObject(tabViewModel)
+                        .environmentObject(albumViewModel)
+                        .environmentObject(mealNavigationPathFinder)
+                        .environmentObject(exerciseNavigationPathFinder)
+                        .environmentObject(profileNavigationPathFinder)
+                        .environmentObject(chatViewModel)
+                        .environmentObject(historyViewModel)
+                        .environmentObject(profileSelectViewModel)
+                        .environmentObject(profileSettingViewModel)
+                        .environmentObject(routineViewModel)
+                        .environmentObject(levelViewModel)
+                        .environmentObject(exerciseViewModel)
+                        .environmentObject(inbodyViewModel)
+                        .environmentObject(azureInbodyViewModel)
+                        .environmentObject(memberViewModel)
+                        .environmentObject(authViewModel)
+                        .modelContainer(modelContainer)
                 }
             }
-            .environmentObject(socialLoginViewModel)
+            .environmentObject(authViewModel)
             .environmentObject(onboardingNavigationPathFinder)
-            .environmentObject(chatViewModel)
-            .environmentObject(routineViewModel)
-            .environmentObject(levelViewModel)
-            .environmentObject(exerciseViewModel)
-            .environmentObject(inbodyViewModel)
-            .environmentObject(historyViewModel)
-            .environmentObject(profileSelectViewModel)
-            .environmentObject(profileSettingViewModel)
-            .environmentObject(azureInbodyViewModel)
         }
-        .environmentObject(memberViewModel)
-        .modelContainer(modelContainer)
-    }
-}
-
-class AppDelegate: NSObject, UIApplicationDelegate {
-    func applicationDidEnterBackground(_ application: UIApplication) {
-        ChatViewModel.shared.clearMessages()
-    }
-
-    func applicationWillTerminate(_ application: UIApplication) {
-        ChatViewModel.shared.clearMessages()
     }
 }
