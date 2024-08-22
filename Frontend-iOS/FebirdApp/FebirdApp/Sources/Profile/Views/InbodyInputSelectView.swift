@@ -8,19 +8,36 @@
 import SwiftUI
 
 struct InbodyInputSelectView: View {
-    @Binding var isPresented: Bool
+    @EnvironmentObject var navigationPathFinder: NavigationPathFinder<ProfileViewOptions>
+    @EnvironmentObject var tabViewModel: TabViewModel
 
     var body: some View {
-
         VStack {
             HStack {
+                Button {
+                    navigationPathFinder.popPath()
+                    tabViewModel.isHidden = false
+                } label: {
+                    Image("Chevron-left")
+                }
+                
                 Spacer()
+                
+                Text("인바디 수정")
+                    .font(.customFont(size: 22, weight: .bold))
+                    .foregroundStyle(.gray100)
+                
+                Spacer()
+            }
+            .padding(.horizontal, 20)
+            
+            Spacer()
+            
+            HStack {
                 Text("인바디를 등록하세요")
                     .font(.customFont(size: 20, weight: .bold))
                     .foregroundStyle(.gray100)
-                Spacer()
             }
-            .padding(.top, 32)
             .padding(.bottom, 56)
 
             ZStack {
@@ -39,17 +56,23 @@ struct InbodyInputSelectView: View {
             Spacer()
 
             CustomButtonView(title: "사진찍기") {
-
-            }.padding(.bottom, 10)
+                navigationPathFinder.addPath(option: .inbodyAddView)
+            }
+            .padding(.vertical, 10)
 
             CustomButtonView(title: "수기입력") {
-
+                navigationPathFinder.addPath(option: .inbodyInputView)
             }
         }
-        .background(.white)
+        .background(.white) 
+        .navigationBarBackButtonHidden()
+        .onAppear {
+            tabViewModel.isHidden = true
+        }
     }
 }
 
 #Preview {
-    InbodyInputSelectView(isPresented: .constant(true))
+    InbodyInputSelectView()
+        .environmentObject(TabViewModel())
 }

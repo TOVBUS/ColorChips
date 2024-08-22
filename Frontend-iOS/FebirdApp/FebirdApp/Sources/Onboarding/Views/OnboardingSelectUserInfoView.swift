@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct OnboardingSelectUserInfoView: View {
-    @EnvironmentObject var navigationPathFinder: NavigationPathFinder<OnboardingViewOptions>
+    @EnvironmentObject var onboardingNavigationPathFinder: NavigationPathFinder<OnboardingViewOptions>
     @EnvironmentObject var memberViewModel : MemberViewModel
     @EnvironmentObject var profilleSettingViewModel : ProfileSettingViewModel
 
@@ -86,7 +86,7 @@ struct OnboardingSelectUserInfoView: View {
 
         CustomButtonView(title: "입력하기") {
             // TODO: API POST 로직 추가
-            navigationPathFinder.addPath(option: .inbodyAddView)
+            onboardingNavigationPathFinder.addPath(option: .inbodyAddView)
         }
         .navigationBarBackButtonHidden()
     }

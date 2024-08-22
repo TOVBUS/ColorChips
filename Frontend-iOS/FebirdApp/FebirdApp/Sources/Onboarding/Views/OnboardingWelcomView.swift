@@ -13,7 +13,6 @@ struct OnboardingWelcomView: View {
     var body: some View {
         VStack {
             OnboardingGaugeView(progress: 1)
-            // .padding(.bottom, 44)
 
             VStack(alignment: .center, content: {
                 Text("반가워요 핑! \n 저는 운동 교관 피오에요 핑! \n 오늘부터 운동 습관을 잡아줄게요 핑!")
