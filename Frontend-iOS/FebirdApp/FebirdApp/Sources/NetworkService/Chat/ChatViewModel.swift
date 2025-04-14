@@ -34,11 +34,11 @@ class ChatViewModel: ObservableObject {
                 ["role": "user", "content": content]
             ]
         ]
-        
+
         let request = AF.request(url, method: .post, parameters: body, encoding: JSONEncoding.default, headers: headers)
-        
+
         let response = await request.serializingDecodable(ChatResponse.self).response
-        
+
         switch response.result {
             case .success(let chatResponse):
                 if let message = chatResponse.choices.first?.message {

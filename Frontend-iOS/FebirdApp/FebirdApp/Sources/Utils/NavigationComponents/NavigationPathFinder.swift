@@ -9,7 +9,7 @@ import SwiftUI
 
 class NavigationPathFinder<Option: ViewOptions>: ObservableObject {
     @Published var path: [Option] = []
-    @Published var isFirstEnteredApp: Bool
+    @Published var isFirstEnteredApp: Bool = true
 
     init() {
         isFirstEnteredApp = UserDefaults.standard.bool(forKey: "IsFirstEnteredApp")

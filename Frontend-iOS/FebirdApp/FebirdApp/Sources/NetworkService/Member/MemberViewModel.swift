@@ -29,11 +29,11 @@ class MemberViewModel: ObservableObject {
             "Content-Type": "application/json",
             "appleID": appleID
         ]
-        
+
         let request = AF.request(url, method: .post, headers: headers)
-        
+
         let response = await request.serializingDecodable(LoginResponse.self).response
-        
+
         switch response.result {
             case .success(let loginResponse):
                 print("JWT 토큰: \(loginResponse.token)")

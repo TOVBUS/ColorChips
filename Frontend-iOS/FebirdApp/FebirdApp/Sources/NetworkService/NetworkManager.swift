@@ -25,15 +25,20 @@ enum NetworkError: Error, LocalizedError {
     }
 }
 
-enum HTTPMethod: String {
-    case get = "GET"
-    case post = "POST"
-    case patch = "PATCH"
-    case delete = "DELETE"
-}
+//enum HTTPMethod: String {
+//    case get = "GET"
+//    case post = "POST"
+//    case patch = "PATCH"
+//    case delete = "DELETE"
+//}
 
 class NetworkManager {
-    static func fetch<T: Codable>(_ endpoint: String, method: HTTPMethod = .get, body: T? = nil, multipartData: [String: Data]? = nil) async throws -> T {
+    static func fetch<T: Codable>(
+        _ endpoint: String,
+        method: HTTPMethod = .get,
+        body: T? = nil,
+        multipartData: [String: Data]? = nil
+    ) async throws -> T {
         let requestURL = URL(string: Config.baseURL + endpoint)!
 
         return try await withCheckedThrowingContinuation { continuation in

@@ -25,7 +25,7 @@ struct ProfileMainView: View {
                     case .album:
                         AlbumMainView()
                     case .inbody:
-                        InbodyMainView(inbodys: inbodyDummyData)
+                        InbodyMainView()
                     case .eyeBody:
                         EyeBodyMainView()
                     }

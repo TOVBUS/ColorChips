@@ -9,20 +9,20 @@ import SwiftUI
 import Charts
 
 struct InbodyChartView<T: Plottable & BinaryFloatingPoint>: View {
-    let inbodys: [InbodyModel]
+    let inbodys: [Inbody]
     let title: String
     let xAxisTitle: String
     let yAxisTitle: String
     let color: Color
-    let getValue: (InbodyModel) -> T?
+    let getValue: (Inbody) -> T?
 
     @StateObject private var inbodyViewModel = InbodyViewModel()
 
-    private var sortedInbodys: [InbodyModel] {
+    private var sortedInbodys: [Inbody] {
         return inbodys.sorted { $0.inbodyDate < $1.inbodyDate}
     }
 
-    private var filteredInbodys: [InbodyModel] {
+    private var filteredInbodys: [Inbody] {
         return sortedInbodys.filter { getValue($0) != nil }
     }
 

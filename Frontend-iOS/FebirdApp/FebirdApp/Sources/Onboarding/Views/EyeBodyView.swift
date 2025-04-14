@@ -11,6 +11,7 @@ struct EyeBodyView: View {
     @EnvironmentObject var onboardingNavigationPathFinder: NavigationPathFinder<OnboardingViewOptions>
     @EnvironmentObject var profileNavigationPathFinder: NavigationPathFinder<ProfileViewOptions>
     @StateObject private var viewModel = EyeBodyPhotoViewModel()
+    @EnvironmentObject var tabViewModel: TabViewModel
     @Environment(\.modelContext) private var modelContext
 
     var isOnboarding: Bool = true
@@ -107,6 +108,12 @@ struct EyeBodyView: View {
             .padding(.top, 30)
         }
         .navigationBarBackButtonHidden()
+        .onAppear {
+            tabViewModel.isHidden = true
+        }
+        .onDisappear {
+            tabViewModel.isHidden = false
+        }
     }
 
     func getPlaceholder(for index: Int) -> String {

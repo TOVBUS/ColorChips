@@ -15,7 +15,7 @@ class InbodyViewModel: ObservableObject {
     @Published var createdInbody: InbodyResponse?
     @Published var errorMessage: String?
 
-    func analyzeTrend<T: BinaryFloatingPoint>(for inbodys: [InbodyModel], getValue: (InbodyModel) -> T?) -> String {
+    func analyzeTrend<T: BinaryFloatingPoint>(for inbodys: [Inbody], getValue: (Inbody) -> T?) -> String {
         let filteredInbodys = inbodys.filter { getValue($0) != nil }.sorted { $0.inbodyDate < $1.inbodyDate }
 
         guard filteredInbodys.count >= 2 else {

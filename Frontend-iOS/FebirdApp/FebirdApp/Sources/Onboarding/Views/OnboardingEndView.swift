@@ -27,7 +27,7 @@ struct OnboardingEndView: View {
         Spacer()
 
         Button(action: {
-            navigationPathFinder.isFirstEnteredApp = false
+            navigationPathFinder.setIsFirstenteredApp(false)
             navigationPathFinder.popToRoot()
         }, label: {
             Text("메인으로 이동하기")
@@ -41,6 +41,7 @@ struct OnboardingEndView: View {
         })
         .padding(.horizontal, 24)
         .navigationBarBackButtonHidden()
+        .padding(.vertical, 60)
     }
 }
 
