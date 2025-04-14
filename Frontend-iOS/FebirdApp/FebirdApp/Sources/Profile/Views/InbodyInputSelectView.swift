@@ -64,8 +64,17 @@ struct InbodyInputSelectView: View {
                 navigationPathFinder.addPath(option: .inbodyInputView)
             }
         }
+<<<<<<< HEAD
         .background(.white) 
         .navigationBarBackButtonHidden()
+=======
+        .padding(.vertical, 50)
+        .background(
+            Rectangle()
+                .foregroundStyle(.white)
+        )
+        .ignoresSafeArea()
+>>>>>>> 6d4c919 (🐛 :: 뭔가 고친 것 같은데 기억 나지 않음 ...)
         .onAppear {
             tabViewModel.isHidden = true
         }

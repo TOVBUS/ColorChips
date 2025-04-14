@@ -15,10 +15,11 @@ class ExerciseGuideViewModel: ObservableObject {
         "팔을 천천히 내리면서 시작 자세로 돌아옵니다."
     ]
 
+    /// 비디오를 로드하여 재생합니다.
     func loadVideo() {
         guard let url = URL(string: "https://strfeo.blob.core.windows.net/exercise-video/466512^Overhead_Clap^Shoulders.mp4") else { return }
         let player = AVPlayer(url: url)
         self.player = player
-        player.play()
+        player.play() // 비디오 재생
     }
 }

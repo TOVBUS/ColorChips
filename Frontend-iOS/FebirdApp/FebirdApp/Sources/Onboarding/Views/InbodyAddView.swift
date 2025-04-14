@@ -11,7 +11,14 @@ struct InbodyAddView: View {
     @EnvironmentObject var onboardingNavigationPathFinder: NavigationPathFinder<OnboardingViewOptions>
     @EnvironmentObject var profileNavigationPathFinder: NavigationPathFinder<ProfileViewOptions>
     @EnvironmentObject var viewModel: AzureInbodyViewModel
+<<<<<<< HEAD
     @EnvironmentObject var tabViewModel: TabViewModel
+=======
+    @EnvironmentObject var onboardingNavigationPathFinder: NavigationPathFinder<OnboardingViewOptions>
+    @EnvironmentObject var profileNavigationPathFinder: NavigationPathFinder<ProfileViewOptions>
+
+    @State private var showOnboardingGaugeView = true
+>>>>>>> 6d4c919 (🐛 :: 뭔가 고친 것 같은데 기억 나지 않음 ...)
     @State private var showSkipButton = true
     @State private var showActionSheet = false
     @State private var showImagePicker = false
@@ -22,7 +29,11 @@ struct InbodyAddView: View {
     
     var body: some View {
         VStack {
+<<<<<<< HEAD
             if onboardingNavigationPathFinder.isFirstEnteredApp {
+=======
+            if !navigationPathFinder.isFirstEnteredApp {
+>>>>>>> 6d4c919 (🐛 :: 뭔가 고친 것 같은데 기억 나지 않음 ...)
                 OnboardingGaugeView(progress: 3)
                     .padding(.top, 40)
             }
@@ -91,10 +102,17 @@ struct InbodyAddView: View {
                         }
                         .padding(.bottom, 20)
                     }
+<<<<<<< HEAD
                     else {
                         CustomButtonView(title: "등록하기") {
                             showActionSheet = true
                         }
+=======
+                    .padding(.top, 40)
+
+                    CustomButtonView(title: "건너뛰기") {
+                        onboardingNavigationPathFinder.addPath(option: .inbodyInputView)
+>>>>>>> 6d4c919 (🐛 :: 뭔가 고친 것 같은데 기억 나지 않음 ...)
                     }
                 }
                 else {
@@ -106,6 +124,7 @@ struct InbodyAddView: View {
                     CustomButtonView(title: "분석하기") {
                         viewModel.analyzeImage(image!) // 분석하는 로직
                         if viewModel.isLoading && viewModel.error == nil {
+<<<<<<< HEAD
                             if onboardingNavigationPathFinder.isFirstEnteredApp {
                                 onboardingNavigationPathFinder.addPath(option: .onboardingLoadingView)
                             } 
@@ -113,6 +132,9 @@ struct InbodyAddView: View {
                                 profileNavigationPathFinder.addPath(option: .onboardingLoadingView)
                             }
                             
+=======
+                            onboardingNavigationPathFinder.addPath(option: .onboardingLoadingView)
+>>>>>>> 6d4c919 (🐛 :: 뭔가 고친 것 같은데 기억 나지 않음 ...)
                         }
                     }
                 }
@@ -138,6 +160,7 @@ struct InbodyAddView: View {
                     isImageSelected = true
                 }
             })
+<<<<<<< HEAD
         }
         .background(Color.white.ignoresSafeArea())
         .preferredColorScheme(.light)
@@ -147,5 +170,10 @@ struct InbodyAddView: View {
                 tabViewModel.isHidden = true
             }
         }
+=======
+            .background(Color.gray10.ignoresSafeArea())
+            .navigationBarBackButtonHidden()
+        }
+>>>>>>> 6d4c919 (🐛 :: 뭔가 고친 것 같은데 기억 나지 않음 ...)
     }
 }

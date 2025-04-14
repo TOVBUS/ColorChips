@@ -13,6 +13,7 @@ struct OnboardingLoadingView: View {
     @EnvironmentObject var viewModel: AzureInbodyViewModel
 
     var body: some View {
+<<<<<<< HEAD
         ZStack {
             Color.white.ignoresSafeArea()
             VStack {
@@ -21,6 +22,12 @@ struct OnboardingLoadingView: View {
                 }
                 Text("🧐")
                     .font(.customFont(size: 200, weight: .bold))
+=======
+        VStack {
+            if !navigationPathFinder.isFirstEnteredApp {
+                OnboardingGaugeView(progress: 6)
+            }
+>>>>>>> 6d4c919 (🐛 :: 뭔가 고친 것 같은데 기억 나지 않음 ...)
 
                 Text("분석중...")
                     .font(.customFont(size: 20, weight: .bold))
@@ -38,6 +45,7 @@ struct OnboardingLoadingView: View {
             }
         }
         .navigationBarBackButtonHidden()
+        .padding(.vertical, 60)
     }
 }
 

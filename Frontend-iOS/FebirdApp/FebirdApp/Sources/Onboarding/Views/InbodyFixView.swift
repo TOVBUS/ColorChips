@@ -23,6 +23,7 @@ struct InbodyFixView: View {
     
     var body: some View {
         ScrollView {
+<<<<<<< HEAD
             if onboardingNavigationPathFinder.isFirstEnteredApp {
                 OnboardingGaugeView(progress: 4)
             }
@@ -45,6 +46,12 @@ struct InbodyFixView: View {
                 .padding(.horizontal, 20)
             }
             
+=======
+            if !navigationPathFinder.isFirstEnteredApp {
+                OnboardingGaugeView(progress: 4)
+            }
+
+>>>>>>> 6d4c919 (🐛 :: 뭔가 고친 것 같은데 기억 나지 않음 ...)
             Text("정보가 다르게 인식됐나요? \n여기에서 수정할 수 있어요 😉")
                 .font(.customFont(size: 20, weight: .bold))
                 .foregroundStyle(Color(red: 0.07, green: 0.07, blue: 0.08))
@@ -76,8 +83,13 @@ struct InbodyFixView: View {
                 }
             }
         }
+        .background(Color.gray10.ignoresSafeArea())
         .navigationBarBackButtonHidden()
+<<<<<<< HEAD
         .preferredColorScheme(.light)
+=======
+        .padding(.vertical, 60)
+>>>>>>> 6d4c919 (🐛 :: 뭔가 고친 것 같은데 기억 나지 않음 ...)
     }
     
     private func saveInbodyData() {

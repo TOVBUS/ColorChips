@@ -23,6 +23,7 @@ struct InbodyInputView: View {
     
     var body: some View {
         VStack {
+<<<<<<< HEAD
             if onboardingNavigationPathFinder.isFirstEnteredApp {
                 OnboardingGaugeView(progress: 5)
                     .padding(.top, 50)
@@ -35,6 +36,11 @@ struct InbodyInputView: View {
                     } label: {
                         Image("Chevron-left")
                     }
+=======
+            if !navigationPathFinder.isFirstEnteredApp {
+                OnboardingGaugeView(progress: 5)
+            }
+>>>>>>> 6d4c919 (🐛 :: 뭔가 고친 것 같은데 기억 나지 않음 ...)
 
                     Spacer()
 
@@ -98,11 +104,16 @@ struct InbodyInputView: View {
                     UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
                 }
         )
+<<<<<<< HEAD
         .onAppear {
             if !onboardingNavigationPathFinder.isFirstEnteredApp {
                 tabViewModel.isHidden = true
             }
         }
+=======
+        .background(Color.gray10.ignoresSafeArea())
+        .padding(.vertical, 60)
+>>>>>>> 6d4c919 (🐛 :: 뭔가 고친 것 같은데 기억 나지 않음 ...)
     }
     
     private func saveInbodyData() {

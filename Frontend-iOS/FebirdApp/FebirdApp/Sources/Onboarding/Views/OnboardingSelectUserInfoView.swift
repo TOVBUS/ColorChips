@@ -13,12 +13,14 @@ struct OnboardingSelectUserInfoView: View {
     @EnvironmentObject var profilleSettingViewModel : ProfileSettingViewModel
 
     @State private var name = ""
-    @State private var age = ""
+    @State private var age = "26"
     @State private var selectedGender: UserProfile.Gender = .female
 
     var body: some View {
         VStack {
-            OnboardingGaugeView(progress: 3)
+            if !navigationPathFinder.isFirstEnteredApp {
+                OnboardingGaugeView(progress: 3)
+            }
             ScrollView {
                 VStack(spacing: 28) {
                     HStack {
@@ -28,7 +30,7 @@ struct OnboardingSelectUserInfoView: View {
                         Spacer()
                     }
 
-                    OnboardingProfileSelectionView(selectedImageIndex: 1)
+                    OnboardingProfileSelectionView(selectedImageIndex: 5)
 
                     HStack {
                         Text("어떻게 불러드릴까요?")
@@ -86,7 +88,15 @@ struct OnboardingSelectUserInfoView: View {
 
         CustomButtonView(title: "입력하기") {
             // TODO: API POST 로직 추가
+<<<<<<< HEAD
             onboardingNavigationPathFinder.addPath(option: .inbodyAddView)
+=======
+            if name.isEmpty {
+                Alert(title: Text("이름을 입력해주세요!"))
+            } else {
+                navigationPathFinder.addPath(option: .inbodyAddView)
+            }
+>>>>>>> 6d4c919 (🐛 :: 뭔가 고친 것 같은데 기억 나지 않음 ...)
         }
         .navigationBarBackButtonHidden()
     }

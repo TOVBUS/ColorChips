@@ -59,7 +59,6 @@
 		8F0F48062C63723F004E3B86 /* RoutineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F48052C63723F004E3B86 /* RoutineViewModel.swift */; };
 		8F0F48082C637261004E3B86 /* LevelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F48072C637261004E3B86 /* LevelViewModel.swift */; };
 		8F0F480A2C6372EA004E3B86 /* ExerciseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F48092C6372EA004E3B86 /* ExerciseViewModel.swift */; };
-		8F0F48132C637905004E3B86 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8F0F48122C637905004E3B86 /* Alamofire */; };
 		8F0F48152C63795A004E3B86 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F48142C63795A004E3B86 /* HistoryViewModel.swift */; };
 		8F0F48172C637985004E3B86 /* MemberViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F48162C637985004E3B86 /* MemberViewModel.swift */; };
 		8F8A77E72C5E7AF9008E61D7 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8A77E62C5E7AF9008E61D7 /* SettingsViewModel.swift */; };
@@ -67,6 +66,7 @@
 		8F8A77EC2C5F554F008E61D7 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8A77EB2C5F554F008E61D7 /* UserProfile.swift */; };
 		8F8A77EE2C5F56BD008E61D7 /* ProfileSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8A77ED2C5F56BD008E61D7 /* ProfileSettingViewModel.swift */; };
 		8F8A77F02C5F734B008E61D7 /* SettingHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8A77EF2C5F734B008E61D7 /* SettingHeaderView.swift */; };
+		8F910D7E2CB7926600FCDB6A /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8F910D7D2CB7926600FCDB6A /* Alamofire */; };
 		8F92DF7A2C4B93730071F336 /* ExerciseGuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F92DF792C4B93730071F336 /* ExerciseGuideView.swift */; };
 		8F92DF7C2C4B9A390071F336 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F92DF7B2C4B9A390071F336 /* CustomNavigationBar.swift */; };
 		8F92DF7E2C4BA9750071F336 /* ExerciseGuideListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F92DF7D2C4BA9750071F336 /* ExerciseGuideListView.swift */; };
@@ -341,7 +341,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8F0F48132C637905004E3B86 /* Alamofire in Frameworks */,
+				8F910D7E2CB7926600FCDB6A /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -918,7 +918,7 @@
 			);
 			name = FebirdApp;
 			packageProductDependencies = (
-				8F0F48122C637905004E3B86 /* Alamofire */,
+				8F910D7D2CB7926600FCDB6A /* Alamofire */,
 			);
 			productName = FebirdApp;
 			productReference = 3EF6F0492C36937E00EEF18F /* FebirdApp.app */;
@@ -994,7 +994,7 @@
 			mainGroup = 3EF6F0402C36937D00EEF18F;
 			packageReferences = (
 				8F0F48102C6375A9004E3B86 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */,
-				8F0F48112C637905004E3B86 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				8F910D7C2CB7926600FCDB6A /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 3EF6F04A2C36937E00EEF18F /* Products */;
 			projectDirPath = "";
@@ -1561,7 +1561,7 @@
 				minimumVersion = 0.56.1;
 			};
 		};
-		8F0F48112C637905004E3B86 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		8F910D7C2CB7926600FCDB6A /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
@@ -1572,9 +1572,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		8F0F48122C637905004E3B86 /* Alamofire */ = {
+		8F910D7D2CB7926600FCDB6A /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 8F0F48112C637905004E3B86 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = 8F910D7C2CB7926600FCDB6A /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
